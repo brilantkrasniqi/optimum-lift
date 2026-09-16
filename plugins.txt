@@ -1,0 +1,14 @@
+# Plugins installed and activated by docker/setup.sh on `docker compose up`.
+#
+#   slug            install the current version from wordpress.org
+#   slug:1.2.3      pin an exact version
+#   #               comment
+#
+# This file is the source of truth for which plugins the site runs. Installing a
+# plugin through wp-admin instead means the next person to bring the stack up
+# will not have it. Add it here.
+#
+# Premium / non-wordpress.org plugins have no slug and cannot go here; when the
+# first one arrives, this file becomes a composer.json (see docs/adr/).
+
+woocommerce

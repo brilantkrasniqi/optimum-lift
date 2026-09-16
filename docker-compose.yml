@@ -1,0 +1,112 @@
+services:
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wp
+      MARIADB_PASSWORD: wp
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('SCRIPT_DEBUG', true);
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        if (!empty($$_SERVER['HTTP_X_FORWARDED_PROTO']) && $$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') { $$_SERVER['HTTPS'] = 'on'; }
+        $$ol_scheme = !empty($$_SERVER['HTTPS']) ? 'https' : 'http';
+        $$ol_host = !empty($$_SERVER['HTTP_HOST']) ? $$_SERVER['HTTP_HOST'] : 'localhost:8080';
+        define('WP_HOME', $$ol_scheme . '://' . $$ol_host);
+        define('WP_SITEURL', $$ol_scheme . '://' . $$ol_host);
+        define('FS_METHOD', 'direct');
+        define('DISALLOW_FILE_EDIT', true);
+    volumes:
+      - wp:/var/www/html
+      - ./docker/php.ini:/usr/local/etc/php/conf.d/zz-optimum-lift.ini:ro
+      - ./themes/optimum-lift:/var/www/html/wp-content/themes/optimum-lift
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./uploads:/var/www/html/wp-content/uploads
+
+  wpcli:
+    image: wordpress:cli-php8.3
+    depends_on:
+      wordpress:
+        condition: service_started
+      db:
+        condition: service_healthy
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+      WP_CLI_PHP_ARGS: -d memory_limit=512M
+    volumes:
+      - wp:/var/www/html
+      - ./docker/php.ini:/usr/local/etc/php/conf.d/zz-optimum-lift.ini:ro
+      - ./themes/optimum-lift:/var/www/html/wp-content/themes/optimum-lift
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./uploads:/var/www/html/wp-content/uploads
+      - ./docker/setup.sh:/setup.sh:ro
+      - ./plugins.txt:/plugins.txt:ro
+    profiles:
+      - cli
+
+  setup:
+    image: wordpress:cli-php8.3
+    depends_on:
+      wordpress:
+        condition: service_started
+      db:
+        condition: service_healthy
+    user: "33:33"
+    restart: "no"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+      WP_CLI_PHP_ARGS: -d memory_limit=512M
+    volumes:
+      - wp:/var/www/html
+      - ./themes/optimum-lift:/var/www/html/wp-content/themes/optimum-lift
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./uploads:/var/www/html/wp-content/uploads
+      - ./docker/setup.sh:/setup.sh:ro
+      - ./plugins.txt:/plugins.txt:ro
+    entrypoint: ["sh", "/setup.sh"]
+
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - "8025:8025"
+
+volumes:
+  db:
+  wp:

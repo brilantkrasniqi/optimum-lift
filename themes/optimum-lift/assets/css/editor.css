@@ -1,0 +1,10 @@
+/*
+ * Loaded inside the block editor so authored content resembles the front end.
+ * Keep this to typography and colour: layout chrome does not exist in there.
+ */
+
+.editor-styles-wrapper {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #14181c;
+}
