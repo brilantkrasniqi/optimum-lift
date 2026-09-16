@@ -20,3 +20,7 @@ Unblocked — this runs in parallel with the entire payment thread, and it shoul
 **Do not** build tooling to generate this. Author it by hand. Tooling is fog on the map, deliberately: building it before three Plans exist means building it around a format that is about to change.
 
 Quality caveat worth taking seriously: faster production of mediocre Plans is a worse outcome than slower production of good ones. If the content is weak, that caps the business before the shop does.
+
+## Comments
+
+**2026-09-16:** The "do not build tooling" note above is overridden. The user asked for the Plans plugin (`.scratch/plans-plugin/`). Author the existing Plan in Training › Training Plans instead of by hand. The Download is rendered from it (ADR-0005). The content-quality caveat still applies in full.

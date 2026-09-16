@@ -101,6 +101,17 @@ services:
       - ./plugins.txt:/plugins.txt:ro
     entrypoint: ["sh", "/setup.sh"]
 
+  # Dev tooling: PHPStan and PHP_CodeSniffer. PHP is not needed on the host.
+  #   docker compose run --rm composer install
+  #   docker compose run --rm composer analyse | lint | fix
+  composer:
+    image: composer:2
+    working_dir: /app
+    volumes:
+      - .:/app
+    profiles:
+      - tools
+
   mailpit:
     image: axllent/mailpit:latest
     restart: unless-stopped

@@ -1,5 +1,6 @@
 /**
- * Front-end behaviour. Deferred, so the DOM is parsed by the time this runs.
+ * Front-end behaviour, bundled to assets/dist/main.js. Deferred, so the DOM is
+ * parsed by the time this runs.
  *
  * WooCommerce replaces fragments (the cart count, mini-cart) over AJAX and
  * fires `wc_fragments_refreshed` afterwards. Anything that decorates those

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ruleset name="Optimum Lift">
+    <description>PSR-12, adapted for WordPress theme and plugin files.</description>
+
+    <file>themes/optimum-lift</file>
+    <file>mu-plugins</file>
+    <file>plugins/optimum-lift-plans</file>
+    <exclude-pattern>themes/optimum-lift/assets/*</exclude-pattern>
+    <exclude-pattern>plugins/optimum-lift-plans/vendor/*</exclude-pattern>
+
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+
+    <!-- Keep line length as a warning, but only errors fail the run. -->
+    <config name="ignore_warnings_on_exit" value="1"/>
+
+    <rule ref="PSR12">
+        <!-- Theme templates and inc/ files mix hook registration with function
+             declarations, and open with a docblock rather than a PSR-12 header. -->
+        <exclude name="PSR1.Files.SideEffects"/>
+        <exclude name="PSR12.Files.FileHeader"/>
+    </rule>
+</ruleset>

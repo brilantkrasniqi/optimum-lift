@@ -24,3 +24,7 @@ The research confirmed this ticket's worst case is real, not hypothetical. **No 
 So if the map lands on an MoR, WooCommerce becomes a catalogue in front of someone else's hosted checkout, and "highly customizable" buys nothing. In that branch, seriously weigh a simple landing page plus the MoR's own checkout instead of a full WordPress/Woo install.
 
 If instead the map lands on Stripe-via-Atlas or a Kosovo bank gateway, both have real first-party WooCommerce plugins and this ticket should confirm quickly.
+
+## Comments
+
+**2026-09-16:** The fitness tracker is back in scope (`.scratch/plans-plugin/`, ADR-0003 and ADR-0004), so WooCommerce's original second argument, a customizable platform for the tracker, applies again. Weigh it when grilling this ticket, especially in the Merchant-of-Record branch: moving off WordPress now also means rebuilding Access and the Portal.

@@ -69,9 +69,9 @@ add_filter('woocommerce_add_to_cart_fragments', static function (array $fragment
 });
 
 /**
- * A Plan is a digital Download: there is nothing to ship and no quantity to
- * pick, so hide the quantity input on virtual, downloadable Products.
+ * Virtual Products (Plans, delivered by the optimum-lift-plans plugin) have
+ * nothing to ship and no quantity to pick, so hide the quantity input.
  */
 add_filter('woocommerce_is_sold_individually', static function (bool $individually, WC_Product $product): bool {
-    return $product->is_downloadable() ? true : $individually;
+    return $product->is_virtual() ? true : $individually;
 }, 10, 2);

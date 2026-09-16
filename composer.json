@@ -1,0 +1,32 @@
+{
+    "name": "optimum-lift/site",
+    "description": "Development tooling for the Optimum Lift theme and plugin. Installing also installs the Plans plugin's runtime dependencies.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^8.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "platform": {
+            "php": "8.3"
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse": "phpstan analyse --memory-limit=2G",
+        "lint": "phpcs",
+        "post-install-cmd": "@composer install --working-dir=plugins/optimum-lift-plans --no-dev --no-interaction",
+        "fix": "phpcbf"
+    },
+    "require-dev": {
+        "php-stubs/acf-pro-stubs": "^6.8",
+        "php-stubs/woocommerce-stubs": "^11.1",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.2",
+        "squizlabs/php_codesniffer": "^4.0",
+        "szepeviktor/phpstan-wordpress": "^2.0"
+    }
+}

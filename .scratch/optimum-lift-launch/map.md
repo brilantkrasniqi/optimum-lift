@@ -38,7 +38,7 @@ The map is done when nothing is left to decide before `/to-spec` can collapse it
 - **Market is Albanian-language, Kosovo/Albania/North Macedonia plus the diaspora** (Germany, Switzerland, Nordics). Not English-language, not bilingual at launch.
 - **Price: €7.99 per Product at launch.** User's decision, against a recommendation of €10–12 (the proven physical price was €10 + €2 shipping). Tripwire: net after VAT and fees is roughly €5.87, so a Meta CPA above ~€5.87 loses money per sale and above ~€3 leaves no real margin. Revisit on real CPA data, not opinion.
 - **Card payments only at launch.** No manual bank-transfer path; it does not scale and delays delivery.
-- **Delivery is a stock WooCommerce downloadable product** — email link plus account download. No custom account area.
+- ~~**Delivery is a stock WooCommerce downloadable product**~~ — **superseded 2026-09-16** by ADR-0005: the Download is rendered from the Plan, and the Customer gets a Portal. See `.scratch/plans-plugin/spec.md`.
 - **Custom theme, not a customized base** — unique design is wanted, and for cold paid traffic the product page is the conversion machine. Boundary: custom *design*, not a custom *checkout*. Style Woo's checkout, do not rebuild it.
 - **Conversion tracking is release-1 scope**, non-negotiable. Acquisition is entirely paid; Meta's optimization needs the purchase signal.
 - **Email capture at checkout is release-1 scope.** 600+ past customers are unreachable today; that mistake is not being repeated.
@@ -54,7 +54,7 @@ The map is done when nothing is left to decide before `/to-spec` can collapse it
 - **Nutrition Plan as Product #2.** The user believes one can be authored quickly. Not release 1, but close behind it.
 - **Geo-differentiated pricing** — a lower price for Kosovo/Albania, the proven price for the diaspora. Attractive, but geo-detection, currency, VAT handling and ad-account separation make it its own effort.
 - **A non-card payment path**, if checkout abandonment proves brutal. The user identified card entry as the real friction in a COD-native market. First lever to pull if the data demands it.
-- **Plan-authoring and PDF generation tooling.** Wanted eventually for seasonal, multi-Product output. Constraint to preserve now: **the theme must never own Plan content**, so a plugin can take this over later without a migration. Never build it into the theme.
+- **Plan-authoring and PDF generation tooling.** Graduated 2026-09-16 into its own effort, `.scratch/plans-plugin/` (ADR-0003, ADR-0005). The theme-never-owns-Plan-content constraint holds.
 - **Piracy deterrence via personalized PDF footers** (buyer name and email stamped per download). Cheap, meaningful, not launch scope.
 - **Meta campaign structure and ad creative** for the digital Product. The COD-to-card shift changes conversion dynamics; creative may need to change with it.
 - **US entity compliance, if Stripe Atlas is chosen.** Delaware franchise tax, registered agent renewal, and likely IRS Form 5472/1120 as a foreign-owned US entity. Ongoing work in a second tax jurisdiction, sharpens only if Route A wins.
@@ -64,7 +64,7 @@ The map is done when nothing is left to decide before `/to-spec` can collapse it
 
 <!-- ruled beyond the destination; never graduates. Returns only as a fresh effort. -->
 
-- **The fitness tracker** — workout logging, set/rep history, progression stats, total-volume metrics. Ruled out by the user during charting. It was the original justification for choosing WooCommerce over Shopify; with it out of scope, the platform choice now rests on the user's WordPress expertise instead, and is tested by ticket 03.
-- **On-site viewable Plans / a custom customer account area.** The first step toward the tracker, and the classic way a ship-fast project becomes a six-month one.
+- **The fitness tracker** — **reopened by the user on 2026-09-16 as a fresh effort, `.scratch/plans-plugin/`.** Originally: workout logging, set/rep history, progression stats, total-volume metrics. Ruled out by the user during charting. It was the original justification for choosing WooCommerce over Shopify; with it out of scope, the platform choice now rests on the user's WordPress expertise instead, and is tested by ticket 03.
+- **On-site viewable Plans / a custom customer account area.** **Reopened 2026-09-16 with the tracker (the Portal).** Originally: The first step toward the tracker, and the classic way a ship-fast project becomes a six-month one.
 - **Trainer-facing tooling** — multi-author plan creation, external trainers building Plans in the dashboard.
 - **Physical products.** The business being left behind.

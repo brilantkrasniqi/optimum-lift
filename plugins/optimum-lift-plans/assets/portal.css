@@ -1,0 +1,116 @@
+/*
+ * Portal styles. Colours come from theme.json presets (--wp--preset--color--*)
+ * with fallbacks, so the Portal follows whichever theme is active.
+ * Mobile first: the Workout screen is used on a phone, in a gym.
+ */
+
+.ol-portal {
+  --ol-ink: var(--wp--preset--color--ink, #14181c);
+  --ol-muted: var(--wp--preset--color--ink-muted, #5b6670);
+  --ol-surface: var(--wp--preset--color--surface, #f4f5f7);
+  --ol-line: var(--wp--preset--color--line, #dfe3e8);
+  --ol-paper: var(--wp--preset--color--paper, #fff);
+  --ol-accent: var(--wp--preset--color--accent, #1d4ed8);
+  --ol-radius: 10px;
+
+  color: var(--ol-ink);
+}
+
+.ol-portal *,
+.ol-portal *::before,
+.ol-portal *::after {
+  box-sizing: border-box;
+}
+
+.ol-muted { color: var(--ol-muted); }
+.ol-eyebrow { margin: 0; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ol-accent); }
+.ol-lead { font-size: 1.05rem; }
+.ol-back { margin: 0 0 1rem; font-size: 0.9rem; }
+.ol-empty { padding: 1.5rem; background: var(--ol-surface); border-radius: var(--ol-radius); }
+.ol-notice { padding: 0.75rem 1rem; background: var(--ol-surface); border-left: 3px solid var(--ol-accent); }
+.ol-tag { display: inline-block; margin-left: 0.5rem; padding: 0.1rem 0.5rem; font-size: 0.75rem; border-radius: 999px; background: var(--ol-surface); color: var(--ol-muted); font-weight: normal; }
+
+.ol-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+
+.ol-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--ol-accent);
+  border-radius: var(--ol-radius);
+  background: var(--ol-accent);
+  color: var(--ol-paper);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ol-button:disabled { opacity: 0.6; cursor: progress; }
+.ol-button--quiet { background: transparent; color: var(--ol-accent); }
+
+/* Plans list */
+
+.ol-plan-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.ol-card { overflow: hidden; border: 1px solid var(--ol-line); border-radius: var(--ol-radius); background: var(--ol-paper); }
+.ol-card__media img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.ol-card__body { padding: 1rem; }
+.ol-card__title { margin: 0 0 0.25rem; font-size: 1.25rem; }
+.ol-card__title a { color: inherit; text-decoration: none; }
+.ol-progress { width: 100%; height: 6px; accent-color: var(--ol-accent); }
+
+/* One Plan */
+
+.ol-week { margin-bottom: 0.5rem; border: 1px solid var(--ol-line); border-radius: var(--ol-radius); background: var(--ol-paper); }
+.ol-week__summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.9rem 1rem; cursor: pointer; font-weight: 600; list-style: none; }
+.ol-week__summary::-webkit-details-marker { display: none; }
+.ol-workout-list { list-style: none; margin: 0; padding: 0 0.5rem 0.5rem; }
+.ol-workout-list__item a { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 0.5rem; border-top: 1px solid var(--ol-line); color: inherit; text-decoration: none; }
+.ol-workout-list__item .ol-muted { display: block; font-size: 0.85rem; }
+.ol-status-icon { flex: 0 0 1.75rem; height: 1.75rem; display: grid; place-items: center; border: 2px solid var(--ol-line); border-radius: 50%; font-size: 0.9rem; }
+.ol-status--completed .ol-status-icon { border-color: var(--ol-accent); background: var(--ol-accent); color: var(--ol-paper); }
+.ol-status--in_progress .ol-status-icon { border-color: var(--ol-accent); color: var(--ol-accent); }
+
+/* Workout screen */
+
+.ol-workout__title { margin: 0.25rem 0; }
+.ol-prescription { margin: 1rem 0; padding: 1rem; border: 1px solid var(--ol-line); border-radius: var(--ol-radius); background: var(--ol-paper); }
+.ol-prescription__head { display: flex; gap: 0.75rem; align-items: center; }
+.ol-prescription__media img { display: block; width: 64px; height: 64px; object-fit: cover; border-radius: 6px; }
+.ol-prescription__name { margin: 0; font-size: 1.1rem; }
+.ol-prescription__target { margin: 0.15rem 0 0; font-weight: 600; }
+.ol-prescription__notes { margin: 0.75rem 0 0; padding: 0.5rem 0.75rem; background: var(--ol-surface); border-radius: 6px; }
+.ol-prescription__history { margin: 0.75rem 0 0; font-size: 0.9rem; }
+.ol-record { display: inline-block; margin-left: 0.25rem; }
+.ol-howto { margin-top: 0.75rem; font-size: 0.95rem; }
+.ol-howto summary { cursor: pointer; color: var(--ol-accent); }
+
+.ol-sets { width: 100%; margin-top: 0.75rem; border-collapse: collapse; }
+.ol-sets th { padding: 0.25rem; font-size: 0.8rem; font-weight: 600; text-align: left; color: var(--ol-muted); }
+.ol-sets td { padding: 0.25rem; }
+.ol-sets th[scope="row"] { width: 2.5rem; font-size: 1rem; color: var(--ol-ink); }
+.ol-set__status { width: 28%; font-size: 0.8rem; color: var(--ol-muted); }
+.ol-set__status[data-state="saved"] { color: var(--ol-accent); }
+.ol-set__status[data-state="record"] { color: var(--ol-accent); font-weight: 700; }
+.ol-set__status[data-state="error"] { color: #b42318; }
+
+.ol-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem;
+  border: 1px solid var(--ol-line);
+  border-radius: 6px;
+  background: var(--ol-paper);
+  color: var(--ol-ink);
+  /* 16px stops iOS zooming into the field. */
+  font: inherit;
+  font-size: 16px;
+}
+
+.ol-input:focus { outline: 2px solid var(--ol-accent); outline-offset: 1px; }
+.ol-input--block { display: block; }
+.ol-label { display: block; margin-bottom: 0.25rem; font-weight: 600; }
+.ol-workout__footer { margin-top: 1.5rem; }
+.ol-finish-message:empty { display: none; }

@@ -19,7 +19,7 @@ while (have_posts()) :
                 <figure class="entry__media"><?php the_post_thumbnail('large'); ?></figure>
             <?php endif; ?>
 
-            <div class="entry__content">
+            <div class="entry__content prose">
                 <?php
                 the_content();
                 wp_link_pages(['before' => '<nav class="page-links">', 'after' => '</nav>']);

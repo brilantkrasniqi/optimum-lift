@@ -1,4 +1,12 @@
 /plugins/*
 !/plugins/.gitkeep
+# First-party plugin: tracked. Its Composer dependencies are not.
+!/plugins/optimum-lift-plans/
+/plugins/optimum-lift-plans/vendor/
 /uploads/*
 !/uploads/.gitkeep
+
+# Build output and dependencies
+/node_modules/
+/vendor/
+/themes/optimum-lift/assets/dist/

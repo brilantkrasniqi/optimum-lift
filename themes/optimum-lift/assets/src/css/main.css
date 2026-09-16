@@ -1,0 +1,205 @@
+/*
+ * Tailwind entry point. Built to assets/dist/main.css by `npm run dev` / `npm run build`.
+ *
+ * Sources are declared explicitly so Tailwind scans only the theme's PHP and JS,
+ * not the rest of the repo.
+ */
+
+@import "tailwindcss" source(none);
+@source "../../../**/*.php";
+@source "../js";
+
+@plugin "@tailwindcss/typography";
+
+@import "@splidejs/splide/css/core";
+
+/* ---------------------------------------------------------------- tokens */
+
+/*
+ * theme.json is the source of truth for the palette and fonts, so the block
+ * editor and the front end cannot drift. `inline` makes utilities reference the
+ * WordPress preset variables directly: `bg-accent` → var(--wp--preset--color--accent).
+ * Add a colour to theme.json first, then map it here.
+ */
+@theme inline {
+  --color-ink: var(--wp--preset--color--ink);
+  --color-ink-muted: var(--wp--preset--color--ink-muted);
+  --color-paper: var(--wp--preset--color--paper);
+  --color-surface: var(--wp--preset--color--surface);
+  --color-line: var(--wp--preset--color--line);
+  --color-accent: var(--wp--preset--color--accent);
+
+  --font-sans: var(--wp--preset--font-family--system);
+}
+
+@theme {
+  --container-site: 1200px;
+}
+
+:root {
+  --ol-measure: 68ch;
+  --ol-gutter: clamp(1rem, 4vw, 2.5rem);
+  --ol-gap: 1.5rem;
+}
+
+/* ----------------------------------------------------------------- base */
+
+@layer base {
+  body {
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--color-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/*
+ * Existing BEM components. They sit in the components layer so a utility class
+ * on the same element always wins. Replace them with utilities in the markup
+ * as templates are rebuilt; don't add new ones here unless markup can't carry
+ * classes (e.g. WordPress- or WooCommerce-generated HTML).
+ */
+@layer components {
+  /* --------------------------------------------------------------- layout */
+
+  .site-header__inner,
+  .site-footer__inner,
+  .site-main {
+    width: min(100% - (var(--ol-gutter) * 2), var(--container-site));
+    margin-inline: auto;
+  }
+
+  .site-main {
+    padding-block: 3rem;
+  }
+
+  .entry__content > * {
+    max-width: var(--ol-measure);
+  }
+
+  /* --------------------------------------------------------------- header */
+
+  .site-header {
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--ol-gap);
+    padding-block: 1rem;
+  }
+
+  .site-header__brand {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .site-header__brand a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-nav {
+    margin-inline-start: auto;
+  }
+
+  .site-nav__list {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-header__cart {
+    position: relative;
+    text-decoration: none;
+  }
+
+  /* --------------------------------------------------------------- footer */
+
+  .site-footer {
+    margin-top: 4rem;
+    padding-block: 2.5rem;
+    border-top: 1px solid var(--color-line);
+    background: var(--color-surface);
+    color: var(--color-ink-muted);
+    font-size: 0.9rem;
+  }
+
+  /* ---------------------------------------------------------------- lists */
+
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--ol-gap);
+  }
+
+  .entry--card .entry__title {
+    margin-block: 0.5rem 0.25rem;
+    font-size: 1.1rem;
+  }
+
+  .entry__meta {
+    margin: 0;
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+  }
+
+  /* ----------------------------------------------------------- woocommerce */
+
+  /*
+   * WooCommerce ships its own stylesheet; only the seams between it and this
+   * theme belong here. Resist restyling components wholesale until the design
+   * exists.
+   */
+
+  .site-main--shop .breadcrumb {
+    margin-bottom: 1.5rem;
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb__sep {
+    margin-inline: 0.5ch;
+  }
+
+  .shop-sidebar {
+    margin-top: 3rem;
+  }
+
+  /* ---------------------------------------------------------- a11y helpers */
+
+  .screen-reader-text {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-link:focus {
+    position: fixed !important;
+    z-index: 100;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: auto;
+    height: auto;
+    clip-path: none;
+    padding: 0.75rem 1rem;
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+  }
+}

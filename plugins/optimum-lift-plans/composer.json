@@ -1,0 +1,17 @@
+{
+    "name": "optimum-lift/plans",
+    "description": "Runtime dependencies of the Optimum Lift Plans plugin.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^8.3",
+        "dompdf/dompdf": "^3.1"
+    },
+    "config": {
+        "platform": {
+            "php": "8.3"
+        },
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}

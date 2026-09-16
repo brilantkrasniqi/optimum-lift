@@ -1,0 +1,21 @@
+parameters:
+    level: 6
+    paths:
+        - themes/optimum-lift
+        - mu-plugins
+        - plugins/optimum-lift-plans/optimum-lift-plans.php
+        - plugins/optimum-lift-plans/src
+        - plugins/optimum-lift-plans/templates
+    excludePaths:
+        - themes/optimum-lift/assets
+    scanFiles:
+        - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
+        - vendor/php-stubs/acf-pro-stubs/acf-pro-stubs.php
+        - phpstan-wp-cli-stub.php
+    scanDirectories:
+        - plugins/optimum-lift-plans/vendor/dompdf
+    bootstrapFiles:
+        - phpstan-bootstrap.php
+    # The stubs declare WC()->cart non-null, but it is null outside front-end
+    # requests; keep the defensive ?-> calls.
+    treatPhpDocTypesAsCertain: false

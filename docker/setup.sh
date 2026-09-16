@@ -65,6 +65,13 @@ if [ -f /plugins.txt ]; then
   done < /tmp/plugins.list
 fi
 
+# First-party plugins live in this repo, not on wordpress.org, so plugins.txt
+# cannot list them. Their Composer dependencies come from
+# `npm run composer -- install`; without them the plugin still boots.
+for slug in optimum-lift-plans; do
+  $WP plugin activate "$slug" >/dev/null 2>&1 || true
+done
+
 if $WP theme is-installed optimum-lift >/dev/null 2>&1; then
   $WP theme activate optimum-lift >/dev/null 2>&1 || true
 fi

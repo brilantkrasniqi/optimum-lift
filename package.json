@@ -1,0 +1,26 @@
+{
+  "name": "optimum-lift",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:css": "tailwindcss -i themes/optimum-lift/assets/src/css/main.css -o themes/optimum-lift/assets/dist/main.css --watch=always",
+    "dev:js": "esbuild themes/optimum-lift/assets/src/js/main.js themes/optimum-lift/assets/src/js/slider.js --bundle --sourcemap --target=es2020 --outdir=themes/optimum-lift/assets/dist --watch=forever",
+    "build": "run-s build:*",
+    "build:css": "tailwindcss -i themes/optimum-lift/assets/src/css/main.css -o themes/optimum-lift/assets/dist/main.css --minify",
+    "build:js": "esbuild themes/optimum-lift/assets/src/js/main.js themes/optimum-lift/assets/src/js/slider.js --bundle --minify --target=es2020 --outdir=themes/optimum-lift/assets/dist",
+    "composer": "docker compose run --rm composer",
+    "lint:php": "docker compose run --rm composer lint",
+    "analyse:php": "docker compose run --rm composer analyse"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "esbuild": "^0.28.2",
+    "npm-run-all2": "^9.0.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4"
+  }
+}
