@@ -1,19 +1,40 @@
 /**
- * Front-end behaviour, bundled to assets/dist/main.js. Deferred, so the DOM is
- * parsed by the time this runs.
+ * Front-end behaviour, bundled to assets/dist/main.js (deferred, no jQuery).
  *
- * WooCommerce replaces fragments (the cart count, mini-cart) over AJAX and
- * fires `wc_fragments_refreshed` afterwards. Anything that decorates those
- * nodes has to re-run on that event, not just on load.
+ * Every module exports init() and returns early when its markup is not on the
+ * page, so one bundle serves every template. User-facing strings never live
+ * here: templates render them and modules read them from data-* attributes.
+ * Page data the server provides is on window.optimumLift (inc/assets.php).
  */
 
-(function () {
-  'use strict';
+import * as track from './modules/track.js';
+import * as countdown from './modules/countdown.js';
+import * as menu from './modules/menu.js';
+import * as reveal from './modules/reveal.js';
+import * as accordion from './modules/accordion.js';
+import * as tabs from './modules/tabs.js';
+import * as gallery from './modules/gallery.js';
+import * as buybar from './modules/buybar.js';
+import * as stickyCta from './modules/sticky-cta.js';
+import * as exitIntent from './modules/exit-intent.js';
+import * as shopSort from './modules/shop-sort.js';
+import * as cart from './modules/cart.js';
 
-  function onFragmentsRefreshed() {
-    // Re-bind anything that touches cart markup here.
-  }
+const modules = [track, countdown, menu, reveal, accordion, tabs, gallery, buybar, stickyCta, exitIntent, shopSort, cart];
 
-  document.body.addEventListener('wc_fragments_refreshed', onFragmentsRefreshed);
-  document.body.addEventListener('wc_fragments_loaded', onFragmentsRefreshed);
-})();
+function boot() {
+  modules.forEach((module) => {
+    // One failing module must not take the buy buttons down with it.
+    try {
+      module.init();
+    } catch (error) {
+      console.error(error);
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', boot, { once: true });
+} else {
+  boot();
+}

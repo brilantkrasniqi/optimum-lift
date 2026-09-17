@@ -123,6 +123,11 @@ wp option update woocommerce_currency "EUR"
 wp option update woocommerce_email_from_address "shop@localhost.local"
 wp option update woocommerce_email_from_name "Optimum Lift"
 
+# Albanian core and WooCommerce strings for the storefront; `wp ol-shop seed`
+# switches the site language. Without network access they stay English.
+wp language core install sq >/dev/null 2>&1 || echo "  Albanian core language pack unavailable; continuing."
+wp language plugin install woocommerce sq >/dev/null 2>&1 || echo "  Albanian WooCommerce language pack unavailable; continuing."
+
 echo
 echo "Ready:"
 echo "  Site    http://localhost:8080"

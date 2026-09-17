@@ -1,0 +1,102 @@
+/*
+ * Element defaults (ticket 01).
+ *
+ * The body's background, text colour and font family are theme.json styles.
+ * WordPress prints those outside any cascade layer, so they win over this
+ * layer: change them in theme.json, not here.
+ *
+ * Tailwind's preflight already makes [hidden] win over display utilities
+ * (`display: none !important`), which the menu, modals and tabs rely on.
+ */
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--color-paper);
+    scroll-padding-top: 5.5rem;
+    /* Keeps the page from shifting sideways when an overlay locks scrolling. */
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #343b42 #0b0d0f;
+  }
+
+  /* The Product page has the sticky buy bar under the header on desktop. */
+  html:has(body.single-product) {
+    scroll-padding-top: 9rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  html.menu-open,
+  html.olc-open {
+    overflow: hidden;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  /* WordPress prints fixed-width controls (the review form's cols="45"
+     textarea), which would make a phone page scroll sideways. */
+  textarea,
+  input,
+  select {
+    max-width: 100%;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-acid);
+    outline-offset: 2px;
+  }
+
+  /* Containers focused by script (WooCommerce notices, dialogs) are not controls. */
+  [tabindex="-1"]:focus-visible {
+    outline: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: #0b0d0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid #0b0d0f;
+    border-radius: 999px;
+    background: #343b42;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4a535c;
+    background-clip: content-box;
+  }
+
+  /*
+   * Offset for sticky and fixed bars: the WordPress admin bar is fixed at the
+   * top for logged-in users (and scrolls away below 601px). Use it as
+   * `top-(--ol-sticky-top)`.
+   */
+  :root {
+    --ol-sticky-top: 0px;
+  }
+
+  @media (min-width: 601px) {
+    body.admin-bar {
+      --ol-sticky-top: var(--wp-admin--admin-bar--height, 0px);
+    }
+  }
+}

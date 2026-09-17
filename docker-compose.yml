@@ -64,6 +64,9 @@ services:
       WORDPRESS_DB_PASSWORD: wp
       WORDPRESS_DB_NAME: wordpress
       WP_CLI_PHP_ARGS: -d memory_limit=512M
+      # WORDPRESS_CONFIG_EXTRA is only set on the wordpress service, so without
+      # this WP-CLI reports "production" and `wp ol-shop seed` refuses to run.
+      WP_ENVIRONMENT_TYPE: local
     volumes:
       - wp:/var/www/html
       - ./docker/php.ini:/usr/local/etc/php/conf.d/zz-optimum-lift.ini:ro
@@ -91,6 +94,7 @@ services:
       WORDPRESS_DB_PASSWORD: wp
       WORDPRESS_DB_NAME: wordpress
       WP_CLI_PHP_ARGS: -d memory_limit=512M
+      WP_ENVIRONMENT_TYPE: local
     volumes:
       - wp:/var/www/html
       - ./themes/optimum-lift:/var/www/html/wp-content/themes/optimum-lift

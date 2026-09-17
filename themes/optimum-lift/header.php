@@ -10,26 +10,14 @@
 
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e('Skip to content', 'optimum-lift'); ?></a>
 
-<header class="site-header">
-    <div class="site-header__inner">
-        <p class="site-header__brand">
-            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-        </p>
-
-        <?php
-        if (has_nav_menu('primary')) {
-            wp_nav_menu([
-                'theme_location'  => 'primary',
-                'container'       => 'nav',
-                'container_class' => 'site-nav',
-                'menu_class'      => 'site-nav__list',
-                'depth'           => 2,
-            ]);
-        }
-
-        if (function_exists('optimum_lift_cart_link')) {
-            optimum_lift_cart_link();
-        }
-        ?>
-    </div>
-</header>
+<?php
+if (optimum_lift_is_checkout_chrome()) {
+    get_template_part('template-parts/header/checkout-header');
+} else {
+    // A ticking offer right after payment (order received) only adds pressure.
+    if (!function_exists('is_checkout') || !is_checkout()) {
+        get_template_part('template-parts/header/urgency-bar');
+    }
+    get_template_part('template-parts/header/site-header');
+    get_template_part('template-parts/header/mobile-menu');
+}

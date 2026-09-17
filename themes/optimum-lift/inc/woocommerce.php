@@ -1,72 +1,64 @@
 <?php
 /**
- * WooCommerce integration.
+ * WooCommerce integration that is not part of a storefront module.
  *
  * Only loaded when WooCommerce is active, so nothing here needs to guard
- * against missing functions.
+ * against missing functions. Storefront behaviour lives in inc/shop/.
  *
  * Template overrides go in themes/optimum-lift/woocommerce/ — copy the file
  * from wp-content/plugins/woocommerce/templates/ and edit the copy. Prefer a
- * hook here over a template override; overrides are frozen copies that stop
+ * hook over a template override; overrides are frozen copies that stop
  * receiving upstream fixes.
  */
 
 declare(strict_types=1);
 
 /**
- * Products per row and per page on shop archives.
- */
-add_filter('loop_shop_columns', static fn (): int => 3);
-add_filter('loop_shop_per_page', static fn (): int => 12, 20);
-
-/**
- * WooCommerce's default sidebar renders the "sidebar-1" widget area, which
- * this theme does not register. Point it at the Shop sidebar instead.
- */
-remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
-add_action('woocommerce_sidebar', static function (): void {
-    if (!is_active_sidebar('shop')) {
-        return;
-    }
-
-    echo '<aside class="shop-sidebar" role="complementary">';
-    dynamic_sidebar('shop');
-    echo '</aside>';
-});
-
-/**
- * Breadcrumb markup, matched to the theme rather than Storefront's.
+ * woocommerce_breadcrumb() in the mock's style: small uppercase crumbs, the
+ * current one brighter.
  */
 add_filter('woocommerce_breadcrumb_defaults', static function (array $defaults): array {
-    $defaults['delimiter']   = '<span class="breadcrumb__sep" aria-hidden="true">/</span>';
-    $defaults['wrap_before'] = '<nav class="breadcrumb" aria-label="' . esc_attr__('Breadcrumb', 'optimum-lift') . '">';
+    $defaults['delimiter']   = '<span aria-hidden="true">/</span>';
+    $defaults['wrap_before'] = '<nav class="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-zinc-600 [&_a]:transition [&_a:hover]:text-zinc-300 [&>span:last-child]:text-zinc-400" aria-label="' . esc_attr__('Breadcrumb', 'optimum-lift') . '">';
     $defaults['wrap_after']  = '</nav>';
+    $defaults['before']      = '<span>';
+    $defaults['after']       = '</span>';
+    $defaults['home']        = _x('Home', 'breadcrumb', 'optimum-lift');
 
     return $defaults;
 });
 
 /**
- * Live cart count in the header. WooCommerce refreshes any element matching a
- * fragment key over AJAX when the cart changes.
+ * The mock's trail is Home / Shop / category / Product. WooCommerce only adds
+ * the shop crumb when the Product permalink base contains the shop page's
+ * slug, which the default /product/ base does not. The label matches the
+ * header's Shop link.
  */
-function optimum_lift_cart_link(): void
-{
-    printf(
-        '<a class="site-header__cart" href="%1$s"><span class="cart-count" data-count="%2$d">%2$d</span><span class="screen-reader-text">%3$s</span></a>',
-        esc_url(wc_get_cart_url()),
-        (int) WC()->cart?->get_cart_contents_count(),
-        esc_html__('View cart', 'optimum-lift')
-    );
-}
+add_filter('woocommerce_get_breadcrumb', static function (array $crumbs): array {
+    $shop_id = wc_get_page_id('shop');
 
-add_filter('woocommerce_add_to_cart_fragments', static function (array $fragments): array {
-    ob_start();
-    $count = (int) WC()->cart?->get_cart_contents_count();
-    printf('<span class="cart-count" data-count="%1$d">%1$d</span>', $count);
-    $fragments['span.cart-count'] = ob_get_clean();
+    if (!(is_product() || is_product_taxonomy()) || $shop_id <= 0 || $shop_id === (int) get_option('page_on_front')) {
+        return $crumbs;
+    }
 
-    return $fragments;
+    $shop_url = (string) get_permalink($shop_id);
+
+    if (in_array($shop_url, array_column($crumbs, 1), true)) {
+        return $crumbs;
+    }
+
+    // After the Home crumb, which the defaults above always set.
+    array_splice($crumbs, 1, 0, [[__('Shop', 'optimum-lift'), $shop_url]]);
+
+    return $crumbs;
 });
+
+/**
+ * The design's review cards carry no avatar, and a Gravatar image sends a hash
+ * of the reviewer's email to a third party on every Product view; the theme
+ * self-hosts its fonts for the same reason.
+ */
+remove_action('woocommerce_review_before', 'woocommerce_review_display_gravatar', 10);
 
 /**
  * Virtual Products (Plans, delivered by the optimum-lift-plans plugin) have
