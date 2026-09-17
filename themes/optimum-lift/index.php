@@ -1,31 +1,24 @@
 <?php
+
 /**
- * Fallback template. Every request WordPress cannot match to a more specific
- * template lands here.
+ * The blog (the posts page) and the fallback for any request WordPress cannot
+ * match to a more specific template.
  */
+
+declare(strict_types=1);
 
 get_header();
 ?>
 
-<main id="main" class="site-main">
-    <?php if (have_posts()) : ?>
-        <?php if (!is_front_page()) : ?>
-            <h1 class="page-title"><?php echo esc_html(optimum_lift_page_title()); ?></h1>
-        <?php endif; ?>
-
-        <div class="post-list">
-            <?php
-            while (have_posts()) {
-                the_post();
-                get_template_part('template-parts/content', get_post_type());
-            }
-            ?>
-        </div>
-
-        <?php the_posts_pagination(); ?>
-    <?php else : ?>
-        <?php get_template_part('template-parts/content', 'none'); ?>
-    <?php endif; ?>
+<main id="main">
+    <?php
+    get_template_part('template-parts/content-intro', null, [
+        'title'   => is_home() && !is_front_page() ? optimum_lift_page_title() : get_bloginfo('name'),
+        'eyebrow' => __('Blog', 'optimum-lift'),
+    ]);
+    get_template_part('template-parts/content-loop');
+    get_template_part('template-parts/content-shop-cta');
+    ?>
 </main>
 
 <?php

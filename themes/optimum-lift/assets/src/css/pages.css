@@ -1,3 +1,176 @@
 /*
- * Blog, page, search and 404 styles (ticket 10). Only what utilities cannot express; @layer components.
+ * Content views (ticket 10b): pagination, post navigation, comments and the
+ * comment form. Templates style their own markup with utilities; this file
+ * covers the markup WordPress core prints (the_posts_pagination(),
+ * wp_link_pages(), the_post_navigation(), wp_list_comments(), comment_form()).
  */
+
+@layer components {
+  /* ------------------------------------------------------------ pagination */
+
+  .ol-pagination .nav-links,
+  .ol-page-links {
+    @apply mt-12 flex flex-wrap items-center justify-center gap-2;
+  }
+
+  .ol-pagination .page-numbers,
+  .ol-page-links .post-page-numbers {
+    @apply grid h-11 min-w-11 place-items-center rounded-xl border border-white/10 px-3 text-[13px] font-extrabold text-zinc-300 transition;
+  }
+
+  .ol-pagination a.page-numbers:hover,
+  .ol-page-links a.post-page-numbers:hover {
+    @apply border-white/30 bg-white/5 text-white;
+  }
+
+  .ol-pagination .page-numbers.current,
+  .ol-page-links .post-page-numbers.current {
+    @apply border-white bg-white text-paper;
+  }
+
+  .ol-pagination .page-numbers.dots {
+    @apply border-transparent text-zinc-500;
+  }
+
+  /* ------------------------------------------------------- post navigation */
+
+  .ol-post-nav .nav-links {
+    @apply mt-12 grid gap-3 sm:grid-cols-2;
+  }
+
+  .ol-post-nav .nav-links a {
+    @apply block h-full rounded-2xl border border-white/[.08] bg-surface p-5 text-[14px] transition hover:border-white/20;
+  }
+
+  .ol-post-nav .nav-next {
+    @apply sm:col-start-2 sm:text-right;
+  }
+
+  /* -------------------------------------------------------------- comments */
+
+  .ol-comments .comment-body {
+    @apply rounded-2xl border border-white/[.08] bg-surface p-5;
+  }
+
+  .ol-comments .bypostauthor > .comment-body {
+    @apply border-accent/40;
+  }
+
+  .ol-comments .children {
+    @apply mt-3 grid gap-3 border-l border-white/10 pl-4 sm:pl-6;
+  }
+
+  .ol-comments .comment-meta {
+    @apply flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1;
+  }
+
+  .ol-comments .comment-author .fn {
+    @apply text-[14px] font-extrabold text-white;
+  }
+
+  .ol-comments .comment-author .fn a {
+    @apply transition hover:text-accent-light;
+  }
+
+  /* "says:" reads oddly without the avatar layout it was written for. */
+  .ol-comments .says {
+    @apply sr-only;
+  }
+
+  .ol-comments .comment-metadata {
+    @apply flex flex-wrap gap-x-3 text-[11px] font-bold uppercase tracking-wider text-zinc-500;
+  }
+
+  .ol-comments .comment-metadata a {
+    @apply transition hover:text-zinc-300;
+  }
+
+  .ol-comments .comment-awaiting-moderation {
+    @apply mt-2 w-full text-[12px] font-bold text-acid;
+  }
+
+  .ol-comments .comment-content {
+    @apply mt-3 text-[14px] leading-relaxed text-zinc-300;
+  }
+
+  .ol-comments .comment-content > * + * {
+    @apply mt-3;
+  }
+
+  .ol-comments .comment-content a {
+    @apply font-bold text-white underline decoration-zinc-600 underline-offset-2;
+  }
+
+  .ol-comments .reply {
+    @apply mt-3;
+  }
+
+  .ol-comments .comment-reply-link {
+    @apply inline-flex min-h-9 items-center rounded-lg border border-white/14 px-3 text-[12px] font-extrabold text-zinc-300 transition hover:border-white/34 hover:text-white;
+  }
+
+  /* Pingbacks: one line, no card chrome. */
+  .ol-comments .pingback .comment-body {
+    @apply text-[13px] text-zinc-400;
+  }
+
+  .ol-comments-nav .nav-links {
+    @apply mt-6 flex justify-between gap-4 text-[13px] font-extrabold text-zinc-300;
+  }
+
+  .ol-comments-nav .nav-next {
+    @apply ml-auto;
+  }
+
+  /* ---------------------------------------------------------- comment form */
+
+  .ol-comments + .ol-comment-respond,
+  .ol-comments-nav + .ol-comment-respond,
+  #comments > p + .ol-comment-respond {
+    @apply mt-12;
+  }
+
+  .ol-comment-respond .comment-reply-title small {
+    @apply ml-2 align-middle font-sans text-[12px] font-bold normal-case tracking-normal;
+  }
+
+  .ol-comment-respond .comment-reply-title small a {
+    @apply text-zinc-400 underline underline-offset-2 hover:text-white;
+  }
+
+  .ol-comment-form :where(.comment-notes, .logged-in-as, .must-log-in) {
+    @apply text-[13px] leading-relaxed text-zinc-400;
+  }
+
+  .ol-comment-form :where(.logged-in-as, .must-log-in) a {
+    @apply font-bold text-white underline decoration-zinc-600 underline-offset-2;
+  }
+
+  .ol-comment-form .required {
+    @apply text-accent-light;
+  }
+
+  .ol-comment-form label {
+    @apply mb-1.5 block text-[12px] font-extrabold uppercase tracking-wider text-zinc-400;
+  }
+
+  .ol-comment-form :where(input[type="text"], input[type="email"], input[type="url"], textarea) {
+    @apply block w-full rounded-xl border border-white/15 bg-surface px-4 py-3 text-base text-white transition placeholder:text-zinc-500 focus:border-white/35 focus:outline-2 focus:outline-offset-2 focus:outline-acid;
+  }
+
+  .ol-comment-form textarea {
+    @apply min-h-36;
+  }
+
+  .ol-comment-form .comment-form-cookies-consent {
+    @apply flex items-start gap-3;
+  }
+
+  .ol-comment-form .comment-form-cookies-consent input {
+    @apply mt-0.5 h-5 w-5 shrink-0 accent-acid;
+  }
+
+  .ol-comment-form .comment-form-cookies-consent label {
+    @apply mb-0 text-[13px] font-semibold normal-case tracking-normal text-zinc-400;
+  }
+}
