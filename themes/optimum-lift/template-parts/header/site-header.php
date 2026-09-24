@@ -13,9 +13,8 @@ declare(strict_types=1);
 
 $links      = optimum_lift_nav_links();
 $cta        = optimum_lift_header_cta();
-$has_cart   = function_exists('wc_get_cart_url');
-$cart_count = optimum_lift_cart_count();
-$badge      = 'olc-badge absolute -top-1.5 -right-1.5 hidden h-[1.15rem] min-w-[1.15rem] place-items-center rounded-full bg-accent px-1 text-[.62rem] leading-none font-extrabold text-white [&.is-on]:grid' . ($cart_count > 0 ? ' is-on' : '');
+$has_cart   = function_exists('wc_get_cart_url') && function_exists('optimum_lift_cart_badge_html');
+$badge      = $has_cart ? optimum_lift_cart_badge_html(optimum_lift_cart_count()) : '';
 ?>
 <header data-site-header class="sticky top-(--ol-sticky-top) z-40 border-b border-white/[.07] bg-paper/80 backdrop-blur-xl">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4">
@@ -48,12 +47,12 @@ $badge      = 'olc-badge absolute -top-1.5 -right-1.5 hidden h-[1.15rem] min-w-[
                 <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="relative grid h-11 w-11 place-items-center rounded-xl border border-white/10 text-white transition hover:bg-white/5 js:hidden">
                     <?php echo optimum_lift_icon('cart', 'w-5 h-5'); ?>
                     <span class="screen-reader-text"><?php esc_html_e('View cart', 'optimum-lift'); ?></span>
-                    <span data-cart-count class="<?php echo esc_attr($badge); ?>"><?php echo esc_html((string) $cart_count); ?></span>
+                    <?php echo $badge; ?>
                 </a>
                 <button type="button" data-cart-toggle aria-controls="ol-cart-drawer" aria-expanded="false" class="relative hidden h-11 w-11 place-items-center rounded-xl border border-white/10 text-white transition hover:bg-white/5 js:grid">
                     <?php echo optimum_lift_icon('cart', 'w-5 h-5'); ?>
                     <span class="screen-reader-text"><?php esc_html_e('Open cart', 'optimum-lift'); ?></span>
-                    <span data-cart-count class="<?php echo esc_attr($badge); ?>"><?php echo esc_html((string) $cart_count); ?></span>
+                    <?php echo $badge; ?>
                 </button>
             <?php endif; ?>
 

@@ -1,3 +1,354 @@
 /*
  * Cart drawer styles (ticket 09). Only what utilities cannot express; @layer components.
+ *
+ * Ported from the mock's cart.js §4 with the palette swapped for tokens. The
+ * open state is html.olc-open (base.css stops the page scrolling). z-index
+ * 70/71 sits above the exit modal (60), the mobile menu (55/56) and the header (40).
  */
+
+@layer components {
+  .olc-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+  }
+
+  .olc-open .olc-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .olc-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 71;
+    display: flex;
+    flex-direction: column;
+    width: min(27rem, 100%);
+    background: var(--color-surface);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -30px 0 80px -40px #000;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0.32s;
+  }
+
+  .olc-open .olc-drawer {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s;
+  }
+
+  .olc-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .olc-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .olc-close {
+    display: grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.6rem;
+    color: var(--color-zinc-400);
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .olc-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .olc-notice:empty {
+    display: none;
+  }
+
+  .olc-notice {
+    padding: 0.85rem 1.25rem 0;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: var(--color-zinc-300);
+  }
+
+  .olc-notice > * {
+    padding: 0.7rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .olc-notice ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .olc-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem;
+    scrollbar-width: thin;
+    scrollbar-color: #343b42 transparent;
+  }
+
+  .olc-body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .olc-body::-webkit-scrollbar-thumb {
+    background: #343b42;
+    border-radius: 999px;
+  }
+
+  .olc-item {
+    display: flex;
+    gap: 0.85rem;
+    margin-bottom: 0.7rem;
+    padding: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 1rem;
+    background: var(--color-raised);
+  }
+
+  .olc-thumb {
+    position: relative;
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 3.1rem;
+    height: 3.1rem;
+    overflow: hidden;
+    border-radius: 0.7rem;
+    background: linear-gradient(135deg, rgba(228, 27, 35, 0.22), transparent 60%), #0b0f11;
+    color: var(--color-zinc-500);
+  }
+
+  .olc-item-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .olc-item-cat {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-zinc-500);
+  }
+
+  .olc-item-name {
+    margin-top: 0.15rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .olc-item-name a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .olc-item-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+  }
+
+  .olc-now {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .olc-was {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-zinc-500);
+    text-decoration: line-through;
+  }
+
+  .olc-rm {
+    align-self: flex-start;
+    padding: 0.15rem;
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-zinc-600);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .olc-rm:hover {
+    color: var(--color-accent-light);
+  }
+
+  .olc-empty {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    color: var(--color-zinc-500);
+  }
+
+  .olc-empty-ico {
+    display: grid;
+    place-items: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    margin: 0 auto 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--color-zinc-700);
+  }
+
+  .olc-empty p {
+    margin: 0 0 1.2rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .olc-up {
+    margin-top: 0.4rem;
+    padding: 0.95rem;
+    border: 1px dashed color-mix(in srgb, var(--color-acid) 42%, transparent);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--color-acid) 7%, transparent);
+  }
+
+  .olc-up-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-acid);
+  }
+
+  .olc-up-text {
+    margin: 0.4rem 0 0.7rem;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: var(--color-zinc-300);
+  }
+
+  .olc-up-text strong {
+    color: #fff;
+  }
+
+  .olc-up-btn {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 0.65rem;
+    background: var(--color-acid);
+    color: var(--color-paper);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  .olc-up-btn:hover {
+    filter: brightness(1.08);
+  }
+
+  .olc-foot {
+    padding: 1.15rem 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0b0d0f;
+  }
+
+  .olc-foot:has(.olc-foot-inner.is-empty) {
+    display: none;
+  }
+
+  .olc-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-zinc-400);
+  }
+
+  .olc-row.total {
+    margin: 0.65rem 0 0.2rem;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .olc-row.total > :last-child {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.06;
+  }
+
+  .olc-saved {
+    color: var(--color-acid);
+  }
+
+  .olc-checkout {
+    margin-top: 0.85rem;
+  }
+
+  .olc-cont {
+    display: block;
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 0.25rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-zinc-500);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .olc-cont:hover {
+    color: var(--color-zinc-300);
+  }
+
+  .olc-reassure {
+    margin-top: 0.8rem;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-zinc-600);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .olc-drawer,
+    .olc-open .olc-drawer,
+    .olc-backdrop {
+      transition: none;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 # Cart drawer: server-rendered markup, fragments and the three `wc-ajax` endpoints
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 09
 Blocked by: 09a, 09c
@@ -84,9 +84,44 @@ Already translated, so don't redefine: "Open cart", "View cart", "Secure payment
 
 ## Acceptance criteria
 
-- [ ] Cookie-jar curl `POST /?wc-ajax=ol_add_to_cart` with `product_id=60` returns `ok: true`, the three fragment keys, `count: 1` and `item`. A second call returns `ok: true` with no change.
-- [ ] With 64 in the cart, adding 62 returns `ok: false` and the "already included" notice.
-- [ ] With [61, 62], the body fragment shows the swap box, and `ol_swap_to_bundle` with the nonce leaves only 64. Remove or swap without a valid nonce returns `ok: false` and changes nothing.
-- [ ] The drawer HTML is absent on `/checkout/` and present on `/`, Products and the shop.
-- [ ] The header badges look identical before and after the refactor (screenshot).
-- [ ] `09d.json` parses.
+- [x] Cookie-jar curl `POST /?wc-ajax=ol_add_to_cart` with `product_id=60` returns `ok: true`, the three fragment keys, `count: 1` and `item`. A second call returns `ok: true` with no change.
+- [x] With 64 in the cart, adding 62 returns `ok: false` and the "already included" notice.
+- [x] With [61, 62], the body fragment shows the swap box, and `ol_swap_to_bundle` with the nonce leaves only 64. Remove or swap without a valid nonce returns `ok: false` and changes nothing.
+- [x] The drawer HTML is absent on `/checkout/` and present on `/`, Products and the shop.
+- [x] The header badges look identical before and after the refactor (screenshot).
+- [x] `09d.json` parses.
+
+## Answer
+
+Built (2026-09-24):
+
+- **`inc/shop/cart.php`**:
+  - Helpers: `optimum_lift_cart_badge_html()`, `optimum_lift_cart_part()`, `optimum_lift_cart_fragments()`, `optimum_lift_cart_lines()`.
+  - The `woocommerce_add_to_cart_fragments` filter unsets the mini-cart and adds the three keys.
+  - The shell on `wp_footer`, except under checkout chrome.
+  - The three `wc_ajax_*` endpoints, all through `optimum_lift_cart_endpoint_start()`: POST only (405 otherwise), a session cookie for new visitors, and the nonce `ol-cart` for remove and swap. Responses go through `optimum_lift_cart_respond()`, which calls `calculate_totals()`, sends notices through `wc_print_notices(true)` and adds a generic error when a failure raised no notice.
+  - Add and swap apply `woocommerce_add_to_cart_validation` themselves.
+- **`template-parts/cart/{drawer,body,line,upsell,empty,foot}.php`**, following the contracts in the ticket.
+  - Upsell copy: *swap* and *complement* follow the mock. *upgrade* reads "Only +X more for everything" / "{bundle} includes every program and every diet, worth ~~anchor~~, for {price}." / "Switch to {bundle}".
+  - The empty state's shop link is a `btn-ghost` inside the body, because the foot is hidden when the cart is empty.
+- **`assets/src/css/drawer.css`**: mock §4 ported to tokens. There's also an `.olc-notice` style for the live region, and `visibility` added to the transition so a closed drawer can't be tabbed into even without `inert`. The foot hides via `.olc-foot:has(.olc-foot-inner.is-empty)`.
+- **Header**: both badges now use `optimum_lift_cart_badge_html()`.
+- **`languages/src/09d.json`**: 25 strings. I reused "This product is no longer available." (09b) and "Secure payment" (01) without redefining them.
+
+Evidence (cookie-jar curl against `/?wc-ajax=…`):
+
+- `ol_add_to_cart` 60 → `ok:true`, keys `div.olc-body-inner`, `div.olc-foot-inner`, `span[data-cart-count]`, `count:1`, `item {id:60, name, price:7.99, currency:"EUR"}`. A second call → `ok:true, added:false`, cart still `60`. GET → 405.
+- With 64 in the cart, add 62 → `ok:false`, notice "Plani Ushqimor 12-Javor is already included in Transformimi Total in your cart.", cart `64`.
+- Remove with `nonce=bad` → `ok:false` "Your session has expired…", cart unchanged. With the fragment's nonce → cart empty.
+- [61, 62]: the body fragment shows "Better deal … Switch to the full bundle and save 0,99 €" (`data-cart-swap="64"`). Swap with a bad nonce → `ok:false`, cart `61,62`. With the nonce → `ok:true`, cart `64`.
+- Drawer markup: present on `/`, the Product, `/shop/` and `/cart/`; absent on `/checkout/`.
+- Header badge: the rendered `<span data-cart-count class="olc-badge … [&amp;.is-on]:grid is-on">N</span>` has exactly the class string from `HEAD`, printed twice. Screenshot at 390px shows the red count bubble on the toggle as before. I also took a drawer screenshot (390px, 1440px) with [61, 62].
+- `09d.json` parses; lint exit 0; PHPStan OK; build OK; `debug.log` unchanged.
+
+Deviation (for 13): the drawer's total is `WC()->cart->get_total('edit')`, not the subtotal, so a coupon from the coupon link (07b) shows in the drawer as a "Coupon discount" row and in the total. "You save" is Σ anchors − Σ current prices (Product discounts only). "Value without discount" shows when Σ anchors > total.
+
+Notes for 09e:
+- The drawer is printed with `inert`; remove it on open and set it again on close.
+- `[data-cart-close]` is on the backdrop, the close button and the foot's "Keep browsing" link (a real shop link, so `preventDefault` it with JS).
+- The remove and swap buttons carry `data-nonce`; `[data-begin-checkout]` holds the JSON payload for `begin_checkout`.
+- `[data-cart-notice]` is outside the fragments.
