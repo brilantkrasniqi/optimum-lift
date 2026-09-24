@@ -1,7 +1,7 @@
 # Checkout, thank-you, cart page, My Account, Portal and content pages
 
 Type: task
-Status: claimed
+Status: resolved
 Wave: 2
 Blocked by: 01, 02, 03, 04
 Split into: 10a, 10b, 10c, 10d, 10e, 10f
@@ -35,3 +35,7 @@ style Woo's checkout, do not rebuild it.
 ## Comments
 
 2026-09-24: split into sub-tickets 10a, 10b, 10c, 10d, 10e, 10f. Work those, not this file; the last of them to resolve also resolves this ticket. The spec's ownership labels map as: 10a (checkout side) → 10a, 10c, 10d, 10e; 10b (pages and account) → 10b, 10f. The Portal and `account.css` live in 10f; notices, forms, checkout, thank-you and the cart page in `woocommerce.css` (10c, 10d, 10e).
+
+## Answer
+
+Resolved through 10a (trimmed checkout fields, hooks, trust block, block-page notice), 10b (translations, a light editor canvas, plus the missing `editor-styles` support), 10c (checkout layout and styles), 10d (thank-you page, plus the fix for the known-shopper login wall), 10e (cart page) and 10f (My Account and the Portal on the dark design).

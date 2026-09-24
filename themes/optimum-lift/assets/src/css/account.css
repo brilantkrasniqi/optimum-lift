@@ -1,3 +1,416 @@
 /*
- * My Account, login and Plans Portal styles (ticket 10b). Only what utilities cannot express; @layer components.
+ * My Account, login and Plans Portal styles (ticket 10). Only what utilities cannot express.
+ *
+ * WooCommerce's account markup is styled in @layer components, like the rest
+ * of the theme. The Plans Portal's own stylesheet (plugins/optimum-lift-plans/
+ * assets/portal.css) is unlayered, and unlayered rules beat layered ones, so
+ * its dark-background overrides at the end of this file stay outside any layer.
  */
+
+@layer components {
+  /* ------------------------------------------------------------- layout */
+
+  .woocommerce-account .woocommerce:has(> .woocommerce-MyAccount-navigation) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .woocommerce-MyAccount-navigation {
+    @apply min-w-0;
+  }
+
+  @media (min-width: 1024px) {
+    .woocommerce-account .woocommerce:has(> .woocommerce-MyAccount-navigation) {
+      grid-template-columns: 15rem minmax(0, 1fr);
+      column-gap: 3rem;
+      align-items: start;
+    }
+  }
+
+  .woocommerce-MyAccount-navigation ul {
+    @apply m-0 flex list-none gap-2 overflow-x-auto p-0 pb-1;
+    scrollbar-width: none;
+  }
+
+  .woocommerce-MyAccount-navigation ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .woocommerce-MyAccount-navigation a {
+    @apply block rounded-xl border border-white/10 bg-white/[.03] px-4 py-2.5 text-[13px] font-bold whitespace-nowrap text-zinc-400 no-underline transition hover:bg-white/[.07] hover:text-white;
+  }
+
+  .woocommerce-MyAccount-navigation .is-active a {
+    @apply border-accent bg-accent text-white hover:bg-accent;
+  }
+
+  .woocommerce-MyAccount-navigation a:focus-visible {
+    @apply outline-2 outline-offset-2 outline-acid;
+  }
+
+  @media (min-width: 1024px) {
+    .woocommerce-MyAccount-navigation {
+      position: sticky;
+      top: calc(var(--ol-sticky-top) + 5.5rem);
+    }
+
+    .woocommerce-MyAccount-navigation ul {
+      @apply flex-col gap-1 overflow-visible rounded-2xl border border-white/[.08] bg-surface p-2;
+    }
+
+    .woocommerce-MyAccount-navigation a {
+      @apply border-transparent bg-transparent;
+    }
+
+    .woocommerce-MyAccount-navigation-link--customer-logout {
+      @apply mt-1 border-t border-white/[.07] pt-1;
+    }
+  }
+
+  .woocommerce-MyAccount-content {
+    @apply min-w-0 text-[15px] leading-relaxed text-zinc-300;
+  }
+
+  .woocommerce-MyAccount-content > p {
+    @apply mb-4 max-w-2xl;
+  }
+
+  .woocommerce-MyAccount-content :where(p, td, address) a:not(.button, .ol-button) {
+    @apply font-bold text-white underline decoration-zinc-600 underline-offset-2 hover:decoration-white;
+  }
+
+  .woocommerce-MyAccount-content strong {
+    @apply text-white;
+  }
+
+  .woocommerce-MyAccount-content :where(h2, h3, legend) {
+    @apply mb-4 text-2xl text-white;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  /* ------------------------------------------------------------ buttons */
+
+  .woocommerce-account :is(.woocommerce-button, .woocommerce-Button, .button):not(.ol-button) {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-[13px] font-extrabold text-white no-underline transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acid;
+  }
+
+  .woocommerce-account :is(.woocommerce-form-login__submit, .woocommerce-form-register__submit, .woocommerce-ResetPassword .button, .woocommerce-EditAccountForm .button, .woocommerce-address-fields .button) {
+    @apply min-h-12 border-accent bg-accent px-6 text-[14px] shadow-glow hover:bg-accent-light;
+  }
+
+  /* ------------------------------------------------------------- tables */
+
+  .woocommerce-account :is(.woocommerce-orders-table, .woocommerce-table--order-downloads, .woocommerce-table--order-details) {
+    @apply w-full border-collapse overflow-hidden rounded-2xl border border-white/[.08] bg-surface text-[14px];
+  }
+
+  .woocommerce-account :is(.woocommerce-orders-table, .woocommerce-table--order-downloads, .woocommerce-table--order-details) :is(th, td) {
+    @apply border-t border-white/[.06] px-4 py-3 text-left align-middle font-semibold text-zinc-300;
+  }
+
+  .woocommerce-account :is(.woocommerce-orders-table, .woocommerce-table--order-downloads, .woocommerce-table--order-details) thead th {
+    @apply border-t-0 bg-white/[.03] text-[10px] font-extrabold tracking-[.14em] text-zinc-500 uppercase;
+  }
+
+  .woocommerce-account .woocommerce-orders-table .button,
+  .woocommerce-account .woocommerce-table--order-downloads .button {
+    @apply mr-1.5 mb-1 px-3 py-1.5 text-[12px];
+  }
+
+  .woocommerce-account .woocommerce-table--order-details tfoot tr:last-child :is(th, td) {
+    @apply text-base font-extrabold text-white;
+  }
+
+  /* Tables become stacked cards on phones, labelled by their data-title. */
+  @media (max-width: 767px) {
+    .woocommerce-account .shop_table_responsive,
+    .woocommerce-account .shop_table_responsive :is(tbody, tr, td) {
+      display: block;
+    }
+
+    .woocommerce-account .shop_table_responsive thead {
+      @apply sr-only;
+    }
+
+    .woocommerce-account .shop_table_responsive tr {
+      @apply border-t border-white/[.08] py-2 first:border-t-0;
+    }
+
+    .woocommerce-account .shop_table_responsive td {
+      @apply flex items-center justify-between gap-4 border-0 py-1.5 text-right;
+    }
+
+    .woocommerce-account .shop_table_responsive td[data-title]::before {
+      @apply shrink-0 text-left text-[11px] font-extrabold tracking-wider text-zinc-500 uppercase;
+      content: attr(data-title);
+    }
+  }
+
+  /* The order a view-order page describes ("Order #N was placed on …"). */
+  .woocommerce-account mark {
+    @apply rounded bg-white/10 px-1.5 font-bold text-white;
+  }
+
+  .woocommerce-account :is(.woocommerce-order-details, .woocommerce-customer-details, .woocommerce-order-downloads) {
+    @apply mt-8;
+  }
+
+  .woocommerce-account .woocommerce-customer-details address {
+    @apply rounded-2xl border border-white/[.08] bg-surface p-5 text-[14px] leading-relaxed text-zinc-400 not-italic;
+  }
+
+  /* -------------------------------------------------- addresses, account */
+
+  .woocommerce-Addresses {
+    @apply grid gap-4 sm:grid-cols-2;
+  }
+
+  .woocommerce-Address {
+    @apply rounded-2xl border border-white/[.08] bg-surface p-5;
+  }
+
+  .woocommerce-Address-title {
+    @apply flex flex-wrap items-baseline justify-between gap-2;
+  }
+
+  .woocommerce-Address-title h2 {
+    @apply mb-2 text-xl;
+  }
+
+  .woocommerce-Address address {
+    @apply text-[14px] leading-relaxed text-zinc-400 not-italic;
+  }
+
+  .woocommerce-EditAccountForm fieldset {
+    @apply mt-8 rounded-2xl border border-white/[.08] bg-surface p-5;
+  }
+
+  .woocommerce-EditAccountForm,
+  .woocommerce-address-fields {
+    @apply max-w-2xl;
+  }
+
+  .woocommerce-account form .form-row :is(em, .description) {
+    @apply mt-1.5 block text-[12px] font-normal not-italic text-zinc-500;
+  }
+
+  /* ----------------------------------------- login, register, passwords */
+
+  .woocommerce-account .u-columns.col2-set {
+    @apply grid gap-6 lg:grid-cols-2;
+  }
+
+  .woocommerce-account :is(.woocommerce-form-login, .woocommerce-form-register, .woocommerce-ResetPassword) {
+    @apply max-w-xl rounded-2xl border border-white/[.08] bg-surface p-5 sm:p-7;
+  }
+
+  .woocommerce-account .woocommerce > h2,
+  .woocommerce-account .u-column1 > h2,
+  .woocommerce-account .u-column2 > h2 {
+    @apply mb-4 text-2xl text-white;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  .woocommerce-form-login .form-row:has(.woocommerce-form-login__submit) {
+    @apply flex flex-wrap items-center justify-between gap-4;
+  }
+
+  .woocommerce-form-login .woocommerce-form-login__rememberme {
+    @apply mb-0;
+  }
+
+  .woocommerce-form-login__submit {
+    @apply w-full sm:w-auto;
+  }
+
+  .woocommerce-account .lost_password {
+    @apply mt-4 mb-0 text-[13px];
+  }
+
+  .woocommerce-account .lost_password a,
+  .woocommerce-account .woocommerce-privacy-policy-text a {
+    @apply font-bold text-white underline decoration-zinc-600 underline-offset-2 hover:decoration-white;
+  }
+
+  .woocommerce-ResetPassword > p:first-child {
+    @apply mb-5 text-[14px] leading-relaxed text-zinc-400;
+  }
+
+  .woocommerce-password-strength {
+    @apply mt-2 rounded-lg px-3 py-2 text-[12px] font-bold;
+  }
+
+  .woocommerce-password-strength:is(.short, .bad) {
+    @apply bg-accent/15 text-accent-light;
+  }
+
+  .woocommerce-password-strength.good {
+    @apply bg-white/10 text-zinc-200;
+  }
+
+  .woocommerce-password-strength.strong {
+    @apply bg-acid/15 text-acid;
+  }
+
+  .woocommerce-password-hint {
+    @apply mt-2 block text-[12px] text-zinc-500;
+  }
+
+  .woocommerce-account .show-password-input {
+    display: none;
+  }
+}
+
+/*
+ * ------------------------------------------------------------ Plans Portal
+ *
+ * Unlayered on purpose (see the top of this file). portal.css reads the
+ * theme.json presets, which on this theme are dark: cards would share the
+ * page's colour and accent text would fall below AA. Contrast on the Portal's
+ * backgrounds (surface #0D1012, raised #14181B):
+ *   ink #E4E4E7 ≥ 14.1:1 · muted #A1A1AA ≥ 6.97:1 · accent-light #FF3B4A ≥ 5.08:1
+ *   white on accent #E41B23 4.69:1 · error #FF8A80 ≥ 7.82:1 · links white ≥ 17.9:1
+ */
+
+.ol-portal {
+  --ol-paper: var(--wp--preset--color--surface, #0d1012);
+  --ol-surface: var(--wp--preset--color--raised, #14181b);
+  --ol-line: rgb(255 255 255 / 0.09);
+  --ol-radius: 1rem;
+  --ol-accent-text: var(--wp--preset--color--accent-light, #ff3b4a);
+  --ol-error: #ff8a80;
+}
+
+.ol-portal .ol-button {
+  color: #fff;
+  font-weight: 800;
+  border-radius: 0.75rem;
+}
+
+.ol-portal .ol-button:hover {
+  background: var(--wp--preset--color--accent-light, #ff3b4a);
+  border-color: var(--wp--preset--color--accent-light, #ff3b4a);
+}
+
+.ol-portal .ol-button:focus-visible,
+.ol-portal .ol-input:focus-visible,
+.ol-portal a:focus-visible,
+.ol-portal summary:focus-visible {
+  outline: 2px solid var(--wp--preset--color--acid, #c6ff3d);
+  outline-offset: 2px;
+}
+
+.ol-portal .ol-button--quiet {
+  background: transparent;
+  border-color: rgb(255 255 255 / 0.15);
+  color: #fff;
+}
+
+.ol-portal .ol-button--quiet:hover {
+  background: rgb(255 255 255 / 0.08);
+  border-color: rgb(255 255 255 / 0.25);
+}
+
+.ol-portal :is(.ol-eyebrow, .ol-howto summary) {
+  color: var(--ol-accent-text);
+}
+
+.ol-portal .ol-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.ol-portal .ol-set__status[data-state="saved"],
+.ol-portal .ol-set__status[data-state="record"] {
+  color: var(--wp--preset--color--acid, #c6ff3d);
+}
+
+.ol-portal .ol-set__status[data-state="error"] {
+  color: var(--ol-error);
+}
+
+.ol-portal :is(.ol-back a, .ol-empty a, .ol-howto a, .ol-notice a) {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgb(255 255 255 / 0.35);
+  text-underline-offset: 2px;
+}
+
+.ol-portal :is(.ol-back a, .ol-empty a, .ol-howto a, .ol-notice a):hover {
+  text-decoration-color: #fff;
+}
+
+.ol-portal .ol-back {
+  font-size: 0.85rem;
+}
+
+.ol-portal :is(.ol-workout__title, .ol-card__title, .ol-prescription__name) {
+  font-family: var(--wp--preset--font-family--display, Anton, Impact, sans-serif);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.06;
+  color: #fff;
+}
+
+.ol-portal .ol-workout__title {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+}
+
+.ol-portal .ol-card__title {
+  font-size: 1.5rem;
+}
+
+.ol-portal .ol-prescription__name {
+  font-size: 1.25rem;
+}
+
+.ol-portal .ol-prescription__target {
+  color: #fff;
+}
+
+.ol-portal :is(.ol-card, .ol-week, .ol-prescription) {
+  border-color: var(--ol-line);
+}
+
+.ol-portal .ol-week[open] .ol-week__summary,
+.ol-portal .ol-week__summary:hover {
+  color: #fff;
+}
+
+.ol-portal .ol-workout-list__item a:hover {
+  background: rgb(255 255 255 / 0.03);
+}
+
+.ol-portal .ol-status--completed .ol-status-icon {
+  color: #fff;
+}
+
+.ol-portal .ol-status--in_progress .ol-status-icon {
+  color: var(--ol-accent-text);
+  border-color: var(--ol-accent-text);
+}
+
+.ol-portal .ol-input {
+  background: var(--ol-surface);
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+.ol-portal .ol-progress {
+  accent-color: var(--wp--preset--color--acid, #c6ff3d);
+}
+
+.ol-portal .ol-tag {
+  color: var(--wp--preset--color--ink-muted, #a1a1aa);
+}
