@@ -30,6 +30,8 @@ add_action('after_setup_theme', static function (): void {
         'single_image_width'    => 800,
     ]);
 
+    // add_editor_style() only takes effect with editor-styles support.
+    add_theme_support('editor-styles');
     add_editor_style('assets/css/editor.css');
 
     register_nav_menus([

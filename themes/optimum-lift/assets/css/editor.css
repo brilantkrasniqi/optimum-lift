@@ -1,10 +1,60 @@
 /*
- * Loaded inside the block editor so authored content resembles the front end.
- * Keep this to typography and colour: layout chrome does not exist in there.
+ * Loaded inside the block editor (add_editor_style(), inc/setup.php), where
+ * WordPress scopes every rule to .editor-styles-wrapper. Keep this to
+ * typography and colour: layout chrome does not exist in there.
+ *
+ * theme.json gives the site a dark background and light text, and the editor
+ * would inherit both. Editors write long legal pages and posts here, so the
+ * canvas stays light: dark text on white, Inter for text and Anton for
+ * headings, as on the front end.
  */
 
 .editor-styles-wrapper {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  line-height: 1.6;
-  color: #14181c;
+  background-color: #ffffff;
+  color: #14181b;
+  font-family: var(--wp--preset--font-family--sans, Inter, system-ui, sans-serif);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.editor-styles-wrapper :where(p, li, td, th, figcaption, blockquote, dd, dt) {
+  color: #27272a;
+}
+
+.editor-styles-wrapper :where(h1, h2, h3, h4, h5, h6, .editor-post-title, .wp-block-post-title) {
+  color: #07080a;
+  font-family: var(--wp--preset--font-family--display, Anton, Impact, sans-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.06;
+  text-transform: uppercase;
+}
+
+.editor-styles-wrapper a {
+  color: #b9141b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.editor-styles-wrapper strong {
+  color: #07080a;
+}
+
+.editor-styles-wrapper :where(blockquote, .wp-block-quote) {
+  border-left: 3px solid #e41b23;
+  padding-left: 1em;
+}
+
+.editor-styles-wrapper :where(hr, .wp-block-separator) {
+  border-color: #e4e4e7;
+}
+
+.editor-styles-wrapper :where(code, pre) {
+  background: #f4f4f5;
+  color: #18181b;
+}
+
+.editor-styles-wrapper ::placeholder,
+.editor-styles-wrapper [data-rich-text-placeholder]::after {
+  color: #a1a1aa;
 }

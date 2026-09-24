@@ -1,7 +1,7 @@
 # Content pages: translations and the editor stylesheet
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 10
 Blocked by: 05a
@@ -31,6 +31,20 @@ The page, blog, search, 404 and comments templates and `pages.css` landed in `a5
 
 ## Acceptance criteria
 
-- [ ] Log in to wp-admin (admin/admin) and screenshot the block editor on a page such as "Politika e kthimit" and on a post: readable dark-on-light text, Inter body and Anton headings.
-- [ ] Nothing changes on the front end. Screenshot `/?s=plan`, `/nonexistent/` and a legal page before and after.
-- [ ] `10b.json` parses.
+- [x] Log in to wp-admin (admin/admin) and screenshot the block editor on a page such as "Politika e kthimit" and on a post: readable dark-on-light text, Inter body and Anton headings.
+- [x] Nothing changes on the front end. Screenshot `/?s=plan`, `/nonexistent/` and a legal page before and after.
+- [x] `10b.json` parses.
+
+## Answer
+
+Built (2026-09-24):
+
+- **`languages/src/10b.json`**: 26 new strings. "Previous"/"Next" reuse 08a's identical keys ("E mëparshme"/"Tjetra") and "Page" is 02's, which makes the 28 the ticket counts. The 3 plurals have plural objects. The account-login hint quotes WooCommerce's own Albanian "Harruat fjalëkalimin tuaj?", which is what the login form shows.
+- **`assets/css/editor.css`**: a light canvas on `.editor-styles-wrapper`: white background, `#14181b` text (`#27272a` for paragraphs, lists and tables), Inter (`--wp--preset--font-family--sans`) for text, Anton uppercase for headings and the post title, plus accent-red links, a red quote rule, and light `hr`/`code` colours.
+- **Fix outside my files: `inc/setup.php`** (ticket 01, resolved). `add_editor_style()` had never taken effect, because the theme didn't declare `add_theme_support('editor-styles')`; the editor iframe loaded no `editor.css` at all. I added that one line (with a comment) just before `add_editor_style()`. Without it this ticket couldn't meet its acceptance.
+
+Evidence:
+
+- **Block editor** (Playwright, admin, the canvas iframe): on "Politika e kthimit" (page 11) and "Hello world!" (post 1) the canvas is `rgb(255,255,255)` with text `rgb(20,24,27)`, paragraphs `rgb(39,39,42)`, body font Inter, and headings/title Anton in `rgb(7,8,10)`. Before the fix it was `rgb(7,8,10)` background with `rgb(228,228,231)` text, all in Inter. Screenshot: the page's title in Anton on white, readable dark body text.
+- **Front end unchanged**: `/?s=plan`, `/nonexistent/` and `/politika-e-kthimit/`, fetched with and without the two changes. After stripping nonces, the only diff is the urgency bar countdown's seconds, which is the clock ticking. `editor.css` isn't referenced on the front end.
+- `10b.json` parses; lint exit 0; PHPStan OK; `debug.log` unchanged.

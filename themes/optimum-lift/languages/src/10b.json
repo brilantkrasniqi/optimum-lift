@@ -1,0 +1,37 @@
+{
+  "%d min read": {
+    "plural": "%d min read",
+    "sq": ["%d min lexim", "%d min lexim"]
+  },
+  "%s comment": {
+    "plural": "%s comments",
+    "sq": ["%s koment", "%s komente"]
+  },
+  "%s result": {
+    "plural": "%s results",
+    "sq": ["%s rezultat", "%s rezultate"]
+  },
+  "Blog": "Blog",
+  "Bought a plan? Log in with the email you used at checkout. On your first order we emailed you a link to set your password; if you cannot find it, use \"Lost your password?\".": "Ke blerë një plan? Hyr me email-in që përdore në pagesë. Në porosinë e parë të dërguam me email një link për të vendosur fjalëkalimin; nëse nuk e gjen, përdor \"Harruat fjalëkalimin tuaj?\".",
+  "Browse the shop": "Shiko dyqanin",
+  "Comments are closed.": "Komentet janë mbyllur.",
+  "Go to the homepage": "Shko te faqja kryesore",
+  "Last updated %s": "Përditësuar më %s",
+  "More posts": "Më shumë artikuj",
+  "Newer comments": "Komentet më të reja",
+  "Next page": "Faqja tjetër",
+  "Nothing here yet.": "Ende nuk ka asgjë këtu.",
+  "Nothing matched your search.": "Asgjë nuk përputhet me kërkimin.",
+  "Older comments": "Komentet më të vjetra",
+  "Previous page": "Faqja e mëparshme",
+  "Read": "Lexo",
+  "Ready to start?": "Gati për të filluar?",
+  "Search articles, programs, plans…": "Kërko artikuj, programe, plane…",
+  "Search": "Kërko",
+  "Start with a plan": "Fillo me një plan",
+  "Tags": "Etiketat",
+  "That page does not exist or has moved. Try a search, or head back to the shop.": "Kjo faqe nuk ekziston ose është zhvendosur. Provo një kërkim, ose kthehu te dyqani.",
+  "Training programs and meal plans in Albanian, for real people with real schedules.": "Programe stërvitjeje dhe plane ushqimore në shqip, për njerëz realë me orare reale.",
+  "Try fewer or different words, or browse every program and plan in the shop.": "Provo më pak fjalë ose fjalë të tjera, ose shiko çdo program dhe plan në dyqan.",
+  "We are working on new content. In the meantime, browse the programs and plans.": "Po punojmë për përmbajtje të re. Ndërkohë, shiko programet dhe planet."
+}
