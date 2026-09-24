@@ -1,0 +1,28 @@
+{
+  "%1$s — %2$d%% off": "%1$s — %2$d%% ULJE",
+  "%s Albanian customers": "%s klientë shqiptarë",
+  "%s extra off": "%s ulje shtesë",
+  "%1$s/5 · %2$s review": {
+    "plural": "%1$s/5 · %2$s reviews",
+    "sq": ["%1$s/5 · %2$s vlerësim", "%1$s/5 · %2$s vlerësime"]
+  },
+  "%s customer started in the last 24 hours": {
+    "plural": "%s customers started in the last 24 hours",
+    "sq": ["%s klient e ka filluar në 24 orët e fundit", "%s klientë e kanë filluar në 24 orët e fundit"]
+  },
+  "100% secure payment": "Pagesë 100% e sigurt",
+  "Close": "Mbyll",
+  "Get %s on top of the current offer.": "Merr %s mbi ofertën aktuale.",
+  "Get %s on your order.": "Merr %s në porosinë tënde.",
+  "Get the plan — %d%% off": "Merr planin — %d%% ULJE",
+  "Get the plan": "Merr planin",
+  "Instant delivery by email": "Dorëzim i menjëhershëm në email",
+  "It is applied automatically as soon as you add a product to your cart:": "Aplikohet automatikisht sapo të shtosh një produkt në shportë:",
+  "No thanks, I’ll continue without the discount": "Jo faleminderit, do të vazhdoj pa ulje",
+  "Offer ends in": "Oferta mbaron pas",
+  "Only tonight": "Vetëm sonte",
+  "Use it now": "Përdore tani",
+  "View all (%s)": "Shiko të gjitha (%s)",
+  "View all products (%s)": "Shiko të gjitha produktet (%s)",
+  "Wait — don’t leave it for Monday": "Prit — mos e lësho për të hënën"
+}

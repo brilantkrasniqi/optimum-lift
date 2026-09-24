@@ -29,7 +29,8 @@ $href = static fn (string $anchor): string => $anchor !== '' ? '#' . sanitize_ti
 
 $saving  = $bundle !== null ? optimum_lift_saving($bundle) : null;
 $offer   = $bundle !== null ? optimum_lift_offer($bundle) ?? optimum_lift_offer() : null;
-$tonight = $offer !== null && $offer['ends_at'] - time() <= DAY_IN_SECONDS;
+// "Only tonight" only when the offer really ends today, in the site's time zone (ADR-0008).
+$tonight = $offer !== null && wp_date('Y-m-d', $offer['ends_at']) === wp_date('Y-m-d');
 
 $show_proof = !empty($block['show_proof']);
 $rating     = $show_proof ? optimum_lift_store_rating() : null;

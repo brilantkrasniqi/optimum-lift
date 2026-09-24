@@ -22,7 +22,7 @@ $label = $saving !== null
     ? sprintf(__('Get the plan — %d%% off', 'optimum-lift'), $saving['percent'])
     : __('Get the plan', 'optimum-lift');
 ?>
-<div data-sticky-cta class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-surface/95 px-4 py-3 backdrop-blur-xl transition-transform duration-300 js:translate-y-full js:data-shown:translate-y-0 md:hidden">
+<div data-sticky-cta class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-surface/95 px-4 py-3 backdrop-blur-xl transition-transform duration-300 motion-reduce:transition-none js:translate-y-full js:data-shown:translate-y-0 md:hidden">
     <div class="flex items-center gap-3">
         <p class="grid leading-tight">
             <span class="h-display text-lg text-white"><?php echo wp_kses_post(wc_price(optimum_lift_current_price($bundle))); ?></span>

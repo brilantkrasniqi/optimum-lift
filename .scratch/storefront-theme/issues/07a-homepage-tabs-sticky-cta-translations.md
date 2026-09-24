@@ -1,7 +1,7 @@
 # Homepage: goal tabs, mobile sticky CTA, translations, fidelity pass
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 07
 Blocked by: 05a
@@ -50,8 +50,32 @@ Ticket 07's markup landed in `a5fa5db`, but its modules are still stubs. This ti
 
 ## Acceptance criteria
 
-- [ ] Keyboard walk-through of the goal tabs: arrows move and select, Tab leaves the tab list and enters the panel, and exactly one panel is visible.
-- [ ] Playwright with JavaScript disabled: every panel shows, stacked, and no tab list is visible.
-- [ ] At 390px the sticky CTA appears after 700px of scroll and hides again above that. The footer's last line is never covered.
-- [ ] Screenshots match the mock sections, apart from the spec's deviations. Any remaining differences are listed in the Answer.
-- [ ] `07.json` parses.
+- [x] Keyboard walk-through of the goal tabs: arrows move and select, Tab leaves the tab list and enters the panel, and exactly one panel is visible.
+- [x] Playwright with JavaScript disabled: every panel shows, stacked, and no tab list is visible.
+- [x] At 390px the sticky CTA appears after 700px of scroll and hides again above that. The footer's last line is never covered.
+- [x] Screenshots match the mock sections, apart from the spec's deviations. Any remaining differences are listed in the Answer.
+- [x] `07.json` parses.
+
+## Answer
+
+Built (2026-09-24):
+
+- **`modules/tabs.js`**: the WAI-ARIA tabs pattern per `[data-tabs]`. It returns early without a `[role=tablist]`. At init it removes `js:hidden` from every panel and sets `hidden` on the inactive ones. Click, ArrowLeft/ArrowRight (wrapping), Home and End work; focus follows the selection, and the roving `tabindex` and `aria-selected` stay in sync.
+- **`modules/sticky-cta.js`**: a passive scroll listener. `data-shown` appears when `scrollY > 700`, and the bar changes only when that state flips (also evaluated at init). The bar is `inert` while hidden. `motion-reduce:transition-none` is added to `sticky-cta.php`.
+- **`languages/src/07.json`**: 20 strings, including the exit modal's (so 07b adds none). The 2 plurals have plural objects. The Albanian is the mock's where it exists ("Prit — mos e lësho për të hënën", "Përdore tani", "Jo faleminderit, do të vazhdoj pa ulje", "Oferta mbaron pas", "Vetëm sonte", "Shiko të gjitha (%s)", "Pagesë 100% e sigurt", "Dorëzim i menjëhershëm në email", "… klientë e kanë filluar në 24 orët e fundit"). There's no key clash with other files.
+- **Honesty fix (`home-hero.php`)**: the "Only tonight" chip under the hero's −X% badge showed whenever the offer ended within 24 hours, which could be tomorrow evening. It now shows only when the offer ends **today** in the site time zone (`wp_date('Y-m-d', ends_at) === wp_date('Y-m-d')`), per ADR-0008.
+- **`front-page.php`**: prints WooCommerce notices at the top of `main` when there are any (the follow-up from 09a). A no-JS `?add-to-cart=62` with the bundle in the cart now shows "…is already included in Transformimi Total in your cart." on `/`.
+- `home.css` stays as it was, since nothing needed CSS.
+
+Evidence (Playwright):
+
+- **Tabs** at 1440px. Init: panels `V--`, tabs `S0 --1 --1`. ArrowRight ×3 → `-V-`, `--V`, `V--` (wraps), with focus on the selected tab. Home → first, End → last, ArrowLeft → middle. Tab from the tab list → focus on `ol-tabs-4-panel-1` (the visible panel). Clicking tab 2 → `-V-`. Exactly one panel is visible every time. No JS errors.
+- **No JS** (390px): panels `VVV` stacked, tab list not visible, sticky CTA visible.
+- **Sticky CTA** (390px): hidden and inert at 0 and 650px; shown at 760; hidden and inert again at 300. At the bottom, the footer's last line ends at y=740, above the bar at 770.
+- **Fidelity**: `/` against `index.html` sections 1–9 and 17–19 at 390px and 1440px. Layout, type, spacing and copy match. Differences, all by spec or seeded content:
+  - Numbers are computed: "600+ klientë shqiptarë" (Customizer baseline 600 + paid orders), "4,8/5 · 45 vlerësime" (store rating above the review threshold), the hero stats, "−50%" (the highest real saving). None of them reads "12.400+" or "1.284". The "Mbi 40 klientë … 24 orët e fundit" line under the steps is hidden below its threshold (`optimum_lift_recent_orders_count()` ≥ 10). "Vetëm sonte" is hidden because the offer ends in 3 days.
+  - € prices; payment badges only Visa and Mastercard; the pricing badge "Best value" instead of "8 nga 10 klientë" (the share is below its threshold).
+  - The value stack's heading and item values are seeded content (06a).
+  - The pricing "rest" line reads "Kemi edhe 1 produkte të tjera", a plural mismatch in the seeded `rest_text` that the mock shares. Seed content, flagged for real copy.
+  - UI chrome is in English until ticket 12.
+- `07.json` parses; lint exit 0; PHPStan OK; build OK; `debug.log` unchanged.
