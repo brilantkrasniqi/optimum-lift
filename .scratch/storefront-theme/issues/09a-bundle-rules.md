@@ -1,7 +1,7 @@
 # Bundle rules on the server (both add paths) and the bundle price warning
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 09
 Blocked by: 05a
@@ -46,8 +46,27 @@ Keep `WC()->cart?->` calls null-safe; PHPStan runs with `treatPhpDocTypesAsCerta
 
 ## Acceptance criteria
 
-- [ ] Cookie-jar curl (`curl -c jar -b jar -L`): `/?add-to-cart=60`, then `/?add-to-cart=64`. The Store API cart (`/wp-json/wc/store/v1/cart`) holds only 64.
-- [ ] Then `/?add-to-cart=62`: the cart is unchanged, and the next page shows the "already included" notice.
-- [ ] `/?add-to-cart=64` again: no error notice, no change.
-- [ ] Setting the bundle to 40 € in wp-admin (admin/admin) shows the warning once. Restore the price with `wp ol-shop seed`.
-- [ ] `09a.json` parses.
+- [x] Cookie-jar curl (`curl -c jar -b jar -L`): `/?add-to-cart=60`, then `/?add-to-cart=64`. The Store API cart (`/wp-json/wc/store/v1/cart`) holds only 64.
+- [x] Then `/?add-to-cart=62`: the cart is unchanged, and the next page shows the "already included" notice.
+- [x] `/?add-to-cart=64` again: no error notice, no change.
+- [x] Setting the bundle to 40 € in wp-admin (admin/admin) shows the warning once. Restore the price with `wp ol-shop seed`.
+- [x] `09a.json` parses.
+
+## Answer
+
+Built `inc/shop/bundle.php` and `languages/src/09a.json` (2026-09-24).
+
+- `woocommerce_add_to_cart_validation`: returns false with a `notice` when a bundle in the cart covers the Product ("%1$s is already included in %2$s in your cart."), or when the Product already has a line ("%s is already in your cart."). This replaces WooCommerce's sold-individually error.
+- `woocommerce_add_to_cart` at priority 10: adding a bundle removes the lines of its components.
+- `acf/save_post` at priority 20 → per-user transient → one `admin_notices` warning. There are two messages: price ≥ components' sum, and no published components.
+- New public helpers for 09b/09c/09d: `optimum_lift_cart_bundle_covering(int $product_id): ?WC_Product` and `optimum_lift_cart_has_product(int $product_id): bool`. The theme's own endpoints still need to call `apply_filters('woocommerce_add_to_cart_validation', true, $id, 1)` themselves.
+
+Evidence:
+
+- Cookie jar: `/?add-to-cart=60` → cart `60`; `/?add-to-cart=64` → cart `64` only.
+- `/?add-to-cart=62` → cart still `64`; the next WooCommerce page (`/product/plani-ushqimor-12-javor/`) shows `woocommerce-info` "…already included in Transformimi Total in your cart."
+- `/?add-to-cart=64` again → cart `64`, no `woocommerce-error`; an info notice "…already in your cart." instead.
+- Playwright in wp-admin: set the bundle to 40 € and saved. The warning read "Transformimi Total costs 40,00 €, which is not less than its components together (29,96 €)…" once, and was gone on the next admin page. Restored with `wp ol-shop seed` (Store API price 1499 again).
+- `09a.json` parses; lint exit 0; PHPStan OK; `debug.log` unchanged.
+
+Follow-up (not my file): the front page (`front-page.php`, 07) prints no WooCommerce notices. A no-JS `?add-to-cart=` from a homepage card leaves its notice until the next Shop, Product or Cart page. 07a/07b could call `woocommerce_output_all_notices()` near the top of the page.
