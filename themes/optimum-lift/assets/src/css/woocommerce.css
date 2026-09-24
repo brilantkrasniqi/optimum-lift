@@ -635,8 +635,9 @@
     @apply mt-4 grid list-none gap-2 p-0;
   }
 
+  /* The plugin separates the links with " — " and " · " text; font-size 0 hides them, the children set their own size. */
   .ol-order-plans li {
-    @apply flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-white/[.08] bg-surface px-4 py-3 text-[13px] text-zinc-600;
+    @apply flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-white/[.08] bg-surface px-4 py-3 text-[0px];
   }
 
   .ol-order-plans li strong {

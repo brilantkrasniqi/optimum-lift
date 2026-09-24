@@ -148,7 +148,7 @@ $cell_class = static fn (array $column, array $row): string => match (true) {
 
         <div class="<?php echo esc_attr($alt ? 'reveal scroll-hint mt-10 rounded-3xl border border-white/[.08] bg-paper first:mt-0' : 'reveal scroll-hint mt-10 rounded-3xl border border-white/[.08] bg-surface first:mt-0'); ?>">
             <div class="scroll-x overflow-x-auto rounded-3xl" tabindex="0" role="region" aria-label="<?php echo esc_attr($caption); ?>">
-                <table class="w-full min-w-[680px] text-left text-[13px]">
+                <table class="<?php echo esc_attr($front ? 'w-full min-w-[620px] text-left text-[13px]' : 'w-full min-w-[680px] text-left text-[13px]'); ?>">
                     <thead>
                         <tr class="border-b border-white/[.08] text-[10px] font-extrabold uppercase tracking-[.14em] text-zinc-500">
                             <td class="p-4 sm:p-5"></td>

@@ -25,7 +25,10 @@ function optimum_lift_page_title(): string
     }
 
     if (is_home() && !is_front_page()) {
-        return (string) get_the_title((int) get_option('page_for_posts'));
+        // Without a posts page, get_the_title(0) would return the first post's title.
+        $posts_page = (int) get_option('page_for_posts');
+
+        return $posts_page > 0 ? (string) get_the_title($posts_page) : __('Blog', 'optimum-lift');
     }
 
     return wp_strip_all_tags(get_the_archive_title());

@@ -26,7 +26,7 @@ if ($groups === []) {
 $note = optimum_lift_field($product->get_id(), 'ol_versions_note');
 ?>
 <div class="<?php echo esc_attr(trim('grid gap-2.5 ' . ($args['class'] ?? ''))); ?>">
-    <div class="grid gap-5 sm:grid-cols-2">
+    <div class="flex flex-wrap gap-x-8 gap-y-5">
         <?php foreach ($groups as $group) : ?>
             <div>
                 <?php if ($group['label'] !== '') : ?>
@@ -34,8 +34,8 @@ $note = optimum_lift_field($product->get_id(), 'ol_versions_note');
                 <?php endif; ?>
                 <ul class="mt-2.5 flex flex-wrap gap-2"<?php echo $group['label'] !== '' ? ' aria-label="' . esc_attr($group['label']) . '"' : ''; ?>>
                     <?php foreach ($group['options'] as $option) : ?>
-                        <li class="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[.03] px-3.5 py-2 text-[12.5px] font-bold text-zinc-200">
-                            <?php echo optimum_lift_icon('check', 'w-3.5 h-3.5 shrink-0 text-acid'); ?>
+                        <li class="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[.03] px-3 py-2 text-[12px] font-bold text-zinc-200 sm:gap-1.5 sm:px-3.5 sm:text-[12.5px]">
+                            <?php echo optimum_lift_icon('check', 'w-3 h-3 shrink-0 text-acid sm:w-3.5 sm:h-3.5'); ?>
                             <?php echo esc_html($option); ?>
                         </li>
                     <?php endforeach; ?>
