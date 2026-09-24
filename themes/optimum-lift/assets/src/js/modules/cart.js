@@ -220,8 +220,9 @@ export function init() {
 
     const add = target.closest('[data-add-to-cart]');
     if (add) {
-      // A modified click (new tab, new window) follows the link as usual.
-      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+      // A modified click (new tab, new window) follows the link as usual, and
+      // so does any add on the cart page, whose table the drawer cannot update.
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || document.body.classList.contains('woocommerce-cart')) {
         return;
       }
       e.preventDefault();

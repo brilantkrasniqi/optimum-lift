@@ -667,4 +667,178 @@
   .ol-thankyou-failed .woocommerce-thankyou-order-failed-actions {
     @apply mt-6 flex flex-wrap justify-center gap-3;
   }
+
+  /* ----------------------------------------------------------- cart page */
+
+  /* The classic cart (the no-JS fallback for the drawer): lines as cards like
+     the drawer's, the totals card beside them from lg, cross-sells below. */
+  .woocommerce-cart .woocommerce:has(> .woocommerce-cart-form) {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .woocommerce-cart .woocommerce:has(> .woocommerce-cart-form) {
+      grid-template-columns: minmax(0, 1fr) 24rem;
+      column-gap: 3rem;
+      align-items: start;
+    }
+
+    .woocommerce-cart .woocommerce > :is(.woocommerce-notices-wrapper, .ol-cart-cross-sells) {
+      grid-column: 1 / -1;
+    }
+
+    .woocommerce-cart .cart-collaterals {
+      position: sticky;
+      top: calc(var(--ol-sticky-top) + 5.5rem);
+    }
+  }
+
+  .woocommerce-cart .woocommerce-notices-wrapper:empty {
+    display: none;
+  }
+
+  table.shop_table.cart,
+  table.shop_table.cart tbody {
+    display: block;
+    width: 100%;
+  }
+
+  table.shop_table.cart thead {
+    @apply sr-only;
+  }
+
+  table.shop_table.cart tr.cart_item {
+    @apply mb-3 flex items-center gap-4 rounded-2xl border border-white/[.07] bg-raised p-3.5 sm:p-4;
+  }
+
+  table.shop_table.cart tr.cart_item td {
+    display: block;
+  }
+
+  table.shop_table.cart .product-thumbnail {
+    order: 1;
+  }
+
+  table.shop_table.cart .product-name {
+    @apply order-2 min-w-0 flex-1 text-[15px] font-extrabold text-white;
+  }
+
+  table.shop_table.cart .product-name a:hover {
+    @apply underline underline-offset-2;
+  }
+
+  table.shop_table.cart .product-subtotal {
+    @apply order-3 text-right text-[15px] font-extrabold whitespace-nowrap text-white;
+  }
+
+  table.shop_table.cart .product-remove {
+    order: 4;
+  }
+
+  /* Every Product is sold individually: the price repeats the subtotal and the
+     quantity cannot change. */
+  table.shop_table.cart :is(.product-price, .product-quantity) {
+    display: none !important;
+  }
+
+  .ol-cart-thumb {
+    @apply relative grid h-14 w-14 place-items-center overflow-hidden rounded-xl bg-surface text-zinc-500 sm:h-16 sm:w-16;
+  }
+
+  table.shop_table.cart a.remove {
+    @apply grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-lg leading-none font-bold text-zinc-500 no-underline transition hover:border-accent-light/50 hover:text-accent-light;
+  }
+
+  table.shop_table.cart tr:not(.cart_item),
+  table.shop_table.cart td.actions {
+    display: block;
+  }
+
+  table.shop_table.cart td.actions {
+    @apply mt-4;
+  }
+
+  table.shop_table.cart .coupon {
+    @apply flex max-w-md items-stretch gap-2;
+  }
+
+  table.shop_table.cart .coupon .input-text {
+    @apply min-w-0 flex-1;
+  }
+
+  table.shop_table.cart .coupon .button {
+    @apply inline-flex shrink-0 cursor-pointer items-center rounded-xl border border-white/15 bg-white/5 px-4 text-[13px] font-extrabold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acid;
+  }
+
+  /* Only quantities would need it, and none can change. */
+  table.shop_table.cart button[name="update_cart"] {
+    display: none;
+  }
+
+  .woocommerce-cart .cart_totals {
+    @apply rounded-2xl border border-white/[.08] bg-surface p-5 sm:p-6;
+  }
+
+  .woocommerce-cart .cart_totals h2 {
+    @apply mb-3 text-2xl text-white;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  .woocommerce-cart .cart_totals table {
+    @apply w-full border-collapse text-[14px];
+  }
+
+  .woocommerce-cart .cart_totals :is(th, td) {
+    @apply py-2 text-left font-semibold text-zinc-400;
+  }
+
+  .woocommerce-cart .cart_totals td {
+    @apply text-right text-white;
+  }
+
+  .woocommerce-cart .cart_totals .cart-discount td {
+    @apply text-acid;
+  }
+
+  .woocommerce-cart .cart_totals .woocommerce-remove-coupon {
+    @apply ml-1 text-[12px] font-bold text-zinc-500 underline underline-offset-2 hover:text-white;
+  }
+
+  .woocommerce-cart .cart_totals .order-total :is(th, td) {
+    @apply border-t border-white/[.08] pt-4 text-base text-white;
+  }
+
+  .woocommerce-cart .cart_totals .order-total td {
+    @apply font-display text-3xl leading-none font-normal;
+  }
+
+  .woocommerce-cart .wc-proceed-to-checkout {
+    @apply mt-5;
+  }
+
+  .woocommerce-cart .checkout-button {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-accent px-7 py-4 text-center text-base font-extrabold text-white no-underline shadow-glow transition hover:bg-accent-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acid;
+  }
+
+  .ol-cart-cross-sells {
+    @apply mt-8 border-t border-white/[.07] pt-10;
+  }
+
+  /* The empty cart. */
+  .wc-empty-cart-message .cart-empty {
+    @apply mx-auto max-w-xl;
+  }
+
+  .woocommerce-cart .return-to-shop {
+    @apply mt-6 text-center;
+  }
+
+  .woocommerce-cart .return-to-shop .button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-[14px] font-extrabold text-paper no-underline transition hover:bg-acid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acid;
+  }
 }

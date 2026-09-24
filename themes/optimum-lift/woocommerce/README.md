@@ -26,3 +26,5 @@ moved into the form column with a "Payment" heading, the trust block after
 "Place order", the summary total fragment, and "Billing details" read as
 "Your details" for carts without shipping, and the order-received page shown
 without a login wall to the buyer who just placed the order (see 10d).
+
+The classic cart page (10e) has no override: it is styled in `assets/src/css/woocommerce.css`, and `inc/shop/checkout.php` swaps its thumbnail for the theme's (`woocommerce_cart_item_thumbnail`) and WooCommerce's loop cross-sells for `compact` cards (`woocommerce_after_cart`).

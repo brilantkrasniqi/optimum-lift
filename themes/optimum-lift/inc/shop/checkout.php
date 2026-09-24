@@ -171,3 +171,89 @@ add_filter('woocommerce_order_received_verify_known_shoppers', static function (
 
     return $verify;
 });
+
+/*
+ * ------------------------------------------------------------ cart page (10e)
+ */
+
+/**
+ * What goes with a set of Products: their cross-sells, without the Products
+ * themselves or anything a bundle among them covers, at most $limit.
+ *
+ * @param list<WC_Product> $products
+ * @return list<WC_Product>
+ */
+function optimum_lift_cross_sells_for(array $products, int $limit = 3): array
+{
+    $owned = [];
+    foreach ($products as $product) {
+        $owned[] = $product->get_id();
+        foreach (optimum_lift_bundle_components($product) as $component) {
+            $owned[] = $component->get_id();
+        }
+    }
+
+    $suggest = [];
+    foreach ($products as $product) {
+        foreach (optimum_lift_cross_sells($product) as $candidate) {
+            $id = $candidate->get_id();
+            if (!in_array($id, $owned, true) && !isset($suggest[$id])) {
+                $suggest[$id] = $candidate;
+            }
+        }
+    }
+
+    return array_slice(array_values($suggest), 0, $limit);
+}
+
+// The theme's thumbnail (the kind-icon tile while a Product has no photo)
+// instead of WooCommerce's light placeholder image.
+add_filter('woocommerce_cart_item_thumbnail', static function (mixed $thumbnail, mixed $cart_item): mixed {
+    $product = is_array($cart_item) ? ($cart_item['data'] ?? null) : null;
+    if (!$product instanceof WC_Product) {
+        return $thumbnail;
+    }
+
+    ob_start();
+    echo '<span class="ol-cart-thumb">';
+    get_template_part('template-parts/product/thumb', null, [
+        'product'   => $product,
+        'size'      => 'woocommerce_gallery_thumbnail',
+        'sizes'     => '64px',
+        'class'     => 'absolute inset-0 h-full w-full',
+        'icon_size' => 'w-6 h-6',
+    ]);
+    echo '</span>';
+
+    return (string) ob_get_clean();
+}, 10, 2);
+
+// WooCommerce's cross-sells use the loop templates, which the theme does not
+// style: the cart page shows the theme's compact cards instead.
+add_action('init', static function (): void {
+    remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
+});
+
+add_action('woocommerce_after_cart', static function (): void {
+    $products = array_values(optimum_lift_cart_lines());
+    $suggest  = $products !== [] ? optimum_lift_cross_sells_for($products) : [];
+    if ($suggest === []) {
+        return;
+    }
+    ?>
+    <section class="ol-cart-cross-sells" aria-labelledby="ol-cart-cross-sells-title">
+        <h2 id="ol-cart-cross-sells-title" class="h-display text-2xl text-white sm:text-3xl"><?php esc_html_e('Frequently bought together', 'optimum-lift'); ?></h2>
+        <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <?php
+            foreach ($suggest as $product) {
+                get_template_part('template-parts/product/card', null, [
+                    'product'    => $product,
+                    'variant'    => 'compact',
+                    'cta_prefix' => 'cart-page',
+                ]);
+            }
+            ?>
+        </div>
+    </section>
+    <?php
+});
