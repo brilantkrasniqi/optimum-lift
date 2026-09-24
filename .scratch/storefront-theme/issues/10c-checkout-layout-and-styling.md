@@ -1,7 +1,7 @@
 # Checkout: two-column layout, order review with savings, notices and form styles
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 10
 Blocked by: 10a
@@ -46,8 +46,38 @@ Working rules: `spec.md` › "Sub-tickets". Paths are relative to `themes/optimu
 
 ## Acceptance criteria
 
-- [ ] Ticket 10's first criterion: logged out, a seeded Product bought through Buy Now (`/?ol_buy_now=60` once 09b is done, otherwise `?add-to-cart`) shows only email, first name, last name, country, payment and Place order. Screenshot it at 390px and 1440px with COD temporarily enabled (see 10a), then disable COD.
-- [ ] Submitting the form empty shows styled inline errors and a styled error notice. No light, unstyled box appears anywhere.
-- [ ] On mobile the summary is first and collapsible; on desktop it is sticky on the right. Changing the country, or applying `OPTIMUM10`, refreshes it with no JS errors and keeps the layout.
-- [ ] The savings row equals the sum of the anchors minus the subtotal (for 60, 14,99 − 7,99 = 7,00 €).
-- [ ] Lint and PHPStan pass, and `10c.json` parses.
+- [x] Ticket 10's first criterion: logged out, a seeded Product bought through Buy Now (`/?ol_buy_now=60` once 09b is done, otherwise `?add-to-cart`) shows only email, first name, last name, country, payment and Place order. Screenshot it at 390px and 1440px with COD temporarily enabled (see 10a), then disable COD.
+- [x] Submitting the form empty shows styled inline errors and a styled error notice. No light, unstyled box appears anywhere.
+- [x] On mobile the summary is first and collapsible; on desktop it is sticky on the right. Changing the country, or applying `OPTIMUM10`, refreshes it with no JS errors and keeps the layout.
+- [x] The savings row equals the sum of the anchors minus the subtotal (for 60, 14,99 − 7,99 = 7,00 €).
+- [x] Lint and PHPStan pass, and `10c.json` parses.
+
+## Answer
+
+Built (2026-09-24):
+
+- **`woocommerce/checkout/form-checkout.php`** (`@version 9.4.0`): `.ol-checkout` grid; `form.checkout` is `display: contents`, so the details column, the summary and the coupon wrapper (`woocommerce_after_checkout_form`, outside the form) share one grid.
+  - Areas, mobile: notices, summary, coupon, details.
+  - Areas, `lg`: notices full-width; details on the left; summary on the right, spanning an `auto` and a `1fr` row and `position: sticky` at `--ol-sticky-top + 1.5rem`; the coupon form in the last right-hand row.
+  - The summary is `<details open>`. A small inline script collapses it below 1024px and keeps it open at 1024px and up. Without JS it stays open.
+  - The `<summary>` holds the "Your order" heading, a "Show details" hint and `.ol-summary-total`, which `woocommerce_update_order_review_fragments` refreshes.
+- **`woocommerce/checkout/review-order.php`** (`@version 11.0.0`): thumb + category per line, `<del>` anchor when on sale, and a `.ol-savings` "You save" row = Σ anchors − displayed subtotal. All original rows and hooks are kept.
+- **`inc/shop/checkout.php`**: `optimum_lift_checkout_summary_total_html()` and its fragment; a "Payment" heading before the moved payment block; "Billing details" becomes "Your details" through `gettext_woocommerce` on checkout when nothing ships.
+- **`woocommerce.css`**:
+  - notices (✓ / i / ! badges; styled links and buttons);
+  - forms (label/input recipes from `pages.css`, invalid/validated states, inline errors, half-width first/last from `sm`);
+  - checkout (the grid, the summary card and toggle, the review table, payment method cards, `#place_order` built from the `btn-primary btn-lg btn-block` utilities plus `shadow-glow`, privacy text, a dark `blockUI`, the coupon toggle and form, the login form).
+- **`woocommerce/README.md`**: an overrides table; **`10c.json`**: 3 strings.
+
+Evidence (Playwright via `/?ol_buy_now=60`, COD enabled temporarily; screenshots at 390px and 1440px):
+
+- Fields: `billing_email`, `billing_first_name`, `billing_last_name`, `billing_country`, then payment and "Bëje porosinë".
+- 390px: summary collapsed and above the details, showing "7,99 €" in its bar; the toggle opens it. 1440px: summary open on the right; after scrolling 600px its top is 24px (sticky).
+- Empty submit: a dark red error notice listing three errors, three `.woocommerce-invalid` rows with red borders and inline messages. No light boxes.
+- Country → DE and `OPTIMUM10` → review refreshed. Summary bar and order total 7,19 €, "Kupon: optimum10 −0,80 €" row, trust block kept. No JS errors at either width.
+- Savings row "You save −7,00 €" (14,99 − 7,99).
+- lint exit 0; PHPStan OK; build OK; `10c.json` parses; `debug.log` unchanged.
+
+Deviation: on desktop the coupon toggle sits at the **bottom** of the right column, level with Place order, not directly under the summary. A sticky element can't leave its grid area, so a summary that stays sticky the whole height of the form can't have the coupon form (which must be outside `form.checkout`) right under it. The summary sticks down to just above the toggle. On mobile the toggle is directly under the summary.
+
+Environment note: the **Check payments** gateway was enabled before this ticket, even though the spec says no gateway is enabled. I disabled it along with COD, so `wp wc payment_gateway list` now shows none enabled.

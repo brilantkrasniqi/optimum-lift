@@ -99,3 +99,43 @@ add_action('admin_notices', static function (): void {
         );
     }
 });
+
+/*
+ * ------------------------------------------------------------ layout (10c)
+ */
+
+/**
+ * The order total in the summary's toggle, so the collapsed summary on a
+ * phone still shows what the buyer pays. Refreshed with the order review.
+ */
+function optimum_lift_checkout_summary_total_html(): string
+{
+    $total = WC()->cart?->get_total() ?? '';
+
+    return '<span class="ol-summary-total">' . wp_kses_post($total) . '</span>';
+}
+
+add_filter('woocommerce_update_order_review_fragments', static function (mixed $fragments): mixed {
+    if (is_array($fragments)) {
+        $fragments['.ol-summary-total'] = optimum_lift_checkout_summary_total_html();
+    }
+
+    return $fragments;
+});
+
+// The payment block moved to the form column (above) gets its own heading.
+add_action('woocommerce_checkout_after_customer_details', static function (): void {
+    if (WC()->cart?->needs_payment()) {
+        echo '<h3 class="ol-checkout-heading">' . esc_html__('Payment', 'optimum-lift') . '</h3>';
+    }
+}, 5);
+
+// A digital order has no billing address to speak of: the form asks who the
+// buyer is and where to send the access.
+add_filter('gettext_woocommerce', static function (string $translation, string $text): string {
+    if ($text === 'Billing details' && did_action('wp') > 0 && is_checkout() && WC()->cart !== null && !WC()->cart->needs_shipping()) {
+        return __('Your details', 'optimum-lift');
+    }
+
+    return $translation;
+}, 10, 2);

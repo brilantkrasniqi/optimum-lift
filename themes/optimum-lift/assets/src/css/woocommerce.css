@@ -1,3 +1,481 @@
 /*
  * WooCommerce screen styles: notices, forms, checkout, cart page, My Account, Portal (ticket 10). Only what utilities cannot express; @layer components.
+ *
+ * WooCommerce's own stylesheets are dequeued (ADR-0007), so nothing here
+ * falls back to its look: every piece of its markup that shows is styled here.
+ * Sections: notices and forms and checkout (10c), thank-you (10d), cart page (10e).
  */
+
+@layer components {
+  /* ------------------------------------------------------------- notices */
+
+  :where(.woocommerce-notices-wrapper, .woocommerce-NoticeGroup):empty {
+    display: none;
+  }
+
+  :is(.woocommerce-message, .woocommerce-info, .woocommerce-error) {
+    @apply relative mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border px-4 py-3.5 pl-11 text-[14px] leading-relaxed font-semibold text-zinc-200;
+    list-style: none;
+  }
+
+  :is(.woocommerce-message, .woocommerce-info, .woocommerce-error)::before {
+    @apply absolute top-3.5 left-4 grid h-5 w-5 place-items-center rounded-full text-[12px] leading-none font-extrabold;
+  }
+
+  .woocommerce-message {
+    @apply border-acid/30 bg-acid/[.06];
+  }
+
+  .woocommerce-message::before {
+    @apply bg-acid text-paper;
+    content: "✓";
+  }
+
+  .woocommerce-info {
+    @apply border-white/15 bg-white/[.04];
+  }
+
+  .woocommerce-info::before {
+    @apply bg-white/15 text-white;
+    content: "i";
+  }
+
+  .woocommerce-error {
+    @apply block border-accent/45 bg-accent/10;
+  }
+
+  .woocommerce-error::before {
+    @apply bg-accent text-white;
+    content: "!";
+  }
+
+  .woocommerce-error li + li {
+    @apply mt-1.5;
+  }
+
+  :is(.woocommerce-message, .woocommerce-info, .woocommerce-error) a:not(.button) {
+    @apply font-bold text-white underline decoration-zinc-500 underline-offset-2 hover:decoration-white;
+  }
+
+  :is(.woocommerce-message, .woocommerce-info, .woocommerce-error) .button {
+    @apply order-last ml-auto inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-[12px] font-extrabold text-white no-underline transition hover:bg-white/10;
+  }
+
+  :is(.woocommerce-message, .woocommerce-info, .woocommerce-error) .button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-acid;
+  }
+
+  /* --------------------------------------------------------------- forms */
+
+  .woocommerce form .form-row {
+    @apply mb-4;
+  }
+
+  .woocommerce form .form-row label:not(.checkbox, .woocommerce-form__label-for-checkbox) {
+    @apply mb-1.5 block text-[12px] font-extrabold uppercase tracking-wider text-zinc-400;
+  }
+
+  .woocommerce form .form-row .required {
+    @apply text-accent-light no-underline;
+  }
+
+  .woocommerce form .form-row .optional {
+    @apply font-semibold normal-case tracking-normal text-zinc-600;
+  }
+
+  .woocommerce :where(.input-text, select, textarea):where(:not([type="checkbox"], [type="radio"])) {
+    @apply block w-full rounded-xl border border-white/15 bg-surface px-4 py-3 text-base text-white transition placeholder:text-zinc-500 focus:border-white/35 focus:outline-2 focus:outline-offset-2 focus:outline-acid;
+  }
+
+  .woocommerce select {
+    @apply appearance-none bg-no-repeat pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right 0.9rem center;
+    background-size: 1rem;
+  }
+
+  .woocommerce select option {
+    @apply bg-surface text-white;
+  }
+
+  .woocommerce :is(input[type="checkbox"], input[type="radio"]) {
+    @apply h-5 w-5 shrink-0 accent-acid;
+  }
+
+  .woocommerce :is(label.checkbox, .woocommerce-form__label-for-checkbox) {
+    @apply flex cursor-pointer items-start gap-3 text-[13px] leading-snug font-semibold text-zinc-400;
+  }
+
+  .woocommerce form .form-row.woocommerce-invalid :is(.input-text, select) {
+    @apply border-accent-light/70;
+  }
+
+  .woocommerce form .form-row.woocommerce-invalid label {
+    @apply text-accent-light;
+  }
+
+  .woocommerce form .form-row.woocommerce-validated :is(.input-text, select) {
+    @apply border-acid/40;
+  }
+
+  .woocommerce form .form-row :is(.checkout-inline-error-message, .woocommerce-input-wrapper + .checkout-inline-error-message) {
+    @apply mt-1.5 text-[12.5px] font-semibold text-accent-light;
+  }
+
+  .woocommerce form .form-row .description {
+    @apply mt-1.5 text-[12px] text-zinc-500;
+  }
+
+  @media (min-width: 640px) {
+    .woocommerce form :is(.form-row-first, .form-row-last) {
+      @apply inline-block w-[calc(50%-.5rem)] align-top;
+    }
+
+    .woocommerce form .form-row-first {
+      @apply mr-4;
+    }
+  }
+
+  .woocommerce .clear {
+    clear: both;
+  }
+
+  /* ------------------------------------------------------------ checkout */
+
+  .ol-checkout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "notices"
+      "summary"
+      "coupon"
+      "details";
+  }
+
+  .ol-checkout > form.checkout {
+    display: contents;
+  }
+
+  .ol-checkout .woocommerce-NoticeGroup {
+    grid-area: notices;
+  }
+
+  .ol-checkout-details {
+    grid-area: details;
+    @apply min-w-0;
+  }
+
+  .ol-checkout-summary {
+    grid-area: summary;
+    @apply min-w-0 self-start rounded-2xl border border-white/[.08] bg-surface;
+  }
+
+  .ol-checkout-coupon {
+    grid-area: coupon;
+    @apply mt-3 min-w-0;
+  }
+
+  .ol-checkout-details {
+    @apply mt-8;
+  }
+
+  @media (min-width: 1024px) {
+    .ol-checkout {
+      grid-template-columns: minmax(0, 1fr) 26rem;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-areas:
+        "notices notices"
+        "details summary"
+        "details summary"
+        "details coupon";
+      column-gap: 3.5rem;
+    }
+
+    .ol-checkout-details {
+      @apply mt-0;
+    }
+
+    .ol-checkout-summary {
+      position: sticky;
+      top: calc(var(--ol-sticky-top) + 1.5rem);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .ol-checkout {
+      grid-template-columns: minmax(0, 1fr) 28rem;
+      column-gap: 5rem;
+    }
+  }
+
+  /* Headings: billing ("Your details"), payment, the summary. */
+  .ol-checkout :is(.woocommerce-billing-fields > h3, .woocommerce-additional-fields > h3, .ol-checkout-heading, #order_review_heading) {
+    @apply text-2xl text-white;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  .ol-checkout :is(.woocommerce-billing-fields > h3, .ol-checkout-heading) {
+    @apply mb-5;
+  }
+
+  .ol-checkout-heading {
+    @apply mt-8;
+  }
+
+  .ol-checkout .col2-set .col-2:empty {
+    display: none;
+  }
+
+  .ol-checkout .woocommerce-shipping-fields:empty,
+  .ol-checkout .woocommerce-additional-fields:not(:has(.form-row)) {
+    display: none;
+  }
+
+  /* The summary: a <details> that is a card on the right from lg, and a
+     collapsed bar above the form below it. */
+  .ol-checkout-summary > summary {
+    @apply flex cursor-pointer items-center gap-3 p-5 select-none;
+    list-style: none;
+  }
+
+  .ol-checkout-summary > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ol-checkout-summary > summary:focus-visible {
+    @apply rounded-2xl outline-2 outline-offset-2 outline-acid;
+  }
+
+  .ol-checkout-summary #order_review_heading {
+    @apply text-xl;
+  }
+
+  .ol-summary-toggle-label {
+    @apply text-[12px] font-bold text-zinc-500 underline decoration-zinc-700 underline-offset-2;
+  }
+
+  .ol-summary-total {
+    @apply ml-auto text-lg font-extrabold text-white;
+  }
+
+  .ol-summary-chevron {
+    @apply shrink-0 text-zinc-500 transition;
+  }
+
+  .ol-checkout-summary[open] .ol-summary-chevron {
+    @apply rotate-180;
+  }
+
+  .ol-checkout-summary[open] .ol-summary-toggle-label {
+    display: none;
+  }
+
+  #order_review {
+    @apply border-t border-white/[.07] px-5 pt-2 pb-5;
+  }
+
+  @media (min-width: 1024px) {
+    .ol-checkout-summary > summary {
+      @apply cursor-default pb-2;
+    }
+
+    .ol-checkout-summary :is(.ol-summary-toggle-label, .ol-summary-total, .ol-summary-chevron) {
+      display: none;
+    }
+
+    #order_review {
+      @apply border-t-0;
+    }
+  }
+
+  /* The review table. */
+  .woocommerce-checkout-review-order-table {
+    @apply w-full border-collapse text-[14px];
+  }
+
+  .woocommerce-checkout-review-order-table thead {
+    @apply sr-only;
+  }
+
+  .woocommerce-checkout-review-order-table :is(th, td) {
+    @apply py-3 text-left align-middle font-semibold text-zinc-400;
+  }
+
+  .woocommerce-checkout-review-order-table :is(.product-total, tfoot td) {
+    @apply pl-4 text-right whitespace-nowrap text-white;
+  }
+
+  .woocommerce-checkout-review-order-table tbody tr + tr td {
+    @apply border-t border-white/[.06];
+  }
+
+  .woocommerce-checkout-review-order-table tfoot tr:first-child :is(th, td) {
+    @apply border-t border-white/[.08] pt-4;
+  }
+
+  .woocommerce-checkout-review-order-table tfoot :is(th, td) {
+    @apply py-1.5;
+  }
+
+  .ol-review-line {
+    @apply flex items-center gap-3;
+  }
+
+  .ol-review-thumb {
+    @apply relative grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-xl bg-raised text-zinc-500;
+  }
+
+  .ol-review-text {
+    @apply min-w-0 text-[14px] leading-snug font-extrabold text-white;
+  }
+
+  .ol-review-cat {
+    @apply mb-0.5 block text-[10px] font-extrabold tracking-[.16em] text-zinc-500 uppercase;
+  }
+
+  .woocommerce-checkout-review-order-table .product-quantity {
+    @apply sr-only;
+  }
+
+  .ol-review-anchor {
+    @apply mr-1.5 text-[12px] font-bold text-zinc-500;
+  }
+
+  .woocommerce-checkout-review-order-table :is(.ol-savings, .cart-discount) td {
+    @apply text-acid;
+  }
+
+  .woocommerce-checkout-review-order-table .cart-discount .woocommerce-remove-coupon {
+    @apply ml-1 text-[12px] font-bold text-zinc-500 underline underline-offset-2 hover:text-white;
+  }
+
+  .woocommerce-checkout-review-order-table .order-total :is(th, td) {
+    @apply border-t border-white/[.08] pt-4 text-base text-white;
+  }
+
+  .woocommerce-checkout-review-order-table .order-total td {
+    @apply font-display text-3xl leading-none font-normal;
+  }
+
+  .woocommerce-checkout-review-order-table .order-total .includes_tax {
+    @apply block font-sans text-[11px] font-semibold text-zinc-500;
+  }
+
+  /* Payment methods and "Place order". */
+  #payment {
+    @apply rounded-2xl border border-white/[.08] bg-surface p-5;
+  }
+
+  #payment .payment_methods {
+    @apply m-0 grid list-none gap-2 p-0;
+  }
+
+  #payment .payment_methods > li:not(.woocommerce-notice) {
+    @apply rounded-xl border border-white/10 bg-raised px-4 py-3.5 transition;
+  }
+
+  #payment .payment_methods > li:has(> input:checked) {
+    @apply border-acid/45;
+  }
+
+  #payment .payment_methods > li > input {
+    @apply mr-2 align-middle;
+  }
+
+  #payment .payment_methods > li > label {
+    @apply inline cursor-pointer text-[14px] font-extrabold text-white;
+  }
+
+  #payment .payment_methods > li > label img {
+    @apply ml-2 inline-block max-h-6 align-middle;
+  }
+
+  #payment .payment_box {
+    @apply mt-3 rounded-lg bg-white/[.04] p-3 text-[13px] leading-relaxed text-zinc-400;
+  }
+
+  #payment .payment_box p:last-child {
+    @apply mb-0;
+  }
+
+  #payment .payment_methods > li .woocommerce-info {
+    @apply mb-0;
+  }
+
+  #payment .place-order {
+    @apply mt-5 mb-0;
+  }
+
+  #payment #place_order {
+    @apply mt-4 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl bg-accent px-7 py-4 text-center text-base font-extrabold text-white shadow-glow transition hover:bg-accent-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acid disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .woocommerce-privacy-policy-text {
+    @apply mt-4 text-[12px] leading-relaxed text-zinc-500;
+  }
+
+  .woocommerce-privacy-policy-text a,
+  .woocommerce-terms-and-conditions-link {
+    @apply font-bold text-white underline decoration-zinc-600 underline-offset-2;
+  }
+
+  .woocommerce-terms-and-conditions-wrapper .form-row {
+    @apply mt-4 mb-0;
+  }
+
+  /* The trust block (template-parts/checkout/trust.php) sits inside #payment. */
+  #payment .ol-checkout-trust {
+    @apply border-white/[.06] bg-paper/40;
+  }
+
+  /* The coupon toggle and form, under the summary. */
+  .ol-checkout-coupon .woocommerce-form-coupon-toggle .woocommerce-info {
+    @apply mb-0 border-dashed border-white/15 bg-transparent py-3 text-[13px] font-semibold text-zinc-400;
+  }
+
+  .ol-checkout-coupon .woocommerce-form-coupon-toggle .woocommerce-info::before {
+    @apply bg-white/10 text-zinc-300;
+    content: "%";
+  }
+
+  .ol-checkout-coupon .checkout_coupon {
+    @apply mt-3 flex items-start gap-2 rounded-2xl border border-white/[.08] bg-surface p-3;
+  }
+
+  .ol-checkout-coupon .checkout_coupon .form-row {
+    @apply m-0 inline-block w-auto;
+  }
+
+  .ol-checkout-coupon .checkout_coupon .form-row-first {
+    @apply mr-0 min-w-0 flex-1;
+  }
+
+  .ol-checkout-coupon .checkout_coupon .button {
+    @apply inline-flex h-full cursor-pointer items-center rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-[13px] font-extrabold whitespace-nowrap text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acid;
+  }
+
+  .ol-checkout-coupon .checkout_coupon .clear {
+    display: none;
+  }
+
+  /* jQuery BlockUI's overlay while checkout refreshes. */
+  .blockUI.blockOverlay {
+    background: color-mix(in srgb, var(--color-paper) 70%, transparent) !important;
+    opacity: 1 !important;
+    cursor: progress !important;
+    border-radius: inherit;
+  }
+
+  .woocommerce .processing {
+    @apply pointer-events-none;
+  }
+
+  /* The login form a returning customer can open above checkout. */
+  .woocommerce-form-login-toggle + .woocommerce-form-login {
+    @apply mb-6 max-w-xl rounded-2xl border border-white/[.08] bg-surface p-5;
+  }
+}
