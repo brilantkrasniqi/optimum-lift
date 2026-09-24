@@ -1,3 +1,12 @@
 /*
  * Homepage styles (ticket 07). Only what utilities cannot express; @layer components.
  */
+
+@layer components {
+  /* ----------------------------------------------------------- exit modal */
+
+  /* While the exit-intent dialog is open (modules/exit-intent.js). */
+  html.ol-modal-open {
+    overflow: hidden;
+  }
+}

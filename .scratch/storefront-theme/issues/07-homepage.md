@@ -1,7 +1,7 @@
 # Homepage: hero, marquee, problem, steps, goal tabs, pricing, sticky CTA, exit intent
 
 Type: task
-Status: claimed
+Status: resolved
 Wave: 2
 Blocked by: 01, 02, 03, 04
 Split into: 07a, 07b
@@ -37,3 +37,7 @@ JS. Sections 8 and 10–16 are ticket 06's blocks.
 ## Comments
 
 2026-09-24: split into sub-tickets 07a, 07b. Work those, not this file; the last of them to resolve also resolves this ticket. The "coupon applied in the drawer" check moved to 09f.
+
+## Answer
+
+Resolved through 07a (goal tabs, mobile sticky CTA, translations, fidelity, front-page notices, an honest "Only tonight") and 07b (exit-intent modal, coupon hand-off verified). The markup landed in `a5fa5db`.
