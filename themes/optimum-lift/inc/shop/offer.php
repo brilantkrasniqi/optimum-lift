@@ -15,7 +15,8 @@ declare(strict_types=1);
  * - scope 'site': the site offer end is in the future and, when $p is given,
  *   $p is on sale.
  *
- * A Product that is not on sale itself has no offer, even while the site
+ * Without a Product, there is a site offer only while at least one published
+ * Product is on sale. A Product that is not on sale itself has no offer, even while the site
  * offer runs. That includes a bundle priced without a sale: its price does not
  * rise when the offer ends (its saving against the components grows), so a
  * countdown next to it would be false urgency.
@@ -34,7 +35,10 @@ function optimum_lift_offer(?WC_Product $p = null): ?array
     $ends_at = optimum_lift_site_offer_end();
 
     if ($p === null) {
-        return $ends_at !== null && $ends_at > $now
+        // With no Product on sale the site date ends nothing: no price rises
+        // when it passes (a bundle's saving against its components is
+        // permanent), so there is no offer to count down to.
+        return $ends_at !== null && $ends_at > $now && optimum_lift_sale_running()
             ? optimum_lift_offer_shape($ends_at, 'site', optimum_lift_best_sale_percent(), true)
             : null;
     }
@@ -93,6 +97,30 @@ function optimum_lift_site_offer_end(): ?int
     $date = DateTimeImmutable::createFromFormat('!Y-m-d\TH:i', substr(trim($value), 0, 16), wp_timezone());
 
     return $date instanceof DateTimeImmutable ? $date->getTimestamp() : null;
+}
+
+/**
+ * Whether any published Product is on sale right now.
+ */
+function optimum_lift_sale_running(): bool
+{
+    $cache_key = 'sale_running:' . wp_cache_get_last_changed('posts');
+    $cached    = wp_cache_get($cache_key, 'optimum_lift', false, $found);
+    if ($found) {
+        return (bool) $cached;
+    }
+
+    $running = false;
+    foreach (optimum_lift_query_products() as $product) {
+        if ($product->is_on_sale()) {
+            $running = true;
+            break;
+        }
+    }
+
+    wp_cache_set($cache_key, $running, 'optimum_lift', 5 * MINUTE_IN_SECONDS);
+
+    return $running;
 }
 
 /**
