@@ -10,7 +10,7 @@ declare(strict_types=1);
 get_header();
 ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
     <?php
     get_template_part('template-parts/content-intro', null, [
         'title'   => is_home() && !is_front_page() ? optimum_lift_page_title() : get_bloginfo('name'),

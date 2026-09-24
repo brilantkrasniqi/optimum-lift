@@ -12,7 +12,7 @@ $featured = function_exists('optimum_lift_featured_products') ? optimum_lift_fea
 get_header();
 ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
     <section class="relative overflow-hidden border-b border-white/[.07]">
         <div class="pointer-events-none absolute -top-40 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent/15 blur-[130px]" aria-hidden="true"></div>
         <div class="grain pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>

@@ -126,7 +126,7 @@ add_filter('woocommerce_update_order_review_fragments', static function (mixed $
 // The payment block moved to the form column (above) gets its own heading.
 add_action('woocommerce_checkout_after_customer_details', static function (): void {
     if (WC()->cart?->needs_payment()) {
-        echo '<h3 class="ol-checkout-heading">' . esc_html__('Payment', 'optimum-lift') . '</h3>';
+        echo '<h2 class="ol-checkout-heading">' . esc_html__('Payment', 'optimum-lift') . '</h2>';
     }
 }, 5);
 

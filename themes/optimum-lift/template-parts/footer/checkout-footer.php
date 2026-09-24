@@ -10,7 +10,7 @@ $legal = optimum_lift_legal_links();
 ?>
 <footer class="border-t border-white/[.07] bg-surface">
     <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 sm:flex-row">
-        <p class="text-[11px] text-zinc-600">
+        <p class="text-[11px] text-zinc-500">
             <?php
             /* translators: 1: year, 2: site name. */
             echo esc_html(sprintf(__('© %1$s %2$s. All rights reserved.', 'optimum-lift'), wp_date('Y'), get_bloginfo('name')));

@@ -80,7 +80,7 @@
   }
 
   .woocommerce form .form-row .optional {
-    @apply font-semibold normal-case tracking-normal text-zinc-600;
+    @apply font-semibold normal-case tracking-normal text-zinc-500;
   }
 
   .woocommerce :where(.input-text, select, textarea):where(:not([type="checkbox"], [type="radio"])) {
@@ -209,7 +209,7 @@
   }
 
   /* Headings: billing ("Your details"), payment, the summary. */
-  .ol-checkout :is(.woocommerce-billing-fields > h3, .woocommerce-additional-fields > h3, .ol-checkout-heading, #order_review_heading) {
+  .ol-checkout :is(.woocommerce-billing-fields > :is(h2, h3), .woocommerce-additional-fields > h3, .ol-checkout-heading, #order_review_heading) {
     @apply text-2xl text-white;
     font-family: var(--font-display);
     font-weight: 400;
@@ -218,7 +218,7 @@
     line-height: 1.06;
   }
 
-  .ol-checkout :is(.woocommerce-billing-fields > h3, .ol-checkout-heading) {
+  .ol-checkout :is(.woocommerce-billing-fields > :is(h2, h3), .ol-checkout-heading) {
     @apply mb-5;
   }
 

@@ -23,7 +23,7 @@ while (have_posts()) :
         $account   = is_account_page();
         $signed_in = is_user_logged_in();
         ?>
-        <main id="main" class="mx-auto max-w-7xl px-4 pt-8 pb-16 md:pt-12 md:pb-24">
+        <main id="main" tabindex="-1" class="mx-auto max-w-7xl px-4 pt-8 pb-16 md:pt-12 md:pb-24">
             <?php if (!is_order_received_page()) : ?>
                 <?php // The thank-you template's success hero is that page's heading. ?>
                 <header class="mb-6 md:mb-8">
@@ -51,7 +51,7 @@ while (have_posts()) :
             (int) get_option('woocommerce_refund_returns_page_id'),
         ]);
         ?>
-        <main id="main">
+        <main id="main" tabindex="-1">
             <?php
             get_template_part('template-parts/content-intro', null, [
                 'title' => get_the_title(),

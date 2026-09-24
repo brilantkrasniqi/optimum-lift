@@ -157,7 +157,7 @@ if ($variant === 'featured' && optimum_lift_find_bundle($product) !== null) {
                         <li class="flex gap-2"><?php echo optimum_lift_icon('check', 'w-3.5 h-3.5 shrink-0 mt-0.5 text-acid'); ?><?php echo esc_html($point); ?></li>
                     <?php endforeach; ?>
                     <?php if ($missing !== null) : ?>
-                        <li class="flex gap-2 text-zinc-600"><?php echo optimum_lift_icon('x', 'w-3.5 h-3.5 shrink-0 mt-0.5'); ?><?php echo esc_html($missing); ?></li>
+                        <li class="flex gap-2 text-zinc-500"><?php echo optimum_lift_icon('x', 'w-3.5 h-3.5 shrink-0 mt-0.5'); ?><?php echo esc_html($missing); ?></li>
                     <?php endif; ?>
                 </ul>
             <?php endif; ?>

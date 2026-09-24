@@ -19,7 +19,7 @@ declare(strict_types=1);
  */
 add_filter('woocommerce_breadcrumb_defaults', static function (array $defaults): array {
     $defaults['delimiter']   = '<span aria-hidden="true">/</span>';
-    $defaults['wrap_before'] = '<nav class="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-zinc-600 [&_a]:transition [&_a:hover]:text-zinc-300 [&>span:last-child]:text-zinc-400" aria-label="' . esc_attr__('Breadcrumb', 'optimum-lift') . '">';
+    $defaults['wrap_before'] = '<nav class="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500 [&_a]:transition [&_a:hover]:text-zinc-300 [&>span:last-child]:text-zinc-400" aria-label="' . esc_attr__('Breadcrumb', 'optimum-lift') . '">';
     $defaults['wrap_after']  = '</nav>';
     $defaults['before']      = '<span>';
     $defaults['after']       = '</span>';

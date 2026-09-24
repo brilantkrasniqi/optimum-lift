@@ -53,19 +53,12 @@ remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
 add_action('wp_enqueue_scripts', static function (): void {
-    // style.css carries the theme header, so it must stay the registered
-    // stylesheet even though the real rules live in assets/dist/.
-    wp_enqueue_style(
-        'optimum-lift',
-        get_stylesheet_uri(),
-        [],
-        optimum_lift_asset_version('style.css')
-    );
-
+    // style.css only carries the theme header, which WordPress reads from the
+    // file; loading it would be a render-blocking request for no rules.
     wp_enqueue_style(
         'optimum-lift-main',
         OPTIMUM_LIFT_URI . '/assets/dist/main.css',
-        ['optimum-lift'],
+        [],
         optimum_lift_asset_version('assets/dist/main.css')
     );
 

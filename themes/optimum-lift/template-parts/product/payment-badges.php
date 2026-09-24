@@ -27,6 +27,6 @@ if ($methods === [] && !$show_ssl) {
         </ul>
     <?php endif; ?>
     <?php if ($show_ssl) : ?>
-        <span class="ml-auto text-[10px] font-bold uppercase tracking-wider text-zinc-600"><?php esc_html_e('SSL-encrypted payment', 'optimum-lift'); ?></span>
+        <span class="ml-auto text-[10px] font-bold uppercase tracking-wider text-zinc-500"><?php esc_html_e('SSL-encrypted payment', 'optimum-lift'); ?></span>
     <?php endif; ?>
 </div>

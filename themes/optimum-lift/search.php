@@ -13,7 +13,7 @@ $found = (int) $wp_query->found_posts;
 get_header();
 ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
     <?php
     get_template_part('template-parts/content-intro', null, [
         'title'  => optimum_lift_page_title(),

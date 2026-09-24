@@ -77,13 +77,13 @@ $link_class = 'block py-[5px] transition hover:text-white';
 
     <div class="border-t border-white/[.07]">
         <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 sm:flex-row">
-            <p class="text-[11px] text-zinc-600">
+            <p class="text-[11px] text-zinc-500">
                 <?php
                 /* translators: 1: year, 2: site name. */
                 echo esc_html(sprintf(__('© %1$s %2$s. All rights reserved.', 'optimum-lift'), wp_date('Y'), get_bloginfo('name')));
                 ?>
             </p>
-            <p class="max-w-xl text-[11px] leading-relaxed text-zinc-600 sm:text-right">
+            <p class="max-w-xl text-[11px] leading-relaxed text-zinc-500 sm:text-right">
                 <?php esc_html_e('Results vary from person to person. This information does not replace medical advice — talk to your doctor before starting a training program or a diet, especially if you have a health condition or are pregnant.', 'optimum-lift'); ?>
             </p>
         </div>

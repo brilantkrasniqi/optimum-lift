@@ -45,6 +45,6 @@ $note = optimum_lift_field($product->get_id(), 'ol_versions_note');
     </div>
 
     <?php if (is_string($note) && $note !== '') : ?>
-        <p class="text-[11px] font-semibold text-zinc-600"><?php echo esc_html($note); ?></p>
+        <p class="text-[11px] font-semibold text-zinc-500"><?php echo esc_html($note); ?></p>
     <?php endif; ?>
 </div>

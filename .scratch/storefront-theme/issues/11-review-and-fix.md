@@ -1,7 +1,7 @@
 # Review and fix pass
 
 Type: task
-Status: claimed
+Status: resolved
 Wave: 3
 Blocked by: 05, 06, 07, 08, 09, 10
 Split into: 11a, 11b, 11c, 11d, 11e
@@ -21,3 +21,21 @@ Findings are verified before fixing. Fixes may touch any file.
 ## Comments
 
 2026-09-24: split into sub-tickets 11a, 11b, 11c, 11d, 11e. Work those, not this file; the last of them to resolve also resolves this ticket. Work them one at a time: fixes may touch any file.
+
+## Answer
+
+Resolved 2026-09-24 through 11a–11e, one commit each. Fixed:
+
+- **11a, fidelity:** the page scrolled sideways at 390px wherever a comparison table sat (`.scroll-x` positioned); the homepage table width back to the mock's; version pills on one row; the blog index title; the thank-you Plans separators.
+- **11b, behaviour:** a minimum-spend coupon link never applied on the add that crossed the minimum; the checkout coupon form had no way in without JavaScript.
+- **11c, honesty:** the site-wide countdown ran with no Product on sale (`optimum_lift_sale_running()`).
+- **11d, code:** a PHP warning on an array `cart_item_key`; dead code removed (`optimum_lift_shop_setting()`, `optimum_lift_entry_meta()`, `.pill*`, `.eyebrow--accent`).
+- **11e, accessibility and speed:**
+  - the page is `inert` behind the mobile menu;
+  - the skip link now focuses `<main>`;
+  - checkout focus order and headings, with a new `form-billing.php` override;
+  - `zinc-500`/`zinc-600` text raised to AA;
+  - "Ends in" full white;
+  - `style.css` no longer loaded.
+
+Each sub-ticket's Answer lists what was deferred and why.

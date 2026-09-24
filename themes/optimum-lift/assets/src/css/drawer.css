@@ -198,7 +198,7 @@
     font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-zinc-600);
+    color: var(--color-zinc-500);
     cursor: pointer;
     transition: color 0.2s;
   }
@@ -341,7 +341,7 @@
     letter-spacing: 0.08em;
     text-align: center;
     text-transform: uppercase;
-    color: var(--color-zinc-600);
+    color: var(--color-zinc-500);
   }
 
   @media (prefers-reduced-motion: reduce) {

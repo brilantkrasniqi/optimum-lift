@@ -22,7 +22,7 @@ if (is_product()) {
 }
 ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
     <?php if ($part !== '' && locate_template($part . '.php') !== '') : ?>
         <?php
         if (is_product()) {

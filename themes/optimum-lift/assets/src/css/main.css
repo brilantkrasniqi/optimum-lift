@@ -49,6 +49,11 @@
 }
 
 @theme {
+  /* Tailwind's zinc-500 (#71717a) is 3.7–4.2:1 on paper, surface and raised,
+     under WCAG AA for the small muted text it sets here. This one is 5.2–5.9:1
+     and still reads a step below zinc-400. */
+  --color-zinc-500: #8a8a93;
+
   --shadow-glow: 0 20px 70px -20px rgba(228, 27, 35, 0.65);
   --shadow-card: 0 30px 80px -40px rgba(0, 0, 0, 0.9);
 }

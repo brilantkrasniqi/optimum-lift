@@ -38,7 +38,7 @@ if ($bundle === null) {
 get_header();
 ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
     <?php if (function_exists('wc_notice_count') && wc_notice_count() > 0) : ?>
         <?php // A no-JS add to cart from a homepage card lands here with its notice. ?>
         <div class="mx-auto max-w-7xl px-4 pt-6"><?php woocommerce_output_all_notices(); ?></div>

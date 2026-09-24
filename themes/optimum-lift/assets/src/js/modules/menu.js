@@ -4,8 +4,8 @@
  *
  * [data-menu-toggle] opens it; the backdrop, [data-menu-close], Escape and any
  * link inside close it. While open, page scroll is locked (html.menu-open) and
- * Tab cycles inside the panel. The panel is `inert` while closed, so its links
- * are not reachable off-screen.
+ * Tab cycles inside the panel and the rest of the page is `inert`. The panel is
+ * `inert` while closed, so its links are not reachable off-screen.
  */
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -22,6 +22,7 @@ export function init() {
 
   const root = document.documentElement;
   let isOpen = false;
+  let madeInert = [];
 
   const focusables = () => [...panel.querySelectorAll(FOCUSABLE)].filter((el) => el.getClientRects().length > 0);
 
@@ -63,6 +64,15 @@ export function init() {
     backdrop.classList.remove('opacity-0', 'pointer-events-none');
     root.classList.add('menu-open');
     toggle.setAttribute('aria-expanded', 'true');
+
+    // As for the cart drawer: everything else is out of reach while the
+    // dialog is open, and only what this module made inert is restored.
+    madeInert = [...document.body.children].filter(
+      (el) => el !== panel && el !== backdrop && el.tagName !== 'SCRIPT' && !el.inert,
+    );
+    madeInert.forEach((el) => {
+      el.inert = true;
+    });
     document.addEventListener('keydown', onKeydown);
 
     const closeButton = panel.querySelector('[data-menu-close]');
@@ -80,6 +90,10 @@ export function init() {
     backdrop.classList.add('opacity-0', 'pointer-events-none');
     root.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded', 'false');
+    madeInert.forEach((el) => {
+      el.inert = false;
+    });
+    madeInert = [];
     document.removeEventListener('keydown', onKeydown);
 
     if (restoreFocus) {

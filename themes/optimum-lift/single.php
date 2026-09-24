@@ -18,7 +18,7 @@ while (have_posts()) :
     $words      = preg_split('/\s+/u', trim(wp_strip_all_tags(get_the_content())), -1, PREG_SPLIT_NO_EMPTY);
     $minutes    = max(1, (int) round(count($words ?: []) / 220));
     ?>
-    <main id="main">
+    <main id="main" tabindex="-1">
         <?php
         get_template_part('template-parts/content-intro', null, [
             'title'   => get_the_title(),
