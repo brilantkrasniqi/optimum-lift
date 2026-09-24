@@ -1,7 +1,7 @@
 # Cart drawer, Buy Now, bundle rules and the upsell decision
 
 Type: task
-Status: claimed
+Status: resolved
 Wave: 2
 Blocked by: 01, 02, 03, 04
 Split into: 09a, 09b, 09c, 09d, 09e, 09f
@@ -38,3 +38,7 @@ ADR-0007 is the architecture. Mock: `cart.js` (read every
 ## Comments
 
 2026-09-24: split into sub-tickets 09a, 09b, 09c, 09d, 09e, 09f. Work those, not this file; the last of them to resolve also resolves this ticket. 09f runs this ticket's acceptance end to end.
+
+## Answer
+
+Resolved through 09a (bundle rules and the price warning), 09b (Buy Now), 09c (the upsell decision), 09d (drawer markup, fragments, endpoints), 09e (cart.js) and 09f (end-to-end acceptance, all green). Deviation recorded in 09d: the drawer total is the cart total, not the subtotal, so a coupon shows there.
