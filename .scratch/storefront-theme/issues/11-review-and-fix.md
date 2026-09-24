@@ -1,9 +1,10 @@
 # Review and fix pass
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Wave: 3
 Blocked by: 05, 06, 07, 08, 09, 10
+Split into: 11a, 11b, 11c, 11d, 11e
 
 ## What to do
 
@@ -16,3 +17,7 @@ Adversarial review of the integrated theme, then fixes:
 - **Accessibility and speed:** keyboard paths through menu, drawer, tabs, accordion and modal; contrast on dark; no layout shift from fonts or bars; JS and CSS weight.
 
 Findings are verified before fixing. Fixes may touch any file.
+
+## Comments
+
+2026-09-24: split into sub-tickets 11a, 11b, 11c, 11d, 11e. Work those, not this file; the last of them to resolve also resolves this ticket. Work them one at a time: fixes may touch any file.

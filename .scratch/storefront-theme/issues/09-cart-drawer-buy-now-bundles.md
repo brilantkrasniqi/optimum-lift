@@ -1,9 +1,10 @@
 # Cart drawer, Buy Now, bundle rules and the upsell decision
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Wave: 2
 Blocked by: 01, 02, 03, 04
+Split into: 09a, 09b, 09c, 09d, 09e, 09f
 
 ## What to build
 
@@ -33,3 +34,7 @@ ADR-0007 is the architecture. Mock: `cart.js` (read every
 - [ ] No price in the drawer is computed in JavaScript.
 - [ ] Works with JavaScript disabled (add-to-cart URLs and Buy Now still work; the toggle links to the cart page).
 - [ ] lint and PHPStan pass on your files.
+
+## Comments
+
+2026-09-24: split into sub-tickets 09a, 09b, 09c, 09d, 09e, 09f. Work those, not this file; the last of them to resolve also resolves this ticket. 09f runs this ticket's acceptance end to end.

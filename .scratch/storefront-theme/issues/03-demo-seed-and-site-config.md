@@ -1,7 +1,7 @@
 # Demo catalogue seed and local site configuration
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 1
 
 ## What to build
@@ -36,3 +36,7 @@ above"), no PayPal claims, etc.
 - [ ] After seeding, `/`, `/shop/`, each Product, `/product-category/dieta/`, `/cart/`, `/checkout/` return 200 for a logged-out visitor.
 - [ ] Every layout in the spec appears at least once in the seeded content.
 - [ ] `npm run lint:php` and `npm run analyse:php` pass on `inc/cli.php`.
+
+## Answer
+
+Landed in `1adeef1` (wave-1): `wp ol-shop seed` in `inc/cli.php` (Products 60–64, front page `kreu`, coupon, legal pages, shortcode Cart/Checkout, price format, `sq`). The seed has no user-facing theme strings, so there is no `03.json`. Sales and the site offer run for 3 days after seeding: re-seed when `on_sale` is false (it was on 2026-09-24).

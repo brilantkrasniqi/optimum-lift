@@ -1,9 +1,10 @@
 # Shop archive
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Wave: 2
 Blocked by: 01, 02, 03, 04
+Split into: 08a
 
 ## What to build
 
@@ -28,3 +29,7 @@ Blocked by: 01, 02, 03, 04
 - [ ] Sorting by price and popularity orders the grid correctly.
 - [ ] Works with JavaScript disabled.
 - [ ] lint and PHPStan pass on your files.
+
+## Comments
+
+2026-09-24: split into sub-tickets 08a. Work those, not this file; the last of them to resolve also resolves this ticket.

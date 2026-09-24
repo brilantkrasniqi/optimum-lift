@@ -1,7 +1,7 @@
 # Data layer: sales fields, product helpers, pricing, proof, offers, block renderer
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 1
 
 ## What to build
@@ -34,3 +34,7 @@ prices come from WooCommerce, never from ACF.
 - [ ] With ACF deactivated, calling every helper on a Product does not fatal.
 - [ ] A bundle's anchor price equals the sum of its components' current prices; a bundle priced at or above that sum has no saving.
 - [ ] Proof helpers return null below their thresholds, and the thresholds are filterable.
+
+## Answer
+
+Landed in `1adeef1` (wave-1): `inc/shop/{fields,product-data,pricing,proof,offer,blocks}.php` with the helper API from the spec. Re-checked 2026-09-24 at integration level (PHPStan clean, every seeded block renders); ticket 11c exercises the ADR-0008 thresholds.

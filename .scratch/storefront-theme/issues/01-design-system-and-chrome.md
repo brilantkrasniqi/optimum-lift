@@ -1,7 +1,7 @@
 # Design system and site chrome
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 1
 
 ## What to build
@@ -37,3 +37,7 @@ footer and the JS of `index.html`, `produkt.html` and `dyqani.html`.
 - [ ] The urgency bar shows only with a real offer, counts down with days when more than 24 h remain, and disappears at zero.
 - [ ] No WooCommerce stylesheet is enqueued on the front end.
 - [ ] `grep -rn '\-ink\b' themes/optimum-lift --include=*.php` finds no Tailwind `ink` colour classes.
+
+## Answer
+
+Landed in `1adeef1` (wave-1): tokens and fonts in `theme.json`, `base.css`/`components.css`, header, footer, mobile menu, urgency bar, countdown, icons, Customizer settings, `inc/assets.php` dequeues and `window.optimumLift`, and the stubs for tickets 02–10. Re-checked 2026-09-24 at integration level only (build, PHPStan, HTTP smoke test with no PHP errors); ticket 11 reviews it in depth. Known follow-up: `optimum_lift_has_sticky_bar()` ignores whether the buy bar renders (fixed in 05b).

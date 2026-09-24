@@ -1,9 +1,10 @@
 # Homepage: hero, marquee, problem, steps, goal tabs, pricing, sticky CTA, exit intent
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Wave: 2
 Blocked by: 01, 02, 03, 04
+Split into: 07a, 07b
 
 ## What to build
 
@@ -32,3 +33,7 @@ JS. Sections 8 and 10–16 are ticket 06's blocks.
 - [ ] Every hero number traces to a helper or the Customizer; nothing reads "12.400+" unless the data says so.
 - [ ] Following the exit modal CTA and adding a Product shows the coupon applied in the drawer and at checkout.
 - [ ] lint and PHPStan pass on your files.
+
+## Comments
+
+2026-09-24: split into sub-tickets 07a, 07b. Work those, not this file; the last of them to resolve also resolves this ticket. The "coupon applied in the drawer" check moved to 09f.

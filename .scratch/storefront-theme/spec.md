@@ -556,6 +556,58 @@ See `pw/smoke.mjs`. `page.screenshot({ fullPage: true })` does not trigger
 `file:///C:/Users/Work/Desktop/Projects/ol-design/<file>.html`. A tall window
 reveals every `.reveal` section.
 
+## Sub-tickets (2026-09-24)
+
+Waves 1–2 landed in `1adeef1` and `a5fa5db`. Tickets 01–04 are resolved. The
+remaining work in 05–11 is split into sub-tickets in `issues/`: `05a` … `11e`.
+Each parent lists its sub-tickets on a `Split into:` line and stays `claimed`
+until the last of them resolves.
+
+**Order.** Work the frontier: the first file by name that is `ready-for-agent`
+and whose `Blocked by` tickets are all `resolved`. `05a` (green lint, valid
+JSON, live demo offer) comes first. If you pick by hand, go for the path to a
+sale first: 09a, 09b, 09c, 09d, 09e, then 10a, 10c, 10d, 09f.
+
+**Rules for every sub-ticket:**
+
+- **Claim and resolve.**
+  - Set `Status: claimed` before starting.
+  - When done, set `Status: resolved` and add a `## Answer` covering what was built, the evidence for each acceptance criterion, deviations from this spec, and follow-ups.
+  - If yours is the last open sub-ticket of its parent, resolve the parent too, with a short Answer.
+- **Ownership.** Edit only the files the sub-ticket lists. It may name files owned by resolved tickets (01–04, 06a). If you need anything else changed, say so in the Answer. Line numbers in sub-tickets date from 2026-09-24 and may drift.
+- **Translations.**
+  - Strings go in `languages/src/<sub-ticket id>.json` (`05.json`, `06b.json`, `07.json`, `08.json`, `09a.json`, `10b.json`, …), in the format above.
+  - The context separator is the six-character escape `\u0004` inside the JSON string, never a raw byte.
+  - Don't redefine a key another file already has. If a key must repeat, use the identical translation.
+  - Validate each file with `node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" <file>`.
+- **Seed data.** The seed's sales and site offer end 3 days after seeding. Before any visual or price check, confirm `on_sale` is true at `/wp-json/wc/store/v1/products`; if it isn't, re-seed with `wp ol-shop seed`. Seeded IDs are stable across re-seeds:
+
+  | ID | Product | Kind | Price after re-seed |
+  | --- | --- | --- | --- |
+  | 60 | `programi-i-stervitjes-12-javor` | program | 7,99 € |
+  | 61 | `force-mase` | program | 8,99 € |
+  | 62 | `plani-ushqimor-12-javor` | diet | 6,99 € |
+  | 63 | `dieta-mesdhetare` | diet | 5,99 € |
+  | 64 | `transformimi-total` | bundle of 60–63 | 14,99 €, anchor 29,96 € |
+
+  Mocks map as: 60 → `produkt.html`, 62 → `produkt-dieta.html`, front page → `index.html`.
+- **Payments.** No payment gateway is enabled. To place a test order, enable Cash on delivery for virtual orders, then disable it again. Use COD because it moves the order to `processing`, which grants Plans; Check payments leaves it `on-hold`.
+- **Done means:**
+  - `npm run build`, `npm run lint:php` (exit 0) and `npm run analyse:php` pass.
+  - `debug.log` has no new lines.
+  - Every acceptance box is checked, with evidence in the Answer.
+- **Commits.** One commit per sub-ticket on `main`, titled `<id>: <title>`, with no push. The owner reviews and pushes.
+
+**New paths:**
+
+| Path | Owner |
+| --- | --- |
+| `template-parts/checkout/*` | 10a |
+| `woocommerce/checkout/**` | 10c, 10d |
+| `woocommerce/cart/**`, `woocommerce/notices/**` | 10e |
+| `woocommerce.css` | split into sections: notices, forms and checkout (10c); thank-you (10d); cart page (10e) |
+| `account.css`, the Portal overrides | 10f |
+
 ## Follow-ups (not in this effort)
 
 - Real content: photos, testimonials, results, trainer, prices, offer dates.

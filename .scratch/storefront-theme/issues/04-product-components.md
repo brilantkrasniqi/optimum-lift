@@ -1,7 +1,7 @@
 # Product components: card, bundle banner, price, rating, buttons
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 1
 
 ## What to build
@@ -33,3 +33,7 @@ cross-sell cards in `produkt.html` / `produkt-dieta.html` section 15/16;
 - [ ] At 390px the card's two buttons are at least 44px tall and full width.
 - [ ] The rating shows 4.7 as 94% star width with "4,7" and "(N vlerësime)".
 - [ ] lint and PHPStan pass on `template-parts/product/`.
+
+## Answer
+
+Landed in `1adeef1` (wave-1): `template-parts/product/*` (card, bundle banner, price, rating, badge, versions, buy buttons, trust line, payment badges, thumb, kind icon) with the markup contracts from the spec. Re-checked 2026-09-24 at integration level only; ticket 11a compares it against the mocks.

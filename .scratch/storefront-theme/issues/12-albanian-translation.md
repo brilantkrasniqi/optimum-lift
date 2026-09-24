@@ -19,3 +19,7 @@ merged; `sq.po` is the source from then on.
 
 - [ ] With the site language `sq`, no English theme string is visible on the homepage, shop, Product pages, drawer, checkout or thank-you page.
 - [ ] 100% of `make-pot` strings are translated.
+
+## Comments
+
+2026-09-24: the sources are every file in `languages/src/`, including the sub-ticket files (`05.json`, `06a.json`, `06b.json`, `07.json`, `08.json`, `09a.json`, `10b.json`, …). A key defined in more than one file must carry the same translation; list any conflict in the Answer. `06a.json` held a raw 0x04 byte instead of the escape `\u0004` until 05a fixed it: check that no other file does.

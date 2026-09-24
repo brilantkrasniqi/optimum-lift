@@ -1,9 +1,10 @@
 # Section blocks shared by Product pages and the homepage
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Wave: 2
 Blocked by: 01, 02, 03, 04
+Split into: 06b
 
 ## What to build
 
@@ -37,3 +38,7 @@ testimonials, comparison, credibility, guarantee, FAQ, final CTA).
 - [ ] The comparison table's prices change when a Product's price changes.
 - [ ] No block prints an empty heading, list or table.
 - [ ] lint and PHPStan pass on your files.
+
+## Comments
+
+2026-09-24: split into sub-tickets 06b. Work those, not this file; the last of them to resolve also resolves this ticket. The 06a half (qualification, phases, preview, sample day, shopping list, value stack, rich text, `06a.json`) landed in `a5fa5db`; its `06a.json` is repaired in 05a.
