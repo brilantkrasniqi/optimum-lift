@@ -478,4 +478,193 @@
   .woocommerce-form-login-toggle + .woocommerce-form-login {
     @apply mb-6 max-w-xl rounded-2xl border border-white/[.08] bg-surface p-5;
   }
+
+  /* ----------------------------------------------------------- thank-you */
+
+  .ol-thankyou {
+    @apply mx-auto grid max-w-3xl gap-8 md:gap-10;
+  }
+
+  .ol-thankyou-hero {
+    @apply relative overflow-hidden rounded-3xl border border-acid/25 bg-surface px-5 py-8 text-center sm:px-10 sm:py-10;
+    background-image: radial-gradient(ellipse at top, color-mix(in srgb, var(--color-acid) 12%, transparent), transparent 65%);
+  }
+
+  .ol-thankyou-check {
+    @apply mx-auto mb-5 grid h-14 w-14 place-items-center rounded-full bg-acid text-paper shadow-[0_0_60px_-10px_var(--color-acid)];
+  }
+
+  .ol-thankyou-title {
+    @apply text-4xl break-words text-white sm:text-5xl;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  .ol-thankyou-lead {
+    @apply mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-zinc-300;
+  }
+
+  .ol-thankyou .woocommerce-order-overview {
+    @apply mt-7 grid list-none grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[.08] bg-white/[.08] p-0 text-left sm:grid-cols-4;
+  }
+
+  .ol-thankyou .woocommerce-order-overview li {
+    @apply bg-surface px-4 py-3 text-[10px] font-extrabold tracking-[.14em] text-zinc-500 uppercase;
+  }
+
+  .ol-thankyou .woocommerce-order-overview li:nth-child(n + 5) {
+    @apply col-span-2 sm:col-span-4;
+  }
+
+  .ol-thankyou .woocommerce-order-overview strong {
+    @apply mt-1 block text-[14px] font-extrabold tracking-normal break-words text-white normal-case;
+  }
+
+  .ol-thankyou-h2,
+  .ol-thankyou :is(.woocommerce-order-details__title, .woocommerce-column__title, .ol-order-plans h2) {
+    @apply text-2xl text-white;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  .ol-thankyou-next ol {
+    @apply mt-5 grid list-none gap-3 p-0;
+    counter-reset: ol-step;
+  }
+
+  .ol-thankyou-next li {
+    @apply relative rounded-2xl border border-white/[.08] bg-surface py-4 pr-4 pl-14 text-[14px] leading-relaxed text-zinc-400;
+    counter-increment: ol-step;
+  }
+
+  .ol-thankyou-next li::before {
+    @apply absolute top-4 left-4 grid h-7 w-7 place-items-center rounded-full bg-accent text-[13px] font-extrabold text-white;
+    content: counter(ol-step);
+  }
+
+  .ol-thankyou-next li strong {
+    @apply block text-[15px] font-extrabold text-white;
+  }
+
+  .ol-thankyou-link {
+    @apply mt-2 inline-flex font-extrabold text-acid underline decoration-acid/40 underline-offset-2 hover:decoration-acid;
+  }
+
+  .ol-thankyou-details {
+    @apply grid gap-8;
+  }
+
+  /* A gateway's own thank-you text (woocommerce_thankyou_<gateway>). */
+  .ol-thankyou-details > p {
+    @apply m-0 rounded-2xl border border-white/[.08] bg-white/[.03] px-4 py-3 text-[14px] leading-relaxed text-zinc-400;
+  }
+
+  .ol-thankyou-details:empty {
+    display: none;
+  }
+
+  /* The order table and the customer details (order/order-details*.php). */
+  .ol-thankyou :is(.woocommerce-order-details, .woocommerce-customer-details) {
+    @apply rounded-2xl border border-white/[.08] bg-surface p-5 sm:p-6;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details {
+    @apply mt-4 w-full border-collapse text-[14px];
+  }
+
+  .ol-thankyou .woocommerce-table--order-details :is(th, td) {
+    @apply border-t border-white/[.06] py-3 text-left align-top font-semibold text-zinc-400;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details thead th {
+    @apply border-t-0 pt-0 text-[10px] font-extrabold tracking-[.14em] text-zinc-500 uppercase;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details :is(td:last-child, th:last-child, tfoot td) {
+    @apply pl-4 text-right text-white;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details .product-name a {
+    @apply font-extrabold text-white hover:underline;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details .product-quantity {
+    @apply font-semibold text-zinc-500;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details tfoot tr:last-child :is(th, td) {
+    @apply text-base font-extrabold text-white;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details .order-actions-button {
+    @apply ml-2 inline-flex rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[12px] font-extrabold text-white transition hover:bg-white/10;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details .order-actions-button.pay {
+    @apply border-accent bg-accent hover:bg-accent-light;
+  }
+
+  .ol-thankyou .woocommerce-table--order-details .wc-item-meta {
+    @apply mt-1 list-none p-0 text-[12px] text-zinc-500;
+  }
+
+  .ol-thankyou .woocommerce-customer-details address {
+    @apply mt-4 text-[14px] leading-relaxed text-zinc-400 not-italic;
+  }
+
+  .ol-thankyou .woocommerce-customer-details :is(.woocommerce-customer-details--email, .woocommerce-customer-details--phone) {
+    @apply mt-1 mb-0;
+  }
+
+  .ol-thankyou .woocommerce-order-downloads {
+    @apply rounded-2xl border border-white/[.08] bg-surface p-5 sm:p-6;
+  }
+
+  /* The Plans plugin's section after the order table (Download/Delivery.php). */
+  .ol-order-plans {
+    @apply rounded-2xl border border-acid/25 bg-acid/[.05] p-5 sm:p-6;
+  }
+
+  .ol-order-plans ul {
+    @apply mt-4 grid list-none gap-2 p-0;
+  }
+
+  .ol-order-plans li {
+    @apply flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-white/[.08] bg-surface px-4 py-3 text-[13px] text-zinc-600;
+  }
+
+  .ol-order-plans li strong {
+    @apply mr-auto text-[14px] font-extrabold text-white;
+  }
+
+  .ol-order-plans li a {
+    @apply inline-flex rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[12px] font-extrabold text-white transition hover:bg-white/10;
+  }
+
+  .ol-order-plans li a:first-of-type {
+    @apply border-acid bg-acid text-paper hover:bg-acid/90;
+  }
+
+  .ol-order-plans p {
+    @apply mt-4 mb-0 text-[13px] leading-relaxed text-zinc-400;
+  }
+
+  /* Failed payment. */
+  .ol-thankyou-failed {
+    @apply rounded-3xl border border-accent/40 bg-accent/[.06] px-5 py-8 text-center sm:px-10;
+  }
+
+  .ol-thankyou-failed .woocommerce-notice {
+    @apply mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-zinc-300;
+  }
+
+  .ol-thankyou-failed .woocommerce-thankyou-order-failed-actions {
+    @apply mt-6 flex flex-wrap justify-center gap-3;
+  }
 }

@@ -139,3 +139,35 @@ add_filter('gettext_woocommerce', static function (string $translation, string $
 
     return $translation;
 }, 10, 2);
+
+/*
+ * The thank-you page right after a guest checkout. The Plans plugin creates
+ * an account for a guest order (Access/OrderAccess.php), which makes the order
+ * a "known shopper" one, and WooCommerce then asks the buyer to log in with a
+ * password they have not set yet instead of showing the order and its Plans.
+ * The buyer who just placed it is let through, as WooCommerce lets a guest
+ * through: this browser's session holds the order's billing email, and the
+ * order is within WooCommerce's email-verification grace period.
+ */
+add_filter('woocommerce_order_received_verify_known_shoppers', static function (mixed $verify): mixed {
+    global $wp;
+
+    $order_id = absint($wp->query_vars['order-received'] ?? 0);
+    $key      = isset($_GET['key']) && is_string($_GET['key']) ? wc_clean(wp_unslash($_GET['key'])) : '';
+    $order    = $order_id > 0 ? wc_get_order($order_id) : null;
+    $customer = WC()->customer;
+
+    if (!$order instanceof WC_Order || !is_string($key) || !hash_equals($order->get_order_key(), $key) || $customer === null) {
+        return $verify;
+    }
+
+    $created = $order->get_date_created();
+    $grace   = (int) apply_filters('woocommerce_order_email_verification_grace_period', 10 * MINUTE_IN_SECONDS, $order, 'order-received');
+    $email   = $customer->get_billing_email();
+
+    if ($created !== null && $created->getTimestamp() > time() - $grace && $email !== '' && strcasecmp($email, $order->get_billing_email()) === 0) {
+        return false;
+    }
+
+    return $verify;
+});
