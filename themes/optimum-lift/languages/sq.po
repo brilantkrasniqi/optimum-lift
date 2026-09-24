@@ -1,0 +1,2156 @@
+# Albanian translation of the Optimum Lift theme.
+# Source of truth for sq.mo and sq.l10n.php (wp i18n make-mo / make-php).
+msgid ""
+msgstr ""
+"Project-Id-Version: Optimum Lift 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-24T14:48:27+00:00\n"
+"PO-Revision-Date: 2026-09-24 14:49+0000\n"
+"Last-Translator: Optimum Lift\n"
+"Language-Team: Albanian\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: optimum-lift\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+#: style.css
+#: inc/customizer.php:126
+msgid "Optimum Lift"
+msgstr "Optimum Lift"
+
+#. Theme URI of the theme
+#: style.css
+msgid "http://localhost:8080"
+msgstr "http://localhost:8080"
+
+#. Description of the theme
+#: style.css
+msgid "Custom storefront theme for Optimum Lift."
+msgstr "Tema e dyqanit të Optimum Lift, e ndërtuar posaçërisht."
+
+#: 404.php:23
+msgid "That page does not exist or has moved. Try a search, or head back to the shop."
+msgstr "Kjo faqe nuk ekziston ose është zhvendosur. Provo një kërkim, ose kthehu te dyqani."
+
+#: 404.php:31
+#: template-parts/content-none.php:30
+#: template-parts/content-shop-cta.php:23
+msgid "Browse the shop"
+msgstr "Shiko dyqanin"
+
+#: 404.php:33
+msgid "Go to the homepage"
+msgstr "Shko te faqja kryesore"
+
+#: 404.php:40
+msgid "Start with a plan"
+msgstr "Fillo me një plan"
+
+#: archive.php:17
+#: inc/template-tags.php:31
+#: index.php:17
+msgid "Blog"
+msgstr "Blog"
+
+#. translators: %s: number of comments.
+#: comments.php:24
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s koment"
+msgstr[1] "%s komente"
+
+#: comments.php:41
+msgid "Older comments"
+msgstr "Komentet më të vjetra"
+
+#: comments.php:42
+msgid "Newer comments"
+msgstr "Komentet më të reja"
+
+#: comments.php:48
+msgid "Comments are closed."
+msgstr "Komentet janë mbyllur."
+
+#: header.php:11
+msgid "Skip to content"
+msgstr "Kalo te përmbajtja"
+
+#: inc/customizer.php:25
+msgid "Header tagline"
+msgstr "Slogani në header"
+
+#: inc/customizer.php:31
+msgid "Contact email"
+msgstr "Email-i i kontaktit"
+
+#: inc/customizer.php:37
+msgid "WhatsApp number"
+msgstr "Numri i WhatsApp-it"
+
+#: inc/customizer.php:38
+msgid "International format, digits only (e.g. 38344123456). Leave empty to hide every WhatsApp link."
+msgstr "Formati ndërkombëtar, vetëm shifra (p.sh. 38344123456). Lëre bosh për të fshehur çdo lidhje WhatsApp."
+
+#: inc/customizer.php:44
+msgid "Instagram URL"
+msgstr "Linku i Instagram-it"
+
+#: inc/customizer.php:50
+msgid "TikTok URL"
+msgstr "Linku i TikTok-ut"
+
+#: inc/customizer.php:56
+msgid "Money-back guarantee (days)"
+msgstr "Garancia e kthimit të parave (ditë)"
+
+#: inc/customizer.php:60
+msgid "Launch offer"
+msgstr "Oferta e lansimit"
+
+#: inc/customizer.php:62
+msgid "Offer label"
+msgstr "Emri i ofertës"
+
+#: inc/customizer.php:68
+msgid "Site offer ends at"
+msgstr "Oferta e faqes mbaron më"
+
+#: inc/customizer.php:69
+msgid "In the site timezone. The offer bar and countdowns show only while this date is in the future, or while a Product has a scheduled sale."
+msgstr "Sipas zonës kohore të faqes. Shiriti i ofertës dhe numëruesit shfaqen vetëm kur kjo datë është në të ardhmen, ose kur një produkt ka një ulje të planifikuar."
+
+#: inc/customizer.php:75
+msgid "Customers before the online store"
+msgstr "Klientët para dyqanit online"
+
+#: inc/customizer.php:76
+msgid "Added to paid online orders for the customer count."
+msgstr "U shtohet porosive të paguara online për numrin e klientëve."
+
+#: inc/customizer.php:82
+msgid "Exit-intent coupon code"
+msgstr "Kodi i kuponit në dalje"
+
+#: inc/customizer.php:83
+msgid "The homepage exit offer shows only while this coupon exists and is valid."
+msgstr "Oferta në dalje e faqes kryesore shfaqet vetëm kur ky kupon ekziston dhe është i vlefshëm."
+
+#: inc/customizer.php:89
+msgid "Payment badges"
+msgstr "Shenjat e pagesës"
+
+#: inc/customizer.php:90
+msgid "Comma-separated. List only the methods checkout actually offers."
+msgstr "Të ndara me presje. Listo vetëm mënyrat e pagesës që ofron vërtet faqja e pagesës."
+
+#: inc/setup.php:38
+msgid "Primary"
+msgstr "Kryesore"
+
+#: inc/setup.php:39
+msgid "Footer"
+msgstr "Fundi i faqes"
+
+#: inc/shop/archive.php:22
+msgid "Our picks"
+msgstr "Të zgjedhurat"
+
+#: inc/shop/archive.php:23
+msgid "Best sellers"
+msgstr "Më të shiturat"
+
+#: inc/shop/archive.php:24
+msgid "Price: low to high"
+msgstr "Çmimi: i ulët → i lartë"
+
+#: inc/shop/archive.php:25
+msgid "Price: high to low"
+msgstr "Çmimi: i lartë → i ulët"
+
+#: inc/shop/archive.php:63
+msgid "All"
+msgstr "Të gjitha"
+
+#: inc/shop/archive.php:71
+msgid "Training programs"
+msgstr "Programe stërvitjeje"
+
+#: inc/shop/archive.php:72
+msgid "Diets"
+msgstr "Dieta"
+
+#: inc/shop/archive.php:73
+msgid "Bundles"
+msgstr "Paketa"
+
+#: inc/shop/archive.php:114
+#: inc/woocommerce.php:26
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr "Kreu"
+
+#: inc/shop/archive.php:115
+#: inc/template-tags.php:119
+#: inc/woocommerce.php:51
+msgid "Shop"
+msgstr "Dyqani"
+
+#: inc/shop/archive.php:149
+#: template-parts/footer/site-footer.php:58
+msgid "All products"
+msgstr "Të gjitha produktet"
+
+#. translators: 1: Product name, 2: bundle name.
+#: inc/shop/bundle.php:67
+#, php-format
+msgid "%1$s is already included in %2$s in your cart."
+msgstr "%1$s përfshihet tashmë në %2$s që ke në shportë."
+
+#. translators: %s: Product name.
+#: inc/shop/bundle.php:80
+#, php-format
+msgid "%s is already in your cart."
+msgstr "%s është tashmë në shportën tënde."
+
+#. translators: %s: bundle name.
+#: inc/shop/bundle.php:156
+#, php-format
+msgid "%s has no published components, so it shows no saving. Choose its components under \"Bundle\"."
+msgstr "%s nuk ka produkte përbërëse të publikuara, prandaj nuk shfaq kursim. Zgjidh produktet përbërëse te \"Bundle\"."
+
+#. translators: 1: bundle name, 2: bundle price, 3: sum of its components' prices.
+#: inc/shop/bundle.php:162
+#, php-format
+msgid "%1$s costs %2$s, which is not less than its components together (%3$s), so it shows no saving. Lower its price below the components' total."
+msgstr "%1$s kushton %2$s, që nuk është më pak se produktet përbërëse bashkë (%3$s), prandaj nuk shfaq kursim. Ule çmimin nën totalin e tyre."
+
+#: inc/shop/buy-now.php:51
+#: inc/shop/cart.php:166
+#: inc/shop/cart.php:205
+msgid "This product is no longer available."
+msgstr "Ky produkt nuk është më i disponueshëm."
+
+#. translators: %s: Product name.
+#: inc/shop/buy-now.php:57
+#: inc/shop/buy-now.php:75
+#, php-format
+msgid "%s can't be bought right now."
+msgstr "%s nuk mund të blihet për momentin."
+
+#: inc/shop/cart.php:103
+msgid "Something went wrong. Please try again."
+msgstr "Diçka shkoi keq. Provo përsëri."
+
+#: inc/shop/cart.php:137
+msgid "Your session has expired. Please reload the page and try again."
+msgstr "Sesioni yt ka skaduar. Rifresko faqen dhe provo përsëri."
+
+#. translators: 1: page title linked to its edit screen, 2: shortcode.
+#: inc/shop/checkout.php:95
+#, php-format
+msgid "%1$s uses the WooCommerce block, which the Optimum Lift theme does not style. Replace the block with the %2$s shortcode."
+msgstr "%1$s përdor bllokun e WooCommerce, të cilin tema Optimum Lift nuk e stilizon. Zëvendësoje bllokun me shortcode-in %2$s."
+
+#: inc/shop/checkout.php:129
+msgid "Payment"
+msgstr "Pagesa"
+
+#: inc/shop/checkout.php:137
+msgid "Your details"
+msgstr "Të dhënat e tua"
+
+#: inc/shop/checkout.php:245
+#: template-parts/single-product/cross-sells.php:32
+msgid "Frequently bought together"
+msgstr "Blihet shpesh bashkë me"
+
+#: inc/shop/fields.php:30
+msgid "Sales page"
+msgstr "Faqja e shitjes"
+
+#: inc/shop/fields.php:38
+#: inc/shop/fields.php:419
+msgid "Bundle"
+msgstr "Paketa"
+
+#: inc/shop/fields.php:45
+msgid "Components"
+msgstr "Përbërësit"
+
+#: inc/shop/fields.php:46
+msgid "The Products this bundle includes. Its comparison price is the sum of their current prices."
+msgstr "Produktet që përfshin kjo paketë. Çmimi i krahasimit është shuma e çmimeve të tyre aktuale."
+
+#: inc/shop/fields.php:57
+msgid "Page sections"
+msgstr "Seksionet e faqes"
+
+#: inc/shop/fields.php:64
+msgid "Sections"
+msgstr "Seksionet"
+
+#: inc/shop/fields.php:65
+msgid "Add section"
+msgstr "Shto seksion"
+
+#: inc/shop/fields.php:78
+msgid "Title accent"
+msgstr "Theksi i titullit"
+
+#: inc/shop/fields.php:79
+msgid "The end of the Product name to show in the accent colour, e.g. \"12-Javor\"."
+msgstr "Fundi i emrit të produktit që shfaqet me ngjyrën e theksit, p.sh. \"12-Javor\"."
+
+#: inc/shop/fields.php:81
+msgid "Card blurb"
+msgstr "Përshkrimi i kartës"
+
+#: inc/shop/fields.php:82
+msgid "One sentence for Product cards. When empty, the short description cut to 16 words."
+msgstr "Një fjali për kartat e produktit. Kur është bosh, përshkrimi i shkurtër i prerë në 16 fjalë."
+
+#: inc/shop/fields.php:84
+msgid "Benefit bullets"
+msgstr "Përfitimet"
+
+#: inc/shop/fields.php:85
+#: inc/shop/fields.php:128
+msgid "Text"
+msgstr "Teksti"
+
+#: inc/shop/fields.php:87
+msgid "Cards show the first 3, the Product page up to 6."
+msgstr "Kartat shfaqin 3 të parat, faqja e produktit deri në 6."
+
+#: inc/shop/fields.php:89
+msgid "Duration (weeks)"
+msgstr "Kohëzgjatja (javë)"
+
+#: inc/shop/fields.php:90
+msgid "Shows the price per week."
+msgstr "Shfaq çmimin në javë."
+
+#: inc/shop/fields.php:94
+msgid "Gallery label"
+msgstr "Etiketa e galerisë"
+
+#: inc/shop/fields.php:95
+msgid "e.g. \"Produkt digjital · PDF + video\"."
+msgstr "p.sh. \"Produkt digjital · PDF + video\"."
+
+#: inc/shop/fields.php:97
+msgid "Level label"
+msgstr "Etiketa e nivelit"
+
+#: inc/shop/fields.php:98
+msgid "The pill beside the category. When empty, the goal."
+msgstr "Etiketa pranë kategorisë. Kur është bosh, objektivi."
+
+#: inc/shop/fields.php:100
+msgid "Included versions"
+msgstr "Versionet e përfshira"
+
+#: inc/shop/fields.php:101
+#: inc/shop/fields.php:109
+#: inc/shop/fields.php:130
+msgid "Label"
+msgstr "Etiketa"
+
+#: inc/shop/fields.php:102
+msgid "Options"
+msgstr "Opsionet"
+
+#: inc/shop/fields.php:104
+msgid "Every version ships with the Product. Nothing here is a choice the buyer makes."
+msgstr "Çdo version vjen me produktin. Asgjë këtu nuk është zgjedhje që bën blerësi."
+
+#: inc/shop/fields.php:106
+msgid "Versions note"
+msgstr "Shënimi i versioneve"
+
+#: inc/shop/fields.php:107
+msgid "Trust strip"
+msgstr "Shiriti i besimit"
+
+#: inc/shop/fields.php:108
+#: inc/shop/fields.php:131
+msgid "Value"
+msgstr "Vlera"
+
+#: inc/shop/fields.php:114
+msgid "Bundle hint"
+msgstr "Sugjerimi për paketën"
+
+#: inc/shop/fields.php:115
+msgid "The sentence before the bundle name, e.g. \"E do edhe ushqimin e zgjidhur?\""
+msgstr "Fjalia para emrit të paketës, p.sh. \"E do edhe ushqimin e zgjidhur?\""
+
+#: inc/shop/fields.php:129
+msgid "Title"
+msgstr "Titulli"
+
+#: inc/shop/fields.php:132
+msgid "Name"
+msgstr "Emri"
+
+#: inc/shop/fields.php:133
+msgid "Body"
+msgstr "Teksti"
+
+#: inc/shop/fields.php:134
+msgid "Note"
+msgstr "Shënimi"
+
+#: inc/shop/fields.php:135
+msgid "Items"
+msgstr "Elementet"
+
+#: inc/shop/fields.php:136
+msgid "Image"
+msgstr "Foto"
+
+#: inc/shop/fields.php:137
+msgid "Button label"
+msgstr "Teksti i butonit"
+
+#: inc/shop/fields.php:138
+msgid "Button anchor"
+msgstr "Ankora e butonit"
+
+#: inc/shop/fields.php:139
+msgid "Chips"
+msgstr "Etiketat"
+
+#: inc/shop/fields.php:142
+msgid "Who it is for"
+msgstr "Për kë është"
+
+#: inc/shop/fields.php:143
+msgid "\"For you\" title"
+msgstr "Titulli \"Për ty\""
+
+#: inc/shop/fields.php:144
+msgid "\"For you\" items"
+msgstr "Elementet \"Për ty\""
+
+#: inc/shop/fields.php:146
+msgid "Bold text and links are allowed."
+msgstr "Lejohen teksti i theksuar dhe lidhjet."
+
+#: inc/shop/fields.php:149
+msgid "\"Not for you\" title"
+msgstr "Titulli \"Jo për ty\""
+
+#: inc/shop/fields.php:150
+msgid "\"Not for you\" items"
+msgstr "Elementet \"Jo për ty\""
+
+#: inc/shop/fields.php:154
+msgid "Phases"
+msgstr "Fazat"
+
+#: inc/shop/fields.php:155
+#: inc/shop/fields.php:308
+msgid "Style"
+msgstr "Stili"
+
+#: inc/shop/fields.php:156
+msgid "Numbers"
+msgstr "Me numra"
+
+#: inc/shop/fields.php:157
+msgid "Icons"
+msgstr "Me ikona"
+
+#: inc/shop/fields.php:159
+#: inc/shop/fields.php:379
+msgid "Cards"
+msgstr "Kartat"
+
+#: inc/shop/fields.php:163
+#: inc/shop/fields.php:405
+msgid "Bullets"
+msgstr "Pikat"
+
+#: inc/shop/fields.php:165
+msgid "Featured"
+msgstr "I veçuar"
+
+#: inc/shop/fields.php:167
+msgid "Checklist"
+msgstr "Lista e kontrollit"
+
+#: inc/shop/fields.php:169
+msgid "Look inside"
+msgstr "Shiko brenda"
+
+#: inc/shop/fields.php:170
+msgid "Workout label"
+msgstr "Etiketa e stërvitjes"
+
+#: inc/shop/fields.php:171
+msgid "Workout tag"
+msgstr "Etiketa e shkurtër e stërvitjes"
+
+#: inc/shop/fields.php:172
+msgid "Workout rows"
+msgstr "Rreshtat e stërvitjes"
+
+#: inc/shop/fields.php:173
+msgid "Exercise"
+msgstr "Ushtrimi"
+
+#: inc/shop/fields.php:174
+msgid "Sets × reps"
+msgstr "Seri × përsëritje"
+
+#: inc/shop/fields.php:176
+msgid "Workout note"
+msgstr "Shënimi i stërvitjes"
+
+#: inc/shop/fields.php:178
+msgid "Video URL"
+msgstr "URL e videos"
+
+#: inc/shop/fields.php:179
+msgid "Media caption"
+msgstr "Përshkrimi i medias"
+
+#: inc/shop/fields.php:180
+msgid "Progress title"
+msgstr "Titulli i progresit"
+
+#: inc/shop/fields.php:181
+msgid "Progress rows"
+msgstr "Rreshtat e progresit"
+
+#: inc/shop/fields.php:184
+msgid "Bar (%)"
+msgstr "Shiriti (%)"
+
+#: inc/shop/fields.php:186
+msgid "Progress note"
+msgstr "Shënimi i progresit"
+
+#: inc/shop/fields.php:188
+msgid "Sample day"
+msgstr "Një ditë shembull"
+
+#: inc/shop/fields.php:189
+msgid "Day label"
+msgstr "Etiketa e ditës"
+
+#: inc/shop/fields.php:190
+#: inc/shop/fields.php:198
+#: inc/shop/fields.php:368
+msgid "Calories"
+msgstr "Kalori"
+
+#: inc/shop/fields.php:191
+#: template-parts/blocks/sample-day.php:60
+#: template-parts/blocks/value-stack.php:102
+msgid "Protein"
+msgstr "Proteina"
+
+#: inc/shop/fields.php:192
+msgid "Carbohydrates"
+msgstr "Karbohidrate"
+
+#: inc/shop/fields.php:193
+msgid "Fat"
+msgstr "Yndyrë"
+
+#: inc/shop/fields.php:194
+#: template-parts/blocks/sample-day.php:112
+msgid "Meals"
+msgstr "Vaktet"
+
+#: inc/shop/fields.php:195
+#: template-parts/blocks/sample-day.php:116
+msgid "Time"
+msgstr "Ora"
+
+#: inc/shop/fields.php:197
+msgid "Description"
+msgstr "Përshkrimi"
+
+#: inc/shop/fields.php:199
+msgid "Macros"
+msgstr "Makrot"
+
+#: inc/shop/fields.php:202
+msgid "Bold text is allowed."
+msgstr "Lejohet teksti i theksuar."
+
+#: inc/shop/fields.php:204
+msgid "Facts"
+msgstr "Faktet"
+
+#: inc/shop/fields.php:209
+#: template-parts/blocks/value-stack.php:238
+msgid "Shopping list"
+msgstr "Lista e pazarit"
+
+#: inc/shop/fields.php:211
+msgid "Cost label"
+msgstr "Etiketa e kostos"
+
+#: inc/shop/fields.php:212
+msgid "Cost"
+msgstr "Kostoja"
+
+#: inc/shop/fields.php:213
+msgid "Cost suffix"
+msgstr "Prapashtesa e kostos"
+
+#: inc/shop/fields.php:214
+msgid "Cost note"
+msgstr "Shënimi i kostos"
+
+#: inc/shop/fields.php:215
+msgid "List label"
+msgstr "Etiketa e listës"
+
+#: inc/shop/fields.php:217
+msgid "List note"
+msgstr "Shënimi i listës"
+
+#: inc/shop/fields.php:219
+msgid "Value stack"
+msgstr "Stiva e vlerës"
+
+#: inc/shop/fields.php:220
+msgid "Layout"
+msgstr "Paraqitja"
+
+#: inc/shop/fields.php:221
+msgid "Centred"
+msgstr "Në qendër"
+
+#: inc/shop/fields.php:222
+msgid "Split, with image"
+msgstr "E ndarë, me foto"
+
+#: inc/shop/fields.php:224
+#: inc/shop/fields.php:277
+#: inc/shop/fields.php:330
+#: inc/shop/fields.php:407
+msgid "Product"
+msgstr "Produkti"
+
+#: inc/shop/fields.php:225
+#: inc/shop/fields.php:331
+msgid "When empty, the page's Product (the bundle on the front page)."
+msgstr "Kur është bosh, produkti i faqes (paketa në faqen kryesore)."
+
+#: inc/shop/fields.php:230
+msgid "Bonus"
+msgstr "Bonus"
+
+#: inc/shop/fields.php:232
+msgid "Total label"
+msgstr "Etiketa e totalit"
+
+#: inc/shop/fields.php:233
+msgid "\"You pay\" label"
+msgstr "Etiketa \"Ti paguan\""
+
+#: inc/shop/fields.php:235
+msgid "Side image"
+msgstr "Foto anësore"
+
+#: inc/shop/fields.php:237
+msgid "Results"
+msgstr "Rezultatet"
+
+#: inc/shop/fields.php:239
+#: inc/shop/fields.php:355
+msgid "Before image"
+msgstr "Foto para"
+
+#: inc/shop/fields.php:240
+#: inc/shop/fields.php:356
+msgid "After image"
+msgstr "Foto pas"
+
+#: inc/shop/fields.php:242
+#: inc/shop/fields.php:264
+msgid "Details"
+msgstr "Detajet"
+
+#: inc/shop/fields.php:243
+msgid "Result"
+msgstr "Rezultati"
+
+#: inc/shop/fields.php:244
+#: inc/shop/fields.php:262
+msgid "Quote"
+msgstr "Citimi"
+
+#: inc/shop/fields.php:246
+msgid "Disclaimer"
+msgstr "Mohimi i përgjegjësisë"
+
+#: inc/shop/fields.php:250
+msgid "Reviews"
+msgstr "Vlerësimet"
+
+#: inc/shop/fields.php:251
+msgid "Source"
+msgstr "Burimi"
+
+#: inc/shop/fields.php:252
+msgid "Product reviews, then testimonials"
+msgstr "Vlerësimet e produktit, pastaj dëshmitë"
+
+#: inc/shop/fields.php:253
+msgid "Product reviews"
+msgstr "Vlerësimet e produktit"
+
+#: inc/shop/fields.php:254
+#: inc/shop/fields.php:261
+msgid "Testimonials"
+msgstr "Dëshmitë"
+
+#: inc/shop/fields.php:256
+msgid "Product reviews to show"
+msgstr "Vlerësime të produktit për t'u shfaqur"
+
+#: inc/shop/fields.php:265
+msgid "Rating"
+msgstr "Vlerësimi"
+
+#: inc/shop/fields.php:272
+msgid "Show the rating summary"
+msgstr "Shfaq përmbledhjen e vlerësimeve"
+
+#: inc/shop/fields.php:274
+#: template-parts/blocks/comparison.php:120
+msgid "Comparison"
+msgstr "Krahasimi"
+
+#: inc/shop/fields.php:275
+msgid "Columns"
+msgstr "Kolonat"
+
+#: inc/shop/fields.php:278
+msgid "Highlight"
+msgstr "Thekso"
+
+#: inc/shop/fields.php:280
+msgid "Rows"
+msgstr "Rreshtat"
+
+#: inc/shop/fields.php:282
+msgid "Type"
+msgstr "Lloji"
+
+#: inc/shop/fields.php:284
+msgid "Price of the column's Product"
+msgstr "Çmimi i produktit të kolonës"
+
+#: inc/shop/fields.php:285
+msgid "Button to the column's Product"
+msgstr "Butoni për produktin e kolonës"
+
+#: inc/shop/fields.php:287
+msgid "Cells"
+msgstr "Qelizat"
+
+#: inc/shop/fields.php:289
+msgid "Start with ✓ or ✕ for a tick or a cross."
+msgstr "Fillo me ✓ ose ✕ për shenjë miratimi ose kryq."
+
+#: inc/shop/fields.php:295
+msgid "Coach"
+msgstr "Trajneri"
+
+#: inc/shop/fields.php:298
+msgid "Role"
+msgstr "Roli"
+
+#: inc/shop/fields.php:300
+msgid "Badges"
+msgstr "Distinktivët"
+
+#: inc/shop/fields.php:307
+msgid "Guarantee"
+msgstr "Garancia"
+
+#: inc/shop/fields.php:309
+#: inc/shop/fields.php:461
+msgid "Band"
+msgstr "Brez"
+
+#: inc/shop/fields.php:310
+msgid "Card"
+msgstr "Kartë"
+
+#: inc/shop/fields.php:317
+#: template-parts/footer/site-footer.php:21
+msgid "FAQ"
+msgstr "Pyetje të shpeshta"
+
+#: inc/shop/fields.php:318
+msgid "Questions"
+msgstr "Pyetjet"
+
+#: inc/shop/fields.php:319
+msgid "Question"
+msgstr "Pyetja"
+
+#: inc/shop/fields.php:320
+msgid "Answer"
+msgstr "Përgjigjja"
+
+#: inc/shop/fields.php:322
+msgid "Medical disclaimer"
+msgstr "Shënimi mjekësor"
+
+#: inc/shop/fields.php:323
+msgid "Show the WhatsApp help box"
+msgstr "Shfaq kutinë e ndihmës në WhatsApp"
+
+#: inc/shop/fields.php:324
+msgid "Shown only when a WhatsApp number is set in the Customizer."
+msgstr "Shfaqet vetëm kur në Customizer është vendosur një numër WhatsApp."
+
+#: inc/shop/fields.php:327
+msgid "Final call to action"
+msgstr "Thirrja përfundimtare për veprim"
+
+#: inc/shop/fields.php:329
+#: inc/shop/fields.php:418
+msgid "Show the offer countdown"
+msgstr "Shfaq numëruesin e ofertës"
+
+#: inc/shop/fields.php:333
+#: inc/shop/fields.php:350
+msgid "Primary button label"
+msgstr "Teksti i butonit kryesor"
+
+#: inc/shop/fields.php:336
+msgid "Primary button action"
+msgstr "Veprimi i butonit kryesor"
+
+#: inc/shop/fields.php:337
+#: inc/template-tags.php:188
+#: template-parts/blocks/final-cta.php:42
+#: template-parts/product/buy-buttons.php:47
+msgid "Buy now"
+msgstr "Bli tani"
+
+#: inc/shop/fields.php:338
+msgid "Scroll to a section"
+msgstr "Shko te një seksion"
+
+#: inc/shop/fields.php:340
+#: inc/shop/fields.php:351
+msgid "Primary button anchor"
+msgstr "Ankora e butonit kryesor"
+
+#: inc/shop/fields.php:341
+msgid "Show \"Add to cart\""
+msgstr "Shfaq \"Shto në shportë\""
+
+#: inc/shop/fields.php:344
+msgid "Rich text"
+msgstr "Tekst i formatuar"
+
+#: inc/shop/fields.php:347
+msgid "Homepage hero"
+msgstr "Hapja e faqes kryesore"
+
+#: inc/shop/fields.php:348
+msgid "Show customers and rating"
+msgstr "Shfaq klientët dhe vlerësimin"
+
+#: inc/shop/fields.php:352
+msgid "Secondary button label"
+msgstr "Teksti i butonit dytësor"
+
+#: inc/shop/fields.php:353
+msgid "Secondary button anchor"
+msgstr "Ankora e butonit dytësor"
+
+#: inc/shop/fields.php:354
+msgid "Reassurance"
+msgstr "Siguritë"
+
+#: inc/shop/fields.php:357
+msgid "Before label"
+msgstr "Etiketa para"
+
+#: inc/shop/fields.php:358
+msgid "After label"
+msgstr "Etiketa pas"
+
+#: inc/shop/fields.php:359
+msgid "Progress label"
+msgstr "Etiketa e progresit"
+
+#: inc/shop/fields.php:360
+msgid "Progress (%)"
+msgstr "Progresi (%)"
+
+#: inc/shop/fields.php:361
+msgid "Progress stats"
+msgstr "Shifrat e progresit"
+
+#: inc/shop/fields.php:365
+msgid "Day plan label"
+msgstr "Etiketa e planit të ditës"
+
+#: inc/shop/fields.php:366
+msgid "Day plan"
+msgstr "Plani i ditës"
+
+#: inc/shop/fields.php:367
+#: template-parts/blocks/sample-day.php:117
+msgid "Meal"
+msgstr "Vakti"
+
+#: inc/shop/fields.php:370
+msgid "Stats"
+msgstr "Shifrat"
+
+#: inc/shop/fields.php:375
+msgid "Marquee"
+msgstr "Shiriti lëvizës"
+
+#: inc/shop/fields.php:378
+msgid "Problem"
+msgstr "Problemi"
+
+#: inc/shop/fields.php:384
+msgid "Closing line"
+msgstr "Rreshti përmbyllës"
+
+#: inc/shop/fields.php:388
+msgid "How it works"
+msgstr "Si funksionon"
+
+#: inc/shop/fields.php:389
+msgid "Steps"
+msgstr "Hapat"
+
+#: inc/shop/fields.php:396
+msgid "Show recent orders"
+msgstr "Shfaq porositë e fundit"
+
+#: inc/shop/fields.php:397
+msgid "Shown only when enough orders were paid in the last 24 hours."
+msgstr "Shfaqet vetëm kur janë paguar mjaftueshëm porosi në 24 orët e fundit."
+
+#: inc/shop/fields.php:400
+msgid "Goal tabs"
+msgstr "Skedat e objektivave"
+
+#: inc/shop/fields.php:401
+msgid "Tabs"
+msgstr "Skedat"
+
+#: inc/shop/fields.php:402
+msgid "Tab label"
+msgstr "Etiketa e skedës"
+
+#: inc/shop/fields.php:403
+#: inc/shop/fields.php:463
+msgid "Heading"
+msgstr "Titulli"
+
+#: inc/shop/fields.php:409
+msgid "Used when no Product is set."
+msgstr "Përdoret kur nuk është zgjedhur produkt."
+
+#: inc/shop/fields.php:411
+msgid "Stat"
+msgstr "Shifra"
+
+#: inc/shop/fields.php:413
+msgid "Image label"
+msgstr "Etiketa e fotos"
+
+#: inc/shop/fields.php:414
+msgid "Image value"
+msgstr "Vlera e fotos"
+
+#: inc/shop/fields.php:417
+msgid "Pricing"
+msgstr "Çmimet"
+
+#: inc/shop/fields.php:420
+msgid "When empty, the first bundle."
+msgstr "Kur është bosh, paketa e parë."
+
+#: inc/shop/fields.php:423
+msgid "Featured Products to show"
+msgstr "Produkte të veçuara për t'u shfaqur"
+
+#: inc/shop/fields.php:428
+msgid "\"More Products\" heading"
+msgstr "Titulli \"Produkte të tjera\""
+
+#: inc/shop/fields.php:429
+msgid "\"More Products\" text"
+msgstr "Teksti \"Produkte të tjera\""
+
+#: inc/shop/fields.php:432
+msgid "Show payment and guarantee row"
+msgstr "Shfaq rreshtin e pagesës dhe të garancisë"
+
+#: inc/shop/fields.php:448
+msgid "Anchor"
+msgstr "Ankora"
+
+#: inc/shop/fields.php:449
+msgid "The section id for links, e.g. \"faq\"."
+msgstr "ID-ja e seksionit për lidhjet, p.sh. \"faq\"."
+
+#: inc/shop/fields.php:452
+msgid "Navigation label"
+msgstr "Etiketa e navigimit"
+
+#: inc/shop/fields.php:453
+msgid "Adds a link to this section in the header."
+msgstr "Shton një lidhje për këtë seksion në kokën e faqes."
+
+#: inc/shop/fields.php:456
+msgid "Eyebrow"
+msgstr "Mbititulli"
+
+#: inc/shop/fields.php:459
+msgid "Background"
+msgstr "Sfondi"
+
+#: inc/shop/fields.php:460
+#: page.php:71
+#: single.php:48
+#: template-parts/content-loop.php:30
+msgid "Page"
+msgstr "Faqja"
+
+#: inc/shop/fields.php:465
+msgid "A new line breaks the heading."
+msgstr "Një rresht i ri e ndan titullin në dy rreshta."
+
+#: inc/shop/fields.php:469
+msgid "Intro"
+msgstr "Hyrja"
+
+#: inc/shop/fields.php:546
+msgid "One per line."
+msgstr "Një për rresht."
+
+#: inc/shop/fields.php:637
+msgid "Icon"
+msgstr "Ikona"
+
+#: inc/shop/fields.php:646
+msgid "Tokens: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee_days}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. A phrase between \" · \" whose token has no value is left out."
+msgstr "Shenjat: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee_days}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. Një frazë mes \" · \" me shenjë pa vlerë nuk shfaqet."
+
+#: inc/shop/fields.php:651
+msgid "Put *words* between asterisks to show them in the accent colour."
+msgstr "Vendos *fjalët* mes yjeve që të shfaqen me ngjyrën e theksit."
+
+#. translators: %s: the highest discount, a number.
+#: inc/shop/offer.php:71
+#, php-format
+msgid "up to −%s%%"
+msgstr "deri në −%s%%"
+
+#. translators: %s: the discount, a number.
+#: inc/shop/offer.php:73
+#, php-format
+msgid "−%s%%"
+msgstr "−%s%%"
+
+#: inc/shop/product-data.php:221
+msgid "Training program"
+msgstr "Program stërvitjeje"
+
+#: inc/shop/product-data.php:222
+msgid "Meal plan"
+msgstr "Plan ushqimor"
+
+#: inc/shop/product-data.php:223
+msgid "Complete bundle"
+msgstr "Paketa e plotë"
+
+#: inc/shop/proof.php:202
+msgid "Best value"
+msgstr "Vlera më e mirë"
+
+#: inc/shop/proof.php:206
+msgid "Best seller"
+msgstr "Më i shituri"
+
+#: inc/shop/proof.php:212
+msgid "New"
+msgstr "I ri"
+
+#. translators: %s: search query.
+#: inc/template-tags.php:20
+#, php-format
+msgid "Results for \"%s\""
+msgstr "Rezultatet për \"%s\""
+
+#: inc/template-tags.php:24
+msgid "Page not found"
+msgstr "Faqja nuk u gjet"
+
+#: inc/template-tags.php:202
+msgid "Start now"
+msgstr "Fillo tani"
+
+#. translators: %d: number of days of the money-back guarantee.
+#: inc/template-tags.php:216
+#: template-parts/product/trust-line.php:21
+#, php-format
+msgid "%d-day guarantee"
+msgid_plural "%d-day guarantee"
+msgstr[0] "Garanci %d ditë"
+msgstr[1] "Garanci %d ditë"
+
+#: inc/template-tags.php:291
+msgid "Terms of service"
+msgstr "Kushtet e shërbimit"
+
+#: inc/template-tags.php:292
+msgid "Privacy policy"
+msgstr "Politika e privatësisë"
+
+#: inc/template-tags.php:293
+msgid "Refund policy"
+msgstr "Politika e kthimit"
+
+#: inc/woocommerce.php:22
+#: template-parts/shop/intro.php:22
+msgid "Breadcrumb"
+msgstr "Rruga"
+
+#: page.php:40
+msgid "Bought a plan? Log in with the email you used at checkout. On your first order we emailed you a link to set your password; if you cannot find it, use \"Lost your password?\"."
+msgstr "Ke blerë një plan? Hyr me email-in që përdore në pagesë. Në porosinë e parë të dërguam me email një link për të vendosur fjalëkalimin; nëse nuk e gjen, përdor \"Harruat fjalëkalimin tuaj?\"."
+
+#. translators: %s: date the page was last changed.
+#: page.php:60
+#, php-format
+msgid "Last updated %s"
+msgstr "Përditësuar më %s"
+
+#. translators: %s: number of search results.
+#: search.php:22
+#, php-format
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s rezultat"
+msgstr[1] "%s rezultate"
+
+#: searchform.php:13
+#: searchform.php:20
+msgid "Search"
+msgstr "Kërko"
+
+#: searchform.php:16
+msgid "Search articles, programs, plans…"
+msgstr "Kërko artikuj, programe, plane…"
+
+#. translators: %d: estimated reading time in minutes.
+#: single.php:30
+#, php-format
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] "%d min lexim"
+msgstr[1] "%d min lexim"
+
+#: single.php:54
+msgid "Tags"
+msgstr "Etiketat"
+
+#: single.php:63
+#: template-parts/shop/pagination.php:22
+msgid "Previous"
+msgstr "E mëparshme"
+
+#: single.php:64
+#: template-parts/shop/pagination.php:23
+msgid "Next"
+msgstr "Tjetra"
+
+#: single.php:65
+msgid "More posts"
+msgstr "Më shumë artikuj"
+
+#: template-parts/blocks/comparison.php:55
+msgid "Yes"
+msgstr "Po"
+
+#: template-parts/blocks/comparison.php:55
+msgid "No"
+msgstr "Jo"
+
+#: template-parts/blocks/comparison.php:84
+msgid "You're viewing it"
+msgstr "Po e shikon"
+
+#: template-parts/blocks/comparison.php:93
+msgid "View"
+msgstr "Shiko"
+
+#: template-parts/blocks/faq.php:93
+msgid "Have other questions before you buy?"
+msgstr "Ke pyetje të tjera para se të blesh?"
+
+#: template-parts/blocks/faq.php:94
+msgid "Message us on WhatsApp and we reply within 24 hours."
+msgstr "Shkruaj në WhatsApp — përgjigjemi brenda 24 orësh."
+
+#: template-parts/blocks/faq.php:98
+msgid "Message us on WhatsApp"
+msgstr "Shkruaj në WhatsApp"
+
+#: template-parts/blocks/faq.php:99
+#: template-parts/blocks/preview.php:147
+msgid "(opens in a new tab)"
+msgstr "(hapet në një skedë të re)"
+
+#. translators: 1: call to action label, 2: discount percent.
+#: template-parts/blocks/home-hero.php:44
+#, php-format
+msgid "%1$s — %2$d%% off"
+msgstr "%1$s — %2$d%% ULJE"
+
+#. translators: %s: customer count, e.g. 600+.
+#: template-parts/blocks/home-hero.php:151
+#, php-format
+msgid "%s Albanian customers"
+msgstr "%s klientë shqiptarë"
+
+#. translators: 1: average rating out of 5, e.g. 4,8. 2: number of reviews.
+#: template-parts/blocks/home-hero.php:160
+#, php-format
+msgid "%1$s/5 · %2$s review"
+msgid_plural "%1$s/5 · %2$s reviews"
+msgstr[0] "%1$s/5 · %2$s vlerësim"
+msgstr[1] "%1$s/5 · %2$s vlerësime"
+
+#. translators: %d: discount percentage.
+#: template-parts/blocks/home-hero.php:269
+#: template-parts/product/card.php:91
+#: template-parts/product/price.php:90
+#, php-format
+msgid "−%d%%"
+msgstr "−%d%%"
+
+#: template-parts/blocks/home-hero.php:272
+msgid "Only tonight"
+msgstr "Vetëm sonte"
+
+#: template-parts/blocks/preview.php:144
+msgid "Watch the video"
+msgstr "Shiko videon"
+
+#. translators: %s: number of Products in the catalogue.
+#: template-parts/blocks/pricing.php:49
+#, php-format
+msgid "View all (%s)"
+msgstr "Shiko të gjitha (%s)"
+
+#. translators: %s: number of Products in the catalogue.
+#: template-parts/blocks/pricing.php:51
+#, php-format
+msgid "View all products (%s)"
+msgstr "Shiko të gjitha produktet (%s)"
+
+#: template-parts/blocks/pricing.php:61
+msgid "Offer ends in"
+msgstr "Oferta mbaron pas"
+
+#: template-parts/blocks/pricing.php:118
+msgid "100% secure payment"
+msgstr "Pagesë 100% e sigurt"
+
+#: template-parts/blocks/pricing.php:123
+msgid "Instant delivery by email"
+msgstr "Dorëzim i menjëhershëm në email"
+
+#: template-parts/blocks/results.php:50
+msgid "Results vary from person to person and depend on following the plan."
+msgstr "Rezultatet ndryshojnë nga personi në person dhe varen nga zbatimi i planit."
+
+#: template-parts/blocks/results.php:65
+msgctxt "result photo"
+msgid "Before"
+msgstr "Para"
+
+#: template-parts/blocks/results.php:69
+msgctxt "result photo"
+msgid "After"
+msgstr "Pas"
+
+#. translators: %s: a customer's words, shown in quotation marks.
+#: template-parts/blocks/results.php:137
+#: template-parts/blocks/reviews.php:223
+#, php-format
+msgctxt "quotation"
+msgid "“%s”"
+msgstr "“%s”"
+
+#: template-parts/blocks/reviews.php:80
+msgid "Verified purchase"
+msgstr "Blerje e verifikuar"
+
+#. translators: %s: number of reviews across the store.
+#. translators: %s: number of reviews.
+#: template-parts/blocks/reviews.php:182
+#: template-parts/product/rating.php:82
+#, php-format
+msgid "%s review"
+msgid_plural "%s reviews"
+msgstr[0] "%s vlerësim"
+msgstr[1] "%s vlerësime"
+
+#. translators: %s: number of reviews of the Product.
+#: template-parts/blocks/reviews.php:184
+#, php-format
+msgid "%s review for this product"
+msgid_plural "%s reviews for this product"
+msgstr[0] "%s vlerësim për këtë produkt"
+msgstr[1] "%s vlerësime për këtë produkt"
+
+#. translators: %s: average rating, e.g. 4,7.
+#: template-parts/blocks/reviews.php:191
+#: template-parts/blocks/reviews.php:218
+#: template-parts/product/rating.php:77
+#, php-format
+msgid "%s out of 5 stars"
+msgstr "%s nga 5 yje"
+
+#: template-parts/blocks/reviews.php:255
+msgid "Rate…"
+msgstr "Vlerëso…"
+
+#: template-parts/blocks/reviews.php:256
+msgid "Perfect"
+msgstr "Perfekt"
+
+#: template-parts/blocks/reviews.php:257
+msgid "Good"
+msgstr "Mirë"
+
+#: template-parts/blocks/reviews.php:258
+msgid "Average"
+msgstr "Mesatar"
+
+#: template-parts/blocks/reviews.php:259
+msgid "Not that bad"
+msgstr "Jo aq keq"
+
+#: template-parts/blocks/reviews.php:260
+msgid "Very poor"
+msgstr "Shumë dobët"
+
+#: template-parts/blocks/reviews.php:263
+msgid "Your rating"
+msgstr "Vlerësimi yt"
+
+#: template-parts/blocks/reviews.php:270
+msgid "Your review"
+msgstr "Komenti yt"
+
+#: template-parts/blocks/reviews.php:274
+msgid "Thank you. Your review will appear here once it is approved."
+msgstr "Faleminderit. Vlerësimi yt do të shfaqet këtu sapo të miratohet."
+
+#: template-parts/blocks/reviews.php:278
+msgid "Write a review"
+msgstr "Shkruaj një vlerësim"
+
+#: template-parts/blocks/reviews.php:295
+msgid "Submit review"
+msgstr "Dërgo vlerësimin"
+
+#: template-parts/blocks/sample-day.php:61
+#: template-parts/blocks/value-stack.php:103
+msgid "Carbs"
+msgstr "Karbo"
+
+#: template-parts/blocks/sample-day.php:62
+#: template-parts/blocks/value-stack.php:104
+msgctxt "macronutrient total"
+msgid "Fat"
+msgstr "Yndyra"
+
+#: template-parts/blocks/sample-day.php:119
+msgid "Kcal"
+msgstr "Kcal"
+
+#: template-parts/blocks/sample-day.php:123
+msgid "P / C / F"
+msgstr "P / K / Y"
+
+#: template-parts/blocks/sample-day.php:124
+msgid "Protein / carbs / fat (g)"
+msgstr "Proteina / karbohidrate / yndyra (g)"
+
+#. translators: %s: number of customers who paid for an order in the last 24 hours.
+#: template-parts/blocks/steps.php:115
+#, php-format
+msgid "%s customer started in the last 24 hours"
+msgid_plural "%s customers started in the last 24 hours"
+msgstr[0] "%s klient e ka filluar në 24 orët e fundit"
+msgstr[1] "%s klientë e kanë filluar në 24 orët e fundit"
+
+#: template-parts/blocks/value-stack.php:145
+msgid "Bonus:"
+msgstr "Bonus:"
+
+#: template-parts/blocks/value-stack.php:152
+msgid "Value:"
+msgstr "Vlera:"
+
+#: template-parts/blocks/value-stack.php:164
+msgid "Total value"
+msgstr "Vlera totale"
+
+#: template-parts/blocks/value-stack.php:170
+msgid "You pay today"
+msgstr "Ti paguan sot"
+
+#: template-parts/blocks/value-stack.php:196
+msgid "PDF"
+msgstr "PDF"
+
+#: template-parts/blocks/value-stack.php:218
+msgid "Macros of the day"
+msgstr "Makro të ditës"
+
+#: template-parts/cart/drawer.php:14
+msgid "Your cart"
+msgstr "Shporta jote"
+
+#: template-parts/cart/drawer.php:15
+msgid "Close cart"
+msgstr "Mbyll shportën"
+
+#: template-parts/cart/empty.php:14
+msgid "Your cart is empty."
+msgstr "Shporta jote është bosh."
+
+#: template-parts/cart/empty.php:15
+msgid "Pick a training program or a meal plan and start today."
+msgstr "Zgjidh një program ose një plan ushqimor dhe fillo sot."
+
+#: template-parts/cart/empty.php:17
+msgid "Keep browsing the products"
+msgstr "Vazhdo të shfletosh produktet"
+
+#: template-parts/cart/foot.php:36
+msgid "Value without discount"
+msgstr "Vlera pa ulje"
+
+#: template-parts/cart/foot.php:39
+#: woocommerce/checkout/review-order.php:97
+msgid "You save"
+msgstr "Kursen"
+
+#: template-parts/cart/foot.php:42
+msgid "Coupon discount"
+msgstr "Zbritja e kuponit"
+
+#: template-parts/cart/foot.php:44
+msgid "Total"
+msgstr "Totali"
+
+#: template-parts/cart/foot.php:47
+msgid "Continue to checkout"
+msgstr "Vazhdo te pagesa"
+
+#: template-parts/cart/foot.php:50
+msgid "Keep browsing"
+msgstr "Vazhdo të shfletosh"
+
+#: template-parts/cart/foot.php:54
+#: template-parts/header/checkout-header.php:18
+msgid "Secure payment"
+msgstr "Pagesë e sigurt"
+
+#. translators: %s: Product name.
+#: template-parts/cart/line.php:44
+#, php-format
+msgid "Remove %s"
+msgstr "Hiq %s"
+
+#: template-parts/cart/line.php:45
+msgid "Remove"
+msgstr "Hiq"
+
+#: template-parts/cart/upsell.php:28
+msgid "Better deal"
+msgstr "Ofertë më e mirë"
+
+#. translators: 1: bundle name, 2: bundle price.
+#: template-parts/cart/upsell.php:31
+#, php-format
+msgid "%1$s includes every program and every diet for %2$s — less than what's in your cart."
+msgstr "%1$s i përmban të gjitha programet dhe të gjitha dietat për %2$s — më lirë se sa ke në shportë."
+
+#. translators: %s: amount saved by switching.
+#: template-parts/cart/upsell.php:36
+#, php-format
+msgid "Switch to the full bundle and save %s"
+msgstr "Kalo te paketa e plotë dhe kurse %s"
+
+#. translators: %s: how much more the bundle costs than the cart's lines it covers.
+#: template-parts/cart/upsell.php:41
+#, php-format
+msgid "Only +%s more for everything"
+msgstr "Vetëm +%s më shumë për gjithçka"
+
+#. translators: 1: bundle name, 2: its components' total price, struck through, 3: bundle price.
+#: template-parts/cart/upsell.php:44
+#, php-format
+msgid "%1$s includes every program and every diet, worth %2$s, for %3$s."
+msgstr "%1$s i përmban të gjitha programet dhe të gjitha dietat, me vlerë %2$s, për %3$s."
+
+#. translators: %s: bundle name.
+#: template-parts/cart/upsell.php:50
+#, php-format
+msgid "Switch to %s"
+msgstr "Kalo te %s"
+
+#: template-parts/cart/upsell.php:54
+msgid "Goes well with this"
+msgstr "Shkon bashkë me këtë"
+
+#. translators: %s: meal plan name.
+#: template-parts/cart/upsell.php:58
+#, php-format
+msgid "Training without a meal plan only gets you halfway. Add %s and complete the system."
+msgstr "Stërvitja pa plan ushqimor ecën përgjysmë. Shto %s dhe mbylle sistemin."
+
+#. translators: %s: training program name.
+#: template-parts/cart/upsell.php:60
+#, php-format
+msgid "Eating well without training only gets you halfway. Add %s and complete the system."
+msgstr "Ushqimi pa stërvitje ecën përgjysmë. Shto %s dhe mbylle sistemin."
+
+#. translators: 1: Product name, 2: its price.
+#: template-parts/cart/upsell.php:62
+#, php-format
+msgid "Add %1$s — %2$s"
+msgstr "Shto %1$s — %2$s"
+
+#: template-parts/checkout/trust.php:17
+msgid "Not happy with it? You get your money back, no questions asked."
+msgstr "Nuk je i kënaqur? Të kthejmë paratë, pa pyetje."
+
+#: template-parts/checkout/trust.php:23
+#: template-parts/product/trust-line.php:19
+msgid "Instant access"
+msgstr "Akses i menjëhershëm"
+
+#: template-parts/checkout/trust.php:24
+msgid "Your plan arrives by email right after payment."
+msgstr "Plani të vjen me email menjëherë pas pagesës."
+
+#: template-parts/checkout/trust.php:29
+msgid "Encrypted payment"
+msgstr "Pagesë e enkriptuar"
+
+#: template-parts/checkout/trust.php:30
+msgid "Your payment is protected with SSL encryption."
+msgstr "Pagesa jote mbrohet me enkriptim SSL."
+
+#: template-parts/components/countdown.php:34
+msgid "Days"
+msgstr "Ditë"
+
+#: template-parts/components/countdown.php:35
+msgid "Hours"
+msgstr "Orë"
+
+#: template-parts/components/countdown.php:36
+msgid "Min"
+msgstr "Min"
+
+#: template-parts/components/countdown.php:37
+msgid "Sec"
+msgstr "Sek"
+
+#: template-parts/components/countdown.php:49
+msgctxt "days, abbreviated"
+msgid "d"
+msgstr "d"
+
+#: template-parts/content-loop.php:28
+msgid "Previous page"
+msgstr "Faqja e mëparshme"
+
+#: template-parts/content-loop.php:29
+msgid "Next page"
+msgstr "Faqja tjetër"
+
+#: template-parts/content-none.php:17
+msgid "Nothing matched your search."
+msgstr "Asgjë nuk përputhet me kërkimin."
+
+#: template-parts/content-none.php:17
+msgid "Nothing here yet."
+msgstr "Ende nuk ka asgjë këtu."
+
+#: template-parts/content-none.php:20
+msgid "Try fewer or different words, or browse every program and plan in the shop."
+msgstr "Provo më pak fjalë ose fjalë të tjera, ose shiko çdo program dhe plan në dyqan."
+
+#: template-parts/content-none.php:20
+msgid "We are working on new content. In the meantime, browse the programs and plans."
+msgstr "Po punojmë për përmbajtje të re. Ndërkohë, shiko programet dhe planet."
+
+#: template-parts/content-shop-cta.php:18
+msgid "Ready to start?"
+msgstr "Gati për të filluar?"
+
+#: template-parts/content-shop-cta.php:19
+msgid "Training programs and meal plans in Albanian, for real people with real schedules."
+msgstr "Programe stërvitjeje dhe plane ushqimore në shqip, për njerëz realë me orare reale."
+
+#: template-parts/content.php:44
+msgid "Read"
+msgstr "Lexo"
+
+#. translators: 1: year, 2: site name.
+#: template-parts/footer/checkout-footer.php:16
+#: template-parts/footer/site-footer.php:83
+#, php-format
+msgid "© %1$s %2$s. All rights reserved."
+msgstr "© %1$s %2$s. Të gjitha të drejtat e rezervuara."
+
+#: template-parts/footer/site-footer.php:39
+msgid "Training programs and meal plans in Albanian, for real people with real schedules. No miracles, no detox teas, no empty promises — just a plan and discipline."
+msgstr "Programe stërvitjeje dhe plane ushqimore në shqip, për njerëz realë me orare reale. Pa mrekulli, pa çajra, pa premtime boshe — vetëm plan dhe disiplinë."
+
+#: template-parts/footer/site-footer.php:56
+#: template-parts/shop/archive.php:61
+msgid "Products"
+msgstr "Produktet"
+
+#: template-parts/footer/site-footer.php:68
+msgid "Help"
+msgstr "Ndihmë"
+
+#: template-parts/footer/site-footer.php:87
+msgid "Results vary from person to person. This information does not replace medical advice — talk to your doctor before starting a training program or a diet, especially if you have a health condition or are pregnant."
+msgstr "Rezultatet ndryshojnë nga personi në person. Informacioni nuk zëvendëson këshillën mjekësore — konsultohu me mjekun para se të fillosh një program stërvitjeje ose dietë, veçanërisht nëse ke problem shëndetësor ose je shtatzënë."
+
+#. translators: %s: the Product's price.
+#: template-parts/header/mobile-menu.php:22
+#, php-format
+msgid "Buy now — %s"
+msgstr "Bli tani — %s"
+
+#. translators: %d: discount percent.
+#: template-parts/header/mobile-menu.php:32
+#, php-format
+msgid "Get my plan — %d%% off"
+msgstr "Merr planin tim — %d%% ULJE"
+
+#. translators: %d: discount percent.
+#: template-parts/header/mobile-menu.php:32
+msgid "Get my plan"
+msgstr "Merr planin tim"
+
+#: template-parts/header/mobile-menu.php:39
+msgid "Get the full bundle"
+msgstr "Merr paketën e plotë"
+
+#: template-parts/header/mobile-menu.php:39
+msgid "See all products"
+msgstr "Shiko të gjitha produktet"
+
+#: template-parts/header/mobile-menu.php:48
+#: template-parts/header/mobile-menu.php:51
+msgid "Menu"
+msgstr "Menu"
+
+#: template-parts/header/mobile-menu.php:54
+msgid "Close menu"
+msgstr "Mbyll menunë"
+
+#: template-parts/header/mobile-menu.php:58
+#: template-parts/header/site-header.php:24
+msgid "Main"
+msgstr "Kryesore"
+
+#: template-parts/header/mobile-menu.php:61
+msgid "Shop · all products"
+msgstr "Dyqani · të gjitha produktet"
+
+#: template-parts/header/site-header.php:49
+msgid "View cart"
+msgstr "Shiko shportën"
+
+#: template-parts/header/site-header.php:54
+msgid "Open cart"
+msgstr "Hap shportën"
+
+#: template-parts/header/site-header.php:61
+msgid "Open menu"
+msgstr "Hap menunë"
+
+#: template-parts/header/urgency-bar.php:22
+msgid "Ends in"
+msgstr "Mbaron pas"
+
+#. translators: %s: the discount, e.g. 10% or 5,00 €.
+#: template-parts/home/exit-modal.php:34
+#, php-format
+msgid "%s extra off"
+msgstr "%s ulje shtesë"
+
+#. translators: %s: the discount, e.g. "10% extra off", in bold.
+#: template-parts/home/exit-modal.php:38
+#, php-format
+msgid "Get %s on top of the current offer."
+msgstr "Merr %s mbi ofertën aktuale."
+
+#. translators: %s: the discount, e.g. "10% extra off", in bold.
+#: template-parts/home/exit-modal.php:40
+#, php-format
+msgid "Get %s on your order."
+msgstr "Merr %s në porosinë tënde."
+
+#: template-parts/home/exit-modal.php:48
+msgid "Close"
+msgstr "Mbyll"
+
+#: template-parts/home/exit-modal.php:53
+msgid "Wait — don’t leave it for Monday"
+msgstr "Prit — mos e lësho për të hënën"
+
+#: template-parts/home/exit-modal.php:56
+msgid "It is applied automatically as soon as you add a product to your cart:"
+msgstr "Aplikohet automatikisht sapo të shtosh një produkt në shportë:"
+
+#: template-parts/home/exit-modal.php:61
+msgid "Use it now"
+msgstr "Përdore tani"
+
+#: template-parts/home/exit-modal.php:62
+msgid "No thanks, I’ll continue without the discount"
+msgstr "Jo faleminderit, do të vazhdoj pa ulje"
+
+#. translators: %d: discount percent.
+#: template-parts/home/sticky-cta.php:22
+#, php-format
+msgid "Get the plan — %d%% off"
+msgstr "Merr planin — %d%% ULJE"
+
+#: template-parts/home/sticky-cta.php:23
+msgid "Get the plan"
+msgstr "Merr planin"
+
+#: template-parts/home/sticky-cta.php:31
+#: template-parts/product/price.php:67
+#: template-parts/single-product/buy-bar.php:38
+msgid "Value without discount:"
+msgstr "Vlera pa ulje:"
+
+#: template-parts/product/add-to-cart.php:24
+msgid "Add to cart"
+msgstr "Shto në shportë"
+
+#. translators: %d: how many of every 10 customers choose the bundle.
+#: template-parts/product/bundle-banner.php:31
+#, php-format
+msgid "Most chosen · %d in 10 customers"
+msgstr "Më i zgjedhuri · %d nga 10 klientë"
+
+#: template-parts/product/bundle-banner.php:101
+msgid "Start my transformation now"
+msgstr "Filloj transformimin tani"
+
+#: template-parts/product/card.php:56
+msgid "View the program"
+msgstr "Shiko programin"
+
+#: template-parts/product/card.php:57
+msgid "View the plan"
+msgstr "Shiko planin"
+
+#: template-parts/product/card.php:58
+msgid "View the bundle"
+msgstr "Shiko paketën"
+
+#: template-parts/product/card.php:59
+msgid "View product"
+msgstr "Shiko produktin"
+
+#: template-parts/product/card.php:77
+msgid "No nutrition plan"
+msgstr "Pa plan ushqimor"
+
+#: template-parts/product/card.php:78
+msgid "No training program"
+msgstr "Pa program stërvitjeje"
+
+#. translators: %d: discount percentage.
+#: template-parts/product/card.php:151
+#, php-format
+msgid "Save %d%%"
+msgstr "Kursen %d%%"
+
+#. translators: %s: number of copies sold.
+#: template-parts/product/card.php:174
+#: template-parts/product/rating.php:94
+#, php-format
+msgid "%s sold"
+msgid_plural "%s sold"
+msgstr[0] "%s e shitur"
+msgstr[1] "%s të shitura"
+
+#: template-parts/product/payment-badges.php:23
+msgid "Accepted payment methods"
+msgstr "Mënyrat e pranuara të pagesës"
+
+#: template-parts/product/payment-badges.php:30
+msgid "SSL-encrypted payment"
+msgstr "Pagesë e enkriptuar SSL"
+
+#. translators: %s: amount saved, formatted price.
+#: template-parts/product/price.php:74
+#: template-parts/product/price.php:84
+#, php-format
+msgid "Save %s"
+msgstr "Kursen %s"
+
+#. translators: %s: price per week, formatted price.
+#: template-parts/product/price.php:96
+#, php-format
+msgid "≈ %s per week · one-time payment"
+msgstr "≈ %s në javë · pagesë e njëhershme"
+
+#: template-parts/product/trust-line.php:18
+msgid "One-time payment"
+msgstr "Pagesë e njëhershme"
+
+#: template-parts/shop/empty.php:14
+msgid "No products match your search."
+msgstr "Asnjë produkt nuk përputhet me kërkimin."
+
+#: template-parts/shop/empty.php:16
+msgid "No products in this category."
+msgstr "Nuk ka produkte në këtë kategori."
+
+#: template-parts/shop/empty.php:18
+msgid "No products yet."
+msgstr "Ende nuk ka produkte."
+
+#: template-parts/shop/empty.php:22
+msgid "We are working on new products — in the meantime, see them all."
+msgstr "Po punojmë për produkte të reja — ndërkohë shiko të gjitha."
+
+#: template-parts/shop/empty.php:23
+msgid "See all"
+msgstr "Shiko të gjitha"
+
+#: template-parts/shop/empty.php:25
+msgid "We are working on new products."
+msgstr "Po punojmë për produkte të reja."
+
+#. translators: %d: number of days of the money-back guarantee.
+#: template-parts/shop/guarantee.php:24
+#, php-format
+msgid "%d-day guarantee on every product"
+msgid_plural "%d-day guarantee on every product"
+msgstr[0] "Garanci %d ditë për çdo produkt"
+msgstr[1] "Garanci %d ditë për çdo produkt"
+
+#. translators: %d: number of days of the money-back guarantee.
+#: template-parts/shop/guarantee.php:29
+#, php-format
+msgid "Try it for %d day."
+msgid_plural "Try it for %d days."
+msgstr[0] "Provoje %d ditë."
+msgstr[1] "Provoje %d ditë."
+
+#: template-parts/shop/guarantee.php:31
+msgid "Not convinced? Send us an email and we refund all of your money, with no forms and no awkward conversation."
+msgstr "Nuk të bind — shkruaj një email dhe të kthejmë 100% të parave, pa formularë dhe pa bisedë të pakëndshme."
+
+#. translators: %s: number of Products in the catalogue.
+#: template-parts/shop/intro.php:46
+#, php-format
+msgid "%s digital product in Albanian — training programs and meal plans."
+msgid_plural "%s digital products in Albanian — training programs and meal plans."
+msgstr[0] "%s produkt digjital në shqip — programe stërvitjeje dhe plane ushqimore."
+msgstr[1] "%s produkte digjitale në shqip — programe stërvitjeje dhe plane ushqimore."
+
+#. translators: %d: number of days of the money-back guarantee.
+#: template-parts/shop/intro.php:52
+#, php-format
+msgid "One-time payment, instant access, %d-day guarantee on all of them."
+msgid_plural "One-time payment, instant access, %d-day guarantee on all of them."
+msgstr[0] "Pagesë e njëhershme, akses i menjëhershëm, garanci %d ditë për të gjitha."
+msgstr[1] "Pagesë e njëhershme, akses i menjëhershëm, garanci %d ditë për të gjitha."
+
+#: template-parts/shop/intro.php:53
+msgid "One-time payment and instant access."
+msgstr "Pagesë e njëhershme dhe akses i menjëhershëm."
+
+#: template-parts/shop/pagination.php:30
+msgid "Pages"
+msgstr "Faqet"
+
+#: template-parts/shop/toolbar.php:21
+msgid "Filter by category"
+msgstr "Filtro sipas kategorisë"
+
+#: template-parts/shop/toolbar.php:37
+msgid "Sort"
+msgstr "Rendit"
+
+#: template-parts/shop/toolbar.php:46
+msgid "Apply"
+msgstr "Zbato"
+
+#. translators: %s: number of Products shown.
+#: template-parts/shop/toolbar.php:54
+#, php-format
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] "%s produkt"
+msgstr[1] "%s produkte"
+
+#. translators: 1: bundle name, 2: bundle price.
+#: template-parts/single-product/bundle-hint.php:51
+#, php-format
+msgid "%1$s includes every meal plan and training program for %2$s."
+msgstr "%1$s i ka të gjitha planet dhe programet për %2$s."
+
+#. translators: 1: bundle name, 2: bundle price.
+#: template-parts/single-product/bundle-hint.php:53
+#, php-format
+msgid "%1$s includes every training program and meal plan for %2$s."
+msgstr "%1$s i ka të gjitha programet dhe dietat për %2$s."
+
+#. translators: 1: bundle name, 2: number of other Products in the bundle, 3: bundle price.
+#: template-parts/single-product/bundle-hint.php:57
+#, php-format
+msgid "%1$s includes this and %2$s more product for %3$s."
+msgid_plural "%1$s includes this and %2$s more products for %3$s."
+msgstr[0] "%1$s e përfshin këtë dhe %2$s produkt tjetër për %3$s."
+msgstr[1] "%1$s e përfshin këtë dhe %2$s produkte të tjera për %3$s."
+
+#: template-parts/single-product/cross-sells.php:24
+msgid "Customers who got this program also added these."
+msgstr "Klientët që morën këtë program, shtuan edhe këto."
+
+#: template-parts/single-product/cross-sells.php:25
+msgid "Food decides how much you lose. Training decides how you look once you lose it."
+msgstr "Ushqimi zgjidh sa humbet. Stërvitja zgjidh si dukesh kur e humb."
+
+#. translators: %d: number of days of the money-back guarantee.
+#: template-parts/single-product/fallback.php:38
+#, php-format
+msgid "%d-day guarantee — no questions asked"
+msgid_plural "%d-day guarantee — no questions asked"
+msgstr[0] "Garanci %d ditë — pa pyetje"
+msgstr[1] "Garanci %d ditë — pa pyetje"
+
+#. translators: Keep {guarantee_days} as it is: it becomes the number of days.
+#: template-parts/single-product/fallback.php:43
+msgid "Follow the plan for {guarantee_days} days. If you see no change and do not feel better, send us an email and we refund 100% of your money — no forms, no excuses, no awkward conversation. The risk is ours, not yours."
+msgstr "Ndiqe planin {guarantee_days} ditë. Nëse nuk sheh ndryshim dhe nuk ndihesh më mirë, na shkruaj një email dhe të kthejmë 100% të parave — pa formularë, pa justifikime, pa biseda të sikletshme. Rreziku është yni, jo yti."
+
+#: template-parts/single-product/fallback.php:45
+msgid "No hidden subscription"
+msgstr "Pa abonim i fshehur"
+
+#: template-parts/single-product/fallback.php:46
+msgid "No complicated cancellation"
+msgstr "Pa anulim i komplikuar"
+
+#: template-parts/single-product/fallback.php:47
+msgid "You keep the materials"
+msgstr "Materialet i mban"
+
+#: template-parts/single-product/fallback.php:49
+msgid "Try it risk-free"
+msgstr "Provoje pa rrezik"
+
+#: template-parts/single-product/gallery.php:64
+msgid "Product images"
+msgstr "Fotot e produktit"
+
+#. translators: 1: image number, 2: number of images.
+#: template-parts/single-product/gallery.php:78
+#, php-format
+msgid "Show image %1$d of %2$d"
+msgstr "Shfaq foton %1$d nga %2$d"
+
+#: template-parts/single-product/hero.php:82
+msgid "Try it. If it does not convince you, we refund every cent — and you keep the materials."
+msgstr "Provoje. Nëse nuk të bind, të kthejmë çdo lek — dhe materialet i mban."
+
+#: template-parts/single-product/price-box.php:24
+msgid "Arrives in your email within 60 seconds"
+msgstr "Të vjen në email brenda 60 sekondave"
+
+#: template-parts/single-product/price-box.php:25
+msgid "One-time payment — no subscription to cancel"
+msgstr "Pagesë e njëhershme — pa abonim për të anuluar"
+
+#: template-parts/single-product/price-box.php:26
+msgid "Lifetime access + updates"
+msgstr "Akses i përhershëm + përditësime"
+
+#: template-parts/single-product/price-box.php:43
+msgid "Buy now — instant access"
+msgstr "Bli tani — akses i menjëhershëm"
+
+#: woocommerce/checkout/form-checkout.php:45
+msgid "Show details"
+msgstr "Shfaq detajet"
+
+#: woocommerce/checkout/thankyou.php:31
+msgid "Your payment did not go through"
+msgstr "Pagesa jote nuk kaloi"
+
+#. translators: %s: buyer's first name.
+#: woocommerce/checkout/thankyou.php:72
+#, php-format
+msgid "Thank you, %s!"
+msgstr "Faleminderit, %s!"
+
+#: woocommerce/checkout/thankyou.php:73
+msgid "Thank you!"
+msgstr "Faleminderit!"
+
+#: woocommerce/checkout/thankyou.php:76
+msgid "Your order is confirmed. Your plan is ready."
+msgstr "Porosia jote u konfirmua. Plani yt është gati."
+
+#: woocommerce/checkout/thankyou.php:107
+msgid "What happens next"
+msgstr "Çfarë ndodh tani"
+
+#: woocommerce/checkout/thankyou.php:110
+msgid "Check your email"
+msgstr "Shiko email-in"
+
+#. translators: %s: billing email address.
+#: woocommerce/checkout/thankyou.php:114
+#, php-format
+msgid "The order confirmation arrives at %s within a few minutes. Check spam if it is not there."
+msgstr "Konfirmimi i porosisë të vjen te %s brenda pak minutash. Shiko te spam nëse nuk e gjen."
+
+#: woocommerce/checkout/thankyou.php:121
+msgid "Set your password"
+msgstr "Vendos fjalëkalimin"
+
+#: woocommerce/checkout/thankyou.php:122
+msgid "On your first order we create your account and email you a link to set its password."
+msgstr "Në porosinë e parë të krijojmë llogarinë dhe të dërgojmë me email një link për të vendosur fjalëkalimin."
+
+#: woocommerce/checkout/thankyou.php:126
+msgid "Open your plan"
+msgstr "Hape planin"
+
+#: woocommerce/checkout/thankyou.php:127
+msgid "Your plans are always in your account, ready to open on your phone or download as a PDF."
+msgstr "Planet e tua janë gjithmonë në llogari, gati për t'u hapur në telefon ose për t'u shkarkuar si PDF."
+
+#: woocommerce/checkout/thankyou.php:128
+msgid "Go to my plans"
+msgstr "Shko te planet e mia"
+
+#: woocommerce/checkout/thankyou.php:170
+msgid "Complete your system"
+msgstr "Plotësoje sistemin"
+
+#: woocommerce/checkout/thankyou.php:171
+msgid "Most customers pair training with a meal plan."
+msgstr "Shumica e klientëve e kombinojnë stërvitjen me një plan ushqimor."
+
+#: theme.json
+msgctxt "Color name"
+msgid "Paper"
+msgstr "Sfondi"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "Sipërfaqja"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Raised"
+msgstr "E ngritur"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Line"
+msgstr "Vija"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "Teksti"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink muted"
+msgstr "Teksti i zbehtë"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Theksi"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Accent light"
+msgstr "Theksi i çelët"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Acid"
+msgstr "Acid"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Anton"
+msgstr "Anton"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "E vogël"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Mesatare"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "E madhe"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra large"
+msgstr "Shumë e madhe"
