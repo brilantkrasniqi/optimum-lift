@@ -1,7 +1,7 @@
 # Shop archive
 
 Type: task
-Status: claimed
+Status: resolved
 Wave: 2
 Blocked by: 01, 02, 03, 04
 Split into: 08a
@@ -33,3 +33,7 @@ Split into: 08a
 ## Comments
 
 2026-09-24: split into sub-tickets 08a. Work those, not this file; the last of them to resolve also resolves this ticket.
+
+## Answer
+
+Resolved through 08a (translations, sort/filter/no-JS acceptance, fidelity, and a fix for the empty grid under a lone banner). The templates landed in `a5fa5db`.

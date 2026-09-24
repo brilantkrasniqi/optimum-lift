@@ -54,6 +54,8 @@ get_template_part('template-parts/shop/intro');
 
 <?php get_template_part('template-parts/shop/toolbar', null, ['count' => $count]); ?>
 
+<?php // The banner can be the only Product (the bundle archive): no empty grid under it. ?>
+<?php if ($products !== [] || $count === 0 || $wp_query->max_num_pages > 1) : ?>
 <section class="mx-auto max-w-7xl px-4 pt-6 pb-20">
     <?php if ($products !== []) : ?>
         <h2 class="screen-reader-text"><?php esc_html_e('Products', 'optimum-lift'); ?></h2>
@@ -68,6 +70,9 @@ get_template_part('template-parts/shop/intro');
 
     <?php get_template_part('template-parts/shop/pagination'); ?>
 </section>
+<?php else : ?>
+<div class="pb-10" aria-hidden="true"></div>
+<?php endif; ?>
 
 <?php
 get_template_part('template-parts/shop/guarantee');

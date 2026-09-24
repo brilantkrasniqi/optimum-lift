@@ -1,0 +1,44 @@
+{
+  "No products match your search.": "Asnjë produkt nuk përputhet me kërkimin.",
+  "No products in this category.": "Nuk ka produkte në këtë kategori.",
+  "No products yet.": "Ende nuk ka produkte.",
+  "We are working on new products — in the meantime, see them all.": "Po punojmë për produkte të reja — ndërkohë shiko të gjitha.",
+  "See all": "Shiko të gjitha",
+  "We are working on new products.": "Po punojmë për produkte të reja.",
+  "%d-day guarantee on every product": {
+    "plural": "%d-day guarantee on every product",
+    "sq": ["Garanci %d ditë për çdo produkt", "Garanci %d ditë për çdo produkt"]
+  },
+  "Try it for %d day.": {
+    "plural": "Try it for %d days.",
+    "sq": ["Provoje %d ditë.", "Provoje %d ditë."]
+  },
+  "Not convinced? Send us an email and we refund all of your money, with no forms and no awkward conversation.": "Nuk të bind — shkruaj një email dhe të kthejmë 100% të parave, pa formularë dhe pa bisedë të pakëndshme.",
+  "%s digital product in Albanian — training programs and meal plans.": {
+    "plural": "%s digital products in Albanian — training programs and meal plans.",
+    "sq": ["%s produkt digjital në shqip — programe stërvitjeje dhe plane ushqimore.", "%s produkte digjitale në shqip — programe stërvitjeje dhe plane ushqimore."]
+  },
+  "One-time payment, instant access, %d-day guarantee on all of them.": {
+    "plural": "One-time payment, instant access, %d-day guarantee on all of them.",
+    "sq": ["Pagesë e njëhershme, akses i menjëhershëm, garanci %d ditë për të gjitha.", "Pagesë e njëhershme, akses i menjëhershëm, garanci %d ditë për të gjitha."]
+  },
+  "One-time payment and instant access.": "Pagesë e njëhershme dhe akses i menjëhershëm.",
+  "Previous": "E mëparshme",
+  "Next": "Tjetra",
+  "Pages": "Faqet",
+  "Filter by category": "Filtro sipas kategorisë",
+  "Sort": "Rendit",
+  "Apply": "Zbato",
+  "%s product": {
+    "plural": "%s products",
+    "sq": ["%s produkt", "%s produkte"]
+  },
+  "Our picks": "Të zgjedhurat",
+  "Best sellers": "Më të shiturat",
+  "Price: low to high": "Çmimi: i ulët → i lartë",
+  "Price: high to low": "Çmimi: i lartë → i ulët",
+  "All": "Të gjitha",
+  "Training programs": "Programe stërvitjeje",
+  "Diets": "Dieta",
+  "Bundles": "Paketa"
+}
