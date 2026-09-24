@@ -25,26 +25,6 @@ function optimum_lift_field(int $post_id, string $name): mixed
 }
 
 /**
- * A theme setting with the spec's defaults, for when the Customizer module is
- * not loaded.
- */
-function optimum_lift_shop_setting(string $key): mixed
-{
-    if (function_exists('optimum_lift_setting')) {
-        return optimum_lift_setting($key);
-    }
-
-    $defaults = [
-        'guarantee_days'     => 30,
-        'offer_label'        => __('Launch offer', 'optimum-lift'),
-        'offer_ends_at'      => '',
-        'customers_baseline' => 600,
-    ];
-
-    return $defaults[$key] ?? null;
-}
-
-/**
  * The product_cat slug behind each kind of Product.
  *
  * @return array<string, string> kind => product_cat slug
@@ -620,7 +600,7 @@ function optimum_lift_token_value(string $token, ?WC_Product $context): ?string
             return $bundle !== null ? $price(optimum_lift_current_price($bundle)) : '';
 
         case 'guarantee_days':
-            $days = (int) optimum_lift_shop_setting('guarantee_days');
+            $days = (int) optimum_lift_setting('guarantee_days');
 
             return $days > 0 ? esc_html(optimum_lift_format_number($days)) : '';
 

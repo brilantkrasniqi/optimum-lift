@@ -26,10 +26,6 @@
     @apply border-acid/30 bg-acid/10 text-acid;
   }
 
-  .eyebrow--accent {
-    @apply border-accent/40 bg-accent/15 text-accent-light;
-  }
-
   /* --------------------------------------------------------------- buttons */
 
   .btn {
@@ -80,20 +76,6 @@
 
   .btn-block {
     @apply flex w-full;
-  }
-
-  /* ----------------------------------------------------------------- pills */
-
-  .pill {
-    @apply inline-flex items-center gap-1.5 rounded-full bg-black/70 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-zinc-300;
-  }
-
-  .pill-acid {
-    @apply bg-acid text-paper;
-  }
-
-  .pill-accent {
-    @apply bg-accent text-white;
   }
 
   /* --------------------------------------------------------- surfaces */

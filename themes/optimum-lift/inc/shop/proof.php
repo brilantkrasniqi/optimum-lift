@@ -119,7 +119,7 @@ function optimum_lift_sold_count(WC_Product $p): ?int
  */
 function optimum_lift_customer_count(): int
 {
-    return max(0, (int) optimum_lift_shop_setting('customers_baseline')) + optimum_lift_paid_orders_count();
+    return max(0, (int) optimum_lift_setting('customers_baseline')) + optimum_lift_paid_orders_count();
 }
 
 /**

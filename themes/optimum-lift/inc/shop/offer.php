@@ -63,7 +63,7 @@ function optimum_lift_offer(?WC_Product $p = null): ?array
  */
 function optimum_lift_offer_shape(int $ends_at, string $scope, ?int $percent, bool $up_to): array
 {
-    $label = trim((string) optimum_lift_shop_setting('offer_label'));
+    $label = trim((string) optimum_lift_setting('offer_label'));
 
     if ($percent !== null && $percent > 0) {
         $amount = $up_to
@@ -89,7 +89,7 @@ function optimum_lift_offer_shape(int $ends_at, string $scope, ?int $percent, bo
  */
 function optimum_lift_site_offer_end(): ?int
 {
-    $value = optimum_lift_shop_setting('offer_ends_at');
+    $value = optimum_lift_setting('offer_ends_at');
     if (!is_string($value) || trim($value) === '') {
         return null;
     }

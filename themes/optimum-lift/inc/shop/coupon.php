@@ -55,7 +55,7 @@ function optimum_lift_offerable_coupon(string $code): ?WC_Coupon
  */
 function optimum_lift_exit_coupon(): ?WC_Coupon
 {
-    $code = optimum_lift_shop_setting('exit_coupon');
+    $code = optimum_lift_setting('exit_coupon');
 
     return is_string($code) ? optimum_lift_offerable_coupon($code) : null;
 }

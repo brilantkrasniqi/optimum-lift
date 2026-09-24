@@ -186,7 +186,8 @@ add_action('wc_ajax_ol_add_to_cart', static function (): void {
 
 add_action('wc_ajax_ol_remove_from_cart', static function (): void {
     $cart = optimum_lift_cart_endpoint_start(true);
-    $key  = wc_clean(wp_unslash((string) ($_POST['cart_item_key'] ?? '')));
+    $key  = $_POST['cart_item_key'] ?? '';
+    $key  = is_string($key) ? wc_clean(wp_unslash($key)) : '';
 
     // A line that is already gone is the outcome the buyer asked for.
     if (is_string($key) && $key !== '' && $cart->get_cart_item($key) !== []) {

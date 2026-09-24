@@ -35,18 +35,6 @@ function optimum_lift_page_title(): string
 }
 
 /**
- * Post meta line for the blog. Products do not use this.
- */
-function optimum_lift_entry_meta(): void
-{
-    printf(
-        '<p class="entry__meta"><time datetime="%1$s">%2$s</time></p>',
-        esc_attr(get_the_date(DATE_W3C)),
-        esc_html(get_the_date())
-    );
-}
-
-/**
  * The Product a single Product page shows; null on every other page.
  */
 function optimum_lift_current_product(): ?WC_Product
