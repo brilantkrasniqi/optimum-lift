@@ -1,7 +1,7 @@
 # Documentation
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 4
 Blocked by: 11
 
@@ -20,3 +20,18 @@ Blocked by: 11
 - Checkout payment is moved from the order review to after the customer details, and the coupon form sits after `form.checkout` (10a, 10c).
 - With the seeded prices, program + diet (14,98 €) is 0,01 € under the bundle, so the drawer offers an "upgrade +0,01 €" rather than a swap (09c).
 - Any other deviation recorded in a sub-ticket `## Answer`.
+
+## Answer
+
+Done 2026-09-24.
+
+- **`CLAUDE.md`:** the `wp ol-shop seed` line next to the Plans seed, and a short storefront list: sections (`ol_blocks` → `template-parts/blocks/`); cart, Buy Now and bundles; checkout and `woocommerce/README.md`; real-data proof; the ADRs; the `sq.po` workflow.
+- **`themes/optimum-lift/woocommerce/README.md`:**
+  - lists all four overrides with the current WooCommerce `@version` (checked against `plugins/woocommerce/templates`: form-billing 3.6.0, form-checkout 9.4.0, review-order 11.0.0, thankyou 8.1.0) and why each exists; `form-billing.php` (11e) is new, and the `form-checkout.php` row covers the source-order change;
+  - the no-JS coupon form;
+  - that cart, My Account and the Portal have no overrides.
+- **`spec.md`:**
+  - Status "done (2026-09-24)";
+  - a new "As built" section. It has the three deviations this ticket names (each confirmed in the code: `foot.php:28`, `checkout.php:59–63` and `form-checkout.php`, the 11b ladder `[60 62] → upgrade +0,01`) and the others recorded in sub-ticket Answers (09b, 10c, 10d, 11b, 11c, 11d, 11e, 12);
+  - three follow-ups from the review.
+- **Tickets:** 01–12, every sub-ticket (05a … 11e) and every parent (05–11) have `Status: resolved` and an `## Answer`. This ticket is the last.

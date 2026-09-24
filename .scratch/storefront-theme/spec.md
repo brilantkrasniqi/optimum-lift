@@ -1,6 +1,6 @@
 # Spec: the storefront theme
 
-Status: in progress (2026-09-16).
+Status: done (2026-09-24). Every ticket is resolved; see "As built" for what differs from this spec.
 
 Read first: `CONTEXT.md`, ADR-0002, ADR-0003, ADR-0006, ADR-0007, ADR-0008, and
 the design at `C:\Users\Work\Desktop\Projects\ol-design\` (`BUILD-BRIEF.md`,
@@ -608,6 +608,48 @@ sale first: 09a, 09b, 09c, 09d, 09e, then 10a, 10c, 10d, 09f.
 | `woocommerce.css` | split into sections: notices, forms and checkout (10c); thank-you (10d); cart page (10e) |
 | `account.css`, the Portal overrides | 10f |
 
+## As built (2026-09-24)
+
+Every ticket, 01–13, is resolved; each ticket's `## Answer` has the evidence. Where the code differs from the sections above, the code wins, as recorded here. Each item was checked against the code on 2026-09-24.
+
+**Cart and checkout**
+
+- **The drawer total is the cart total, not the subtotal** (09d). `template-parts/cart/foot.php` uses `WC()->cart->get_total('edit')`, so a coupon from the coupon link (07b) shows as a discount row and lowers the total; "Vlera pa ulje" and "Kursen" still compare against the anchors.
+- **Program + diet is not a swap** (09c). With the seeded prices, 60 + 62 cost 14,98 €, 0,01 € under the bundle, so step 3 of the ladder offers "upgrade" (+0,01 €) rather than "swap".
+- **Payment block and coupon form moved** (10a, 10c). `inc/shop/checkout.php` moves the payment block out of the order review to after the customer details (with its own "Payment" heading), and the coupon form to `woocommerce_after_checkout_form`, outside `form.checkout`. On desktop the coupon toggle sits at the bottom of the right column. Without JavaScript the form is shown directly (11b).
+- **Checkout source order and headings** (11e). The order summary comes before the fields in the source, so focus follows the phone layout; the grid places it on the right from `lg`. "Your details", "Payment" and "Your order" are `h2`, which needs a `woocommerce/checkout/form-billing.php` override. Overrides and hooks are listed in `themes/optimum-lift/woocommerce/README.md`.
+- **Thank-you without a login wall** (10d). The Plans plugin creates an account for every guest order, which makes WooCommerce ask for a password the buyer hasn't set. `woocommerce_order_received_verify_known_shoppers` lets the buyer through only when:
+  - the URL carries the order key;
+  - the session's email matches the order's;
+  - the order is inside WooCommerce's 10-minute grace period.
+- **A failed Buy Now leaves the cart empty** (09b). The cart is emptied before the add, so if a third-party validation filter refuses the Product, the previous cart is not restored. The buyer is sent back with a notice.
+
+**Offers**
+
+- **A site-wide offer needs a running sale** (11c). `optimum_lift_offer()` without a Product returns null unless at least one published Product is on sale (`optimum_lift_sale_running()`); otherwise the countdown would end with no price changing. A bundle's saving against its components still counts toward the site label's "up to −X%", as specified.
+
+**Styling**
+
+- **Muted text colours** (11e). `--color-zinc-500` is `#8a8a93`, not Tailwind's `#71717a` (under AA on the dark backgrounds). Small text the mock sets in `zinc-600` uses `zinc-500`; `zinc-600` remains for decorative separators, icons, gradients and underlines.
+- **No `style.css` request** (11e). `style.css` only holds the theme header and is no longer enqueued; `assets/dist/main.css` is the one stylesheet.
+- **Component classes removed** (11d). `.pill`, `.pill-acid`, `.pill-accent` and `.eyebrow--accent` were in the component list but unused. The badges use utilities.
+- **`<main id="main" tabindex="-1">`** in every template, so the skip link moves focus (11e).
+
+**Contracts**
+
+- **dataLayer key** (11d). The `track()` dataLayer push carries `event_id` (GTM convention) rather than `eventID` and drops `once`; `fbq` still receives `{eventID}`.
+- **`optimum_lift_shop_setting()` removed** (11d). It was a fallback from when ticket 02 ran without the Customizer module; everything calls `optimum_lift_setting()`.
+
+**Translations**
+
+- **`sq.po` replaces the JSON sources** (12). The per-ticket `languages/src/*.json` files were merged into `themes/optimum-lift/languages/sq.po`, then deleted. `sq.po` is the source; `optimum-lift.pot` sits beside it; `sq.mo` and `sq.l10n.php` are generated. To add a string:
+  1. `wp i18n make-pot . languages/optimum-lift.pot --domain=optimum-lift --exclude=assets,languages`
+  2. `wp i18n update-po`
+  3. Translate the new entries.
+  4. `wp i18n make-mo` and `make-php`.
+
+  The "Translations" rule under PHP conventions no longer applies. PHPCS excludes `languages/`.
+
 ## Follow-ups (not in this effort)
 
 - Real content: photos, testimonials, results, trainer, prices, offer dates.
@@ -618,3 +660,6 @@ sale first: 09a, 09b, 09c, 09d, 09e, then 10a, 10c, 10d, 09f.
 - Server-side purchase tracking / Meta Conversions API (launch issue 09).
 - Albanian translation of the Plans plugin.
 - Omnibus lowest-price display.
+- WooCommerce order attribution (`sourcebuster.js`, `sbjs_*` cookies) on every page: keep it for ad attribution or gate it behind consent (11e).
+- The site offer label's "up to −X%" counts the bundle's permanent saving; consider only Products on sale. Every sale should end on `offer_ends_at` (11c).
+- Seeded guarantee copy outside `{guarantee_days}` has to follow the setting by hand (11c).
