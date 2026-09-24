@@ -1,7 +1,7 @@
 # Product page frame: hero, gallery, price box, buy bar, cross-sells
 
 Type: task
-Status: claimed
+Status: resolved
 Wave: 2
 Blocked by: 01, 02, 03, 04
 Split into: 05a, 05b
@@ -36,3 +36,7 @@ in the spec. Mock: `produkt.html` and `produkt-dieta.html` sections 3, 4 and
 ## Comments
 
 2026-09-24: split into sub-tickets 05a, 05b. Work those, not this file; the last of them to resolve also resolves this ticket. 05a is the wave-2 baseline (lint, broken JSON, re-seed) that every other sub-ticket waits for. The Buy Now end-to-end check moved to 09f.
+
+## Answer
+
+Resolved through 05a (green lint, valid translation JSON, live demo offer) and 05b (translations, sticky-bar spacer, fidelity pass). The templates themselves landed in `a5fa5db`. The "Bli tani" end-to-end check moves to 09f.

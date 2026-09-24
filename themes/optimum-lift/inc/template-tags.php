@@ -315,9 +315,19 @@ function optimum_lift_legal_links(): array
 
 /**
  * Whether a fixed bar covers the bottom of the screen on mobile (the Product
- * buy bar, the homepage CTA), so the footer needs room to scroll past it.
+ * buy bar, the homepage CTA), so the footer needs room to scroll past it. On
+ * a Product, only when its buy bar actually renders.
  */
 function optimum_lift_has_sticky_bar(): bool
 {
-    return (bool) apply_filters('optimum_lift_has_sticky_bar', optimum_lift_current_product() !== null || is_front_page());
+    $product = optimum_lift_current_product();
+
+    // The same conditions under which buy-bar.php renders, and layout.php
+    // reaches it (not behind a password form).
+    $buy_bar = $product !== null
+        && $product->is_purchasable()
+        && $product->is_in_stock()
+        && !post_password_required($product->get_id());
+
+    return (bool) apply_filters('optimum_lift_has_sticky_bar', $buy_bar || is_front_page());
 }
