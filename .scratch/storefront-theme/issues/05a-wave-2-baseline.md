@@ -1,7 +1,7 @@
 # Wave-2 baseline: green lint, valid translation JSON, live demo offer
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 05
 Blocked by: 01, 02, 03, 04
@@ -40,7 +40,25 @@ Nothing new. Put the tree back in a state every other sub-ticket can start from.
 
 ## Acceptance criteria
 
-- [ ] `npm run lint:php` exits 0 and `npm run analyse:php` reports no errors.
-- [ ] Every `languages/src/*.json` parses.
-- [ ] The Store API lists Products 60–63 with `on_sale: true`, and `/` shows the urgency bar with a countdown.
-- [ ] `npm run build` succeeds, and `git diff --stat` shows only the files above.
+- [x] `npm run lint:php` exits 0 and `npm run analyse:php` reports no errors.
+- [x] Every `languages/src/*.json` parses.
+- [x] The Store API lists Products 60–63 with `on_sale: true`, and `/` shows the urgency bar with a countdown.
+- [x] `npm run build` succeeds, and `git diff --stat` shows only the files above.
+
+## Answer
+
+Built (2026-09-24):
+
+- phpcbf's fix re-indented the three `?>` to odd columns, so I used the fallback refactor instead: `comparison.php` computes cell classes with a `$cell_class($column, $row)` closure defined before the markup; `final-cta.php` computes `$body_class` with the other top-of-file values; `reviews.php` computes `$summary_text` in the PHP block that already computed `$average`, and echoes it inside the `<p>`. Output is unchanged.
+- `06a.json`: the raw 0x04 byte is now the `\u0004` escape (`"macronutrient total\u0004Fat": "Yndyra"`).
+- Re-seeded (offers end 2026-09-27 23:59), then `npm run build`.
+
+Evidence:
+
+- `npm run lint:php` exits 0 (warnings only); `npm run analyse:php` reports `[OK] No errors`.
+- Every `languages/src/*.json` parses with `JSON.parse`.
+- Store API: 60, 61, 62, 63 `on_sale: true` (7,99 / 8,99 / 6,99 / 5,99). 64 (the bundle) shows `on_sale: false`, which is expected: it has no sale price, and its saving is computed from its components (ADR-0006). `/` renders the urgency bar with `data-countdown`.
+- `assets/dist/main.css` rebuilt and contains the `data-shown` rules; `debug.log` line count unchanged (157).
+- `git diff --stat`: only the three templates, `06a.json` and this ticket.
+
+Note for later tickets: `core.autocrlf` is `true`, so `git checkout -- file` rewrites files with CRLF, and phpcs then fails with "End of line character is invalid". Run `sed -i 's/\r$//'` on the file after restoring it.

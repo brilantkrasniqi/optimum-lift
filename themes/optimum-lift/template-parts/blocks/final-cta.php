@@ -72,6 +72,12 @@ $tone     = optimum_lift_block_tone_class($block);
 $previous = $index > 0 ? (optimum_lift_blocks($post_id)[$index - 1] ?? null) : null;
 // A line between this and a section of the same background, where the glow begins.
 $divided = $tone === '' && is_array($previous) && optimum_lift_block_tone_class($previous) === '';
+
+$body_class = match (true) {
+    $paired => 'mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-zinc-400 first:mt-0',
+    $front  => 'mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-zinc-300 first:mt-0 sm:text-lg',
+    default => 'mx-auto mt-6 max-w-lg text-[15px] leading-relaxed text-zinc-300 first:mt-0',
+};
 ?>
 <section id="<?php echo esc_attr(optimum_lift_block_id($block, 'final-cta')); ?>" class="<?php echo esc_attr('relative overflow-hidden py-20 md:py-28 ' . ($divided ? 'border-t border-white/[.07]' : $tone)); ?>">
     <?php if ($paired) : ?>
@@ -90,13 +96,6 @@ $divided = $tone === '' && is_array($previous) && optimum_lift_block_tone_class(
             <h2 class="<?php echo esc_attr($front ? 'h-display text-4xl text-white sm:text-6xl' : 'h-display text-4xl text-white sm:text-5xl'); ?>"><?php echo optimum_lift_heading_html($heading); ?></h2>
         <?php endif; ?>
         <?php if ($body !== '') : ?>
-            <?php
-            $body_class = match (true) {
-                $paired => 'mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-zinc-400 first:mt-0',
-                $front  => 'mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-zinc-300 first:mt-0 sm:text-lg',
-                default => 'mx-auto mt-6 max-w-lg text-[15px] leading-relaxed text-zinc-300 first:mt-0',
-            };
-            ?>
             <p class="<?php echo esc_attr($body_class); ?>"><?php echo esc_html($body); ?></p>
         <?php endif; ?>
 

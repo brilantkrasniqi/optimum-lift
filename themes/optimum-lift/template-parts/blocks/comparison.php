@@ -119,6 +119,16 @@ $front   = $post_id > 0 && $post_id === optimum_lift_front_page_id();
 $alt     = optimum_lift_block_tone_class($block) !== '';
 $caption = $heading !== '' ? trim(str_replace('*', '', (string) preg_replace('/\s+/u', ' ', $heading))) : __('Comparison', 'optimum-lift');
 $last    = count($rows) - 1;
+
+/**
+ * @param array{highlight: bool} $column
+ * @param array{type: string} $row
+ */
+$cell_class = static fn (array $column, array $row): string => match (true) {
+    $column['highlight'] && $row['type'] === 'price' => 'bg-accent/[.06] p-4 text-center font-extrabold text-white sm:p-5',
+    $column['highlight']                             => 'bg-accent/[.06] p-4 text-center sm:p-5',
+    default                                          => 'p-4 text-center text-zinc-400 sm:p-5',
+};
 ?>
 <section id="<?php echo esc_attr(optimum_lift_block_id($block, 'comparison')); ?>" class="py-20 md:py-28 <?php echo esc_attr(optimum_lift_block_tone_class($block)); ?>">
     <div class="mx-auto max-w-5xl px-4">
@@ -152,14 +162,7 @@ $last    = count($rows) - 1;
                             <tr class="<?php echo esc_attr($r < $last ? 'border-b border-white/[.05]' : ''); ?>">
                                 <th scope="row" class="p-4 text-left font-semibold text-zinc-400 sm:p-5"><?php echo esc_html($row['label']); ?></th>
                                 <?php foreach ($columns as $i => $column) : ?>
-                                    <?php
-                                    $cell_class = match (true) {
-                                        $column['highlight'] && $row['type'] === 'price' => 'bg-accent/[.06] p-4 text-center font-extrabold text-white sm:p-5',
-                                        $column['highlight']                             => 'bg-accent/[.06] p-4 text-center sm:p-5',
-                                        default                                          => 'p-4 text-center text-zinc-400 sm:p-5',
-                                    };
-                                    ?>
-                                    <td class="<?php echo esc_attr($cell_class); ?>"><?php echo wp_kses_post($row['cells'][$i]); ?></td>
+                                    <td class="<?php echo esc_attr($cell_class($column, $row)); ?>"><?php echo wp_kses_post($row['cells'][$i]); ?></td>
                                 <?php endforeach; ?>
                             </tr>
                         <?php endforeach; ?>

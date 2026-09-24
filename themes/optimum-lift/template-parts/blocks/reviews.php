@@ -174,7 +174,15 @@ $avatars = [
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <?php $average = optimum_lift_format_rating($rating['average']); ?>
+                <?php
+                $average      = optimum_lift_format_rating($rating['average']);
+                $count        = optimum_lift_format_number($rating['count']);
+                $summary_text = $front
+                    /* translators: %s: number of reviews across the store. */
+                    ? sprintf(_n('%s review', '%s reviews', $rating['count'], 'optimum-lift'), $count)
+                    /* translators: %s: number of reviews of the Product. */
+                    : sprintf(_n('%s review for this product', '%s reviews for this product', $rating['count'], 'optimum-lift'), $count);
+                ?>
                 <div class="<?php echo esc_attr($alt ? 'flex shrink-0 items-center gap-3 self-start rounded-2xl border border-white/10 bg-paper px-5 py-3.5 sm:self-auto' : 'flex shrink-0 items-center gap-3 self-start rounded-2xl border border-white/10 bg-surface px-5 py-3.5 sm:self-auto'); ?>">
                     <p class="h-display text-3xl text-white" aria-hidden="true"><?php echo esc_html($average); ?></p>
                     <div>
@@ -182,14 +190,7 @@ $avatars = [
                             /* translators: %s: average rating, e.g. 4,7. */
                             echo esc_attr(sprintf(__('%s out of 5 stars', 'optimum-lift'), $average));
                         ?>">★★★★★</span>
-                        <p class="mt-0.5 text-[11px] font-bold text-zinc-500"><?php
-                            $count = optimum_lift_format_number($rating['count']);
-                            echo esc_html($front
-                                /* translators: %s: number of reviews across the store. */
-                                ? sprintf(_n('%s review', '%s reviews', $rating['count'], 'optimum-lift'), $count)
-                                /* translators: %s: number of reviews of the Product. */
-                                : sprintf(_n('%s review for this product', '%s reviews for this product', $rating['count'], 'optimum-lift'), $count));
-                        ?></p>
+                        <p class="mt-0.5 text-[11px] font-bold text-zinc-500"><?php echo esc_html($summary_text); ?></p>
                     </div>
                 </div>
             </div>
