@@ -98,6 +98,10 @@ function optimum_lift_apply_stored_coupon(): void
         return;
     }
 
+    // Right after an add the totals still describe the old cart, and the
+    // minimum-spend rule reads them.
+    $cart->calculate_totals();
+
     if ((new WC_Discounts($cart))->is_coupon_valid($coupon) === true) {
         $cart->apply_coupon($coupon->get_code());
     }

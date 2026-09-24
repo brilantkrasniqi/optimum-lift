@@ -462,6 +462,16 @@
     display: none;
   }
 
+  /* Without JavaScript the toggle cannot open the form (WooCommerce hides it
+     inline), yet the form posts and applies the code: show it, drop the toggle. */
+  html:not(.js) .ol-checkout-coupon .checkout_coupon {
+    display: flex !important;
+  }
+
+  html:not(.js) .ol-checkout-coupon .woocommerce-form-coupon-toggle {
+    display: none;
+  }
+
   /* jQuery BlockUI's overlay while checkout refreshes. */
   .blockUI.blockOverlay {
     background: color-mix(in srgb, var(--color-paper) 70%, transparent) !important;
