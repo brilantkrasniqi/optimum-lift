@@ -1,7 +1,7 @@
 # The drawer's upsell decision: `optimum_lift_cart_upsell()`
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 09
 Blocked by: 05a
@@ -47,7 +47,7 @@ No user-facing strings, so there's no JSON file.
 
 ## Acceptance criteria
 
-- [ ] Write a `wp eval-file` script (in the scratchpad, not the repo) that loads a cart in CLI (`wc_load_cart()`), fills it, prints `optimum_lift_cart_upsell()`, and empties it between cases. With the seeded sale prices (60: 7.99, 61: 8.99, 62: 6.99, 63: 5.99, bundle 64: 14.99) it must print:
+- [x] Write a `wp eval-file` script (in the scratchpad, not the repo) that loads a cart in CLI (`wc_load_cart()`), fills it, prints `optimum_lift_cart_upsell()`, and empties it between cases. With the seeded sale prices (60: 7.99, 61: 8.99, 62: 6.99, 63: 5.99, bundle 64: 14.99) it must print:
 
   | Cart | Expected |
   | --- | --- |
@@ -60,4 +60,35 @@ No user-facing strings, so there's no JSON file.
   | [61, 62] | swap → 64, 0.99 |
   | [64] | null |
 
-- [ ] If a case differs because of how "best complement" is read, explain the reading in the Answer rather than bending the code to the table.
+- [x] If a case differs because of how "best complement" is read, explain the reading in the Answer rather than bending the code to the table.
+
+## Answer
+
+Built `inc/shop/upsell.php` (2026-09-24):
+
+- `optimum_lift_cart_upsell()`: the ladder, from the real cart lines.
+- `optimum_lift_bestseller_of_kind(string $kind): ?WC_Product`: cached with `optimum_lift_proof_cached('bestseller_' . $kind, 12h, …)`. It stores the ID; ties go to menu order; with no sales at all, it returns the first Product in menu order.
+- `optimum_lift_best_complement($lines, $kind, $line_ids)`.
+
+How I read the ladder:
+
+- *Bundle*: the first bundle that contains any line, else the first bundle. *Covered*: lines that are components of it.
+- *Subtotal* in step 3: the sum of `optimum_lift_current_price()` over all lines. I used display prices, not `WC()->cart` totals, so coupons don't move the decision.
+- *One kind*: the set of non-null kinds in the cart has exactly one member. Lines with no kind are ignored.
+- *Best complement*: the lines' cross-sells in order, skipping anything in the cart or unpublished/unpurchasable, then the kind's best-seller.
+- Step 4's amount is clamped at ≥ 0.
+
+Evidence: `wp eval-file -` with a scratch script (`wc_load_cart()`, empty the cart, add, print) gives exactly the table:
+
+```
+[] => null
+[60] => complement -> 62, 6.99
+[61] => upgrade -> 64, 6.00
+[62] => complement -> 60, 7.99
+[63] => complement -> 60, 7.99
+[60, 62] => upgrade -> 64, 0.01
+[61, 62] => swap -> 64, 0.99
+[64] => null
+```
+
+lint exit 0; PHPStan OK; `debug.log` unchanged.
