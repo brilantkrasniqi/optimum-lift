@@ -1,7 +1,7 @@
 # Proof blocks: FAQ accordion, `.proof-copy`, translations, acceptance
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Wave: 2
 Parent: 06
 Blocked by: 05a
@@ -50,10 +50,34 @@ The 06b templates landed in `a5fa5db`: `template-parts/blocks/{results,reviews,c
 
 ## Acceptance criteria
 
-- [ ] Ticket 06's criteria, for the 06b blocks:
+- [x] Ticket 06's criteria, for the 06b blocks:
   - Screenshots of 60 (`produkt.html` 10–14), 62 (`produkt-dieta.html`) and `/` (`index.html` 10–16) at 390px and 1440px match.
   - The medical disclaimer appears in 62's FAQ.
-- [ ] Comparison prices follow the Product's price. Change a column Product's sale price with WP-CLI, reload, see the new price, then revert.
-- [ ] No block prints an empty heading, list or table. Blank a block's rows (`wp eval` with `update_field`), check the page, then restore with `wp ol-shop seed`.
-- [ ] The accordion works by keyboard and allows one open item per container. Tab never lands inside a collapsed answer.
-- [ ] `06b.json` parses.
+- [x] Comparison prices follow the Product's price. Change a column Product's sale price with WP-CLI, reload, see the new price, then revert.
+- [x] No block prints an empty heading, list or table. Blank a block's rows (`wp eval` with `update_field`), check the page, then restore with `wp ol-shop seed`.
+- [x] The accordion works by keyboard and allows one open item per container. Tab never lands inside a collapsed answer.
+- [x] `06b.json` parses.
+
+## Answer
+
+Built (2026-09-24):
+
+- **`modules/accordion.js`**: one click listener per `[data-accordion]`. It toggles `.open` on `btn.closest('.acc')`, closes the other items **of the same container** only, keeps `aria-expanded` in sync, and sets `inert` on every collapsed `.acc-body`, both at init and on each toggle. Without JS, all answers show (the existing CSS).
+- **`.proof-copy`** in `blocks-proof.css`: paragraph spacing, `strong` in `text-zinc-200`, the `pages.css` inline-link recipe, and disc/decimal lists with accent/zinc markers.
+- **`languages/src/06b.json`**: 24 strings (2 contexts: `result photo`, `quotation`; 1 plural, "%s review for this product"). There's no key clash with other files; "%s review", "%s out of 5 stars", "Comparison", "(opens in a new tab)" and "Buy now" aren't redefined. The Albanian comes from the mocks where it exists ("Blerje e verifikuar", "Ke pyetje të tjera para se të blesh?", "Shkruaj në WhatsApp — përgjigjemi brenda 24 orësh.", "Rezultatet ndryshojnë nga personi në person dhe varen nga zbatimi i planit.", "Para"/"Pas"). WooCommerce's rating labels use the same voice.
+- The block templates didn't need changes; the review form keeps its native `<select>`.
+
+Evidence:
+
+- **Accordion** (Playwright, 390px, Product 62): at init all 7 items are closed and inert. Enter on #0 → `Oe` (open, expanded) with the others closed. Space on #1 → only #1 open. Clicking #1 again → all closed. Twelve Tabs from the first question never landed inside a collapsed answer. No JS errors.
+- **Disclaimer**: 62's FAQ note renders "Shënim: Ky plan është material informativ dhe edukativ për njerëz të shëndetshëm — nuk është këshillë mjekësore…".
+- **Comparison prices**: 60's comparison read `7,99 / 8,99 / 14,99 €`. With 60 at 6.49 (post meta), it read `6,49 / 8,99 / 14,99 €`. Reverted by `wp ol-shop seed` (Store API 799).
+- **Empty blocks**: I blanked the rows and bodies of results, reviews (manual source), comparison, credibility, guarantee, FAQ and final CTA on 60 and the front page with `update_field('field_olt_blocks', …)`. There were 0 empty headings, lists, tbodies or paragraphs, no `data-accordion` and no `<table>`. The blanked sections disappeared entirely, headings included; the final CTA stayed (its button still has content). Restored with the seed.
+- **Screenshots**: 60, 62 and `/` at 390px and 1440px, from the first proof section to the footer, against `produkt.html`, `produkt-dieta.html` and `index.html`. Structure, type, spacing and copy match. Differences:
+  - Reviews show native demo reviews first, then manual ones (spec), so 6 cards instead of the mock's 3.
+  - Manual testimonials don't carry "Blerje e verifikuar". Only native reviews from verified buyers do (ADR-0008).
+  - Computed prices and rating; the trainer/results placeholders are as seeded.
+  - UI chrome is in English until ticket 12.
+- `06b.json` parses; lint exit 0; PHPStan OK; build OK; `debug.log` unchanged.
+
+Not tested live: two FAQ blocks on one page, since no seeded page has two. The listener and item lookup are scoped to their own container.

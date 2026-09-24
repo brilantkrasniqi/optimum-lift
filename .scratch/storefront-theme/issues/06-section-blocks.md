@@ -1,7 +1,7 @@
 # Section blocks shared by Product pages and the homepage
 
 Type: task
-Status: claimed
+Status: resolved
 Wave: 2
 Blocked by: 01, 02, 03, 04
 Split into: 06b
@@ -42,3 +42,7 @@ testimonials, comparison, credibility, guarantee, FAQ, final CTA).
 ## Comments
 
 2026-09-24: split into sub-tickets 06b. Work those, not this file; the last of them to resolve also resolves this ticket. The 06a half (qualification, phases, preview, sample day, shopping list, value stack, rich text, `06a.json`) landed in `a5fa5db`; its `06a.json` is repaired in 05a.
+
+## Answer
+
+Resolved through 06b (FAQ accordion, `.proof-copy`, translations, acceptance for the proof blocks). 06a and the 06b templates landed in waves 1–2.

@@ -1,3 +1,33 @@
 /*
  * Proof section block styles: results, reviews, comparison, credibility, guarantee, FAQ, final CTA (ticket 06b). Only what utilities cannot express; @layer components.
  */
+
+@layer components {
+  /*
+   * Editor HTML inside the proof blocks (FAQ answers and note, the trainer's
+   * bio): paragraphs, emphasis, links and lists on the dark background.
+   */
+  .proof-copy > * + * {
+    @apply mt-3;
+  }
+
+  .proof-copy strong {
+    @apply font-bold text-zinc-200;
+  }
+
+  .proof-copy a {
+    @apply font-bold text-white underline decoration-zinc-600 underline-offset-2 transition hover:decoration-white;
+  }
+
+  .proof-copy :is(ul, ol) {
+    @apply grid gap-1.5 pl-5;
+  }
+
+  .proof-copy ul {
+    @apply list-disc marker:text-accent-light;
+  }
+
+  .proof-copy ol {
+    @apply list-decimal marker:font-bold marker:text-zinc-500;
+  }
+}
