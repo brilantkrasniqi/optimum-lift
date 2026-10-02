@@ -2,8 +2,9 @@
 
 /**
  * The homepage's pricing showcase (brief §3): the bundle as the anchor card,
- * the featured Products beside it, a way out to the full catalogue, and the
- * payment reassurance row. It is not the catalogue: the shop is.
+ * the featured Products beside it, a way out to the full catalogue under the
+ * cards (never above them: the cards are what the visitor came to compare),
+ * and the payment reassurance row. It is not the catalogue: the shop is.
  *
  * The countdown chip shows only while the site offer has a real end date
  * (ADR-0008); without one the eyebrow shows, if set. "{rest}" counts the
@@ -72,15 +73,6 @@ $view_all_products = __('View all products (%s)', 'optimum-lift');
             <?php endif; ?>
         </div>
 
-        <?php if ($catalog > 0) : ?>
-            <div class="reveal mt-8 flex justify-center">
-                <a href="<?php echo esc_url($shop_url); ?>" data-cta="catalog-header-all" class="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-surface px-4 py-2.5 text-[12px] font-extrabold text-zinc-300 transition hover:border-white/25 hover:text-white">
-                    <?php echo esc_html(sprintf($view_all, optimum_lift_format_number($catalog))); ?>
-                    <?php echo optimum_lift_icon('arrow-right', 'w-4 h-4 shrink-0'); ?>
-                </a>
-            </div>
-        <?php endif; ?>
-
         <?php if ($bundle !== null) : ?>
             <?php get_template_part('template-parts/product/bundle-banner', null, ['product' => $bundle, 'variant' => 'home', 'class' => 'reveal mt-10']); ?>
         <?php endif; ?>
@@ -93,7 +85,14 @@ $view_all_products = __('View all products (%s)', 'optimum-lift');
             </div>
         <?php endif; ?>
 
-        <?php if ($rest > 0) : ?>
+        <?php if ($rest === 0 && $catalog > 0) : ?>
+            <div class="reveal mt-8 flex justify-center">
+                <a href="<?php echo esc_url($shop_url); ?>" data-cta="catalog-all" class="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-surface px-4 py-2.5 text-[12px] font-extrabold text-zinc-300 transition hover:border-white/25 hover:text-white">
+                    <?php echo esc_html(sprintf($view_all, optimum_lift_format_number($catalog))); ?>
+                    <?php echo optimum_lift_icon('arrow-right', 'w-4 h-4 shrink-0'); ?>
+                </a>
+            </div>
+        <?php elseif ($rest > 0) : ?>
             <div class="reveal mt-10 rounded-3xl border border-white/[.08] bg-surface/60 p-7 text-center">
                 <?php if ($rest_heading !== '') : ?>
                     <h3 class="h-display text-xl text-white sm:text-2xl"><?php echo esc_html($rest_heading); ?></h3>

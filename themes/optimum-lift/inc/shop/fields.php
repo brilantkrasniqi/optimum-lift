@@ -643,7 +643,7 @@ function optimum_lift_acf_icon(): array
 
 function optimum_lift_acf_tokens_note(): string
 {
-    return __('Tokens: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee_days}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. A phrase between " · " whose token has no value is left out.', 'optimum-lift');
+    return __('Tokens: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. A phrase between " · " whose token has no value is left out.', 'optimum-lift');
 }
 
 function optimum_lift_acf_accent_note(): string

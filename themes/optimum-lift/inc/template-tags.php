@@ -98,11 +98,12 @@ function optimum_lift_section_anchor(int $post_id, string $layout): string
 }
 
 /**
- * Header and mobile menu links. On the front page and Products: the shop,
- * then the page's own sections. Elsewhere: the `primary` menu, or when none is
- * assigned, the shop plus the front page's sections.
+ * Header and mobile menu links. On the front page and Products: the shop, the
+ * training and diet archives, then the page's own sections. Elsewhere: the
+ * `primary` menu, or when none is assigned, the same links with the front
+ * page's sections.
  *
- * @return list<array{label: string, url: string, current: bool, shop: bool}>
+ * @return list<array{label: string, url: string, current: bool, shop: bool, section: bool}>
  */
 function optimum_lift_nav_links(): array
 {
@@ -115,12 +116,17 @@ function optimum_lift_nav_links(): array
     $links = [];
 
     if (function_exists('wc_get_page_permalink')) {
+        $kinds = optimum_lift_nav_kind_links();
+
         $links[] = [
             'label'   => __('Shop', 'optimum-lift'),
             'url'     => wc_get_page_permalink('shop'),
-            'current' => is_shop() || is_product_taxonomy(),
+            'current' => is_shop() || (is_product_taxonomy() && !in_array(true, array_column($kinds, 'current'), true)),
             'shop'    => true,
+            'section' => false,
         ];
+
+        array_push($links, ...$kinds);
     }
 
     $sections_post = $post_id !== 0 ? $post_id : optimum_lift_front_page_id();
@@ -133,6 +139,7 @@ function optimum_lift_nav_links(): array
                 'url'     => $base . '#' . $item['anchor'],
                 'current' => false,
                 'shop'    => false,
+                'section' => true,
             ];
         }
     }
@@ -141,9 +148,27 @@ function optimum_lift_nav_links(): array
 }
 
 /**
+ * The header's links to the training and diet archives, right after Shop: the
+ * two things the store sells, one click from every page.
+ *
+ * @return list<array{label: string, url: string, current: bool, shop: bool, section: bool}>
+ */
+function optimum_lift_nav_kind_links(): array
+{
+    if (!function_exists('optimum_lift_kind_archive_links')) {
+        return [];
+    }
+
+    return array_map(
+        static fn (array $link): array => $link + ['shop' => false, 'section' => false],
+        optimum_lift_kind_archive_links(['program', 'diet'])
+    );
+}
+
+/**
  * The top-level items of the menu assigned to a location.
  *
- * @return list<array{label: string, url: string, current: bool, shop: bool}>
+ * @return list<array{label: string, url: string, current: bool, shop: bool, section: bool}>
  */
 function optimum_lift_menu_links(string $location): array
 {
@@ -170,6 +195,7 @@ function optimum_lift_menu_links(string $location): array
             'url'     => $url,
             'current' => untrailingslashit($url) === $current,
             'shop'    => $shop_url !== '' && untrailingslashit($url) === $shop_url,
+            'section' => false,
         ];
     }
 
@@ -206,14 +232,25 @@ function optimum_lift_header_cta(): ?array
 }
 
 /**
- * "30-day guarantee", from the Customizer.
+ * The store's promise ("Success guaranteed") from the Customizer, or '' when
+ * it is switched off. Every guarantee mention hides on ''.
+ *
+ * It is not a money-back guarantee: the store gives no refunds on its digital
+ * Products (ADR-0009). What backs it is the help a buyer gets when stuck.
  */
 function optimum_lift_guarantee_label(): string
 {
-    $days = (int) optimum_lift_setting('guarantee_days');
+    $label = optimum_lift_setting('guarantee');
 
-    /* translators: %d: number of days of the money-back guarantee. */
-    return sprintf(_n('%d-day guarantee', '%d-day guarantee', $days, 'optimum-lift'), $days);
+    return is_string($label) ? trim($label) : '';
+}
+
+/**
+ * The sentence that explains the promise, next to the label.
+ */
+function optimum_lift_guarantee_text(): string
+{
+    return __('Follow the plan as written and you will see the change. Stuck along the way? Write to us and we will help you get back on track.', 'optimum-lift');
 }
 
 /**

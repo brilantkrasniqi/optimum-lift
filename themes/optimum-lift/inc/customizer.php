@@ -50,11 +50,12 @@ function optimum_lift_settings(): array
             'label'    => __('TikTok URL', 'optimum-lift'),
             'sanitize' => static fn (mixed $value): string => esc_url_raw(is_string($value) ? $value : ''),
         ],
-        'guarantee_days' => [
-            'default'  => 30,
-            'control'  => 'number',
-            'label'    => __('Money-back guarantee (days)', 'optimum-lift'),
-            'sanitize' => static fn (mixed $value): int => absint($value),
+        'guarantee' => [
+            'default'     => __('Success guaranteed', 'optimum-lift'),
+            'control'     => 'text',
+            'label'       => __('Guarantee', 'optimum-lift'),
+            'description' => __('The promise shown in the header, cart, checkout and shop. Leave empty to hide it. The store does not give refunds, so never promise money back here.', 'optimum-lift'),
+            'sanitize'    => $text,
         ],
         'offer_label' => [
             'default'  => __('Launch offer', 'optimum-lift'),

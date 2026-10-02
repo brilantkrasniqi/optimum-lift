@@ -26,12 +26,8 @@ if ($args['anchor'] !== '') {
     $url .= '#' . $args['anchor'];
 }
 
-$discount = $coupon->get_discount_type() === 'percent'
-    ? esc_html(optimum_lift_format_number((float) $coupon->get_amount(), fmod((float) $coupon->get_amount(), 1.0) > 0 ? 1 : 0) . '%')
-    : wp_kses_post(wc_price((float) $coupon->get_amount()));
-
 /* translators: %s: the discount, e.g. 10% or 5,00 €. */
-$amount = sprintf(esc_html__('%s extra off', 'optimum-lift'), $discount);
+$amount = sprintf(esc_html__('%s extra off', 'optimum-lift'), optimum_lift_coupon_discount_html($coupon));
 
 $offer = optimum_lift_offer() !== null
     /* translators: %s: the discount, e.g. "10% extra off", in bold. */

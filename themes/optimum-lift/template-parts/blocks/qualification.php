@@ -3,7 +3,7 @@
 /**
  * Qualification: who the Product is for, and who should not buy it. Saying
  * plainly who it is not for makes the rest of the page believable and cuts
- * refunds.
+ * disappointment.
  *
  * Diet Products get the ✓/✕ variant of the design (produkt-dieta.html), every
  * other Product the arrow variant (produkt.html). "For you" items may hold

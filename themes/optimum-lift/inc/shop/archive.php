@@ -47,6 +47,41 @@ function optimum_lift_shop_orderby(): string
 }
 
 /**
+ * Links to the category archives of the given kinds, in the given order. They
+ * name the kinds, not the categories: "Plane ushqimore" is the diet archive's
+ * title, "Dieta" its short label. A kind whose category does not exist (yet)
+ * has no link.
+ *
+ * @param list<string> $kinds 'program', 'diet', 'bundle'.
+ * @return list<array{label: string, url: string, current: bool}>
+ */
+function optimum_lift_kind_archive_links(array $kinds): array
+{
+    $labels = [
+        'program' => __('Training programs', 'optimum-lift'),
+        'diet'    => __('Diets', 'optimum-lift'),
+        'bundle'  => __('Bundles', 'optimum-lift'),
+    ];
+    $slugs = optimum_lift_kind_slugs();
+    $links = [];
+
+    foreach ($kinds as $kind) {
+        $term = empty($slugs[$kind]) || !isset($labels[$kind]) ? false : get_term_by('slug', $slugs[$kind], 'product_cat');
+        $url  = $term instanceof WP_Term ? get_term_link($term) : null;
+
+        if ($term instanceof WP_Term && is_string($url)) {
+            $links[] = [
+                'label'   => $labels[$kind],
+                'url'     => $url,
+                'current' => is_product_category($term->slug),
+            ];
+        }
+    }
+
+    return $links;
+}
+
+/**
  * The category filter: all Products (the shop page), then each kind's category
  * archive. Each link keeps the current sort.
  *
@@ -65,26 +100,8 @@ function optimum_lift_shop_filters(): array
         'current' => is_shop() && !is_search(),
     ]];
 
-    // The pills name the kinds, not the categories: "Plane ushqimore" is the
-    // diet archive's title, "Dieta" its short label.
-    $labels = [
-        'program' => __('Training programs', 'optimum-lift'),
-        'diet'    => __('Diets', 'optimum-lift'),
-        'bundle'  => __('Bundles', 'optimum-lift'),
-    ];
-    $slugs = optimum_lift_kind_slugs();
-
-    foreach ($labels as $kind => $label) {
-        $term = empty($slugs[$kind]) ? false : get_term_by('slug', $slugs[$kind], 'product_cat');
-        $url  = $term instanceof WP_Term ? get_term_link($term) : null;
-
-        if ($term instanceof WP_Term && is_string($url)) {
-            $filters[] = [
-                'label'   => $label,
-                'url'     => $keep($url),
-                'current' => is_product_category($term->slug),
-            ];
-        }
+    foreach (optimum_lift_kind_archive_links(['program', 'diet', 'bundle']) as $link) {
+        $filters[] = ['url' => $keep($link['url'])] + $link;
     }
 
     return $filters;

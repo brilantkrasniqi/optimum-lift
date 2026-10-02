@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-$guarantee_days = (int) optimum_lift_setting('guarantee_days');
+$guarantee = optimum_lift_guarantee_label();
 ?>
 <header class="border-b border-white/[.07] bg-paper">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4">
@@ -17,10 +17,10 @@ $guarantee_days = (int) optimum_lift_setting('guarantee_days');
                 <?php echo optimum_lift_icon('lock', 'w-4 h-4 text-acid'); ?>
                 <?php esc_html_e('Secure payment', 'optimum-lift'); ?>
             </span>
-            <?php if ($guarantee_days > 0) : ?>
+            <?php if ($guarantee !== '') : ?>
                 <span class="hidden items-center gap-1.5 sm:flex">
                     <?php echo optimum_lift_icon('shield-check', 'w-4 h-4 text-acid', ['stroke-width' => '2.2']); ?>
-                    <?php echo esc_html(optimum_lift_guarantee_label()); ?>
+                    <?php echo esc_html($guarantee); ?>
                 </span>
             <?php endif; ?>
         </div>

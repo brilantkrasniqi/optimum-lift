@@ -11,9 +11,10 @@
  * testimonials, results and the marquee, the homepage hero's before/after and
  * progress card, the goal tabs' customer averages and typical results, the
  * trainer, "WhatsApp 7/7", value-stack values, the shopping-list cost and the
- * legal pages. Guarantee copy outside {guarantee_days} tokens (headings,
- * intros, reassurance lines, comparison cells, FAQ answers, Product
- * descriptions) says 30 days: keep it equal to the Customizer setting.
+ * legal pages. The guarantee is a promise backed by help, never money back
+ * (ADR-0009). Copy that names it outside {guarantee} tokens (section headings,
+ * the hero's reassurance lines) says "Sukses i garantuar", as the Customizer
+ * does: keep the two equal.
  */
 
 declare(strict_types=1);
@@ -636,7 +637,6 @@ final class ShopCommand
      */
     private function legalPages(): void
     {
-        $days  = (int) optimum_lift_setting('guarantee_days');
         $email = (string) optimum_lift_setting('contact_email');
         $pages = [
             'woocommerce_terms_page_id' => ['kushtet-e-sherbimit', 'Kushtet e shërbimit', [
@@ -650,8 +650,8 @@ final class ShopCommand
                 sprintf('Për të parë ose fshirë të dhënat e tua, shkruaj në %s.', $email),
             ]],
             'woocommerce_refund_returns_page_id' => ['politika-e-kthimit', 'Politika e kthimit', [
-                sprintf('Ke %d ditë nga blerja për të kërkuar kthimin e plotë të parave, pa pyetje.', $days),
-                sprintf('Shkruaj në %s me numrin e porosisë. Paratë kthehen në të njëjtën mënyrë pagese.', $email),
+                'Produktet e Optimum Lift janë digjitale dhe i merr menjëherë pas pagesës. Në pagesë kërkon që aksesi të nisë menjëherë dhe pranon që, sapo nis, humb të drejtën e tërheqjes brenda 14 ditëve. Prandaj, pasi aksesi është dhënë, nuk kthejmë para.',
+                sprintf('Nëse produkti nuk hapet, ka gabim ose nuk është siç përshkruhet, shkruaj në %s me numrin e porosisë dhe e rregullojmë ose ta zëvendësojmë. Kjo nuk prek të drejtat që të jep ligji.', $email),
             ]],
         ];
 
@@ -683,8 +683,9 @@ final class ShopCommand
         }
 
         // A terms page turns on WooCommerce's required terms checkbox. The
-        // checkout asks for as little as possible (ADR-0007), so it stays off
-        // until the launch consent work decides what buyers must accept.
+        // checkout asks for as little as possible (ADR-0007), so it stays off:
+        // the one box a buyer must tick is the withdrawal waiver
+        // (inc/shop/withdrawal.php, ADR-0009).
         update_option('woocommerce_checkout_terms_and_conditions_checkbox_text', '');
     }
 
@@ -769,7 +770,7 @@ final class ShopCommand
             self::PROGRAM => [
                 'title'       => 'Programi i Stërvitjes 12-Javor',
                 'excerpt'     => '12 javë stërvitje të strukturuara, në shqip, me <strong>version për shtëpi dhe për palestër</strong>. Çdo javë e di saktësisht çfarë të bësh, me sa peshë dhe sa përsëritje — dhe e sheh progresin me shifra, jo me ndjesi.',
-                'description' => 'Program stërvitjeje 12-javor në shqip, me version për shtëpi dhe për palestër, video për çdo ushtrim dhe tabelë progresioni. Akses i menjëhershëm, garanci 30 ditë.',
+                'description' => 'Program stërvitjeje 12-javor në shqip, me version për shtëpi dhe për palestër, video për çdo ushtrim dhe tabelë progresioni. Akses i menjëhershëm dhe pagesë e njëhershme.',
                 'category'    => 'programe-stervitjeje',
                 'goal'        => 'Humbje yndyre',
                 'regular'     => '14.99',
@@ -823,7 +824,7 @@ final class ShopCommand
             self::FORCE => [
                 'title'       => 'Forcë & Masë',
                 'excerpt'     => 'Program 16-javor për muskul dhe forcë reale, jo vetëm humbje peshe. Split 4–5 ditë, <strong>mbingarkesë progresive e shkruar javë pas jave</strong> dhe video për çdo ushtrim, në shqip.',
-                'description' => 'Program stërvitjeje 16-javor për masë muskulore dhe forcë, në shqip: split 4–5 ditë (push/pull/këmbë), tabelë e mbingarkesës progresive dhe video për çdo ushtrim. Akses i menjëhershëm, garanci 30 ditë.',
+                'description' => 'Program stërvitjeje 16-javor për masë muskulore dhe forcë, në shqip: split 4–5 ditë (push/pull/këmbë), tabelë e mbingarkesës progresive dhe video për çdo ushtrim. Akses i menjëhershëm dhe pagesë e njëhershme.',
                 'category'    => 'programe-stervitjeje',
                 'goal'        => 'Masë & forcë',
                 'regular'     => '15.99',
@@ -873,7 +874,7 @@ final class ShopCommand
             self::DIET => [
                 'title'       => 'Plani Ushqimor 12-Javor',
                 'excerpt'     => "Kalori dhe makro të llogaritura për ty — me gjoks pule, jogurt, peshk, oriz dhe perime që i gjen në çdo treg te ne. Pa ushqime ekzotike që s'i gjen, pa uri, pa filluar nga e para çdo të hënë.",
-                'description' => 'Plan ushqimor 12-javor në shqip, me kalori e makro të llogaritura dhe ushqime që gjenden në çdo treg te ne. Lista e pazarit, 30 receta, akses i menjëhershëm, garanci 30 ditë.',
+                'description' => 'Plan ushqimor 12-javor në shqip, me kalori e makro të llogaritura dhe ushqime që gjenden në çdo treg te ne. Lista e pazarit, 30 receta, akses i menjëhershëm dhe pagesë e njëhershme.',
                 'category'    => 'dieta',
                 'goal'        => 'Humbje yndyre',
                 'regular'     => '12.99',
@@ -905,7 +906,7 @@ final class ShopCommand
                         ['{customers}', 'Klientë'],
                         ['30', 'Receta shqiptare'],
                         ['12', 'Javë të planifikuara'],
-                        ['{guarantee_days} ditë', 'Garanci kthimi'],
+                        ['1×', 'Pagesë, pa abonim'],
                     ]),
                     'field_olt_bundle_hint'    => 'Ushqimi pa stërvitje ecën përgjysmë.',
                 ],
@@ -925,7 +926,7 @@ final class ShopCommand
             self::MED => [
                 'title'       => 'Dieta Mesdhetare',
                 'excerpt'     => '8 javë ushqim mesdhetar me vaj ulliri, peshk, perime dhe drithëra integrale — <strong>pa numëruar kalori</strong> dhe pa hequr grupe të tëra ushqimesh. Për energji, shëndet dhe një peshë që mbahet.',
-                'description' => 'Plan ushqimor mesdhetar 8-javor në shqip, me 25 receta, listë pazari javë pas jave dhe ushqime që gjenden te ne. Pa numërim kalorish. Akses i menjëhershëm, garanci 30 ditë.',
+                'description' => 'Plan ushqimor mesdhetar 8-javor në shqip, me 25 receta, listë pazari javë pas jave dhe ushqime që gjenden te ne. Pa numërim kalorish. Akses i menjëhershëm dhe pagesë e njëhershme.',
                 'category'    => 'dieta',
                 'goal'        => 'Shëndet & mbajtje',
                 'regular'     => '9.99',
@@ -956,7 +957,7 @@ final class ShopCommand
                         ['8', 'Javë të planifikuara'],
                         ['25', 'Receta mesdhetare'],
                         ['0', 'Kalori për të numëruar'],
-                        ['{guarantee_days} ditë', 'Garanci kthimi'],
+                        ['1×', 'Pagesë, pa abonim'],
                     ]),
                     'field_olt_bundle_hint'    => 'Ushqimi i mirë jep më shumë kur e shoqëron stërvitja.',
                 ],
@@ -969,7 +970,7 @@ final class ShopCommand
             self::BUNDLE => [
                 'title'       => 'Transformimi Total',
                 'excerpt'     => 'Akses te të gjitha programet e stërvitjes dhe të gjitha planet ushqimore, plus mbështetje. Sistemi i plotë, pa hapësirë për hamendësime.',
-                'description' => 'Paketa e plotë e Optimum Lift: çdo program stërvitjeje dhe çdo plan ushqimor në një blerje, më lirë se të blera veç e veç. Pagesë e njëhershme, akses i menjëhershëm, garanci 30 ditë.',
+                'description' => 'Paketa e plotë e Optimum Lift: çdo program stërvitjeje dhe çdo plan ushqimor në një blerje, më lirë se të blera veç e veç. Pagesë e njëhershme dhe akses i menjëhershëm.',
                 'category'    => 'paketa',
                 'goal'        => 'Transformim i plotë',
                 'regular'     => '14.99',
@@ -1000,7 +1001,7 @@ final class ShopCommand
                         ['{saving}', 'Kursen me paketën'],
                         ['60', 'Receta shqiptare'],
                         ['{customers}', 'Klientë'],
-                        ['{guarantee_days} ditë', 'Garanci kthimi'],
+                        ['1×', 'Pagesë, pa abonim'],
                     ]),
                     'field_olt_bundle_hint'    => '',
                 ],
@@ -1237,7 +1238,7 @@ final class ShopCommand
                 'primary_action'        => 'buy_now',
                 'primary_anchor'        => '',
                 'secondary_add_to_cart' => false,
-                'note'                  => 'Në vend të {regular_price} · Garanci {guarantee_days} ditë · Akses i menjëhershëm',
+                'note'                  => 'Në vend të {regular_price} · {guarantee} · Akses i menjëhershëm',
             ]),
         ];
     }
@@ -1426,11 +1427,11 @@ final class ShopCommand
                 'chips'   => $this->lines('Nutricionist i licencuar', 'Ushqime lokale', 'Shkruar në shqip'),
             ]),
             $this->block('guarantee', [
-                'heading'    => '30 ditë. Pa pyetje.',
+                'heading'    => 'Sukses i garantuar.',
                 'style'      => 'card',
-                'body'       => "Ndiqe planin një muaj. Nëse nuk të përshtatet — nëse s'të pëlqejnë recetat, nëse e sheh që nuk është për ty — na shkruaj dhe të kthejmë çdo lek. Planin e mban. Rreziku është i yni, jo i yti.",
+                'body'       => 'Ndiqe planin siç është shkruar dhe ndryshimin do ta shohësh. Nëse ngec diku — nuk të shkon një recetë ose nuk di me çfarë ta zëvendësosh një ushqim — na shkruaj dhe e rregullojmë bashkë. Nuk je vetëm në këtë.',
                 'chips'      => '',
-                'cta_label'  => 'Provoje pa rrezik',
+                'cta_label'  => 'Fillo sot',
                 'cta_anchor' => 'blej',
             ]),
             $this->block('faq', [
@@ -1818,7 +1819,7 @@ final class ShopCommand
                 'primary_action'        => 'buy_now',
                 'primary_anchor'        => '',
                 'secondary_add_to_cart' => true,
-                'note'                  => 'Në vend të {regular_price} · Garanci {guarantee_days} ditë · Akses i menjëhershëm',
+                'note'                  => 'Në vend të {regular_price} · {guarantee} · Akses i menjëhershëm',
             ]),
         ];
     }
@@ -1839,7 +1840,7 @@ final class ShopCommand
                 'primary_anchor'   => 'cmimet',
                 'secondary_label'  => 'Si funksionon',
                 'secondary_anchor' => 'si-funksionon',
-                'reassurance'      => $this->lines('Akses i menjëhershëm', 'Pagesë e njëhershme, pa abonim', 'Garanci 30 ditë'),
+                'reassurance'      => $this->lines('Akses i menjëhershëm', 'Pagesë e njëhershme, pa abonim', 'Sukses i garantuar'),
                 'before_label'     => 'Para',
                 'after_label'      => 'Pas 12 javësh',
                 'progress_label'   => 'Progresi i javës 8/12',
@@ -1858,7 +1859,7 @@ final class ShopCommand
                 'stats'            => $this->table(['value', 'label'], [
                     ['{customers}', 'Klientë'],
                     ['{store_rating}★', '{store_reviews} vlerësime'],
-                    ['{guarantee_days} ditë', 'Garanci kthimi'],
+                    ['1×', 'Pagesë, pa abonim'],
                     ['7/7', 'Mbështetje në shqip'],
                 ]),
             ]),
@@ -1970,12 +1971,12 @@ final class ShopCommand
             $this->block('pricing', [
                 'anchor'         => 'cmimet',
                 'heading'        => 'Zgjidh planin tënd',
-                'intro'          => 'Programe stërvitjeje, dieta, ose paketa e plotë me çdo gjë. Pagesë e njëhershme, akses i përhershëm, garanci 30 ditë.',
+                'intro'          => 'Programe stërvitjeje, dieta, ose paketa e plotë me çdo gjë. Pagesë e njëhershme, akses i menjëhershëm dhe i përhershëm.',
                 'show_countdown' => true,
                 'bundle'         => null,
                 'featured_limit' => 3,
                 'rest_heading'   => 'Këto janë më të kërkuarat',
-                'rest_text'      => 'Kemi edhe {rest} produkte të tjera — dieta dhe programe për objektiva më specifike.',
+                'rest_text'      => 'Në dyqan ka edhe dieta dhe programe të tjera, për objektiva më specifike.',
                 'show_trust'     => true,
             ]),
             $this->block('results', [
@@ -2024,7 +2025,7 @@ final class ShopCommand
                     ['Ushqime që gjenden tek ne', 'text', $this->rows('value', '✓ 100%', 'Varet', '✕')],
                     ['Mbështetje njerëzore', 'text', $this->rows('value', '✓ WhatsApp 7/7', '✓', '✕ Chatbot')],
                     ['Fillon menjëherë', 'text', $this->rows('value', '✓ 60 sekonda', 'Duhet takim', '✓')],
-                    ['Garanci kthimi parash', 'text', $this->rows('value', '✓ 30 ditë', '✕', 'Vetëm 7 ditë')],
+                    ['E ke përgjithmonë', 'text', $this->rows('value', '✓ Pagesë e njëhershme', '✕ Vetëm sa paguan', '✕ Vetëm me abonim')],
                 ]),
                 'note'    => '',
             ]),
@@ -2043,10 +2044,10 @@ final class ShopCommand
                 'chips'   => '',
             ]),
             $this->block('guarantee', [
-                'heading'    => 'Garanci 30 ditë — pa pyetje',
+                'heading'    => 'Sukses i garantuar',
                 'style'      => 'band',
-                'body'       => 'Ndiqe planin për {guarantee_days} ditë. Nëse nuk shikon ndryshim dhe nuk ndihesh më mirë, shkruaj një email dhe të kthejmë 100% të parave — pa formularë, pa justifikime, pa bisedë të pakëndshme. Risku është i jonë, nuk është i yti.',
-                'chips'      => $this->lines('Pa abonim i fshehur', 'Pa anulim i komplikuar', 'Materialet i mban'),
+                'body'       => 'Çdo plan është ndërtuar që të funksionojë kur e ndjek: çdo javë e shkruar, çdo ushtrim me video, çdo recetë me sasi. Nëse ngec ose diçka nuk është e qartë, na shkruaj dhe të ndihmojmë të kthehesh në binarë.',
+                'chips'      => $this->lines('Pa abonim të fshehur', 'Pa anulim të komplikuar', 'Mbështetje në shqip'),
                 'cta_label'  => '',
                 'cta_anchor' => '',
             ]),
@@ -2098,7 +2099,7 @@ final class ShopCommand
                 'primary_action'        => 'anchor',
                 'primary_anchor'        => 'cmimet',
                 'secondary_add_to_cart' => false,
-                'note'                  => 'Në vend të {regular_price} · Garanci {guarantee_days} ditë · Akses i menjëhershëm',
+                'note'                  => 'Në vend të {regular_price} · {guarantee} · Akses i menjëhershëm',
             ]),
         ];
     }
@@ -2115,7 +2116,7 @@ final class ShopCommand
 
     private function guaranteeAnswer(): string
     {
-        return '<p>Ke <strong>30 ditë garanci të plotë</strong>. Provoje, ndiqe, mate. Nëse nuk të bind, shkruaj një email dhe të kthejmë të gjithë shumën — dhe materialet i mban për vete.</p>';
+        return '<p>Plani funksionon kur e ndjek — për këtë është ndërtuar. Nëse ngec, nuk di si ta përshtatësh ose diçka nuk është e qartë, <strong>na shkruaj dhe të ndihmojmë</strong> të kthehesh në binarë.</p><p>Meqë produkti është digjital dhe e merr menjëherë, pas blerjes nuk kthejmë para. Nëse nuk hapet ose ka ndonjë gabim, na shkruaj dhe e rregullojmë menjëherë.</p>';
     }
 
     private function subscriptionAnswer(): string
@@ -2133,7 +2134,7 @@ final class ShopCommand
 
     private function oneTimeNote(): string
     {
-        return 'Pagesë e njëhershme · Akses i menjëhershëm · Garanci {guarantee_days} ditë';
+        return 'Pagesë e njëhershme · Akses i menjëhershëm · {guarantee}';
     }
 }
 

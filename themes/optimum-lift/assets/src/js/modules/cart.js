@@ -4,9 +4,14 @@
  * endpoints and swaps in the fragments they answer with. It never computes a
  * price and holds no cart state of its own.
  *
- * [data-add-to-cart] adds without leaving the page and opens the drawer; if
- * the request fails, the link's own href lets WooCommerce add it instead.
- * [data-buy-now] is plain navigation and is never intercepted.
+ * [data-add-to-cart] opens the drawer at once and adds without leaving the
+ * page; if the request fails, the link's own href lets WooCommerce add it
+ * instead. [data-buy-now] is plain navigation and is never intercepted
+ * (pending-links.js only shows that it is loading).
+ *
+ * Nothing waits silently: the control that started a request is aria-busy (a
+ * spinner, components.css) and the drawer has data-busy (a moving bar, dimmed
+ * totals and, for an add, a placeholder line; drawer.css) until it answers.
  */
 
 import { track } from './track.js';
@@ -24,9 +29,11 @@ export function init() {
   const root = document.documentElement;
   const backdrop = document.querySelector('.olc-backdrop');
   const notice = drawer.querySelector('[data-cart-notice]');
+  const status = drawer.querySelector('[data-cart-status]');
   let isOpen = false;
   let opener = null;
   let madeInert = [];
+  let pending = 0;
 
   const url = (name) => endpoint.replace('%%endpoint%%', name);
   const focusables = () => [...drawer.querySelectorAll(FOCUSABLE)].filter((el) => el.getClientRects().length > 0);
@@ -159,12 +166,35 @@ export function init() {
   }
 
   /**
-   * Runs one endpoint call for a control: busy state while it runs, then
-   * fragments, notice and the drawer. Returns the response, or null when
-   * the request failed.
+   * The drawer's busy state, counted so that one request finishing does not
+   * clear it while another still runs. `kind` is `add` or `update`.
    */
-  async function run(el, name, data) {
+  function busy(kind) {
+    pending += 1;
+    drawer.dataset.busy = kind;
+    if (status) {
+      status.textContent = kind === 'add' ? drawer.dataset.labelAdd || '' : drawer.dataset.labelUpdate || '';
+    }
+  }
+
+  function idle() {
+    pending = Math.max(0, pending - 1);
+    if (pending === 0) {
+      delete drawer.dataset.busy;
+      if (status) {
+        status.textContent = '';
+      }
+    }
+  }
+
+  /**
+   * Runs one endpoint call for a control: busy state while it runs, then
+   * fragments and notice. Returns the response, or null when the request
+   * failed.
+   */
+  async function run(el, name, data, kind) {
     el.setAttribute('aria-busy', 'true');
+    busy(kind);
 
     try {
       const result = await post(name, data);
@@ -176,12 +206,17 @@ export function init() {
       return null;
     } finally {
       el.removeAttribute('aria-busy');
+      idle();
     }
   }
 
   async function addToCart(el) {
     showNotice('');
-    const result = await run(el, 'ol_add_to_cart', { product_id: el.dataset.addToCart });
+    // Open before the server answers: the buyer sees the cart at work rather
+    // than a button that seems to do nothing.
+    open(el.closest('#ol-cart-drawer') ? opener : el);
+
+    const result = await run(el, 'ol_add_to_cart', { product_id: el.dataset.addToCart }, 'add');
 
     if (!result) {
       // Let WooCommerce add it the classic way.
@@ -191,8 +226,6 @@ export function init() {
       return;
     }
 
-    open(el.closest('#ol-cart-drawer') ? opener : el);
-
     if (result.ok && result.added !== false && result.item) {
       track('add_to_cart', result.item);
     }
@@ -200,7 +233,7 @@ export function init() {
 
   async function swapToBundle(el) {
     showNotice('');
-    const result = await run(el, 'ol_swap_to_bundle', { bundle_id: el.dataset.cartSwap, nonce: el.dataset.nonce || '' });
+    const result = await run(el, 'ol_swap_to_bundle', { bundle_id: el.dataset.cartSwap, nonce: el.dataset.nonce || '' }, 'update');
 
     if (result?.ok && result.added !== false && result.item) {
       track('add_to_cart', result.item);
@@ -209,7 +242,7 @@ export function init() {
 
   async function removeLine(el) {
     showNotice('');
-    await run(el, 'ol_remove_from_cart', { cart_item_key: el.dataset.cartRemove, nonce: el.dataset.nonce || '' });
+    await run(el, 'ol_remove_from_cart', { cart_item_key: el.dataset.cartRemove, nonce: el.dataset.nonce || '' }, 'update');
   }
 
   document.addEventListener('click', (e) => {

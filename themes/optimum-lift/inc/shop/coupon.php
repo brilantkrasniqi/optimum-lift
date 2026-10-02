@@ -61,6 +61,18 @@ function optimum_lift_exit_coupon(): ?WC_Coupon
 }
 
 /**
+ * The coupon's discount as HTML: "10%" or "5,00 €".
+ */
+function optimum_lift_coupon_discount_html(WC_Coupon $coupon): string
+{
+    $amount = (float) $coupon->get_amount();
+
+    return $coupon->get_discount_type() === 'percent'
+        ? esc_html(optimum_lift_format_number($amount, fmod($amount, 1.0) > 0 ? 1 : 0) . '%')
+        : wp_kses_post(wc_price($amount));
+}
+
+/**
  * The code a coupon link stored for this visitor, or ''.
  */
 function optimum_lift_stored_coupon(): string
@@ -111,7 +123,8 @@ function optimum_lift_apply_stored_coupon(): void
  * Stores the linked coupon, applies it at once when the cart already has
  * items, then redirects without the query argument, so the code does not stay
  * in a URL that gets shared or bookmarked. Browsers keep the #fragment across
- * the redirect, so the link still lands on its section.
+ * the redirect, so the link still lands on its section, where a toast confirms
+ * the code (below): without it, the click seems to do nothing.
  */
 add_action('wp_loaded', static function (): void {
     $code = $_GET['ol_coupon'] ?? null;
@@ -132,11 +145,32 @@ add_action('wp_loaded', static function (): void {
         }
 
         $session->set('ol_coupon', $coupon->get_code());
+        $session->set('ol_coupon_toast', true);
         optimum_lift_apply_stored_coupon();
     }
 
     wp_safe_redirect(remove_query_arg('ol_coupon'));
     exit;
+});
+
+// The confirmation, once, on the page the coupon link redirected to.
+add_action('wp_footer', static function (): void {
+    $session = WC()->session;
+    if (!$session instanceof WC_Session_Handler || !$session->get('ol_coupon_toast')) {
+        return;
+    }
+
+    $session->__unset('ol_coupon_toast');
+
+    $coupon = optimum_lift_offerable_coupon(optimum_lift_stored_coupon());
+    if ($coupon === null || optimum_lift_is_checkout_chrome()) {
+        return;
+    }
+
+    get_template_part('template-parts/components/coupon-toast', null, [
+        'coupon'  => $coupon,
+        'applied' => WC()->cart?->has_discount($coupon->get_code()) ?? false,
+    ]);
 });
 
 add_action('woocommerce_add_to_cart', 'optimum_lift_apply_stored_coupon', 20, 0);

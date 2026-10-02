@@ -40,6 +40,38 @@
     @apply pointer-events-none cursor-progress opacity-70;
   }
 
+  /*
+   * A buy control waiting on the server (modules/cart.js, pending-links.js):
+   * its icons give way to a spinner after the label, so the button keeps its
+   * size and says it is working. The Buy Now pulse stops meanwhile.
+   */
+  :is([data-add-to-cart], [data-buy-now], [data-cart-swap], [data-begin-checkout], .olc-rm)[aria-busy="true"] {
+    @apply pointer-events-none cursor-progress;
+    animation: none;
+  }
+
+  :is([data-add-to-cart], [data-buy-now], [data-cart-swap], [data-begin-checkout])[aria-busy="true"] > svg {
+    display: none;
+  }
+
+  :is([data-add-to-cart], [data-buy-now], [data-cart-swap], [data-begin-checkout], .olc-rm)[aria-busy="true"]::after {
+    content: "";
+    display: inline-block;
+    flex: none;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 999px;
+    animation: ol-spin 0.7s linear infinite;
+  }
+
+  /* Not flex containers: the spinner needs its own gap. */
+  :is(.olc-up-btn, .olc-rm)[aria-busy="true"]::after {
+    margin-inline-start: 0.45em;
+  }
+
   .btn:disabled,
   .btn[aria-disabled="true"] {
     @apply pointer-events-none opacity-50;
@@ -338,5 +370,12 @@
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Spinners keep turning under reduced motion: they are the only sign of work. */
+@keyframes ol-spin {
+  to {
+    transform: rotate(360deg);
   }
 }

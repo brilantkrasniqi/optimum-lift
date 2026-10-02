@@ -25,7 +25,7 @@ $category    = optimum_lift_category_label($product);
 $level       = optimum_lift_level_label($product);
 $points      = array_slice(optimum_lift_points($product), 0, 6);
 $description = $product->get_short_description();
-$days        = (int) optimum_lift_setting('guarantee_days');
+$guarantee   = optimum_lift_guarantee_label();
 
 $glow = optimum_lift_product_kind($product) === 'diet'
     ? 'pointer-events-none absolute -top-40 -left-40 h-[42rem] w-[42rem] rounded-full bg-acid/10 blur-[130px]'
@@ -74,12 +74,12 @@ $glow = optimum_lift_product_kind($product) === 'diet'
             <div class="min-w-0 [grid-area:gallery] lg:sticky lg:top-[calc(var(--ol-sticky-top)+6rem)]">
                 <?php get_template_part('template-parts/single-product/gallery', null, ['product' => $product]); ?>
 
-                <?php if ($days > 0) : ?>
+                <?php if ($guarantee !== '') : ?>
                     <div class="mt-4 flex items-center gap-3 rounded-2xl border border-white/[.08] bg-surface p-4">
                         <?php echo optimum_lift_icon('shield-check', 'w-8 h-8 shrink-0 text-acid'); ?>
                         <p class="text-[12.5px] leading-relaxed text-zinc-400">
-                            <strong class="text-white"><?php echo esc_html(optimum_lift_guarantee_label()); ?>.</strong>
-                            <?php esc_html_e('Try it. If it does not convince you, we refund every cent — and you keep the materials.', 'optimum-lift'); ?>
+                            <strong class="text-white"><?php echo esc_html(rtrim($guarantee, '.!')); ?>.</strong>
+                            <?php echo esc_html(optimum_lift_guarantee_text()); ?>
                         </p>
                     </div>
                 <?php endif; ?>

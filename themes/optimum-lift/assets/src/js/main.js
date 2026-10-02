@@ -19,8 +19,10 @@ import * as stickyCta from './modules/sticky-cta.js';
 import * as exitIntent from './modules/exit-intent.js';
 import * as shopSort from './modules/shop-sort.js';
 import * as cart from './modules/cart.js';
+import * as pendingLinks from './modules/pending-links.js';
+import * as couponToast from './modules/coupon-toast.js';
 
-const modules = [track, countdown, menu, reveal, accordion, tabs, gallery, buybar, stickyCta, exitIntent, shopSort, cart];
+const modules = [track, countdown, menu, reveal, accordion, tabs, gallery, buybar, stickyCta, exitIntent, shopSort, cart, pendingLinks, couponToast];
 
 function boot() {
   modules.forEach((module) => {

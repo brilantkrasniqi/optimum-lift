@@ -28,6 +28,12 @@ moved into the form column with a "Payment" `h2`, the trust block after
 "Your details" for carts without shipping, and the order-received page shown
 without a login wall to the buyer who just placed the order (see 10d).
 
+The withdrawal waiver is hooks too (`inc/shop/withdrawal.php`, ADR-0009): the
+box above "Place order" (`woocommerce_review_order_before_submit`), its check
+(`woocommerce_after_checkout_validation`), the stored consent
+(`woocommerce_checkout_create_order`), the order screen line and the email
+confirmation (`woocommerce_email_order_meta`).
+
 Without JavaScript the coupon form is shown directly (WooCommerce hides it behind a script toggle), from `woocommerce.css` (11b).
 
 The classic cart page (10e) has no override: it is styled in `assets/src/css/woocommerce.css`, and `inc/shop/checkout.php` swaps its thumbnail for the theme's (`woocommerce_cart_item_thumbnail`) and WooCommerce's loop cross-sells for `compact` cards (`woocommerce_after_cart`).

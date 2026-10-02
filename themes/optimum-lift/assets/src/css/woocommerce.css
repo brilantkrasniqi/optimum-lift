@@ -419,8 +419,22 @@
   }
 
   .woocommerce-privacy-policy-text a,
-  .woocommerce-terms-and-conditions-link {
+  .woocommerce-terms-and-conditions-link,
+  .ol-waiver a {
     @apply font-bold text-white underline decoration-zinc-600 underline-offset-2;
+  }
+
+  /* The withdrawal waiver above "Place order" (inc/shop/withdrawal.php). */
+  #payment .ol-waiver {
+    @apply mt-4 mb-0 rounded-xl border border-white/10 bg-white/[.03] p-3.5;
+  }
+
+  #payment .ol-waiver.woocommerce-invalid {
+    @apply border-accent-light/70;
+  }
+
+  .ol-waiver abbr.required {
+    @apply text-accent-light no-underline;
   }
 
   .woocommerce-terms-and-conditions-wrapper .form-row {

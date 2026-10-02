@@ -498,9 +498,9 @@ function optimum_lift_lines(?string $textarea): array
 }
 
 /**
- * Replaces {price}, {regular_price}, {saving}, {bundle_price},
- * {guarantee_days}, {customers}, {rating}, {reviews}, {store_rating},
- * {store_reviews} and {rest} in editor text.
+ * Replaces {price}, {regular_price}, {saving}, {bundle_price}, {guarantee},
+ * {customers}, {rating}, {reviews}, {store_rating}, {store_reviews} and
+ * {rest} in editor text.
  *
  * Returns HTML: the text is escaped first, then the values are inserted (prices
  * as wc_price() markup). Callers must not escape the result again.
@@ -572,7 +572,8 @@ function optimum_lift_has_empty_token(string $text, ?WC_Product $context): bool
  *   threshold; the whole store's without a context. {store_rating} and
  *   {store_reviews} are always the whole store's (the homepage, whose context
  *   is the bundle, uses these).
- * - {guarantee_days}: empty when the Customizer guarantee is 0.
+ * - {guarantee}: the Customizer promise ("Success guaranteed"), empty when
+ *   it is switched off. {guarantee_days} is retired and always empty.
  * - {rest}: optimum_lift_catalog_rest() with the default three featured cards.
  */
 function optimum_lift_token_value(string $token, ?WC_Product $context): ?string
@@ -599,10 +600,13 @@ function optimum_lift_token_value(string $token, ?WC_Product $context): ?string
 
             return $bundle !== null ? $price(optimum_lift_current_price($bundle)) : '';
 
-        case 'guarantee_days':
-            $days = (int) optimum_lift_setting('guarantee_days');
+        case 'guarantee':
+            return esc_html(optimum_lift_guarantee_label());
 
-            return $days > 0 ? esc_html(optimum_lift_format_number($days)) : '';
+        case 'guarantee_days':
+            // Retired with the money-back guarantee (ADR-0009). Always empty,
+            // so older text that still uses it drops the phrase.
+            return '';
 
         case 'customers':
             return esc_html(optimum_lift_format_count_plus(optimum_lift_customer_count()));

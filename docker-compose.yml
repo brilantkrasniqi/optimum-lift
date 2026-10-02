@@ -42,11 +42,15 @@ services:
         define('WP_SITEURL', $$ol_scheme . '://' . $$ol_host);
         define('FS_METHOD', 'direct');
         define('DISALLOW_FILE_EDIT', true);
+    # Only first-party code is bind-mounted. On Docker Desktop (Windows, macOS)
+    # every file check through a bind mount costs ~2 ms, and WooCommerce alone
+    # is 4,000 PHP files, so with it mounted every page took 8 s. Third-party
+    # plugins live in the `wp` volume; docker/setup.sh installs them there.
     volumes:
       - wp:/var/www/html
       - ./docker/php.ini:/usr/local/etc/php/conf.d/zz-optimum-lift.ini:ro
       - ./themes/optimum-lift:/var/www/html/wp-content/themes/optimum-lift
-      - ./plugins:/var/www/html/wp-content/plugins
+      - ./plugins/optimum-lift-plans:/var/www/html/wp-content/plugins/optimum-lift-plans
       - ./mu-plugins:/var/www/html/wp-content/mu-plugins
       - ./uploads:/var/www/html/wp-content/uploads
 
@@ -71,11 +75,12 @@ services:
       - wp:/var/www/html
       - ./docker/php.ini:/usr/local/etc/php/conf.d/zz-optimum-lift.ini:ro
       - ./themes/optimum-lift:/var/www/html/wp-content/themes/optimum-lift
-      - ./plugins:/var/www/html/wp-content/plugins
+      - ./plugins/optimum-lift-plans:/var/www/html/wp-content/plugins/optimum-lift-plans
       - ./mu-plugins:/var/www/html/wp-content/mu-plugins
       - ./uploads:/var/www/html/wp-content/uploads
       - ./docker/setup.sh:/setup.sh:ro
       - ./plugins.txt:/plugins.txt:ro
+      - ./plugins:/plugins-src:ro
     profiles:
       - cli
 
@@ -98,11 +103,12 @@ services:
     volumes:
       - wp:/var/www/html
       - ./themes/optimum-lift:/var/www/html/wp-content/themes/optimum-lift
-      - ./plugins:/var/www/html/wp-content/plugins
+      - ./plugins/optimum-lift-plans:/var/www/html/wp-content/plugins/optimum-lift-plans
       - ./mu-plugins:/var/www/html/wp-content/mu-plugins
       - ./uploads:/var/www/html/wp-content/uploads
       - ./docker/setup.sh:/setup.sh:ro
       - ./plugins.txt:/plugins.txt:ro
+      - ./plugins:/plugins-src:ro
     entrypoint: ["sh", "/setup.sh"]
 
   # Dev tooling: PHPStan and PHP_CodeSniffer. PHP is not needed on the host.

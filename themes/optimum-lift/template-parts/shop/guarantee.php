@@ -1,14 +1,14 @@
 <?php
 
 /**
- * The guarantee band under the grid. The days come from the Customizer; with
- * no guarantee there is nothing to promise, so nothing renders.
+ * The guarantee band under the grid: the Customizer promise and what backs it.
+ * With the promise switched off there is nothing to say, so nothing renders.
  */
 
 declare(strict_types=1);
 
-$days = (int) optimum_lift_setting('guarantee_days');
-if ($days < 1) {
+$guarantee = optimum_lift_guarantee_label();
+if ($guarantee === '') {
     return;
 }
 ?>
@@ -19,18 +19,8 @@ if ($days < 1) {
                 <?php echo optimum_lift_icon('shield-check', 'w-8 h-8', ['stroke-width' => '2.1']); ?>
             </div>
             <div>
-                <h2 class="h-display text-2xl text-white sm:text-3xl"><?php
-                    /* translators: %d: number of days of the money-back guarantee. */
-                    echo esc_html(sprintf(_n('%d-day guarantee on every product', '%d-day guarantee on every product', $days, 'optimum-lift'), $days));
-                ?></h2>
-                <p class="mt-3 max-w-2xl text-[14.5px] leading-relaxed text-zinc-300">
-                    <?php
-                    /* translators: %d: number of days of the money-back guarantee. */
-                    echo esc_html(sprintf(_n('Try it for %d day.', 'Try it for %d days.', $days, 'optimum-lift'), $days));
-                    echo ' ';
-                    esc_html_e('Not convinced? Send us an email and we refund all of your money, with no forms and no awkward conversation.', 'optimum-lift');
-                    ?>
-                </p>
+                <h2 class="h-display text-2xl text-white sm:text-3xl"><?php echo esc_html($guarantee); ?></h2>
+                <p class="mt-3 max-w-2xl text-[14.5px] leading-relaxed text-zinc-300"><?php echo esc_html(optimum_lift_guarantee_text()); ?></p>
             </div>
         </div>
     </div>

@@ -207,6 +207,89 @@
     color: var(--color-accent-light);
   }
 
+  /* The line being removed fades while the request runs. */
+  .olc-item:has(.olc-rm[aria-busy="true"]) {
+    opacity: 0.45;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  /*
+   * Busy: cart.js sets data-busy (add | update) on the drawer while a request
+   * runs. The bar under the head moves, the totals dim, and an add shows a
+   * placeholder line (and hides the empty state) until the real one arrives.
+   */
+  .olc-progress {
+    position: relative;
+    height: 2px;
+    margin-top: -1px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .olc-progress::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: var(--color-accent);
+    transform: translateX(-100%);
+  }
+
+  .olc-drawer[data-busy] .olc-progress {
+    opacity: 1;
+  }
+
+  .olc-drawer[data-busy] .olc-progress::before {
+    animation: olc-progress 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .olc-drawer[data-busy] .olc-foot-inner {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .olc-item.olc-adding {
+    display: none;
+  }
+
+  .olc-drawer[data-busy="add"] .olc-item.olc-adding {
+    display: flex;
+  }
+
+  .olc-drawer[data-busy="add"] .olc-empty {
+    display: none;
+  }
+
+  .olc-adding .olc-thumb {
+    color: var(--color-accent-light);
+  }
+
+  .olc-spinner {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 999px;
+    animation: ol-spin 0.7s linear infinite;
+  }
+
+  .olc-skel {
+    display: block;
+    width: 75%;
+    height: 0.6rem;
+    margin-top: 0.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    animation: olc-pulse 1.2s ease-in-out infinite;
+  }
+
+  .olc-skel--short {
+    width: 35%;
+  }
+
   .olc-empty {
     padding: 2.5rem 1rem;
     text-align: center;
@@ -350,5 +433,33 @@
     .olc-backdrop {
       transition: none;
     }
+
+    /* Still say "working", without the motion. */
+    .olc-drawer[data-busy] .olc-progress::before {
+      width: 100%;
+      transform: none;
+      animation: none;
+      opacity: 0.6;
+    }
+
+    .olc-skel {
+      animation: none;
+    }
+  }
+}
+
+@keyframes olc-progress {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(250%);
+  }
+}
+
+@keyframes olc-pulse {
+  50% {
+    opacity: 0.45;
   }
 }

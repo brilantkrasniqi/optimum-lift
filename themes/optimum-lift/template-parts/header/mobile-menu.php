@@ -42,11 +42,11 @@ if ($product !== null) {
     ];
 }
 
-$guarantee_days = (int) optimum_lift_setting('guarantee_days');
+$guarantee = optimum_lift_guarantee_label();
 ?>
-<div data-menu-backdrop class="pointer-events-none fixed inset-0 z-[55] bg-black/70 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden"></div>
+<div data-menu-backdrop class="pointer-events-none fixed inset-0 z-[55] bg-black/70 opacity-0 backdrop-blur-sm transition-opacity duration-300 xl:hidden"></div>
 <aside id="ol-mobile-menu" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Menu', 'optimum-lift'); ?>" inert
-       class="fixed top-0 right-0 bottom-0 z-[56] flex w-[min(21rem,86%)] translate-x-full flex-col border-l border-white/10 bg-surface transition-transform duration-300 lg:hidden">
+       class="fixed top-0 right-0 bottom-0 z-[56] flex w-[min(21rem,86%)] translate-x-full flex-col border-l border-white/10 bg-surface transition-transform duration-300 xl:hidden">
     <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
         <span class="h-display text-lg text-white"><?php esc_html_e('Menu', 'optimum-lift'); ?></span>
         <button type="button" data-menu-close class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 text-zinc-400 transition hover:bg-white/5 hover:text-white">
@@ -67,8 +67,8 @@ $guarantee_days = (int) optimum_lift_setting('guarantee_days');
         <a href="<?php echo esc_url($cta['url']); ?>" data-cta="<?php echo esc_attr($cta['id']); ?>"<?php echo $cta['buy_now'] > 0 ? ' data-buy-now="' . esc_attr((string) $cta['buy_now']) . '" rel="nofollow"' : ''; ?> class="btn btn-primary btn-block rounded-xl px-4 py-3.5 text-base">
             <span><?php echo $cta['html']; ?></span>
         </a>
-        <?php if ($guarantee_days > 0) : ?>
-            <p class="mt-3 text-center text-[11px] font-bold uppercase tracking-wider text-zinc-500"><?php echo esc_html(optimum_lift_guarantee_label()); ?></p>
+        <?php if ($guarantee !== '') : ?>
+            <p class="mt-3 text-center text-[11px] font-bold uppercase tracking-wider text-zinc-500"><?php echo esc_html($guarantee); ?></p>
         <?php endif; ?>
     </div>
 </aside>

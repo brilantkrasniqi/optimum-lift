@@ -10,7 +10,6 @@
 declare(strict_types=1);
 
 $catalog = optimum_lift_catalog_count();
-$days    = (int) optimum_lift_setting('guarantee_days');
 $crumbs  = optimum_lift_shop_breadcrumb();
 $last    = count($crumbs) - 1;
 ?>
@@ -47,10 +46,7 @@ $last    = count($crumbs) - 1;
                     optimum_lift_format_number($catalog)
                 ));
                 echo ' ';
-                echo esc_html($days > 0
-                    /* translators: %d: number of days of the money-back guarantee. */
-                    ? sprintf(_n('One-time payment, instant access, %d-day guarantee on all of them.', 'One-time payment, instant access, %d-day guarantee on all of them.', $days, 'optimum-lift'), $days)
-                    : __('One-time payment and instant access.', 'optimum-lift'));
+                esc_html_e('One-time payment and instant access.', 'optimum-lift');
                 ?>
             </p>
         <?php endif; ?>

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * The money-back guarantee, as a wide `band` (icon beside the text, chips) or a
- * centred `card` (icon above, call to action).
+ * The guarantee (the store's promise, not money back: ADR-0009), as a wide
+ * `band` (icon beside the text, chips) or a centred `card` (icon above, call
+ * to action).
  *
- * Nothing renders while the Customizer guarantee is 0 days: a guarantee section
- * for a guarantee the store does not give would be false. The body takes
- * tokens ({guarantee_days}); the heading is editor text and must be kept equal
- * to the Customizer by hand.
+ * Nothing renders while the Customizer guarantee is empty: a guarantee section
+ * for a promise the store does not make would be false. The body takes tokens
+ * ({guarantee}); the heading is editor text.
  *
  * The block sits in its own section, and after a section with the same
  * background it drops its top padding, so it reads as that section's closing
@@ -29,7 +29,7 @@ $text = static fn (mixed $value): string => is_string($value) ? trim($value) : '
 $heading = $text($block['heading'] ?? null);
 $body    = $text($block['body'] ?? null);
 
-if ((int) optimum_lift_setting('guarantee_days') < 1 || ($heading === '' && $body === '')) {
+if (optimum_lift_guarantee_label() === '' || ($heading === '' && $body === '')) {
     return;
 }
 

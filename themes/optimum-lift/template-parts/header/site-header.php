@@ -3,6 +3,11 @@
  * The sticky site header: logo and tagline, nav, contextual CTA, cart toggle
  * and the mobile menu button.
  *
+ * The nav's store links (Shop, the training and diet archives) show from lg,
+ * the page's section links only from xl, and below xl the menu button opens
+ * all of them: between lg and xl there is no room for every link on one line,
+ * and the store links are the ones that sell.
+ *
  * The cart control is a link to the cart page until JavaScript runs, then the
  * drawer toggle (modules/cart.js); `js:` swaps them before first paint. The
  * menu button also needs JavaScript to open anything, so it only shows with
@@ -13,6 +18,7 @@ declare(strict_types=1);
 
 $links      = optimum_lift_nav_links();
 $cta        = optimum_lift_header_cta();
+$guarantee  = is_front_page() ? optimum_lift_guarantee_label() : '';
 $has_cart   = function_exists('wc_get_cart_url') && function_exists('optimum_lift_cart_badge_html');
 $badge      = $has_cart ? optimum_lift_cart_badge_html(optimum_lift_cart_count()) : '';
 ?>
@@ -22,22 +28,29 @@ $badge      = $has_cart ? optimum_lift_cart_badge_html(optimum_lift_cart_count()
 
         <?php if ($links !== []) : ?>
             <nav class="hidden items-center gap-7 text-[13px] font-semibold text-zinc-400 lg:flex" aria-label="<?php esc_attr_e('Main', 'optimum-lift'); ?>">
-                <?php foreach ($links as $link) : ?>
-                    <a href="<?php echo esc_url($link['url']); ?>" class="<?php echo $link['current'] ? 'text-white' : 'transition hover:text-white'; ?>"<?php echo $link['current'] ? ' aria-current="page"' : ''; ?>><?php echo esc_html($link['label']); ?></a>
+                <?php
+                foreach ($links as $link) :
+                    $class = trim(implode(' ', [
+                        'whitespace-nowrap',
+                        $link['current'] ? 'text-white' : 'transition hover:text-white',
+                        $link['section'] ? 'hidden xl:inline' : '',
+                    ]));
+                    ?>
+                    <a href="<?php echo esc_url($link['url']); ?>" class="<?php echo esc_attr($class); ?>"<?php echo $link['current'] ? ' aria-current="page"' : ''; ?>><?php echo esc_html($link['label']); ?></a>
                 <?php endforeach; ?>
             </nav>
         <?php endif; ?>
 
         <div class="flex items-center gap-2">
-            <?php if (is_front_page() && (int) optimum_lift_setting('guarantee_days') > 0) : ?>
+            <?php if ($guarantee !== '') : ?>
                 <span class="mr-1 hidden items-center gap-1.5 text-[11px] font-bold text-zinc-400 xl:flex">
                     <?php echo optimum_lift_icon('shield-check', 'w-4 h-4 text-acid', ['stroke-width' => '2.2']); ?>
-                    <?php echo esc_html(optimum_lift_guarantee_label()); ?>
+                    <?php echo esc_html($guarantee); ?>
                 </span>
             <?php endif; ?>
 
             <?php if ($cta !== null) : ?>
-                <a href="<?php echo esc_url($cta['url']); ?>" data-cta="header-cta" class="btn btn-light btn-sm hidden text-[13px] sm:inline-flex">
+                <a href="<?php echo esc_url($cta['url']); ?>" data-cta="header-cta" class="btn btn-light btn-sm hidden text-[13px] whitespace-nowrap sm:inline-flex">
                     <?php echo esc_html($cta['label']); ?>
                     <?php echo $cta['arrow'] ? optimum_lift_icon('arrow-right') : ''; ?>
                 </a>
@@ -56,7 +69,7 @@ $badge      = $has_cart ? optimum_lift_cart_badge_html(optimum_lift_cart_count()
                 </button>
             <?php endif; ?>
 
-            <button type="button" data-menu-toggle aria-controls="ol-mobile-menu" aria-expanded="false" class="hidden h-11 w-11 place-items-center rounded-xl border border-white/10 text-white js:max-lg:grid">
+            <button type="button" data-menu-toggle aria-controls="ol-mobile-menu" aria-expanded="false" class="hidden h-11 w-11 place-items-center rounded-xl border border-white/10 text-white js:max-xl:grid">
                 <?php echo optimum_lift_icon('menu', 'w-5 h-5'); ?>
                 <span class="screen-reader-text"><?php esc_html_e('Open menu', 'optimum-lift'); ?></span>
             </button>

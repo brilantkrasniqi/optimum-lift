@@ -37,13 +37,49 @@ else
   echo "WordPress already installed."
 fi
 
+# Strip comments and whitespace; each remaining line is "slug" or "slug:version".
+: > /tmp/plugins.list
+if [ -f /plugins.txt ]; then
+  sed -e 's/#.*//' -e 's/[[:space:]]//g' /plugins.txt | grep . > /tmp/plugins.list || true
+fi
+
+# Third-party plugins run from the wp volume, not from ./plugins/ (see the
+# volumes in docker-compose.yml: a bind mount made every page take seconds).
+# A plugin with no wordpress.org slug (ACF Pro, until plans-plugin ticket 10)
+# is still dropped into ./plugins/ by hand, so copy each one into the volume
+# when it is missing or its version changed. A plugins.txt plugin found there
+# is only copied when missing: plugins.txt owns its version.
+FIRST_PARTY="optimum-lift-plans"
+PLUGIN_DIR=/var/www/html/wp-content/plugins
+
+plugin_version() {
+  main=$(grep -l -i 'Plugin Name:' "$1"/*.php 2>/dev/null | head -n 1)
+  [ -n "$main" ] && grep -i -m 1 '^[[:space:]*]*Version:' "$main" | sed 's/.*:[[:space:]]*//' | tr -d '\r'
+}
+
+if [ -d /plugins-src ]; then
+  for src in /plugins-src/*/; do
+    [ -d "$src" ] || continue
+    slug=$(basename "$src")
+    case " $FIRST_PARTY " in *" $slug "*) continue ;; esac
+    dest="$PLUGIN_DIR/$slug"
+
+    if [ -d "$dest" ]; then
+      grep -q -e "^$slug\$" -e "^$slug:" /tmp/plugins.list && continue
+      [ "$(plugin_version "$src")" = "$(plugin_version "$dest")" ] && continue
+    fi
+
+    echo "Copying $slug from ./plugins/ into the wp volume..."
+    rm -rf "$dest"
+    cp -R "$src" "$dest"
+  done
+fi
+
 # Install and activate everything first, then flush rewrites once at the end --
 # WooCommerce registers its own rewrite rules and needs to be loaded for the
 # flush to pick them up.
-if [ -f /plugins.txt ]; then
+if [ -s /tmp/plugins.list ]; then
   echo "Syncing plugins from plugins.txt..."
-  # Strip comments and whitespace; each remaining line is "slug" or "slug:version".
-  sed -e 's/#.*//' -e 's/[[:space:]]//g' /plugins.txt | grep . > /tmp/plugins.list || true
 
   while read -r entry; do
     slug="${entry%%:*}"

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-24T14:48:27+00:00\n"
+"POT-Creation-Date: 2026-10-02T07:15:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: optimum-lift\n"
@@ -17,7 +17,7 @@ msgstr ""
 #. Theme Name of the theme
 #. Author of the theme
 #: style.css
-#: inc/customizer.php:126
+#: inc/customizer.php:127
 msgid "Optimum Lift"
 msgstr ""
 
@@ -103,47 +103,56 @@ msgstr ""
 msgid "TikTok URL"
 msgstr ""
 
-#: inc/customizer.php:56
-msgid "Money-back guarantee (days)"
+#: inc/customizer.php:54
+msgid "Success guaranteed"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:56
+#: inc/shop/fields.php:307
+msgid "Guarantee"
+msgstr ""
+
+#: inc/customizer.php:57
+msgid "The promise shown in the header, cart, checkout and shop. Leave empty to hide it. The store does not give refunds, so never promise money back here."
+msgstr ""
+
+#: inc/customizer.php:61
 msgid "Launch offer"
 msgstr ""
 
-#: inc/customizer.php:62
+#: inc/customizer.php:63
 msgid "Offer label"
 msgstr ""
 
-#: inc/customizer.php:68
+#: inc/customizer.php:69
 msgid "Site offer ends at"
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:70
 msgid "In the site timezone. The offer bar and countdowns show only while this date is in the future, or while a Product has a scheduled sale."
 msgstr ""
 
-#: inc/customizer.php:75
+#: inc/customizer.php:76
 msgid "Customers before the online store"
 msgstr ""
 
-#: inc/customizer.php:76
+#: inc/customizer.php:77
 msgid "Added to paid online orders for the customer count."
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:83
 msgid "Exit-intent coupon code"
 msgstr ""
 
-#: inc/customizer.php:83
+#: inc/customizer.php:84
 msgid "The homepage exit offer shows only while this coupon exists and is valid."
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:90
 msgid "Payment badges"
 msgstr ""
 
-#: inc/customizer.php:90
+#: inc/customizer.php:91
 msgid "Comma-separated. List only the methods checkout actually offers."
 msgstr ""
 
@@ -171,35 +180,35 @@ msgstr ""
 msgid "Price: high to low"
 msgstr ""
 
-#: inc/shop/archive.php:63
-msgid "All"
-msgstr ""
-
-#: inc/shop/archive.php:71
+#: inc/shop/archive.php:61
 msgid "Training programs"
 msgstr ""
 
-#: inc/shop/archive.php:72
+#: inc/shop/archive.php:62
 msgid "Diets"
 msgstr ""
 
-#: inc/shop/archive.php:73
+#: inc/shop/archive.php:63
 msgid "Bundles"
 msgstr ""
 
-#: inc/shop/archive.php:114
+#: inc/shop/archive.php:98
+msgid "All"
+msgstr ""
+
+#: inc/shop/archive.php:131
 #: inc/woocommerce.php:26
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
 
-#: inc/shop/archive.php:115
-#: inc/template-tags.php:119
+#: inc/shop/archive.php:132
+#: inc/template-tags.php:122
 #: inc/woocommerce.php:51
 msgid "Shop"
 msgstr ""
 
-#: inc/shop/archive.php:149
+#: inc/shop/archive.php:166
 #: template-parts/footer/site-footer.php:58
 msgid "All products"
 msgstr ""
@@ -211,7 +220,9 @@ msgid "%1$s is already included in %2$s in your cart."
 msgstr ""
 
 #. translators: %s: Product name.
+#. translators: %s: the discount, e.g. "10% extra off".
 #: inc/shop/bundle.php:80
+#: template-parts/components/coupon-toast.php:32
 #, php-format
 msgid "%s is already in your cart."
 msgstr ""
@@ -777,10 +788,6 @@ msgstr ""
 msgid "Badges"
 msgstr ""
 
-#: inc/shop/fields.php:307
-msgid "Guarantee"
-msgstr ""
-
 #: inc/shop/fields.php:309
 #: inc/shop/fields.php:461
 msgid "Band"
@@ -838,7 +845,7 @@ msgid "Primary button action"
 msgstr ""
 
 #: inc/shop/fields.php:337
-#: inc/template-tags.php:188
+#: inc/template-tags.php:211
 #: template-parts/blocks/final-cta.php:42
 #: template-parts/product/buy-buttons.php:47
 msgid "Buy now"
@@ -1051,7 +1058,7 @@ msgid "Icon"
 msgstr ""
 
 #: inc/shop/fields.php:646
-msgid "Tokens: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee_days}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. A phrase between \" · \" whose token has no value is left out."
+msgid "Tokens: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. A phrase between \" · \" whose token has no value is left out."
 msgstr ""
 
 #: inc/shop/fields.php:651
@@ -1094,6 +1101,41 @@ msgstr ""
 msgid "New"
 msgstr ""
 
+#: inc/shop/withdrawal.php:43
+msgid "I want access to my plan right away, and I understand that once access starts I lose my 14-day right of withdrawal."
+msgstr ""
+
+#: inc/shop/withdrawal.php:80
+#: inc/template-tags.php:327
+msgid "Refund policy"
+msgstr ""
+
+#: inc/shop/withdrawal.php:82
+msgid "required"
+msgstr ""
+
+#: inc/shop/withdrawal.php:93
+msgid "To place the order, tick the box that asks for immediate access."
+msgstr ""
+
+#: inc/shop/withdrawal.php:127
+msgid "Withdrawal waiver:"
+msgstr ""
+
+#. translators: %s: date and time the box was ticked.
+#: inc/shop/withdrawal.php:131
+#, php-format
+msgid "ticked at checkout, %s"
+msgstr ""
+
+#: inc/shop/withdrawal.php:137
+msgid "not recorded for this order"
+msgstr ""
+
+#: inc/shop/withdrawal.php:148
+msgid "You asked for immediate access to your digital products and confirmed that you lose your right of withdrawal once access starts."
+msgstr ""
+
 #. translators: %s: search query.
 #: inc/template-tags.php:20
 #, php-format
@@ -1104,33 +1146,25 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: inc/template-tags.php:202
+#: inc/template-tags.php:225
+#: template-parts/single-product/fallback.php:47
 msgid "Start now"
 msgstr ""
 
-#. translators: %d: number of days of the money-back guarantee.
-#: inc/template-tags.php:216
-#: template-parts/product/trust-line.php:21
-#, php-format
-msgid "%d-day guarantee"
-msgid_plural "%d-day guarantee"
-msgstr[0] ""
-msgstr[1] ""
+#: inc/template-tags.php:250
+msgid "Follow the plan as written and you will see the change. Stuck along the way? Write to us and we will help you get back on track."
+msgstr ""
 
-#: inc/template-tags.php:291
+#: inc/template-tags.php:325
 msgid "Terms of service"
 msgstr ""
 
-#: inc/template-tags.php:292
+#: inc/template-tags.php:326
 msgid "Privacy policy"
 msgstr ""
 
-#: inc/template-tags.php:293
-msgid "Refund policy"
-msgstr ""
-
 #: inc/woocommerce.php:22
-#: template-parts/shop/intro.php:22
+#: template-parts/shop/intro.php:21
 msgid "Breadcrumb"
 msgstr ""
 
@@ -1257,26 +1291,26 @@ msgid "Watch the video"
 msgstr ""
 
 #. translators: %s: number of Products in the catalogue.
-#: template-parts/blocks/pricing.php:49
+#: template-parts/blocks/pricing.php:50
 #, php-format
 msgid "View all (%s)"
 msgstr ""
 
 #. translators: %s: number of Products in the catalogue.
-#: template-parts/blocks/pricing.php:51
+#: template-parts/blocks/pricing.php:52
 #, php-format
 msgid "View all products (%s)"
 msgstr ""
 
-#: template-parts/blocks/pricing.php:61
+#: template-parts/blocks/pricing.php:62
 msgid "Offer ends in"
 msgstr ""
 
-#: template-parts/blocks/pricing.php:118
+#: template-parts/blocks/pricing.php:117
 msgid "100% secure payment"
 msgstr ""
 
-#: template-parts/blocks/pricing.php:123
+#: template-parts/blocks/pricing.php:122
 msgid "Instant delivery by email"
 msgstr ""
 
@@ -1431,11 +1465,20 @@ msgstr ""
 msgid "Macros of the day"
 msgstr ""
 
-#: template-parts/cart/drawer.php:14
+#: template-parts/cart/drawer.php:18
+#: template-parts/cart/drawer.php:33
+msgid "Adding to your cart…"
+msgstr ""
+
+#: template-parts/cart/drawer.php:19
+msgid "Updating your cart…"
+msgstr ""
+
+#: template-parts/cart/drawer.php:21
 msgid "Your cart"
 msgstr ""
 
-#: template-parts/cart/drawer.php:15
+#: template-parts/cart/drawer.php:22
 msgid "Close cart"
 msgstr ""
 
@@ -1547,24 +1590,25 @@ msgstr ""
 msgid "Add %1$s — %2$s"
 msgstr ""
 
-#: template-parts/checkout/trust.php:17
-msgid "Not happy with it? You get your money back, no questions asked."
-msgstr ""
-
-#: template-parts/checkout/trust.php:23
-#: template-parts/product/trust-line.php:19
-msgid "Instant access"
+#: template-parts/checkout/trust.php:18
+msgid "Follow the plan and the results come. If you get stuck, we help you."
 msgstr ""
 
 #: template-parts/checkout/trust.php:24
+#: template-parts/product/trust-line.php:18
+#: template-parts/single-product/fallback.php:45
+msgid "Instant access"
+msgstr ""
+
+#: template-parts/checkout/trust.php:25
 msgid "Your plan arrives by email right after payment."
 msgstr ""
 
-#: template-parts/checkout/trust.php:29
+#: template-parts/checkout/trust.php:30
 msgid "Encrypted payment"
 msgstr ""
 
-#: template-parts/checkout/trust.php:30
+#: template-parts/checkout/trust.php:31
 msgid "Your payment is protected with SSL encryption."
 msgstr ""
 
@@ -1587,6 +1631,36 @@ msgstr ""
 #: template-parts/components/countdown.php:49
 msgctxt "days, abbreviated"
 msgid "d"
+msgstr ""
+
+#. translators: %s: the discount, e.g. 10% or 5,00 €.
+#: template-parts/components/coupon-toast.php:23
+#: template-parts/home/exit-modal.php:30
+#, php-format
+msgid "%s extra off"
+msgstr ""
+
+#. translators: %s: the coupon code.
+#: template-parts/components/coupon-toast.php:27
+#, php-format
+msgid "Code %s applied"
+msgstr ""
+
+#. translators: %s: the coupon code.
+#: template-parts/components/coupon-toast.php:29
+#, php-format
+msgid "Code %s saved"
+msgstr ""
+
+#. translators: %s: the discount, e.g. "10% extra off".
+#: template-parts/components/coupon-toast.php:34
+#, php-format
+msgid "%s is applied automatically as soon as you add a product to your cart."
+msgstr ""
+
+#: template-parts/components/coupon-toast.php:46
+#: template-parts/home/exit-modal.php:44
+msgid "Close"
 msgstr ""
 
 #: template-parts/content-loop.php:28
@@ -1684,7 +1758,7 @@ msgid "Close menu"
 msgstr ""
 
 #: template-parts/header/mobile-menu.php:58
-#: template-parts/header/site-header.php:24
+#: template-parts/header/site-header.php:25
 msgid "Main"
 msgstr ""
 
@@ -1692,15 +1766,15 @@ msgstr ""
 msgid "Shop · all products"
 msgstr ""
 
-#: template-parts/header/site-header.php:49
+#: template-parts/header/site-header.php:50
 msgid "View cart"
 msgstr ""
 
-#: template-parts/header/site-header.php:54
+#: template-parts/header/site-header.php:55
 msgid "Open cart"
 msgstr ""
 
-#: template-parts/header/site-header.php:61
+#: template-parts/header/site-header.php:62
 msgid "Open menu"
 msgstr ""
 
@@ -1708,41 +1782,31 @@ msgstr ""
 msgid "Ends in"
 msgstr ""
 
-#. translators: %s: the discount, e.g. 10% or 5,00 €.
-#: template-parts/home/exit-modal.php:34
-#, php-format
-msgid "%s extra off"
-msgstr ""
-
 #. translators: %s: the discount, e.g. "10% extra off", in bold.
-#: template-parts/home/exit-modal.php:38
+#: template-parts/home/exit-modal.php:34
 #, php-format
 msgid "Get %s on top of the current offer."
 msgstr ""
 
 #. translators: %s: the discount, e.g. "10% extra off", in bold.
-#: template-parts/home/exit-modal.php:40
+#: template-parts/home/exit-modal.php:36
 #, php-format
 msgid "Get %s on your order."
 msgstr ""
 
-#: template-parts/home/exit-modal.php:48
-msgid "Close"
-msgstr ""
-
-#: template-parts/home/exit-modal.php:53
+#: template-parts/home/exit-modal.php:49
 msgid "Wait — don’t leave it for Monday"
 msgstr ""
 
-#: template-parts/home/exit-modal.php:56
+#: template-parts/home/exit-modal.php:52
 msgid "It is applied automatically as soon as you add a product to your cart:"
 msgstr ""
 
-#: template-parts/home/exit-modal.php:61
+#: template-parts/home/exit-modal.php:57
 msgid "Use it now"
 msgstr ""
 
-#: template-parts/home/exit-modal.php:62
+#: template-parts/home/exit-modal.php:58
 msgid "No thanks, I’ll continue without the discount"
 msgstr ""
 
@@ -1836,7 +1900,7 @@ msgstr ""
 msgid "≈ %s per week · one-time payment"
 msgstr ""
 
-#: template-parts/product/trust-line.php:18
+#: template-parts/product/trust-line.php:17
 msgid "One-time payment"
 msgstr ""
 
@@ -1864,43 +1928,15 @@ msgstr ""
 msgid "We are working on new products."
 msgstr ""
 
-#. translators: %d: number of days of the money-back guarantee.
-#: template-parts/shop/guarantee.php:24
-#, php-format
-msgid "%d-day guarantee on every product"
-msgid_plural "%d-day guarantee on every product"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %d: number of days of the money-back guarantee.
-#: template-parts/shop/guarantee.php:29
-#, php-format
-msgid "Try it for %d day."
-msgid_plural "Try it for %d days."
-msgstr[0] ""
-msgstr[1] ""
-
-#: template-parts/shop/guarantee.php:31
-msgid "Not convinced? Send us an email and we refund all of your money, with no forms and no awkward conversation."
-msgstr ""
-
 #. translators: %s: number of Products in the catalogue.
-#: template-parts/shop/intro.php:46
+#: template-parts/shop/intro.php:45
 #, php-format
 msgid "%s digital product in Albanian — training programs and meal plans."
 msgid_plural "%s digital products in Albanian — training programs and meal plans."
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: %d: number of days of the money-back guarantee.
-#: template-parts/shop/intro.php:52
-#, php-format
-msgid "One-time payment, instant access, %d-day guarantee on all of them."
-msgid_plural "One-time payment, instant access, %d-day guarantee on all of them."
-msgstr[0] ""
-msgstr[1] ""
-
-#: template-parts/shop/intro.php:53
+#: template-parts/shop/intro.php:49
 msgid "One-time payment and instant access."
 msgstr ""
 
@@ -1956,33 +1992,12 @@ msgstr ""
 msgid "Food decides how much you lose. Training decides how you look once you lose it."
 msgstr ""
 
-#. translators: %d: number of days of the money-back guarantee.
-#: template-parts/single-product/fallback.php:38
-#, php-format
-msgid "%d-day guarantee — no questions asked"
-msgid_plural "%d-day guarantee — no questions asked"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: Keep {guarantee_days} as it is: it becomes the number of days.
 #: template-parts/single-product/fallback.php:43
-msgid "Follow the plan for {guarantee_days} days. If you see no change and do not feel better, send us an email and we refund 100% of your money — no forms, no excuses, no awkward conversation. The risk is ours, not yours."
-msgstr ""
-
-#: template-parts/single-product/fallback.php:45
 msgid "No hidden subscription"
 msgstr ""
 
-#: template-parts/single-product/fallback.php:46
+#: template-parts/single-product/fallback.php:44
 msgid "No complicated cancellation"
-msgstr ""
-
-#: template-parts/single-product/fallback.php:47
-msgid "You keep the materials"
-msgstr ""
-
-#: template-parts/single-product/fallback.php:49
-msgid "Try it risk-free"
 msgstr ""
 
 #: template-parts/single-product/gallery.php:64
@@ -1993,10 +2008,6 @@ msgstr ""
 #: template-parts/single-product/gallery.php:78
 #, php-format
 msgid "Show image %1$d of %2$d"
-msgstr ""
-
-#: template-parts/single-product/hero.php:82
-msgid "Try it. If it does not convince you, we refund every cent — and you keep the materials."
 msgstr ""
 
 #: template-parts/single-product/price-box.php:24

@@ -8,13 +8,14 @@
 
 declare(strict_types=1);
 
-$items = [];
+$items     = [];
+$guarantee = optimum_lift_guarantee_label();
 
-if ((int) optimum_lift_setting('guarantee_days') > 0) {
+if ($guarantee !== '') {
     $items[] = [
         'icon'  => 'shield-check',
-        'title' => optimum_lift_guarantee_label(),
-        'text'  => __('Not happy with it? You get your money back, no questions asked.', 'optimum-lift'),
+        'title' => $guarantee,
+        'text'  => __('Follow the plan and the results come. If you get stuck, we help you.', 'optimum-lift'),
     ];
 }
 

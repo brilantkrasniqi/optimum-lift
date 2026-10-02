@@ -55,10 +55,10 @@ homepage hero's before/after and progress card, the goal tabs' "customer
 average" and "typical result" figures, trainer name and certificates,
 "WhatsApp 7/7", the shopping-list cost, value-stack values, the legal pages'
 text) is seeded as in the mock and must be replaced with real, consented
-content before launch. The theme cannot verify it. Guarantee copy outside a
-`{guarantee_days}` token (headings, intros, reassurance lines, comparison
-cells, FAQ answers, Product descriptions) is seeded as "30 ditë" and must be
-kept equal to the Customizer's `guarantee_days`.
+content before launch. The theme cannot verify it. The guarantee is a promise,
+never money back (ADR-0009): copy that names it outside a `{guarantee}` token
+(section headings, the hero's reassurance lines) is seeded as "Sukses i
+garantuar" and must be kept equal to the Customizer's `guarantee`.
 
 ## Design tokens
 
@@ -167,7 +167,7 @@ $key): mixed`, which returns the default when unset.
 | `contact_email` | email | `info@optimumlift.com` |
 | `whatsapp` | text (international digits) | `''` (WhatsApp elements hidden) |
 | `instagram_url`, `tiktok_url` | url | `''` (icon hidden) |
-| `guarantee_days` | int | `30` |
+| `guarantee` | text, empty hides every mention (ADR-0009) | `Success guaranteed` (translatable) |
 | `offer_label` | text | `Launch offer` (translatable) |
 | `offer_ends_at` | datetime-local, site timezone | `''` |
 | `customers_baseline` | int | `600` |
@@ -227,7 +227,7 @@ Text fields marked *tokens* pass through `optimum_lift_replace_tokens()`:
 | `{regular_price}` | Context Product's anchor price (the struck "was" price) | no saving (ADR-0008) |
 | `{saving}` | Context Product's saving amount | no saving |
 | `{bundle_price}` | Context bundle, else the bundle containing the context, else the first bundle | no bundle |
-| `{guarantee_days}` | Customizer `guarantee_days` | it is 0 |
+| `{guarantee}` | Customizer `guarantee` (`{guarantee_days}` is retired and always empty, ADR-0009) | it is empty |
 | `{customers}` | `optimum_lift_format_count_plus(optimum_lift_customer_count())` | never |
 | `{rating}`, `{reviews}` | Context Product's own rating (store-wide without a context) | below the review threshold |
 | `{store_rating}`, `{store_reviews}` | Store-wide rating (use these on the homepage, whose context is the bundle) | below the review threshold |

@@ -9,7 +9,8 @@
  */
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
-const DESKTOP = '(min-width: 1024px)';
+// The menu holds the section links the header shows only from xl.
+const DESKTOP = '(min-width: 1280px)';
 
 export function init() {
   const panel = document.getElementById('ol-mobile-menu');
