@@ -1,0 +1,767 @@
+# Copyright (C) 2026 
+# This file is distributed under the same license as the Optimum Lift Plans plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Optimum Lift Plans 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/optimum-lift-plans\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Albanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sq\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-10-04T11:29:11+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: optimum-lift-plans\n"
+
+#. Plugin Name of the plugin
+#: optimum-lift-plans.php
+msgid "Optimum Lift Plans"
+msgstr "Optimum Lift Plans"
+
+#. Description of the plugin
+#: optimum-lift-plans.php
+msgid "Exercises, Training Plans, Access, Downloads and the Portal. Plan content lives here, never in the theme (ADR-0003)."
+msgstr "Ushtrime, plane stërvitjeje, aksesi, shkarkimet dhe portali. Përmbajtja e planeve jeton këtu, kurrë në temë (ADR-0003)."
+
+#: src/Access/OrderAccess.php:66
+msgid "Could not create an account for this order, so no Plan Access was granted."
+msgstr "Nuk u krijua dot një llogari për këtë porosi, ndaj nuk u dha akses në asnjë plan."
+
+#: src/Access/OrderAccess.php:163
+#: src/Privacy/Privacy.php:82
+msgid "Plan Access"
+msgstr "Aksesi në plane"
+
+#: src/Access/OrderAccess.php:170
+msgid "revoked"
+msgstr "revokuar"
+
+#: src/Access/ProductFields.php:24
+#: src/Content/PostTypes.php:62
+#: src/Content/PostTypes.php:68
+#: src/Privacy/Privacy.php:44
+msgid "Training Plans"
+msgstr "Plane stërvitjeje"
+
+#: src/Access/ProductFields.php:31
+msgid "Plans included"
+msgstr "Planet që përfshin"
+
+#: src/Access/ProductFields.php:32
+msgid "Buying this Product gives Access to these Plans. Mark the Product Virtual. Changing this later does not affect past buyers."
+msgstr "Kush e blen këtë produkt merr akses në këto plane. Shënoje produktin si virtual. Ndryshimet e mëvonshme nuk prekin blerësit e mëparshëm."
+
+#: src/Content/Choices.php:21
+msgid "Chest"
+msgstr "Gjoksi"
+
+#: src/Content/Choices.php:22
+msgid "Back"
+msgstr "Shpina"
+
+#: src/Content/Choices.php:23
+msgid "Shoulders"
+msgstr "Shpatullat"
+
+#: src/Content/Choices.php:24
+msgid "Biceps"
+msgstr "Bicepsi"
+
+#: src/Content/Choices.php:25
+msgid "Triceps"
+msgstr "Tricepsi"
+
+#: src/Content/Choices.php:26
+msgid "Forearms"
+msgstr "Parakrahët"
+
+#: src/Content/Choices.php:27
+msgid "Core"
+msgstr "Barku"
+
+#: src/Content/Choices.php:28
+msgid "Glutes"
+msgstr "Vithet"
+
+#: src/Content/Choices.php:29
+msgid "Quads"
+msgstr "Kuadricepsi"
+
+#: src/Content/Choices.php:30
+msgid "Hamstrings"
+msgstr "Pjesa e pasme e kofshës"
+
+#: src/Content/Choices.php:31
+msgid "Calves"
+msgstr "Pulpat"
+
+#: src/Content/Choices.php:32
+msgid "Full body"
+msgstr "Gjithë trupi"
+
+#: src/Content/Choices.php:42
+msgid "Barbell"
+msgstr "Shtangë"
+
+#: src/Content/Choices.php:43
+msgid "Dumbbell"
+msgstr "Shtangë dore"
+
+#: src/Content/Choices.php:44
+msgid "Kettlebell"
+msgstr "Kettlebell"
+
+#: src/Content/Choices.php:45
+msgid "Machine"
+msgstr "Makinë"
+
+#: src/Content/Choices.php:46
+msgid "Cable"
+msgstr "Kabllo"
+
+#: src/Content/Choices.php:47
+msgid "Resistance band"
+msgstr "Llastik rezistence"
+
+#: src/Content/Choices.php:48
+msgid "Bench"
+msgstr "Stol"
+
+#: src/Content/Choices.php:49
+msgid "Pull-up bar"
+msgstr "Hekur për tërheqje"
+
+#: src/Content/Choices.php:50
+msgid "Bodyweight"
+msgstr "Pesha trupore"
+
+#: src/Content/Choices.php:60
+msgid "Beginner"
+msgstr "Fillestar"
+
+#: src/Content/Choices.php:61
+msgid "Intermediate"
+msgstr "Mesatar"
+
+#: src/Content/Choices.php:62
+msgid "Advanced"
+msgstr "I avancuar"
+
+#: src/Content/Choices.php:72
+#: templates/portal/workout.php:75
+msgid "Reps"
+msgstr "Përsëritje"
+
+#: src/Content/Choices.php:73
+#: templates/portal/workout.php:75
+msgid "Seconds"
+msgstr "Sekonda"
+
+#: src/Content/ExerciseFields.php:24
+#: src/Content/PlanFields.php:209
+#: src/Content/PostTypes.php:50
+#: templates/pdf/plan.php:136
+msgid "Exercise"
+msgstr "Ushtrimi"
+
+#: src/Content/ExerciseFields.php:32
+#: src/Content/ExerciseFields.php:120
+msgid "Primary muscle"
+msgstr "Muskuli kryesor"
+
+#: src/Content/ExerciseFields.php:42
+msgid "Secondary muscles"
+msgstr "Muskujt dytësorë"
+
+#: src/Content/ExerciseFields.php:54
+#: src/Content/PlanFields.php:92
+#: templates/pdf/plan.php:95
+msgid "Difficulty"
+msgstr "Vështirësia"
+
+#: src/Content/ExerciseFields.php:64
+#: src/Content/ExerciseFields.php:121
+msgid "Equipment"
+msgstr "Pajisjet"
+
+#: src/Content/ExerciseFields.php:73
+msgid "Image"
+msgstr "Imazhi"
+
+#: src/Content/ExerciseFields.php:74
+msgid "A still photo. Used in the PDF Download, and in the Portal when there is no animation."
+msgstr "Një foto. Përdoret në PDF dhe në portal kur nuk ka animacion."
+
+#: src/Content/ExerciseFields.php:84
+msgid "Animation"
+msgstr "Animacioni"
+
+#: src/Content/ExerciseFields.php:85
+msgid "A GIF for the Portal. Never used in the PDF."
+msgstr "Një GIF për portalin. Nuk përdoret kurrë në PDF."
+
+#: src/Content/ExerciseFields.php:95
+msgid "Video"
+msgstr "Video"
+
+#: src/Content/ExerciseFields.php:96
+msgid "Unlisted YouTube or Vimeo link."
+msgstr "Link YouTube ose Vimeo i palistuar."
+
+#: src/Content/ExerciseFields.php:102
+msgid "Instructions"
+msgstr "Udhëzimet"
+
+#: src/Content/PlanFields.php:60
+#: src/Content/PostTypes.php:63
+msgid "Training Plan"
+msgstr "Plan stërvitjeje"
+
+#: src/Content/PlanFields.php:65
+msgid "Overview"
+msgstr "Përmbledhje"
+
+#: src/Content/PlanFields.php:69
+msgid "Summary"
+msgstr "Përshkrimi i shkurtër"
+
+#: src/Content/PlanFields.php:70
+msgid "Shown on the PDF cover and at the top of the Plan in the Portal."
+msgstr "Shfaqet në kopertinën e PDF-së dhe në krye të planit në portal."
+
+#: src/Content/PlanFields.php:78
+#: templates/pdf/plan.php:89
+msgid "Goal"
+msgstr "Qëllimi"
+
+#: src/Content/PlanFields.php:85
+msgid "Target audience"
+msgstr "Për kë është"
+
+#: src/Content/PlanFields.php:100
+#: src/Content/PlanFields.php:104
+msgid "Phases"
+msgstr "Fazat"
+
+#: src/Content/PlanFields.php:105
+msgid "Optional. A name over consecutive Weeks, e.g. \"Strength\", Weeks 9 to 12. Phases may not overlap."
+msgstr "Opsionale. Një emër mbi disa javë radhazi, p.sh. \"Forcë\", javët 9 deri 12. Fazat nuk mund të mbivendosen."
+
+#: src/Content/PlanFields.php:108
+msgid "Add Phase"
+msgstr "Shto fazë"
+
+#: src/Content/PlanFields.php:113
+msgid "Name"
+msgstr "Emri"
+
+#: src/Content/PlanFields.php:121
+msgid "First Week"
+msgstr "Java e parë"
+
+#: src/Content/PlanFields.php:131
+msgid "Last Week"
+msgstr "Java e fundit"
+
+#: src/Content/PlanFields.php:141
+#: src/Content/PlanFields.php:145
+msgid "Weeks"
+msgstr "Javët"
+
+#: src/Content/PlanFields.php:146
+msgid "A Week is numbered by its position. To write the next Week, hold Shift and click the duplicate icon beside the last Week, then edit the copy."
+msgstr "Java numërohet sipas vendit të saj. Për të shkruar javën tjetër, mbaj Shift dhe kliko ikonën e dyfishimit pranë javës së fundit, pastaj ndrysho kopjen."
+
+#: src/Content/PlanFields.php:151
+msgid "Add Week"
+msgstr "Shto javë"
+
+#: src/Content/PlanFields.php:158
+#: src/Content/PlanFields.php:518
+msgid "Week"
+msgstr "Java"
+
+#: src/Content/PlanFields.php:165
+msgid "Workouts"
+msgstr "Stërvitjet"
+
+#: src/Content/PlanFields.php:170
+msgid "Add Workout"
+msgstr "Shto stërvitje"
+
+#: src/Content/PlanFields.php:176
+msgid "Workout name"
+msgstr "Emri i stërvitjes"
+
+#: src/Content/PlanFields.php:177
+msgid "e.g. \"Upper body\". Not a weekday."
+msgstr "p.sh. \"Pjesa e sipërme\". Jo ditë e javës."
+
+#: src/Content/PlanFields.php:184
+msgid "Prescriptions"
+msgstr "Ushtrimet"
+
+#: src/Content/PlanFields.php:188
+msgid "Add Prescription"
+msgstr "Shto ushtrim"
+
+#: src/Content/PlanFields.php:221
+#: src/Privacy/Privacy.php:121
+msgid "Sets"
+msgstr "Seri"
+
+#: src/Content/PlanFields.php:233
+msgid "Target in"
+msgstr "Objektivi në"
+
+#: src/Content/PlanFields.php:243
+msgid "Target"
+msgstr "Objektivi"
+
+#: src/Content/PlanFields.php:244
+msgid "8, 8-10, AMRAP, 30"
+msgstr "8, 8-10, AMRAP, 30"
+
+#: src/Content/PlanFields.php:253
+#: templates/pdf/plan.php:138
+msgid "Intensity"
+msgstr "Intensiteti"
+
+#: src/Content/PlanFields.php:254
+msgid "e.g. RPE 8"
+msgstr "p.sh. RPE 8"
+
+#: src/Content/PlanFields.php:262
+msgid "Rest (s)"
+msgstr "Pushim (s)"
+
+#: src/Content/PlanFields.php:271
+#: src/Privacy/Privacy.php:120
+#: templates/pdf/plan.php:140
+#: templates/portal/workout.php:160
+msgid "Notes"
+msgstr "Shënime"
+
+#: src/Content/PlanFields.php:411
+msgid "A Phase must end on or after the Week it starts."
+msgstr "Faza duhet të mbarojë në javën ku nis ose më vonë."
+
+#. translators: %d: number of Weeks in the Plan
+#: src/Content/PlanFields.php:417
+#, php-format
+msgid "This Plan only has %d Weeks."
+msgstr "Ky plan ka vetëm %d javë."
+
+#. translators: %d: Week number
+#: src/Content/PlanFields.php:424
+#, php-format
+msgid "Phases overlap at Week %d."
+msgstr "Fazat mbivendosen te java %d."
+
+#. translators: 1: estimated form inputs, 2: max_input_vars
+#: src/Content/PlanFields.php:482
+#, php-format
+msgid "This Plan submits about %1$d form inputs and the server accepts %2$d (max_input_vars). Raise the limit before adding more Weeks."
+msgstr "Ky plan dërgon rreth %1$d fusha formulari dhe serveri pranon %2$d (max_input_vars). Rrite kufirin para se të shtosh javë të tjera."
+
+#: src/Content/PlanFields.php:554
+msgid "The Plan was not saved: the form was cut short because it exceeds the server's max_input_vars limit. Your last saved version is unchanged. Raise max_input_vars and save again."
+msgstr "Plani nuk u ruajt: formulari u pre sepse kalon kufirin max_input_vars të serverit. Versioni i fundit i ruajtur nuk ka ndryshuar. Rrite max_input_vars dhe ruaje përsëri."
+
+#: src/Content/PostTypes.php:49
+#: src/Content/PostTypes.php:55
+#: templates/pdf/plan.php:163
+msgid "Exercises"
+msgstr "Ushtrimet"
+
+#: src/Content/PostTypes.php:51
+msgid "Add Exercise"
+msgstr "Shto ushtrim"
+
+#: src/Content/PostTypes.php:52
+msgid "Edit Exercise"
+msgstr "Ndrysho ushtrimin"
+
+#: src/Content/PostTypes.php:53
+msgid "Search Exercises"
+msgstr "Kërko ushtrime"
+
+#: src/Content/PostTypes.php:54
+msgid "No Exercises found."
+msgstr "Nuk u gjet asnjë ushtrim."
+
+#: src/Content/PostTypes.php:64
+msgid "Add Training Plan"
+msgstr "Shto plan stërvitjeje"
+
+#: src/Content/PostTypes.php:65
+msgid "Edit Training Plan"
+msgstr "Ndrysho planin e stërvitjes"
+
+#: src/Content/PostTypes.php:66
+msgid "Search Training Plans"
+msgstr "Kërko plane stërvitjeje"
+
+#: src/Content/PostTypes.php:67
+msgid "No Training Plans found."
+msgstr "Nuk u gjet asnjë plan stërvitjeje."
+
+#: src/Content/PostTypes.php:79
+#: src/Content/PostTypes.php:80
+msgid "Training"
+msgstr "Stërvitja"
+
+#: src/Download/Delivery.php:87
+msgid "You do not have Access to this Plan."
+msgstr "Nuk ke akses në këtë plan."
+
+#: src/Download/Delivery.php:102
+msgid "You cannot preview this Plan."
+msgstr "Nuk mund ta shohësh paraprakisht këtë plan."
+
+#: src/Download/Delivery.php:116
+msgid "Download"
+msgstr "Shkarkimi"
+
+#: src/Download/Delivery.php:118
+msgid "Dompdf is not installed. Run `npm run composer -- install`."
+msgstr "Dompdf nuk është instaluar. Ekzekuto `npm run composer -- install`."
+
+#: src/Download/Delivery.php:126
+msgid "Preview PDF"
+msgstr "Shiko PDF-në"
+
+#: src/Download/Delivery.php:127
+msgid "Shows the last saved version."
+msgstr "Shfaq versionin e fundit të ruajtur."
+
+#: src/Download/Delivery.php:159
+msgid "Plan PDF"
+msgstr "PDF e planit"
+
+#: src/Download/Delivery.php:179
+#: src/Download/Delivery.php:221
+#: src/Download/Delivery.php:230
+#: src/Portal/Portal.php:200
+msgid "Your Plans"
+msgstr "Planet e tua"
+
+#: src/Download/Delivery.php:186
+msgid "Open"
+msgstr "Hape"
+
+#: src/Download/Delivery.php:188
+#: templates/portal/plan.php:40
+#: templates/portal/plans.php:65
+msgid "Download PDF"
+msgstr "Shkarko PDF"
+
+#. translators: %s: billing email
+#: src/Download/Delivery.php:199
+#, php-format
+msgid "Sign in with %s to open your Plans. If this is your first order, we have emailed you a link to set your password."
+msgstr "Hyr me %s për të hapur planet e tua. Nëse kjo është porosia jote e parë, të kemi dërguar me email një link për të vendosur fjalëkalimin."
+
+#: src/Download/Delivery.php:238
+msgid "PDF"
+msgstr "PDF"
+
+#: src/Download/Delivery.php:269
+msgid "The PDF could not be created. Please try again shortly."
+msgstr "PDF-ja nuk u krijua dot. Provo përsëri pas pak."
+
+#: src/Format.php:50
+msgid "BW"
+msgstr "PT"
+
+#: src/Logging/RestController.php:135
+msgid "That set is not part of this Prescription."
+msgstr "Kjo seri nuk është pjesë e këtij ushtrimi."
+
+#: src/Logging/RestController.php:186
+msgid "Log at least one set before you finish the Workout."
+msgstr "Regjistro të paktën një seri para se ta përfundosh stërvitjen."
+
+#. translators: 1: sets logged, 2: sets the Workout prescribes
+#: src/Logging/RestController.php:271
+#, php-format
+msgid "You have logged %1$d of %2$d set."
+msgid_plural "You have logged %1$d of %2$d sets."
+msgstr[0] "Ke regjistruar %1$d nga %2$d seri."
+msgstr[1] "Ke regjistruar %1$d nga %2$d seri."
+
+#. translators: %d: Exercises without a logged set
+#: src/Logging/RestController.php:279
+#, php-format
+msgid "%d Exercise has not been started."
+msgid_plural "%d Exercises have not been started."
+msgstr[0] "%d ushtrim nuk ka nisur ende."
+msgstr[1] "%d ushtrime nuk kanë nisur ende."
+
+#: src/Logging/RestController.php:323
+msgid "Not found."
+msgstr "Nuk u gjet."
+
+#. translators: %s: comma-separated plugin names
+#: src/Plugin.php:41
+#, php-format
+msgid "Optimum Lift Plans is inactive until these plugins are active: %s."
+msgstr "Optimum Lift Plans është joaktiv derisa të aktivizohen këto shtojca: %s."
+
+#: src/Portal/Portal.php:60
+#: src/Portal/Portal.php:74
+msgid "Plans"
+msgstr "Planet"
+
+#: src/Portal/Portal.php:152
+msgid "Saving…"
+msgstr "Po ruhet…"
+
+#: src/Portal/Portal.php:153
+msgid "Saved"
+msgstr "U ruajt"
+
+#: src/Portal/Portal.php:154
+msgid "Offline: will save when you reconnect"
+msgstr "Pa internet: ruhet kur të lidhesh sërish"
+
+#: src/Portal/Portal.php:155
+msgid "Not saved"
+msgstr "Nuk u ruajt"
+
+#: src/Portal/Portal.php:156
+msgid "New Personal Record!"
+msgstr "Rekord i ri personal!"
+
+#: src/Portal/Portal.php:157
+msgid "Some sets have not been saved yet. Reconnect, then finish the Workout."
+msgstr "Disa seri nuk janë ruajtur ende. Lidhu sërish me internetin, pastaj përfundoje stërvitjen."
+
+#: src/Portal/Portal.php:158
+#: templates/portal/workout.php:166
+msgid "Finish Workout"
+msgstr "Përfundo stërvitjen"
+
+#: src/Privacy/Privacy.php:58
+#: src/Privacy/Privacy.php:113
+msgid "Workout Logs"
+msgstr "Regjistrimet e stërvitjeve"
+
+#: src/Privacy/Privacy.php:85
+#: src/Privacy/Privacy.php:116
+msgid "Plan"
+msgstr "Plani"
+
+#: src/Privacy/Privacy.php:86
+msgid "Order"
+msgstr "Porosia"
+
+#: src/Privacy/Privacy.php:87
+msgid "Granted"
+msgstr "Dhënë"
+
+#: src/Privacy/Privacy.php:88
+msgid "Revoked"
+msgstr "Revokuar"
+
+#: src/Privacy/Privacy.php:117
+msgid "Workout"
+msgstr "Stërvitja"
+
+#: src/Privacy/Privacy.php:118
+msgid "Started"
+msgstr "Nisur"
+
+#: src/Privacy/Privacy.php:119
+#: templates/portal/plan.php:84
+msgid "Completed"
+msgstr "Përfunduar"
+
+#: src/Privacy/Privacy.php:146
+msgid "Plan Access was kept as a record of purchase."
+msgstr "Aksesi në plane u ruajt si dëshmi e blerjes."
+
+#: templates/pdf/plan.php:80
+msgid "Length"
+msgstr "Kohëzgjatja"
+
+#. translators: 1: number of Weeks, 2: number of Workouts
+#: templates/pdf/plan.php:84
+#, php-format
+msgid "%1$d Weeks, %2$d Workouts"
+msgstr "%1$d javë, %2$d stërvitje"
+
+#: templates/pdf/plan.php:92
+msgid "For"
+msgstr "Për"
+
+#. translators: 1: first Week, 2: last Week
+#: templates/pdf/plan.php:103
+#, php-format
+msgid "Weeks %1$d–%2$d"
+msgstr "Javët %1$d–%2$d"
+
+#. translators: %d: Week number
+#: templates/pdf/plan.php:120
+#: templates/portal/plan.php:53
+#, php-format
+msgid "Week %d"
+msgstr "Java %d"
+
+#. translators: 1: Workout number, 2: Workout name
+#: templates/pdf/plan.php:130
+#, php-format
+msgid "Workout %1$d: %2$s"
+msgstr "Stërvitja %1$d: %2$s"
+
+#: templates/pdf/plan.php:137
+msgid "Sets × target"
+msgstr "Seri × objektiv"
+
+#: templates/pdf/plan.php:139
+msgid "Rest"
+msgstr "Pushim"
+
+#: templates/portal/plan.php:25
+msgid "All Plans"
+msgstr "Të gjitha planet"
+
+#. translators: 1: Week number, 2: Workout name
+#: templates/portal/plan.php:36
+#: templates/portal/plans.php:60
+#, php-format
+msgid "Next: Week %1$d, %2$s"
+msgstr "Tjetra: java %1$d, %2$s"
+
+#. translators: 1: completed Workouts, 2: Workouts in the Week
+#: templates/portal/plan.php:62
+#, php-format
+msgid "%1$d / %2$d"
+msgstr "%1$d / %2$d"
+
+#. translators: %d: number of Exercises
+#: templates/portal/plan.php:77
+#, php-format
+msgid "%d Exercise"
+msgid_plural "%d Exercises"
+msgstr[0] "%d ushtrim"
+msgstr[1] "%d ushtrime"
+
+#: templates/portal/plan.php:85
+msgid "In progress"
+msgstr "Në vazhdim"
+
+#: templates/portal/plan.php:86
+msgid "Not started"
+msgstr "Pa nisur"
+
+#: templates/portal/plans.php:27
+msgid "You do not have any Plans yet."
+msgstr "Nuk ke ende asnjë plan."
+
+#: templates/portal/plans.php:28
+msgid "Browse the shop"
+msgstr "Shiko dyqanin"
+
+#. translators: 1: completed Workouts, 2: total Workouts
+#: templates/portal/plans.php:51
+#, php-format
+msgid "%1$d of %2$d Workouts completed"
+msgstr "%1$d nga %2$d stërvitje të përfunduara"
+
+#. translators: 1: Week number, 2: Workout number
+#: templates/portal/workout.php:49
+#, php-format
+msgid "Week %1$d · Workout %2$d"
+msgstr "Java %1$d · Stërvitja %2$d"
+
+#. translators: %s: date
+#: templates/portal/workout.php:57
+#, php-format
+msgid "Completed %s"
+msgstr "Përfunduar më %s"
+
+#: templates/portal/workout.php:63
+msgid "Logging needs JavaScript enabled."
+msgstr "Për të regjistruar seritë duhet JavaScript i aktivizuar."
+
+#: templates/portal/workout.php:66
+msgid "Start Workout"
+msgstr "Fillo stërvitjen"
+
+#. translators: %s: rest time
+#: templates/portal/workout.php:86
+#, php-format
+msgid "Rest %s"
+msgstr "Pushim %s"
+
+#: templates/portal/workout.php:98
+msgid "Last time:"
+msgstr "Herën e kaluar:"
+
+#: templates/portal/workout.php:102
+msgid "Personal Record:"
+msgstr "Rekordi personal:"
+
+#: templates/portal/workout.php:109
+msgid "How to"
+msgstr "Si bëhet"
+
+#: templates/portal/workout.php:112
+msgid "Watch the video"
+msgstr "Shiko videon"
+
+#: templates/portal/workout.php:121
+msgid "Set"
+msgstr "Seria"
+
+#: templates/portal/workout.php:122
+msgid "kg"
+msgstr "kg"
+
+#: templates/portal/workout.php:124
+msgid "Status"
+msgstr "Statusi"
+
+#. translators: %d: set number
+#: templates/portal/workout.php:139
+#, php-format
+msgid "Set %d load in kg"
+msgstr "Pesha në kg, seria %d"
+
+#. translators: 1: set number, 2: Reps or Seconds
+#: templates/portal/workout.php:145
+#, php-format
+msgid "Set %1$d %2$s"
+msgstr "Seria %1$d, %2$s"
+
+#: templates/portal/workout.php:162
+msgid "How did it feel?"
+msgstr "Si u ndjeve?"
+
+#: templates/portal/workout.php:166
+msgid "Save changes"
+msgstr "Ruaj ndryshimet"
+
+#: templates/portal/workout.php:170
+msgid "Log this Workout again"
+msgstr "Regjistroje sërish këtë stërvitje"
+
+#: templates/portal/workout.php:176
+msgid "Finish this Workout?"
+msgstr "Ta përfundosh stërvitjen?"
+
+#: templates/portal/workout.php:177
+msgid "You still have a lot of this Workout left."
+msgstr "Të ka mbetur ende shumë nga kjo stërvitje."
+
+#: templates/portal/workout.php:180
+msgid "Back to the Workout"
+msgstr "Kthehu te stërvitja"
+
+#: templates/portal/workout.php:181
+msgid "Finish anyway"
+msgstr "Përfundoje gjithsesi"

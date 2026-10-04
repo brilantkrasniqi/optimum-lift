@@ -34,6 +34,7 @@ final class Portal
         add_filter('woocommerce_account_menu_items', [$this, 'menuItems']);
         add_filter('woocommerce_endpoint_' . Endpoint::NAME . '_title', [$this, 'title']);
         add_action('woocommerce_account_' . Endpoint::NAME . '_endpoint', [$this, 'render']);
+        add_action('woocommerce_account_dashboard', [$this, 'renderDashboard']);
         add_action('template_redirect', [$this, 'guard'], 5);
         add_action('template_redirect', [$this, 'handleStart'], 6);
         add_action('wp_enqueue_scripts', [$this, 'assets']);
@@ -130,15 +131,16 @@ final class Portal
 
     public function assets(): void
     {
-        $route = Endpoint::current();
+        $route     = Endpoint::current();
+        $dashboard = is_account_page() && is_user_logged_in() && !is_wc_endpoint_url();
 
-        if ($route === null) {
+        if ($route === null && !$dashboard) {
             return;
         }
 
         wp_enqueue_style('ol-portal', plugins_url('assets/portal.css', \OptimumLift\Plans\FILE), [], $this->assetVersion('assets/portal.css'));
 
-        if ($route['action'] !== 'workout') {
+        if ($route === null || $route['action'] !== 'workout') {
             return;
         }
 
@@ -153,6 +155,7 @@ final class Portal
                 'failed'         => __('Not saved', 'optimum-lift-plans'),
                 'personalRecord' => __('New Personal Record!', 'optimum-lift-plans'),
                 'unsaved'        => __('Some sets have not been saved yet. Reconnect, then finish the Workout.', 'optimum-lift-plans'),
+                'finish'         => __('Finish Workout', 'optimum-lift-plans'),
             ],
         ]);
     }
@@ -188,7 +191,16 @@ final class Portal
         ]);
     }
 
-    private function renderList(int $userId): void
+    /**
+     * The dashboard, where logging in lands, leads to the Customer's Plans:
+     * they are why most Customers have an account.
+     */
+    public function renderDashboard(): void
+    {
+        $this->renderList(get_current_user_id(), __('Your Plans', 'optimum-lift-plans'));
+    }
+
+    private function renderList(int $userId, string $heading = ''): void
     {
         $entries = [];
 
@@ -207,7 +219,7 @@ final class Portal
             ];
         }
 
-        Templates::render('portal/plans', ['entries' => $entries]);
+        Templates::render('portal/plans', ['entries' => $entries, 'heading' => $heading]);
     }
 
     private function renderWorkout(int $userId, Plan $plan, Workout $workout): void

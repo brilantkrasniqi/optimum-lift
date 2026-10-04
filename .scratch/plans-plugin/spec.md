@@ -172,9 +172,15 @@ Portal, the Download and the REST API use only these objects, never
 | Method | Route | Does |
 | --- | --- | --- |
 | POST | `/workout-logs` | `{plan_id, workout_uid}` → reuse the Customer's in-progress log for that Workout or start one |
-| PUT | `/workout-logs/{id}/sets` | `{prescription_uid, set_number, load_kg, reps, seconds}` → upsert; returns `{personal_record: bool}` |
-| DELETE | `/workout-logs/{id}/sets` | `{prescription_uid, set_number}` |
-| POST | `/workout-logs/{id}/complete` | `{notes}` |
+| PUT | `/workout-logs/{id}/sets` | `{prescription_uid, set_number, load_kg, reps, seconds}` → upsert; returns `{personal_record: bool, log_status}` |
+| DELETE | `/workout-logs/{id}/sets` | `{prescription_uid, set_number}`; returns `{log_status}` |
+| POST | `/workout-logs/{id}/complete` | `{notes, confirm}` → 422 `ol_nothing_logged` with no performed set; 409 `ol_workout_unfinished` when much is left, unless `confirm` |
+
+A performed set has at least one rep or second. "Much left" is a Prescription
+with no performed set, or under 75% of the prescribed sets
+(`Logging/WorkoutProgress`). A completed log whose performed sets are all
+cleared goes back to in progress, so the rule cannot be dodged by finishing
+first and clearing afterwards.
 | GET | `/exercises/{id}/history` | the Customer's Logged Sets and Personal Record for the Exercise |
 
 ### Download

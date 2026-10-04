@@ -24,6 +24,16 @@ final readonly class LoggedSet
     }
 
     /**
+     * Whether the set was actually done: at least one rep or second. A set of
+     * zero reps is a failed attempt, and counts towards neither a Personal
+     * Record nor a finished Workout.
+     */
+    public function isPerformed(): bool
+    {
+        return ($this->reps ?? 0) > 0 || ($this->seconds ?? 0) > 0;
+    }
+
+    /**
      * @param array<string, mixed> $row
      */
     public static function fromRow(array $row): self

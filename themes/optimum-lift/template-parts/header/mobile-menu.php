@@ -3,8 +3,9 @@
  * The mobile menu: a backdrop and a panel fixed over the page, outside the
  * header, so opening it never moves the layout (modules/menu.js).
  *
- * Its closing call to action follows the page: buy this Product, go to the
- * homepage pricing, or see the bundle.
+ * Below the links, the account in words: log in or register, or once signed
+ * in, the Customer's Plans and orders. Its closing call to action follows the
+ * page: buy this Product, go to the homepage pricing, or see the bundle.
  */
 
 declare(strict_types=1);
@@ -42,7 +43,9 @@ if ($product !== null) {
     ];
 }
 
-$guarantee = optimum_lift_guarantee_label();
+$guarantee     = optimum_lift_guarantee_label();
+$account_links = optimum_lift_account_menu_links();
+$signed_in_as  = is_user_logged_in() ? wp_get_current_user()->display_name : '';
 ?>
 <div data-menu-backdrop class="pointer-events-none fixed inset-0 z-[55] bg-black/70 opacity-0 backdrop-blur-sm transition-opacity duration-300 xl:hidden"></div>
 <aside id="ol-mobile-menu" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Menu', 'optimum-lift'); ?>" inert
@@ -62,6 +65,23 @@ $guarantee = optimum_lift_guarantee_label();
             </a>
         <?php endforeach; ?>
     </nav>
+
+    <?php if ($account_links !== []) : ?>
+        <nav class="border-t border-white/10 px-5 pt-4 pb-1" aria-labelledby="ol-menu-account">
+            <h2 id="ol-menu-account" class="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-zinc-500">
+                <?php echo optimum_lift_icon('user', 'w-3.5 h-3.5'); ?>
+                <?php esc_html_e('Account', 'optimum-lift'); ?>
+                <?php if ($signed_in_as !== '') : ?>
+                    <span class="truncate font-bold normal-case tracking-normal text-zinc-400">· <?php echo esc_html($signed_in_as); ?></span>
+                <?php endif; ?>
+            </h2>
+            <ul class="mt-3 flex flex-wrap gap-2">
+                <?php foreach ($account_links as $link) : ?>
+                    <li><a href="<?php echo esc_url($link['url']); ?>" class="btn btn-ghost btn-sm min-h-11 px-4 text-[13px]"><?php echo esc_html($link['label']); ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </nav>
+    <?php endif; ?>
 
     <div class="border-t border-white/10 p-5">
         <a href="<?php echo esc_url($cta['url']); ?>" data-cta="<?php echo esc_attr($cta['id']); ?>"<?php echo $cta['buy_now'] > 0 ? ' data-buy-now="' . esc_attr((string) $cta['buy_now']) . '" rel="nofollow"' : ''; ?> class="btn btn-primary btn-block rounded-xl px-4 py-3.5 text-base">

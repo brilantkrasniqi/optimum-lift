@@ -41,3 +41,26 @@ function ol_dynamic_host_filter(mixed $value): mixed
 
 add_filter('option_home', 'ol_dynamic_host_filter');
 add_filter('option_siteurl', 'ol_dynamic_host_filter');
+
+/**
+ * WP-Cron spawns itself with a loopback request to the site URL, but inside the
+ * container neither localhost:8080 nor the tunnel host reaches Apache, which
+ * listens on port 80. Without this no cron event runs, so Action Scheduler's
+ * queue never drains and wp-admin warns about past-due actions.
+ *
+ * @param array{url: string, key: string, args: array<string, mixed>} $request
+ * @return array{url: string, key: string, args: array<string, mixed>}
+ */
+function ol_dynamic_host_cron_request(array $request): array
+{
+    if (wp_get_environment_type() !== 'local') {
+        return $request;
+    }
+
+    $query = (string) wp_parse_url($request['url'], PHP_URL_QUERY);
+    $request['url'] = 'http://localhost/wp-cron.php' . ($query !== '' ? '?' . $query : '');
+
+    return $request;
+}
+
+add_filter('cron_request', 'ol_dynamic_host_cron_request');

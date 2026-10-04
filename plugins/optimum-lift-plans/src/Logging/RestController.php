@@ -83,8 +83,9 @@ final class RestController
             'callback'            => [$this, 'complete'],
             'permission_callback' => $loggedIn,
             'args'                => [
-                'id'    => $logId,
-                'notes' => ['type' => 'string', 'default' => '', 'maxLength' => 2000],
+                'id'      => $logId,
+                'notes'   => ['type' => 'string', 'default' => '', 'maxLength' => 2000],
+                'confirm' => ['type' => 'boolean', 'default' => false],
             ],
         ]);
 
@@ -144,6 +145,7 @@ final class RestController
             'reps'            => $reps,
             'seconds'         => $seconds,
             'personal_record' => $personalRecord,
+            'log_status'      => $this->reopenIfEmpty($log, $context[2]),
         ]);
     }
 
@@ -155,11 +157,18 @@ final class RestController
             return $context;
         }
 
-        $this->logs->deleteSet($context[0], (string) $request['prescription_uid'], (int) $request['set_number']);
+        [$log, , $workout] = $context;
 
-        return new WP_REST_Response(null, 204);
+        $this->logs->deleteSet($log, (string) $request['prescription_uid'], (int) $request['set_number']);
+
+        return new WP_REST_Response(['log_status' => $this->reopenIfEmpty($log, $workout)]);
     }
 
+    /**
+     * Finish the Workout. Refused while nothing is performed (422), and while
+     * much of it is left (409) until the request confirms. Saving the notes of
+     * a Workout already finished asks nothing.
+     */
     public function complete(WP_REST_Request $request): WP_REST_Response|WP_Error
     {
         $context = $this->context($request);
@@ -168,9 +177,28 @@ final class RestController
             return $context;
         }
 
-        $this->logs->complete($context[0], sanitize_textarea_field((string) $request['notes']));
+        [$log, , $workout] = $context;
+        $progress = WorkoutProgress::of($workout, $this->logs->sets($log->id));
 
-        $log = $this->logs->find($context[0]->id);
+        if ($progress->isEmpty()) {
+            return new WP_Error(
+                'ol_nothing_logged',
+                __('Log at least one set before you finish the Workout.', 'optimum-lift-plans'),
+                ['status' => 422, 'progress' => $progress->toArray()]
+            );
+        }
+
+        if (!$log->isCompleted() && $progress->hasMuchLeft() && !$request['confirm']) {
+            return new WP_Error(
+                'ol_workout_unfinished',
+                $this->unfinishedMessage($progress),
+                ['status' => 409, 'progress' => $progress->toArray()]
+            );
+        }
+
+        $this->logs->complete($log, sanitize_textarea_field((string) $request['notes']));
+
+        $log = $this->logs->find($log->id);
 
         return new WP_REST_Response($log === null ? null : $this->logResponse($log));
     }
@@ -216,6 +244,44 @@ final class RestController
         }
 
         return [$log, $plan, $workout];
+    }
+
+    /**
+     * A finished Workout with every set cleared is no longer finished: without
+     * this, finishing with one set and then clearing it would get round the
+     * rule in complete().
+     *
+     * @return string The log's status after the change.
+     */
+    private function reopenIfEmpty(WorkoutLog $log, Workout $workout): string
+    {
+        if (!$log->isCompleted() || !WorkoutProgress::of($workout, $this->logs->sets($log->id))->isEmpty()) {
+            return $log->status;
+        }
+
+        $this->logs->reopen($log);
+
+        return WorkoutLog::IN_PROGRESS;
+    }
+
+    private function unfinishedMessage(WorkoutProgress $progress): string
+    {
+        $message = sprintf(
+            /* translators: 1: sets logged, 2: sets the Workout prescribes */
+            _n('You have logged %1$d of %2$d set.', 'You have logged %1$d of %2$d sets.', $progress->prescribedSets, 'optimum-lift-plans'),
+            $progress->performedSets,
+            $progress->prescribedSets
+        );
+
+        if ($progress->prescriptionsNotStarted > 0) {
+            $message .= ' ' . sprintf(
+                /* translators: %d: Exercises without a logged set */
+                _n('%d Exercise has not been started.', '%d Exercises have not been started.', $progress->prescriptionsNotStarted, 'optimum-lift-plans'),
+                $progress->prescriptionsNotStarted
+            );
+        }
+
+        return $message;
     }
 
     /**

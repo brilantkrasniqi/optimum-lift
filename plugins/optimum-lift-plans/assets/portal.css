@@ -53,6 +53,7 @@
 
 /* Plans list */
 
+.ol-portal__heading { margin: 1.5rem 0 0.75rem; font-size: 1.25rem; }
 .ol-plan-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
 .ol-card { overflow: hidden; border: 1px solid var(--ol-line); border-radius: var(--ol-radius); background: var(--ol-paper); }
 .ol-card__media img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
@@ -114,3 +115,22 @@
 .ol-label { display: block; margin-bottom: 0.25rem; font-weight: 600; }
 .ol-workout__footer { margin-top: 1.5rem; }
 .ol-finish-message:empty { display: none; }
+
+/* Finish confirmation (portal.js opens it when much of the Workout is left) */
+
+.ol-dialog {
+  /* Centred in the viewport; theme resets often zero dialog margins. */
+  margin: auto;
+  width: min(28rem, calc(100% - 2rem));
+  padding: 1.25rem;
+  border: 1px solid var(--ol-line);
+  border-radius: var(--ol-radius);
+  background: var(--ol-paper);
+  color: var(--ol-ink);
+}
+
+.ol-dialog::backdrop { background: rgb(0 0 0 / 0.6); }
+.ol-dialog__title { margin: 0 0 0.5rem; font-size: 1.25rem; }
+.ol-dialog p { margin: 0 0 0.5rem; }
+.ol-dialog .ol-actions { margin: 1.25rem 0 0; }
+.ol-dialog .ol-button { flex: 1 1 10rem; }

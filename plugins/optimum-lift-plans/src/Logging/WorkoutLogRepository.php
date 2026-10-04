@@ -94,6 +94,27 @@ final class WorkoutLogRepository
     }
 
     /**
+     * Back to in progress, for a completed log that no longer has anything
+     * performed in it.
+     */
+    public function reopen(WorkoutLog $log): void
+    {
+        global $wpdb;
+
+        $wpdb->update(
+            Schema::workoutLogs(),
+            [
+                'status'       => WorkoutLog::IN_PROGRESS,
+                'completed_at' => null,
+                'updated_at'   => current_time('mysql', true),
+            ],
+            ['id' => $log->id],
+            ['%s', '%s', '%s'],
+            ['%d']
+        );
+    }
+
+    /**
      * Status of each Workout in a Plan: completed if any log of it was
      * completed, otherwise in progress if one was started.
      *

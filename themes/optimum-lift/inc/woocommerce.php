@@ -67,3 +67,28 @@ remove_action('woocommerce_review_before', 'woocommerce_review_display_gravatar'
 add_filter('woocommerce_is_sold_individually', static function (bool $individually, WC_Product $product): bool {
     return $product->is_virtual() ? true : $individually;
 }, 10, 2);
+
+/**
+ * On a phone the registration form stacks below the login form, out of sight,
+ * so the login form points to it. From lg the two sit side by side.
+ */
+add_action('woocommerce_login_form_end', static function (): void {
+    if (!is_account_page() || !optimum_lift_can_register()) {
+        return;
+    }
+
+    printf(
+        '<p class="ol-auth-switch lg:hidden">%s <a href="#ol-register">%s</a></p>',
+        esc_html__('No account yet?', 'optimum-lift'),
+        esc_html__('Create one', 'optimum-lift')
+    );
+});
+
+/**
+ * The anchor the login form above and the mobile menu's "Create an account"
+ * link go to. Its scroll margin clears the sticky header and keeps the form's
+ * heading in view.
+ */
+add_action('woocommerce_register_form_start', static function (): void {
+    echo '<span id="ol-register" class="block scroll-mt-48"></span>';
+});

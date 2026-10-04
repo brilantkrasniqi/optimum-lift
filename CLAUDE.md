@@ -33,6 +33,6 @@ The storefront lives in the theme (ADR-0006, ADR-0007, ADR-0008; spec and ticket
 - **Checkout:** `inc/shop/checkout.php`, with the template overrides listed in `woocommerce/README.md`.
 - **Urgency and proof:** only from real data (`inc/shop/{proof,offer}.php`).
 - **Guarantee and refunds:** no refunds on digital Products; checkout takes a withdrawal waiver (`inc/shop/withdrawal.php`), and the guarantee is the Customizer's `guarantee` promise, never money back (ADR-0009).
-- **Strings:** source strings are English. Albanian lives in `languages/sq.po`; after changing strings run `wp i18n make-pot`, `update-po`, `make-mo` and `make-php` (see ticket 12).
+- **Strings:** source strings are English. Albanian lives in `languages/sq.po`; after changing strings run `wp i18n make-pot`, `update-po`, `make-mo` and `make-php` (see ticket 12). The Plans plugin's is `plugins/optimum-lift-plans/languages/optimum-lift-plans-sq.po`, same steps with `--domain=optimum-lift-plans --exclude=vendor,assets,languages`.
 
 Styling is Tailwind v4, configured in CSS (`assets/src/css/main.css`); there is no `tailwind.config.js`. Colours and fonts come from `theme.json`; see ADR-0002. Sliders use Splide; see `assets/src/js/slider.js` for the markup and how to enqueue it.

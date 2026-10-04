@@ -170,5 +170,17 @@ $startForm = static function (string $label, string $class = 'ol-button') use ($
                 <?php $startForm(__('Log this Workout again', 'optimum-lift-plans'), 'ol-button ol-button--quiet'); ?>
             <?php endif; ?>
         </footer>
+
+        <dialog class="ol-dialog" data-finish-confirm aria-labelledby="ol-finish-confirm-title">
+            <form method="dialog">
+                <h2 id="ol-finish-confirm-title" class="ol-dialog__title"><?php esc_html_e('Finish this Workout?', 'optimum-lift-plans'); ?></h2>
+                <p><?php esc_html_e('You still have a lot of this Workout left.', 'optimum-lift-plans'); ?></p>
+                <p class="ol-muted" data-finish-confirm-progress></p>
+                <p class="ol-actions">
+                    <button type="submit" value="back" class="ol-button" autofocus><?php esc_html_e('Back to the Workout', 'optimum-lift-plans'); ?></button>
+                    <button type="submit" value="finish" class="ol-button ol-button--quiet"><?php esc_html_e('Finish anyway', 'optimum-lift-plans'); ?></button>
+                </p>
+            </form>
+        </dialog>
     <?php endif; ?>
 </div>

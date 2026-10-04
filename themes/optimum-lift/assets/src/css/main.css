@@ -9,6 +9,13 @@
 @source "../../../**/*.php";
 @source "../js";
 
+/*
+ * WooCommerce's own column classes, copied into the checkout override. As
+ * utilities they set grid-column, which put My Account's register form in a
+ * second grid column on a phone.
+ */
+@source not inline("col-1 col-2");
+
 @plugin "@tailwindcss/typography";
 
 @import "@splidejs/splide/css/core";

@@ -1,11 +1,12 @@
 <?php
 
 /**
- * My Account › Plans.
+ * My Account › Plans, and the same list on the My Account dashboard.
  *
  * Override in a theme at optimum-lift-plans/portal/plans.php.
  *
  * @var list<array{plan: \OptimumLift\Plans\Plan\Plan, completed: int, next: ?\OptimumLift\Plans\Plan\Workout}> $entries
+ * @var string $heading '' on the Plans page, whose title is the heading.
  */
 
 declare(strict_types=1);
@@ -17,6 +18,10 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <div class="ol-portal">
+    <?php if (($heading ?? '') !== '') : ?>
+        <h2 class="ol-portal__heading"><?php echo esc_html($heading); ?></h2>
+    <?php endif; ?>
+
     <?php if ($entries === []) : ?>
         <p class="ol-empty">
             <?php esc_html_e('You do not have any Plans yet.', 'optimum-lift-plans'); ?>

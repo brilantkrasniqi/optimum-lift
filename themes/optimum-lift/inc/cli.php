@@ -596,6 +596,11 @@ final class ShopCommand
     private function configure(DateTimeImmutable $offerEnd): void
     {
         $options = [
+            // The home page's <title> and link previews read the tagline.
+            'blogdescription'                  => 'Programe stërvitjeje dhe plane ushqimore në shqip',
+            // Kosovo's zone, so offers end and orders are dated in local time.
+            'timezone_string'                  => 'Europe/Belgrade',
+            'date_format'                      => 'j F Y',
             'woocommerce_coming_soon'          => 'no',
             'woocommerce_default_country'      => 'XK',
             'woocommerce_price_thousand_sep'   => '.',
@@ -604,6 +609,15 @@ final class ShopCommand
             'woocommerce_currency_pos'         => 'right_space',
             'woocommerce_enable_reviews'       => 'yes',
             'woocommerce_enable_review_rating' => 'yes',
+            // The header's account button offers "Create an account". Whoever
+            // registers there picks a password; a guest checkout's account
+            // still gets a set-password email (the Plans plugin's OrderAccess).
+            'woocommerce_enable_myaccount_registration'  => 'yes',
+            'woocommerce_registration_generate_password' => 'no',
+            // Settings, so WooCommerce stores them in the language it was
+            // installed in (English) unless they are set.
+            'woocommerce_registration_privacy_policy_text' => 'Të dhënat e tua përdoren për të menaxhuar llogarinë tënde. Më shumë te faqja [privacy_policy].',
+            'woocommerce_checkout_privacy_policy_text'     => 'Të dhënat e tua përdoren për të përpunuar porosinë dhe për llogarinë tënde. Më shumë te faqja [privacy_policy].',
         ];
         foreach ($options as $name => $value) {
             update_option($name, $value);
@@ -627,6 +641,15 @@ final class ShopCommand
                 'ID'           => wc_get_page_id($page),
                 'post_content' => sprintf('<!-- wp:shortcode -->[%s]<!-- /wp:shortcode -->', $shortcode),
             ]);
+        }
+
+        // WooCommerce names its pages in English. The titles show in the
+        // browser tab, on cart and My Account, and in My Account's eyebrow.
+        $titles = ['shop' => 'Dyqani', 'cart' => 'Shporta', 'checkout' => 'Pagesa', 'myaccount' => 'Llogaria ime'];
+        foreach ($titles as $page => $title) {
+            if (wc_get_page_id($page) > 0) {
+                wp_update_post(['ID' => wc_get_page_id($page), 'post_title' => $title]);
+            }
         }
     }
 

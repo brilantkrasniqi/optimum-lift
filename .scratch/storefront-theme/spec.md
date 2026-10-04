@@ -658,7 +658,7 @@ Every ticket, 01–13, is resolved; each ticket's `## Answer` has the evidence. 
 - EU withdrawal consent at checkout (launch issue 10) and marketing email
   consent (launch map: email capture).
 - Server-side purchase tracking / Meta Conversions API (launch issue 09).
-- Albanian translation of the Plans plugin.
+- ~~Albanian translation of the Plans plugin.~~ Done 2026-10-04: `plugins/optimum-lift-plans/languages/`.
 - Omnibus lowest-price display.
 - WooCommerce order attribution (`sourcebuster.js`, `sbjs_*` cookies) on every page: keep it for ad attribution or gate it behind consent (11e).
 - The site offer label's "up to −X%" counts the bundle's permanent saving; consider only Products on sale. Every sale should end on `offer_ends_at` (11c).

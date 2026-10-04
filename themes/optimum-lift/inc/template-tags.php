@@ -270,6 +270,76 @@ function optimum_lift_whatsapp_url(string $message = ''): string
 }
 
 /**
+ * The header's account button. My Account is the login form (and the
+ * registration form, when the store allows it) until the visitor signs in.
+ *
+ * @return array{url: string, label: string, signed_in: bool, current: bool}|null Null without WooCommerce.
+ */
+function optimum_lift_account_link(): ?array
+{
+    if (!function_exists('wc_get_page_permalink')) {
+        return null;
+    }
+
+    $signed_in = is_user_logged_in();
+
+    return [
+        'url'       => wc_get_page_permalink('myaccount'),
+        'label'     => $signed_in ? __('My account', 'optimum-lift') : __('Log in', 'optimum-lift'),
+        'signed_in' => $signed_in,
+        'current'   => is_account_page(),
+    ];
+}
+
+/**
+ * Whether My Account offers a registration form (WooCommerce › Settings ›
+ * Accounts & Privacy).
+ */
+function optimum_lift_can_register(): bool
+{
+    return get_option('woocommerce_enable_myaccount_registration') === 'yes';
+}
+
+/**
+ * The mobile menu's account links. Signed out: log in, and register when the
+ * store allows it. Signed in: My Account, the Customer's Plans, orders, and
+ * logging out.
+ *
+ * @return list<array{label: string, url: string}>
+ */
+function optimum_lift_account_menu_links(): array
+{
+    $account = optimum_lift_account_link();
+
+    if ($account === null) {
+        return [];
+    }
+
+    if (!$account['signed_in']) {
+        $links = [['label' => __('Log in', 'optimum-lift'), 'url' => $account['url']]];
+
+        if (optimum_lift_can_register()) {
+            // The anchor inc/woocommerce.php puts on the registration form.
+            $links[] = ['label' => __('Create an account', 'optimum-lift'), 'url' => $account['url'] . '#ol-register'];
+        }
+
+        return $links;
+    }
+
+    $links = [['label' => __('My account', 'optimum-lift'), 'url' => $account['url']]];
+    $items = wc_get_account_menu_items();
+
+    // Plans comes from the optimum-lift-plans plugin, when it is active.
+    foreach (['plans', 'orders', 'customer-logout'] as $endpoint) {
+        if (isset($items[$endpoint])) {
+            $links[] = ['label' => $items[$endpoint], 'url' => wc_get_account_endpoint_url($endpoint)];
+        }
+    }
+
+    return $links;
+}
+
+/**
  * Items in the cart, for the header badge.
  */
 function optimum_lift_cart_count(): int

@@ -241,6 +241,15 @@
     @apply font-bold text-white underline decoration-zinc-600 underline-offset-2 hover:decoration-white;
   }
 
+  /* inc/woocommerce.php: the login form's link down to registration. */
+  .woocommerce-account .ol-auth-switch {
+    @apply mt-5 mb-0 border-t border-white/[.08] pt-5 text-[13px] text-zinc-400;
+  }
+
+  .woocommerce-account .ol-auth-switch a {
+    @apply font-bold text-white underline decoration-zinc-600 underline-offset-2 hover:decoration-white;
+  }
+
   .woocommerce-ResetPassword > p:first-child {
     @apply mb-5 text-[14px] leading-relaxed text-zinc-400;
   }
@@ -355,7 +364,7 @@
   font-size: 0.85rem;
 }
 
-.ol-portal :is(.ol-workout__title, .ol-card__title, .ol-prescription__name) {
+.ol-portal :is(.ol-workout__title, .ol-card__title, .ol-prescription__name, .ol-dialog__title, .ol-portal__heading) {
   font-family: var(--wp--preset--font-family--display, Anton, Impact, sans-serif);
   font-weight: 400;
   text-transform: uppercase;
@@ -374,6 +383,25 @@
 
 .ol-portal .ol-prescription__name {
   font-size: 1.25rem;
+}
+
+.ol-portal .ol-dialog {
+  border-color: rgb(255 255 255 / 0.12);
+  box-shadow: 0 24px 64px rgb(0 0 0 / 0.6);
+}
+
+.ol-portal .ol-dialog__title {
+  font-size: 1.75rem;
+}
+
+.ol-portal .ol-portal__heading {
+  margin-top: 2rem;
+  font-size: 1.75rem;
+}
+
+.ol-portal .ol-dialog::backdrop {
+  background: rgb(0 0 0 / 0.7);
+  backdrop-filter: blur(4px);
 }
 
 .ol-portal .ol-prescription__target {
@@ -407,8 +435,27 @@
   border-color: rgb(255 255 255 / 0.15);
 }
 
+/* The native bar renders a dark green fill on a grey track; draw it instead. */
 .ol-portal .ol-progress {
-  accent-color: var(--wp--preset--color--acid, #c6ff3d);
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.1);
+}
+
+.ol-portal .ol-progress::-webkit-progress-bar {
+  background: rgb(255 255 255 / 0.1);
+}
+
+.ol-portal .ol-progress::-webkit-progress-value {
+  border-radius: 999px;
+  background: var(--wp--preset--color--acid, #c6ff3d);
+}
+
+.ol-portal .ol-progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: var(--wp--preset--color--acid, #c6ff3d);
 }
 
 .ol-portal .ol-tag {

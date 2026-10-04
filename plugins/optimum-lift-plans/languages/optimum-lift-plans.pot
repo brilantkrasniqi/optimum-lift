@@ -1,0 +1,765 @@
+# Copyright (C) 2026 
+# This file is distributed under the same license as the Optimum Lift Plans plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Optimum Lift Plans 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/optimum-lift-plans\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-04T11:29:11+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: optimum-lift-plans\n"
+
+#. Plugin Name of the plugin
+#: optimum-lift-plans.php
+msgid "Optimum Lift Plans"
+msgstr ""
+
+#. Description of the plugin
+#: optimum-lift-plans.php
+msgid "Exercises, Training Plans, Access, Downloads and the Portal. Plan content lives here, never in the theme (ADR-0003)."
+msgstr ""
+
+#: src/Access/OrderAccess.php:66
+msgid "Could not create an account for this order, so no Plan Access was granted."
+msgstr ""
+
+#: src/Access/OrderAccess.php:163
+#: src/Privacy/Privacy.php:82
+msgid "Plan Access"
+msgstr ""
+
+#: src/Access/OrderAccess.php:170
+msgid "revoked"
+msgstr ""
+
+#: src/Access/ProductFields.php:24
+#: src/Content/PostTypes.php:62
+#: src/Content/PostTypes.php:68
+#: src/Privacy/Privacy.php:44
+msgid "Training Plans"
+msgstr ""
+
+#: src/Access/ProductFields.php:31
+msgid "Plans included"
+msgstr ""
+
+#: src/Access/ProductFields.php:32
+msgid "Buying this Product gives Access to these Plans. Mark the Product Virtual. Changing this later does not affect past buyers."
+msgstr ""
+
+#: src/Content/Choices.php:21
+msgid "Chest"
+msgstr ""
+
+#: src/Content/Choices.php:22
+msgid "Back"
+msgstr ""
+
+#: src/Content/Choices.php:23
+msgid "Shoulders"
+msgstr ""
+
+#: src/Content/Choices.php:24
+msgid "Biceps"
+msgstr ""
+
+#: src/Content/Choices.php:25
+msgid "Triceps"
+msgstr ""
+
+#: src/Content/Choices.php:26
+msgid "Forearms"
+msgstr ""
+
+#: src/Content/Choices.php:27
+msgid "Core"
+msgstr ""
+
+#: src/Content/Choices.php:28
+msgid "Glutes"
+msgstr ""
+
+#: src/Content/Choices.php:29
+msgid "Quads"
+msgstr ""
+
+#: src/Content/Choices.php:30
+msgid "Hamstrings"
+msgstr ""
+
+#: src/Content/Choices.php:31
+msgid "Calves"
+msgstr ""
+
+#: src/Content/Choices.php:32
+msgid "Full body"
+msgstr ""
+
+#: src/Content/Choices.php:42
+msgid "Barbell"
+msgstr ""
+
+#: src/Content/Choices.php:43
+msgid "Dumbbell"
+msgstr ""
+
+#: src/Content/Choices.php:44
+msgid "Kettlebell"
+msgstr ""
+
+#: src/Content/Choices.php:45
+msgid "Machine"
+msgstr ""
+
+#: src/Content/Choices.php:46
+msgid "Cable"
+msgstr ""
+
+#: src/Content/Choices.php:47
+msgid "Resistance band"
+msgstr ""
+
+#: src/Content/Choices.php:48
+msgid "Bench"
+msgstr ""
+
+#: src/Content/Choices.php:49
+msgid "Pull-up bar"
+msgstr ""
+
+#: src/Content/Choices.php:50
+msgid "Bodyweight"
+msgstr ""
+
+#: src/Content/Choices.php:60
+msgid "Beginner"
+msgstr ""
+
+#: src/Content/Choices.php:61
+msgid "Intermediate"
+msgstr ""
+
+#: src/Content/Choices.php:62
+msgid "Advanced"
+msgstr ""
+
+#: src/Content/Choices.php:72
+#: templates/portal/workout.php:75
+msgid "Reps"
+msgstr ""
+
+#: src/Content/Choices.php:73
+#: templates/portal/workout.php:75
+msgid "Seconds"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:24
+#: src/Content/PlanFields.php:209
+#: src/Content/PostTypes.php:50
+#: templates/pdf/plan.php:136
+msgid "Exercise"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:32
+#: src/Content/ExerciseFields.php:120
+msgid "Primary muscle"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:42
+msgid "Secondary muscles"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:54
+#: src/Content/PlanFields.php:92
+#: templates/pdf/plan.php:95
+msgid "Difficulty"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:64
+#: src/Content/ExerciseFields.php:121
+msgid "Equipment"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:73
+msgid "Image"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:74
+msgid "A still photo. Used in the PDF Download, and in the Portal when there is no animation."
+msgstr ""
+
+#: src/Content/ExerciseFields.php:84
+msgid "Animation"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:85
+msgid "A GIF for the Portal. Never used in the PDF."
+msgstr ""
+
+#: src/Content/ExerciseFields.php:95
+msgid "Video"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:96
+msgid "Unlisted YouTube or Vimeo link."
+msgstr ""
+
+#: src/Content/ExerciseFields.php:102
+msgid "Instructions"
+msgstr ""
+
+#: src/Content/PlanFields.php:60
+#: src/Content/PostTypes.php:63
+msgid "Training Plan"
+msgstr ""
+
+#: src/Content/PlanFields.php:65
+msgid "Overview"
+msgstr ""
+
+#: src/Content/PlanFields.php:69
+msgid "Summary"
+msgstr ""
+
+#: src/Content/PlanFields.php:70
+msgid "Shown on the PDF cover and at the top of the Plan in the Portal."
+msgstr ""
+
+#: src/Content/PlanFields.php:78
+#: templates/pdf/plan.php:89
+msgid "Goal"
+msgstr ""
+
+#: src/Content/PlanFields.php:85
+msgid "Target audience"
+msgstr ""
+
+#: src/Content/PlanFields.php:100
+#: src/Content/PlanFields.php:104
+msgid "Phases"
+msgstr ""
+
+#: src/Content/PlanFields.php:105
+msgid "Optional. A name over consecutive Weeks, e.g. \"Strength\", Weeks 9 to 12. Phases may not overlap."
+msgstr ""
+
+#: src/Content/PlanFields.php:108
+msgid "Add Phase"
+msgstr ""
+
+#: src/Content/PlanFields.php:113
+msgid "Name"
+msgstr ""
+
+#: src/Content/PlanFields.php:121
+msgid "First Week"
+msgstr ""
+
+#: src/Content/PlanFields.php:131
+msgid "Last Week"
+msgstr ""
+
+#: src/Content/PlanFields.php:141
+#: src/Content/PlanFields.php:145
+msgid "Weeks"
+msgstr ""
+
+#: src/Content/PlanFields.php:146
+msgid "A Week is numbered by its position. To write the next Week, hold Shift and click the duplicate icon beside the last Week, then edit the copy."
+msgstr ""
+
+#: src/Content/PlanFields.php:151
+msgid "Add Week"
+msgstr ""
+
+#: src/Content/PlanFields.php:158
+#: src/Content/PlanFields.php:518
+msgid "Week"
+msgstr ""
+
+#: src/Content/PlanFields.php:165
+msgid "Workouts"
+msgstr ""
+
+#: src/Content/PlanFields.php:170
+msgid "Add Workout"
+msgstr ""
+
+#: src/Content/PlanFields.php:176
+msgid "Workout name"
+msgstr ""
+
+#: src/Content/PlanFields.php:177
+msgid "e.g. \"Upper body\". Not a weekday."
+msgstr ""
+
+#: src/Content/PlanFields.php:184
+msgid "Prescriptions"
+msgstr ""
+
+#: src/Content/PlanFields.php:188
+msgid "Add Prescription"
+msgstr ""
+
+#: src/Content/PlanFields.php:221
+#: src/Privacy/Privacy.php:121
+msgid "Sets"
+msgstr ""
+
+#: src/Content/PlanFields.php:233
+msgid "Target in"
+msgstr ""
+
+#: src/Content/PlanFields.php:243
+msgid "Target"
+msgstr ""
+
+#: src/Content/PlanFields.php:244
+msgid "8, 8-10, AMRAP, 30"
+msgstr ""
+
+#: src/Content/PlanFields.php:253
+#: templates/pdf/plan.php:138
+msgid "Intensity"
+msgstr ""
+
+#: src/Content/PlanFields.php:254
+msgid "e.g. RPE 8"
+msgstr ""
+
+#: src/Content/PlanFields.php:262
+msgid "Rest (s)"
+msgstr ""
+
+#: src/Content/PlanFields.php:271
+#: src/Privacy/Privacy.php:120
+#: templates/pdf/plan.php:140
+#: templates/portal/workout.php:160
+msgid "Notes"
+msgstr ""
+
+#: src/Content/PlanFields.php:411
+msgid "A Phase must end on or after the Week it starts."
+msgstr ""
+
+#. translators: %d: number of Weeks in the Plan
+#: src/Content/PlanFields.php:417
+#, php-format
+msgid "This Plan only has %d Weeks."
+msgstr ""
+
+#. translators: %d: Week number
+#: src/Content/PlanFields.php:424
+#, php-format
+msgid "Phases overlap at Week %d."
+msgstr ""
+
+#. translators: 1: estimated form inputs, 2: max_input_vars
+#: src/Content/PlanFields.php:482
+#, php-format
+msgid "This Plan submits about %1$d form inputs and the server accepts %2$d (max_input_vars). Raise the limit before adding more Weeks."
+msgstr ""
+
+#: src/Content/PlanFields.php:554
+msgid "The Plan was not saved: the form was cut short because it exceeds the server's max_input_vars limit. Your last saved version is unchanged. Raise max_input_vars and save again."
+msgstr ""
+
+#: src/Content/PostTypes.php:49
+#: src/Content/PostTypes.php:55
+#: templates/pdf/plan.php:163
+msgid "Exercises"
+msgstr ""
+
+#: src/Content/PostTypes.php:51
+msgid "Add Exercise"
+msgstr ""
+
+#: src/Content/PostTypes.php:52
+msgid "Edit Exercise"
+msgstr ""
+
+#: src/Content/PostTypes.php:53
+msgid "Search Exercises"
+msgstr ""
+
+#: src/Content/PostTypes.php:54
+msgid "No Exercises found."
+msgstr ""
+
+#: src/Content/PostTypes.php:64
+msgid "Add Training Plan"
+msgstr ""
+
+#: src/Content/PostTypes.php:65
+msgid "Edit Training Plan"
+msgstr ""
+
+#: src/Content/PostTypes.php:66
+msgid "Search Training Plans"
+msgstr ""
+
+#: src/Content/PostTypes.php:67
+msgid "No Training Plans found."
+msgstr ""
+
+#: src/Content/PostTypes.php:79
+#: src/Content/PostTypes.php:80
+msgid "Training"
+msgstr ""
+
+#: src/Download/Delivery.php:87
+msgid "You do not have Access to this Plan."
+msgstr ""
+
+#: src/Download/Delivery.php:102
+msgid "You cannot preview this Plan."
+msgstr ""
+
+#: src/Download/Delivery.php:116
+msgid "Download"
+msgstr ""
+
+#: src/Download/Delivery.php:118
+msgid "Dompdf is not installed. Run `npm run composer -- install`."
+msgstr ""
+
+#: src/Download/Delivery.php:126
+msgid "Preview PDF"
+msgstr ""
+
+#: src/Download/Delivery.php:127
+msgid "Shows the last saved version."
+msgstr ""
+
+#: src/Download/Delivery.php:159
+msgid "Plan PDF"
+msgstr ""
+
+#: src/Download/Delivery.php:179
+#: src/Download/Delivery.php:221
+#: src/Download/Delivery.php:230
+#: src/Portal/Portal.php:200
+msgid "Your Plans"
+msgstr ""
+
+#: src/Download/Delivery.php:186
+msgid "Open"
+msgstr ""
+
+#: src/Download/Delivery.php:188
+#: templates/portal/plan.php:40
+#: templates/portal/plans.php:65
+msgid "Download PDF"
+msgstr ""
+
+#. translators: %s: billing email
+#: src/Download/Delivery.php:199
+#, php-format
+msgid "Sign in with %s to open your Plans. If this is your first order, we have emailed you a link to set your password."
+msgstr ""
+
+#: src/Download/Delivery.php:238
+msgid "PDF"
+msgstr ""
+
+#: src/Download/Delivery.php:269
+msgid "The PDF could not be created. Please try again shortly."
+msgstr ""
+
+#: src/Format.php:50
+msgid "BW"
+msgstr ""
+
+#: src/Logging/RestController.php:135
+msgid "That set is not part of this Prescription."
+msgstr ""
+
+#: src/Logging/RestController.php:186
+msgid "Log at least one set before you finish the Workout."
+msgstr ""
+
+#. translators: 1: sets logged, 2: sets the Workout prescribes
+#: src/Logging/RestController.php:271
+#, php-format
+msgid "You have logged %1$d of %2$d set."
+msgid_plural "You have logged %1$d of %2$d sets."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: Exercises without a logged set
+#: src/Logging/RestController.php:279
+#, php-format
+msgid "%d Exercise has not been started."
+msgid_plural "%d Exercises have not been started."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Logging/RestController.php:323
+msgid "Not found."
+msgstr ""
+
+#. translators: %s: comma-separated plugin names
+#: src/Plugin.php:41
+#, php-format
+msgid "Optimum Lift Plans is inactive until these plugins are active: %s."
+msgstr ""
+
+#: src/Portal/Portal.php:60
+#: src/Portal/Portal.php:74
+msgid "Plans"
+msgstr ""
+
+#: src/Portal/Portal.php:152
+msgid "Saving…"
+msgstr ""
+
+#: src/Portal/Portal.php:153
+msgid "Saved"
+msgstr ""
+
+#: src/Portal/Portal.php:154
+msgid "Offline: will save when you reconnect"
+msgstr ""
+
+#: src/Portal/Portal.php:155
+msgid "Not saved"
+msgstr ""
+
+#: src/Portal/Portal.php:156
+msgid "New Personal Record!"
+msgstr ""
+
+#: src/Portal/Portal.php:157
+msgid "Some sets have not been saved yet. Reconnect, then finish the Workout."
+msgstr ""
+
+#: src/Portal/Portal.php:158
+#: templates/portal/workout.php:166
+msgid "Finish Workout"
+msgstr ""
+
+#: src/Privacy/Privacy.php:58
+#: src/Privacy/Privacy.php:113
+msgid "Workout Logs"
+msgstr ""
+
+#: src/Privacy/Privacy.php:85
+#: src/Privacy/Privacy.php:116
+msgid "Plan"
+msgstr ""
+
+#: src/Privacy/Privacy.php:86
+msgid "Order"
+msgstr ""
+
+#: src/Privacy/Privacy.php:87
+msgid "Granted"
+msgstr ""
+
+#: src/Privacy/Privacy.php:88
+msgid "Revoked"
+msgstr ""
+
+#: src/Privacy/Privacy.php:117
+msgid "Workout"
+msgstr ""
+
+#: src/Privacy/Privacy.php:118
+msgid "Started"
+msgstr ""
+
+#: src/Privacy/Privacy.php:119
+#: templates/portal/plan.php:84
+msgid "Completed"
+msgstr ""
+
+#: src/Privacy/Privacy.php:146
+msgid "Plan Access was kept as a record of purchase."
+msgstr ""
+
+#: templates/pdf/plan.php:80
+msgid "Length"
+msgstr ""
+
+#. translators: 1: number of Weeks, 2: number of Workouts
+#: templates/pdf/plan.php:84
+#, php-format
+msgid "%1$d Weeks, %2$d Workouts"
+msgstr ""
+
+#: templates/pdf/plan.php:92
+msgid "For"
+msgstr ""
+
+#. translators: 1: first Week, 2: last Week
+#: templates/pdf/plan.php:103
+#, php-format
+msgid "Weeks %1$d–%2$d"
+msgstr ""
+
+#. translators: %d: Week number
+#: templates/pdf/plan.php:120
+#: templates/portal/plan.php:53
+#, php-format
+msgid "Week %d"
+msgstr ""
+
+#. translators: 1: Workout number, 2: Workout name
+#: templates/pdf/plan.php:130
+#, php-format
+msgid "Workout %1$d: %2$s"
+msgstr ""
+
+#: templates/pdf/plan.php:137
+msgid "Sets × target"
+msgstr ""
+
+#: templates/pdf/plan.php:139
+msgid "Rest"
+msgstr ""
+
+#: templates/portal/plan.php:25
+msgid "All Plans"
+msgstr ""
+
+#. translators: 1: Week number, 2: Workout name
+#: templates/portal/plan.php:36
+#: templates/portal/plans.php:60
+#, php-format
+msgid "Next: Week %1$d, %2$s"
+msgstr ""
+
+#. translators: 1: completed Workouts, 2: Workouts in the Week
+#: templates/portal/plan.php:62
+#, php-format
+msgid "%1$d / %2$d"
+msgstr ""
+
+#. translators: %d: number of Exercises
+#: templates/portal/plan.php:77
+#, php-format
+msgid "%d Exercise"
+msgid_plural "%d Exercises"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/portal/plan.php:85
+msgid "In progress"
+msgstr ""
+
+#: templates/portal/plan.php:86
+msgid "Not started"
+msgstr ""
+
+#: templates/portal/plans.php:27
+msgid "You do not have any Plans yet."
+msgstr ""
+
+#: templates/portal/plans.php:28
+msgid "Browse the shop"
+msgstr ""
+
+#. translators: 1: completed Workouts, 2: total Workouts
+#: templates/portal/plans.php:51
+#, php-format
+msgid "%1$d of %2$d Workouts completed"
+msgstr ""
+
+#. translators: 1: Week number, 2: Workout number
+#: templates/portal/workout.php:49
+#, php-format
+msgid "Week %1$d · Workout %2$d"
+msgstr ""
+
+#. translators: %s: date
+#: templates/portal/workout.php:57
+#, php-format
+msgid "Completed %s"
+msgstr ""
+
+#: templates/portal/workout.php:63
+msgid "Logging needs JavaScript enabled."
+msgstr ""
+
+#: templates/portal/workout.php:66
+msgid "Start Workout"
+msgstr ""
+
+#. translators: %s: rest time
+#: templates/portal/workout.php:86
+#, php-format
+msgid "Rest %s"
+msgstr ""
+
+#: templates/portal/workout.php:98
+msgid "Last time:"
+msgstr ""
+
+#: templates/portal/workout.php:102
+msgid "Personal Record:"
+msgstr ""
+
+#: templates/portal/workout.php:109
+msgid "How to"
+msgstr ""
+
+#: templates/portal/workout.php:112
+msgid "Watch the video"
+msgstr ""
+
+#: templates/portal/workout.php:121
+msgid "Set"
+msgstr ""
+
+#: templates/portal/workout.php:122
+msgid "kg"
+msgstr ""
+
+#: templates/portal/workout.php:124
+msgid "Status"
+msgstr ""
+
+#. translators: %d: set number
+#: templates/portal/workout.php:139
+#, php-format
+msgid "Set %d load in kg"
+msgstr ""
+
+#. translators: 1: set number, 2: Reps or Seconds
+#: templates/portal/workout.php:145
+#, php-format
+msgid "Set %1$d %2$s"
+msgstr ""
+
+#: templates/portal/workout.php:162
+msgid "How did it feel?"
+msgstr ""
+
+#: templates/portal/workout.php:166
+msgid "Save changes"
+msgstr ""
+
+#: templates/portal/workout.php:170
+msgid "Log this Workout again"
+msgstr ""
+
+#: templates/portal/workout.php:176
+msgid "Finish this Workout?"
+msgstr ""
+
+#: templates/portal/workout.php:177
+msgid "You still have a lot of this Workout left."
+msgstr ""
+
+#: templates/portal/workout.php:180
+msgid "Back to the Workout"
+msgstr ""
+
+#: templates/portal/workout.php:181
+msgid "Finish anyway"
+msgstr ""

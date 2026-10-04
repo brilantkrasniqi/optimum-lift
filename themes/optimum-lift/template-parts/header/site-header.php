@@ -1,7 +1,11 @@
 <?php
 /**
- * The sticky site header: logo and tagline, nav, contextual CTA, cart toggle
- * and the mobile menu button.
+ * The sticky site header: logo and tagline, nav, contextual CTA, account,
+ * cart toggle and the mobile menu button.
+ *
+ * The account button is the way in for a Customer coming back to their Plans,
+ * so it shows at every width; a dot marks that they are signed in. The mobile
+ * menu repeats it with words (Log in, Create an account, Plans, Orders).
  *
  * The nav's store links (Shop, the training and diet archives) show from lg,
  * the page's section links only from xl, and below xl the menu button opens
@@ -19,6 +23,7 @@ declare(strict_types=1);
 $links      = optimum_lift_nav_links();
 $cta        = optimum_lift_header_cta();
 $guarantee  = is_front_page() ? optimum_lift_guarantee_label() : '';
+$account    = optimum_lift_account_link();
 $has_cart   = function_exists('wc_get_cart_url') && function_exists('optimum_lift_cart_badge_html');
 $badge      = $has_cart ? optimum_lift_cart_badge_html(optimum_lift_cart_count()) : '';
 ?>
@@ -53,6 +58,16 @@ $badge      = $has_cart ? optimum_lift_cart_badge_html(optimum_lift_cart_count()
                 <a href="<?php echo esc_url($cta['url']); ?>" data-cta="header-cta" class="btn btn-light btn-sm hidden text-[13px] whitespace-nowrap sm:inline-flex">
                     <?php echo esc_html($cta['label']); ?>
                     <?php echo $cta['arrow'] ? optimum_lift_icon('arrow-right') : ''; ?>
+                </a>
+            <?php endif; ?>
+
+            <?php if ($account !== null) : ?>
+                <a href="<?php echo esc_url($account['url']); ?>" title="<?php echo esc_attr($account['label']); ?>" class="relative grid h-11 w-11 place-items-center rounded-xl border text-white transition hover:bg-white/5 <?php echo $account['current'] ? 'border-white/25 bg-white/5' : 'border-white/10'; ?>"<?php echo $account['current'] ? ' aria-current="page"' : ''; ?>>
+                    <?php echo optimum_lift_icon('user', 'w-5 h-5'); ?>
+                    <span class="screen-reader-text"><?php echo esc_html($account['label']); ?></span>
+                    <?php if ($account['signed_in']) : ?>
+                        <span class="absolute right-2 bottom-2 h-2 w-2 rounded-full bg-acid ring-2 ring-paper" aria-hidden="true"></span>
+                    <?php endif; ?>
                 </a>
             <?php endif; ?>
 

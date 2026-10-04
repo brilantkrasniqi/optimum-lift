@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-02T07:15:03+00:00\n"
+"POT-Creation-Date: 2026-10-04T11:31:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: optimum-lift\n"
@@ -845,7 +845,7 @@ msgid "Primary button action"
 msgstr ""
 
 #: inc/shop/fields.php:337
-#: inc/template-tags.php:211
+#: inc/template-tags.php:214
 #: template-parts/blocks/final-cta.php:42
 #: template-parts/product/buy-buttons.php:47
 msgid "Buy now"
@@ -1106,7 +1106,7 @@ msgid "I want access to my plan right away, and I understand that once access st
 msgstr ""
 
 #: inc/shop/withdrawal.php:80
-#: inc/template-tags.php:327
+#: inc/template-tags.php:400
 msgid "Refund policy"
 msgstr ""
 
@@ -1146,26 +1146,48 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: inc/template-tags.php:225
+#: inc/template-tags.php:228
 #: template-parts/single-product/fallback.php:47
 msgid "Start now"
 msgstr ""
 
-#: inc/template-tags.php:250
+#: inc/template-tags.php:253
 msgid "Follow the plan as written and you will see the change. Stuck along the way? Write to us and we will help you get back on track."
 msgstr ""
 
-#: inc/template-tags.php:325
+#: inc/template-tags.php:288
+#: inc/template-tags.php:329
+msgid "My account"
+msgstr ""
+
+#: inc/template-tags.php:288
+#: inc/template-tags.php:319
+msgid "Log in"
+msgstr ""
+
+#: inc/template-tags.php:323
+msgid "Create an account"
+msgstr ""
+
+#: inc/template-tags.php:398
 msgid "Terms of service"
 msgstr ""
 
-#: inc/template-tags.php:326
+#: inc/template-tags.php:399
 msgid "Privacy policy"
 msgstr ""
 
 #: inc/woocommerce.php:22
 #: template-parts/shop/intro.php:21
 msgid "Breadcrumb"
+msgstr ""
+
+#: inc/woocommerce.php:82
+msgid "No account yet?"
+msgstr ""
+
+#: inc/woocommerce.php:83
+msgid "Create one"
 msgstr ""
 
 #: page.php:40
@@ -1724,57 +1746,61 @@ msgid "Results vary from person to person. This information does not replace med
 msgstr ""
 
 #. translators: %s: the Product's price.
-#: template-parts/header/mobile-menu.php:22
+#: template-parts/header/mobile-menu.php:23
 #, php-format
 msgid "Buy now — %s"
 msgstr ""
 
 #. translators: %d: discount percent.
-#: template-parts/header/mobile-menu.php:32
+#: template-parts/header/mobile-menu.php:33
 #, php-format
 msgid "Get my plan — %d%% off"
 msgstr ""
 
 #. translators: %d: discount percent.
-#: template-parts/header/mobile-menu.php:32
+#: template-parts/header/mobile-menu.php:33
 msgid "Get my plan"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:39
+#: template-parts/header/mobile-menu.php:40
 msgid "Get the full bundle"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:39
+#: template-parts/header/mobile-menu.php:40
 msgid "See all products"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:48
 #: template-parts/header/mobile-menu.php:51
+#: template-parts/header/mobile-menu.php:54
 msgid "Menu"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:54
+#: template-parts/header/mobile-menu.php:57
 msgid "Close menu"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:58
-#: template-parts/header/site-header.php:25
+#: template-parts/header/mobile-menu.php:61
+#: template-parts/header/site-header.php:35
 msgid "Main"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:61
+#: template-parts/header/mobile-menu.php:64
 msgid "Shop · all products"
 msgstr ""
 
-#: template-parts/header/site-header.php:50
+#: template-parts/header/mobile-menu.php:73
+msgid "Account"
+msgstr ""
+
+#: template-parts/header/site-header.php:77
 msgid "View cart"
 msgstr ""
 
-#: template-parts/header/site-header.php:55
+#: template-parts/header/site-header.php:82
 msgid "Open cart"
 msgstr ""
 
-#: template-parts/header/site-header.php:62
+#: template-parts/header/site-header.php:89
 msgid "Open menu"
 msgstr ""
 
