@@ -39,6 +39,15 @@ _Avoid_: Day (implies a calendar date), Session
 **Exercise** — a movement, independent of any Plan (e.g. *Barbell back squat*). The same Exercise appears in many Workouts across many Plans.
 _Avoid_: Movement
 
+**Exercise library** — the curated Exercises that come with the Plans plugin, each with a still image and an animation. Imported into a site; once imported they are ordinary Exercises that can be edited.
+
+**Library key** — the name an Exercise goes by outside the database, the same on every site (e.g. `incline-push-up`). Set once and never changed, even if the Exercise is renamed. Plan files name Exercises by library key, never by ID.
+_Avoid_: Slug, Exercise ID (in files)
+
+**Movement pattern** — what an Exercise trains, described as a movement (e.g. *horizontal push*, *hinge*). Used to balance a Plan; never shown to a Customer. Not a name for the Exercise itself (see *Movement*, avoided above).
+
+**Setting** — where a Customer trains: *home*, *gym* or *CrossFit*. An Exercise lists every Setting it can be done in.
+
 **Prescription** — one line of a Workout: an Exercise plus how to perform it there. A number of identical sets, each with a target (reps or seconds) and optionally an intensity (e.g. RPE) and a rest between sets, plus notes that apply only to this Workout (e.g. *pause 2 seconds at the bottom*). Sets within a Prescription never differ.
 _Avoid_: Workout exercise, Exercise (for the line itself)
 

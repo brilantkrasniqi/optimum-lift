@@ -1,0 +1,3796 @@
+{
+  "version": 1,
+  "exercises": [
+    {
+      "key": "ab-wheel-rollout",
+      "source_id": "0857",
+      "name": "Ab wheel rollout",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "ab_wheel"
+      ],
+      "difficulty": "advanced",
+      "pattern": "core_anti_extension",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Kneel on the floor and place the wheel roller in front of you. Place your hands on the handles of the wheel roller and extend your arms straight out in front of you. Engage your core muscles and slowly roll the wheel forward, keeping your back straight and your abs tight. Continue rolling forward until your body is fully extended and your arms are overhead. Pause for a moment, then slowly roll the wheel back towards your knees, maintaining control and keeping your abs engaged. Repeat for the desired number of repetitions.",
+      "image": "media/0857-NAgVB3t.jpg",
+      "animation": "media/0857-NAgVB3t.gif"
+    },
+    {
+      "key": "alternating-heel-touches",
+      "source_id": "0006",
+      "name": "Alternating heel touches",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_lateral",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Lie flat on your back with your knees bent and feet flat on the ground. Extend your arms straight out to the sides, parallel to the ground. Engaging your abs, lift your shoulders off the ground and reach your right hand towards your right heel. Return to the starting position and repeat on the left side, reaching your left hand towards your left heel. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/0006-qaZVsGk.jpg",
+      "animation": "media/0006-qaZVsGk.gif"
+    },
+    {
+      "key": "archer-pull-up",
+      "source_id": "3293",
+      "name": "Archer pull-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_pull",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by hanging from a pull-up bar with an overhand grip, slightly wider than shoulder-width apart. Engage your core and pull your shoulder blades down and back. As you pull yourself up, bend one arm and bring your elbow towards your side, while keeping the other arm straight. Continue pulling until your chin is above the bar and your bent arm is fully flexed. Lower yourself back down with control, straightening the bent arm and repeating the movement on the other side. Alternate sides with each repetition.",
+      "image": "media/3293-72BC5Za.jpg",
+      "animation": "media/3293-72BC5Za.gif"
+    },
+    {
+      "key": "archer-push-up",
+      "source_id": "3294",
+      "name": "Archer push-up",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a push-up position with your hands slightly wider than shoulder-width apart. Extend one arm straight out to the side, parallel to the ground. Lower your body by bending your elbows, keeping your back straight and core engaged. Push back up to the starting position. Repeat on the other side, extending the opposite arm out to the side. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/3294-A9qxk2F.jpg",
+      "animation": "media/3294-A9qxk2F.gif"
+    },
+    {
+      "key": "assisted-hanging-knee-raise",
+      "source_id": "0011",
+      "name": "Assisted hanging knee raise",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Hang from a pull-up bar with your arms fully extended and your palms facing away from you. Engage your core muscles and lift your knees towards your chest, bending at the hips and knees. Pause for a moment at the top of the movement, squeezing your abs. Slowly lower your legs back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0011-03lzqwk.jpg",
+      "animation": "media/0011-03lzqwk.gif"
+    },
+    {
+      "key": "back-extension-on-exercise-ball",
+      "source_id": "1314",
+      "name": "Back extension on exercise ball",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "exercise_ball"
+      ],
+      "difficulty": "beginner",
+      "pattern": "back_extension",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Place the stability ball on the ground and lie face down on top of it, with your hips resting on the ball and your feet against a wall or other stable surface. Position your hands behind your head or crossed over your chest. Engage your core and slowly lift your upper body off the ball, extending your back until your body forms a straight line from your head to your heels. Pause for a moment at the top, then slowly lower your upper body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1314-qLpO4vV.jpg",
+      "animation": "media/1314-qLpO4vV.gif"
+    },
+    {
+      "key": "band-alternating-biceps-curl",
+      "source_id": "0968",
+      "name": "Band alternating biceps curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold the band with an underhand grip, palms facing up. Keep your elbows close to your sides and slowly curl one arm up towards your shoulder, squeezing your biceps at the top. Lower the arm back down to the starting position and repeat with the other arm. Continue alternating arms for the desired number of repetitions.",
+      "image": "media/0968-3omWx6P.jpg",
+      "animation": "media/0968-3omWx6P.gif"
+    },
+    {
+      "key": "band-assisted-pull-up",
+      "source_id": "0970",
+      "name": "Band-assisted pull-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "band",
+        "pullup_bar"
+      ],
+      "difficulty": "beginner",
+      "pattern": "vertical_pull",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Attach the band to a pull-up bar or sturdy anchor point. Step onto the band and grip the bar with your palms facing away from you, hands slightly wider than shoulder-width apart. Hang with your arms fully extended, keeping your core engaged and your shoulders down and back. Pull your body up towards the bar by squeezing your shoulder blades together and driving your elbows down towards your hips. Continue pulling until your chin is above the bar, then slowly lower yourself back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0970-r1XNRYB.jpg",
+      "animation": "media/0970-r1XNRYB.gif"
+    },
+    {
+      "key": "band-close-grip-pulldown",
+      "source_id": "0974",
+      "name": "Band close-grip pulldown",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "vertical_pull",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Attach the band to a high anchor point, such as a pull-up bar or sturdy beam. Stand facing the anchor point and grab the band with an underhand grip, hands shoulder-width apart. Step back to create tension in the band, keeping your feet hip-width apart. Engage your core and keep your back straight as you pull the band down towards your chest, squeezing your shoulder blades together. Pause for a moment at the bottom of the movement, then slowly release the band back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0974-DptumMx.jpg",
+      "animation": "media/0974-DptumMx.gif"
+    },
+    {
+      "key": "band-monster-walk",
+      "source_id": "0628",
+      "name": "Band monster walk",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hip_abduction",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Place a resistance band around your ankles. Stand with your feet shoulder-width apart and slightly bend your knees. Take a step to the side with your right foot, maintaining tension on the resistance band. Follow with your left foot, stepping to the side to return to the starting position. Repeat for the desired number of repetitions, then switch sides.",
+      "image": "media/0628-O95afRA.jpg",
+      "animation": "media/0628-O95afRA.gif"
+    },
+    {
+      "key": "band-pallof-press",
+      "source_id": "0979",
+      "name": "Band Pallof press",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "anti_rotation",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Attach the band to a sturdy anchor point at waist height. Stand perpendicular to the anchor point with your feet shoulder-width apart. Grasp the band handle with both hands and step away from the anchor point to create tension in the band. Bring your hands to your chest, keeping your elbows bent and close to your body. Engage your core and maintain a stable stance. Extend your arms straight out in front of you, pushing the band away from your body. Hold the extended position for a few seconds, focusing on maintaining tension in your core. Slowly bring your hands back to your chest, resisting the pull of the band. Repeat for the desired number of repetitions.",
+      "image": "media/0979-9pa4H5m.jpg",
+      "animation": "media/0979-9pa4H5m.gif"
+    },
+    {
+      "key": "band-pull-through",
+      "source_id": "0991",
+      "name": "Band pull-through",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hinge",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Attach a resistance band to a sturdy anchor point at ground level. Stand facing away from the anchor point with your feet shoulder-width apart. Step forward to create tension in the band, keeping your knees slightly bent. Hinge at the hips and push your glutes back, maintaining a slight bend in your knees. Lower your torso until it is parallel to the ground, feeling a stretch in your hamstrings. Drive your hips forward and squeeze your glutes to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0991-VtTbiP3.jpg",
+      "animation": "media/0991-VtTbiP3.gif"
+    },
+    {
+      "key": "band-reverse-fly",
+      "source_id": "0993",
+      "name": "Band reverse fly",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "rear_delt",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Attach the band to a stationary object at chest height. Stand with your feet shoulder-width apart and hold the band with both hands in front of you. Keep your arms straight and lift them out to the sides until they are parallel to the ground. Squeeze your shoulder blades together at the top of the movement. Slowly lower your arms back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0993-sTfvVsG.jpg",
+      "animation": "media/0993-sTfvVsG.gif"
+    },
+    {
+      "key": "band-seated-chest-press",
+      "source_id": "3124",
+      "name": "Band seated chest press",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Sit on a chair or bench with your back straight and feet flat on the ground. Hold the resistance band handles in each hand, with your palms facing down and elbows bent at a 90-degree angle. Extend your arms forward, pushing the resistance band away from your chest. Pause for a moment at the end of the movement, then slowly return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3124-4x5Okof.jpg",
+      "animation": "media/3124-4x5Okof.gif"
+    },
+    {
+      "key": "band-seated-row",
+      "source_id": "3144",
+      "name": "Band seated row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Sit on the floor with your legs extended and loop the resistance band around your feet. Hold the ends of the resistance band with your hands, palms facing each other. Keep your back straight and lean slightly back, engaging your core. Pull the resistance band towards your chest, squeezing your shoulder blades together. Pause for a moment at the top, then slowly release the tension and return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3144-Nu7jqFE.jpg",
+      "animation": "media/3144-Nu7jqFE.gif"
+    },
+    {
+      "key": "band-shoulder-press",
+      "source_id": "0997",
+      "name": "Band shoulder press",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "vertical_push",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and place the band under your feet. Hold the band with your palms facing forward and raise your hands to shoulder height, elbows bent. Press the band overhead, fully extending your arms. Pause for a moment at the top, then slowly lower the band back to shoulder height. Repeat for the desired number of repetitions.",
+      "image": "media/0997-peAeMR3.jpg",
+      "animation": "media/0997-peAeMR3.gif"
+    },
+    {
+      "key": "band-squat",
+      "source_id": "1004",
+      "name": "Band squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "squat",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, with the band placed just above your knees. Keeping your chest up and core engaged, push your hips back and bend your knees to lower into a squat position. Make sure your knees are tracking over your toes and your weight is in your heels. Pause for a moment at the bottom, then push through your heels to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1004-TUZLh71.jpg",
+      "animation": "media/1004-TUZLh71.gif"
+    },
+    {
+      "key": "band-stiff-leg-deadlift",
+      "source_id": "1009",
+      "name": "Band stiff-leg deadlift",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hinge",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and place the band around your ankles. Hold the band with both hands in front of your thighs, palms facing your body. Keeping your back straight and your core engaged, hinge at the hips and slowly lower your upper body towards the ground. As you lower, push your hips back and allow your knees to bend slightly. Lower the band towards the ground, feeling a stretch in your hamstrings. Pause for a moment at the bottom, then engage your glutes and hamstrings to lift your upper body back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1009-kuMiR2T.jpg",
+      "animation": "media/1009-kuMiR2T.gif"
+    },
+    {
+      "key": "band-wrist-curl",
+      "source_id": "1016",
+      "name": "Band wrist curl",
+      "primary_muscle": "forearms",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "wrist_forearm",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Sit on a bench or chair with your feet flat on the ground. Hold the band with both hands, palms facing up, and rest your forearms on your thighs. Slowly curl your wrists upward, squeezing your forearms. Pause for a moment at the top, then slowly lower your wrists back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1016-vUTfFHw.jpg",
+      "animation": "media/1016-vUTfFHw.gif"
+    },
+    {
+      "key": "band-y-raise",
+      "source_id": "1017",
+      "name": "Band Y-raise",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "band"
+      ],
+      "difficulty": "beginner",
+      "pattern": "scapular",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold the band in front of your thighs with your palms facing inwards. Keep your arms straight and lift them up and out to the sides, forming a 'Y' shape with your body. Squeeze your shoulder blades together at the top of the movement. Slowly lower your arms back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1017-aHDy5O5.jpg",
+      "animation": "media/1017-aHDy5O5.gif"
+    },
+    {
+      "key": "barbell-back-squat",
+      "source_id": "0043",
+      "name": "Barbell back squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "squat",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, toes slightly turned out. Hold the barbell across your upper back, resting it on your traps or rear delts. Engage your core and keep your chest up as you begin to lower your body down. Bend at the knees and hips, pushing your hips back and down as if sitting into a chair. Lower yourself until your thighs are parallel to the ground or slightly below. Keep your knees in line with your toes and your weight in your heels. Drive through your heels to stand back up, extending your hips and knees. Repeat for the desired number of repetitions.",
+      "image": "media/0043-qXTaZnJ.jpg",
+      "animation": "media/0043-qXTaZnJ.gif"
+    },
+    {
+      "key": "barbell-bench-press",
+      "source_id": "0025",
+      "name": "Barbell bench press",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_push",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench. Grasp the barbell with an overhand grip slightly wider than shoulder-width apart. Lift the barbell off the rack and hold it directly above your chest with your arms fully extended. Lower the barbell slowly towards your chest, keeping your elbows tucked in. Pause for a moment when the barbell touches your chest. Push the barbell back up to the starting position by extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0025-EIeI8Vf.jpg",
+      "animation": "media/0025-EIeI8Vf.gif"
+    },
+    {
+      "key": "barbell-bent-over-row",
+      "source_id": "0027",
+      "name": "Barbell bent-over row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and knees slightly bent. Bend forward at the hips while keeping your back straight and chest up. Grasp the barbell with an overhand grip, hands slightly wider than shoulder-width apart. Pull the barbell towards your lower chest by retracting your shoulder blades and squeezing your back muscles. Pause for a moment at the top, then slowly lower the barbell back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0027-eZyBC3j.jpg",
+      "animation": "media/0027-eZyBC3j.gif"
+    },
+    {
+      "key": "barbell-clean-and-press",
+      "source_id": "0028",
+      "name": "Barbell clean and press",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "olympic_lift",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and the barbell on the floor in front of you. Bend your knees and hinge at the hips to lower down and grip the barbell with an overhand grip, hands slightly wider than shoulder-width apart. Drive through your heels and extend your hips and knees to lift the barbell off the floor, keeping it close to your body. As the barbell reaches your thighs, explosively extend your hips, shrug your shoulders, and pull the barbell up towards your chest. As the barbell reaches chest height, quickly drop under it and catch it at shoulder level, with your elbows pointing forward and your palms facing up. From the catch position, press the barbell overhead by extending your arms and pushing the barbell straight up. Lower the barbell back down to the starting position and repeat for the desired number of repetitions.",
+      "image": "media/0028-SGY8Zui.jpg",
+      "animation": "media/0028-SGY8Zui.gif"
+    },
+    {
+      "key": "barbell-close-grip-bench-press",
+      "source_id": "0030",
+      "name": "Barbell close-grip bench press",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_push",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench. Grasp the barbell with a close grip, slightly narrower than shoulder-width apart. Unrack the barbell and lower it slowly towards your chest, keeping your elbows close to your body. Pause for a moment when the barbell touches your chest. Push the barbell back up to the starting position, fully extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0030-J6Dx1Mu.jpg",
+      "animation": "media/0030-J6Dx1Mu.gif"
+    },
+    {
+      "key": "barbell-close-grip-military-press",
+      "source_id": "1456",
+      "name": "Barbell close-grip military press",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "vertical_push",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold the barbell with an overhand grip, hands slightly closer than shoulder-width apart. Lift the barbell to shoulder height, keeping your elbows close to your body. Press the barbell overhead, extending your arms fully. Lower the barbell back to shoulder height. Repeat for the desired number of repetitions.",
+      "image": "media/1456-wdRZISl.jpg",
+      "animation": "media/1456-wdRZISl.gif"
+    },
+    {
+      "key": "barbell-curl",
+      "source_id": "0031",
+      "name": "Barbell curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand up straight with your feet shoulder-width apart and hold a barbell with an underhand grip, palms facing forward. Keep your elbows close to your torso and exhale as you curl the weights while contracting your biceps. Continue to raise the bar until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps. Inhale as you slowly begin to lower the bar back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0031-25GPyDY.jpg",
+      "animation": "media/0031-25GPyDY.gif"
+    },
+    {
+      "key": "barbell-deadlift",
+      "source_id": "0032",
+      "name": "Barbell deadlift",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hinge",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and the barbell on the ground in front of you. Bend your knees and hinge at the hips to lower your torso and grip the barbell with an overhand grip, hands slightly wider than shoulder-width apart. Keep your back straight and chest lifted as you drive through your heels to lift the barbell off the ground, extending your hips and knees. As you stand up straight, squeeze your glutes and keep your core engaged. Lower the barbell back down to the ground by bending at the hips and knees, keeping your back straight. Repeat for the desired number of repetitions.",
+      "image": "media/0032-ila4NZS.jpg",
+      "animation": "media/0032-ila4NZS.gif"
+    },
+    {
+      "key": "barbell-front-squat",
+      "source_id": "0042",
+      "name": "Barbell front squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "squat",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by standing with your feet shoulder-width apart, toes slightly turned out. Hold the barbell in front of your shoulders, resting it on your collarbone and shoulders. Engage your core and keep your chest up as you lower your body down into a squat position, pushing your hips back and bending your knees. Lower until your thighs are parallel to the ground, or as low as you can comfortably go. Pause for a moment at the bottom, then push through your heels to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0042-zG0zs85.jpg",
+      "animation": "media/0042-zG0zs85.gif"
+    },
+    {
+      "key": "barbell-glute-bridge",
+      "source_id": "1409",
+      "name": "Barbell glute bridge",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hip_extension",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by lying flat on your back on the ground with your knees bent and feet flat on the floor. Place a barbell across your hips, holding it securely with both hands. Engage your glutes and core muscles, then lift your hips off the ground until your body forms a straight line from your knees to your shoulders. Pause for a moment at the top, squeezing your glutes. Slowly lower your hips back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1409-qKBpF7I.jpg",
+      "animation": "media/1409-qKBpF7I.gif"
+    },
+    {
+      "key": "barbell-lunge",
+      "source_id": "0054",
+      "name": "Barbell lunge",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "lunge",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by standing with your feet shoulder-width apart and a barbell resting on your upper back. Take a step forward with your right foot, keeping your torso upright. Lower your body by bending your right knee until your thigh is parallel to the ground. Push through your right heel to return to the starting position. Repeat with your left leg, alternating legs for the desired number of repetitions.",
+      "image": "media/0054-t8iSghb.jpg",
+      "animation": "media/0054-t8iSghb.gif"
+    },
+    {
+      "key": "barbell-overhead-squat",
+      "source_id": "0069",
+      "name": "Barbell overhead squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "squat",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and toes slightly turned out. Hold the barbell with a wide grip, positioning it overhead with your arms fully extended. Engage your core and lower your body down into a squat position, keeping your chest up and knees tracking over your toes. Pause for a moment at the bottom, then push through your heels to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0069-gfk9kD4.jpg",
+      "animation": "media/0069-gfk9kD4.gif"
+    },
+    {
+      "key": "barbell-pendlay-row",
+      "source_id": "3017",
+      "name": "Barbell Pendlay row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and your knees slightly bent. Bend forward at the hips, keeping your back straight and your chest up. Grasp the barbell with an overhand grip, slightly wider than shoulder-width apart. Pull the barbell towards your upper abdomen, squeezing your shoulder blades together. Lower the barbell back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3017-r0z6xzQ.jpg",
+      "animation": "media/3017-r0z6xzQ.gif"
+    },
+    {
+      "key": "barbell-preacher-curl",
+      "source_id": "0070",
+      "name": "Barbell preacher curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Sit on a preacher bench with your upper arms resting on the pad and your chest against the support. Grasp the barbell with an underhand grip, slightly wider than shoulder-width apart. Keeping your upper arms stationary, exhale and curl the barbell up towards your shoulders. Pause for a moment at the top, squeezing your biceps. Inhale and slowly lower the barbell back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0070-qOgPVf6.jpg",
+      "animation": "media/0070-qOgPVf6.gif"
+    },
+    {
+      "key": "barbell-romanian-deadlift",
+      "source_id": "0085",
+      "name": "Barbell Romanian deadlift",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hinge",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and your toes pointing forward. Hold the barbell with an overhand grip, hands slightly wider than shoulder-width apart. Bend at the hips, keeping your back straight and your knees slightly bent. Lower the barbell towards the ground, keeping it close to your body. Feel the stretch in your hamstrings as you lower the barbell. Once you feel a stretch in your hamstrings, push your hips forward and stand up straight. Squeeze your glutes at the top of the movement. Lower the barbell back down to the starting position and repeat for the desired number of repetitions.",
+      "image": "media/0085-wQ2c4XD.jpg",
+      "animation": "media/0085-wQ2c4XD.gif"
+    },
+    {
+      "key": "barbell-single-leg-deadlift",
+      "source_id": "1756",
+      "name": "Barbell single-leg deadlift",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "hinge",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet hip-width apart, holding a barbell in front of your thighs with an overhand grip. Shift your weight onto your left foot and lift your right foot slightly off the ground. Hinge forward at the hips, keeping your back straight and your right leg extended behind you for balance. Lower the barbell towards the ground, keeping it close to your body and your left leg slightly bent. Pause for a moment at the bottom, then engage your glutes and hamstrings to lift your torso back up to the starting position. Repeat for the desired number of repetitions, then switch sides.",
+      "image": "media/1756-gEyURal.jpg",
+      "animation": "media/1756-gEyURal.gif"
+    },
+    {
+      "key": "barbell-skull-crusher",
+      "source_id": "0060",
+      "name": "Barbell skull crusher",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_extension",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Lie flat on a bench with your feet flat on the ground and your head at the end of the bench. Hold the barbell with an overhand grip, hands shoulder-width apart, and extend your arms straight up over your chest. Keeping your upper arms stationary, slowly lower the barbell towards your forehead by bending your elbows. Pause for a moment when the barbell is just above your forehead, then extend your arms back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0060-h8LFzo9.jpg",
+      "animation": "media/0060-h8LFzo9.gif"
+    },
+    {
+      "key": "barbell-step-up",
+      "source_id": "0114",
+      "name": "Barbell step-up",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "lunge",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand in front of a bench or step with a barbell resting on your upper back. Place one foot on the bench or step, ensuring your entire foot is in contact with the surface. Push through your heel and step up onto the bench or step, fully extending your hip and knee. Pause briefly at the top, then lower yourself back down to the starting position. Repeat with the opposite leg. Continue alternating legs for the desired number of repetitions.",
+      "image": "media/0114-Kxquu2E.jpg",
+      "animation": "media/0114-Kxquu2E.gif"
+    },
+    {
+      "key": "barbell-sumo-deadlift",
+      "source_id": "0117",
+      "name": "Barbell sumo deadlift",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hinge",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet wider than shoulder-width apart, toes pointing outwards. Place a barbell on the ground in front of you, centered between your feet. Bend your knees and lower your hips, keeping your back straight and chest up, to grip the barbell with an overhand grip. Engage your core and drive through your heels to lift the barbell off the ground, extending your hips and knees simultaneously. As you lift, keep your chest up and back straight, and push your hips forward to fully engage your glutes. Pause for a moment at the top, then slowly lower the barbell back down to the starting position, maintaining control throughout the movement. Repeat for the desired number of repetitions.",
+      "image": "media/0117-KgI0tqW.jpg",
+      "animation": "media/0117-KgI0tqW.gif"
+    },
+    {
+      "key": "barbell-thruster",
+      "source_id": "3305",
+      "name": "Barbell thruster",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "squat_to_press",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by standing with your feet shoulder-width apart, holding a barbell at shoulder height with an overhand grip. Lower into a squat position by bending your knees and pushing your hips back. As you reach the bottom of the squat, explosively drive through your heels to stand up, simultaneously pressing the barbell overhead. Lower the barbell back to shoulder height as you lower back into the squat position. Repeat for the desired number of repetitions.",
+      "image": "media/3305-f7Y9eDZ.jpg",
+      "animation": "media/3305-f7Y9eDZ.gif"
+    },
+    {
+      "key": "barbell-wrist-curl",
+      "source_id": "0126",
+      "name": "Barbell wrist curl",
+      "primary_muscle": "forearms",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "wrist_forearm",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Sit on a bench with your feet flat on the ground and your forearms resting on your thighs, holding a barbell with an underhand grip. Allow the barbell to roll down to your fingertips, keeping your wrists straight. Slowly curl the barbell up towards your forearms by flexing your wrists. Pause for a moment at the top, then slowly lower the barbell back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0126-82LxxkW.jpg",
+      "animation": "media/0126-82LxxkW.gif"
+    },
+    {
+      "key": "battling-ropes",
+      "source_id": "0128",
+      "name": "Battling ropes",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "rope"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "conditioning",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and knees slightly bent. Hold one end of the rope in each hand, with your palms facing each other. Raise your arms to shoulder height, keeping your elbows slightly bent. Begin making alternating waves with the ropes by rapidly raising and lowering each arm. Continue for the desired duration or number of repetitions.",
+      "image": "media/0128-RJa4tCo.jpg",
+      "animation": "media/0128-RJa4tCo.gif"
+    },
+    {
+      "key": "bear-crawl",
+      "source_id": "3360",
+      "name": "Bear crawl",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Start on all fours with your hands directly under your shoulders and your knees directly under your hips. Lift your knees slightly off the ground, keeping your back flat and your core engaged. Move your right hand and left foot forward simultaneously, followed by your left hand and right foot. Continue crawling forward, alternating your hand and foot movements. Maintain a steady pace and keep your core tight throughout the exercise. Continue for the desired distance or time.",
+      "image": "media/3360-0Yz8WdV.jpg",
+      "animation": "media/3360-0Yz8WdV.gif"
+    },
+    {
+      "key": "bicycle-crunch",
+      "source_id": "0003",
+      "name": "Bicycle crunch",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Lie flat on your back with your hands placed behind your head. Lift your legs off the ground and bend your knees at a 90-degree angle. Bring your right elbow towards your left knee while simultaneously straightening your right leg. Return to the starting position and repeat the movement on the opposite side, bringing your left elbow towards your right knee while straightening your left leg. Continue alternating sides in a pedaling motion for the desired number of repetitions.",
+      "image": "media/0003-1ZFqTDN.jpg",
+      "animation": "media/0003-1ZFqTDN.gif"
+    },
+    {
+      "key": "bodyweight-kneeling-triceps-extension",
+      "source_id": "1771",
+      "name": "Bodyweight kneeling triceps extension",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_extension",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Kneel down on the ground with your knees hip-width apart. Place your hands on the ground in front of you, shoulder-width apart, fingers pointing forward. Extend your legs straight behind you, balancing on your toes and hands, forming a straight line from head to heels. Bend your elbows and lower your upper body towards the ground, keeping your elbows close to your sides. Pause for a moment at the bottom, then push through your hands to straighten your arms and return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1771-s0HKO2I.jpg",
+      "animation": "media/1771-s0HKO2I.gif"
+    },
+    {
+      "key": "bodyweight-standing-calf-raise",
+      "source_id": "1373",
+      "name": "Bodyweight standing calf raise",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "calf_raise",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, toes pointing forward. Place your hands on a wall or stable surface for balance. Slowly raise your heels off the ground, lifting your body weight onto the balls of your feet. Pause for a moment at the top, then slowly lower your heels back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1373-bJYHBIN.jpg",
+      "animation": "media/1373-bJYHBIN.gif"
+    },
+    {
+      "key": "burpee",
+      "source_id": "1160",
+      "name": "Burpee",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a standing position with your feet shoulder-width apart. Lower your body into a squat position by bending your knees and placing your hands on the floor in front of you. Kick your feet back into a push-up position. Perform a push-up, keeping your body in a straight line. Jump your feet back into the squat position. Jump up explosively, reaching your arms overhead. Land softly and immediately lower back into a squat position to begin the next repetition.",
+      "image": "media/1160-dK9394r.jpg",
+      "animation": "media/1160-dK9394r.gif"
+    },
+    {
+      "key": "cable-curl",
+      "source_id": "0868",
+      "name": "Cable curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Stand facing the cable machine with your feet shoulder-width apart. Grasp the cable attachment with an underhand grip, palms facing up. Keep your elbows close to your sides and your upper arms stationary. Exhale and curl the cable attachment towards your shoulders, contracting your biceps. Pause for a moment at the top of the movement, squeezing your biceps. Inhale and slowly lower the cable attachment back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0868-G08RZcQ.jpg",
+      "animation": "media/0868-G08RZcQ.gif"
+    },
+    {
+      "key": "cable-kneeling-crunch",
+      "source_id": "0175",
+      "name": "Cable kneeling crunch",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Attach a rope handle to a high pulley and kneel down facing away from the machine. Hold the rope handle with both hands and place it behind your head, keeping your elbows out to the sides. Keeping your hips stationary, flex your waist and crunch your torso down towards your thighs. Pause for a moment at the bottom, then slowly return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0175-WW95auq.jpg",
+      "animation": "media/0175-WW95auq.gif"
+    },
+    {
+      "key": "cable-lat-pulldown",
+      "source_id": "0150",
+      "name": "Cable lat pulldown",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "vertical_pull",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the cable pulley to a high position and attach a straight bar. Sit facing the cable machine with your feet flat on the ground and your knees slightly bent. Grasp the bar with an overhand grip, slightly wider than shoulder-width apart. Lean back slightly and keep your chest up, maintaining a slight arch in your lower back. Pull the bar down towards your chest, leading with your elbows and squeezing your shoulder blades together. Pause for a moment at the bottom of the movement, then slowly return the bar to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0150-eYnzaCm.jpg",
+      "animation": "media/0150-eYnzaCm.gif"
+    },
+    {
+      "key": "cable-lateral-raise",
+      "source_id": "0178",
+      "name": "Cable lateral raise",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "shoulder_abduction",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and grasp the cable handles with an overhand grip. Keep your arms straight and your core engaged. Raise your arms out to the sides until they are parallel to the floor. Pause for a moment at the top, then slowly lower your arms back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0178-goJ6ezq.jpg",
+      "animation": "media/0178-goJ6ezq.gif"
+    },
+    {
+      "key": "cable-overhead-triceps-extension-rope",
+      "source_id": "0194",
+      "name": "Cable overhead triceps extension (rope)",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_extension",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Attach a rope to a cable machine at a high position. Stand facing away from the machine with your feet shoulder-width apart. Grasp the rope with both hands, palms facing each other, and bring your hands above your head. Keep your upper arms close to your head and your elbows pointing forward. Slowly lower the rope behind your head by bending your elbows. Pause for a moment, then extend your arms back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0194-2IxROQ1.jpg",
+      "animation": "media/0194-2IxROQ1.gif"
+    },
+    {
+      "key": "cable-pull-through",
+      "source_id": "0196",
+      "name": "Cable pull-through",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hinge",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Stand facing away from the cable machine with your feet shoulder-width apart. Grab the rope attachment with both hands and step forward, creating tension in the cable. Bend at the hips and lower your upper body until it is parallel to the ground, keeping your back straight. Engage your glutes and hamstrings to pull your body back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0196-OM46QHm.jpg",
+      "animation": "media/0196-OM46QHm.gif"
+    },
+    {
+      "key": "cable-seated-row",
+      "source_id": "0861",
+      "name": "Cable seated row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Sit on the cable row machine with your feet flat on the footrests and your knees slightly bent. Grasp the handles with an overhand grip, keeping your back straight and your shoulders relaxed. Pull the handles towards your body, squeezing your shoulder blades together. Pause for a moment at the peak of the movement, then slowly release the handles back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0861-fUBheHs.jpg",
+      "animation": "media/0861-fUBheHs.gif"
+    },
+    {
+      "key": "cable-shoulder-external-rotation",
+      "source_id": "0235",
+      "name": "Cable shoulder external rotation",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "external_rotation",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and your knees slightly bent. Hold the cable handle with your arm extended in front of you, parallel to the ground. Keep your elbow slightly bent and your shoulder blades pulled back. Slowly rotate your arm outward, away from your body, while keeping your elbow in the same position. Pause for a moment at the end of the movement, then slowly return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0235-FWdVhcW.jpg",
+      "animation": "media/0235-FWdVhcW.gif"
+    },
+    {
+      "key": "cable-side-bend",
+      "source_id": "0222",
+      "name": "Cable side bend",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_lateral",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and grasp the cable handle with one hand. Keep your back straight and your core engaged. Slowly bend sideways at the waist, lowering the cable handle towards your knee. Pause for a moment, then return to the starting position. Repeat on the other side. Alternate sides for the desired number of repetitions.",
+      "image": "media/0222-wPypxFY.jpg",
+      "animation": "media/0222-wPypxFY.gif"
+    },
+    {
+      "key": "cable-standing-fly",
+      "source_id": "0227",
+      "name": "Cable standing fly",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "chest_fly",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Attach the handles to the cables at chest height. Stand with your feet shoulder-width apart, facing away from the cable machine. Grasp the handles with an overhand grip, palms facing forward. Step forward slightly to create tension in the cables. Keep your core engaged and your back straight throughout the exercise. With a slight bend in your elbows, slowly bring your arms forward and together in front of your chest. Squeeze your chest muscles at the peak of the movement. Slowly reverse the movement, returning your arms to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0227-Pr9Rhf4.jpg",
+      "animation": "media/0227-Pr9Rhf4.gif"
+    },
+    {
+      "key": "cable-standing-hip-extension",
+      "source_id": "0228",
+      "name": "Cable standing hip extension",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hip_extension",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Attach a cable to a low pulley and stand facing away from the machine. Place the cable around your ankle and stand with your feet shoulder-width apart. Keep your core engaged and your back straight throughout the exercise. Slowly extend your leg straight back, squeezing your glutes at the top of the movement. Pause for a moment, then return to the starting position. Repeat for the desired number of repetitions. Switch sides and repeat with the other leg.",
+      "image": "media/0228-Kpajagk.jpg",
+      "animation": "media/0228-Kpajagk.gif"
+    },
+    {
+      "key": "cable-straight-arm-pulldown",
+      "source_id": "0238",
+      "name": "Cable straight-arm pulldown",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "shoulder_extension",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Attach a straight bar to the high pulley of a cable machine. Stand facing the machine with your feet shoulder-width apart. Grasp the bar with an overhand grip, keeping your arms straight and your palms facing down. Engage your lats and pull the bar down towards your thighs, keeping your arms straight throughout the movement. Pause for a moment at the bottom, then slowly return the bar to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0238-x69MAlq.jpg",
+      "animation": "media/0238-x69MAlq.gif"
+    },
+    {
+      "key": "cable-triceps-pushdown",
+      "source_id": "0201",
+      "name": "Cable triceps pushdown",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_extension",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Attach a straight bar to a high pulley cable machine. Stand facing the machine with your feet shoulder-width apart and a slight bend in your knees. Grasp the bar with an overhand grip, hands shoulder-width apart. Keep your elbows close to your sides and your upper arms stationary. Exhale and push the bar down until your elbows are fully extended. Pause for a moment, then inhale and slowly return the bar to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0201-3ZflifB.jpg",
+      "animation": "media/0201-3ZflifB.gif"
+    },
+    {
+      "key": "cable-twist",
+      "source_id": "0243",
+      "name": "Cable twist",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "cable"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_rotation",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, facing the cable machine. Hold the cable handle with both hands in front of your chest, keeping your arms slightly bent. Engage your core and twist your torso to the right, pulling the cable across your body. Pause for a moment at the end of the movement, feeling the contraction in your abs and obliques. Slowly return to the starting position, resisting the cable's pull. Repeat the movement to the left side. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/0243-aVs3BR3.jpg",
+      "animation": "media/0243-aVs3BR3.gif"
+    },
+    {
+      "key": "chest-dip",
+      "source_id": "0251",
+      "name": "Chest dip",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "dip_bars"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_push",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Position yourself on parallel bars with your arms fully extended and your body straight. Lower your body by bending your elbows until your shoulders are below your elbows. Push yourself back up to the starting position by straightening your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0251-9WTm7dq.jpg",
+      "animation": "media/0251-9WTm7dq.gif"
+    },
+    {
+      "key": "chin-up",
+      "source_id": "1326",
+      "name": "Chin-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "vertical_pull",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Hang from a pull-up bar with your palms facing towards you and your hands shoulder-width apart. Engage your core and pull your body up towards the bar, leading with your chest. Continue pulling until your chin is above the bar. Pause for a moment at the top, then slowly lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1326-T2mxWqc.jpg",
+      "animation": "media/1326-T2mxWqc.gif"
+    },
+    {
+      "key": "clap-push-up",
+      "source_id": "1273",
+      "name": "Clap push-up",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "plyometric",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Start in a high plank position with your hands slightly wider than shoulder-width apart. Lower your body towards the ground by bending your elbows, keeping your core engaged. Push through your palms explosively to propel your body off the ground. While in mid-air, clap your hands together before landing back in the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1273-wigSg76.jpg",
+      "animation": "media/1273-wigSg76.gif"
+    },
+    {
+      "key": "close-grip-chin-up",
+      "source_id": "1327",
+      "name": "Close-grip chin-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_pull",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Grab the pull-up bar with your palms facing towards you and your hands shoulder-width apart. Hang from the bar with your arms fully extended and your feet off the ground. Engage your back muscles and pull your body up towards the bar, keeping your elbows close to your body. Continue pulling until your chin is above the bar. Pause for a moment at the top, then slowly lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1327-VnfUNW7.jpg",
+      "animation": "media/1327-VnfUNW7.gif"
+    },
+    {
+      "key": "close-grip-push-up",
+      "source_id": "0259",
+      "name": "Close-grip push-up",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a high plank position with your hands placed close together, directly under your shoulders. Engage your core and lower your body towards the ground, keeping your elbows close to your sides. Push through your palms to extend your arms and return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0259-x6KpKpq.jpg",
+      "animation": "media/0259-x6KpKpq.gif"
+    },
+    {
+      "key": "curl-up",
+      "source_id": "3016",
+      "name": "Curl-up",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Lie flat on your back with your knees bent and feet flat on the ground. Place your hands behind your head with your elbows pointing outwards. Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle. Pause for a moment at the top, then slowly lower your upper body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3016-g2oKspu.jpg",
+      "animation": "media/3016-g2oKspu.gif"
+    },
+    {
+      "key": "curtsey-squat",
+      "source_id": "3769",
+      "name": "Curtsey squat",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "lunge",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart. Take a step diagonally behind and across your body with your right foot, crossing it behind your left leg. Bend both knees as if you were curtsying, lowering your body towards the ground. Keep your torso upright and your weight on your front foot. Push through your front foot to return to the starting position. Repeat on the other side, stepping diagonally behind and across your body with your left foot.",
+      "image": "media/3769-gUjqdei.jpg",
+      "animation": "media/3769-gUjqdei.gif"
+    },
+    {
+      "key": "dead-bug",
+      "source_id": "0276",
+      "name": "Dead bug",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_anti_extension",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Lie flat on your back with your arms extended towards the ceiling. Bend your knees and lift your legs off the ground, creating a 90-degree angle at your hips and knees. Engage your core and lower back to press your lower back into the ground. Slowly lower your right arm and left leg towards the ground, keeping them straight and hovering just above the floor. Pause for a moment, then return to the starting position. Repeat the movement with your left arm and right leg. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/0276-iny3m5y.jpg",
+      "animation": "media/0276-iny3m5y.gif"
+    },
+    {
+      "key": "decline-push-up",
+      "source_id": "0279",
+      "name": "Decline push-up",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Place your hands on the ground slightly wider than shoulder-width apart, with your feet elevated on a stable surface. Keep your body in a straight line from head to toe, engaging your core muscles. Lower your chest towards the ground by bending your elbows, keeping them close to your body. Push through your palms to extend your arms and return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0279-i5cEhka.jpg",
+      "animation": "media/0279-i5cEhka.gif"
+    },
+    {
+      "key": "diamond-push-up",
+      "source_id": "0283",
+      "name": "Diamond push-up",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Start in a high plank position with your hands close together, forming a diamond shape with your thumbs and index fingers. Keep your body in a straight line from head to toe, engaging your core and glutes. Lower your chest towards the diamond shape formed by your hands, keeping your elbows close to your body. Pause for a moment at the bottom, then push yourself back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0283-soIB2rj.jpg",
+      "animation": "media/0283-soIB2rj.gif"
+    },
+    {
+      "key": "dumbbell-arnold-press",
+      "source_id": "2137",
+      "name": "Dumbbell Arnold press",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "vertical_push",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Sit on a bench with back support and hold a dumbbell in each hand at shoulder level, palms facing your body and elbows bent. Press the dumbbells upward until your arms are fully extended and your palms are facing forward. Rotate your wrists as you lift, so that your palms are facing forward at the top of the movement. Pause for a moment at the top, then slowly lower the dumbbells back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/2137-Xy4jlWA.jpg",
+      "animation": "media/2137-Xy4jlWA.gif"
+    },
+    {
+      "key": "dumbbell-bench-press",
+      "source_id": "0289",
+      "name": "Dumbbell bench press",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_push",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench. Hold a dumbbell in each hand, with your palms facing forward and your arms extended above your chest. Lower the dumbbells slowly to the sides of your chest, keeping your elbows at a 90-degree angle. Pause for a moment, then push the dumbbells back up to the starting position, fully extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0289-SpYC0Kp.jpg",
+      "animation": "media/0289-SpYC0Kp.gif"
+    },
+    {
+      "key": "dumbbell-biceps-curl",
+      "source_id": "0294",
+      "name": "Dumbbell biceps curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand up straight with a dumbbell in each hand, palms facing forward and arms fully extended. Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps. Inhale and slowly begin to lower the dumbbells back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0294-NbVPDMW.jpg",
+      "animation": "media/0294-NbVPDMW.gif"
+    },
+    {
+      "key": "dumbbell-burpee",
+      "source_id": "1201",
+      "name": "Dumbbell burpee",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "conditioning",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Start in a standing position with your feet shoulder-width apart and a dumbbell in each hand. Lower your body into a squat position, placing the dumbbells on the ground in front of you. Kick your feet back into a push-up position, keeping your body in a straight line. Perform a push-up, bending your elbows and lowering your chest towards the ground. Jump your feet back towards your hands, landing in a squat position. Stand up explosively, lifting the dumbbells off the ground and bringing them to your shoulders. Press the dumbbells overhead, fully extending your arms. Lower the dumbbells back to your shoulders and repeat the entire sequence for the desired number of repetitions.",
+      "image": "media/1201-0JtKWum.jpg",
+      "animation": "media/1201-0JtKWum.gif"
+    },
+    {
+      "key": "dumbbell-clean",
+      "source_id": "0295",
+      "name": "Dumbbell clean",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "ballistic",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand with an overhand grip. Bend your knees and lower your hips into a squat position, keeping your back straight and chest up. Explosively extend your hips and knees, driving through your heels to jump off the ground. As you jump, shrug your shoulders and pull the dumbbells up towards your shoulders, keeping them close to your body. Catch the dumbbells at shoulder height, with your elbows pointing forward and your palms facing up. Lower the dumbbells back down to the starting position by reversing the movement. Repeat for the desired number of repetitions.",
+      "image": "media/0295-7Hg55JG.jpg",
+      "animation": "media/0295-7Hg55JG.gif"
+    },
+    {
+      "key": "dumbbell-concentration-curl",
+      "source_id": "0297",
+      "name": "Dumbbell concentration curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Sit on a bench with your legs spread apart and a dumbbell in one hand, resting your elbow on the inside of your thigh. Fully extend your arm and hold the dumbbell with an underhand grip. Keeping your upper arm stationary, exhale and curl the weight up towards your shoulder while contracting your biceps. Continue to raise the dumbbell until your biceps are fully contracted and the dumbbell is at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps. Inhale and slowly lower the dumbbell back to the starting position. Repeat for the desired number of repetitions, then switch arms.",
+      "image": "media/0297-gvsWLQw.jpg",
+      "animation": "media/0297-gvsWLQw.gif"
+    },
+    {
+      "key": "dumbbell-deadlift",
+      "source_id": "0300",
+      "name": "Dumbbell deadlift",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hinge",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, toes pointing forward. Hold a dumbbell in each hand, palms facing your body, arms extended downwards. Bend at your hips and knees, lowering the dumbbells towards the ground while keeping your back straight. Push through your heels and extend your hips and knees, lifting the dumbbells back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0300-nUwVh7b.jpg",
+      "animation": "media/0300-nUwVh7b.gif"
+    },
+    {
+      "key": "dumbbell-fly",
+      "source_id": "0308",
+      "name": "Dumbbell fly",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "chest_fly",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Lie flat on a bench with a dumbbell in each hand, palms facing each other. Extend your arms straight up over your chest, with a slight bend in your elbows. Keeping a slight bend in your elbows, lower your arms out to the sides in a wide arc until you feel a stretch in your chest. Pause for a moment, then reverse the movement and bring the dumbbells back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0308-yz9nUhF.jpg",
+      "animation": "media/0308-yz9nUhF.gif"
+    },
+    {
+      "key": "dumbbell-front-raise",
+      "source_id": "0310",
+      "name": "Dumbbell front raise",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "shoulder_abduction",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand with your palms facing your thighs. Keeping your arms straight, exhale and lift the dumbbells in front of you until they are at shoulder level. Pause for a moment at the top, then inhale and slowly lower the dumbbells back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0310-3eGE2JC.jpg",
+      "animation": "media/0310-3eGE2JC.gif"
+    },
+    {
+      "key": "dumbbell-hammer-curl",
+      "source_id": "0313",
+      "name": "Dumbbell hammer curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand up straight with a dumbbell in each hand, palms facing your torso. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. This will be your starting position. Now, keeping the upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps. Then, inhale and slowly begin to lower the dumbbells back to the starting position. Repeat for the recommended amount of repetitions.",
+      "image": "media/0313-slDvUAU.jpg",
+      "animation": "media/0313-slDvUAU.gif"
+    },
+    {
+      "key": "dumbbell-incline-bench-press",
+      "source_id": "0314",
+      "name": "Dumbbell incline bench press",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_push",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Set up an incline bench at a 45-degree angle. Sit on the bench with your feet flat on the ground and your back pressed firmly against the bench. Hold a dumbbell in each hand, palms facing forward, and lift them to shoulder height. Slowly lower the dumbbells to the sides of your chest, keeping your elbows at a 90-degree angle. Push the dumbbells back up to the starting position, fully extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0314-ns0SIbU.jpg",
+      "animation": "media/0314-ns0SIbU.gif"
+    },
+    {
+      "key": "dumbbell-incline-biceps-curl",
+      "source_id": "0315",
+      "name": "Dumbbell incline biceps curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Sit on an incline bench with a dumbbell in each hand, palms facing forward, and arms fully extended. Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the dumbbells until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps. Inhale and slowly begin to lower the dumbbells back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0315-F3xgbjF.jpg",
+      "animation": "media/0315-F3xgbjF.gif"
+    },
+    {
+      "key": "dumbbell-kickback",
+      "source_id": "0333",
+      "name": "Dumbbell kickback",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_extension",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold a dumbbell in each hand. Bend your knees slightly and hinge forward at the hips, keeping your back straight. Bring your upper arms close to your sides, with your elbows bent at a 90-degree angle. Extend your arms straight back, squeezing your triceps at the top of the movement. Pause for a moment, then slowly lower the dumbbells back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0333-W6PxUkg.jpg",
+      "animation": "media/0333-W6PxUkg.gif"
+    },
+    {
+      "key": "dumbbell-lateral-raise",
+      "source_id": "0334",
+      "name": "Dumbbell lateral raise",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "shoulder_abduction",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold a dumbbell in each hand, palms facing your body. Keep your back straight and engage your core. Raise your arms out to the sides until they are parallel to the floor, keeping a slight bend in your elbows. Pause for a moment at the top, then slowly lower your arms back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0334-DsgkuIt.jpg",
+      "animation": "media/0334-DsgkuIt.gif"
+    },
+    {
+      "key": "dumbbell-one-arm-bent-over-row",
+      "source_id": "0292",
+      "name": "Dumbbell one-arm bent-over row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in one hand with your palm facing your body. Bend your knees slightly and hinge forward at the hips, keeping your back straight and your core engaged. Let the dumbbell hang straight down towards the floor, with your arm fully extended. Pull the dumbbell up towards your chest, keeping your elbow close to your body and squeezing your shoulder blades together. Pause for a moment at the top, then slowly lower the dumbbell back down to the starting position. Repeat for the desired number of repetitions, then switch sides.",
+      "image": "media/0292-C0MA9bC.jpg",
+      "animation": "media/0292-C0MA9bC.gif"
+    },
+    {
+      "key": "dumbbell-one-arm-snatch",
+      "source_id": "3888",
+      "name": "Dumbbell one-arm snatch",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "ballistic",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in one hand with an overhand grip. Bend your knees slightly and hinge forward at the hips, keeping your back straight and chest up. Lower the dumbbell towards the ground, keeping it close to your body. Explosively extend your hips, knees, and ankles, driving the dumbbell upwards in a straight line. As the dumbbell reaches shoulder height, quickly rotate your hand and punch it overhead, fully extending your arm. Catch the dumbbell overhead with a slight bend in your knees and hips. Lower the dumbbell back down to the starting position in a controlled manner. Repeat for the desired number of repetitions, then switch to the other arm.",
+      "image": "media/3888-6pTkI99.jpg",
+      "animation": "media/3888-6pTkI99.gif"
+    },
+    {
+      "key": "dumbbell-push-press",
+      "source_id": "1700",
+      "name": "Dumbbell push press",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "vertical_push",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at shoulder level. Bend your knees slightly and dip your body down, then explosively extend your legs and press the dumbbells overhead. Lock out your arms at the top of the movement, then lower the dumbbells back to shoulder level. Repeat for the desired number of repetitions.",
+      "image": "media/1700-FS63wTN.jpg",
+      "animation": "media/1700-FS63wTN.gif"
+    },
+    {
+      "key": "dumbbell-rear-fly",
+      "source_id": "0378",
+      "name": "Dumbbell rear fly",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "rear_delt",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold a dumbbell in each hand. Bend your knees slightly and hinge forward at the hips, keeping your back straight. Extend your arms straight down towards the ground, palms facing each other. Keeping a slight bend in your elbows, lift your arms out to the sides and squeeze your shoulder blades together. Pause for a moment at the top, then slowly lower your arms back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0378-8DiFDVA.jpg",
+      "animation": "media/0378-8DiFDVA.gif"
+    },
+    {
+      "key": "dumbbell-reverse-lunge",
+      "source_id": "0381",
+      "name": "Dumbbell reverse lunge",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "lunge",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand. Take a step backward with your right foot, lowering your body into a lunge position. Bend your left knee and lower your body until your left thigh is parallel to the ground. Pause for a moment, then push through your left heel to return to the starting position. Repeat on the other side, stepping back with your left foot.",
+      "image": "media/0381-SSsBDwB.jpg",
+      "animation": "media/0381-SSsBDwB.gif"
+    },
+    {
+      "key": "dumbbell-reverse-wrist-curl",
+      "source_id": "0385",
+      "name": "Dumbbell reverse wrist curl",
+      "primary_muscle": "forearms",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "wrist_forearm",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Sit on a bench or chair with your feet flat on the ground. Hold a dumbbell in each hand with an overhand grip, palms facing down. Rest your forearms on your thighs, allowing your wrists to hang off the edge. Slowly curl your wrists upward, bringing the dumbbells towards your body. Pause for a moment at the top, then slowly lower the dumbbells back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0385-BLCvwr2.jpg",
+      "animation": "media/0385-BLCvwr2.gif"
+    },
+    {
+      "key": "dumbbell-romanian-deadlift",
+      "source_id": "1459",
+      "name": "Dumbbell Romanian deadlift",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hinge",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand with an overhand grip. Keeping your back straight and your core engaged, hinge at the hips and lower the dumbbells towards the ground, allowing your knees to bend slightly. Lower the dumbbells until you feel a stretch in your hamstrings, then push through your heels and engage your glutes to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1459-rR0LJzx.jpg",
+      "animation": "media/1459-rR0LJzx.gif"
+    },
+    {
+      "key": "dumbbell-shrug",
+      "source_id": "0406",
+      "name": "Dumbbell shrug",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "scapular",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold a dumbbell in each hand with your palms facing your body. Keep your arms straight and let the dumbbells hang by your sides. Raise your shoulders as high as possible, as if you are trying to touch your ears with your shoulders. Hold the contraction for a second, then slowly lower your shoulders back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0406-NJzBsGJ.jpg",
+      "animation": "media/0406-NJzBsGJ.gif"
+    },
+    {
+      "key": "dumbbell-single-arm-overhead-carry",
+      "source_id": "3548",
+      "name": "Dumbbell single-arm overhead carry",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "carry",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand tall with your feet shoulder-width apart, holding a dumbbell in one hand. Raise the dumbbell overhead, fully extending your arm. Engage your core and keep your back straight as you walk forward, maintaining the dumbbell overhead. Continue walking for the desired distance or time. Switch hands and repeat the exercise.",
+      "image": "media/3548-mWBtgmb.jpg",
+      "animation": "media/3548-mWBtgmb.gif"
+    },
+    {
+      "key": "dumbbell-single-leg-calf-raise",
+      "source_id": "0409",
+      "name": "Dumbbell single-leg calf raise",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "calf_raise",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand on the edge of a step or platform with your heels hanging off and your toes on the step. Hold a dumbbell in one hand and place your other hand on a wall or railing for support. Raise your heel as high as possible, lifting your body up onto your toes. Pause for a moment at the top, then slowly lower your heel back down below the step. Repeat for the desired number of repetitions, then switch to the other leg.",
+      "image": "media/0409-1kB3Wmk.jpg",
+      "animation": "media/0409-1kB3Wmk.gif"
+    },
+    {
+      "key": "dumbbell-single-leg-deadlift",
+      "source_id": "1757",
+      "name": "Dumbbell single-leg deadlift",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hinge",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet hip-width apart, holding a dumbbell in your right hand. Shift your weight onto your left leg and lift your right foot slightly off the ground. Keeping your back straight, hinge forward at the hips and lower the dumbbell towards the ground. At the same time, extend your right leg straight behind you, maintaining a slight bend in your left knee. Lower the dumbbell until your torso and right leg are parallel to the ground. Pause for a moment, then engage your glutes and hamstrings to return to the starting position. Repeat for the desired number of repetitions, then switch sides.",
+      "image": "media/1757-gKozT8X.jpg",
+      "animation": "media/1757-gKozT8X.gif"
+    },
+    {
+      "key": "dumbbell-single-leg-split-squat",
+      "source_id": "0410",
+      "name": "Dumbbell single-leg split squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "lunge",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand. Take a step forward with one foot and position your feet so that your front foot is flat on the ground and your back foot is elevated on a bench or step. Lower your body by bending your front knee and hip, keeping your back knee slightly bent and your back heel off the ground. Continue lowering until your front thigh is parallel to the ground, then push through your front heel to return to the starting position. Repeat for the desired number of repetitions, then switch legs and repeat.",
+      "image": "media/0410-qx4fgX7.jpg",
+      "animation": "media/0410-qx4fgX7.gif"
+    },
+    {
+      "key": "dumbbell-standing-calf-raise",
+      "source_id": "0417",
+      "name": "Dumbbell standing calf raise",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "calf_raise",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand. Raise your heels off the ground as high as possible, using your calves. Pause for a moment at the top, then slowly lower your heels back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0417-dPmaUaU.jpg",
+      "animation": "media/0417-dPmaUaU.gif"
+    },
+    {
+      "key": "dumbbell-standing-overhead-press",
+      "source_id": "0426",
+      "name": "Dumbbell standing overhead press",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "vertical_push",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at shoulder level with your palms facing forward. Press the dumbbells upward until your arms are fully extended overhead. Pause for a moment at the top, then slowly lower the dumbbells back down to shoulder level. Repeat for the desired number of repetitions.",
+      "image": "media/0426-A6wtbuL.jpg",
+      "animation": "media/0426-A6wtbuL.gif"
+    },
+    {
+      "key": "dumbbell-standing-triceps-extension",
+      "source_id": "0430",
+      "name": "Dumbbell standing triceps extension",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_extension",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold a dumbbell in one hand. Raise the dumbbell overhead, keeping your arm straight. Bend your elbow and lower the dumbbell behind your head, keeping your upper arm stationary. Extend your arm back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0430-PdmaD0N.jpg",
+      "animation": "media/0430-PdmaD0N.gif"
+    },
+    {
+      "key": "dumbbell-step-up",
+      "source_id": "0431",
+      "name": "Dumbbell step-up",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell",
+        "bench"
+      ],
+      "difficulty": "beginner",
+      "pattern": "lunge",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand in front of a bench or step with a dumbbell in each hand, palms facing your body. Place your right foot on the bench or step, ensuring your entire foot is in contact with the surface. Push through your right heel and lift your body up onto the bench or step, straightening your right leg. Bring your left foot up onto the bench or step, standing fully upright. Step back down with your left foot, followed by your right foot, returning to the starting position. Repeat for the desired number of repetitions, then switch legs.",
+      "image": "media/0431-aXtJhlg.jpg",
+      "animation": "media/0431-aXtJhlg.gif"
+    },
+    {
+      "key": "dumbbell-zottman-curl",
+      "source_id": "0439",
+      "name": "Dumbbell Zottman curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand up straight with a dumbbell in each hand, palms facing your body. Keep your elbows close to your torso and rotate your palms to face forward. Curl the dumbbells up to your shoulders while keeping your upper arms stationary. At the top of the movement, rotate your wrists so that your palms are facing away from your body. Slowly lower the dumbbells back to the starting position, rotating your palms back to facing your body. Repeat for the desired number of repetitions.",
+      "image": "media/0439-kXaIn5A.jpg",
+      "animation": "media/0439-kXaIn5A.gif"
+    },
+    {
+      "key": "elliptical-cross-trainer",
+      "source_id": "2141",
+      "name": "Elliptical cross-trainer",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "cardio_machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the resistance level and incline of the elliptical machine to your desired settings. Step onto the pedals of the machine and grip the handles lightly. Begin by pushing down with your feet and pulling the handles towards your body. Continue this motion, alternating between pushing and pulling, to simulate a walking or running motion. Maintain a steady pace and keep your core engaged throughout the exercise. Continue for the desired duration of your cardio workout. Gradually decrease the intensity and speed of the machine before stepping off.",
+      "image": "media/2141-rjtuP6X.jpg",
+      "animation": "media/2141-rjtuP6X.gif"
+    },
+    {
+      "key": "farmers-walk",
+      "source_id": "2133",
+      "name": "Farmer's walk",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "carry",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand up straight with a dumbbell in each hand, palms facing your sides. Keep your back straight and your shoulders back. Take small, controlled steps forward, maintaining an upright posture. Continue walking for the desired distance or time. To finish, stop walking and carefully lower the dumbbells to your sides.",
+      "image": "media/2133-qPEzJjA.jpg",
+      "animation": "media/2133-qPEzJjA.gif"
+    },
+    {
+      "key": "floor-crunch",
+      "source_id": "0274",
+      "name": "Floor crunch",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Lie flat on your back with your knees bent and feet flat on the ground. Place your hands behind your head with your elbows pointing outwards. Engage your abs and lift your shoulders off the ground, curling forward towards your knees. Pause for a moment at the top, then slowly lower your shoulders back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0274-TFqbd8t.jpg",
+      "animation": "media/0274-TFqbd8t.gif"
+    },
+    {
+      "key": "front-plank-with-twist",
+      "source_id": "0464",
+      "name": "Front plank with twist",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_anti_extension",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Start in a high plank position with your hands directly under your shoulders and your body in a straight line from head to toe. Engage your core and glutes to maintain a stable position. Rotate your torso to the right, lifting your right arm and extending it towards the ceiling. Keep your hips and legs stable as you twist. Hold for a moment, then return to the starting position. Repeat the twist on the left side. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/0464-CosupLu.jpg",
+      "animation": "media/0464-CosupLu.gif"
+    },
+    {
+      "key": "glute-bridge",
+      "source_id": "3013",
+      "name": "Glute bridge",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hip_extension",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Lie flat on your back with your knees bent and feet flat on the ground. Place your arms by your sides, palms facing down. Engage your glutes and core, then lift your hips off the ground until your body forms a straight line from your knees to your shoulders. Pause for a moment at the top, squeezing your glutes. Slowly lower your hips back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3013-u0cNiij.jpg",
+      "animation": "media/3013-u0cNiij.gif"
+    },
+    {
+      "key": "glute-ham-raise",
+      "source_id": "3193",
+      "name": "Glute-ham raise",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "advanced",
+      "pattern": "knee_flexion",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Adjust the glute-ham raise machine to fit your body. Position yourself face down on the machine with your ankles secured. Place your hands on your chest or cross them over your chest. Engage your hamstrings and glutes to lift your upper body up towards the ceiling. Continue lifting until your body is in a straight line from your head to your heels. Pause for a moment at the top, then slowly lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3193-Vvwjz6N.jpg",
+      "animation": "media/3193-Vvwjz6N.gif"
+    },
+    {
+      "key": "handstand-hold",
+      "source_id": "3302",
+      "name": "Handstand hold",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_push",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Find an open space with enough room to perform a handstand. Place your hands on the ground shoulder-width apart, fingers pointing forward. Kick your legs up towards the wall, using your core and shoulders to maintain balance. Once in a handstand position, engage your triceps to support your body weight. Hold the handstand for as long as you can maintain balance. To come down, slowly lower your legs back to the ground. Repeat for the desired number of repetitions.",
+      "image": "media/3302-XooAdhl.jpg",
+      "animation": "media/3302-XooAdhl.gif"
+    },
+    {
+      "key": "handstand-push-up",
+      "source_id": "0471",
+      "name": "Handstand push-up",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_push",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Find a wall and face away from it, standing a few feet away. Place your hands on the ground shoulder-width apart and kick your feet up against the wall, coming into a handstand position. Bend your elbows and lower your head towards the ground, keeping your body in a straight line. Push through your hands and extend your arms to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0471-rQxwMxO.jpg",
+      "animation": "media/0471-rQxwMxO.gif"
+    },
+    {
+      "key": "hanging-leg-raise",
+      "source_id": "0472",
+      "name": "Hanging leg raise",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Hang from a pull-up bar with your arms fully extended and your palms facing away from you. Engage your core and lift your legs up in front of you, keeping them straight. Continue lifting until your legs are parallel to the ground or as high as you can comfortably go. Pause for a moment at the top, then slowly lower your legs back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0472-I3tsCnC.jpg",
+      "animation": "media/0472-I3tsCnC.gif"
+    },
+    {
+      "key": "hanging-pike",
+      "source_id": "0473",
+      "name": "Hanging pike",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Hang from a pull-up bar with your arms fully extended and your palms facing away from you. Engage your core and lift your legs up towards the bar, keeping them straight. Continue lifting until your body forms a 'V' shape, with your legs parallel to the ground. Hold the position for a moment, then slowly lower your legs back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0473-nuBF9MO.jpg",
+      "animation": "media/0473-nuBF9MO.gif"
+    },
+    {
+      "key": "hyperextension",
+      "source_id": "0489",
+      "name": "Hyperextension",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "back_extension",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Adjust the hyperextension bench so that your upper thighs are resting on the pad and your feet are secured. Cross your arms over your chest or place your hands behind your head. Lower your upper body towards the ground while keeping your back straight. Pause for a moment at the bottom, then raise your upper body back up until it is in line with your legs. Repeat for the desired number of repetitions.",
+      "image": "media/0489-zhMwOwE.jpg",
+      "animation": "media/0489-zhMwOwE.gif"
+    },
+    {
+      "key": "inchworm",
+      "source_id": "1471",
+      "name": "Inchworm",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "mobility",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a standing position with your feet hip-width apart. Bend forward at the waist and place your hands on the ground in front of you. Walk your hands forward until you are in a high plank position, with your body in a straight line from head to toe. Pause for a moment, then walk your hands back towards your feet, keeping your legs as straight as possible. Once your hands reach your feet, stand back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1471-ZgsNQ6d.jpg",
+      "animation": "media/1471-ZgsNQ6d.gif"
+    },
+    {
+      "key": "incline-push-up",
+      "source_id": "0493",
+      "name": "Incline push-up",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Place your hands on an elevated surface, such as a bench or step, slightly wider than shoulder-width apart. Extend your legs behind you, resting on the balls of your feet, creating a straight line from your head to your heels. Lower your chest towards the elevated surface by bending your elbows, keeping your body in a straight line. Pause for a moment at the bottom, then push yourself back up to the starting position by straightening your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0493-B1EVP9F.jpg",
+      "animation": "media/0493-B1EVP9F.gif"
+    },
+    {
+      "key": "incline-side-plank",
+      "source_id": "3544",
+      "name": "Incline side plank",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_lateral",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Start by lying on your side with your legs extended and stacked on top of each other. Place your forearm on the ground directly below your shoulder, with your elbow bent at a 90-degree angle. Engage your core and lift your hips off the ground, creating a straight line from your head to your feet. Hold this position for the desired amount of time. Lower your hips back down to the ground and repeat on the other side.",
+      "image": "media/3544-5VXmnV5.jpg",
+      "animation": "media/3544-5VXmnV5.gif"
+    },
+    {
+      "key": "incline-treadmill-walk",
+      "source_id": "3666",
+      "name": "Incline treadmill walk",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "cardio_machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the incline level on the treadmill to your desired intensity. Stand on the treadmill with your feet shoulder-width apart. Start walking at a comfortable pace, ensuring that you maintain proper form. Engage your core muscles and keep your back straight throughout the exercise. Continue walking on the incline treadmill for the desired duration of your cardio workout. Gradually decrease the incline and speed of the treadmill to cool down before stopping.",
+      "image": "media/3666-rjiM4L3.jpg",
+      "animation": "media/3666-rjiM4L3.gif"
+    },
+    {
+      "key": "inverted-row",
+      "source_id": "0499",
+      "name": "Inverted row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Set up a bar at waist height or use a suspension trainer. Stand facing the bar or suspension trainer, with your feet shoulder-width apart. Grab the bar or handles with an overhand grip, slightly wider than shoulder-width apart. Lean back, keeping your body straight and your heels on the ground. Pull your chest towards the bar or handles, squeezing your shoulder blades together. Pause for a moment at the top, then slowly lower yourself back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0499-bZGHsAZ.jpg",
+      "animation": "media/0499-bZGHsAZ.gif"
+    },
+    {
+      "key": "jump-rope",
+      "source_id": "2612",
+      "name": "Jump rope",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "rope"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Hold the handles of the jump rope with your hands, palms facing inward. Stand with your feet shoulder-width apart and knees slightly bent. Swing the rope over your head and jump over it as it comes towards your feet. Land softly on the balls of your feet and repeat the jump as the rope comes around again. Continue jumping for the desired duration or number of repetitions.",
+      "image": "media/2612-e1e76I2.jpg",
+      "animation": "media/2612-e1e76I2.gif"
+    },
+    {
+      "key": "jump-squat",
+      "source_id": "0514",
+      "name": "Jump squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "plyometric",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart. Lower your body into a squat position by bending your knees and pushing your hips back. Jump explosively off the ground, extending your hips, knees, and ankles. While in mid-air, quickly bring your arms forward for balance. Land softly on the balls of your feet and immediately go into the next repetition. Repeat for the desired number of repetitions.",
+      "image": "media/0514-LIlE5Tn.jpg",
+      "animation": "media/0514-LIlE5Tn.gif"
+    },
+    {
+      "key": "jumping-jack",
+      "source_id": "3224",
+      "name": "Jumping jack",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Stand with your feet together and your arms by your sides. Jump up, spreading your feet apart and raising your arms above your head. As you land, quickly jump back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3224-1g5bPpA.jpg",
+      "animation": "media/3224-1g5bPpA.gif"
+    },
+    {
+      "key": "jumping-lunge",
+      "source_id": "3582",
+      "name": "Jumping lunge",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "plyometric",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by standing with your feet shoulder-width apart. Take a step forward with your right foot, lowering your body into a lunge position. Push off with your right foot and jump into the air, switching the position of your feet mid-air. Land softly with your left foot forward and immediately lower your body into a lunge position. Continue alternating between lunges and jumps for the desired number of repetitions.",
+      "image": "media/3582-PM1PZjg.jpg",
+      "animation": "media/3582-PM1PZjg.gif"
+    },
+    {
+      "key": "kettlebell-alternating-press",
+      "source_id": "0520",
+      "name": "Kettlebell alternating press",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "vertical_push",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a kettlebell in each hand at shoulder height. Press one kettlebell overhead, fully extending your arm. Lower the kettlebell back to shoulder height. Repeat with the other arm. Continue alternating arms for the desired number of repetitions.",
+      "image": "media/0520-5KLbZWx.jpg",
+      "animation": "media/0520-5KLbZWx.gif"
+    },
+    {
+      "key": "kettlebell-bottoms-up-hang-clean",
+      "source_id": "0525",
+      "name": "Kettlebell bottoms-up hang clean",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "ballistic",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a kettlebell in one hand with an overhand grip. Bend your knees slightly and hinge forward at the hips, keeping your back straight and chest up. Allow the kettlebell to hang down between your legs, with your arm fully extended. In one fluid motion, explosively extend your hips and knees while pulling the kettlebell up towards your shoulder. As the kettlebell reaches shoulder height, rotate your wrist so that the bottom of the kettlebell is facing up. Catch the kettlebell at shoulder height with your elbow bent and your palm facing up. Lower the kettlebell back down to the starting position by reversing the movement. Repeat for the desired number of repetitions, then switch sides.",
+      "image": "media/0525-4KJEpzb.jpg",
+      "animation": "media/0525-4KJEpzb.gif"
+    },
+    {
+      "key": "kettlebell-goblet-squat",
+      "source_id": "0534",
+      "name": "Kettlebell goblet squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "beginner",
+      "pattern": "squat",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a kettlebell close to your chest with both hands. Keeping your chest up and core engaged, lower your body down into a squat position by bending at the knees and hips. Continue lowering until your thighs are parallel to the ground, or as low as you can comfortably go. Pause for a moment at the bottom, then push through your heels to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0534-ZA8b5hc.jpg",
+      "animation": "media/0534-ZA8b5hc.gif"
+    },
+    {
+      "key": "kettlebell-hang-clean",
+      "source_id": "0535",
+      "name": "Kettlebell hang clean",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "ballistic",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a kettlebell in front of your thighs. Bend your knees slightly and hinge forward at the hips, keeping your back straight. Lower the kettlebell towards the ground, allowing it to swing between your legs. Quickly extend your hips and knees, using the momentum to swing the kettlebell up to shoulder height. As the kettlebell reaches shoulder height, rotate your wrists and catch the kettlebell in the rack position, with your elbow tucked in and the kettlebell resting on your forearm. Lower the kettlebell back down to the starting position between your legs, and repeat for the desired number of repetitions.",
+      "image": "media/0535-LHWF7us.jpg",
+      "animation": "media/0535-LHWF7us.gif"
+    },
+    {
+      "key": "kettlebell-one-arm-floor-press",
+      "source_id": "1298",
+      "name": "Kettlebell one-arm floor press",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Lie flat on your back on the floor with your knees bent and feet flat on the ground. Hold the kettlebell in one hand with your palm facing towards your feet and your arm extended straight up towards the ceiling. Slowly lower the kettlebell towards your chest by bending your elbow, keeping your upper arm close to your body. Pause for a moment when the kettlebell is just above your chest, then push it back up to the starting position by extending your elbow. Repeat for the desired number of repetitions, then switch to the other arm.",
+      "image": "media/1298-rg59QCH.jpg",
+      "animation": "media/1298-rg59QCH.gif"
+    },
+    {
+      "key": "kettlebell-one-arm-jerk",
+      "source_id": "0538",
+      "name": "Kettlebell one-arm jerk",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_push",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a kettlebell in one hand at shoulder height. Bend your knees slightly and engage your core. Press the kettlebell overhead in a straight line, fully extending your arm. As you press the kettlebell overhead, simultaneously dip your knees and quickly straighten them to generate momentum. As the kettlebell reaches its highest point, quickly drop underneath it by bending your knees and hips. Catch the kettlebell with a slight bend in your knees and hips, and your arm fully extended overhead. Stand up straight, fully extending your knees and hips, and stabilize the kettlebell overhead. Lower the kettlebell back to the starting position by bending your knees and hips, and repeat for the desired number of repetitions.",
+      "image": "media/0538-S37C94C.jpg",
+      "animation": "media/0538-S37C94C.gif"
+    },
+    {
+      "key": "kettlebell-one-arm-snatch",
+      "source_id": "0542",
+      "name": "Kettlebell one-arm snatch",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "ballistic",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a kettlebell in one hand between your legs. Bend your knees slightly and hinge at the hips, lowering the kettlebell towards the ground. Explosively extend your hips and knees, using the momentum to swing the kettlebell up towards your shoulder. As the kettlebell reaches shoulder height, rotate your hand and punch it straight up overhead, fully extending your arm. Lower the kettlebell back down between your legs and repeat for the desired number of repetitions.",
+      "image": "media/0542-aXcUyKb.jpg",
+      "animation": "media/0542-aXcUyKb.gif"
+    },
+    {
+      "key": "kettlebell-renegade-row",
+      "source_id": "0521",
+      "name": "Kettlebell renegade row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Start in a high plank position with your hands gripping the kettlebells and your feet hip-width apart. Engage your core and keep your body in a straight line from head to heels. Pull one kettlebell up towards your chest, keeping your elbow close to your body. Lower the kettlebell back down to the starting position and repeat with the other arm. Continue alternating arms for the desired number of repetitions.",
+      "image": "media/0521-b9kqlBy.jpg",
+      "animation": "media/0521-b9kqlBy.gif"
+    },
+    {
+      "key": "kettlebell-sumo-high-pull",
+      "source_id": "0548",
+      "name": "Kettlebell sumo high pull",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "ballistic",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet wider than shoulder-width apart, toes pointing outwards. Hold a kettlebell with both hands in front of your body, arms extended downwards. Bend your knees and lower your hips into a squat position, keeping your back straight. Drive through your heels and explosively extend your hips and knees, pulling the kettlebell up towards your chin. As you pull the kettlebell up, keep your elbows high and wide, and squeeze your shoulder blades together. Lower the kettlebell back down to the starting position and repeat for the desired number of repetitions.",
+      "image": "media/0548-8ARQ9Hw.jpg",
+      "animation": "media/0548-8ARQ9Hw.gif"
+    },
+    {
+      "key": "kettlebell-swing",
+      "source_id": "0549",
+      "name": "Kettlebell swing",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hinge",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, toes pointed slightly outward. Hold the kettlebell with both hands in front of your body, arms extended. Bend your knees slightly and hinge at the hips, pushing your butt back. Swing the kettlebell back between your legs, keeping your arms straight and maintaining a flat back. Drive your hips forward and swing the kettlebell up to shoulder height, using the momentum generated by your hips. Allow the kettlebell to swing back down between your legs and repeat the movement for the desired number of repetitions.",
+      "image": "media/0549-UHJlbu3.jpg",
+      "animation": "media/0549-UHJlbu3.gif"
+    },
+    {
+      "key": "kettlebell-thruster",
+      "source_id": "0550",
+      "name": "Kettlebell thruster",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "squat_to_press",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Start by standing with your feet shoulder-width apart, holding a kettlebell in front of your chest with both hands, palms facing each other. Lower into a squat position by bending your knees and pushing your hips back, keeping your chest up and your back straight. As you reach the bottom of the squat, explosively drive through your heels to stand up, simultaneously pressing the kettlebell overhead. Lock out your arms at the top of the movement, fully extending your elbows. Lower the kettlebell back to the starting position by reversing the movement, bending your elbows and lowering the weight back to your chest. Repeat for the desired number of repetitions.",
+      "image": "media/0550-yWxMvB5.jpg",
+      "animation": "media/0550-yWxMvB5.gif"
+    },
+    {
+      "key": "kettlebell-turkish-get-up",
+      "source_id": "0551",
+      "name": "Kettlebell Turkish get-up",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "get_up",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by lying on your back with your legs extended and the kettlebell held in your right hand, arm fully extended above your shoulder. Bend your right knee and place your right foot flat on the ground, keeping your left leg extended. Pressing through your right foot, lift your hips off the ground, coming into a bridge position. Slide your left leg underneath your body, bending your left knee and placing your left foot flat on the ground. Rotate your torso to the left, bringing your left hand to the ground for support. Pressing through your right foot and left hand, lift your torso off the ground, coming into a kneeling position. From the kneeling position, stand up, keeping the kettlebell extended overhead. Reverse the movement to return to the starting position. Repeat the exercise on the other side, starting with the kettlebell in your left hand.",
+      "image": "media/0551-Ha7SZ3y.jpg",
+      "animation": "media/0551-Ha7SZ3y.gif"
+    },
+    {
+      "key": "kettlebell-windmill",
+      "source_id": "0554",
+      "name": "Kettlebell windmill",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_lateral",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a kettlebell in your right hand overhead. Rotate your left foot outwards about 45 degrees and keep your right foot pointing forward. Bend your torso to the left side, keeping your right arm extended overhead and your eyes on the kettlebell. Lower your torso as far as you can while keeping your right arm straight and your left arm extended to the side. Pause for a moment, then return to the starting position by pushing through your right foot and engaging your obliques. Repeat for the desired number of repetitions, then switch sides.",
+      "image": "media/0554-9Tkqa9O.jpg",
+      "animation": "media/0554-9Tkqa9O.gif"
+    },
+    {
+      "key": "kipping-muscle-up",
+      "source_id": "0558",
+      "name": "Kipping muscle-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_pull",
+      "settings": [
+        "crossfit"
+      ],
+      "instructions": "Start by hanging from a pull-up bar with an overhand grip, hands slightly wider than shoulder-width apart. Engage your core and use a swinging motion to generate momentum. As you swing forward, pull your chest towards the bar, using your lats and biceps to initiate the movement. Continue the upward motion until your chest reaches the bar, then transition into a dip position by pushing down on the bar and extending your arms. Lower yourself back down to the starting position by bending your arms and controlling the descent. Repeat for the desired number of repetitions.",
+      "image": "media/0558-pM07UxU.jpg",
+      "animation": "media/0558-pM07UxU.gif"
+    },
+    {
+      "key": "kneeling-plank-shoulder-tap",
+      "source_id": "3239",
+      "name": "Kneeling plank shoulder tap",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "anti_rotation",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Start in a kneeling position with your hands on the ground, shoulder-width apart. Extend your legs behind you, resting on your toes, and lift your body into a plank position. Keeping your core engaged and your hips stable, lift one hand off the ground and tap the opposite shoulder. Return the hand to the ground and repeat with the other hand. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/3239-h1ezqSu.jpg",
+      "animation": "media/3239-h1ezqSu.gif"
+    },
+    {
+      "key": "l-sit",
+      "source_id": "3419",
+      "name": "L-sit",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Sit on the floor with your legs extended in front of you. Place your hands on the floor beside your hips, fingers pointing forward. Engage your core and lift your legs off the ground, keeping them straight. Try to bring your legs parallel to the floor, forming an 'L' shape with your body. Hold this position for as long as you can. Slowly lower your legs back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3419-UpWmA5E.jpg",
+      "animation": "media/3419-UpWmA5E.gif"
+    },
+    {
+      "key": "landmine-180",
+      "source_id": "0562",
+      "name": "Landmine 180",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_rotation",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and hold the barbell with both hands in front of your chest. Bend your knees slightly and rotate your torso to the right, swinging the barbell down towards your right hip. As you reach the bottom of the movement, quickly reverse the motion and rotate your torso to the left, swinging the barbell up and across your body towards your left shoulder. Continue this twisting motion, alternating sides, for the desired number of repetitions.",
+      "image": "media/0562-QYysSLV.jpg",
+      "animation": "media/0562-QYysSLV.gif"
+    },
+    {
+      "key": "leg-press-45",
+      "source_id": "1463",
+      "name": "Leg press (45°)",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "squat",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat of the sled machine so that your knees are at a 90-degree angle when your feet are on the footplate. Sit on the sled machine with your back flat against the backrest and your feet shoulder-width apart on the footplate. Grip the handles on the sides of the seat for stability. Push against the footplate to extend your legs, straightening them completely. Pause for a moment at the top, then slowly bend your knees to lower the footplate back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1463-2Qh2J1e.jpg",
+      "animation": "media/1463-2Qh2J1e.gif"
+    },
+    {
+      "key": "machine-assisted-pull-up",
+      "source_id": "0017",
+      "name": "Machine-assisted pull-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "vertical_pull",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the machine to your desired weight and height settings. Grasp the handles with an overhand grip, slightly wider than shoulder-width apart. Hang with your arms fully extended and your feet off the ground. Engage your back muscles and pull your body up towards the handles, keeping your elbows close to your body. Continue pulling until your chin is above the handles. Pause for a moment at the top, then slowly lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0017-kiJ4Z2K.jpg",
+      "animation": "media/0017-kiJ4Z2K.gif"
+    },
+    {
+      "key": "machine-biceps-curl",
+      "source_id": "0575",
+      "name": "Machine biceps curl",
+      "primary_muscle": "biceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and position yourself on the machine with your back against the pad. Grasp the handles with an underhand grip, palms facing up, and keep your elbows close to your sides. Exhale and curl the handles upward, contracting your biceps. Pause for a moment at the top of the movement, squeezing your biceps. Inhale and slowly lower the handles back to the starting position, fully extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0575-q6y3OhV.jpg",
+      "animation": "media/0575-q6y3OhV.gif"
+    },
+    {
+      "key": "machine-chest-press",
+      "source_id": "0577",
+      "name": "Machine chest press",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_push",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and position yourself on the machine with your back flat against the pad. Grasp the handles with an overhand grip and position your elbows at a 90-degree angle. Push the handles forward until your arms are fully extended, exhaling during the movement. Pause briefly at the end of the movement, then slowly return to the starting position, inhaling as you do so. Repeat for the desired number of repetitions.",
+      "image": "media/0577-T0yTjgW.jpg",
+      "animation": "media/0577-T0yTjgW.gif"
+    },
+    {
+      "key": "machine-hack-squat",
+      "source_id": "0743",
+      "name": "Machine hack squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "squat",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the sled machine to a comfortable position for your height. Stand with your feet shoulder-width apart on the platform, toes slightly pointed outwards. Hold onto the handles or bars for stability. Lower your body by bending your knees and hips, keeping your back straight and chest up. Continue lowering until your thighs are parallel to the ground or slightly below. Pause for a moment, then push through your heels to raise your body back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0743-Qa55kX1.jpg",
+      "animation": "media/0743-Qa55kX1.gif"
+    },
+    {
+      "key": "machine-leg-extension",
+      "source_id": "0585",
+      "name": "Machine leg extension",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "knee_extension",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and backrest of the machine to fit your body. Sit on the machine with your back against the backrest and your feet on the footpad. Grasp the handles or sidebars for stability. Extend your legs forward by straightening your knees, lifting the weight. Pause for a moment at the top, then slowly lower the weight back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0585-my33uHU.jpg",
+      "animation": "media/0585-my33uHU.gif"
+    },
+    {
+      "key": "machine-lying-leg-curl-2-up-1-down",
+      "source_id": "3195",
+      "name": "Machine lying leg curl (2 up, 1 down)",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "advanced",
+      "pattern": "knee_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the machine to fit your body and sit on it with your back against the backrest. Place your legs on the lever pad, just above your ankles. Grasp the handles on the sides of the machine for support. Keeping your upper body still, exhale and curl your legs up towards your glutes. Pause for a moment at the top, then inhale and slowly lower your legs back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3195-UXpKJoq.jpg",
+      "animation": "media/3195-UXpKJoq.gif"
+    },
+    {
+      "key": "machine-seated-calf-raise",
+      "source_id": "0594",
+      "name": "Machine seated calf raise",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "calf_raise",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height so that your knees are slightly bent and your feet are flat on the footplate. Place your toes on the footplate with your heels hanging off the edge. Grasp the handles or the sides of the seat for stability. Push through the balls of your feet to raise your heels as high as possible. Pause for a moment at the top, then slowly lower your heels back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0594-bOOdeyc.jpg",
+      "animation": "media/0594-bOOdeyc.gif"
+    },
+    {
+      "key": "machine-seated-crunch",
+      "source_id": "0595",
+      "name": "Machine seated crunch",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and chest pad position according to your comfort. Sit on the machine with your back against the chest pad and your feet flat on the floor. Grasp the handles or side bars for stability. Engage your abs and slowly lean back, allowing the chest pad to move with you. Pause for a moment at the maximum contraction, feeling the tension in your abs. Slowly return to the starting position by contracting your abs and pulling yourself back up. Repeat for the desired number of repetitions.",
+      "image": "media/0595-ZnJHhMk.jpg",
+      "animation": "media/0595-ZnJHhMk.gif"
+    },
+    {
+      "key": "machine-seated-fly",
+      "source_id": "0596",
+      "name": "Machine seated fly",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "chest_fly",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and position yourself on the machine with your back against the pad. Grasp the handles with a pronated grip and keep your elbows slightly bent. Exhale and push the handles forward, bringing them together in front of your chest. Pause for a moment, squeezing your chest muscles. Inhale and slowly return to the starting position, allowing your chest muscles to stretch. Repeat for the desired number of repetitions.",
+      "image": "media/0596-v3xmPAR.jpg",
+      "animation": "media/0596-v3xmPAR.gif"
+    },
+    {
+      "key": "machine-seated-hip-abduction",
+      "source_id": "0597",
+      "name": "Machine seated hip abduction",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hip_abduction",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height so that your knees are at a 90-degree angle. Sit on the machine with your back against the backrest and your feet on the footrests. Place your hands on the side handles for stability. Engage your abductors and slowly push your legs apart, away from the midline of your body. Pause for a moment at the end of the movement, then slowly bring your legs back together to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0597-CHpahtl.jpg",
+      "animation": "media/0597-CHpahtl.gif"
+    },
+    {
+      "key": "machine-seated-leg-curl",
+      "source_id": "0599",
+      "name": "Machine seated leg curl",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "knee_flexion",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the machine to fit your body and sit on it with your back against the backrest. Place your lower legs under the padded lever, just above your ankles. Grasp the handles on the sides of the machine for support. Keeping your upper legs stationary, exhale and curl your legs up as far as possible. Hold the contracted position for a brief pause as you squeeze your hamstrings. Inhale and slowly lower the lever back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0599-Zg3XY7P.jpg",
+      "animation": "media/0599-Zg3XY7P.gif"
+    },
+    {
+      "key": "machine-seated-reverse-fly",
+      "source_id": "0602",
+      "name": "Machine seated reverse fly",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "rear_delt",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and position yourself on the machine with your chest against the pad and your feet flat on the floor. Grasp the handles with an overhand grip and keep your arms slightly bent. Exhale and squeeze your shoulder blades together as you pull the handles back and outward, away from your body. Pause for a moment at the peak contraction, then inhale and slowly return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0602-myfUsKf.jpg",
+      "animation": "media/0602-myfUsKf.gif"
+    },
+    {
+      "key": "machine-shoulder-press",
+      "source_id": "0603",
+      "name": "Machine shoulder press",
+      "primary_muscle": "shoulders",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "vertical_push",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and position yourself on the machine with your back against the backrest. Grasp the handles with an overhand grip and position your hands at shoulder level. Push the handles upward until your arms are fully extended, but do not lock your elbows. Pause for a moment at the top, then slowly lower the handles back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0603-67n3r98.jpg",
+      "animation": "media/0603-67n3r98.gif"
+    },
+    {
+      "key": "machine-standing-calf-raise",
+      "source_id": "0605",
+      "name": "Machine standing calf raise",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "calf_raise",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the machine to your height and stand with your feet shoulder-width apart. Place your shoulders under the pads and hold onto the handles for stability. Raise your heels as high as possible by extending your ankles. Pause for a moment at the top, then slowly lower your heels back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0605-ykUOVze.jpg",
+      "animation": "media/0605-ykUOVze.gif"
+    },
+    {
+      "key": "machine-t-bar-row",
+      "source_id": "0606",
+      "name": "Machine T-bar row",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "horizontal_pull",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and footplate position to ensure proper alignment. Sit on the machine with your chest against the pad and your feet flat on the footplate. Grasp the handles with an overhand grip, slightly wider than shoulder-width apart. Keep your back straight and engage your core. Pull the handles towards your torso, squeezing your shoulder blades together. Pause for a moment at the peak contraction, then slowly release the handles back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0606-aaXr7ld.jpg",
+      "animation": "media/0606-aaXr7ld.gif"
+    },
+    {
+      "key": "machine-triceps-extension",
+      "source_id": "0607",
+      "name": "Machine triceps extension",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "elbow_extension",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and position yourself on the machine with your back against the pad. Grasp the handles with an overhand grip and fully extend your arms in front of you. Keeping your upper arms stationary, slowly lower the handles towards your forehead by bending your elbows. Pause for a moment at the bottom, then push the handles back up to the starting position by extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0607-Ser9eQp.jpg",
+      "animation": "media/0607-Ser9eQp.gif"
+    },
+    {
+      "key": "medicine-ball-chest-pass",
+      "source_id": "1302",
+      "name": "Medicine ball chest pass",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "medicine_ball"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "plyometric",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding the medicine ball at chest level. Extend your arms forward, pushing the medicine ball away from your chest with force. As you release the ball, follow through with your arms and torso, transferring your weight from your back foot to your front foot. Catch the ball as it rebounds off the wall or partner, and immediately repeat the movement. Continue for the desired number of repetitions.",
+      "image": "media/1302-aDoFKrE.jpg",
+      "animation": "media/1302-aDoFKrE.gif"
+    },
+    {
+      "key": "medicine-ball-slam",
+      "source_id": "1354",
+      "name": "Medicine ball slam",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "medicine_ball"
+      ],
+      "difficulty": "beginner",
+      "pattern": "ballistic",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart, holding a medicine ball with both hands above your head. Engage your core and keep your back straight. Bend your knees slightly and forcefully slam the medicine ball down to the ground in front of you. As you slam the ball down, use your entire body to generate power, including your shoulders and core. Catch the ball on the bounce and repeat for the desired number of repetitions.",
+      "image": "media/1354-oHg8eop.jpg",
+      "animation": "media/1354-oHg8eop.gif"
+    },
+    {
+      "key": "mountain-climber",
+      "source_id": "0630",
+      "name": "Mountain climber",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a high plank position with your hands directly under your shoulders and your body in a straight line. Engage your core and bring your right knee towards your chest, then quickly switch and bring your left knee towards your chest. Continue alternating legs in a running motion, keeping your hips low and your core engaged. Maintain a steady pace and breathe evenly throughout the exercise. Repeat for the desired number of repetitions.",
+      "image": "media/0630-RJgzwny.jpg",
+      "animation": "media/0630-RJgzwny.gif"
+    },
+    {
+      "key": "muscle-up",
+      "source_id": "0631",
+      "name": "Muscle-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_pull",
+      "settings": [
+        "crossfit"
+      ],
+      "instructions": "Start by hanging from a pull-up bar with your palms facing away from you and your arms fully extended. Engage your core and pull your body up towards the bar, leading with your chest. As you reach the top of the movement, transition your grip so that your palms are facing towards you. Continue pulling yourself up until your chest is above the bar and your arms are fully flexed. Reverse the movement by slowly lowering yourself back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0631-yJUHKTn.jpg",
+      "animation": "media/0631-yJUHKTn.gif"
+    },
+    {
+      "key": "nordic-curl-bench-supported",
+      "source_id": "0496",
+      "name": "Nordic curl (bench-supported)",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "bench"
+      ],
+      "difficulty": "advanced",
+      "pattern": "knee_flexion",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Lie face down on a bench with your hips at the edge and your legs extended straight behind you. Hold onto the bench for support. Keeping your upper body still, bend your knees and curl your legs towards your glutes. Pause for a moment at the top, then slowly extend your legs back to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0496-ms7tjSG.jpg",
+      "animation": "media/0496-ms7tjSG.gif"
+    },
+    {
+      "key": "one-leg-floor-calf-raise",
+      "source_id": "1387",
+      "name": "One-leg floor calf raise",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "calf_raise",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet hip-width apart and place your hands on a wall or sturdy object for balance. Lift one foot off the ground and balance on the other foot. Slowly raise your heel off the ground, lifting your body up onto the ball of your foot. Pause for a moment at the top, then slowly lower your heel back down to the starting position. Repeat for the desired number of repetitions, then switch legs and repeat.",
+      "image": "media/1387-0jp9Rlz.jpg",
+      "animation": "media/1387-0jp9Rlz.gif"
+    },
+    {
+      "key": "pistol-squat",
+      "source_id": "1759",
+      "name": "Pistol squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "squat",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and arms extended in front of you. Lift your right foot off the ground and extend it forward. Slowly lower your body down by bending your left knee and pushing your hips back. Keep your chest up and your back straight as you lower yourself down. Lower until your left thigh is parallel to the ground, or as low as you can comfortably go. Pause for a moment at the bottom, then push through your left heel to return to the starting position. Repeat for the desired number of repetitions, then switch legs.",
+      "image": "media/1759-nqs5HGV.jpg",
+      "animation": "media/1759-nqs5HGV.gif"
+    },
+    {
+      "key": "power-clean",
+      "source_id": "0648",
+      "name": "Power clean",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "olympic_lift",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start with the barbell on the ground in front of you, with your feet shoulder-width apart. Bend down and grip the barbell with an overhand grip, slightly wider than shoulder-width apart. Keep your back straight and chest up as you lift the barbell off the ground, extending your hips and knees. As the barbell reaches your mid-thigh, explosively pull it upwards, shrugging your shoulders and pulling your elbows high and to the sides. As the barbell reaches its highest point, quickly drop underneath it, rotating your elbows around and catching the barbell on your shoulders in a front squat position. Stand up with the barbell, fully extending your hips and knees. Lower the barbell back down to the starting position, keeping control of the weight throughout the movement. Repeat for the desired number of repetitions.",
+      "image": "media/0648-SiWCcTN.jpg",
+      "animation": "media/0648-SiWCcTN.gif"
+    },
+    {
+      "key": "pull-up",
+      "source_id": "0652",
+      "name": "Pull-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "vertical_pull",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Hang from a pull-up bar with your palms facing away from you and your arms fully extended. Engage your core and squeeze your shoulder blades together. Pull your body up towards the bar by bending your elbows and bringing your chest towards the bar. Pause at the top of the movement, then slowly lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0652-lBDjFxJ.jpg",
+      "animation": "media/0652-lBDjFxJ.gif"
+    },
+    {
+      "key": "push-up",
+      "source_id": "0662",
+      "name": "Push-up",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a high plank position with your hands slightly wider than shoulder-width apart and your feet together. Engage your core and lower your body towards the ground by bending your elbows, keeping your body in a straight line. Pause for a moment when your chest is just above the ground, then push yourself back up to the starting position by straightening your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0662-I4hDWkc.jpg",
+      "animation": "media/0662-I4hDWkc.gif"
+    },
+    {
+      "key": "reverse-crunch",
+      "source_id": "0872",
+      "name": "Reverse crunch",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Lie flat on your back with your arms extended along your sides. Bend your knees and lift your feet off the ground, bringing your thighs perpendicular to the floor. Contract your abs and curl your hips off the floor, bringing your knees towards your chest. Pause for a moment at the top, then slowly lower your hips back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0872-nCU1Ekp.jpg",
+      "animation": "media/0872-nCU1Ekp.gif"
+    },
+    {
+      "key": "ring-dip",
+      "source_id": "0677",
+      "name": "Ring dip",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "rings"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_push",
+      "settings": [
+        "crossfit"
+      ],
+      "instructions": "Start by hanging from the rings with your arms fully extended and your body straight. Lower your body by bending your elbows until your shoulders are below your elbows. Push yourself back up to the starting position by straightening your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0677-ezTvXcr.jpg",
+      "animation": "media/0677-ezTvXcr.gif"
+    },
+    {
+      "key": "rope-climb",
+      "source_id": "0680",
+      "name": "Rope climb",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "rope"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_pull",
+      "settings": [
+        "crossfit"
+      ],
+      "instructions": "Stand facing the rope with your feet shoulder-width apart. Grab the rope with both hands, palms facing towards you. Bend your knees slightly and engage your core. Begin pulling yourself up the rope by alternating hand-over-hand movements. Use your legs to assist in the upward movement. Continue climbing until you reach the desired height or the top of the rope. To descend, reverse the hand-over-hand movement while controlling your descent. Repeat for the desired number of repetitions.",
+      "image": "media/0680-yaAxcQr.jpg",
+      "animation": "media/0680-yaAxcQr.gif"
+    },
+    {
+      "key": "run",
+      "source_id": "0685",
+      "name": "Run",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by standing upright with your feet hip-width apart. Engage your core and keep your upper body relaxed. Begin jogging in place, lifting your knees up towards your chest and landing softly on the balls of your feet. Maintain a steady pace and continue jogging for the desired duration or distance. Remember to breathe deeply and maintain good posture throughout the exercise.",
+      "image": "media/0685-oLrKqDH.jpg",
+      "animation": "media/0685-oLrKqDH.gif"
+    },
+    {
+      "key": "russian-twist",
+      "source_id": "0687",
+      "name": "Russian twist",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_rotation",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Sit on the ground with your knees bent and feet flat on the floor. Lean back slightly while keeping your back straight and your core engaged. Hold your hands together in front of your chest or hold a weight if desired. Lift your feet off the ground, balancing on your sit bones. Twist your torso to the right, bringing your hands or weight towards the right side of your body. Pause for a moment, then twist your torso to the left, bringing your hands or weight towards the left side of your body. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/0687-XVDdcoj.jpg",
+      "animation": "media/0687-XVDdcoj.gif"
+    },
+    {
+      "key": "scapular-pull-up",
+      "source_id": "0688",
+      "name": "Scapular pull-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "beginner",
+      "pattern": "scapular",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by hanging from a pull-up bar with your palms facing away from you and your arms fully extended. Retract your shoulder blades by pulling them down and back. Engage your back muscles and pull your body up towards the bar, focusing on squeezing your shoulder blades together. Pause for a moment at the top of the movement, then slowly lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0688-uTBt1HV.jpg",
+      "animation": "media/0688-uTBt1HV.gif"
+    },
+    {
+      "key": "self-assisted-nordic-curl",
+      "source_id": "0696",
+      "name": "Self-assisted Nordic curl",
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "knee_flexion",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Lie flat on your back with your legs extended and your arms by your sides. Bend your knees and place your feet flat on the ground, hip-width apart. Lift your hips off the ground, engaging your glutes and hamstrings. Slowly curl your legs towards your glutes, keeping your hips lifted. Pause for a moment at the top, then slowly extend your legs back to the starting position. Lower your hips back down to the ground. Repeat for the desired number of repetitions.",
+      "image": "media/0696-E4PwJqI.jpg",
+      "animation": "media/0696-E4PwJqI.gif"
+    },
+    {
+      "key": "side-hip-abduction",
+      "source_id": "0710",
+      "name": "Side hip abduction",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "hip_abduction",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and your hands on your hips. Shift your weight to one leg and lift the opposite leg out to the side, keeping it straight. Pause for a moment at the top, then slowly lower your leg back down to the starting position. Repeat on the other side. Continue alternating sides for the desired number of repetitions.",
+      "image": "media/0710-7WaDzyL.jpg",
+      "animation": "media/0710-7WaDzyL.gif"
+    },
+    {
+      "key": "single-arm-push-up",
+      "source_id": "0725",
+      "name": "Single-arm push-up",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "advanced",
+      "pattern": "horizontal_push",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a push-up position with your hands shoulder-width apart and one hand placed slightly wider than the other. Engage your core and lower your body towards the ground by bending your elbows, keeping your back straight. As you lower yourself, shift your weight to one side and lift the opposite arm off the ground, extending it straight out to the side. Push through your chest and triceps to raise your body back up to the starting position, while simultaneously lowering your extended arm back to the ground. Repeat the movement, alternating the arm you extend with each repetition.",
+      "image": "media/0725-MUic5zN.jpg",
+      "animation": "media/0725-MUic5zN.gif"
+    },
+    {
+      "key": "single-leg-calf-press-on-leg-press",
+      "source_id": "1392",
+      "name": "Single-leg calf press on leg press",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "machine"
+      ],
+      "difficulty": "advanced",
+      "pattern": "calf_raise",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat of the leg press machine so that your knees are slightly bent when your feet are on the sled. Sit on the machine with your back against the backrest and your feet on the sled, shoulder-width apart. Place your toes and the balls of your feet on the sled, keeping your heels off. Push the sled forward by extending your ankles, keeping your knees slightly bent. Pause for a moment at the top, then slowly lower the sled back down by flexing your ankles. Repeat for the desired number of repetitions.",
+      "image": "media/1392-u0pLNgz.jpg",
+      "animation": "media/1392-u0pLNgz.gif"
+    },
+    {
+      "key": "single-leg-glute-bridge",
+      "source_id": "3645",
+      "name": "Single-leg glute bridge",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hip_extension",
+      "settings": [
+        "home",
+        "gym"
+      ],
+      "instructions": "Lie on your back with your knees bent and feet flat on the ground. Extend one leg straight out in front of you. Engage your glutes and lift your hips off the ground, forming a straight line from your knees to your shoulders. Hold for a moment at the top, then slowly lower your hips back down to the starting position. Repeat for the desired number of repetitions, then switch legs.",
+      "image": "media/3645-rmEukuS.jpg",
+      "animation": "media/3645-rmEukuS.gif"
+    },
+    {
+      "key": "sit-up-with-arms-on-chest",
+      "source_id": "3679",
+      "name": "Sit-up with arms on chest",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "core_flexion",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Lie flat on your back with your knees bent and feet flat on the ground. Cross your arms over your chest. Engaging your abs, lift your upper body off the ground towards your knees. Pause for a moment at the top, then slowly lower your upper body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/3679-6ZCiYWQ.jpg",
+      "animation": "media/3679-6ZCiYWQ.gif"
+    },
+    {
+      "key": "skater-hop",
+      "source_id": "3361",
+      "name": "Skater hop",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "plyometric",
+      "settings": [
+        "home",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart. Bend your knees slightly and jump to the right, landing on your right foot. As you land, swing your left leg behind your right leg and tap the ground with your left toes. Immediately jump to the left, landing on your left foot. As you land, swing your right leg behind your left leg and tap the ground with your right toes. Continue alternating sides, jumping and tapping the ground with each leg. Repeat for the desired number of repetitions.",
+      "image": "media/3361-zfNHMN9.jpg",
+      "animation": "media/3361-zfNHMN9.gif"
+    },
+    {
+      "key": "ski-erg",
+      "source_id": "2142",
+      "name": "Ski erg",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "cardio_machine"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "conditioning",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Adjust the seat height and footrests to a comfortable position. Grasp the handles with an overhand grip, palms facing down. Sit up straight with your feet flat on the footrests. Extend your arms straight out in front of you, keeping your elbows slightly bent. Engage your triceps and push the handles down towards your thighs. Pause for a moment at the bottom, then slowly return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/2142-vpQaQkH.jpg",
+      "animation": "media/2142-vpQaQkH.gif"
+    },
+    {
+      "key": "smith-machine-bench-press",
+      "source_id": "0748",
+      "name": "Smith machine bench press",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "smith_machine",
+        "bench"
+      ],
+      "difficulty": "beginner",
+      "pattern": "horizontal_push",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the height of the smith machine bar to chest level. Lie flat on the bench with your feet firmly planted on the ground. Grip the bar with an overhand grip slightly wider than shoulder-width apart. Unrack the bar and lower it towards your chest, keeping your elbows tucked in. Pause for a moment when the bar touches your chest. Push the bar back up to the starting position, fully extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/0748-trqKQv2.jpg",
+      "animation": "media/0748-trqKQv2.gif"
+    },
+    {
+      "key": "smith-machine-squat",
+      "source_id": "0770",
+      "name": "Smith machine squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "smith_machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "squat",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Set up the smith machine with the barbell at an appropriate height for your squat. Stand with your feet shoulder-width apart, toes slightly turned out. Position yourself under the barbell, resting it on your upper traps and shoulders. Grip the barbell with a wide grip, slightly wider than shoulder-width apart. Engage your core and unrack the barbell, stepping back to clear the rack. Keeping your chest up and back straight, initiate the squat by bending at the hips and knees. Lower your body until your thighs are parallel to the ground or slightly below. Pause for a moment at the bottom, then drive through your heels to return to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0770-jFtipLl.jpg",
+      "animation": "media/0770-jFtipLl.gif"
+    },
+    {
+      "key": "snatch-pull",
+      "source_id": "0776",
+      "name": "Snatch pull",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "olympic_lift",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and the barbell on the ground in front of you. Bend your knees and hinge at the hips to lower into a squat position, gripping the barbell with an overhand grip. Keep your back straight and chest up as you drive through your heels to lift the barbell off the ground, extending your hips and knees. As the barbell reaches hip level, explosively pull it upwards, shrugging your shoulders and pulling your elbows high and to the sides. As the barbell reaches its highest point, quickly drop underneath it, pulling yourself into a deep squat position. Catch the barbell overhead with your arms fully extended and your knees bent. Stand up by extending your hips and knees, keeping the barbell overhead. Lower the barbell back down to the starting position by reversing the movement. Repeat for the desired number of repetitions.",
+      "image": "media/0776-dG5Smob.jpg",
+      "animation": "media/0776-dG5Smob.gif"
+    },
+    {
+      "key": "split-squat",
+      "source_id": "2368",
+      "name": "Split squat",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "lunge",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart. Take a step forward with one foot and place it about two feet in front of the other foot. Lower your body by bending your knees and hips, keeping your back straight. Continue lowering until your front thigh is parallel to the ground, and your back knee is hovering just above the ground. Pause for a moment, then push through your front heel to return to the starting position. Repeat for the desired number of repetitions, then switch legs and repeat.",
+      "image": "media/2368-9E25EOx.jpg",
+      "animation": "media/2368-9E25EOx.gif"
+    },
+    {
+      "key": "squat-jerk",
+      "source_id": "0786",
+      "name": "Squat jerk",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "barbell"
+      ],
+      "difficulty": "advanced",
+      "pattern": "olympic_lift",
+      "settings": [
+        "crossfit"
+      ],
+      "instructions": "Start with the barbell resting on your shoulders, with your feet shoulder-width apart. Lower your body into a squat position, keeping your chest up and your knees tracking over your toes. As you reach the bottom of the squat, explosively drive through your legs and push the barbell overhead. As the barbell reaches its peak, quickly drop into a split position, with one foot forward and one foot back. Catch the barbell overhead with your arms fully extended and your back knee slightly touching the ground. Stand up from the split position, bringing your feet back together. Lower the barbell back to your shoulders and repeat for the desired number of repetitions.",
+      "image": "media/0786-IMRsOCn.jpg",
+      "animation": "media/0786-IMRsOCn.gif"
+    },
+    {
+      "key": "squat-to-overhead-reach",
+      "source_id": "1685",
+      "name": "Squat to overhead reach",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "squat",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and toes slightly turned out. Lower your body down into a squat position by bending your knees and pushing your hips back. As you come up from the squat, extend your arms overhead, reaching towards the ceiling. Return to the starting position by lowering your arms and bending your knees to squat down again. Repeat for the desired number of repetitions.",
+      "image": "media/1685-QChZi3x.jpg",
+      "animation": "media/1685-QChZi3x.gif"
+    },
+    {
+      "key": "standing-calf-raise-on-a-step",
+      "source_id": "1490",
+      "name": "Standing calf raise on a step",
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "calf_raise",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand on the edge of a step or a sturdy platform with your heels hanging off and your toes on the step. Hold onto a railing or wall for balance if needed. Slowly raise your heels as high as possible, lifting your body weight onto the balls of your feet. Pause for a moment at the top, then slowly lower your heels back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/1490-6HmFgmx.jpg",
+      "animation": "media/1490-6HmFgmx.gif"
+    },
+    {
+      "key": "stationary-bike-easy",
+      "source_id": "0798",
+      "name": "Stationary bike (easy)",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "cardio_machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Adjust the seat height and position on the stationary bike to ensure proper alignment. Place your feet on the pedals and secure them with the straps if available. Start pedaling at a comfortable pace, keeping your back straight and core engaged. Maintain a steady rhythm and increase the resistance level if desired. Continue pedaling for the desired duration of your cardio workout. Cool down by gradually reducing your pace and resistance level. Stretch your leg muscles after the workout to prevent tightness and promote recovery.",
+      "image": "media/0798-a8VDgLw.jpg",
+      "animation": "media/0798-a8VDgLw.gif"
+    },
+    {
+      "key": "stationary-bike-fast",
+      "source_id": "2138",
+      "name": "Stationary bike (fast)",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "cardio_machine"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "conditioning",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Adjust the seat height and position to ensure proper alignment. Place your feet on the pedals and secure them with the straps if available. Start pedaling at a comfortable pace. Maintain a steady rhythm and increase the resistance as desired. Engage your core muscles to maintain stability and proper posture. Continue pedaling for the desired duration of your workout. Gradually decrease the resistance and slow down before coming to a complete stop. Stretch your legs and cool down after the workout.",
+      "image": "media/2138-H1PESYI.jpg",
+      "animation": "media/2138-H1PESYI.gif"
+    },
+    {
+      "key": "suspension-trainer-fallout",
+      "source_id": "0805",
+      "name": "Suspension trainer fallout",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "suspension_trainer"
+      ],
+      "difficulty": "advanced",
+      "pattern": "core_anti_extension",
+      "settings": [
+        "home"
+      ],
+      "instructions": "Attach a suspension trainer to a high anchor point and adjust the straps to waist height. Stand facing away from the anchor point and hold the handles with your arms extended in front of you. Lean forward at the waist, keeping your body straight and your core engaged. Lower your body as far as you can while maintaining control and tension in your abs. Pause for a moment at the bottom, then slowly raise your body back up to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0805-X3TCNEU.jpg",
+      "animation": "media/0805-X3TCNEU.gif"
+    },
+    {
+      "key": "trap-bar-deadlift",
+      "source_id": "0811",
+      "name": "Trap bar deadlift",
+      "primary_muscle": "glutes",
+      "secondary_muscles": [],
+      "equipment": [
+        "trap_bar"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "hinge",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart and the trap bar on the ground in front of you. Bend at the hips and knees to lower yourself down and grip the handles of the trap bar with an overhand grip. Keep your back straight and chest up as you begin to lift the trap bar off the ground by extending your hips and knees. As you lift, focus on driving through your heels and squeezing your glutes at the top of the movement. Lower the trap bar back down to the ground by bending at the hips and knees, keeping your back straight throughout the movement. Repeat for the desired number of repetitions.",
+      "image": "media/0811-jQGwmxN.jpg",
+      "animation": "media/0811-jQGwmxN.gif"
+    },
+    {
+      "key": "treadmill-run",
+      "source_id": "0684",
+      "name": "Treadmill run",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "cardio_machine"
+      ],
+      "difficulty": "beginner",
+      "pattern": "conditioning",
+      "settings": [
+        "gym"
+      ],
+      "instructions": "Start by standing upright with your feet hip-width apart. Engage your core and keep your upper body relaxed. Begin jogging in place, lifting your knees up towards your chest and landing softly on the balls of your feet. Maintain a steady pace and continue jogging for the desired duration or distance. Remember to breathe deeply and maintain good posture throughout the exercise.",
+      "image": "media/0684-y5p0H8a.jpg",
+      "animation": "media/0684-y5p0H8a.gif"
+    },
+    {
+      "key": "walking-lunge",
+      "source_id": "1460",
+      "name": "Walking lunge",
+      "primary_muscle": "quads",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "lunge",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand with your feet shoulder-width apart. Take a step forward with your right leg, lowering your body into a lunge position. Keep your torso upright and your front knee aligned with your ankle. Push off with your right foot and bring your left foot forward, stepping into a lunge position with your left leg. Continue alternating legs and walking forward, maintaining a controlled and steady pace. Repeat for the desired number of repetitions.",
+      "image": "media/1460-IZVHb27.jpg",
+      "animation": "media/1460-IZVHb27.gif"
+    },
+    {
+      "key": "weighted-close-grip-chin-up",
+      "source_id": "2987",
+      "name": "Weighted close-grip chin-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_pull",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Stand in front of the dip cage and grab the parallel bars with an underhand grip, hands shoulder-width apart. Hang from the bars with your arms fully extended, feet off the ground, and body straight. Engage your back muscles and pull your body up towards the bars, keeping your elbows close to your sides. Continue pulling until your chin is above the bars, then pause for a moment. Slowly lower your body back down to the starting position, fully extending your arms. Repeat for the desired number of repetitions.",
+      "image": "media/2987-Gk1r408.jpg",
+      "animation": "media/2987-Gk1r408.gif"
+    },
+    {
+      "key": "weighted-plank",
+      "source_id": "2135",
+      "name": "Weighted plank",
+      "primary_muscle": "core",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "intermediate",
+      "pattern": "core_anti_extension",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start by lying face down on the floor. Place your forearms on the ground, with your elbows directly under your shoulders. Extend your legs straight out behind you, with your toes on the ground. Engage your core and lift your body off the ground, balancing on your forearms and toes. Keep your body in a straight line from your head to your heels. Hold this position for the desired amount of time. Lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/2135-VBAWRPG.jpg",
+      "animation": "media/2135-VBAWRPG.gif"
+    },
+    {
+      "key": "weighted-pull-up",
+      "source_id": "0841",
+      "name": "Weighted pull-up",
+      "primary_muscle": "back",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_pull",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Grab the pull-up bar with an overhand grip, slightly wider than shoulder-width apart. Hang from the bar with your arms fully extended and your body straight. Engage your back muscles and pull your body up towards the bar, keeping your elbows close to your body. Continue pulling until your chin is above the bar. Pause for a moment at the top, then slowly lower your body back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0841-HMzLjXx.jpg",
+      "animation": "media/0841-HMzLjXx.gif"
+    },
+    {
+      "key": "weighted-straight-bar-dip",
+      "source_id": "3313",
+      "name": "Weighted straight bar dip",
+      "primary_muscle": "chest",
+      "secondary_muscles": [],
+      "equipment": [
+        "pullup_bar"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_push",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Position yourself between parallel bars with your arms fully extended and your body straight. Lower your body by bending your elbows until your upper arms are parallel to the ground. Pause for a moment, then push yourself back up to the starting position by straightening your arms. Repeat for the desired number of repetitions.",
+      "image": "media/3313-Ff18ItA.jpg",
+      "animation": "media/3313-Ff18ItA.gif"
+    },
+    {
+      "key": "weighted-triceps-dip",
+      "source_id": "1755",
+      "name": "Weighted triceps dip",
+      "primary_muscle": "triceps",
+      "secondary_muscles": [],
+      "equipment": [
+        "dip_bars"
+      ],
+      "difficulty": "advanced",
+      "pattern": "vertical_push",
+      "settings": [
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Sit on the edge of a bench or chair with your hands gripping the edge next to your hips. Slide your butt off the front of the bench with your legs extended in front of you. Keep your back close to the bench and your elbows slightly bent. Lower your body by bending your elbows until your upper arms are parallel to the floor. Push yourself back up to the starting position by straightening your arms. Repeat for the desired number of repetitions.",
+      "image": "media/1755-bZq4bwK.jpg",
+      "animation": "media/1755-bZq4bwK.gif"
+    },
+    {
+      "key": "worlds-greatest-stretch",
+      "source_id": "1604",
+      "name": "World's greatest stretch",
+      "primary_muscle": "full_body",
+      "secondary_muscles": [],
+      "equipment": [
+        "bodyweight"
+      ],
+      "difficulty": "beginner",
+      "pattern": "mobility",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Start in a lunge position with your right foot forward and your left foot back. Place your hands on the ground on either side of your right foot. Lower your left knee to the ground and extend your right leg, keeping your right foot flat on the ground. Rotate your torso to the right, reaching your right arm up towards the ceiling. Hold this position for a few seconds, then return to the starting position. Switch sides and repeat the stretch with your left foot forward.",
+      "image": "media/1604-DFGXwZr.jpg",
+      "animation": "media/1604-DFGXwZr.gif"
+    },
+    {
+      "key": "wrist-roller",
+      "source_id": "0859",
+      "name": "Wrist roller",
+      "primary_muscle": "forearms",
+      "secondary_muscles": [],
+      "equipment": [],
+      "difficulty": "advanced",
+      "pattern": "wrist_forearm",
+      "settings": [
+        "home",
+        "gym",
+        "crossfit"
+      ],
+      "instructions": "Attach a weight to one end of a rope or bar. Hold the other end of the rope or bar with both hands, palms facing down. Stand with your feet shoulder-width apart and your arms fully extended in front of you. Slowly roll the weight up towards your hands by flexing your wrists. Pause for a moment at the top, then slowly lower the weight back down to the starting position. Repeat for the desired number of repetitions.",
+      "image": "media/0859-bd5b860.jpg",
+      "animation": "media/0859-bd5b860.gif"
+    }
+  ]
+}

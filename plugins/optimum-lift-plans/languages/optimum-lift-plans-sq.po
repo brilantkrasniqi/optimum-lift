@@ -1,5 +1,3 @@
-# Copyright (C) 2026 
-# This file is distributed under the same license as the Optimum Lift Plans plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: Optimum Lift Plans 0.1.0\n"
@@ -9,10 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sq\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "POT-Creation-Date: 2026-10-04T11:29:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: sq\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: optimum-lift-plans\n"
 
@@ -106,112 +104,112 @@ msgstr "Gjithë trupi"
 msgid "Barbell"
 msgstr "Shtangë"
 
-#: src/Content/Choices.php:43
+#: src/Content/Choices.php:44
 msgid "Dumbbell"
 msgstr "Shtangë dore"
 
-#: src/Content/Choices.php:44
+#: src/Content/Choices.php:45
 msgid "Kettlebell"
 msgstr "Kettlebell"
 
-#: src/Content/Choices.php:45
+#: src/Content/Choices.php:46
 msgid "Machine"
 msgstr "Makinë"
 
-#: src/Content/Choices.php:46
+#: src/Content/Choices.php:48
 msgid "Cable"
 msgstr "Kabllo"
 
-#: src/Content/Choices.php:47
+#: src/Content/Choices.php:49
 msgid "Resistance band"
 msgstr "Llastik rezistence"
 
-#: src/Content/Choices.php:48
+#: src/Content/Choices.php:50
 msgid "Bench"
 msgstr "Stol"
 
-#: src/Content/Choices.php:49
+#: src/Content/Choices.php:51
 msgid "Pull-up bar"
 msgstr "Hekur për tërheqje"
 
-#: src/Content/Choices.php:50
+#: src/Content/Choices.php:60
 msgid "Bodyweight"
 msgstr "Pesha trupore"
 
-#: src/Content/Choices.php:60
+#: src/Content/Choices.php:132
 msgid "Beginner"
 msgstr "Fillestar"
 
-#: src/Content/Choices.php:61
+#: src/Content/Choices.php:133
 msgid "Intermediate"
 msgstr "Mesatar"
 
-#: src/Content/Choices.php:62
+#: src/Content/Choices.php:134
 msgid "Advanced"
 msgstr "I avancuar"
 
-#: src/Content/Choices.php:72
-#: templates/portal/workout.php:75
+#: src/Content/Choices.php:144
+#: templates/portal/workout.php:74
 msgid "Reps"
 msgstr "Përsëritje"
 
-#: src/Content/Choices.php:73
-#: templates/portal/workout.php:75
+#: src/Content/Choices.php:145
+#: templates/portal/workout.php:74
 msgid "Seconds"
 msgstr "Sekonda"
 
-#: src/Content/ExerciseFields.php:24
+#: src/Content/ExerciseFields.php:35
 #: src/Content/PlanFields.php:209
 #: src/Content/PostTypes.php:50
 #: templates/pdf/plan.php:136
 msgid "Exercise"
 msgstr "Ushtrimi"
 
-#: src/Content/ExerciseFields.php:32
-#: src/Content/ExerciseFields.php:120
+#: src/Content/ExerciseFields.php:43
+#: src/Content/ExerciseFields.php:164
 msgid "Primary muscle"
 msgstr "Muskuli kryesor"
 
-#: src/Content/ExerciseFields.php:42
+#: src/Content/ExerciseFields.php:53
 msgid "Secondary muscles"
 msgstr "Muskujt dytësorë"
 
-#: src/Content/ExerciseFields.php:54
+#: src/Content/ExerciseFields.php:65
 #: src/Content/PlanFields.php:92
 #: templates/pdf/plan.php:95
 msgid "Difficulty"
 msgstr "Vështirësia"
 
-#: src/Content/ExerciseFields.php:64
-#: src/Content/ExerciseFields.php:121
+#: src/Content/ExerciseFields.php:108
+#: src/Content/ExerciseFields.php:165
 msgid "Equipment"
 msgstr "Pajisjet"
 
-#: src/Content/ExerciseFields.php:73
+#: src/Content/ExerciseFields.php:117
 msgid "Image"
 msgstr "Imazhi"
 
-#: src/Content/ExerciseFields.php:74
+#: src/Content/ExerciseFields.php:118
 msgid "A still photo. Used in the PDF Download, and in the Portal when there is no animation."
 msgstr "Një foto. Përdoret në PDF dhe në portal kur nuk ka animacion."
 
-#: src/Content/ExerciseFields.php:84
+#: src/Content/ExerciseFields.php:128
 msgid "Animation"
 msgstr "Animacioni"
 
-#: src/Content/ExerciseFields.php:85
+#: src/Content/ExerciseFields.php:129
 msgid "A GIF for the Portal. Never used in the PDF."
 msgstr "Një GIF për portalin. Nuk përdoret kurrë në PDF."
 
-#: src/Content/ExerciseFields.php:95
+#: src/Content/ExerciseFields.php:139
 msgid "Video"
 msgstr "Video"
 
-#: src/Content/ExerciseFields.php:96
+#: src/Content/ExerciseFields.php:140
 msgid "Unlisted YouTube or Vimeo link."
 msgstr "Link YouTube ose Vimeo i palistuar."
 
-#: src/Content/ExerciseFields.php:102
+#: src/Content/ExerciseFields.php:146
 msgid "Instructions"
 msgstr "Udhëzimet"
 
@@ -341,7 +339,7 @@ msgstr "Pushim (s)"
 #: src/Content/PlanFields.php:271
 #: src/Privacy/Privacy.php:120
 #: templates/pdf/plan.php:140
-#: templates/portal/workout.php:160
+#: templates/portal/workout.php:182
 msgid "Notes"
 msgstr "Shënime"
 
@@ -506,7 +504,7 @@ msgid "Not found."
 msgstr "Nuk u gjet."
 
 #. translators: %s: comma-separated plugin names
-#: src/Plugin.php:41
+#: src/Plugin.php:45
 #, php-format
 msgid "Optimum Lift Plans is inactive until these plugins are active: %s."
 msgstr "Optimum Lift Plans është joaktiv derisa të aktivizohen këto shtojca: %s."
@@ -541,7 +539,7 @@ msgid "Some sets have not been saved yet. Reconnect, then finish the Workout."
 msgstr "Disa seri nuk janë ruajtur ende. Lidhu sërish me internetin, pastaj përfundoje stërvitjen."
 
 #: src/Portal/Portal.php:158
-#: templates/portal/workout.php:166
+#: templates/portal/workout.php:188
 msgid "Finish Workout"
 msgstr "Përfundo stërvitjen"
 
@@ -693,75 +691,489 @@ msgid "Start Workout"
 msgstr "Fillo stërvitjen"
 
 #. translators: %s: rest time
-#: templates/portal/workout.php:86
+#: templates/portal/workout.php:92
 #, php-format
 msgid "Rest %s"
 msgstr "Pushim %s"
 
-#: templates/portal/workout.php:98
+#: templates/portal/workout.php:104
 msgid "Last time:"
 msgstr "Herën e kaluar:"
 
-#: templates/portal/workout.php:102
+#: templates/portal/workout.php:108
 msgid "Personal Record:"
 msgstr "Rekordi personal:"
 
-#: templates/portal/workout.php:109
+#: templates/portal/workout.php:115
 msgid "How to"
 msgstr "Si bëhet"
 
-#: templates/portal/workout.php:112
+#: templates/portal/workout.php:134
 msgid "Watch the video"
 msgstr "Shiko videon"
 
-#: templates/portal/workout.php:121
+#: templates/portal/workout.php:143
 msgid "Set"
 msgstr "Seria"
 
-#: templates/portal/workout.php:122
+#: templates/portal/workout.php:144
 msgid "kg"
 msgstr "kg"
 
-#: templates/portal/workout.php:124
+#: templates/portal/workout.php:146
 msgid "Status"
 msgstr "Statusi"
 
 #. translators: %d: set number
-#: templates/portal/workout.php:139
+#: templates/portal/workout.php:161
 #, php-format
 msgid "Set %d load in kg"
 msgstr "Pesha në kg, seria %d"
 
 #. translators: 1: set number, 2: Reps or Seconds
-#: templates/portal/workout.php:145
+#: templates/portal/workout.php:167
 #, php-format
 msgid "Set %1$d %2$s"
 msgstr "Seria %1$d, %2$s"
 
-#: templates/portal/workout.php:162
+#: templates/portal/workout.php:184
 msgid "How did it feel?"
 msgstr "Si u ndjeve?"
 
-#: templates/portal/workout.php:166
+#: templates/portal/workout.php:188
 msgid "Save changes"
 msgstr "Ruaj ndryshimet"
 
-#: templates/portal/workout.php:170
+#: templates/portal/workout.php:192
 msgid "Log this Workout again"
 msgstr "Regjistroje sërish këtë stërvitje"
 
-#: templates/portal/workout.php:176
+#: templates/portal/workout.php:198
 msgid "Finish this Workout?"
 msgstr "Ta përfundosh stërvitjen?"
 
-#: templates/portal/workout.php:177
+#: templates/portal/workout.php:199
 msgid "You still have a lot of this Workout left."
 msgstr "Të ka mbetur ende shumë nga kjo stërvitje."
 
-#: templates/portal/workout.php:180
+#: templates/portal/workout.php:202
 msgid "Back to the Workout"
 msgstr "Kthehu te stërvitja"
 
-#: templates/portal/workout.php:181
+#: templates/portal/workout.php:203
 msgid "Finish anyway"
 msgstr "Përfundoje gjithsesi"
+
+#: src/Content/Choices.php:43
+msgid "Trap bar"
+msgstr "Shtangë trap"
+
+#: src/Content/Choices.php:47
+msgid "Smith machine"
+msgstr "Makinë Smith"
+
+#: src/Content/Choices.php:53
+msgid "Rings"
+msgstr "Unaza"
+
+#: src/Content/Choices.php:54
+msgid "Suspension trainer"
+msgstr "Rripa pezullimi"
+
+#: src/Content/Choices.php:55
+msgid "Medicine ball"
+msgstr "Top mjekësor"
+
+#: src/Content/Choices.php:56
+msgid "Exercise ball"
+msgstr "Top fitnesi"
+
+#: src/Content/Choices.php:57
+msgid "Ab wheel"
+msgstr "Rrotë për bark"
+
+#: src/Content/Choices.php:58
+msgid "Rope"
+msgstr "Litar"
+
+#: src/Content/Choices.php:59
+msgid "Cardio machine"
+msgstr "Makinë kardio"
+
+#: src/Content/Choices.php:74
+msgid "Horizontal push"
+msgstr "Shtytje horizontale"
+
+#: src/Content/Choices.php:75
+msgid "Vertical push"
+msgstr "Shtytje vertikale"
+
+#: src/Content/Choices.php:76
+msgid "Chest fly"
+msgstr "Hapje për gjoks"
+
+#: src/Content/Choices.php:77
+msgid "Elbow extension"
+msgstr "Shtrirje e bërrylit"
+
+#: src/Content/Choices.php:78
+msgid "Horizontal pull"
+msgstr "Tërheqje horizontale"
+
+#: src/Content/Choices.php:79
+msgid "Vertical pull"
+msgstr "Tërheqje vertikale"
+
+#: src/Content/Choices.php:80
+msgid "Back extension"
+msgstr "Shtrirje e shpinës"
+
+#: src/Content/Choices.php:81
+msgid "Scapular"
+msgstr "Skapulare"
+
+#: src/Content/Choices.php:82
+msgid "Shoulder extension"
+msgstr "Shtrirje e shpatullës"
+
+#: src/Content/Choices.php:83
+msgid "Rear delt"
+msgstr "Deltoidi i pasmë"
+
+#: src/Content/Choices.php:84
+msgid "Shoulder abduction"
+msgstr "Abduksion i shpatullës"
+
+#: src/Content/Choices.php:85
+msgid "External rotation"
+msgstr "Rrotullim i jashtëm"
+
+#: src/Content/Choices.php:86
+msgid "Elbow flexion"
+msgstr "Përkulje e bërrylit"
+
+#: src/Content/Choices.php:87
+msgid "Wrist and forearm"
+msgstr "Kyçi i dorës dhe parakrahu"
+
+#: src/Content/Choices.php:88
+msgid "Squat"
+msgstr "Squat"
+
+#: src/Content/Choices.php:89
+msgid "Lunge"
+msgstr "Lunge"
+
+#: src/Content/Choices.php:90
+msgid "Hinge"
+msgstr "Përkulje në ije"
+
+#: src/Content/Choices.php:91
+msgid "Hip extension"
+msgstr "Shtrirje e ijes"
+
+#: src/Content/Choices.php:92
+msgid "Hip abduction"
+msgstr "Abduksion i ijes"
+
+#: src/Content/Choices.php:93
+msgid "Knee extension"
+msgstr "Shtrirje e gjurit"
+
+#: src/Content/Choices.php:94
+msgid "Knee flexion"
+msgstr "Përkulje e gjurit"
+
+#: src/Content/Choices.php:95
+msgid "Calf raise"
+msgstr "Ngritje e pulpave"
+
+#: src/Content/Choices.php:96
+msgid "Core flexion"
+msgstr "Përkulje e barkut"
+
+#: src/Content/Choices.php:97
+msgid "Core anti-extension"
+msgstr "Kundër-shtrirje e barkut"
+
+#: src/Content/Choices.php:98
+msgid "Core lateral"
+msgstr "Lëvizje anësore e barkut"
+
+#: src/Content/Choices.php:99
+msgid "Core rotation"
+msgstr "Rrotullim i barkut"
+
+#: src/Content/Choices.php:100
+msgid "Anti-rotation"
+msgstr "Kundër-rrotullim"
+
+#: src/Content/Choices.php:101
+msgid "Carry"
+msgstr "Bartje"
+
+#: src/Content/Choices.php:102
+msgid "Squat to press"
+msgstr "Squat me shtytje"
+
+#: src/Content/Choices.php:103
+msgid "Olympic lift"
+msgstr "Ngritje olimpike"
+
+#: src/Content/Choices.php:104
+msgid "Ballistic"
+msgstr "Balistike"
+
+#: src/Content/Choices.php:105
+msgid "Plyometric"
+msgstr "Pliometrike"
+
+#: src/Content/Choices.php:106
+msgid "Conditioning"
+msgstr "Kondicionim"
+
+#: src/Content/Choices.php:107
+msgid "Mobility"
+msgstr "Lëvizshmëri"
+
+#: src/Content/Choices.php:108
+msgid "Get-up"
+msgstr "Ngritje nga toka"
+
+#: src/Content/Choices.php:120
+msgid "Home"
+msgstr "Shtëpi"
+
+#: src/Content/Choices.php:121
+msgid "Gym"
+msgstr "Palestër"
+
+#: src/Content/Choices.php:122
+msgid "CrossFit"
+msgstr "CrossFit"
+
+#: src/Content/ExerciseFields.php:75
+msgid "Movement pattern"
+msgstr "Modeli i lëvizjes"
+
+#: src/Content/ExerciseFields.php:76
+msgid "Not shown to Customers. Helps balance a Plan, for example pushing against pulling."
+msgstr "Nuk u shfaqet klientëve. Ndihmon të balancohet një plan, për shembull shtytja kundrejt tërheqjes."
+
+#: src/Content/ExerciseFields.php:87
+msgid "Settings"
+msgstr "Vendi i stërvitjes"
+
+#: src/Content/ExerciseFields.php:88
+msgid "Where this Exercise can be done."
+msgstr "Ku mund të bëhet ky ushtrim."
+
+#: src/Content/ExerciseFields.php:98
+msgid "Library key"
+msgstr "Çelësi i bibliotekës"
+
+#: src/Content/ExerciseFields.php:99
+msgid "Names this Exercise in Plan files. Set when first saved, never changes."
+msgstr "Identifikon këtë ushtrim në skedarët e planeve. Caktohet kur ruhet për herë të parë dhe nuk ndryshon kurrë."
+
+#: src/Content/ExerciseFields.php:102
+msgid "Created when you save"
+msgstr "Krijohet kur ruan"
+
+#: src/Content/Choices.php:52
+msgid "Dip bars"
+msgstr "Paralele"
+
+#. translators: 1: Exercise name, 2: library key
+#: src/Library/ExerciseImporter.php:167
+#, php-format
+msgid "\"%1$s\" (%2$s) is in the trash and was left alone."
+msgstr "\"%1$s\" (%2$s) është në kosh dhe u la siç ishte."
+
+#. translators: 1: post ID, 2: Exercise title, 3: library key
+#: src/Library/ExerciseImporter.php:190
+#, php-format
+msgid "Could not give Exercise %1$d \"%2$s\" the key %3$s."
+msgstr "Ushtrimit %1$d \"%2$s\" nuk iu dha dot çelësi %3$s."
+
+#. translators: 1: post ID, 2: Exercise title, 3: library key
+#: src/Library/ExerciseImporter.php:199
+#, php-format
+msgid "Took over Exercise %1$d \"%2$s\" as %3$s."
+msgstr "Ushtrimi %1$d \"%2$s\" u mor përsipër si %3$s."
+
+#. translators: 1: Exercise name, 2: error message
+#: src/Library/ExerciseImporter.php:228
+#, php-format
+msgid "Could not create \"%1$s\": %2$s"
+msgstr "Nuk u krijua dot \"%1$s\": %2$s"
+
+#. translators: %s: media file name
+#: src/Library/ExerciseImporter.php:394
+#, php-format
+msgid "Could not copy %s to a temporary file."
+msgstr "Nuk u kopjua dot %s në një skedar të përkohshëm."
+
+#. translators: 1: media file name, 2: error message
+#: src/Library/ExerciseImporter.php:409
+#, php-format
+msgid "Could not add %1$s to the Media Library: %2$s"
+msgstr "Nuk u shtua dot %1$s në Mediatekë: %2$s"
+
+#. translators: %d: post ID
+#: src/Library/ExerciseImporter.php:459
+#, php-format
+msgid "Exercise %d has no letters or digits in its title, so it still has no key."
+msgstr "Ushtrimi %d nuk ka shkronja ose shifra në titull, ndaj ende nuk ka çelës."
+
+#. translators: 1: post ID, 2: Exercise title, 3: library key
+#: src/Library/ExerciseImporter.php:469
+#, php-format
+msgid "Gave Exercise %1$d \"%2$s\" the key %3$s."
+msgstr "Ushtrimit %1$d \"%2$s\" iu dha çelësi %3$s."
+
+#: src/Library/ImportScreen.php:49
+#: templates/admin/import-exercises.php:24
+#: templates/admin/import-exercises.php:77
+msgid "Import Exercises"
+msgstr "Importo ushtrimet"
+
+#: src/Library/ImportScreen.php:50
+msgid "Import"
+msgstr "Importo"
+
+#. translators: 1: Exercises done, 2: Exercises in the library
+#: src/Library/ImportScreen.php:70
+#, php-format
+msgid "Importing… %1$d of %2$d Exercises"
+msgstr "Po importohen… %1$d nga %2$d ushtrime"
+
+#: src/Library/ImportScreen.php:71
+msgid "Import finished."
+msgstr "Importimi përfundoi."
+
+#: src/Library/ImportScreen.php:72
+msgid "Import finished with errors. Running it again retries what failed."
+msgstr "Importimi përfundoi me gabime. Po ta nisësh sërish, provohet përsëri ajo që dështoi."
+
+#. translators: %s: error message
+#: src/Library/ImportScreen.php:74
+#, php-format
+msgid "The import stopped: %s"
+msgstr "Importimi u ndal: %s"
+
+#: src/Library/ImportScreen.php:75
+msgid "Continue import"
+msgstr "Vazhdo importimin"
+
+#: src/Library/ImportScreen.php:76
+msgid "The import is still running. Leave anyway?"
+msgstr "Importimi është ende në punë. Të largohesh gjithsesi?"
+
+#: src/Library/ImportScreen.php:77
+msgid "the site could not be reached. Check the connection"
+msgstr "faqja nuk u arrit. Kontrollo lidhjen"
+
+#. translators: %d: number of notes
+#: src/Library/ImportScreen.php:79
+#, php-format
+msgid "Details (%d)"
+msgstr "Hollësi (%d)"
+
+#: src/Library/ImportScreen.php:80
+msgid "Go to Exercises"
+msgstr "Shko te ushtrimet"
+
+#: src/Library/ImportScreen.php:109
+msgid "You are not allowed to import Exercises."
+msgstr "Nuk ke leje të importosh ushtrime."
+
+#: src/Library/ImportScreen.php:113
+msgid "This page has expired. Reload it and import again."
+msgstr "Kjo faqe ka skaduar. Ringarkoje dhe importo sërish."
+
+#: src/Library/ImportScreen.php:119
+msgid "The library file has problems. Reload the page to see them."
+msgstr "Skedari i bibliotekës ka probleme. Ringarko faqen për t'i parë."
+
+#. translators: %d: number of Exercises in the library
+#: src/Library/ImportScreen.php:172
+#, php-format
+msgid "There are no Exercises yet. The plugin comes with a library of %d Exercise, with an image and an animation."
+msgid_plural "There are no Exercises yet. The plugin comes with a library of %d Exercises, each with an image and an animation."
+msgstr[0] "Ende nuk ka ushtrime. Shtojca vjen me një bibliotekë me %d ushtrim, me një imazh dhe një animacion."
+msgstr[1] "Ende nuk ka ushtrime. Shtojca vjen me një bibliotekë me %d ushtrime, secili me një imazh dhe një animacion."
+
+#: src/Library/ImportScreen.php:181
+msgid "Import the library"
+msgstr "Importo bibliotekën"
+
+#: src/Library/ImportScreen.php:193
+msgid "New Exercises"
+msgstr "Ushtrime të reja"
+
+#: src/Library/ImportScreen.php:194
+msgid "Your Exercises with a library name, taken over"
+msgstr "Ushtrimet e tua me emër nga biblioteka, të marra përsipër"
+
+#: src/Library/ImportScreen.php:195
+msgid "Library Exercises with empty fields filled in"
+msgstr "Ushtrime të bibliotekës me fusha bosh të plotësuara"
+
+#: src/Library/ImportScreen.php:196
+msgid "Library Exercises already complete"
+msgstr "Ushtrime të bibliotekës tashmë të plota"
+
+#: src/Library/ImportScreen.php:197
+msgid "Library Exercises in the trash, left alone"
+msgstr "Ushtrime të bibliotekës në kosh, të lëna siç janë"
+
+#: src/Library/ImportScreen.php:198
+msgid "Other Exercises given a library key"
+msgstr "Ushtrime të tjera që morën çelës biblioteke"
+
+#: src/Library/ImportScreen.php:199
+msgid "Images and animations added to the Media Library"
+msgstr "Imazhe dhe animacione të shtuara në Mediatekë"
+
+#: src/Library/ImportScreen.php:200
+msgid "Images and animations already in the Media Library"
+msgstr "Imazhe dhe animacione që ishin tashmë në Mediatekë"
+
+#. translators: %d: number of Exercises in the library
+#: templates/admin/import-exercises.php:30
+#, php-format
+msgid "The plugin comes with a library of %d Exercise, with a still image for the PDF and an animation for the Portal."
+msgid_plural "The plugin comes with a library of %d Exercises, each with a still image for the PDF and an animation for the Portal."
+msgstr[0] "Shtojca vjen me një bibliotekë me %d ushtrim, me një foto për PDF-në dhe një animacion për portalin."
+msgstr[1] "Shtojca vjen me një bibliotekë me %d ushtrime, secili me një foto për PDF-në dhe një animacion për portalin."
+
+#: templates/admin/import-exercises.php:39
+msgid "Importing adds the ones you do not have and fills in empty fields. It never changes a field you have filled in, so it is safe to run again."
+msgstr "Importimi shton ato që nuk i ke dhe plotëson fushat bosh. Nuk ndryshon kurrë një fushë që e ke plotësuar vetë, ndaj mund ta nisësh sërish pa rrezik."
+
+#: templates/admin/import-exercises.php:44
+msgid "The library file that comes with the plugin has problems, so nothing can be imported:"
+msgstr "Skedari i bibliotekës që vjen me shtojcën ka probleme, ndaj nuk mund të importohet asgjë:"
+
+#: templates/admin/import-exercises.php:54
+msgid "What an import would do now"
+msgstr "Çfarë do të bënte importimi tani"
+
+#: templates/admin/import-exercises.php:70
+msgid "The library is fully imported. There is nothing to do."
+msgstr "Biblioteka është importuar plotësisht. Nuk ka asgjë për të bërë."
+
+#: templates/admin/import-exercises.php:74
+msgid "Keep this page open until the import finishes; it takes a few minutes. If it stops, press the button again: it carries on and never imports anything twice."
+msgstr "Mbaje këtë faqe të hapur derisa të përfundojë importimi; zgjat disa minuta. Nëse ndalet, shtyp sërish butonin: vazhdon nga aty ku mbeti dhe nuk importon asgjë dy herë."
+
+#: src/Library/ExerciseImporter.php:77
+msgid "Another import is running. Try again in a minute."
+msgstr "Një importim tjetër është në punë. Provo sërish pas një minute."
+
+#. translators: %s: Exercise name
+#: templates/portal/workout.php:126
+#, php-format
+msgid "%s demonstration"
+msgstr "Demonstrim i ushtrimit %s"

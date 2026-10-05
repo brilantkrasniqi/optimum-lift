@@ -68,17 +68,23 @@ $startForm = static function (string $label, string $class = 'ol-button') use ($
 
     <?php foreach ($workout->prescriptions as $prescription) : ?>
         <?php
-        $exercise = $prescription->exercise;
-        $last     = $previous[$exercise->id] ?? [];
-        $record   = $records[$exercise->id] ?? null;
-        $media    = $exercise->animationId ?: $exercise->imageId;
-        $unit     = $prescription->isTimed() ? __('Seconds', 'optimum-lift-plans') : __('Reps', 'optimum-lift-plans');
-        $field    = $prescription->isTimed() ? 'seconds' : 'reps';
+        $exercise  = $prescription->exercise;
+        $last      = $previous[$exercise->id] ?? [];
+        $record    = $records[$exercise->id] ?? null;
+        $unit      = $prescription->isTimed() ? __('Seconds', 'optimum-lift-plans') : __('Reps', 'optimum-lift-plans');
+        $field     = $prescription->isTimed() ? 'seconds' : 'reps';
+        // The list shows a still; "How to" shows the animation, which only
+        // plays in the original file (WordPress's smaller sizes are stills).
+        $thumb     = $exercise->imageId ?: $exercise->animationId;
+        $animation = $exercise->animationId > 0 ? wp_get_attachment_image_src($exercise->animationId, 'full') : false;
+        $photo     = $exercise->imageId > 0 ? wp_get_attachment_image_src($exercise->imageId, 'full') : false;
+        $demo      = $animation ?: $photo;
         ?>
         <section class="ol-prescription" data-prescription-uid="<?php echo esc_attr($prescription->uid); ?>">
             <div class="ol-prescription__head">
-                <?php if ($media > 0) : ?>
-                    <div class="ol-prescription__media"><?php echo wp_get_attachment_image($media, 'thumbnail', false, ['loading' => 'lazy']); ?></div>
+                <?php if ($thumb > 0) : ?>
+                    <?php // Decorative: the Exercise name is right beside it. ?>
+                    <div class="ol-prescription__media"><?php echo wp_get_attachment_image($thumb, 'thumbnail', false, ['loading' => 'lazy', 'alt' => '']); ?></div>
                 <?php endif; ?>
                 <div>
                     <h3 class="ol-prescription__name"><?php echo esc_html($exercise->name); ?></h3>
@@ -104,9 +110,25 @@ $startForm = static function (string $label, string $class = 'ol-button') use ($
                 </p>
             <?php endif; ?>
 
-            <?php if ($exercise->instructions !== '' || $exercise->videoUrl !== '') : ?>
+            <?php if ($demo !== false || $exercise->instructions !== '' || $exercise->videoUrl !== '') : ?>
                 <details class="ol-howto">
                     <summary><?php esc_html_e('How to', 'optimum-lift-plans'); ?></summary>
+                    <?php if ($demo !== false) : ?>
+                        <?php // Lazy, so a closed panel costs no download. Reduced motion gets the still. ?>
+                        <picture class="ol-howto__media">
+                            <?php if ($animation !== false && $photo !== false) : ?>
+                                <source media="(prefers-reduced-motion: reduce)" srcset="<?php echo esc_url($photo[0]); ?>">
+                            <?php endif; ?>
+                            <img
+                                src="<?php echo esc_url($demo[0]); ?>"
+                                width="<?php echo esc_attr((string) $demo[1]); ?>"
+                                height="<?php echo esc_attr((string) $demo[2]); ?>"
+                                alt="<?php echo esc_attr(sprintf(/* translators: %s: Exercise name */ __('%s demonstration', 'optimum-lift-plans'), $exercise->name)); ?>"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </picture>
+                    <?php endif; ?>
                     <?php echo wp_kses_post(wpautop($exercise->instructions)); ?>
                     <?php if ($exercise->videoUrl !== '') : ?>
                         <p><a href="<?php echo esc_url($exercise->videoUrl); ?>" target="_blank" rel="noopener"><?php esc_html_e('Watch the video', 'optimum-lift-plans'); ?></a></p>
