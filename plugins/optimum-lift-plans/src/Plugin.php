@@ -27,6 +27,7 @@ use OptimumLift\Plans\Logging\RestController;
 use OptimumLift\Plans\Logging\WorkoutLogRepository;
 use OptimumLift\Plans\Plan\PlanRepository;
 use OptimumLift\Plans\PlanFile\PlanFileExporter;
+use OptimumLift\Plans\PlanFile\PlanFileImporter;
 use OptimumLift\Plans\Portal\Portal;
 use OptimumLift\Plans\Privacy\Privacy;
 
@@ -55,10 +56,11 @@ final class Plugin
 
         add_action('init', [Schema::class, 'maybeUpgrade'], 1);
 
-        $plans     = new PlanRepository();
-        $access    = new AccessRepository();
-        $logs      = new WorkoutLogRepository();
-        $renderer  = new PdfRenderer();
+        $plans        = new PlanRepository();
+        $access       = new AccessRepository();
+        $logs         = new WorkoutLogRepository();
+        $renderer     = new PdfRenderer();
+        $planExporter = new PlanFileExporter();
 
         (new PostTypes())->register();
         (new ExerciseFields())->register();
@@ -77,8 +79,9 @@ final class Plugin
             \WP_CLI::add_command('ol-plans', new SeedCommand($importer));
             \WP_CLI::add_command('ol-plans import-exercises', new ImportExercisesCommand($importer));
 
-            $planFiles = new PlanFileCommand(new PlanFileExporter());
+            $planFiles = new PlanFileCommand($planExporter, new PlanFileImporter(new LibraryKeys(), $planExporter));
             \WP_CLI::add_command('ol-plans export-plan', [$planFiles, 'export']);
+            \WP_CLI::add_command('ol-plans import-plan', [$planFiles, 'import']);
         }
     }
 
