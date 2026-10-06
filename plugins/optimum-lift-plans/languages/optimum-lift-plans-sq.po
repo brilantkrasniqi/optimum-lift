@@ -1177,3 +1177,271 @@ msgstr "Një importim tjetër është në punë. Provo sërish pas një minute."
 #, php-format
 msgid "%s demonstration"
 msgstr "Demonstrim i ushtrimit %s"
+
+#: src/PlanFile/PlanFileImporter.php
+msgid "The Plan could not be created: %s"
+msgstr "Plani nuk u krijua dot: %s"
+
+#: src/PlanFile/PlanFileImporter.php
+msgid "The import failed while writing the Plan: %s"
+msgstr "Importi dështoi gjatë shkrimit të planit: %s"
+
+#: src/PlanFile/PlanFileImporter.php
+msgid "The new Plan was deleted; nothing was imported."
+msgstr "Plani i ri u fshi; nuk u importua asgjë."
+
+#: src/PlanFile/PlanFileImporter.php
+msgid "A Training Plan with this title already exists (ID %d). Importing creates another one; it does not replace it."
+msgstr "Ekziston tashmë një plan stërvitjeje me këtë titull (ID %d). Importi krijon një tjetër; nuk e zëvendëson atë."
+
+#: src/PlanFile/PlanFileImporter.php
+msgid "This Plan's edit form sends about %1$d inputs and this site accepts %2$d (max_input_vars). It imports fine, but it cannot be saved from wp-admin until the limit is raised."
+msgstr "Formulari i këtij plani dërgon rreth %1$d fusha dhe kjo faqe pranon %2$d (max_input_vars). Importohet pa problem, por nuk mund të ruhet nga wp-admin derisa të rritet kufiri."
+
+#: src/PlanFile/PlanFileImporter.php
+msgid "The Plan was written but could not be read back: %s"
+msgstr "Plani u shkrua, por nuk u lexua dot përsëri: %s"
+
+#: src/PlanFile/PlanFileImporter.php
+msgid "The Plan was written but did not read back as the file says; the first difference is at %s."
+msgstr "Plani u shkrua, por nuk u lexua përsëri ashtu si thotë skedari; dallimi i parë është te %s."
+
+#: src/PlanFile/Places.php
+msgid "File"
+msgstr "Skedari"
+
+#: src/PlanFile/Places.php
+msgid "Phase %d"
+msgstr "Faza %d"
+
+#: src/PlanFile/Places.php
+msgid "Week %1$d, Workout %2$d"
+msgstr "Java %1$d, stërvitja %2$d"
+
+#: src/PlanFile/Places.php
+msgid "Week %1$d, Workout %2$d (\"%3$s\")"
+msgstr "Java %1$d, stërvitja %2$d (\"%3$s\")"
+
+#: src/PlanFile/Places.php
+msgid "%1$s, Prescription %2$d"
+msgstr "%1$s, ushtrimi %2$d"
+
+#: src/PlanFile/PlanFileExporter.php
+msgid "There is no Training Plan with ID %d."
+msgstr "Nuk ka plan stërvitjeje me ID %d."
+
+#: src/PlanFile/PlanFileExporter.php
+msgid "Training Plan %d is in the trash."
+msgstr "Plani i stërvitjes %d është në kosh."
+
+#: src/PlanFile/PlanFileExporter.php
+msgid "the Exercise no longer exists. Choose another one in wp-admin."
+msgstr "ushtrimi nuk ekziston më. Zgjidh një tjetër në wp-admin."
+
+#: src/PlanFile/PlanFileExporter.php
+msgid "the Exercise \"%s\" has no library key. Save that Exercise once in wp-admin to give it one."
+msgstr "ushtrimi \"%s\" nuk ka çelës biblioteke. Ruaje atë ushtrim një herë në wp-admin që ta marrë një të tillë."
+
+#: src/PlanFile/PlanFileExporter.php
+msgid "\"%1$s\" (%2$s) is not published and not in the Exercise library, so the site you import into must have it, published. Used in %3$s."
+msgstr "\"%1$s\" (%2$s) nuk është i publikuar dhe nuk është në bibliotekën e ushtrimeve, ndaj faqja ku e importon duhet ta ketë, të publikuar. Përdoret te %3$s."
+
+#: src/PlanFile/PlanFileExporter.php
+msgid "\"%1$s\" (%2$s) is not published, so the Portal and the PDF leave it out, and the site you import into must have it published. Used in %3$s."
+msgstr "\"%1$s\" (%2$s) nuk është i publikuar, ndaj portali dhe PDF-ja e lënë jashtë, dhe faqja ku e importon duhet ta ketë të publikuar. Përdoret te %3$s."
+
+#: src/PlanFile/PlanFileExporter.php
+msgid "\"%1$s\" (%2$s) is not in the Exercise library, so the site you import into must have it too. Used in %3$s."
+msgstr "\"%1$s\" (%2$s) nuk është në bibliotekën e ushtrimeve, ndaj edhe faqja ku e importon duhet ta ketë. Përdoret te %3$s."
+
+#: src/PlanFile/ExportAction.php
+msgid "Export as JSON"
+msgstr "Eksporto si JSON"
+
+#: src/PlanFile/ExportAction.php
+msgid "Plan file"
+msgstr "Skedari i planit"
+
+#: src/PlanFile/ExportAction.php
+msgid "This Plan cannot be exported until these are fixed:"
+msgstr "Ky plan nuk mund të eksportohet derisa të rregullohen këto:"
+
+#: src/PlanFile/ExportAction.php
+msgid "Exports the last saved version."
+msgstr "Eksporton versionin e fundit të ruajtur."
+
+#: src/PlanFile/ExportAction.php
+msgid "This link has expired. Go back, reload the page and try again."
+msgstr "Kjo lidhje ka skaduar. Kthehu mbrapa, ringarko faqen dhe provo përsëri."
+
+#: src/PlanFile/ExportAction.php
+msgid "You are not allowed to export this Plan."
+msgstr "Nuk ke leje ta eksportosh këtë plan."
+
+#: src/PlanFile/ExportAction.php
+msgid "The Plan was not exported:"
+msgstr "Plani nuk u eksportua:"
+
+#: src/PlanFile/PlanFile.php
+msgid "The file is not UTF-8 text (it looks like UTF-16). Save the file as UTF-8."
+msgstr "Skedari nuk është tekst UTF-8 (duket si UTF-16). Ruaje skedarin si UTF-8."
+
+#: src/PlanFile/PlanFile.php
+msgid "The file is not valid JSON: %s."
+msgstr "Skedari nuk është JSON i vlefshëm: %s."
+
+#: src/PlanFile/PlanFile.php
+msgid "The file must hold one JSON object, starting with {."
+msgstr "Skedari duhet të përmbajë një objekt JSON, që nis me {."
+
+#: src/PlanFile/PlanFile.php
+msgid "Exercise \"%1$s\" does not exist on this site. Used in %2$s."
+msgstr "Ushtrimi \"%1$s\" nuk ekziston në këtë faqe. Përdoret te %2$s."
+
+#: src/PlanFile/PlanFile.php
+msgid "Exercise \"%1$s\" is in the trash. Used in %2$s."
+msgstr "Ushtrimi \"%1$s\" është në kosh. Përdoret te %2$s."
+
+#: src/PlanFile/PlanFile.php
+msgid "Exercise \"%1$s\" is not published. Used in %2$s."
+msgstr "Ushtrimi \"%1$s\" nuk është i publikuar. Përdoret te %2$s."
+
+#: src/PlanFile/PlanFile.php
+msgid "The file is larger than 2 MB, which no Plan file needs. Check that it is the right file."
+msgstr "Skedari është më i madh se 2 MB, gjë që asnjë skedar plani nuk e ka nevojë. Kontrollo që është skedari i duhur."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%1$s\" must be \"%2$s\"."
+msgstr "\"%1$s\" duhet të jetë \"%2$s\"."
+
+#: src/PlanFile/PlanFile.php
+msgid "This file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
+msgstr "Ky skedar u krijua nga një version më i ri i shtojcës. Përditëso shtojcën në këtë faqe, pastaj importoje përsëri."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%1$s\" must be %2$d."
+msgstr "\"%1$s\" duhet të jetë %2$d."
+
+#: src/PlanFile/PlanFile.php
+msgid "must be an object."
+msgstr "duhet të jetë objekt."
+
+#: src/PlanFile/PlanFile.php
+msgid "%s is not a library key. A key is lowercase letters and digits joined by hyphens, e.g. \"barbell-back-squat\"."
+msgstr "%s nuk është çelës biblioteke. Një çelës është shkronja të vogla dhe shifra të lidhura me viza, p.sh. \"barbell-back-squat\"."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%s\" must be a whole number of 0 or more, or null."
+msgstr "\"%s\" duhet të jetë numër i plotë 0 ose më shumë, ose null."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%s\" must be text."
+msgstr "\"%s\" duhet të jetë tekst."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%1$s\" must be at most %2$d characters."
+msgstr "\"%1$s\" duhet të ketë jo më shumë se %2$d shenja."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%1$s\" must be a whole number from %2$d to %3$d."
+msgstr "\"%1$s\" duhet të jetë numër i plotë nga %2$d deri në %3$d."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%s\" must be a whole number."
+msgstr "\"%s\" duhet të jetë numër i plotë."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%1$s\" must be one of: %2$s."
+msgstr "\"%1$s\" duhet të jetë një nga: %2$s."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%s\" must be a list, in [ ]."
+msgstr "\"%s\" duhet të jetë listë, brenda [ ]."
+
+#: src/PlanFile/PlanFile.php
+msgid "unknown property \"%s\"."
+msgstr "veti e panjohur \"%s\"."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%s\" is missing."
+msgstr "\"%s\" mungon."
+
+#: src/PlanFile/PlanFile.php
+msgid "\"%s\" must not be empty."
+msgstr "\"%s\" nuk duhet të jetë bosh."
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "Import Plan"
+msgstr "Importo planin"
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "You are not allowed to import Plans."
+msgstr "Nuk ke leje të importosh plane."
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "Imported as a draft: %s. Review it, publish it, then add it to a Product."
+msgstr "U importua si skicë: %s. Rishikoje, publikoje, pastaj shtoje te një produkt."
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "Choose a Plan file to import."
+msgstr "Zgjidh një skedar plani për të importuar."
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "The upload failed (error %d). Try again."
+msgstr "Ngarkimi dështoi (gabimi %d). Provo përsëri."
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "The file is larger than this server accepts (%s). A Plan file is usually about 100 KB; check that it is the right file."
+msgstr "Skedari është më i madh se sa pranon ky server (%s). Një skedar plani zakonisht është rreth 100 KB; kontrollo që është skedari i duhur."
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "%s Week"
+msgid_plural "%s Weeks"
+msgstr[0] "%s javë"
+msgstr[1] "%s javë"
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "%s Workout"
+msgid_plural "%s Workouts"
+msgstr[0] "%s stërvitje"
+msgstr[1] "%s stërvitje"
+
+#: src/PlanFile/ImportPlanScreen.php
+msgid "%s Prescription"
+msgid_plural "%s Prescriptions"
+msgstr[0] "%s ushtrim"
+msgstr[1] "%s ushtrime"
+
+#: templates/admin/import-plan.php
+msgid "The file"
+msgstr "Skedari"
+
+#: templates/admin/import-plan.php
+msgid "A Plan file is one Training Plan saved as JSON, with its Exercises named by library key. Export one from another site with \"Export as JSON\" on its Training Plans list."
+msgstr "Një skedar plani është një plan stërvitjeje i ruajtur si JSON, me ushtrimet e emërtuara sipas çelësit të bibliotekës. Eksporto një nga një faqe tjetër me \"Eksporto si JSON\" te lista e planeve të stërvitjes atje."
+
+#: templates/admin/import-plan.php
+msgid "Importing always creates a new Plan, as a draft. It never changes a Plan you already have. Review the draft, publish it, then add it to a Product."
+msgstr "Importi krijon gjithmonë një plan të ri, si skicë. Nuk ndryshon kurrë një plan që ke tashmë. Rishiko skicën, publikoje, pastaj shtoje te një produkt."
+
+#: templates/admin/import-plan.php
+msgid "Every Exercise in the file must already exist on this site, published. If the check finds one missing, import the Exercise library first:"
+msgstr "Çdo ushtrim i skedarit duhet të ekzistojë tashmë në këtë faqe, i publikuar. Nëse kontrolli gjen që mungon ndonjë, importo fillimisht bibliotekën e ushtrimeve:"
+
+#: templates/admin/import-plan.php
+msgid "%1$s is ready to import: %2$s. Nothing was imported yet."
+msgstr "%1$s është gati për import: %2$s. Ende nuk është importuar asgjë."
+
+#: templates/admin/import-plan.php
+msgid "Check only"
+msgstr "Vetëm kontroll"
+
+#: templates/admin/import-plan.php
+msgid "Check only, don't import"
+msgstr "Vetëm kontrollo, mos importo"
+
+#: templates/admin/import-plan.php
+msgid "Nothing was imported. %s has this problem:"
+msgid_plural "Nothing was imported. %s has these problems:"
+msgstr[0] "Nuk u importua asgjë. %s ka këtë problem:"
+msgstr[1] "Nuk u importua asgjë. %s ka këto probleme:"

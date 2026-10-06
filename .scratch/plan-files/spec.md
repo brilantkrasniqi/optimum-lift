@@ -1,6 +1,6 @@
 # Spec: Plan files (export and import Training Plans as JSON)
 
-Status: planned (2026-10-06, revised the same day). Tickets 01 to 07 in `issues/`, in build order. Tickets 01 to 06 are for an agent; 07 is the owner's check on production.
+Status: planned (2026-10-06, revised the same day). Tickets 01 to 07 in `issues/`, in build order. Tickets 01 to 06 are for an agent; 07 is the owner's check on production. Decision record: `docs/adr/0011-plans-move-between-sites-as-json-files.md`.
 
 Read `CONTEXT.md` first. This spec uses its words: **Plan**, **Training Plan**, **Week**, **Phase**, **Workout**, **Prescription**, **Exercise**, **Library key**, **Product**, **Workout Log**. A **Plan file** is one Training Plan written as JSON, naming Exercises by library key (ticket 06 adds the term to `CONTEXT.md`).
 
