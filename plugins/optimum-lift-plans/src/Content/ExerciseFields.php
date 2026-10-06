@@ -10,6 +10,17 @@ namespace OptimumLift\Plans\Content;
 
 final class ExerciseFields
 {
+    public const PRIMARY_MUSCLE    = 'field_ol_exercise_primary_muscle';
+    public const SECONDARY_MUSCLES = 'field_ol_exercise_secondary_muscles';
+    public const DIFFICULTY        = 'field_ol_exercise_difficulty';
+    public const MOVEMENT_PATTERN  = 'field_ol_exercise_movement_pattern';
+    public const SETTINGS          = 'field_ol_exercise_settings';
+    public const EQUIPMENT         = 'field_ol_exercise_equipment';
+    public const IMAGE             = 'field_ol_exercise_image';
+    public const ANIMATION         = 'field_ol_exercise_animation';
+    public const VIDEO_URL         = 'field_ol_exercise_video_url';
+    public const INSTRUCTIONS      = 'field_ol_exercise_instructions';
+
     public function register(): void
     {
         add_action('acf/include_fields', [$this, 'registerFields']);
@@ -27,7 +38,7 @@ final class ExerciseFields
             'style'    => 'seamless',
             'fields'   => [
                 [
-                    'key'           => 'field_ol_exercise_primary_muscle',
+                    'key'           => self::PRIMARY_MUSCLE,
                     'name'          => 'primary_muscle',
                     'label'         => __('Primary muscle', 'optimum-lift-plans'),
                     'type'          => 'select',
@@ -37,7 +48,7 @@ final class ExerciseFields
                     'wrapper'       => ['width' => '33'],
                 ],
                 [
-                    'key'           => 'field_ol_exercise_secondary_muscles',
+                    'key'           => self::SECONDARY_MUSCLES,
                     'name'          => 'secondary_muscles',
                     'label'         => __('Secondary muscles', 'optimum-lift-plans'),
                     'type'          => 'select',
@@ -49,7 +60,7 @@ final class ExerciseFields
                     'wrapper'       => ['width' => '33'],
                 ],
                 [
-                    'key'           => 'field_ol_exercise_difficulty',
+                    'key'           => self::DIFFICULTY,
                     'name'          => 'difficulty',
                     'label'         => __('Difficulty', 'optimum-lift-plans'),
                     'type'          => 'select',
@@ -59,7 +70,40 @@ final class ExerciseFields
                     'wrapper'       => ['width' => '34'],
                 ],
                 [
-                    'key'           => 'field_ol_exercise_equipment',
+                    'key'           => self::MOVEMENT_PATTERN,
+                    'name'          => 'movement_pattern',
+                    'label'         => __('Movement pattern', 'optimum-lift-plans'),
+                    'instructions'  => __('Not shown to Customers. Helps balance a Plan, for example pushing against pulling.', 'optimum-lift-plans'),
+                    'type'          => 'select',
+                    'choices'       => Choices::patterns(),
+                    'ui'            => 1,
+                    'allow_null'    => 1,
+                    'return_format' => 'value',
+                    'wrapper'       => ['width' => '33'],
+                ],
+                [
+                    'key'           => self::SETTINGS,
+                    'name'          => 'settings',
+                    'label'         => __('Settings', 'optimum-lift-plans'),
+                    'instructions'  => __('Where this Exercise can be done.', 'optimum-lift-plans'),
+                    'type'          => 'checkbox',
+                    'choices'       => Choices::settings(),
+                    'layout'        => 'horizontal',
+                    'return_format' => 'value',
+                    'wrapper'       => ['width' => '33'],
+                ],
+                [
+                    'key'          => LibraryKeys::FIELD,
+                    'name'         => LibraryKeys::META,
+                    'label'        => __('Library key', 'optimum-lift-plans'),
+                    'instructions' => __('Names this Exercise in Plan files. Set when first saved, never changes.', 'optimum-lift-plans'),
+                    'type'         => 'text',
+                    'readonly'     => 1,
+                    'placeholder'  => __('Created when you save', 'optimum-lift-plans'),
+                    'wrapper'      => ['width' => '34'],
+                ],
+                [
+                    'key'           => self::EQUIPMENT,
                     'name'          => 'equipment',
                     'label'         => __('Equipment', 'optimum-lift-plans'),
                     'type'          => 'checkbox',
@@ -68,7 +112,7 @@ final class ExerciseFields
                     'return_format' => 'value',
                 ],
                 [
-                    'key'           => 'field_ol_exercise_image',
+                    'key'           => self::IMAGE,
                     'name'          => 'image',
                     'label'         => __('Image', 'optimum-lift-plans'),
                     'instructions'  => __('A still photo. Used in the PDF Download, and in the Portal when there is no animation.', 'optimum-lift-plans'),
@@ -79,7 +123,7 @@ final class ExerciseFields
                     'wrapper'       => ['width' => '50'],
                 ],
                 [
-                    'key'           => 'field_ol_exercise_animation',
+                    'key'           => self::ANIMATION,
                     'name'          => 'animation',
                     'label'         => __('Animation', 'optimum-lift-plans'),
                     'instructions'  => __('A GIF for the Portal. Never used in the PDF.', 'optimum-lift-plans'),
@@ -90,14 +134,14 @@ final class ExerciseFields
                     'wrapper'       => ['width' => '50'],
                 ],
                 [
-                    'key'          => 'field_ol_exercise_video_url',
+                    'key'          => self::VIDEO_URL,
                     'name'         => 'video_url',
                     'label'        => __('Video', 'optimum-lift-plans'),
                     'instructions' => __('Unlisted YouTube or Vimeo link.', 'optimum-lift-plans'),
                     'type'         => 'url',
                 ],
                 [
-                    'key'          => 'field_ol_exercise_instructions',
+                    'key'          => self::INSTRUCTIONS,
                     'name'         => 'instructions',
                     'label'        => __('Instructions', 'optimum-lift-plans'),
                     'type'         => 'wysiwyg',

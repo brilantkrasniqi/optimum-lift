@@ -18,6 +18,14 @@ class WP_CLI
     {
     }
 
+    public static function log(string $message): void
+    {
+    }
+
+    public static function warning(string $message): void
+    {
+    }
+
     public static function error(string $message): never
     {
         exit(1);

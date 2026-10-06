@@ -12,12 +12,16 @@ namespace OptimumLift\Plans;
 use OptimumLift\Plans\Access\AccessRepository;
 use OptimumLift\Plans\Access\OrderAccess;
 use OptimumLift\Plans\Access\ProductFields;
+use OptimumLift\Plans\Cli\ImportExercisesCommand;
 use OptimumLift\Plans\Cli\SeedCommand;
 use OptimumLift\Plans\Content\ExerciseFields;
+use OptimumLift\Plans\Content\LibraryKeys;
 use OptimumLift\Plans\Content\PlanFields;
 use OptimumLift\Plans\Content\PostTypes;
 use OptimumLift\Plans\Download\Delivery;
 use OptimumLift\Plans\Download\PdfRenderer;
+use OptimumLift\Plans\Library\ExerciseImporter;
+use OptimumLift\Plans\Library\ImportScreen;
 use OptimumLift\Plans\Logging\RestController;
 use OptimumLift\Plans\Logging\WorkoutLogRepository;
 use OptimumLift\Plans\Plan\PlanRepository;
@@ -56,6 +60,8 @@ final class Plugin
 
         (new PostTypes())->register();
         (new ExerciseFields())->register();
+        (new LibraryKeys())->register();
+        (new ImportScreen(new ExerciseImporter(new LibraryKeys())))->register();
         (new PlanFields())->register();
         (new ProductFields())->register();
         (new OrderAccess($access))->register();
@@ -65,7 +71,9 @@ final class Plugin
         (new Privacy($logs, $access))->register();
 
         if (defined('WP_CLI') && WP_CLI) {
-            \WP_CLI::add_command('ol-plans', new SeedCommand());
+            $importer = new ExerciseImporter(new LibraryKeys());
+            \WP_CLI::add_command('ol-plans', new SeedCommand($importer));
+            \WP_CLI::add_command('ol-plans import-exercises', new ImportExercisesCommand($importer));
         }
     }
 

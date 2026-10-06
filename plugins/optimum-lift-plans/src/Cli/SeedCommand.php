@@ -8,35 +8,43 @@ declare(strict_types=1);
 
 namespace OptimumLift\Plans\Cli;
 
+use OptimumLift\Plans\Content\LibraryKeys;
 use OptimumLift\Plans\Content\PostTypes;
+use OptimumLift\Plans\Library\ExerciseImporter;
+use OptimumLift\Plans\Library\ImportOptions;
+use OptimumLift\Plans\Library\LibraryFile;
 use WC_Product_Simple;
 use WP_CLI;
-use WP_Post;
 
 final class SeedCommand
 {
     /**
-     * [muscle, equipment, target type]
+     * Library key => target type.
      */
     private const EXERCISES = [
-        'Barbell back squat'      => ['quads', ['barbell'], 'reps'],
-        'Romanian deadlift'       => ['hamstrings', ['barbell'], 'reps'],
-        'Barbell bench press'     => ['chest', ['barbell', 'bench'], 'reps'],
-        'Pull-up'                 => ['back', ['pullup_bar'], 'reps'],
-        'Dumbbell shoulder press' => ['shoulders', ['dumbbell'], 'reps'],
-        'Seated cable row'        => ['back', ['cable'], 'reps'],
-        'Walking lunge'           => ['glutes', ['dumbbell'], 'reps'],
-        'Plank'                   => ['core', ['bodyweight'], 'seconds'],
+        'barbell-back-squat'               => 'reps',
+        'barbell-romanian-deadlift'        => 'reps',
+        'barbell-bench-press'              => 'reps',
+        'pull-up'                          => 'reps',
+        'dumbbell-standing-overhead-press' => 'reps',
+        'cable-seated-row'                 => 'reps',
+        'walking-lunge'                    => 'reps',
+        'incline-side-plank'               => 'seconds',
     ];
 
     private const WORKOUTS = [
-        'Lower body' => ['Barbell back squat', 'Romanian deadlift', 'Walking lunge', 'Plank'],
-        'Upper body' => ['Barbell bench press', 'Pull-up', 'Dumbbell shoulder press', 'Seated cable row'],
-        'Full body'  => ['Barbell back squat', 'Barbell bench press', 'Seated cable row', 'Plank'],
+        'Lower body' => ['barbell-back-squat', 'barbell-romanian-deadlift', 'walking-lunge', 'incline-side-plank'],
+        'Upper body' => ['barbell-bench-press', 'pull-up', 'dumbbell-standing-overhead-press', 'cable-seated-row'],
+        'Full body'  => ['barbell-back-squat', 'barbell-bench-press', 'cable-seated-row', 'incline-side-plank'],
     ];
 
+    public function __construct(private readonly ExerciseImporter $importer)
+    {
+    }
+
     /**
-     * Creates demo Exercises, a Training Plan and a virtual Product that includes it.
+     * Imports the Exercise library, then creates a demo Training Plan from it
+     * and a virtual Product that includes the Plan.
      *
      * ## OPTIONS
      *
@@ -57,11 +65,7 @@ final class SeedCommand
     public function seed(array $args, array $assoc): void
     {
         $weeks = max(1, (int) ($assoc['weeks'] ?? 4));
-        $ids   = [];
-
-        foreach (self::EXERCISES as $name => [$muscle, $equipment]) {
-            $ids[$name] = $this->exercise($name, $muscle, $equipment);
-        }
+        $ids   = $this->libraryExercises();
 
         $planId = (int) wp_insert_post([
             'post_type'   => PostTypes::PLAN,
@@ -86,19 +90,19 @@ final class SeedCommand
         for ($week = 1; $week <= $weeks; $week++) {
             $workoutRows = [];
 
-            foreach (self::WORKOUTS as $workoutName => $exerciseNames) {
+            foreach (self::WORKOUTS as $workoutName => $keys) {
                 $prescriptionRows = [];
 
-                foreach ($exerciseNames as $exerciseName) {
-                    $timed              = self::EXERCISES[$exerciseName][2] === 'seconds';
+                foreach ($keys as $key) {
+                    $timed              = self::EXERCISES[$key] === 'seconds';
                     $prescriptionRows[] = [
-                        'field_ol_prescription_exercise'     => $ids[$exerciseName],
+                        'field_ol_prescription_exercise'     => $ids[$key],
                         'field_ol_prescription_sets'         => $timed ? 3 : 3 + ($week % 2),
                         'field_ol_prescription_target_type'  => $timed ? 'seconds' : 'reps',
                         'field_ol_prescription_target'       => $timed ? (string) (30 + 5 * $week) : '8-10',
                         'field_ol_prescription_intensity'    => $timed ? '' : 'RPE ' . min(9, 6 + $week % 4),
                         'field_ol_prescription_rest_seconds' => $timed ? 60 : 120,
-                        'field_ol_prescription_notes'        => $exerciseName === 'Barbell back squat' ? 'Pause 2 seconds at the bottom.' : '',
+                        'field_ol_prescription_notes'        => $key === 'barbell-back-squat' ? 'Pause 2 seconds at the bottom.' : '',
                     ];
                 }
 
@@ -126,27 +130,40 @@ final class SeedCommand
     }
 
     /**
-     * @param list<string> $equipment
+     * Imports the library (a no-op when it is already there) and returns the
+     * demo's Exercises by key.
+     *
+     * @return array<string, int>
      */
-    private function exercise(string $name, string $muscle, array $equipment): int
+    private function libraryExercises(): array
     {
-        $existing = get_posts([
-            'post_type'      => PostTypes::EXERCISE,
-            'title'          => $name,
-            'post_status'    => 'any',
-            'posts_per_page' => 1,
-        ]);
+        $file = LibraryFile::bundled();
 
-        if ($existing !== [] && $existing[0] instanceof WP_Post) {
-            return $existing[0]->ID;
+        if ($file->problems !== []) {
+            WP_CLI::error('The Exercise library file has problems; run `wp ol-plans import-exercises --dry-run` to see them.');
         }
 
-        $id = (int) wp_insert_post(['post_type' => PostTypes::EXERCISE, 'post_status' => 'publish', 'post_title' => $name], true);
+        $report = $this->importer->run($file, new ImportOptions());
 
-        update_field('field_ol_exercise_primary_muscle', $muscle, $id);
-        update_field('field_ol_exercise_equipment', $equipment, $id);
-        update_field('field_ol_exercise_instructions', '<p>Brace, control the lowering, drive up hard. Stop the set when form breaks.</p>', $id);
+        if ($report->errors !== []) {
+            WP_CLI::error(implode(' ', $report->errors));
+        }
 
-        return $id;
+        WP_CLI::log(sprintf('Exercise library: %d created, %d already there.', $report->counts['created'], $report->counts['skipped'] + $report->counts['filled'] + $report->counts['adopted']));
+
+        $keys = new LibraryKeys();
+        $ids  = [];
+
+        foreach (array_keys(self::EXERCISES) as $key) {
+            $id = $keys->find($key);
+
+            if ($id === null || get_post_status($id) !== 'publish') {
+                WP_CLI::error(sprintf('The library Exercise "%s" is missing or not published.', $key));
+            }
+
+            $ids[$key] = $id;
+        }
+
+        return $ids;
     }
 }

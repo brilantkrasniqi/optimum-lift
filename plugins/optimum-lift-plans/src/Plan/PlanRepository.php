@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace OptimumLift\Plans\Plan;
 
+use OptimumLift\Plans\Content\LibraryKeys;
 use OptimumLift\Plans\Content\PostTypes;
 use WP_Post;
 
@@ -178,11 +179,14 @@ final class PlanRepository
         foreach ($posts as $post) {
             $exercises[$post->ID] = new Exercise(
                 $post->ID,
+                $this->string(get_field(LibraryKeys::META, $post->ID)),
                 get_the_title($post),
                 $this->string(get_field('primary_muscle', $post->ID)),
                 $this->strings(get_field('secondary_muscles', $post->ID)),
                 $this->strings(get_field('equipment', $post->ID)),
                 $this->string(get_field('difficulty', $post->ID)),
+                $this->string(get_field('movement_pattern', $post->ID)),
+                $this->strings(get_field('settings', $post->ID)),
                 (int) get_field('image', $post->ID),
                 (int) get_field('animation', $post->ID),
                 $this->string(get_field('video_url', $post->ID)),

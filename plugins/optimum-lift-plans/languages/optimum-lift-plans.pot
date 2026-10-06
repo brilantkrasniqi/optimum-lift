@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-04T11:29:11+00:00\n"
+"POT-Creation-Date: 2026-10-05T08:52:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: optimum-lift-plans\n"
@@ -105,111 +105,331 @@ msgid "Barbell"
 msgstr ""
 
 #: src/Content/Choices.php:43
-msgid "Dumbbell"
+msgid "Trap bar"
 msgstr ""
 
 #: src/Content/Choices.php:44
-msgid "Kettlebell"
+msgid "Dumbbell"
 msgstr ""
 
 #: src/Content/Choices.php:45
-msgid "Machine"
+msgid "Kettlebell"
 msgstr ""
 
 #: src/Content/Choices.php:46
-msgid "Cable"
+msgid "Machine"
 msgstr ""
 
 #: src/Content/Choices.php:47
-msgid "Resistance band"
+msgid "Smith machine"
 msgstr ""
 
 #: src/Content/Choices.php:48
-msgid "Bench"
+msgid "Cable"
 msgstr ""
 
 #: src/Content/Choices.php:49
-msgid "Pull-up bar"
+msgid "Resistance band"
 msgstr ""
 
 #: src/Content/Choices.php:50
-msgid "Bodyweight"
+msgid "Bench"
+msgstr ""
+
+#: src/Content/Choices.php:51
+msgid "Pull-up bar"
+msgstr ""
+
+#: src/Content/Choices.php:52
+msgid "Dip bars"
+msgstr ""
+
+#: src/Content/Choices.php:53
+msgid "Rings"
+msgstr ""
+
+#: src/Content/Choices.php:54
+msgid "Suspension trainer"
+msgstr ""
+
+#: src/Content/Choices.php:55
+msgid "Medicine ball"
+msgstr ""
+
+#: src/Content/Choices.php:56
+msgid "Exercise ball"
+msgstr ""
+
+#: src/Content/Choices.php:57
+msgid "Ab wheel"
+msgstr ""
+
+#: src/Content/Choices.php:58
+msgid "Rope"
+msgstr ""
+
+#: src/Content/Choices.php:59
+msgid "Cardio machine"
 msgstr ""
 
 #: src/Content/Choices.php:60
+msgid "Bodyweight"
+msgstr ""
+
+#: src/Content/Choices.php:74
+msgid "Horizontal push"
+msgstr ""
+
+#: src/Content/Choices.php:75
+msgid "Vertical push"
+msgstr ""
+
+#: src/Content/Choices.php:76
+msgid "Chest fly"
+msgstr ""
+
+#: src/Content/Choices.php:77
+msgid "Elbow extension"
+msgstr ""
+
+#: src/Content/Choices.php:78
+msgid "Horizontal pull"
+msgstr ""
+
+#: src/Content/Choices.php:79
+msgid "Vertical pull"
+msgstr ""
+
+#: src/Content/Choices.php:80
+msgid "Back extension"
+msgstr ""
+
+#: src/Content/Choices.php:81
+msgid "Scapular"
+msgstr ""
+
+#: src/Content/Choices.php:82
+msgid "Shoulder extension"
+msgstr ""
+
+#: src/Content/Choices.php:83
+msgid "Rear delt"
+msgstr ""
+
+#: src/Content/Choices.php:84
+msgid "Shoulder abduction"
+msgstr ""
+
+#: src/Content/Choices.php:85
+msgid "External rotation"
+msgstr ""
+
+#: src/Content/Choices.php:86
+msgid "Elbow flexion"
+msgstr ""
+
+#: src/Content/Choices.php:87
+msgid "Wrist and forearm"
+msgstr ""
+
+#: src/Content/Choices.php:88
+msgid "Squat"
+msgstr ""
+
+#: src/Content/Choices.php:89
+msgid "Lunge"
+msgstr ""
+
+#: src/Content/Choices.php:90
+msgid "Hinge"
+msgstr ""
+
+#: src/Content/Choices.php:91
+msgid "Hip extension"
+msgstr ""
+
+#: src/Content/Choices.php:92
+msgid "Hip abduction"
+msgstr ""
+
+#: src/Content/Choices.php:93
+msgid "Knee extension"
+msgstr ""
+
+#: src/Content/Choices.php:94
+msgid "Knee flexion"
+msgstr ""
+
+#: src/Content/Choices.php:95
+msgid "Calf raise"
+msgstr ""
+
+#: src/Content/Choices.php:96
+msgid "Core flexion"
+msgstr ""
+
+#: src/Content/Choices.php:97
+msgid "Core anti-extension"
+msgstr ""
+
+#: src/Content/Choices.php:98
+msgid "Core lateral"
+msgstr ""
+
+#: src/Content/Choices.php:99
+msgid "Core rotation"
+msgstr ""
+
+#: src/Content/Choices.php:100
+msgid "Anti-rotation"
+msgstr ""
+
+#: src/Content/Choices.php:101
+msgid "Carry"
+msgstr ""
+
+#: src/Content/Choices.php:102
+msgid "Squat to press"
+msgstr ""
+
+#: src/Content/Choices.php:103
+msgid "Olympic lift"
+msgstr ""
+
+#: src/Content/Choices.php:104
+msgid "Ballistic"
+msgstr ""
+
+#: src/Content/Choices.php:105
+msgid "Plyometric"
+msgstr ""
+
+#: src/Content/Choices.php:106
+msgid "Conditioning"
+msgstr ""
+
+#: src/Content/Choices.php:107
+msgid "Mobility"
+msgstr ""
+
+#: src/Content/Choices.php:108
+msgid "Get-up"
+msgstr ""
+
+#: src/Content/Choices.php:120
+msgid "Home"
+msgstr ""
+
+#: src/Content/Choices.php:121
+msgid "Gym"
+msgstr ""
+
+#: src/Content/Choices.php:122
+msgid "CrossFit"
+msgstr ""
+
+#: src/Content/Choices.php:132
 msgid "Beginner"
 msgstr ""
 
-#: src/Content/Choices.php:61
+#: src/Content/Choices.php:133
 msgid "Intermediate"
 msgstr ""
 
-#: src/Content/Choices.php:62
+#: src/Content/Choices.php:134
 msgid "Advanced"
 msgstr ""
 
-#: src/Content/Choices.php:72
-#: templates/portal/workout.php:75
+#: src/Content/Choices.php:144
+#: templates/portal/workout.php:74
 msgid "Reps"
 msgstr ""
 
-#: src/Content/Choices.php:73
-#: templates/portal/workout.php:75
+#: src/Content/Choices.php:145
+#: templates/portal/workout.php:74
 msgid "Seconds"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:24
+#: src/Content/ExerciseFields.php:35
 #: src/Content/PlanFields.php:209
 #: src/Content/PostTypes.php:50
 #: templates/pdf/plan.php:136
 msgid "Exercise"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:32
-#: src/Content/ExerciseFields.php:120
+#: src/Content/ExerciseFields.php:43
+#: src/Content/ExerciseFields.php:164
 msgid "Primary muscle"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:42
+#: src/Content/ExerciseFields.php:53
 msgid "Secondary muscles"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:54
+#: src/Content/ExerciseFields.php:65
 #: src/Content/PlanFields.php:92
 #: templates/pdf/plan.php:95
 msgid "Difficulty"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:64
-#: src/Content/ExerciseFields.php:121
-msgid "Equipment"
+#: src/Content/ExerciseFields.php:75
+msgid "Movement pattern"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:73
-msgid "Image"
+#: src/Content/ExerciseFields.php:76
+msgid "Not shown to Customers. Helps balance a Plan, for example pushing against pulling."
 msgstr ""
 
-#: src/Content/ExerciseFields.php:74
-msgid "A still photo. Used in the PDF Download, and in the Portal when there is no animation."
+#: src/Content/ExerciseFields.php:87
+msgid "Settings"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:84
-msgid "Animation"
+#: src/Content/ExerciseFields.php:88
+msgid "Where this Exercise can be done."
 msgstr ""
 
-#: src/Content/ExerciseFields.php:85
-msgid "A GIF for the Portal. Never used in the PDF."
+#: src/Content/ExerciseFields.php:98
+msgid "Library key"
 msgstr ""
 
-#: src/Content/ExerciseFields.php:95
-msgid "Video"
-msgstr ""
-
-#: src/Content/ExerciseFields.php:96
-msgid "Unlisted YouTube or Vimeo link."
+#: src/Content/ExerciseFields.php:99
+msgid "Names this Exercise in Plan files. Set when first saved, never changes."
 msgstr ""
 
 #: src/Content/ExerciseFields.php:102
+msgid "Created when you save"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:108
+#: src/Content/ExerciseFields.php:165
+msgid "Equipment"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:117
+msgid "Image"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:118
+msgid "A still photo. Used in the PDF Download, and in the Portal when there is no animation."
+msgstr ""
+
+#: src/Content/ExerciseFields.php:128
+msgid "Animation"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:129
+msgid "A GIF for the Portal. Never used in the PDF."
+msgstr ""
+
+#: src/Content/ExerciseFields.php:139
+msgid "Video"
+msgstr ""
+
+#: src/Content/ExerciseFields.php:140
+msgid "Unlisted YouTube or Vimeo link."
+msgstr ""
+
+#: src/Content/ExerciseFields.php:146
 msgid "Instructions"
 msgstr ""
 
@@ -339,7 +559,7 @@ msgstr ""
 #: src/Content/PlanFields.php:271
 #: src/Privacy/Privacy.php:120
 #: templates/pdf/plan.php:140
-#: templates/portal/workout.php:160
+#: templates/portal/workout.php:182
 msgid "Notes"
 msgstr ""
 
@@ -475,6 +695,166 @@ msgstr ""
 msgid "BW"
 msgstr ""
 
+#: src/Library/ExerciseImporter.php:77
+msgid "Another import is running. Try again in a minute."
+msgstr ""
+
+#. translators: 1: Exercise name, 2: library key
+#: src/Library/ExerciseImporter.php:167
+#, php-format
+msgid "\"%1$s\" (%2$s) is in the trash and was left alone."
+msgstr ""
+
+#. translators: 1: post ID, 2: Exercise title, 3: library key
+#: src/Library/ExerciseImporter.php:190
+#, php-format
+msgid "Could not give Exercise %1$d \"%2$s\" the key %3$s."
+msgstr ""
+
+#. translators: 1: post ID, 2: Exercise title, 3: library key
+#: src/Library/ExerciseImporter.php:199
+#, php-format
+msgid "Took over Exercise %1$d \"%2$s\" as %3$s."
+msgstr ""
+
+#. translators: 1: Exercise name, 2: error message
+#: src/Library/ExerciseImporter.php:228
+#, php-format
+msgid "Could not create \"%1$s\": %2$s"
+msgstr ""
+
+#. translators: %s: media file name
+#: src/Library/ExerciseImporter.php:394
+#, php-format
+msgid "Could not copy %s to a temporary file."
+msgstr ""
+
+#. translators: 1: media file name, 2: error message
+#: src/Library/ExerciseImporter.php:409
+#, php-format
+msgid "Could not add %1$s to the Media Library: %2$s"
+msgstr ""
+
+#. translators: %d: post ID
+#: src/Library/ExerciseImporter.php:459
+#, php-format
+msgid "Exercise %d has no letters or digits in its title, so it still has no key."
+msgstr ""
+
+#. translators: 1: post ID, 2: Exercise title, 3: library key
+#: src/Library/ExerciseImporter.php:469
+#, php-format
+msgid "Gave Exercise %1$d \"%2$s\" the key %3$s."
+msgstr ""
+
+#: src/Library/ImportScreen.php:49
+#: templates/admin/import-exercises.php:24
+#: templates/admin/import-exercises.php:77
+msgid "Import Exercises"
+msgstr ""
+
+#: src/Library/ImportScreen.php:50
+msgid "Import"
+msgstr ""
+
+#. translators: 1: Exercises done, 2: Exercises in the library
+#: src/Library/ImportScreen.php:70
+#, php-format
+msgid "Importing… %1$d of %2$d Exercises"
+msgstr ""
+
+#: src/Library/ImportScreen.php:71
+msgid "Import finished."
+msgstr ""
+
+#: src/Library/ImportScreen.php:72
+msgid "Import finished with errors. Running it again retries what failed."
+msgstr ""
+
+#. translators: %s: error message
+#: src/Library/ImportScreen.php:74
+#, php-format
+msgid "The import stopped: %s"
+msgstr ""
+
+#: src/Library/ImportScreen.php:75
+msgid "Continue import"
+msgstr ""
+
+#: src/Library/ImportScreen.php:76
+msgid "The import is still running. Leave anyway?"
+msgstr ""
+
+#: src/Library/ImportScreen.php:77
+msgid "the site could not be reached. Check the connection"
+msgstr ""
+
+#. translators: %d: number of notes
+#: src/Library/ImportScreen.php:79
+#, php-format
+msgid "Details (%d)"
+msgstr ""
+
+#: src/Library/ImportScreen.php:80
+msgid "Go to Exercises"
+msgstr ""
+
+#: src/Library/ImportScreen.php:109
+msgid "You are not allowed to import Exercises."
+msgstr ""
+
+#: src/Library/ImportScreen.php:113
+msgid "This page has expired. Reload it and import again."
+msgstr ""
+
+#: src/Library/ImportScreen.php:119
+msgid "The library file has problems. Reload the page to see them."
+msgstr ""
+
+#. translators: %d: number of Exercises in the library
+#: src/Library/ImportScreen.php:172
+#, php-format
+msgid "There are no Exercises yet. The plugin comes with a library of %d Exercise, with an image and an animation."
+msgid_plural "There are no Exercises yet. The plugin comes with a library of %d Exercises, each with an image and an animation."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Library/ImportScreen.php:181
+msgid "Import the library"
+msgstr ""
+
+#: src/Library/ImportScreen.php:193
+msgid "New Exercises"
+msgstr ""
+
+#: src/Library/ImportScreen.php:194
+msgid "Your Exercises with a library name, taken over"
+msgstr ""
+
+#: src/Library/ImportScreen.php:195
+msgid "Library Exercises with empty fields filled in"
+msgstr ""
+
+#: src/Library/ImportScreen.php:196
+msgid "Library Exercises already complete"
+msgstr ""
+
+#: src/Library/ImportScreen.php:197
+msgid "Library Exercises in the trash, left alone"
+msgstr ""
+
+#: src/Library/ImportScreen.php:198
+msgid "Other Exercises given a library key"
+msgstr ""
+
+#: src/Library/ImportScreen.php:199
+msgid "Images and animations added to the Media Library"
+msgstr ""
+
+#: src/Library/ImportScreen.php:200
+msgid "Images and animations already in the Media Library"
+msgstr ""
+
 #: src/Logging/RestController.php:135
 msgid "That set is not part of this Prescription."
 msgstr ""
@@ -504,7 +884,7 @@ msgid "Not found."
 msgstr ""
 
 #. translators: %s: comma-separated plugin names
-#: src/Plugin.php:41
+#: src/Plugin.php:45
 #, php-format
 msgid "Optimum Lift Plans is inactive until these plugins are active: %s."
 msgstr ""
@@ -539,7 +919,7 @@ msgid "Some sets have not been saved yet. Reconnect, then finish the Workout."
 msgstr ""
 
 #: src/Portal/Portal.php:158
-#: templates/portal/workout.php:166
+#: templates/portal/workout.php:188
 msgid "Finish Workout"
 msgstr ""
 
@@ -580,6 +960,34 @@ msgstr ""
 
 #: src/Privacy/Privacy.php:146
 msgid "Plan Access was kept as a record of purchase."
+msgstr ""
+
+#. translators: %d: number of Exercises in the library
+#: templates/admin/import-exercises.php:30
+#, php-format
+msgid "The plugin comes with a library of %d Exercise, with a still image for the PDF and an animation for the Portal."
+msgid_plural "The plugin comes with a library of %d Exercises, each with a still image for the PDF and an animation for the Portal."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/import-exercises.php:39
+msgid "Importing adds the ones you do not have and fills in empty fields. It never changes a field you have filled in, so it is safe to run again."
+msgstr ""
+
+#: templates/admin/import-exercises.php:44
+msgid "The library file that comes with the plugin has problems, so nothing can be imported:"
+msgstr ""
+
+#: templates/admin/import-exercises.php:54
+msgid "What an import would do now"
+msgstr ""
+
+#: templates/admin/import-exercises.php:70
+msgid "The library is fully imported. There is nothing to do."
+msgstr ""
+
+#: templates/admin/import-exercises.php:74
+msgid "Keep this page open until the import finishes; it takes a few minutes. If it stops, press the button again: it carries on and never imports anything twice."
 msgstr ""
 
 #: templates/pdf/plan.php:80
@@ -691,75 +1099,81 @@ msgid "Start Workout"
 msgstr ""
 
 #. translators: %s: rest time
-#: templates/portal/workout.php:86
+#: templates/portal/workout.php:92
 #, php-format
 msgid "Rest %s"
 msgstr ""
 
-#: templates/portal/workout.php:98
+#: templates/portal/workout.php:104
 msgid "Last time:"
 msgstr ""
 
-#: templates/portal/workout.php:102
+#: templates/portal/workout.php:108
 msgid "Personal Record:"
 msgstr ""
 
-#: templates/portal/workout.php:109
+#: templates/portal/workout.php:115
 msgid "How to"
 msgstr ""
 
-#: templates/portal/workout.php:112
+#. translators: %s: Exercise name
+#: templates/portal/workout.php:126
+#, php-format
+msgid "%s demonstration"
+msgstr ""
+
+#: templates/portal/workout.php:134
 msgid "Watch the video"
 msgstr ""
 
-#: templates/portal/workout.php:121
+#: templates/portal/workout.php:143
 msgid "Set"
 msgstr ""
 
-#: templates/portal/workout.php:122
+#: templates/portal/workout.php:144
 msgid "kg"
 msgstr ""
 
-#: templates/portal/workout.php:124
+#: templates/portal/workout.php:146
 msgid "Status"
 msgstr ""
 
 #. translators: %d: set number
-#: templates/portal/workout.php:139
+#: templates/portal/workout.php:161
 #, php-format
 msgid "Set %d load in kg"
 msgstr ""
 
 #. translators: 1: set number, 2: Reps or Seconds
-#: templates/portal/workout.php:145
+#: templates/portal/workout.php:167
 #, php-format
 msgid "Set %1$d %2$s"
 msgstr ""
 
-#: templates/portal/workout.php:162
+#: templates/portal/workout.php:184
 msgid "How did it feel?"
 msgstr ""
 
-#: templates/portal/workout.php:166
+#: templates/portal/workout.php:188
 msgid "Save changes"
 msgstr ""
 
-#: templates/portal/workout.php:170
+#: templates/portal/workout.php:192
 msgid "Log this Workout again"
 msgstr ""
 
-#: templates/portal/workout.php:176
+#: templates/portal/workout.php:198
 msgid "Finish this Workout?"
 msgstr ""
 
-#: templates/portal/workout.php:177
+#: templates/portal/workout.php:199
 msgid "You still have a lot of this Workout left."
 msgstr ""
 
-#: templates/portal/workout.php:180
+#: templates/portal/workout.php:202
 msgid "Back to the Workout"
 msgstr ""
 
-#: templates/portal/workout.php:181
+#: templates/portal/workout.php:203
 msgid "Finish anyway"
 msgstr ""
