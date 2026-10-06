@@ -57,7 +57,7 @@ final class PlanFile
     public static function parse(string $bytes): self
     {
         if (strlen($bytes) > self::MAX_BYTES) {
-            return self::refused(__('The file is larger than 2 MB, which no Plan file needs. Check that it is the right file.', 'optimum-lift-plans'));
+            return self::refused(self::tooLarge());
         }
 
         if (str_starts_with($bytes, "\xFF\xFE") || str_starts_with($bytes, "\xFE\xFF") || str_contains($bytes, "\0")) {
@@ -140,6 +140,15 @@ final class PlanFile
         ];
 
         return json_encode($file, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
+    }
+
+    /**
+     * The problem for a file over MAX_BYTES; uploads check the size before
+     * reading the file.
+     */
+    public static function tooLarge(): string
+    {
+        return __('The file is larger than 2 MB, which no Plan file needs. Check that it is the right file.', 'optimum-lift-plans');
     }
 
     /**

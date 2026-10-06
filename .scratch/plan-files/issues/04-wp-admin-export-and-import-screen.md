@@ -1,7 +1,7 @@
 # wp-admin: Export as JSON and Training › Import Plan
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 02, 03
 
 ## What to build
