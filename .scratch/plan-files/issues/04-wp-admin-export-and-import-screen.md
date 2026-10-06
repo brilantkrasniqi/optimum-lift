@@ -6,28 +6,30 @@ Blocked by: 02, 03
 
 ## What to build
 
-Production has no WP-CLI, so both directions need wp-admin.
+Production has no WP-CLI, so both directions need wp-admin. Copy `ImportScreen`'s patterns (menu, capability check, nonce, template included with variables).
 
 **Export** (`src/PlanFile/ExportAction.php`):
-- Row action **Export as JSON** on the Training Plans list (`post_row_actions`, only for `ol_training_plan`, not in the trash), and a small side meta box on the Plan edit screen with the same link. Hide both on a never-saved Plan.
-- Both link to `admin-post.php?action=ol_export_plan&plan=<id>&_wpnonce=…`. The handler checks the nonce and `current_user_can('edit_post', $id)`, runs the exporter, and on success sends `Content-Type: application/json; charset=utf-8`, `Content-Disposition: attachment; filename="<post_name or sanitize_title(title)>.json"`, `nocache_headers()`, and the file. On problems it redirects back with the problems in a transient-backed admin notice. Warnings are not shown on download (the browser only gets a file); mention in the meta box that the CLI shows them, or show warnings in the meta box itself by running the exporter's checks on render. Pick the meta box one if it stays cheap (one query for the Plan's Exercises).
-- Unsaved changes in the edit form are not in the export; the meta box says "Exports the last saved version."
+- **Export as JSON** row action on the Training Plans list (`post_row_actions`, only `ol_training_plan`, not in the trash, only if `current_user_can('edit_post', $id)`).
+- A side meta box "Plan file" on the Plan edit screen, hidden on a Plan never saved (`auto-draft`): the **Export as JSON** link, the line "Exports the last saved version.", and the export's warnings, if any, as a short list. Run the exporter's checks on render; they are a few queries.
+- Both link to `admin-post.php?action=ol_export_plan&plan=<id>` with a nonce (`wp_nonce_url`). The handler checks the nonce and `edit_post`, runs the exporter, and on success: `nocache_headers()`, `Content-Type: application/json; charset=utf-8`, `Content-Disposition: attachment; filename="<name>.json"` where `<name>` is `post_name`, or `sanitize_title(title)` for a draft that has none, then the bytes and `exit`. On problems: store them in a user-scoped transient (like `PlanFields::noticeKey()`), redirect back to the referring screen, and show them as an error notice.
 
 **Import** (`src/PlanFile/ImportPlanScreen.php`, `templates/admin/import-plan.php`):
-- Submenu under Training (`PostTypes::MENU`): page title "Import Plan", menu label "Import Plan". The existing Exercise screen keeps its label; rename its menu label to "Import Exercises" so the two are distinct (update the `.po`).
-- A form posting to `admin-post.php` (`multipart/form-data`): file input (`accept=".json,application/json"`), checkbox "Check only, don't import", nonce, submit. `manage_options` only.
-- Read the upload from `$_FILES['tmp_name']` with `is_uploaded_file()`; never move it into uploads. Check upload errors and size (2 MB) first.
-- Problems: redirect back and list them all on the screen (store the report in a short-lived user-scoped transient, like `PlanFields` does for its notice). Check only: show the counts and "Ready to import". Success: redirect to the new draft's edit screen with a notice "Imported as a draft: N Weeks, … Publish it, then add it to a Product."
-- An **Import Plan** button next to "Add New" on the Training Plans list screen, linking to the page.
+- Submenu under `PostTypes::MENU`: page title and menu label "Import Plan", `manage_options`. Change the Exercise screen's menu label (not its page slug) to "Import Exercises".
+- An **Import Plan** button next to "Add New" on the Training Plans list (the `views_edit-ol_training_plan` filter or a small inline script, whichever is cleaner), shown only to `manage_options`.
+- The form posts `multipart/form-data` to `admin-post.php?action=ol_import_plan`: file input (`accept=".json,application/json"`), checkbox "Check only, don't import", nonce, submit. A few lines of inline JS disable the submit button on submit, so a double click does not import twice.
+- Handler: nonce and capability; `$_FILES` upload error codes (no file, too big for PHP's `upload_max_filesize`); `is_uploaded_file()`; size ≤ 2 MB; read the temp file directly, never move it into uploads. Then `PlanFile` and the importer.
+- Results: problems and "Check only" results go into a user-scoped transient and redirect back to the screen, which lists them (all problems, counts, notes). Success redirects to the new draft's edit screen with a notice: "Imported as a draft: 10 Weeks, 30 Workouts, 180 Prescriptions. Review it, publish it, then add it to a Product." plus any notes.
+- A short help text on the screen: what a Plan file is, that import always creates a new draft, and that every Exercise in the file must already exist on this site (link to Import Exercises).
 
 ## Acceptance criteria
 
-- [ ] Export from the row action and the meta box downloads a file identical (apart from `exported_at`) to `wp ol-plans export-plan` for the same Plan.
-- [ ] An Editor without `manage_options` can export a Plan they can edit but cannot see the Import Plan page.
-- [ ] Bad or missing nonce on either handler: no file, no Plan, a "link expired" message.
-- [ ] Uploading the broken file from ticket 01 shows every problem and creates nothing; "Check only" with a good file shows counts and creates nothing; a real import lands on the new draft's edit screen with the notice.
-- [ ] Not a JSON file, a 3 MB file, and no file each give one clear message.
-- [ ] Checked end to end in a headless browser on the local site (Chromium is installed; see CLAUDE.md for the stack).
-- [ ] Strings are translatable; `npm run lint:php` and `npm run analyse:php` pass.
+- [ ] The row action and the meta box download a file byte-identical to `wp ol-plans export-plan` for the same Plan.
+- [ ] A Plan with a non-library Exercise shows the warning in the meta box.
+- [ ] An Editor (no `manage_options`) can export a Plan but sees neither the Import Plan menu item nor the button, and gets a 403 from the handler URL.
+- [ ] A bad or missing nonce on either handler: no download, no Plan, a "This link has expired" message.
+- [ ] Upload `broken.json`: every problem listed, nothing created. "Check only" with `full.json`: counts shown, nothing created. Real import: lands on the new draft with the notice.
+- [ ] No file, a non-JSON file, and a 3 MB file each give one clear message.
+- [ ] Checked end to end in a browser on the local site, in English and with the site language set to Albanian (strings may still be English until ticket 06).
+- [ ] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments

@@ -6,22 +6,25 @@ Blocked by: 01
 
 ## What to build
 
-`src/PlanFile/PlanFileExporter.php` and the export half of `src/Cli/PlanFileCommand.php`.
+**`src/PlanFile/PlanFileExporter.php`**:
+- `read(int $planId)`: the Plan's content in the normalised structure from ticket 01, read from raw ACF rows with `get_field()` (`summary`, `goal`, `target_audience`, `difficulty`, `phases`, `weeks`). **Not** `PlanRepository`, which drops Prescriptions with unpublished Exercises. Exercise IDs become library keys (`LibraryKeys::META`); numbers become `int`; empty rest becomes `null`; an empty difficulty (ACF may return `null` or `false`) becomes `""`. Ticket 03's read-back uses this same method.
+- `export(int $planId)`: a result with the JSON string, `problems` and `warnings`.
+  - Problems (no file): the post is missing, trashed or not an `ol_training_plan`; a Prescription's Exercise post no longer exists or has no key. List every such row by Week, Workout and Prescription.
+  - Warnings (file still written): an Exercise is not published, or its key is not in `LibraryFile::bundled()`. One warning per Exercise, with every place it is used: `"Seated cable row" (seated-cable-row) is not in the Exercise library, so the site you import into must have it too. Used in Week 1, Workout 2, Prescription 4; …`
+  - Encoding as the spec says (property order of the table, pretty print, LF, trailing newline). No timestamps or URLs.
+  - Self-check: parse the output with `PlanFile` (format checks only) before returning; a problem there is an exporter bug, so throw.
 
-- Input: a Plan post ID, any status except trash. Read `summary`, `goal`, `target_audience`, `difficulty`, and the raw `phases` and `weeks` rows with `get_field()`. Do **not** use `PlanRepository`: it drops Prescriptions with unpublished Exercises.
-- Each Prescription's Exercise ID becomes its library key (`LibraryKeys::META`). Exercise missing, or without a key: a problem naming the row; refuse the export and list every such row.
-- Warnings (file still written): the Exercise is not published; its key is not in `LibraryFile::bundled()` (so production will only have it if someone made it there by hand). One warning per Exercise, listing where it is used.
-- Write every property, defaults included, in the spec's order; `exported_at` as UTC ISO 8601, `exported_from` as `home_url()`. Encode with `JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES` plus a trailing newline. Empty `rest_seconds` is `null`; numbers are integers, not strings (ACF returns strings).
-- Self-check: before returning, parse the output with `PlanFile` (format checks only) and treat any problem as an exporter bug.
-- CLI: `wp ol-plans export-plan <plan-id> [--file=<path>]`. Stdout by default; warnings go to stderr via `WP_CLI::warning()` so `> file.json` stays clean. Unknown ID or wrong post type is `WP_CLI::error()`.
+**`src/Cli/PlanFileCommand.php`**, export half, registered in `Plugin::boot()` as `ol-plans export-plan` (follow `ImportExercisesCommand`'s shape and docblock style, with `## OPTIONS` and `## EXAMPLES` using the `/plans` path):
+- `wp ol-plans export-plan <plan-id> [--file=<path>]`. Without `--file`, write the bytes to stdout with `fwrite(STDOUT, …)`, not `WP_CLI::line()`, so nothing is added. With `--file`, write the file and `WP_CLI::success('Plan 123 exported to /plans/x.json.')`. Warnings via `WP_CLI::warning()` (stderr). Problems: list them, then `WP_CLI::error()`.
+- If a WP-CLI method is missing from `phpstan-wp-cli-stub.php`, add it there.
 
 ## Acceptance criteria
 
-- [ ] `wp ol-plans export-plan <demo-plan-id>` on a freshly seeded site prints a file that `PlanFile` accepts, with no warnings (the demo uses library keys only).
-- [ ] Two exports of the same unchanged Plan differ only in `exported_at`.
-- [ ] A Plan with a Prescription pointing at a hand-made, non-library Exercise exports with one warning naming that Exercise.
-- [ ] A Plan whose Exercise was deleted refuses to export and names the Week, Workout and Prescription.
-- [ ] Phases, empty intensity, empty rest and multi-line notes survive as the spec says.
+- [ ] `export-plan <demo-plan-id> --file=/plans/demo.json` on a freshly seeded site writes a file `PlanFile` accepts, with no warnings (the demo uses library keys only).
+- [ ] Exporting the same unchanged Plan twice gives byte-identical files (`Get-FileHash` / `sha256sum`).
+- [ ] A Plan with one Prescription pointing at a hand-made, non-library Exercise exports, with one warning naming that Exercise and its place.
+- [ ] A Plan whose Exercise was deleted (`wp post delete <id> --force`) refuses to export and names the Week, Workout and Prescription.
+- [ ] Phases, empty intensity, empty rest, non-ASCII text and multi-line notes come out as the spec says.
 - [ ] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
