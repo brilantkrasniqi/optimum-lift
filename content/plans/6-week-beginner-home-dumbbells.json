@@ -1,0 +1,1084 @@
+{
+    "format": "optimum-lift-plan",
+    "version": 1,
+    "plan": {
+        "title": "6-week beginner home dumbbells",
+        "summary": "Three full-body Workouts a week at home with a pair of dumbbells. Sets and effort climb each Week; the last Week of each Phase is lighter.",
+        "goal": "Strength and muscle",
+        "target_audience": "Beginners training at home with dumbbells",
+        "difficulty": "beginner",
+        "phases": [
+            {
+                "name": "Foundation",
+                "first_week": 1,
+                "last_week": 3
+            },
+            {
+                "name": "Build",
+                "first_week": 4,
+                "last_week": 6
+            }
+        ],
+        "weeks": [
+            {
+                "workouts": [
+                    {
+                        "name": "Full body A",
+                        "prescriptions": [
+                            {
+                                "exercise": "split-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-push-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dead-bug",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body B",
+                        "prescriptions": [
+                            {
+                                "exercise": "squat-to-overhead-reach",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "glute-bridge",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": "Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-biceps-curl",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 2,
+                                "target_type": "seconds",
+                                "target": "20",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body C",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "split-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "incline-push-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-lateral-raise",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "kneeling-plank-shoulder-tap",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Full body A",
+                        "prescriptions": [
+                            {
+                                "exercise": "split-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-push-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dead-bug",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body B",
+                        "prescriptions": [
+                            {
+                                "exercise": "squat-to-overhead-reach",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "glute-bridge",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-biceps-curl",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 2,
+                                "target_type": "seconds",
+                                "target": "25",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body C",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "split-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "incline-push-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-lateral-raise",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "kneeling-plank-shoulder-tap",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Full body A",
+                        "prescriptions": [
+                            {
+                                "exercise": "split-squat",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-push-up",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dead-bug",
+                                "sets": 1,
+                                "target_type": "reps",
+                                "target": "10",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body B",
+                        "prescriptions": [
+                            {
+                                "exercise": "squat-to-overhead-reach",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "glute-bridge",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-biceps-curl",
+                                "sets": 1,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 1,
+                                "target_type": "seconds",
+                                "target": "25",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body C",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-deadlift",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "split-squat",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "incline-push-up",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-lateral-raise",
+                                "sets": 1,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "kneeling-plank-shoulder-tap",
+                                "sets": 1,
+                                "target_type": "reps",
+                                "target": "10",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Full body A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-single-leg-split-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "push-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "6-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hands on a raised surface if you cannot reach the reps."
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-biceps-curl",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dead-bug",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body B",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-reverse-lunge",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "glute-bridge",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hold a dumbbell on your hips. Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm. Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-kickback",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "30",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body C",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "squat-to-overhead-reach",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Lower for 3 seconds."
+                            },
+                            {
+                                "exercise": "push-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "6-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hands on a raised surface if you cannot reach the reps."
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-lateral-raise",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "farmers-walk",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "30",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Full body A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-single-leg-split-squat",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "push-up",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "6-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hands on a raised surface if you cannot reach the reps."
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-biceps-curl",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dead-bug",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "12",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body B",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-reverse-lunge",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "glute-bridge",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hold a dumbbell on your hips. Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm. Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-kickback",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "35",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body C",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-deadlift",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "squat-to-overhead-reach",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Lower for 3 seconds."
+                            },
+                            {
+                                "exercise": "push-up",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "6-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hands on a raised surface if you cannot reach the reps."
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-lateral-raise",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "farmers-walk",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "40",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Full body A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-single-leg-split-squat",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "push-up",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "6-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hands on a raised surface if you cannot reach the reps."
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-biceps-curl",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dead-bug",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "12",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body B",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-reverse-lunge",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each leg."
+                            },
+                            {
+                                "exercise": "glute-bridge",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hold a dumbbell on your hips. Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm. Pause 1 second at the top."
+                            },
+                            {
+                                "exercise": "dumbbell-kickback",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 2,
+                                "target_type": "seconds",
+                                "target": "35",
+                                "intensity": "",
+                                "rest_seconds": 45,
+                                "notes": "Each side."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body C",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-deadlift",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "squat-to-overhead-reach",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "12-15",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Lower for 3 seconds."
+                            },
+                            {
+                                "exercise": "push-up",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "6-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Hands on a raised surface if you cannot reach the reps."
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Each arm."
+                            },
+                            {
+                                "exercise": "dumbbell-lateral-raise",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "farmers-walk",
+                                "sets": 2,
+                                "target_type": "seconds",
+                                "target": "40",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
