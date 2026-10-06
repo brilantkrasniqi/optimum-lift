@@ -19,17 +19,35 @@ use WP_Post;
 
 final class PlanFields
 {
-    public const WEEKS              = 'field_ol_plan_weeks';
-    public const PHASES             = 'field_ol_plan_phases';
-    public const WORKOUT_UID        = 'field_ol_workout_uid';
-    public const WORKOUT_NAME       = 'field_ol_workout_name';
-    public const PRESCRIPTION_UID   = 'field_ol_prescription_uid';
+    public const SUMMARY                  = 'field_ol_plan_summary';
+    public const GOAL                     = 'field_ol_plan_goal';
+    public const TARGET_AUDIENCE          = 'field_ol_plan_target_audience';
+    public const DIFFICULTY               = 'field_ol_plan_difficulty';
+    public const PHASES                   = 'field_ol_plan_phases';
+    public const PHASE_NAME               = 'field_ol_phase_name';
+    public const PHASE_FIRST              = 'field_ol_phase_first_week';
+    public const PHASE_LAST               = 'field_ol_phase_last_week';
+    public const WEEKS                    = 'field_ol_plan_weeks';
+    public const WEEK_WORKOUTS            = 'field_ol_week_workouts';
+    public const WORKOUT_UID              = 'field_ol_workout_uid';
+    public const WORKOUT_NAME             = 'field_ol_workout_name';
+    public const WORKOUT_PRESCRIPTIONS    = 'field_ol_workout_prescriptions';
+    public const PRESCRIPTION_UID         = 'field_ol_prescription_uid';
+    public const PRESCRIPTION_EXERCISE    = 'field_ol_prescription_exercise';
+    public const PRESCRIPTION_SETS        = 'field_ol_prescription_sets';
+    public const PRESCRIPTION_TARGET_TYPE = 'field_ol_prescription_target_type';
+    public const PRESCRIPTION_TARGET      = 'field_ol_prescription_target';
+    public const PRESCRIPTION_INTENSITY   = 'field_ol_prescription_intensity';
+    public const PRESCRIPTION_REST        = 'field_ol_prescription_rest_seconds';
+    public const PRESCRIPTION_NOTES       = 'field_ol_prescription_notes';
 
-    private const PHASE_NAME        = 'field_ol_phase_name';
-    private const PHASE_FIRST       = 'field_ol_phase_first_week';
-    private const PHASE_LAST        = 'field_ol_phase_last_week';
-    private const WEEK_HEADING      = 'field_ol_week_heading';
-    private const SENTINEL          = 'ol_plan_form_complete';
+    /** Limits of the Prescription fields, shared with the Plan file validator. */
+    public const SETS_MAX             = 20;
+    public const TARGET_MAX_LENGTH    = 20;
+    public const INTENSITY_MAX_LENGTH = 20;
+
+    private const WEEK_HEADING = 'field_ol_week_heading';
+    private const SENTINEL     = 'ol_plan_form_complete';
 
     /** @var array<string, true> uids already assigned during the current Plan save */
     private array $seenUids = [];
@@ -64,7 +82,7 @@ final class PlanFields
             'fields'   => [
                 $this->tab('overview', __('Overview', 'optimum-lift-plans')),
                 [
-                    'key'          => 'field_ol_plan_summary',
+                    'key'          => self::SUMMARY,
                     'name'         => 'summary',
                     'label'        => __('Summary', 'optimum-lift-plans'),
                     'instructions' => __('Shown on the PDF cover and at the top of the Plan in the Portal.', 'optimum-lift-plans'),
@@ -73,21 +91,21 @@ final class PlanFields
                     'new_lines'    => '',
                 ],
                 [
-                    'key'     => 'field_ol_plan_goal',
+                    'key'     => self::GOAL,
                     'name'    => 'goal',
                     'label'   => __('Goal', 'optimum-lift-plans'),
                     'type'    => 'text',
                     'wrapper' => ['width' => '33'],
                 ],
                 [
-                    'key'     => 'field_ol_plan_target_audience',
+                    'key'     => self::TARGET_AUDIENCE,
                     'name'    => 'target_audience',
                     'label'   => __('Target audience', 'optimum-lift-plans'),
                     'type'    => 'text',
                     'wrapper' => ['width' => '33'],
                 ],
                 [
-                    'key'           => 'field_ol_plan_difficulty',
+                    'key'           => self::DIFFICULTY,
                     'name'          => 'difficulty',
                     'label'         => __('Difficulty', 'optimum-lift-plans'),
                     'type'          => 'select',
@@ -160,7 +178,7 @@ final class PlanFields
                             'message' => '',
                         ],
                         [
-                            'key'          => 'field_ol_week_workouts',
+                            'key'          => self::WEEK_WORKOUTS,
                             'name'         => 'workouts',
                             'label'        => __('Workouts', 'optimum-lift-plans'),
                             'type'         => 'repeater',
@@ -179,7 +197,7 @@ final class PlanFields
                                     'required'     => 1,
                                 ],
                                 [
-                                    'key'          => 'field_ol_workout_prescriptions',
+                                    'key'          => self::WORKOUT_PRESCRIPTIONS,
                                     'name'         => 'prescriptions',
                                     'label'        => __('Prescriptions', 'optimum-lift-plans'),
                                     'type'         => 'repeater',
@@ -204,7 +222,7 @@ final class PlanFields
         return [
             $this->uidField(self::PRESCRIPTION_UID),
             [
-                'key'           => 'field_ol_prescription_exercise',
+                'key'           => self::PRESCRIPTION_EXERCISE,
                 'name'          => 'exercise',
                 'label'         => __('Exercise', 'optimum-lift-plans'),
                 'type'          => 'post_object',
@@ -216,19 +234,19 @@ final class PlanFields
                 'wrapper'       => ['width' => '22'],
             ],
             [
-                'key'           => 'field_ol_prescription_sets',
+                'key'           => self::PRESCRIPTION_SETS,
                 'name'          => 'sets',
                 'label'         => __('Sets', 'optimum-lift-plans'),
                 'type'          => 'number',
                 'min'           => 1,
-                'max'           => 20,
+                'max'           => self::SETS_MAX,
                 'step'          => 1,
                 'default_value' => 3,
                 'required'      => 1,
                 'wrapper'       => ['width' => '9'],
             ],
             [
-                'key'           => 'field_ol_prescription_target_type',
+                'key'           => self::PRESCRIPTION_TARGET_TYPE,
                 'name'          => 'target_type',
                 'label'         => __('Target in', 'optimum-lift-plans'),
                 'type'          => 'button_group',
@@ -238,26 +256,26 @@ final class PlanFields
                 'wrapper'       => ['width' => '15'],
             ],
             [
-                'key'          => 'field_ol_prescription_target',
+                'key'          => self::PRESCRIPTION_TARGET,
                 'name'         => 'target',
                 'label'        => __('Target', 'optimum-lift-plans'),
                 'instructions' => __('8, 8-10, AMRAP, 30', 'optimum-lift-plans'),
                 'type'         => 'text',
                 'required'     => 1,
-                'maxlength'    => 20,
+                'maxlength'    => self::TARGET_MAX_LENGTH,
                 'wrapper'      => ['width' => '11'],
             ],
             [
-                'key'          => 'field_ol_prescription_intensity',
+                'key'          => self::PRESCRIPTION_INTENSITY,
                 'name'         => 'intensity',
                 'label'        => __('Intensity', 'optimum-lift-plans'),
                 'instructions' => __('e.g. RPE 8', 'optimum-lift-plans'),
                 'type'         => 'text',
-                'maxlength'    => 20,
+                'maxlength'    => self::INTENSITY_MAX_LENGTH,
                 'wrapper'      => ['width' => '11'],
             ],
             [
-                'key'     => 'field_ol_prescription_rest_seconds',
+                'key'     => self::PRESCRIPTION_REST,
                 'name'    => 'rest_seconds',
                 'label'   => __('Rest (s)', 'optimum-lift-plans'),
                 'type'    => 'number',
@@ -266,7 +284,7 @@ final class PlanFields
                 'wrapper' => ['width' => '10'],
             ],
             [
-                'key'       => 'field_ol_prescription_notes',
+                'key'       => self::PRESCRIPTION_NOTES,
                 'name'      => 'notes',
                 'label'     => __('Notes', 'optimum-lift-plans'),
                 'type'      => 'textarea',
@@ -330,8 +348,8 @@ final class PlanFields
     public function ensureUidInRows(mixed $rows, int|string $postId, array $field): mixed
     {
         $uidKey = match ($field['key'] ?? '') {
-            'field_ol_week_workouts'         => self::WORKOUT_UID,
-            'field_ol_workout_prescriptions' => self::PRESCRIPTION_UID,
+            self::WEEK_WORKOUTS         => self::WORKOUT_UID,
+            self::WORKOUT_PRESCRIPTIONS => self::PRESCRIPTION_UID,
             default                          => null,
         };
 
@@ -459,17 +477,19 @@ final class PlanFields
             return;
         }
 
-        $inputs = 60 + 4 * (int) get_post_meta($postId, 'phases', true);
-        $weeks  = (int) get_post_meta($postId, 'weeks', true);
+        $weeks      = (int) get_post_meta($postId, 'weeks', true);
+        $perWorkout = [];
 
         for ($w = 0; $w < $weeks; $w++) {
-            $workouts = (int) get_post_meta($postId, "weeks_{$w}_workouts", true);
-            $inputs  += 2;
+            $workouts       = (int) get_post_meta($postId, "weeks_{$w}_workouts", true);
+            $perWorkout[$w] = [];
 
             for ($o = 0; $o < $workouts; $o++) {
-                $inputs += 4 + 9 * (int) get_post_meta($postId, "weeks_{$w}_workouts_{$o}_prescriptions", true);
+                $perWorkout[$w][] = (int) get_post_meta($postId, "weeks_{$w}_workouts_{$o}_prescriptions", true);
             }
         }
+
+        $inputs = self::estimateInputs((int) get_post_meta($postId, 'phases', true), $perWorkout);
 
         if ($inputs < 0.8 * $limit) {
             return;
@@ -484,6 +504,28 @@ final class PlanFields
                 $limit
             ))
         );
+    }
+
+    /**
+     * About how many inputs the edit form submits for a Plan of this shape:
+     * the fixed fields, 4 per Phase, 2 per Week, 4 per Workout and 9 per
+     * Prescription.
+     *
+     * @param array<int, array<int, int>> $prescriptionsPerWorkoutPerWeek Prescription counts, by Week then Workout.
+     */
+    public static function estimateInputs(int $phases, array $prescriptionsPerWorkoutPerWeek): int
+    {
+        $inputs = 60 + 4 * $phases;
+
+        foreach ($prescriptionsPerWorkoutPerWeek as $workouts) {
+            $inputs += 2;
+
+            foreach ($workouts as $prescriptions) {
+                $inputs += 4 + 9 * $prescriptions;
+            }
+        }
+
+        return $inputs;
     }
 
     public function adminStyles(): void

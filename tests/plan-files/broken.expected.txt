@@ -1,0 +1,17 @@
+File: "format" must be "optimum-lift-plan".
+This file was made by a newer version of the plugin. Update the plugin on this site, then import it again.
+Plan: "title" must not be empty.
+Plan: "difficulty" must be one of: "", "beginner", "intermediate", "advanced".
+Phase 2: Phases overlap at Week 1.
+Phase 3: This Plan only has 2 Weeks.
+Week 1, Workout 1 ("Upper body"), Prescription 1: "sets" must be a whole number from 1 to 20.
+Week 1, Workout 1 ("Upper body"), Prescription 2: "sets" must be a whole number from 1 to 20.
+Week 1, Workout 1 ("Upper body"), Prescription 3: "target_type" must be one of: "reps", "seconds".
+Week 1, Workout 1 ("Upper body"), Prescription 3: "target" must be at most 20 characters.
+Week 1, Workout 1 ("Upper body"), Prescription 4: "rest_seconds" must be a whole number of 0 or more, or null.
+Week 1, Workout 1 ("Upper body"), Prescription 5: unknown property "rest".
+Week 1, Workout 1 ("Upper body"), Prescription 6: "Bench Press" is not a library key. A key is lowercase letters and digits joined by hyphens, e.g. "barbell-back-squat".
+Week 1, Workout 2: "name" must not be empty.
+Week 2: "workouts" must not be empty.
+Exercise "barbel-bench-press" does not exist on this site. Used in Week 1, Workout 1 ("Upper body"), Prescription 7; Week 1, Workout 2, Prescription 1.
+Exercise "band-y-raise" is in the trash. Used in Week 1, Workout 2, Prescription 2.
