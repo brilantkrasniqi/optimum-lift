@@ -1,7 +1,7 @@
 # Exporter and `wp ol-plans export-plan`
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 01
 
 ## What to build

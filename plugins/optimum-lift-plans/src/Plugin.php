@@ -13,6 +13,7 @@ use OptimumLift\Plans\Access\AccessRepository;
 use OptimumLift\Plans\Access\OrderAccess;
 use OptimumLift\Plans\Access\ProductFields;
 use OptimumLift\Plans\Cli\ImportExercisesCommand;
+use OptimumLift\Plans\Cli\PlanFileCommand;
 use OptimumLift\Plans\Cli\SeedCommand;
 use OptimumLift\Plans\Content\ExerciseFields;
 use OptimumLift\Plans\Content\LibraryKeys;
@@ -25,6 +26,7 @@ use OptimumLift\Plans\Library\ImportScreen;
 use OptimumLift\Plans\Logging\RestController;
 use OptimumLift\Plans\Logging\WorkoutLogRepository;
 use OptimumLift\Plans\Plan\PlanRepository;
+use OptimumLift\Plans\PlanFile\PlanFileExporter;
 use OptimumLift\Plans\Portal\Portal;
 use OptimumLift\Plans\Privacy\Privacy;
 
@@ -74,6 +76,9 @@ final class Plugin
             $importer = new ExerciseImporter(new LibraryKeys());
             \WP_CLI::add_command('ol-plans', new SeedCommand($importer));
             \WP_CLI::add_command('ol-plans import-exercises', new ImportExercisesCommand($importer));
+
+            $planFiles = new PlanFileCommand(new PlanFileExporter());
+            \WP_CLI::add_command('ol-plans export-plan', [$planFiles, 'export']);
         }
     }
 
