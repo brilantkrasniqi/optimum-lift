@@ -135,12 +135,13 @@ final class PlanFileImporter
         }
 
         try {
-            // wp_insert_post() unslashes what it is given.
-            return wp_insert_post(wp_slash([
+            // wp_insert_post() unslashes what it is given; addslashes() is
+            // wp_slash() for a string.
+            return wp_insert_post([
                 'post_type'   => PostTypes::PLAN,
                 'post_status' => $status,
-                'post_title'  => $title,
-            ]), true);
+                'post_title'  => addslashes($title),
+            ], true);
         } finally {
             if ($kses) {
                 kses_init_filters();

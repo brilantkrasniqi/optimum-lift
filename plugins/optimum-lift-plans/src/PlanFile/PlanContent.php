@@ -65,7 +65,13 @@ final readonly class PlanContent
 
     public function workoutCount(): int
     {
-        return array_sum(array_map(static fn (WeekRow $week): int => count($week->workouts), $this->weeks));
+        $count = 0;
+
+        foreach ($this->weeks as $week) {
+            $count += count($week->workouts);
+        }
+
+        return $count;
     }
 
     public function prescriptionCount(): int

@@ -43,6 +43,7 @@ final class PlanFileExporter
 
         $problems  = [];
         $exercises = [];
+        $places    = [];
         $phases    = [];
         $weeks     = [];
 
@@ -82,7 +83,7 @@ final class PlanFileExporter
                         continue;
                     }
 
-                    $exercises[$exerciseId]['places'][] = $place;
+                    $places[$exerciseId][] = $place;
 
                     $rest = $row['rest_seconds'] ?? null;
 
@@ -117,7 +118,7 @@ final class PlanFileExporter
             $weeks,
         );
 
-        return new PlanFileExport($content, '', [], $this->warnings(array_filter($exercises)));
+        return new PlanFileExport($content, '', [], $this->warnings(array_filter($exercises), $places));
     }
 
     /**
@@ -160,7 +161,7 @@ final class PlanFileExporter
     }
 
     /**
-     * @return array{key: string, title: string, status: string, places: list<string>}|null
+     * @return array{key: string, title: string, status: string}|null
      */
     private function exercise(int $exerciseId): ?array
     {
@@ -174,7 +175,6 @@ final class PlanFileExporter
             'key'    => $this->text(get_post_meta($exerciseId, LibraryKeys::META, true)),
             'title'  => $post->post_title,
             'status' => $post->post_status,
-            'places' => [],
         ];
     }
 
@@ -182,14 +182,15 @@ final class PlanFileExporter
      * One warning per Exercise the importing site may not have, naming every
      * place it is used.
      *
-     * @param array<int, array{key: string, title: string, status: string, places: list<string>}> $exercises
+     * @param array<int, array{key: string, title: string, status: string}> $exercises
+     * @param array<int, list<string>>                                     $places    Exercise ID => places it is used.
      * @return list<string>
      */
-    private function warnings(array $exercises): array
+    private function warnings(array $exercises, array $places): array
     {
         $warnings = [];
 
-        foreach ($exercises as $exercise) {
+        foreach ($exercises as $exerciseId => $exercise) {
             $published = $exercise['status'] === 'publish';
             $inLibrary = isset($this->bundledKeys()[$exercise['key']]);
 
@@ -208,7 +209,7 @@ final class PlanFileExporter
                 },
                 $exercise['title'],
                 $exercise['key'],
-                Places::list($exercise['places'])
+                Places::list($places[$exerciseId] ?? [])
             );
         }
 
