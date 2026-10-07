@@ -1,7 +1,7 @@
 # "Size PDFs" box on the Product edit screen
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 05
 
 ## What to build
@@ -51,3 +51,45 @@ So `djegie-e-shpejte-mashkull-80-90kg.pdf` matches a Gjinia × Pesha variation `
 - [ ] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+Built in the "Diets 09" commit, in `inc/shop/size-files.php` (loaded with the other shop files). The boxes stay open until the owner's PC run.
+
+**How it works:**
+- The box (`add_meta_boxes_product`, variable Products only) shows the warnings, the table in the picker's order (`optimum_lift_size_variations()`) and a `multiple` PDF field. `post_edit_form_tag` adds `multipart/form-data` on every Product form, which does no harm on Simple ones.
+- On save it runs on `woocommerce_process_product_meta` at priority 50, after WooCommerce's own save (10) and images (20). It needs the nonce and `edit_product` on the post.
+- Matching (`optimum_lift_size_files_plan()`): the stem is the name without `.pdf` and a trailing `kg`, and it must end with `-` plus the variation's values in the parent's attribute order. `…-90pluskg.pdf` works, since the renderer's code is `90plus`. Every problem is collected: not a PDF (`wp_check_filetype_and_ext()` with PDF only), no match, several matches, or two files for one slot. Nothing is stored unless the list is empty.
+- Storing goes through `wp_handle_upload()` with an `upload_dir` filter pointing at `{uploads}/woocommerce_uploads/diets/<slug>`, WooCommerce's protected folder (its `.htaccess` sits at the top). A `unique_filename_callback` keeps the file's own name, so a re-upload overwrites it. A file that cannot be stored attaches none.
+- Download IDs:
+  - The same plan prefix in this box's folder keeps its ID.
+  - Otherwise the new file takes over the ID of a download it replaces (for a diet, its one file; for example the seed's `ol-demo` placeholder or a hand-attached file).
+  - Only a genuinely new slot gets `wp_generate_uuid4()`.
+  - A bundle keeps this box's files for plans the upload does not touch. So a bundle can take its two plans in two uploads, which matters on a host whose `post_max_size` is below the 10 MB the 20 PDFs need (each rendered PDF is about 0.5 MB).
+- Names: "<Product> — <Size>", and for a bundle " — <Plan>" from the prefix ("Djegie yndyre"). Variations are set Virtual and Downloadable.
+- PDFs in the folder that no variation uses any more are deleted.
+- Warnings, in the box and as a notice after save:
+  - a different price;
+  - not Virtual;
+  - not Downloadable or no file;
+  - an "Any …" attribute;
+  - for a bundle, fewer files than its sized components.
+
+  Mapping a file to a particular component is not possible, because plan slugs are not Product slugs. So the bundle check counts files against sized components.
+
+**PC test:**
+1. Render `node render.js plans/djegie-yndyre.json` and `plans/djegie-e-shpejte.json` in `content/diets`.
+2. Product › 12-javor:
+   - Before uploading, print the download IDs: `wp eval '$v = wc_get_product(<variation ID>); print_r(array_keys($v->get_downloads()));'`
+   - Upload the 10 `djegie-yndyre` PDFs and Update.
+   - Expect "10 PDFs attached.", a table with no warning, and the same IDs as before.
+   - Open three files from My Account or the table and check each cover's Size.
+3. `dieta-mesdhetare`: the 5 `djegie-e-shpejte` PDFs match by weight.
+4. Error cases: rename one file to `x.pdf`, then add a second copy of one Size. Each time, nothing is attached and the notice names the files.
+5. Place a test order and download the file. Re-upload one changed PDF. The same link now serves the new file, and `wp-content/uploads/woocommerce_uploads/diets/plani-ushqimor-12-javor/` holds 10 files.
+6. Bundle: upload all 20 files. Each variation lists two.
+7. Warnings: change one variation's price, untick Virtual on another, and remove the file from a third. All three warnings show.
+8. Refusals:
+   - a `.txt` renamed to `.pdf` is refused;
+   - a Shop Manager can upload;
+   - a user without `edit_product` never reaches the save.

@@ -46,6 +46,7 @@ define('OPTIMUM_LIFT_URI', get_template_directory_uri());
             'inc/shop/upsell.php',
             'inc/shop/checkout.php',
             'inc/shop/withdrawal.php',
+            'inc/shop/size-files.php',
         );
     }
 
