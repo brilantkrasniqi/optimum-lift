@@ -1,0 +1,20 @@
+{
+  "name": "Omëletë me perime e sallatë",
+  "slots": ["dinner"],
+  "minutes": 12,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 100 },
+    { "food": "egg_white", "grams": 200 },
+    { "food": "zucchini", "grams": 100 },
+    { "food": "pepper", "grams": 80 },
+    { "food": "kashkaval", "grams": 20 },
+    { "food": "wholegrain_bread", "grams": 55 }
+  ],
+  "steps": [
+    "Kaurdis kungulleshën dhe specin 4 minuta.",
+    "Hidh vezët e rrahura, kaçkavallin sipër, mbuloje 3 minuta."
+  ],
+  "swap": "Kaçkavall → djathë i bardhë, 25 g"
+}

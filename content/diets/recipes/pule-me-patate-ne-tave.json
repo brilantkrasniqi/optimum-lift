@@ -1,0 +1,20 @@
+{
+  "name": "Pulë me patate në tavë",
+  "slots": ["lunch"],
+  "minutes": 45,
+  "tags": ["dairy-free", "gluten-free", "meal-prep"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 180, "note": "i papjekur" },
+    { "food": "potato", "grams": 355 },
+    { "food": "pepper", "grams": 100 },
+    { "food": "onion", "grams": 50 },
+    { "food": "olive_oil", "grams": 7 }
+  ],
+  "steps": [
+    "Prit patatet, specat dhe qepën, përziej me vajin dhe erëzat.",
+    "Shto pulën në copa sipër.",
+    "Piqe 35–40 minuta në 200 °C."
+  ],
+  "swap": "Patate → patate e ëmbël, 270 g"
+}

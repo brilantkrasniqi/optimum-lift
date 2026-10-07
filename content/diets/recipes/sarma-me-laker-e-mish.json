@@ -1,0 +1,20 @@
+{
+  "name": "Sarma me lakër e mish",
+  "slots": ["dinner"],
+  "minutes": 50,
+  "tags": ["gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "cabbage", "grams": 250 },
+    { "food": "beef_mince_5", "grams": 130 },
+    { "food": "rice", "grams": 50 },
+    { "food": "tomato_sauce", "grams": 100 },
+    { "food": "greek_yogurt_2", "grams": 100 }
+  ],
+  "steps": [
+    "Zbutini gjethet e lakrës në ujë të vluar 3 minuta.",
+    "Mbushi me mishin, orizin e papjekur dhe pak salcë, mbështilli.",
+    "Ziej 40 minuta në salcën e mbetur; hae me kos."
+  ],
+  "swap": "Lakër → speca, 250 g"
+}

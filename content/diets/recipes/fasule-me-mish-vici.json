@@ -1,0 +1,21 @@
+{
+  "name": "Fasule me mish viçi",
+  "slots": ["dinner"],
+  "minutes": 30,
+  "tags": ["dairy-free", "gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "beef_mince_5", "grams": 120 },
+    { "food": "white_beans_cooked", "grams": 150 },
+    { "food": "onion_carrot", "grams": 80 },
+    { "food": "tomato_sauce", "grams": 100 },
+    { "food": "olive_oil", "grams": 5 },
+    { "food": "spice", "label": "Paprikë", "household": "1 lugë çaji" }
+  ],
+  "steps": [
+    "Kaurdis mishin me qepën dhe karotën.",
+    "Shto fasulet, salcën, paprikën dhe 1 gotë ujë.",
+    "Lëre të ziejë 15 minuta në zjarr të ulët."
+  ],
+  "swap": "Viç → gjoks gjeldeti i grirë, 130 g"
+}

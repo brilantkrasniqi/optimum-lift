@@ -1,0 +1,19 @@
+{
+  "name": "Sallatë me vezë, ton e patate",
+  "slots": ["dinner"],
+  "minutes": 20,
+  "tags": ["pescatarian", "dairy-free", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 100 },
+    { "food": "tuna_water", "grams": 100 },
+    { "food": "potato", "grams": 305 },
+    { "food": "lettuce", "grams": 80 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Zieji patatet 20 minuta dhe vezët 9 minuta.",
+    "Prit gjithçka dhe përziej me tonin, vajin dhe limon."
+  ],
+  "swap": "Patate → bukë integrale, 70 g"
+}

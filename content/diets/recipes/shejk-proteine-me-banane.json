@@ -1,0 +1,16 @@
+{
+  "name": "Shejk proteine me banane",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "whey", "grams": 30 },
+    { "food": "milk_15", "grams": 250 },
+    { "food": "banana", "grams": 100 }
+  ],
+  "steps": [
+    "Përzieji në blender ose në shishe shejku."
+  ],
+  "swap": "Qumësht → ujë dhe 1 lugë gjalpë kikiriku"
+}

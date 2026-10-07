@@ -1,0 +1,20 @@
+{
+  "name": "Mish viçi me bishtaja",
+  "slots": ["lunch"],
+  "minutes": 40,
+  "tags": ["dairy-free", "gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "beef_lean", "grams": 190 },
+    { "food": "green_beans", "grams": 250 },
+    { "food": "tomato_sauce", "grams": 100 },
+    { "food": "potato", "grams": 120 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Kaurdis mishin në copa me vajin.",
+    "Shto bishtajat, patatet, salcën dhe 1 gotë ujë.",
+    "Lëre të ziejë 30 minuta."
+  ],
+  "swap": "Viç → gjoks gjeldeti, 170 g"
+}

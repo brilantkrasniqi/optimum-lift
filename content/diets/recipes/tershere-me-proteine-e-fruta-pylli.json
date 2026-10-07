@@ -1,0 +1,19 @@
+{
+  "name": "Tërshërë me proteinë e fruta pylli",
+  "slots": ["breakfast"],
+  "minutes": 5,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "oats", "grams": 70 },
+    { "food": "whey", "grams": 30 },
+    { "food": "milk_15", "grams": 200 },
+    { "food": "berries", "grams": 100 }
+  ],
+  "steps": [
+    "Zieji tërshërën me qumështin 3 minuta.",
+    "Hiqe nga zjarri dhe përziej proteinën.",
+    "Shto frutat sipër."
+  ],
+  "swap": "Fruta pylli → 1 banane e vogël"
+}

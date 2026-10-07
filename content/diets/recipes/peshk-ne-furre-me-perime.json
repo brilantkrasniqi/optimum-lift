@@ -1,0 +1,20 @@
+{
+  "name": "Peshk në furrë me perime",
+  "slots": ["dinner"],
+  "minutes": 35,
+  "tags": ["pescatarian", "dairy-free", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "white_fish", "grams": 220 },
+    { "food": "zucchini", "grams": 150 },
+    { "food": "pepper", "grams": 100 },
+    { "food": "potato", "grams": 260 },
+    { "food": "olive_oil", "grams": 10 }
+  ],
+  "steps": [
+    "Prit perimet e patatet, përziej me vajin.",
+    "Piqi 20 minuta në 200 °C, shto peshkun.",
+    "Piqe edhe 12 minuta, limon sipër."
+  ],
+  "swap": "Peshk → gjoks pule, 180 g"
+}

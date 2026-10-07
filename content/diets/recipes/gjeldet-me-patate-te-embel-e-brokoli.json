@@ -1,0 +1,19 @@
+{
+  "name": "Gjeldet me patate të ëmbël e brokoli",
+  "slots": ["lunch"],
+  "minutes": 40,
+  "tags": ["dairy-free", "gluten-free", "meal-prep"],
+  "photo": "",
+  "ingredients": [
+    { "food": "turkey_breast", "grams": 180, "note": "i papjekur" },
+    { "food": "sweet_potato", "grams": 250 },
+    { "food": "broccoli", "grams": 150 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Piqe patatet e ëmbla në feta 25 minuta në 200 °C.",
+    "Pjeke gjeldetin në tigan 5 minuta për anë.",
+    "Zieje brokolin me avull 5 minuta."
+  ],
+  "swap": "Patate e ëmbël → patate, 280 g"
+}

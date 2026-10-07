@@ -1,0 +1,18 @@
+{
+  "name": "Gjizë me domate e kastravec",
+  "slots": ["snack"],
+  "minutes": 3,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "cottage_cheese", "grams": 200 },
+    { "food": "tomato", "grams": 100 },
+    { "food": "cucumber", "grams": 100 },
+    { "food": "wholegrain_bread", "grams": 45 }
+  ],
+  "steps": [
+    "Prit perimet, hidh kripë e piper.",
+    "Hae me gjizën dhe bukën."
+  ],
+  "swap": "Gjizë → 2 vezë të ziera"
+}

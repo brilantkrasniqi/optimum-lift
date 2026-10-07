@@ -1,0 +1,15 @@
+{
+  "name": "Gjizë me portokall",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "cottage_cheese", "grams": 200 },
+    { "food": "orange", "grams": 150 }
+  ],
+  "steps": [
+    "Qëroje portokallin dhe hae me gjizën."
+  ],
+  "swap": "Portokall → mollë, 150 g"
+}

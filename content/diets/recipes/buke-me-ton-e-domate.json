@@ -1,0 +1,17 @@
+{
+  "name": "Bukë me ton e domate",
+  "slots": ["snack"],
+  "minutes": 3,
+  "tags": ["pescatarian", "dairy-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "wholegrain_bread", "grams": 55 },
+    { "food": "tuna_water", "grams": 100 },
+    { "food": "tomato", "grams": 100 }
+  ],
+  "steps": [
+    "Kullo tonin dhe përziej me pak limon.",
+    "Vendose mbi bukë me domaten në feta."
+  ],
+  "swap": "Ton → gjoks pule i zier, 100 g"
+}

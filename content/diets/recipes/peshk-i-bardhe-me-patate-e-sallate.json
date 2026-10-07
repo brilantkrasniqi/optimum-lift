@@ -1,0 +1,19 @@
+{
+  "name": "Peshk i bardhë me patate e sallatë",
+  "slots": ["lunch"],
+  "minutes": 30,
+  "tags": ["pescatarian", "dairy-free", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "white_fish", "grams": 220 },
+    { "food": "potato", "grams": 525 },
+    { "food": "lettuce", "grams": 80 },
+    { "food": "olive_oil", "grams": 10 }
+  ],
+  "steps": [
+    "Zieji patatet 20 minuta.",
+    "Pjeke peshkun në tigan ose furrë 10–12 minuta.",
+    "Shërbeje me sallatë, vaj e limon."
+  ],
+  "swap": "Peshk i bardhë → salmon, 120 g"
+}

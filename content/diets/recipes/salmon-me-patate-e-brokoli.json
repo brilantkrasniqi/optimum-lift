@@ -1,0 +1,19 @@
+{
+  "name": "Salmon me patate e brokoli",
+  "slots": ["dinner"],
+  "minutes": 35,
+  "tags": ["pescatarian", "dairy-free", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "salmon", "grams": 150 },
+    { "food": "potato", "grams": 235 },
+    { "food": "broccoli", "grams": 150 },
+    { "food": "spice", "label": "Limon, kopër", "household": "sipas dëshirës" }
+  ],
+  "steps": [
+    "Prit patatet në feta dhe piqi 20 minuta në 200 °C.",
+    "Shto salmonin dhe brokolin, piqi edhe 12–15 minuta.",
+    "Shtrydh limon sipër."
+  ],
+  "swap": "Salmon → peshk i bardhë, 200 g, plus 1 lugë çaji vaj"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Sallatë Cezar me pulë",
+  "slots": ["lunch"],
+  "minutes": 15,
+  "tags": [],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 160, "note": "i papjekur" },
+    { "food": "lettuce", "grams": 150 },
+    { "food": "wholegrain_bread", "grams": 55 },
+    { "food": "kashkaval", "grams": 15 },
+    { "food": "greek_yogurt_2", "grams": 50 }
+  ],
+  "steps": [
+    "Pjeke pulën dhe prije në rripa.",
+    "Thek bukën në kubikë në tigan.",
+    "Përziej kosin me limon e hudhër si salcë dhe shto gjithçka mbi sallatë."
+  ],
+  "swap": "Kaçkavall → djathë i bardhë, 20 g"
+}

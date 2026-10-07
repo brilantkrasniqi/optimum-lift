@@ -1,0 +1,17 @@
+{
+  "name": "Bukë me gjizë e domate",
+  "slots": ["snack"],
+  "minutes": 3,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "wholegrain_bread", "grams": 40 },
+    { "food": "cottage_cheese", "grams": 150 },
+    { "food": "tomato", "grams": 100 }
+  ],
+  "steps": [
+    "Lyej bukën me gjizë dhe vendos domaten në feta sipër.",
+    "Kripë e piper sipas dëshirës."
+  ],
+  "swap": "Gjizë → 2 vezë të ziera"
+}

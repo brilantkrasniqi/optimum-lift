@@ -1,0 +1,20 @@
+{
+  "name": "Gjellë me thjerrëza e pulë",
+  "slots": ["lunch"],
+  "minutes": 25,
+  "tags": ["dairy-free", "gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "lentils_cooked", "grams": 200 },
+    { "food": "chicken_breast", "grams": 130, "note": "i papjekur" },
+    { "food": "carrot", "grams": 80 },
+    { "food": "onion", "grams": 50 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Kaurdis qepën, karotën dhe pulën në copa.",
+    "Shto thjerrëzat dhe 1 gotë ujë.",
+    "Lëre të ziejë 15 minuta."
+  ],
+  "swap": "Thjerrëza → fasule të ziera, 170 g"
+}

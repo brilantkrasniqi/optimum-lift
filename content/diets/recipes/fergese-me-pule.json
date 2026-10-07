@@ -1,0 +1,20 @@
+{
+  "name": "Fërgesë me pulë",
+  "slots": ["lunch"],
+  "minutes": 25,
+  "tags": ["balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 160, "note": "i papjekur" },
+    { "food": "pepper", "grams": 150 },
+    { "food": "tomato", "grams": 150 },
+    { "food": "cottage_cheese", "grams": 80 },
+    { "food": "wholegrain_bread", "grams": 45 }
+  ],
+  "steps": [
+    "Kaurdis pulën në copa të vogla në tigan pa vaj.",
+    "Shto specat dhe domatet, lëri 10 minuta.",
+    "Përziej gjizën në fund dhe hae me bukën."
+  ],
+  "swap": "Gjizë → djathë i bardhë, 30 g"
+}

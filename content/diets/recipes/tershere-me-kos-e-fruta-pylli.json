@@ -1,0 +1,18 @@
+{
+  "name": "Tërshërë me kos e fruta pylli",
+  "slots": ["breakfast"],
+  "minutes": 5,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "oats", "grams": 50 },
+    { "food": "greek_yogurt_2", "grams": 200 },
+    { "food": "berries", "grams": 100 },
+    { "food": "honey", "grams": 10 }
+  ],
+  "steps": [
+    "Përziej tërshërën me kosin, mund ta lësh në frigorifer që natën.",
+    "Shto frutat dhe mjaltin sipër."
+  ],
+  "swap": "Fruta pylli → 1 banane e vogël"
+}

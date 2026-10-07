@@ -1,0 +1,18 @@
+{
+  "name": "Gjizë me mjaltë e arra",
+  "slots": ["breakfast"],
+  "minutes": 3,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "cottage_cheese", "grams": 250 },
+    { "food": "honey", "grams": 15 },
+    { "food": "walnuts", "grams": 10 },
+    { "food": "wholegrain_bread", "grams": 40 }
+  ],
+  "steps": [
+    "Hidh gjizën në tas, mjaltin e arrat sipër.",
+    "Hae me bukën anash."
+  ],
+  "swap": "Arra → bajame, 10 g"
+}

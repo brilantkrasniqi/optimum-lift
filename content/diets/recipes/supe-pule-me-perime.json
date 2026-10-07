@@ -1,0 +1,21 @@
+{
+  "name": "Supë pule me perime",
+  "slots": ["dinner"],
+  "minutes": 40,
+  "tags": ["dairy-free", "meal-prep"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 160, "note": "i papjekur" },
+    { "food": "carrot", "grams": 100 },
+    { "food": "potato", "grams": 290 },
+    { "food": "onion", "grams": 50 },
+    { "food": "olive_oil", "grams": 5 },
+    { "food": "wholegrain_bread", "grams": 70 }
+  ],
+  "steps": [
+    "Zieje pulën në 1 litër ujë 20 minuta, pastaj grije.",
+    "Shto perimet në copa dhe lëri 15 minuta.",
+    "Kthe pulën në supë, limon sipër."
+  ],
+  "swap": "Patate → oriz, 35 g"
+}

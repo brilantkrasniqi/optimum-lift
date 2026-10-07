@@ -1,0 +1,20 @@
+{
+  "name": "Tavë me presh e mish",
+  "slots": ["dinner"],
+  "minutes": 40,
+  "tags": ["dairy-free", "gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "leek", "grams": 300 },
+    { "food": "beef_lean", "grams": 180 },
+    { "food": "rice", "grams": 25 },
+    { "food": "tomato_sauce", "grams": 80 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Kaurdis mishin në copa të vogla.",
+    "Shto preshin, orizin, salcën dhe 1 gotë ujë.",
+    "Piqe 30 minuta në 190 °C."
+  ],
+  "swap": "Viç → gjoks pule, 160 g"
+}

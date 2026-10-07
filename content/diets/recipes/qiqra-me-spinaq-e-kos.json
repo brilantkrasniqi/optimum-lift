@@ -1,0 +1,20 @@
+{
+  "name": "Qiqra me spinaq e kos",
+  "slots": ["dinner"],
+  "minutes": 20,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chickpeas_cooked", "grams": 180 },
+    { "food": "spinach", "grams": 150 },
+    { "food": "tomato_sauce", "grams": 100 },
+    { "food": "olive_oil", "grams": 5 },
+    { "food": "greek_yogurt_2", "grams": 200 }
+  ],
+  "steps": [
+    "Kaurdis spinaqin me vajin derisa të bjerë.",
+    "Shto qiqrat dhe salcën, lëri 8 minuta.",
+    "Hae me kosin anash."
+  ],
+  "swap": "Qiqra → thjerrëza, 200 g"
+}

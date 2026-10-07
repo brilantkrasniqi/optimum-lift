@@ -1,0 +1,20 @@
+{
+  "name": "Makarona me mish viçi e domate",
+  "slots": ["lunch"],
+  "minutes": 25,
+  "tags": ["dairy-free", "meal-prep"],
+  "photo": "",
+  "ingredients": [
+    { "food": "pasta", "grams": 110 },
+    { "food": "beef_mince_5", "grams": 130 },
+    { "food": "tomato_sauce", "grams": 150 },
+    { "food": "onion", "grams": 50 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Kaurdis qepën e mishin derisa të marrë ngjyrë.",
+    "Shto salcën dhe lëre 10 minuta.",
+    "Zieji makaronat dhe përzieji me salcën."
+  ],
+  "swap": "Makarona → oriz, 80 g"
+}

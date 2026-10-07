@@ -1,0 +1,20 @@
+{
+  "name": "Pulë me kërpudha e oriz",
+  "slots": ["lunch"],
+  "minutes": 25,
+  "tags": ["dairy-free", "gluten-free", "meal-prep"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 180, "note": "i papjekur" },
+    { "food": "mushrooms", "grams": 150 },
+    { "food": "rice", "grams": 90 },
+    { "food": "onion", "grams": 50 },
+    { "food": "olive_oil", "grams": 7 }
+  ],
+  "steps": [
+    "Kaurdis qepën e pulën në copa.",
+    "Shto kërpudhat dhe lëri 8 minuta.",
+    "Shërbeje me orizin e zier."
+  ],
+  "swap": "Kërpudha → kungulleshë, 150 g"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Vezë me domate e speca",
+  "slots": ["breakfast"],
+  "minutes": 12,
+  "tags": ["vegetarian", "dairy-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 150 },
+    { "food": "egg_white", "grams": 100 },
+    { "food": "tomato", "grams": 150 },
+    { "food": "pepper", "grams": 100 },
+    { "food": "wholegrain_bread", "grams": 55 }
+  ],
+  "steps": [
+    "Kaurdis specat 3 minuta në tigan pa vaj.",
+    "Shto domaten e grirë dhe lëre 3 minuta.",
+    "Thyej vezët sipër dhe përziej derisa të piqen."
+  ],
+  "swap": "Bukë → 1 patate e zier, 120 g"
+}

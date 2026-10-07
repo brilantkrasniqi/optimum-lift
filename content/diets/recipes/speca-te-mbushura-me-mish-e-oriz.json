@@ -1,0 +1,20 @@
+{
+  "name": "Speca të mbushura me mish e oriz",
+  "slots": ["dinner"],
+  "minutes": 50,
+  "tags": ["dairy-free", "gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "pepper", "grams": 250 },
+    { "food": "beef_mince_5", "grams": 130 },
+    { "food": "rice", "grams": 55 },
+    { "food": "tomato_sauce", "grams": 100 },
+    { "food": "onion", "grams": 40 }
+  ],
+  "steps": [
+    "Përziej mishin, orizin e papjekur, qepën dhe gjysmën e salcës.",
+    "Mbush specat, hidh salcën e mbetur dhe pak ujë.",
+    "Piqi 40 minuta në 190 °C."
+  ],
+  "swap": "Viç → gjoks gjeldeti i grirë, 140 g"
+}

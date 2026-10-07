@@ -1,0 +1,20 @@
+{
+  "name": "Oriz me pulë e perime",
+  "slots": ["lunch"],
+  "minutes": 20,
+  "tags": ["dairy-free", "gluten-free", "meal-prep"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 170, "note": "i papjekur" },
+    { "food": "rice", "grams": 90 },
+    { "food": "zucchini", "grams": 100 },
+    { "food": "carrot", "grams": 80 },
+    { "food": "olive_oil", "grams": 7 }
+  ],
+  "steps": [
+    "Zieje orizin.",
+    "Kaurdis pulën në copa, pastaj karotën e kungulleshën.",
+    "Shto orizin dhe përziej 2 minuta në zjarr të fortë."
+  ],
+  "swap": "Pulë → gjoks gjeldeti, 170 g"
+}

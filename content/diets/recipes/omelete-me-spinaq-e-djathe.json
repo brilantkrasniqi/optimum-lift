@@ -1,0 +1,20 @@
+{
+  "name": "Omëletë me spinaq e djathë",
+  "slots": ["breakfast"],
+  "minutes": 10,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 150 },
+    { "food": "egg_white", "grams": 150 },
+    { "food": "spinach", "grams": 60 },
+    { "food": "white_cheese", "grams": 25 },
+    { "food": "wholegrain_bread", "grams": 70 }
+  ],
+  "steps": [
+    "Rrihi vezët bashkë me të bardhat.",
+    "Kaurdis spinaqin 1 minutë në tigan pa vaj.",
+    "Hidh vezët, thërrmo djathin sipër, mbuloje 3 minuta."
+  ],
+  "swap": "Djathë i bardhë → gjizë, 40 g"
+}

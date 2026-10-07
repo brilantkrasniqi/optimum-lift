@@ -1,0 +1,19 @@
+{
+  "name": "Shejk me banane, tërshërë e proteinë",
+  "slots": ["breakfast"],
+  "minutes": 3,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "milk_15", "grams": 300 },
+    { "food": "whey", "grams": 30 },
+    { "food": "banana", "grams": 120 },
+    { "food": "oats", "grams": 40 },
+    { "food": "peanut_butter", "grams": 10 }
+  ],
+  "steps": [
+    "Hidhi të gjitha në blender.",
+    "Përzieji 30 sekonda, me pak akull nëse do."
+  ],
+  "swap": "Banane → fruta pylli, 150 g"
+}
