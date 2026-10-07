@@ -3,13 +3,15 @@
  * (`?ol_buy_now=`, which fills the cart and redirects to checkout) and the
  * drawer's "Continue to checkout". They stay plain navigation; a click only
  * makes them aria-busy, which shows a spinner (components.css) and blocks a
- * second click while the browser loads.
+ * second click while the browser loads. The Size picker's Buy Now
+ * ([data-buy-now-submit]) is a submit button and gets the same state once the
+ * browser has accepted the form.
  *
  * A page restored from the back/forward cache would come back still spinning,
  * so pageshow clears it, and so does a timeout if the page never arrives.
  */
 
-const SELECTOR = '[data-buy-now], [data-begin-checkout]';
+const SELECTOR = '[data-buy-now], [data-begin-checkout], [data-buy-now-submit]';
 const GIVE_UP_AFTER = 20000;
 
 function clear(link) {
@@ -37,6 +39,16 @@ export function init() {
 
     link.setAttribute('aria-busy', 'true');
     window.setTimeout(() => clear(link), GIVE_UP_AFTER);
+  });
+
+  document.addEventListener('submit', (e) => {
+    const button = e.submitter;
+    if (e.defaultPrevented || !(button instanceof HTMLButtonElement) || !button.matches('[data-buy-now-submit]')) {
+      return;
+    }
+
+    button.setAttribute('aria-busy', 'true');
+    window.setTimeout(() => clear(button), GIVE_UP_AFTER);
   });
 
   window.addEventListener('pageshow', (e) => {

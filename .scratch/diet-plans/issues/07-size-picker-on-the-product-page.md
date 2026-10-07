@@ -1,7 +1,7 @@
 # The Size picker on the Product page
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 06
 
 ## What to build
@@ -63,3 +63,43 @@ Without the argument they render ticket 08's "Choose your size" link. Simple Pro
 - [ ] `npm run build`, `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+Built in the "Diets 07" commit; the boxes stay open until the owner's PC run.
+
+**Changed:**
+- New `template-parts/product/size-picker.php`, rendered by `single-product/price-box.php` between the price and the buttons. Options come from `get_variation_attributes()` in the term order of `wc_get_product_terms()` (as WooCommerce's own dropdown does). A plain permalink's query (`?product=…`) is kept as hidden inputs, since a GET form drops the action's own query.
+- `product/buy-buttons.php` and `product/add-to-cart.php`: with `form`, submit buttons (`data-buy-now-submit`, `data-size-add`); without it, one "Choose your size" link to `#blej` (`{prefix}-choose-size`), which ticket 08 relies on. Simple Products take the old branch unchanged.
+- `single-product/buy-bar.php`: `[data-size-summary]` and the `form` argument; a variable Product gets its own button class string (the add button is `[data-size-add]`). The PHP tags sit at column 0 so a Simple Product's HTML is byte-identical.
+- New `modules/size-picker.js` (started from `main.js` before `cart.js`). `cart.js` handles the form's `submit` for `[data-size-add]`, with a native `requestSubmit()` fallback when the request fails, and closes the drawer on `needs_choice`. It also follows `needs_choice` to the Product's URL for `[data-add-to-cart]` links and the swap button. `pending-links.js` gives `[data-buy-now-submit]` its loading state on `submit`. The spinner selectors in `components.css` cover both new buttons.
+- Styles: `.ol-size-*` in `product.css`. These are radio pills with an empty ring that fills when chosen, so they read as a choice next to the check-mark version pills. Each is at least 44 px, with a focus ring, checked and disabled (struck through) states. `scroll-margin` sits on the radios themselves, because the browser scrolls the invalid radio, not its fieldset, into view: 10.5rem clears the header and the desktop bar, 6rem the phone bar.
+
+**Checked here** with a static copy of the picker's markup, the built CSS and JS, and the theme.json colours, in headless Chromium (no WordPress in this environment):
+- At 360 px the pills wrap two per row and the page does not scroll sideways. The bar shows "Mashkull · 80–90 kg" next to the price and Buy Now.
+- Nothing checked: the bar's Buy Now submits nothing. Focus goes to "Mashkull", scrolled clear of the phone bar (radio bottom 644 px, bar top 671 px). On desktop, after the smooth scroll, it sits 486 px from the top.
+- With the Femër · 90+ variation missing:
+  - choosing Femër disables 90+;
+  - choosing 90+ after Mashkull disables Femër;
+  - `variation_id` follows each complete choice, and the arrow keys move the choice.
+- A complete choice submits.
+
+**PC test** (after `ol-shop seed`):
+1. Save the HTML of a Training Plan Product on `main` and on this branch (`curl -s <url> > a.html`, in Git Bash, not PowerShell) and diff them. Only asset hashes differ.
+2. On `plani-ushqimor-12-javor` with nothing chosen:
+   - Buy Now and Add in the price box, then in the buy bar after scrolling down, all submit nothing.
+   - The browser points at Gjinia, which is visible.
+3. With JavaScript:
+   - Add opens the drawer with the chosen Size.
+   - Buy Now goes to checkout with it.
+4. With JavaScript disabled:
+   - Add reloads with WooCommerce's notice, and the Size is in the cart.
+   - Buy Now goes to checkout.
+5. `?attribute_pa_gjinia=femer&attribute_pa_pesha=60-70` pre-checks both groups. `attribute_pa_pesha=99` checks nothing in Pesha.
+6. `dieta-mesdhetare` shows one Pesha group.
+7. Trash one variation of 12-javor:
+   - with JavaScript, its combination is disabled;
+   - without JavaScript, choosing it gives "This size is not available.".
+8. Keyboard: Tab reaches each group, the arrows move the choice, and Enter on Buy Now submits.
+9. A diet with "included versions" next to the picker: take a screenshot for this comment.
+10. At 360 px wide: no horizontal scroll, and the bar fits.

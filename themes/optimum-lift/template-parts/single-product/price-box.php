@@ -1,8 +1,9 @@
 <?php
 
 /**
- * The hero's price box: price with the saving and the per-week price, Buy Now
- * and add to cart, what happens after paying, and the payment methods.
+ * The hero's price box: price with the saving and the per-week price, the Size
+ * picker for a Product sold in Sizes, Buy Now and add to cart, what happens
+ * after paying, and the payment methods.
  *
  * The sticky buy bar (modules/buybar.js) appears once this box has scrolled
  * up out of view. It watches `data-buybar-target`, a sentinel that runs from
@@ -36,6 +37,8 @@ $delivery = [
         'show_per_week' => true,
     ]);
 
+    get_template_part('template-parts/product/size-picker', null, ['product' => $product, 'class' => 'mt-6']);
+
     get_template_part('template-parts/product/buy-buttons', null, [
         'product'    => $product,
         'size'       => 'lg',
@@ -43,6 +46,7 @@ $delivery = [
         'buy_label'  => __('Buy now — instant access', 'optimum-lift'),
         'pulse'      => true,
         'class'      => 'mt-6',
+        'form'       => 'ol-size-form',
     ]);
     ?>
 
