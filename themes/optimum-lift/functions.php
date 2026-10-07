@@ -33,6 +33,7 @@ define('OPTIMUM_LIFT_URI', get_template_directory_uri());
             'inc/woocommerce.php',
             'inc/shop/fields.php',
             'inc/shop/product-data.php',
+            'inc/shop/sizes.php',
             'inc/shop/pricing.php',
             'inc/shop/proof.php',
             'inc/shop/offer.php',

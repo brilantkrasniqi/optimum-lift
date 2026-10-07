@@ -40,16 +40,21 @@ function optimum_lift_cart_bundle_covering(int $product_id): ?WC_Product
 }
 
 /**
- * Whether the Product already has a line in the cart.
+ * Whether the Product already has a line in the cart. A variation ID matches
+ * only that Size; a parent ID matches any of its Sizes.
  */
 function optimum_lift_cart_has_product(int $product_id): bool
 {
-    $cart = WC()->cart;
+    foreach (WC()->cart?->get_cart() ?? [] as $item) {
+        if ((int) ($item['product_id'] ?? 0) === $product_id || (int) ($item['variation_id'] ?? 0) === $product_id) {
+            return true;
+        }
+    }
 
-    return $cart !== null && $cart->find_product_in_cart($cart->generate_cart_id($product_id)) !== '';
+    return false;
 }
 
-add_filter('woocommerce_add_to_cart_validation', static function (mixed $passed, mixed $product_id): mixed {
+add_filter('woocommerce_add_to_cart_validation', static function (mixed $passed, mixed $product_id, mixed $quantity = 1, mixed $variation_id = 0): mixed {
     if (!$passed || !is_numeric($product_id)) {
         return $passed;
     }
@@ -72,9 +77,16 @@ add_filter('woocommerce_add_to_cart_validation', static function (mixed $passed,
         return false;
     }
 
+    // A Product sold in Sizes without a Size is refused by WooCommerce itself.
+    $variation_id = is_numeric($variation_id) ? (int) $variation_id : 0;
+    if ($variation_id === 0 && optimum_lift_needs_choice($product)) {
+        return $passed;
+    }
+
     // Virtual Products are sold individually (inc/woocommerce.php), so a
-    // second add would otherwise end in WooCommerce's "cannot add another" error.
-    if (optimum_lift_cart_has_product($product_id)) {
+    // second add would otherwise end in WooCommerce's "cannot add another"
+    // error. Another Size of the same Product replaces it instead (below).
+    if (optimum_lift_cart_has_product($variation_id > 0 ? $variation_id : $product_id)) {
         wc_add_notice(sprintf(
             /* translators: %s: Product name. */
             __('%s is already in your cart.', 'optimum-lift'),
@@ -85,7 +97,30 @@ add_filter('woocommerce_add_to_cart_validation', static function (mixed $passed,
     }
 
     return $passed;
-}, 10, 2);
+}, 10, 4);
+
+// One Size per Product: a new Size replaces the one in the cart. It runs after
+// the add, so a failed add never loses the old line.
+add_action('woocommerce_add_to_cart', static function (mixed $cart_item_key, mixed $product_id, mixed $quantity = 1, mixed $variation_id = 0): void {
+    $cart      = WC()->cart;
+    $variation = is_numeric($variation_id) && (int) $variation_id > 0 ? wc_get_product((int) $variation_id) : null;
+    if ($cart === null || !$variation instanceof WC_Product_Variation) {
+        return;
+    }
+
+    $replaced = false;
+    foreach ($cart->get_cart() as $key => $item) {
+        if ($key !== $cart_item_key && (int) ($item['product_id'] ?? 0) === (int) $product_id) {
+            $cart->remove_cart_item((string) $key);
+            $replaced = true;
+        }
+    }
+
+    if ($replaced) {
+        /* translators: %s: the Size now in the cart, such as "Mashkull · 80–90 kg". */
+        wc_add_notice(sprintf(__('Changed to %s', 'optimum-lift'), optimum_lift_size_label($variation)), 'notice');
+    }
+}, 5, 4);
 
 // Priority 10: before the stored coupon is applied (coupon.php, priority 20),
 // so the coupon is validated against the cleaned cart.

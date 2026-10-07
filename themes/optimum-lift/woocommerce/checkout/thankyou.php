@@ -46,11 +46,13 @@ defined('ABSPATH') || exit;
             $ol_items     = [];
             foreach ($order->get_items() as $ol_item) {
                 if ($ol_item instanceof WC_Order_Item_Product) {
+                    $ol_line    = $ol_item->get_variation_id() > 0 ? wc_get_product($ol_item->get_variation_id()) : null;
+                    $ol_variant = $ol_line instanceof WC_Product ? optimum_lift_size_label($ol_line) : '';
                     $ol_items[] = [
                         'id'    => $ol_item->get_product_id(),
                         'name'  => optimum_lift_plain_text($ol_item->get_name()),
                         'price' => round((float) $order->get_item_total($ol_item, true), wc_get_price_decimals()),
-                    ];
+                    ] + ($ol_variant !== '' ? ['variant' => $ol_variant] : []);
                 }
             }
             $ol_payload = [
@@ -148,7 +150,7 @@ defined('ABSPATH') || exit;
                 $ol_product = $ol_item instanceof WC_Order_Item_Product ? $ol_item->get_product() : null;
                 if ($ol_product instanceof WC_Product) {
                     $ol_bought[]  = $ol_product;
-                    $ol_owned[]   = $ol_product->get_id();
+                    $ol_owned[]   = optimum_lift_base_id($ol_product);
                     foreach (optimum_lift_bundle_components($ol_product) as $ol_component) {
                         $ol_owned[] = $ol_component->get_id();
                     }

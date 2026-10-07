@@ -28,6 +28,9 @@ const ONCE_PREFIX = 'ol_tracked:';
 /**
  * Meta's standard parameters from our payload shapes: a single item
  * ({ id, name, price, currency }) or an order ({ value, currency, items }).
+ * An item for one Size also has `variant` ("Mashkull · 80–90 kg"); its `id`
+ * is the parent Product's, so Meta's content_ids stay one per Product. The
+ * dataLayer and gtag get the whole payload, `variant` included.
  */
 function metaParams(data) {
   const items = Array.isArray(data.items) ? data.items : data.id !== undefined ? [data] : [];

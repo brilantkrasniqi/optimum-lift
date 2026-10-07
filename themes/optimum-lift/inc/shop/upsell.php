@@ -80,8 +80,9 @@ function optimum_lift_cart_upsell(): ?array
     }
     $bundle ??= optimum_lift_find_bundle();
 
+    // A line for one Size counts as its parent Product (sizes.php).
     $decimals = wc_get_price_decimals();
-    $line_ids = array_map(static fn (WC_Product $p): int => $p->get_id(), $lines);
+    $line_ids = array_map('optimum_lift_base_id', $lines);
     $covered  = 0.0;
     $price    = 0.0;
 
@@ -89,7 +90,7 @@ function optimum_lift_cart_upsell(): ?array
         $price         = optimum_lift_current_price($bundle);
         $component_ids = array_map(static fn (WC_Product $c): int => $c->get_id(), optimum_lift_bundle_components($bundle));
         foreach ($lines as $line) {
-            if (in_array($line->get_id(), $component_ids, true)) {
+            if (in_array(optimum_lift_base_id($line), $component_ids, true)) {
                 $covered += optimum_lift_current_price($line);
             }
         }
@@ -146,7 +147,7 @@ function optimum_lift_cart_upsell(): ?array
 function optimum_lift_best_complement(array $lines, string $kind, array $line_ids): ?WC_Product
 {
     foreach ($lines as $line) {
-        foreach ($line->get_cross_sell_ids() as $id) {
+        foreach (optimum_lift_base_product($line)->get_cross_sell_ids() as $id) {
             $candidate = wc_get_product((int) $id);
             if (
                 $candidate instanceof WC_Product
