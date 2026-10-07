@@ -1,0 +1,25 @@
+{
+  "plan": { "name": "Fixture OK", "tagline": "", "for_whom": "", "water_litres": 3 },
+  "sizes": { "genders": ["male"], "weights": [{ "label": "80", "code": "80", "mid": 80 }] },
+  "how_to": [],
+  "adjust": [],
+  "days": [
+    {
+      "title": "Dita 1",
+      "type": "Ditë stërvitjeje",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "tost-me-veze", "portion": 1.5 },
+        { "slot": "lunch", "time": "13:00", "recipe": "pule-me-oriz", "grams": { "rice": 85 } }
+      ]
+    },
+    {
+      "title": "Dita 2",
+      "type": "Ditë pushimi",
+      "meals": [
+        { "slot": "snack", "time": "10:30", "recipe": "kos-me-fruta", "portion": 0.5 },
+        { "slot": "lunch", "time": "13:00", "recipe": "pule-me-oriz", "grams": { "olive_oil": 0 } },
+        { "slot": "dinner", "time": "19:00", "recipe": "tost-me-veze" }
+      ]
+    }
+  ]
+}

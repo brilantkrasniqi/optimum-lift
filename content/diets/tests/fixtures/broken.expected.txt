@@ -1,0 +1,12 @@
+ERROR Recipe "Bad_Key": the file name must be lowercase ASCII words joined by hyphens, like "omelete-me-spinaq"
+ERROR Recipe "food-twice", ingredient 3: "egg" is listed twice
+ERROR Recipe "pule-me-oriz-kopje": name "Pulë me oriz" is already used by Recipe "pule-me-oriz"
+ERROR Recipe "unknown-food", ingredient 3: unknown food "spinaq" (add it to foods.json first)
+ERROR Recipe "unknown-property": unknown property "kcal"
+ERROR Recipe "unknown-property", ingredient 1: unknown property "kcal"
+ERROR Recipe "unknown-tag": unknown tag "keto" (use vegetarian, pescatarian, dairy-free, gluten-free, meal-prep, balkan)
+ERROR Day 1 ("E hënë"), lunch: unknown recipe "pule-skare"
+ERROR Day 1 ("E hënë"), dinner: grams for "salmon", which Recipe "pule-me-oriz" does not contain
+ERROR Day 2 ("E martë"), lunch: portion 3 must be from 0.5 to 2
+ERROR Day 2 ("E martë"), dinner: unknown property "kcal"
+ERROR Day 2 ("E martë"), snack: "Mollë" is written out inline: write this meal as a Recipe and name it

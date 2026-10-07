@@ -1,7 +1,7 @@
 # Recipes in the renderer
 
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 01
 
 ## What to build
@@ -45,9 +45,30 @@ The two real plans fail after this ticket (their meals are inline). Ticket 03 mi
 
 ## Acceptance criteria
 
-- [ ] `node render.js tests/fixtures/plan-ok.json --recipes tests/fixtures/recipes --dump` gives the grams you work out by hand for the `portion`, the override and the dropped Food. Write the hand calculation in the ticket comment.
-- [ ] `plan-broken.json` prints exactly `broken.expected.txt` and exits non-zero. Its problems include: an unknown recipe; an override key not in the Recipe; `portion: 3`; an unknown meal property; an inline meal; and, in `recipes-broken/`, a bad key, an unknown Recipe property, an unknown Food, a Food twice, a duplicate name and an unknown tag.
-- [ ] A Recipe used in the wrong slot gives a `WARNING`, not an error.
-- [ ] Swap grams scale with `portion` and the Size: a Recipe swap of "40 g" at `portion: 1.5` reads "60 g" at the reference factor 1 (check with a fixture Size or a unit test).
+- [x] `node render.js tests/fixtures/plan-ok.json --recipes tests/fixtures/recipes --dump` gives the grams you work out by hand for the `portion`, the override and the dropped Food. Write the hand calculation in the ticket comment.
+- [x] `plan-broken.json` prints exactly `broken.expected.txt` and exits non-zero. Its problems include: an unknown recipe; an override key not in the Recipe; `portion: 3`; an unknown meal property; an inline meal; and, in `recipes-broken/`, a bad key, an unknown Recipe property, an unknown Food, a Food twice, a duplicate name and an unknown tag.
+- [x] A Recipe used in the wrong slot gives a `WARNING`, not an error.
+- [x] Swap grams scale with `portion` and the Size: a Recipe swap of "40 g" at `portion: 1.5` reads "60 g" at the reference factor 1 (check with a fixture Size or a unit test).
 
 ## Comments
+
+### 2026-10-07 (Claude, cloud session)
+
+**Changed:** new `content/diets/lib/recipes.js`, `content/diets/tests/fixtures/` (with `README.md`), `content/diets/tests/run.js` (`npm test`); `render.js` (`--recipes`, resolves meals before scaling, photo warning names the Recipe).
+
+- `loadRecipes()` checks every Recipe in the folder, used or not. A Recipe with errors stays known by key, so a plan naming it is not also told "unknown recipe".
+- Spice lines (Foods with kcal 0) need a `label`; two spice lines with the same label count as listed twice.
+- A `grams` override on a Food that has no grams in the Recipe (a spice) is an error too.
+- Swap grams are scaled by `portion` and rounded to whole grams, then by the Size as before.
+- With any `ERROR` from Recipes or the plan, the render prints warnings and errors and stops before building Sizes.
+
+**Verified:**
+- `node render.js tests/fixtures/plan-ok.json --recipes tests/fixtures/recipes --dump` (fixture Size of exactly 80 kg, factor 1). By hand, from `foods.json`:
+  - Day 1 breakfast, `tost-me-veze` at `portion` 1.5: egg 100 × 1.5 = 150 g = 3 pieces (143 × 1.5 = 214.5 kcal); bread 60 × 1.5 = 90 g = 3 slices (247 × 0.9 = 222.3). Meal 436.8 kcal. Dump: 150 g/3, 90 g/3, 436.8 ✓. Swap "40 g" reads "60 g" ✓.
+  - Day 1 lunch, `pule-me-oriz` with `{"rice": 85}`: chicken 150 g (180), rice 85 g (360 × 0.85 = 306), oil 10 g (88.4), salad 100 g (18). 592.4 kcal ✓.
+  - Day 2 lunch with `{"olive_oil": 0}`: the oil line is gone; 180 + 252 + 18 = 450 kcal ✓.
+  - Day 2 snack, `kos-me-fruta` at 0.5: yogurt 100 g (73), berries 50 g (25), honey 7 g = 1 tsp (21.3). 119.3 kcal ✓.
+- `plan-broken.json` with `recipes-broken/` prints exactly `broken.expected.txt` (12 `ERROR` lines) and exits 1.
+- `tost-me-veze` at dinner prints `WARNING Day 2 ("Dita 2"), dinner: Recipe "tost-me-veze" is written for breakfast, not dinner` and exits 0.
+- `npm test` runs all of the above: 5 ok.
+- The two real plans now fail (inline meals). Ticket 03 migrates them.

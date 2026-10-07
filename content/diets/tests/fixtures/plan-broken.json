@@ -1,0 +1,24 @@
+{
+  "plan": { "name": "Fixture broken" },
+  "how_to": [],
+  "days": [
+    {
+      "title": "E hënë",
+      "meals": [
+        { "slot": "lunch", "time": "13:00", "recipe": "pule-skare" },
+        { "slot": "dinner", "time": "19:00", "recipe": "pule-me-oriz", "grams": { "salmon": 100 } }
+      ]
+    },
+    {
+      "title": "E martë",
+      "meals": [
+        { "slot": "lunch", "time": "13:00", "recipe": "pule-me-oriz", "portion": 3 },
+        { "slot": "dinner", "time": "19:00", "recipe": "pule-me-oriz", "kcal": 500 },
+        {
+          "slot": "snack", "time": "16:00", "minutes": 2, "name": "Mollë",
+          "ingredients": [{ "food": "apple", "grams": 150 }], "steps": ["Haje mollën."]
+        }
+      ]
+    }
+  ]
+}

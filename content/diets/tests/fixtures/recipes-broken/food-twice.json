@@ -1,0 +1,1 @@
+{ "name": "Dy herë vezë", "slots": ["breakfast"], "minutes": 5, "ingredients": [{ "food": "egg", "grams": 100 }, { "food": "spice", "label": "Kripë" }, { "food": "egg", "grams": 50 }, { "food": "spice", "label": "Piper" }], "steps": ["Zieji vezët."] }

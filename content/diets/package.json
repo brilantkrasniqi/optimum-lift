@@ -4,7 +4,8 @@
   "type": "commonjs",
   "description": "Renders the Nutrition Plans in plans/ into PDFs, one per Size.",
   "scripts": {
-    "render": "node render.js"
+    "render": "node render.js",
+    "test": "node tests/run.js"
   },
   "devDependencies": {
     "playwright": "1.56.1"

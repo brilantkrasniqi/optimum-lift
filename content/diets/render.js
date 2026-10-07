@@ -6,26 +6,30 @@
 //   node render.js plans/<plan>.json --out <dir>     write to <dir>/<plan>/ instead of out/<plan>/
 //   node render.js plans/<plan>.json --dump          write each size's computed plan as JSON, no PDFs
 //                                                    (needs no Playwright; used to prove a change moved no number)
+//   node render.js plans/<plan>.json --recipes <dir> read Recipes from <dir> instead of recipes/
 //
+// A plan's meals name Recipes (recipes/<key>.json, see lib/recipes.js), optionally with a portion
+// and per-Food grams for this plan.
 // The plan is written once, for the reference person in sizes.json. Each size scales every
 // portion by the same factor and rounds it to something a cook can measure. Every calorie and
 // macro number is then computed from foods.json, so the numbers always match the grams printed.
 
 const fs = require('fs');
 const path = require('path');
+const { loadRecipes, resolvePlan } = require('./lib/recipes');
 
 const ROOT = __dirname;
 // The PDFs use the theme's own copy of the fonts, so the site and the PDFs never drift apart.
 const FONTS = path.join(ROOT, '..', '..', 'themes', 'optimum-lift', 'assets', 'fonts');
 const args = process.argv.slice(2);
 const option = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : null);
-const VALUED = ['--only', '--out'];
+const VALUED = ['--only', '--out', '--recipes'];
 const planArg = args.find((a, i) => a.endsWith('.json') && !VALUED.includes(args[i - 1]));
 const only = option('--only');
 const wantPng = args.includes('--png');
 const dump = args.includes('--dump');
 if (!planArg || !fs.existsSync(path.resolve(planArg)) || VALUED.some((o) => args.includes(o) && !option(o))) {
-  console.error('Usage: node render.js plans/<plan>.json [--only <size>] [--png] [--out <dir>] [--dump]');
+  console.error('Usage: node render.js plans/<plan>.json [--only <size>] [--png] [--out <dir>] [--dump] [--recipes <dir>]');
   process.exit(1);
 }
 // Paths in messages are relative to this folder, the way the README writes them.
@@ -38,6 +42,18 @@ const source = JSON.parse(fs.readFileSync(planPath, 'utf8'));
 const { foods, groups } = JSON.parse(fs.readFileSync(path.join(ROOT, 'foods.json'), 'utf8'));
 const defaults = JSON.parse(fs.readFileSync(path.join(ROOT, 'sizes.json'), 'utf8'));
 const slug = path.basename(planPath, '.json');
+
+// ---------- recipes ----------
+// Every Recipe is checked, used or not, and every meal is resolved before any scaling.
+const recipesDir = option('--recipes') ? path.resolve(option('--recipes')) : path.join(ROOT, 'recipes');
+const loaded = loadRecipes(recipesDir, foods);
+const resolved = resolvePlan(source, loaded.recipes);
+const problems = [...loaded.errors, ...resolved.errors];
+if (problems.length) {
+  resolved.warnings.forEach((w) => console.log(`WARNING ${w}`));
+  problems.forEach((e) => console.log(`ERROR ${e}`));
+  process.exit(1);
+}
 const outDir = path.join(option('--out') ? path.resolve(option('--out')) : path.join(ROOT, 'out'), slug);
 fs.mkdirSync(outDir, { recursive: true });
 
@@ -138,7 +154,7 @@ function photoStyle(meal, warnings) {
   if (!meal.photo) return '';
   const p = path.resolve(ROOT, meal.photo);
   if (!fs.existsSync(p)) {
-    warnings.push(`${meal.name}: photo ${meal.photo} not found, showing the placeholder`);
+    warnings.push(`Recipe "${meal.recipe}": photo ${meal.photo} not found, showing the placeholder`);
     return '';
   }
   const type = mime[path.extname(p).toLowerCase()] || 'jpeg';
@@ -306,7 +322,7 @@ const css = fs.readFileSync(path.join(ROOT, 'style.css'), 'utf8')
 
 // ---------- build every size, then report ----------
 const errors = new Set();
-const warnings = [];
+const warnings = [...resolved.warnings];
 const chosen = only ? sizes.filter((s) => s.code === only) : sizes;
 if (!chosen.length) {
   console.error(`No size "${only}". Sizes: ${sizes.map((s) => s.code).join(', ')}`);
