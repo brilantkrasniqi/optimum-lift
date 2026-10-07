@@ -1,7 +1,7 @@
 # Demo sized diets in the seed
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: none
 
 ## What to build

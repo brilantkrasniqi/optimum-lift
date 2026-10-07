@@ -23,7 +23,7 @@ Only first-party code (the theme, `plugins/optimum-lift-plans`, `mu-plugins`) an
 - `npm install` then `npm run dev`: watches `themes/optimum-lift/assets/src/` and builds into `assets/dist/`. `npm run build` does a minified build. `assets/dist/` is gitignored, so the site is unstyled until one of these has run.
 - `npm run composer -- install` once, then `npm run lint:php` (PHP_CodeSniffer, PSR-12) and `npm run analyse:php` (PHPStan). Both must pass before handing work back. `npm run composer -- fix` auto-fixes style. The install also installs the Plans plugin's runtime dependencies (Dompdf) into its own `vendor/`.
 - The Exercise library and a demo Training Plan with a linked Product: `docker compose --profile cli run --rm wpcli ol-plans seed` (it imports the library first).
-- Demo storefront (Products 60–64, the front page, coupon, legal pages, site settings; sales end 3 days after seeding): `docker compose --profile cli run --rm wpcli ol-shop seed`.
+- Demo storefront (Products 60–64, the front page, coupon, legal pages, site settings; sales end 3 days after seeding): `docker compose --profile cli run --rm wpcli ol-shop seed`. The two diets and the bundle are variable Products sold in Sizes (Gjinia × Pesha, or Pesha alone for Dieta Mesdhetare), each variation with a placeholder PDF in `uploads/woocommerce_uploads/ol-demo/`.
 
 Plans, Exercises, Access, the Download and the Portal live in `plugins/optimum-lift-plans/`, a tracked first-party plugin; the theme only styles and may override its templates (ADR-0003). Spec and tickets: `.scratch/plans-plugin/`. Plan structure changes touch the ACF field groups in `src/Content/`, and Workout Logs depend on the Workout and Prescription `uid`s staying stable.
 

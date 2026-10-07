@@ -27,8 +27,12 @@ use RuntimeException;
 use WC_Comments;
 use WC_Coupon;
 use WC_Install;
+use WC_Product;
 use WC_Product_Attribute;
+use WC_Product_Download;
 use WC_Product_Simple;
+use WC_Product_Variable;
+use WC_Product_Variation;
 use WP_CLI;
 use WP_Comment;
 use WP_Error;
@@ -53,8 +57,10 @@ use WP_Term;
  *     sales: int,
  *     cross_sells: list<string>,
  *     fields: array<string, mixed>,
- *     reviews: list<Review>
+ *     reviews: list<Review>,
+ *     sizes?: list<string>
  * }
+ * @phpstan-type SizeAttribute array{attribute: int, taxonomy: string, terms: array<string, int>}
  */
 final class ShopCommand
 {
@@ -65,6 +71,26 @@ final class ShopCommand
     private const DIET    = 'plani-ushqimor-12-javor';
     private const MED     = 'dieta-mesdhetare';
     private const BUNDLE  = 'transformimi-total';
+
+    /**
+     * The Size attributes (spec .scratch/diet-plans, Decision 9): term slugs
+     * equal the diet renderer's codes, in the order every picker shows them.
+     */
+    private const SIZES = [
+        'gjinia' => ['name' => 'Gjinia', 'terms' => ['mashkull' => 'Mashkull', 'femer' => 'Femër']],
+        'pesha'  => ['name' => 'Pesha', 'terms' => [
+            '50-60'  => '50–60 kg',
+            '60-70'  => '60–70 kg',
+            '70-80'  => '70–80 kg',
+            '80-90'  => '80–90 kg',
+            '90plus' => '90+ kg',
+        ]],
+    ];
+
+    /**
+     * The sized diets in the bundle, whose files each bundle variation carries.
+     */
+    private const BUNDLE_SIZED = [self::DIET, self::MED];
 
     private const FRONT_PAGE = 'kreu';
     private const COUPON     = 'OPTIMUM10';
@@ -82,11 +108,28 @@ final class ShopCommand
     private array $unknownFields = [];
 
     /**
+     * @var array<string, SizeAttribute> The Size attributes by slug.
+     */
+    private array $sizes = [];
+
+    /**
+     * @var array<string, ProductData> The catalogue being seeded, by slug.
+     */
+    private array $products = [];
+
+    /**
+     * @var array<string, int> Variations per sized Product slug.
+     */
+    private array $variationCounts = [];
+
+    /**
      * Seeds the demo catalogue and configures the local site.
      *
-     * Creates or updates, by slug: the Product categories and the goal
-     * attribute, five Products with their sales fields, sections, cross-sells,
-     * demo sales and demo reviews, the front page, the OPTIMUM10 coupon, and
+     * Creates or updates, by slug: the Product categories, the goal attribute
+     * and the Size attributes (Gjinia, Pesha), five Products with their sales
+     * fields, sections, cross-sells, demo sales and demo reviews (the two
+     * diets and the bundle are variable, one variation per Size, each with a
+     * placeholder PDF), the front page, the OPTIMUM10 coupon, and
      * the site settings the storefront expects. Runs only when the environment
      * type is local or development.
      *
@@ -126,7 +169,8 @@ final class ShopCommand
             throw new RuntimeException('WooCommerce and ACF Pro must be active.');
         }
 
-        $catalogue = $this->catalogue();
+        $catalogue      = $this->catalogue();
+        $this->products = $catalogue;
 
         if ($reset) {
             $this->reset(array_keys($catalogue));
@@ -140,6 +184,9 @@ final class ShopCommand
             'paketa'               => $this->term('product_cat', 'paketa', 'Paketa'),
         ];
         $goals = $this->goals();
+        foreach (self::SIZES as $slug => $size) {
+            $this->sizes[$slug] = $this->sizeAttribute($slug, $size['name'], $size['terms']);
+        }
 
         foreach ($catalogue as $slug => $data) {
             $this->ids[$slug] = $this->saveProduct($slug, $data, $categories, $goals, $offerEnd);
@@ -178,8 +225,13 @@ final class ShopCommand
         }
 
         return sprintf(
-            'Seeded %d Products, the front page (%d), coupon %s and the site settings; offers end %s. %s %s',
+            'Seeded %d Products (sized: %s), the front page (%d), coupon %s and the site settings; offers end %s. %s %s',
             count($this->ids),
+            implode(', ', array_map(
+                static fn (string $slug, int $count): string => sprintf('%s with %d variations', $slug, $count),
+                array_keys($this->variationCounts),
+                $this->variationCounts
+            )),
             $frontPage,
             self::COUPON,
             $offerEnd->format('Y-m-d H:i'),
@@ -193,6 +245,8 @@ final class ShopCommand
      */
     private function reset(array $slugs): void
     {
+        // Force-deleting a variable Product deletes its variations too
+        // (WC_Post_Data::delete_post_data() on `delete_post`).
         foreach ($slugs as $slug) {
             $product = wc_get_product($this->postId('product', $slug));
             if ($product) {
@@ -251,27 +305,7 @@ final class ShopCommand
      */
     private function goals(): array
     {
-        $attribute = wc_attribute_taxonomy_id_by_name(self::GOAL);
-        if ($attribute === 0) {
-            $created = wc_create_attribute([
-                'name'         => 'Objektivi',
-                'slug'         => self::GOAL,
-                'type'         => 'select',
-                'order_by'     => 'menu_order',
-                'has_archives' => false,
-            ]);
-            if ($created instanceof WP_Error) {
-                throw new RuntimeException('Could not create the goal attribute: ' . $created->get_error_message());
-            }
-            $attribute = $created;
-        }
-
-        // WooCommerce registers attribute taxonomies on init, before this
-        // request created the attribute.
-        $taxonomy = wc_attribute_taxonomy_name(self::GOAL);
-        if (!taxonomy_exists($taxonomy)) {
-            register_taxonomy($taxonomy, ['product'], ['hierarchical' => false, 'show_ui' => false, 'rewrite' => false]);
-        }
+        [$attribute, $taxonomy] = $this->attribute(self::GOAL, 'Objektivi');
 
         $terms = [];
         foreach (
@@ -289,14 +323,72 @@ final class ShopCommand
     }
 
     /**
+     * A global attribute with custom term order, created when missing and
+     * left alone when present. Returns its ID and taxonomy.
+     *
+     * @return array{0: int, 1: string}
+     */
+    private function attribute(string $slug, string $name): array
+    {
+        $attribute = wc_attribute_taxonomy_id_by_name($slug);
+        if ($attribute === 0) {
+            $created = wc_create_attribute([
+                'name'         => $name,
+                'slug'         => $slug,
+                'type'         => 'select',
+                'order_by'     => 'menu_order',
+                'has_archives' => false,
+            ]);
+            if ($created instanceof WP_Error) {
+                throw new RuntimeException(sprintf('Could not create the attribute "%s": %s', $name, $created->get_error_message()));
+            }
+            $attribute = $created;
+        }
+
+        // WooCommerce registers attribute taxonomies on init, before this
+        // request created the attribute.
+        $taxonomy = wc_attribute_taxonomy_name($slug);
+        if (!taxonomy_exists($taxonomy)) {
+            register_taxonomy($taxonomy, ['product'], ['hierarchical' => false, 'show_ui' => false, 'rewrite' => false]);
+        }
+
+        return [$attribute, $taxonomy];
+    }
+
+    /**
+     * A Size attribute and its terms, in the given order.
+     *
+     * @param array<string, string> $terms slug => name
+     * @return SizeAttribute Its terms as slug => term ID.
+     */
+    private function sizeAttribute(string $slug, string $name, array $terms): array
+    {
+        [$attribute, $taxonomy] = $this->attribute($slug, $name);
+
+        $ids   = [];
+        $index = 0;
+        foreach ($terms as $termSlug => $termName) {
+            $ids[(string) $termSlug] = $this->term($taxonomy, (string) $termSlug, $termName);
+            wc_set_term_order($ids[(string) $termSlug], $index++, $taxonomy);
+        }
+
+        return ['attribute' => $attribute, 'taxonomy' => $taxonomy, 'terms' => $ids];
+    }
+
+    /**
      * @param ProductData                                                         $data
      * @param array<string, int>                                                  $categories
      * @param array{attribute: int, taxonomy: string, terms: array<string, int>} $goals
      */
     private function saveProduct(string $slug, array $data, array $categories, array $goals, DateTimeImmutable $offerEnd): int
     {
-        $product = new WC_Product_Simple($this->postId('product', $slug));
-        $onSale  = $data['sale'] !== '';
+        $sizes = $data['sizes'] ?? [];
+        // A sized Product is variable. Loading the post seeded as Simple by an
+        // older seed as WC_Product_Variable converts it in place, same ID.
+        $product = $sizes === []
+            ? new WC_Product_Simple($this->postId('product', $slug))
+            : new WC_Product_Variable($this->postId('product', $slug));
+        $onSale = $data['sale'] !== '';
 
         $product->set_name($data['title']);
         $product->set_slug($slug);
@@ -310,10 +402,16 @@ final class ShopCommand
         $product->set_short_description($data['excerpt']);
         $product->set_description($data['description']);
         $product->set_category_ids([$categories[$data['category']]]);
-        $product->set_regular_price($data['regular']);
-        $product->set_sale_price($data['sale']);
-        $product->set_date_on_sale_from($onSale ? (new DateTimeImmutable('today', wp_timezone()))->getTimestamp() : null);
-        $product->set_date_on_sale_to($onSale ? $offerEnd->getTimestamp() : null);
+        // A variable Product's prices live on its variations; clear any left
+        // from when it was Simple.
+        if ($sizes === []) {
+            $this->setPrices($product, $data, $onSale, $offerEnd);
+        } else {
+            $product->set_regular_price('');
+            $product->set_sale_price('');
+            $product->set_date_on_sale_from(null);
+            $product->set_date_on_sale_to(null);
+        }
         // Demo proof: a sales count the thresholds can show, and a publish date
         // that makes only the newest Product "new".
         $product->set_total_sales($data['sales']);
@@ -325,9 +423,248 @@ final class ShopCommand
         $goal->set_options([$goals['terms'][$data['goal']]]);
         $goal->set_visible(true);
         $goal->set_variation(false);
-        $product->set_attributes([$goal]);
 
-        return $product->save();
+        $attributes = [$goal];
+        foreach ($sizes as $position => $size) {
+            $attribute = new WC_Product_Attribute();
+            $attribute->set_id($this->sizes[$size]['attribute']);
+            $attribute->set_name($this->sizes[$size]['taxonomy']);
+            $attribute->set_options(array_values($this->sizes[$size]['terms']));
+            $attribute->set_position($position + 1);
+            $attribute->set_visible(true);
+            $attribute->set_variation(true);
+            $attributes[] = $attribute;
+        }
+        $product->set_attributes($attributes);
+
+        $id = $product->save();
+
+        if ($sizes !== []) {
+            $this->saveVariations($id, $slug, $data, $sizes, $onSale, $offerEnd);
+        }
+
+        return $id;
+    }
+
+    /**
+     * @param ProductData $data
+     */
+    private function setPrices(WC_Product $product, array $data, bool $onSale, DateTimeImmutable $offerEnd): void
+    {
+        $product->set_regular_price($data['regular']);
+        $product->set_sale_price($data['sale']);
+        $product->set_date_on_sale_from($onSale ? (new DateTimeImmutable('today', wp_timezone()))->getTimestamp() : null);
+        $product->set_date_on_sale_to($onSale ? $offerEnd->getTimestamp() : null);
+    }
+
+    /**
+     * One published, virtual, downloadable variation per Size, all at the
+     * Product's price (Decision 10), each with its placeholder PDF. A Size
+     * that already has a variation keeps it (same ID, same download ID), so
+     * seeding again changes nothing; a variation for no Size is deleted.
+     *
+     * @param ProductData  $data
+     * @param list<string> $sizes Attribute slugs, in the Product's order.
+     */
+    private function saveVariations(int $parentId, string $slug, array $data, array $sizes, bool $onSale, DateTimeImmutable $offerEnd): void
+    {
+        $childIds = get_posts([
+            'post_type'   => 'product_variation',
+            'post_parent' => $parentId,
+            'post_status' => 'any',
+            'numberposts' => -1,
+            'fields'      => 'ids',
+        ]);
+
+        $existing = [];
+        foreach ($childIds as $childId) {
+            $child = wc_get_product((int) $childId);
+            if ($child instanceof WC_Product_Variation) {
+                $existing[$this->sizeKey($child->get_attributes())] = $child;
+            }
+        }
+
+        $kept = [];
+        foreach ($this->sizeCombinations($sizes) as $position => $values) {
+            $attributes = [];
+            foreach ($values as $size => $term) {
+                $attributes[$this->sizes[$size]['taxonomy']] = $term;
+            }
+
+            $key       = $this->sizeKey($attributes);
+            $variation = $existing[$key] ?? new WC_Product_Variation();
+            $variation->set_parent_id($parentId);
+            $variation->set_attributes($attributes);
+            $variation->set_status('publish');
+            $variation->set_menu_order($position);
+            $variation->set_virtual(true);
+            $variation->set_downloadable(true);
+            $this->setPrices($variation, $data, $onSale, $offerEnd);
+            $variation->set_downloads($this->demoDownloads($slug, $data['title'], $values));
+            $kept[] = $variation->save();
+        }
+
+        foreach ($existing as $variation) {
+            if (!in_array($variation->get_id(), $kept, true)) {
+                $variation->delete(true);
+            }
+        }
+
+        WC_Product_Variable::sync($parentId);
+        wc_delete_product_transients($parentId);
+        $this->variationCounts[$slug] = count($kept);
+    }
+
+    /**
+     * Every combination of the Sizes' terms, first attribute outermost.
+     *
+     * @param list<string> $sizes
+     * @return list<array<string, string>> attribute slug => term slug
+     */
+    private function sizeCombinations(array $sizes): array
+    {
+        $combinations = [[]];
+        foreach ($sizes as $size) {
+            $next = [];
+            foreach ($combinations as $combination) {
+                foreach (array_keys(self::SIZES[$size]['terms']) as $term) {
+                    $next[] = $combination + [$size => (string) $term];
+                }
+            }
+            $combinations = $next;
+        }
+
+        return $combinations;
+    }
+
+    /**
+     * @param array<string, mixed> $attributes taxonomy => term slug
+     */
+    private function sizeKey(array $attributes): string
+    {
+        ksort($attributes);
+
+        return (string) wp_json_encode($attributes);
+    }
+
+    /**
+     * The Size label, "Femër · 60–70 kg".
+     *
+     * @param array<string, string> $values attribute slug => term slug
+     */
+    private function sizeLabel(array $values): string
+    {
+        $names = [];
+        foreach ($values as $size => $term) {
+            $names[] = self::SIZES[$size]['terms'][$term];
+        }
+
+        return implode(' · ', $names);
+    }
+
+    /**
+     * The variation's downloads: the Product's own placeholder PDF, or for
+     * the bundle, each sized diet's PDF for the same Size.
+     *
+     * Demo data: Dieta Mesdhetare is women-only (Pesha alone), which a real
+     * Gjinia × Pesha bundle must not contain (spec Decision 16). Here both
+     * Gjinia values of a weight share its one file, so the bundle has
+     * something to deliver.
+     *
+     * @param array<string, string> $values attribute slug => term slug
+     * @return list<WC_Product_Download>
+     */
+    private function demoDownloads(string $slug, string $title, array $values): array
+    {
+        $label = $this->sizeLabel($values);
+        if ($slug !== self::BUNDLE) {
+            return [$this->demoDownload($slug, $title . ' — ' . $label, $title, $values)];
+        }
+
+        $downloads = [];
+        foreach (self::BUNDLE_SIZED as $component) {
+            $data        = $this->products[$component];
+            $own         = array_intersect_key($values, array_flip($data['sizes'] ?? []));
+            $downloads[] = $this->demoDownload(
+                $component,
+                $title . ' — ' . $label . ' — ' . $data['title'],
+                $data['title'],
+                $own
+            );
+        }
+
+        return $downloads;
+    }
+
+    /**
+     * Writes the placeholder PDF for one diet Size, named the way the diet
+     * renderer names its files, and returns it as a download. The download
+     * ID comes from the file, so seeding again keeps it.
+     *
+     * @param array<string, string> $values attribute slug => term slug
+     */
+    private function demoDownload(string $slug, string $name, string $title, array $values): WC_Product_Download
+    {
+        $dir = wp_upload_dir()['basedir'] . '/woocommerce_uploads/ol-demo';
+        if (!wp_mkdir_p($dir)) {
+            throw new RuntimeException(sprintf('Could not create %s.', $dir));
+        }
+
+        $file = sprintf('%s/%s-%skg.pdf', $dir, $slug, implode('-', $values));
+        $pdf  = $this->placeholderPdf([$title, $this->sizeLabel($values)]);
+        if (!is_file($file) || file_get_contents($file) !== $pdf) {
+            file_put_contents($file, $pdf);
+        }
+
+        $download = new WC_Product_Download();
+        $download->set_id(md5($file));
+        $download->set_name($name);
+        $download->set_file($file);
+
+        return $download;
+    }
+
+    /**
+     * A one-page A4 PDF with a few lines of text, written by hand so the seed
+     * needs no library. Helvetica with WinAnsiEncoding covers ë, ç, – and ·.
+     *
+     * @param list<string> $lines
+     */
+    private function placeholderPdf(array $lines): string
+    {
+        $text = '';
+        foreach ($lines as $i => $line) {
+            $encoded = (string) mb_convert_encoding($line, 'Windows-1252', 'UTF-8');
+            $text   .= sprintf(
+                'BT /F1 %d Tf 56 %d Td (%s) Tj ET ',
+                $i === 0 ? 24 : 18,
+                760 - $i * 36,
+                strtr($encoded, ['\\' => '\\\\', '(' => '\\(', ')' => '\\)'])
+            );
+        }
+
+        $objects = [
+            '<< /Type /Catalog /Pages 2 0 R >>',
+            '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
+            '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>',
+            '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>',
+            sprintf("<< /Length %d >>\nstream\n%s\nendstream", strlen($text), $text),
+        ];
+
+        $pdf     = "%PDF-1.4\n";
+        $offsets = [];
+        foreach ($objects as $i => $object) {
+            $offsets[] = strlen($pdf);
+            $pdf      .= sprintf("%d 0 obj\n%s\nendobj\n", $i + 1, $object);
+        }
+
+        $xref = strlen($pdf);
+        $pdf .= sprintf("xref\n0 %d\n0000000000 65535 f \n", count($objects) + 1);
+        foreach ($offsets as $offset) {
+            $pdf .= sprintf("%010d 00000 n \n", $offset);
+        }
+
+        return $pdf . sprintf("trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n", count($objects) + 1, $xref);
     }
 
     /**
@@ -907,6 +1244,7 @@ final class ShopCommand
                 'age_days'    => 110,
                 'sales'       => 74,
                 'cross_sells' => [self::PROGRAM, self::FORCE, self::BUNDLE],
+                'sizes'       => ['gjinia', 'pesha'],
                 'fields'      => [
                     'field_olt_title_accent'   => '12-Javor',
                     'field_olt_card_blurb'     => 'Kalori e makro të llogaritura, me ushqime që gjenden tek ne.',
@@ -959,6 +1297,7 @@ final class ShopCommand
                 'age_days'    => 6,
                 'sales'       => 13,
                 'cross_sells' => [self::PROGRAM, self::FORCE, self::BUNDLE],
+                'sizes'       => ['pesha'],
                 'fields'      => [
                     'field_olt_title_accent'   => 'Mesdhetare',
                     'field_olt_card_blurb'     => '8 javë me vaj ulliri, peshk dhe perime — pa restriksion të skajshëm.',
@@ -1003,6 +1342,7 @@ final class ShopCommand
                 'age_days'    => 90,
                 'sales'       => 156,
                 'cross_sells' => [],
+                'sizes'       => ['gjinia', 'pesha'],
                 'fields'      => [
                     'field_olt_title_accent'   => 'Total',
                     'field_olt_card_blurb'     => 'Çdo program dhe çdo dietë — më lirë se dy produkte veç e veç.',
