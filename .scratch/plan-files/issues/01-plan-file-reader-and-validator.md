@@ -1,7 +1,7 @@
 # Plan file reader, validator and test fixtures
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: none
 
 ## What to build
@@ -31,11 +31,23 @@ There is no command yet to run the validator; ticket 03's `import-plan --dry-run
 
 ## Acceptance criteria
 
-- [ ] `minimal.json` and `full.json` pass; the normalised `minimal.json` has every default from the spec's table.
-- [ ] `broken.json` produces exactly `broken.expected.txt`. It covers: wrong `format`; `version` 2; empty title; unknown difficulty; a Phase ending after the last Week; overlapping Phases; a Week with no Workouts; a Workout with no name; `sets: 0`; `sets: "3"`; a 21-character target; `target_type: "minutes"`; `rest_seconds: -5`; an unknown property; a malformed key (`"Bench Press"`); a well-formed key that does not exist (twice, in two Workouts, reported once with both places); a key of a trashed Exercise (document in the fixture README which library Exercise to trash for the test, and restore it after).
-- [ ] A 3 MB file, a file that is not JSON, and a UTF-16 file give one problem each; `minimal.json` saved with a UTF-8 BOM passes.
-- [ ] `PlanFields` registers identical field groups: `wp eval 'echo md5(serialize(acf_get_local_fields("group_ol_training_plan")));'` gives the same hash before and after.
-- [ ] The Plan edit screen's max_input_vars warning still appears for `wp ol-plans seed --weeks=40` with the local limit lowered (or compare the estimate for an existing Plan before and after the move).
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] `minimal.json` and `full.json` pass; the normalised `minimal.json` has every default from the spec's table.
+- [x] `broken.json` produces exactly `broken.expected.txt`. It covers: wrong `format`; `version` 2; empty title; unknown difficulty; a Phase ending after the last Week; overlapping Phases; a Week with no Workouts; a Workout with no name; `sets: 0`; `sets: "3"`; a 21-character target; `target_type: "minutes"`; `rest_seconds: -5`; an unknown property; a malformed key (`"Bench Press"`); a well-formed key that does not exist (twice, in two Workouts, reported once with both places); a key of a trashed Exercise (document in the fixture README which library Exercise to trash for the test, and restore it after).
+- [x] A 3 MB file, a file that is not JSON, and a UTF-16 file give one problem each; `minimal.json` saved with a UTF-8 BOM passes.
+- [x] `PlanFields` registers identical field groups: `wp eval 'echo md5(serialize(acf_get_local_fields("group_ol_training_plan")));'` gives the same hash before and after.
+- [x] The Plan edit screen's max_input_vars warning still appears for `wp ol-plans seed --weeks=40` with the local limit lowered (or compare the estimate for an existing Plan before and after the move).
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+Built in `src/PlanFile/` (`PlanFile`, `PlanContent`, the row classes, `Places`) and `src/Content/PlanFields.php` (field key constants, limits, `estimateInputs()`); fixtures in `tests/plan-files/`. Checked on the owner's PC with `.scratch/plan-files/checks.ps1`:
+
+- Field group: main and branch both 9 fields, md5 `5fa9399e335c8d08c75dfa5fe61ae6bb`.
+- `broken.json` prints exactly `broken.expected.txt` (17 lines, with `band-y-raise` trashed by `wp_trash_post`, since `wp post delete` only trashes posts and pages; the fixture README says so). Through wp-admin in Albanian, every problem is Albanian.
+- 3 MB, not-JSON and UTF-16 files give one problem each; `minimal.json` with a BOM passes.
+- Estimate: the old edit-screen estimate and `PlanFields::estimateInputs()` both give 2020 for a 16-week Plan; with `max_input_vars=1000` the dry run warns.
+- `lint:php` 0 errors, `analyse:php` no errors.
+
+Deviation: Exercise keys are checked even when the file has format problems, so one run lists everything.

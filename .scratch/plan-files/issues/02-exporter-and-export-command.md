@@ -1,7 +1,7 @@
 # Exporter and `wp ol-plans export-plan`
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 01
 
 ## What to build
@@ -20,11 +20,22 @@ Blocked by: 01
 
 ## Acceptance criteria
 
-- [ ] `export-plan <demo-plan-id> --file=/plans/demo.json` on a freshly seeded site writes a file `PlanFile` accepts, with no warnings (the demo uses library keys only).
-- [ ] Exporting the same unchanged Plan twice gives byte-identical files (`Get-FileHash` / `sha256sum`).
-- [ ] A Plan with one Prescription pointing at a hand-made, non-library Exercise exports, with one warning naming that Exercise and its place.
-- [ ] A Plan whose Exercise was deleted (`wp post delete <id> --force`) refuses to export and names the Week, Workout and Prescription.
-- [ ] Phases, empty intensity, empty rest, non-ASCII text and multi-line notes come out as the spec says.
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] `export-plan <demo-plan-id> --file=/plans/demo.json` on a freshly seeded site writes a file `PlanFile` accepts, with no warnings (the demo uses library keys only).
+- [x] Exporting the same unchanged Plan twice gives byte-identical files (`Get-FileHash` / `sha256sum`).
+- [x] A Plan with one Prescription pointing at a hand-made, non-library Exercise exports, with one warning naming that Exercise and its place.
+- [x] A Plan whose Exercise was deleted (`wp post delete <id> --force`) refuses to export and names the Week, Workout and Prescription.
+- [x] Phases, empty intensity, empty rest, non-ASCII text and multi-line notes come out as the spec says.
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+Built `PlanFileExporter`, `PlanFileExport` and `wp ol-plans export-plan`. Checked on the owner's PC:
+
+- The seeded demo exports with no warnings, twice to the same bytes, and equals `content/plans/demo-body-recomposition.json`.
+- A Prescription pointing at a hand-made Exercise exports with exactly one warning naming the Exercise and Week 2, Workout 1, Prescription 2. After deleting that Exercise, the export refuses (exit 1, no file) and names the place.
+- `full.json` (Phases, empty intensity and rest, non-ASCII, multi-line notes) round-trips byte-identical.
+- `lint:php` and `analyse:php` pass.
+
+Deviation: a Plan that cannot be exported comes back as problems in `PlanFileExport`, not an exception, so CLI and wp-admin report it the same way.

@@ -1,7 +1,7 @@
 # Authoring guide for Claude, and a worked example
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 03
 
 ## What to build
@@ -26,9 +26,17 @@ What a Claude session reads when the owner says "create a Plan like this".
 
 ## Acceptance criteria
 
-- [ ] The subagent's file passes `--dry-run` on the first try, or after fixes the guide now prevents; the guide changes are listed in the ticket.
-- [ ] `demo-body-recomposition.json` is in `content/plans/` and round-trips.
-- [ ] Every command in the guide was run on the owner's PC and works in PowerShell.
-- [ ] `CLAUDE.md` points at the guide.
+- [x] The subagent's file passes `--dry-run` on the first try, or after fixes the guide now prevents; the guide changes are listed in the ticket.
+- [x] `demo-body-recomposition.json` is in `content/plans/` and round-trips.
+- [x] Every command in the guide was run on the owner's PC and works in PowerShell.
+- [x] `CLAUDE.md` points at the guide.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+`docs/plan-files.md` written; `CLAUDE.md` points at it; `content/plans/demo-body-recomposition.json` is the seeded demo, exported, and round-trips.
+
+Trial: a session given only the guide wrote `content/plans/6-week-beginner-home-dumbbells.json` (6 Weeks, 18 Workouts, 105 Prescriptions, 18 Exercises); `--dry-run` says "Ready to import". Where it had to guess, the guide now says: the slug rule, equipment filtering (bodyweight always available, every item of an Exercise's equipment needed), balance counted by Prescriptions with `rear_delt`/`scapular` as accessories, the library's known gaps, one change at a time in progression, the demo being format only, and what a cloud session does without Docker.
+
+The guide's commands ran on the owner's PC in PowerShell (dry run, import, export with `--file=`, the PowerShell Exercise query: 63 Exercises).
