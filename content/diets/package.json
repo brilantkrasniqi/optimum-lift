@@ -5,6 +5,7 @@
   "description": "Renders the Nutrition Plans in plans/ into PDFs, one per Size.",
   "scripts": {
     "render": "node render.js",
+    "catalogue": "node catalogue.js",
     "test": "node tests/run.js"
   },
   "devDependencies": {

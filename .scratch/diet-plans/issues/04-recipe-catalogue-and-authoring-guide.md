@@ -1,7 +1,7 @@
 # Recipe catalogue and the authoring guide
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 03
 
 ## What to build
@@ -29,10 +29,26 @@ Update the files table: `recipes/`, `INDEX.md`, `catalogue.js`, `lib/`, `tests/`
 
 ## Acceptance criteria
 
-- [ ] `node catalogue.js` writes `INDEX.md` with all Recipes, correct numbers (spot-check three by hand against `foods.json`) and correct "used in" counts. A second run changes nothing.
-- [ ] Edit one Recipe's grams: `catalogue.js --check` fails and `render.js` warns. Run `catalogue.js` and both are quiet again (revert the edit).
-- [ ] The README's instructions are complete enough that a fresh session could write a 7-day plan from them. Test it: give a fresh subagent only the README and the brief "3-day Balkan recomposition plan, no fish" and check that it reuses Recipes, writes no inline meals and renders without errors. Do not commit its plan.
-- [ ] The updated `write-diet-plan` skill was proposed to the owner.
+- [x] `node catalogue.js` writes `INDEX.md` with all Recipes, correct numbers (spot-check three by hand against `foods.json`) and correct "used in" counts. A second run changes nothing.
+- [x] Edit one Recipe's grams: `catalogue.js --check` fails and `render.js` warns. Run `catalogue.js` and both are quiet again (revert the edit).
+- [x] The README's instructions are complete enough that a fresh session could write a 7-day plan from them. Test it: give a fresh subagent only the README and the brief "3-day Balkan recomposition plan, no fish" and check that it reuses Recipes, writes no inline meals and renders without errors. Do not commit its plan.
+- [x] The updated `write-diet-plan` skill was proposed to the owner.
 - [ ] After the merge: the shared folder holds only the pointer README (with the owner's yes recorded in the comment).
 
 ## Comments
+
+### 2026-10-07 (Claude, cloud session)
+
+Status stays `claimed` until the last box: the shared-folder cleanup waits for the merge and Brilant's yes.
+
+**Changed:** new `content/diets/catalogue.js` (`npm run catalogue`), generated `recipes/INDEX.md`; `render.js` warns when the index is stale (only with the default recipes folder); `README.md` gains a Recipes section and a rewritten "Instructions for Claude filling a diet", plus the files table.
+
+**Verified:**
+- `node catalogue.js` writes 58 rows (a Recipe is listed under each of its slots). A second run gives the same md5 (`d93c29da…`).
+- By hand against `foods.json`, portion 1:
+  - `gjize-me-mjalte-e-arra`: cottage cheese 250 g (245) + honey 15 g (45.6) + walnuts 10 g (65.4) + bread 40 g (98.8) = 454.8 → 455 kcal; protein 27.8 + 0 + 1.5 + 5.2 = 34.5 → 35 ✓.
+  - `supe-pule-me-perime`: 192 + 41 + 223.3 + 20 + 44.2 + 172.9 = 693.4 → 693 ✓.
+  - `kos-me-molle-e-arra`: 146 + 78 + 65.4 = 289.4 → 289 ✓. Used in "djegie-e-shpejte ×1, djegie-yndyre ×1", matching `grep -c` on both plans ✓.
+- Walnuts 10 → 12 in `kos-me-molle-e-arra`: `catalogue.js --check` exits 1 and `render.js` prints `WARNING recipes/INDEX.md is out of date: run node catalogue.js`. Reverted: both quiet.
+- **Fresh-session test.** A subagent given only the README and "3-day Balkan recomposition plan, no fish", in a scratch copy, wrote a plan of 12 meals that all reuse existing Recipes (6 tagged `balkan`, no fish), no inline meals, rendered 10 Sizes with no ERROR or WARNING, and checked the PNGs. Its plan was not committed. Gaps it found, now in the README: what `plan.goal` holds, four meals a day (a page fits four cards), what the protein rule measures, and that a swap's grams do not follow `grams` overrides (keep an override on the swapped Food within ~20%, or write a new Recipe).
+- The updated `write-diet-plan` skill was proposed to Brilant (new paths, Recipe rules, `--out`, commit on a branch). It should be saved after Part A is merged.

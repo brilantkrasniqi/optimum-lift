@@ -323,6 +323,7 @@ const css = fs.readFileSync(path.join(ROOT, 'style.css'), 'utf8')
 // ---------- build every size, then report ----------
 const errors = new Set();
 const warnings = [...resolved.warnings];
+if (!option('--recipes') && !require('./catalogue').indexIsCurrent()) warnings.push('recipes/INDEX.md is out of date: run node catalogue.js');
 const chosen = only ? sizes.filter((s) => s.code === only) : sizes;
 if (!chosen.length) {
   console.error(`No size "${only}". Sizes: ${sizes.map((s) => s.code).join(', ')}`);
