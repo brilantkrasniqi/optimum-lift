@@ -44,6 +44,15 @@ $groupPhp = '<?php echo count(acf_get_local_fields("group_ol_training_plan")), "
 git checkout origin/main -- plugins/optimum-lift-plans/src/Content/PlanFields.php
 $groupMain = EvalPhp 'group' $groupPhp
 git checkout HEAD -- plugins/optimum-lift-plans/src/Content/PlanFields.php
+# Docker Desktop's bind mount can serve the old file for a while; every
+# later check would then run main's PlanFields. Wait until it serves HEAD's.
+$fieldsHash = (Get-FileHash plugins/optimum-lift-plans/src/Content/PlanFields.php -Algorithm MD5).Hash.ToLower()
+for ($i = 0; $i -lt 30; $i++) {
+    $seen = "$(docker compose exec -T wordpress md5sum wp-content/plugins/optimum-lift-plans/src/Content/PlanFields.php 2>$null)"
+    if ($seen.StartsWith($fieldsHash)) { break }
+    Start-Sleep -Seconds 1
+}
+Check 'the container serves the branch PlanFields.php again' ($seen.StartsWith($fieldsHash))
 $groupBranch = EvalPhp 'group' $groupPhp
 "main:   $groupMain"
 "branch: $groupBranch"
