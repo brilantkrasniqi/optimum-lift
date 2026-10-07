@@ -154,9 +154,54 @@ final class PlanFileImporter
      * update_field() unslashes through update_metadata(), so values go in
      * slashed. No uids: PlanFields assigns them as the Weeks are written.
      *
+     * A new Plan has no meta yet, so each value is added without the lookup
+     * update_metadata() makes first. ACF clears the meta cache with every
+     * row, so that lookup reloaded all of the Plan's meta each time: a
+     * 16-Week Plan took 16 seconds. A key written twice, or one the Plan
+     * already has, goes the normal way. The read-back checks the result.
+     *
      * @param array<string, int> $exerciseIds
      */
     private function writeFields(int $planId, PlanContent $content, array $exerciseIds): void
+    {
+        $written = array_fill_keys(array_keys((array) get_post_meta($planId)), true);
+        $add     = static function (
+            mixed $check,
+            mixed $objectId,
+            mixed $metaKey,
+            mixed $metaValue,
+            mixed $previous
+        ) use (
+            $planId,
+            &$written
+        ): mixed {
+            $ours = $check === null && (int) $objectId === $planId && is_string($metaKey);
+
+            if (!$ours || isset($written[$metaKey]) || !in_array($previous, ['', null], true)) {
+                return $check;
+            }
+
+            $written[$metaKey] = true;
+
+            // update_metadata() has unslashed the value already; add_metadata() unslashes again.
+            $id = add_metadata('post', $planId, $metaKey, wp_slash($metaValue));
+
+            return $id === false ? null : $id;
+        };
+
+        add_filter('update_post_metadata', $add, 10, 5);
+
+        try {
+            $this->writeValues($planId, $content, $exerciseIds);
+        } finally {
+            remove_filter('update_post_metadata', $add, 10);
+        }
+    }
+
+    /**
+     * @param array<string, int> $exerciseIds
+     */
+    private function writeValues(int $planId, PlanContent $content, array $exerciseIds): void
     {
         update_field(PlanFields::SUMMARY, wp_slash($content->summary), $planId);
         update_field(PlanFields::GOAL, wp_slash($content->goal), $planId);
