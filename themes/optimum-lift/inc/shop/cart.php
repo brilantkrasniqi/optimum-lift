@@ -261,17 +261,7 @@ add_action('wc_ajax_ol_swap_to_bundle', static function (): void {
     // A bundle sold in Sizes takes the Size of a component already in the cart.
     $variation = null;
     if (optimum_lift_needs_choice($bundle)) {
-        $component_ids = array_map(static fn (WC_Product $c): int => $c->get_id(), optimum_lift_bundle_components($bundle));
-        foreach ($cart->get_cart() as $line) {
-            $sized = $line['data'] ?? null;
-            if ($sized instanceof WC_Product_Variation && in_array((int) ($line['product_id'] ?? 0), $component_ids, true)) {
-                $variation = optimum_lift_matching_variation($bundle, $sized);
-                if ($variation !== null) {
-                    break;
-                }
-            }
-        }
-
+        $variation = optimum_lift_cart_bundle_size($bundle);
         if ($variation === null) {
             optimum_lift_cart_needs_choice($bundle, []);
         }

@@ -337,6 +337,11 @@
     @apply mb-0.5 block text-[10px] font-extrabold tracking-[.16em] text-zinc-500 uppercase;
   }
 
+  /* The Size of a Product sold in Sizes, under its name. */
+  .ol-review-size {
+    @apply mt-0.5 block text-[12px] font-bold text-zinc-400;
+  }
+
   .woocommerce-checkout-review-order-table .product-quantity {
     @apply sr-only;
   }
@@ -636,6 +641,29 @@
 
   .ol-thankyou .woocommerce-table--order-details .wc-item-meta {
     @apply mt-1 list-none p-0 text-[12px] text-zinc-500;
+  }
+
+  /*
+   * WooCommerce's own line attributes (a Size: "Gjinia: Mashkull", "Pesha:
+   * 80–90 kg") on the order received page, My Account and the classic cart.
+   * Its markup puts each value in a <p>, which would break every pair over
+   * two lines.
+   */
+  .wc-item-meta li {
+    @apply flex flex-wrap gap-x-1;
+  }
+
+  .wc-item-meta p,
+  dl.variation dd p {
+    @apply m-0;
+  }
+
+  dl.variation {
+    @apply mt-1 grid grid-cols-[auto_1fr] gap-x-1.5 text-[12px] text-zinc-400;
+  }
+
+  dl.variation :is(dt, dd) {
+    @apply m-0;
   }
 
   .ol-thankyou .woocommerce-customer-details address {

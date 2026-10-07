@@ -4,6 +4,10 @@
  * The drawer's one next step, as decided by optimum_lift_cart_upsell(): swap
  * the lines for the bundle, add the complement, or upgrade to the bundle.
  * Names and prices come from the Products.
+ *
+ * A Product sold in Sizes cannot be added from here without one: the
+ * complement links to its Size picker, and so does the bundle unless a line
+ * in the cart gives it a Size (sizes.php), which the swap then uses.
  */
 
 declare(strict_types=1);
@@ -65,7 +69,11 @@ switch ($upsell['type']) {
 <div class="olc-up">
     <p class="olc-up-label"><?php echo wp_kses_post($label); ?></p>
     <p class="olc-up-text"><?php echo wp_kses_post($text); ?></p>
-    <?php if ($upsell['type'] === 'complement') : ?>
+    <?php if ($upsell['type'] === 'complement' && optimum_lift_needs_choice($product)) : ?>
+        <a href="<?php echo esc_url(optimum_lift_buy_now_url($product)); ?>" class="olc-up-btn" data-cta="drawer-complement-choose-size"><?php esc_html_e('Choose your size', 'optimum-lift'); ?></a>
+    <?php elseif ($upsell['type'] !== 'complement' && optimum_lift_needs_choice($product) && optimum_lift_cart_bundle_size($product) === null) : ?>
+        <a href="<?php echo esc_url(optimum_lift_buy_now_url($product)); ?>" class="olc-up-btn" data-cta="<?php echo esc_attr('drawer-' . $upsell['type'] . '-choose-size'); ?>"><?php echo wp_kses_post($button); ?></a>
+    <?php elseif ($upsell['type'] === 'complement') : ?>
         <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" rel="nofollow" class="olc-up-btn" data-add-to-cart="<?php echo esc_attr((string) $product->get_id()); ?>" data-cta="drawer-complement"><?php echo wp_kses_post($button); ?></a>
     <?php else : ?>
         <button type="button" class="olc-up-btn" data-cart-swap="<?php echo esc_attr((string) $product->get_id()); ?>" data-nonce="<?php echo esc_attr($nonce); ?>" data-cta="<?php echo esc_attr('drawer-' . $upsell['type']); ?>"><?php echo wp_kses_post($button); ?></button>

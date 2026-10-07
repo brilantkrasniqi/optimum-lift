@@ -27,7 +27,7 @@ $choose = optimum_lift_needs_choice($product);
 $form   = $choose ? ($args['form'] ?? '') : '';
 ?>
 <?php if ($choose && $form === '') : ?>
-<a href="<?php echo esc_url($product->get_permalink() . '#blej'); ?>" data-cta="<?php echo esc_attr(str_replace('-add', '-choose-size', $args['cta'])); ?>" class="<?php echo esc_attr($args['class']); ?>">
+<a href="<?php echo esc_url(optimum_lift_buy_now_url($product)); ?>" data-cta="<?php echo esc_attr(str_replace('-add', '-choose-size', $args['cta'])); ?>" class="<?php echo esc_attr($args['class']); ?>">
     <?php esc_html_e('Choose your size', 'optimum-lift'); ?><span class="screen-reader-text">: <?php echo esc_html($product->get_name()); ?></span>
 </a>
 <?php elseif ($choose) : ?>

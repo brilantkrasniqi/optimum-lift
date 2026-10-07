@@ -203,6 +203,25 @@ function optimum_lift_size_error(WC_Product $parent, array $request): string
 }
 
 /**
+ * Where a buy link for the Product leads. Buy Now for a Product that needs no
+ * Size. Otherwise the Size picker: `#blej` on the Product's own page, where
+ * the link keeps its label, else the Product page's `#blej`, labelled
+ * "Choose your size" (`choose`).
+ *
+ * @return array{url: string, buy_now: bool, choose: bool}
+ */
+function optimum_lift_buy_link(WC_Product $p): array
+{
+    if (!optimum_lift_needs_choice($p)) {
+        return ['url' => optimum_lift_buy_now_url($p), 'buy_now' => true, 'choose' => false];
+    }
+
+    $own = is_singular('product') && get_queried_object_id() === $p->get_id();
+
+    return ['url' => $own ? '#blej' : optimum_lift_buy_now_url($p), 'buy_now' => false, 'choose' => !$own];
+}
+
+/**
  * The variation that has the same Size as another one, for a bundle sold in
  * the Sizes of its diets: the values the two share by attribute name.
  */
@@ -210,6 +229,36 @@ function optimum_lift_matching_variation(WC_Product $parent, WC_Product_Variatio
 {
     return optimum_lift_resolve_variation($parent, $like->get_variation_attributes());
 }
+
+/**
+ * For a bundle sold in Sizes, its variation in the Size of a component already
+ * in the cart (the first cart line that gives one), else null.
+ */
+function optimum_lift_cart_bundle_size(WC_Product $bundle): ?WC_Product_Variation
+{
+    $component_ids = array_map(static fn (WC_Product $c): int => $c->get_id(), optimum_lift_bundle_components($bundle));
+    foreach (WC()->cart?->get_cart() ?? [] as $line) {
+        $sized = $line['data'] ?? null;
+        if ($sized instanceof WC_Product_Variation && in_array((int) ($line['product_id'] ?? 0), $component_ids, true)) {
+            $variation = optimum_lift_matching_variation($bundle, $sized);
+            if ($variation !== null) {
+                return $variation;
+            }
+        }
+    }
+
+    return null;
+}
+
+/*
+ * A variation is named like its parent ("Plani ushqimor 12-javor"), not
+ * "… - Mashkull, 80–90 kg", so the order item keeps the diet's name.
+ * WooCommerce then lists the Size as the line's attributes on its own pages,
+ * emails and wp-admin; the theme's drawer and checkout summary print it
+ * themselves. WooCommerce regenerates a variation's stored title when it
+ * reads or saves it, so existing variations follow.
+ */
+add_filter('woocommerce_product_variation_title_include_attributes', '__return_false');
 
 /*
  * WooCommerce's own add path (`?add-to-cart=ID` with `attribute_*` values, the

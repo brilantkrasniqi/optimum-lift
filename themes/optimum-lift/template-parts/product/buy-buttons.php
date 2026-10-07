@@ -53,7 +53,7 @@ $icon   = $size === 'sm' ? 'w-4 h-4 shrink-0' : 'w-5 h-5 shrink-0';
 ?>
 <div class="<?php echo esc_attr(trim(implode(' ', $wrap))); ?>">
 <?php if ($choose && $form === '') : ?>
-    <a href="<?php echo esc_url($product->get_permalink() . '#blej'); ?>" data-cta="<?php echo esc_attr($prefix . '-choose-size'); ?>" class="<?php echo esc_attr($buy_class . $width); ?>">
+    <a href="<?php echo esc_url(optimum_lift_buy_now_url($product)); ?>" data-cta="<?php echo esc_attr($prefix . '-choose-size'); ?>" class="<?php echo esc_attr($buy_class . $width); ?>">
         <?php esc_html_e('Choose your size', 'optimum-lift'); ?>
         <?php echo optimum_lift_icon('arrow-right', $icon); ?>
     </a>

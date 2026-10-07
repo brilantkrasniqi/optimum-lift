@@ -1,7 +1,7 @@
 # Every other buy surface, and the Size on cart and order lines
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 07
 
 ## What to build
@@ -57,3 +57,43 @@ On the seeded demo:
 - [ ] `npm run build`, `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+Built in the "Diets 08" commit; the boxes stay open until the owner's PC run.
+
+**Changed:**
+- `product/buy-buttons.php` and `product/add-to-cart.php`: without `form`, a Product that needs a choice gets one "Choose your size" link to `optimum_lift_buy_now_url()` (`#blej`). This covers the cards, the bundle banner and the final CTA's add button.
+- New `optimum_lift_buy_link()` in `sizes.php`: Buy Now, or the picker. On the Product's own page that is `#blej` and the label stays; elsewhere it is the page's `#blej` and the label becomes "Choose your size".
+  - `blocks/final-cta.php` uses it. Without a Buy Now URL there is no `data-buy-now`/`rel`, and no add button for a sized Product, so the paired layout keeps one button.
+  - So does `blocks/value-stack.php`.
+- `header/mobile-menu.php`: on a sized Product's page the CTA goes to `#blej`, without `data-buy-now`, priced with `optimum_lift_current_price()`.
+- `cart/upsell.php`: a sized complement links to its picker with "Choose your size". The bundle swap/upgrade stays a `data-cart-swap` button only when `optimum_lift_cart_bundle_size()` (moved out of the swap endpoint) finds a Size in the cart's lines; otherwise it links to the bundle's picker.
+- `cart/line.php` and `checkout/review-order.php`: thumb, category, name and link come from the parent. The Size is on its own line (`.olc-item-size`, `.ol-review-size`) and in the remove button's label. The checkout summary passes the cart item to `wc_get_formatted_cart_item_data()` without its `variation`, so the Size is not printed twice. Other item data still shows.
+- `woocommerce_product_variation_title_include_attributes` is now `false` (`sizes.php`), so variations and new order items carry the diet's name. WooCommerce's variation data store regenerates a variation's stored title on read and on save (`generate_product_title()` in `read()`, `create()` and `update()`), so the seeded variations follow without a re-seed.
+- CSS: `.wc-item-meta` (order received, My Account) and `dl.variation` (classic cart) put each "Gjinia: Mashkull" pair on one line.
+
+**Checked in code, no change needed:**
+- Cards price through `optimum_lift_current_price()`/`anchor_price()` (ticket 06).
+- The badge and sales proof read the parent's `total_sales`, which `wc_update_total_sales_counts()` increments.
+- `product/price.php`, `value-stack.php` and `comparison.php` test `get_price() !== ''`. That is WooCommerce's synced `_price` on the parent, which the seed's sync fills.
+- The shop's price sort uses WooCommerce's lookup table, which holds a variable Product's min and max price.
+- The thank-you cross-sells use parent IDs (ticket 06).
+
+**PC test** (after `ol-shop seed`, with `WP_DEBUG_LOG` on):
+1. On the shop page, the front page and a Training Plan page, every card, banner and section for 12-javor, mesdhetare and the bundle says "Choose your size" and lands on that Product's picker. Simple Products are unchanged.
+2. On 12-javor's own page, the final CTA, value stack and mobile menu go to `#blej`.
+3. Drawer:
+   - With only a Training Plan in the cart, the complement diet says "Choose your size".
+   - With 12-javor "Mashkull · 80–90 kg" plus a Training Plan, the swap offers the bundle and adds its "Mashkull · 80–90 kg".
+4. Order a diet Size and a Training Plan, paying cash on delivery, and set the order to Processing. The Size shows exactly once on each of these:
+   - the drawer;
+   - checkout;
+   - the classic cart (`/cart/`);
+   - the thank-you page;
+   - both emails (WP Mail Logging or Mailpit);
+   - My Account › Orders and the order view;
+   - wp-admin.
+5. View the thank-you page's source. The `purchase` items have the parent `id` and `variant`.
+6. The Product page's JSON-LD passes https://validator.schema.org.
+7. `debug.log` stays empty.

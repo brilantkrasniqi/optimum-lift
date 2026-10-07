@@ -46,6 +46,11 @@ $ol_anchors = 0.0;
                 $ol_anchor   = optimum_lift_anchor_price($_product);
                 $ol_anchors += $ol_anchor * (int) $cart_item['quantity'];
                 $ol_saving   = optimum_lift_saving($_product);
+                // The Size prints on its own line, so WooCommerce's item data
+                // leaves out the variation's attributes (sizes.php).
+                $ol_base     = optimum_lift_base_product($_product);
+                $ol_size     = optimum_lift_size_label($_product);
+                $ol_data     = wc_get_formatted_cart_item_data(array_merge($cart_item, ['variation' => []]));
                 ?>
                 <tr class="<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
                     <td class="product-name">
@@ -53,7 +58,7 @@ $ol_anchors = 0.0;
                             <span class="ol-review-thumb">
                                 <?php
                                 get_template_part('template-parts/product/thumb', null, [
-                                    'product'   => $_product,
+                                    'product'   => $ol_base,
                                     'size'      => 'woocommerce_gallery_thumbnail',
                                     'sizes'     => '48px',
                                     'class'     => 'absolute inset-0 h-full w-full',
@@ -63,9 +68,12 @@ $ol_anchors = 0.0;
                             </span>
                             <span class="ol-review-text">
                                 <span class="ol-review-cat"><?php echo esc_html(optimum_lift_category_label($_product)); ?></span>
-                                <?php echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key)) . '&nbsp;'; ?>
+                                <?php echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $ol_base->get_name(), $cart_item, $cart_item_key)) . '&nbsp;'; ?>
                                 <?php echo apply_filters('woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf('&times;&nbsp;%s', $cart_item['quantity']) . '</strong>', $cart_item, $cart_item_key); ?>
-                                <?php echo wc_get_formatted_cart_item_data($cart_item); ?>
+                                <?php if ($ol_size !== '') : ?>
+                                    <span class="ol-review-size"><?php echo esc_html($ol_size); ?></span>
+                                <?php endif; ?>
+                                <?php echo $ol_data; ?>
                             </span>
                         </div>
                     </td>
