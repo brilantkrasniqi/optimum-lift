@@ -23,13 +23,27 @@ Production has no WP-CLI, so both directions need wp-admin. Copy `ImportScreen`'
 
 ## Acceptance criteria
 
-- [ ] The row action and the meta box download a file byte-identical to `wp ol-plans export-plan` for the same Plan.
-- [ ] A Plan with a non-library Exercise shows the warning in the meta box.
-- [ ] An Editor (no `manage_options`) can export a Plan but sees neither the Import Plan menu item nor the button, and gets a 403 from the handler URL.
-- [ ] A bad or missing nonce on either handler: no download, no Plan, a "This link has expired" message.
-- [ ] Upload `broken.json`: every problem listed, nothing created. "Check only" with `full.json`: counts shown, nothing created. Real import: lands on the new draft with the notice.
-- [ ] No file, a non-JSON file, and a 3 MB file each give one clear message.
+- [x] The row action and the meta box download a file byte-identical to `wp ol-plans export-plan` for the same Plan.
+- [x] A Plan with a non-library Exercise shows the warning in the meta box.
+- [x] An Editor (no `manage_options`) can export a Plan but sees neither the Import Plan menu item nor the button, and gets a 403 from the handler URL.
+- [x] A bad or missing nonce on either handler: no download, no Plan, a "This link has expired" message.
+- [x] Upload `broken.json`: every problem listed, nothing created. "Check only" with `full.json`: counts shown, nothing created. Real import: lands on the new draft with the notice.
+- [x] No file, a non-JSON file, and a 3 MB file each give one clear message.
 - [ ] Checked end to end in a browser on the local site, in English and with the site language set to Albanian (strings may still be English until ticket 06).
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+Built `ExportAction`, `ImportPlanScreen` and `templates/admin/import-plan.php`; the Exercise import's menu label is now "Import Exercises". Checked on the owner's PC over authenticated HTTP:
+
+- Row action and meta box downloads are byte-identical to `export-plan` (application/json, attachment, no-cache).
+- The non-library Exercise warning shows in the meta box.
+- An Editor can export, sees no Import Plan menu item or button, and gets 403 from the handler and the page.
+- Bad or missing nonce on either handler: 403 "This link has expired", nothing downloaded or created.
+- `broken.json` upload lists every problem, creates nothing; Check only with `full.json` shows counts and the same-title note; a real import lands on the draft with the notice.
+- No file, non-JSON and 3 MB files give one message each.
+- Albanian user: the screens return Albanian strings. `debug.log` stayed empty.
+
+Not checked: the look in a real browser and the double-click guard (inline script). Left for the owner, so this stays claimed until then.
