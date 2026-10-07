@@ -1,0 +1,2332 @@
+{
+  "plan": "Djegie e shpejtë",
+  "size": {
+    "code": "m-70-80",
+    "gender": "Mashkull",
+    "weight": "70–80 kg"
+  },
+  "days": [
+    {
+      "title": "Dita 1",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1911,
+        "p": 157.6,
+        "c": 183.8,
+        "f": 60.4
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Omëletë me spinaq e djathë",
+          "minutes": 10,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 150,
+              "count": 3
+            },
+            {
+              "food": "egg_white",
+              "grams": 145
+            },
+            {
+              "food": "spinach",
+              "grams": 55
+            },
+            {
+              "food": "white_cheese",
+              "grams": 25
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 60,
+              "count": 2
+            }
+          ],
+          "steps": [
+            "Rrihi vezët bashkë me të bardhat.",
+            "Kaurdis spinaqin 1 minutë në tigan pa vaj.",
+            "Hidh vezët, thërrmo djathin sipër, mbuloje 3 minuta."
+          ],
+          "swap": "Djathë i bardhë → gjizë, 40 g",
+          "totals": {
+            "kcal": 516.8,
+            "p": 47.6,
+            "c": 29.7,
+            "f": 22.1
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Kos me mollë e arra",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "greek_yogurt_2",
+              "grams": 190
+            },
+            {
+              "food": "apple",
+              "grams": 145
+            },
+            {
+              "food": "walnuts",
+              "grams": 8,
+              "count": 0.5
+            }
+          ],
+          "steps": [
+            "Prije mollën në kubikë dhe përziej me kosin.",
+            "Thyej arrat sipër."
+          ],
+          "swap": "Mollë → dardhë, 145 g",
+          "totals": {
+            "kcal": 266.4,
+            "p": 20.7,
+            "c": 28.5,
+            "f": 9.1
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Pulë në skarë, oriz e sallatë shope",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 170,
+              "note": "i papjekur"
+            },
+            {
+              "food": "rice",
+              "grams": 80
+            },
+            {
+              "food": "salad_mix",
+              "grams": 285
+            },
+            {
+              "food": "white_cheese",
+              "grams": 19
+            },
+            {
+              "food": "olive_oil",
+              "grams": 8,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Pjeke pulën në skarë 6–7 minuta për anë.",
+            "Zieje orizin sipas paketimit.",
+            "Prit perimet, shto vajin dhe djathin sipër."
+          ],
+          "swap": "Oriz → patate të ziera, 305 g",
+          "totals": {
+            "kcal": 664.2,
+            "p": 48.6,
+            "c": 75.9,
+            "f": 17.5
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:30",
+          "name": "Fasule me mish viçi",
+          "minutes": 30,
+          "ingredients": [
+            {
+              "food": "beef_mince_5",
+              "grams": 115
+            },
+            {
+              "food": "white_beans_cooked",
+              "grams": 145
+            },
+            {
+              "food": "onion_carrot",
+              "grams": 75
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 95
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Kaurdis mishin me qepën dhe karotën.",
+            "Shto fasulet, salcën, paprikën dhe 1 gotë ujë.",
+            "Lëre të ziejë 15 minuta në zjarr të ulët."
+          ],
+          "swap": "Viç → gjoks gjeldeti i grirë, 125 g",
+          "totals": {
+            "kcal": 463.7,
+            "p": 40.8,
+            "c": 49.8,
+            "f": 11.6
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 2",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1946.1,
+        "p": 160.8,
+        "c": 222.8,
+        "f": 48.7
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Tërshërë me proteinë e fruta pylli",
+          "minutes": 5,
+          "ingredients": [
+            {
+              "food": "oats",
+              "grams": 70,
+              "count": 7
+            },
+            {
+              "food": "whey",
+              "grams": 30
+            },
+            {
+              "food": "milk_15",
+              "grams": 190
+            },
+            {
+              "food": "berries",
+              "grams": 95
+            }
+          ],
+          "steps": [
+            "Zieji tërshërën me qumështin 3 minuta.",
+            "Hiqe nga zjarri dhe përziej proteinën.",
+            "Shto frutat sipër."
+          ],
+          "swap": "Fruta pylli → 1 banane e vogël",
+          "totals": {
+            "kcal": 529.1,
+            "p": 43,
+            "c": 69.5,
+            "f": 9.8
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Shejk proteine me banane",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "whey",
+              "grams": 30
+            },
+            {
+              "food": "milk_15",
+              "grams": 240
+            },
+            {
+              "food": "banana",
+              "grams": 95
+            }
+          ],
+          "steps": [
+            "Përzieji në blender ose në shishe shejku."
+          ],
+          "swap": "Qumësht → ujë dhe 1 lugë gjalpë kikiriku",
+          "totals": {
+            "kcal": 317.4,
+            "p": 33.2,
+            "c": 35.8,
+            "f": 5.7
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Pulë me patate në tavë",
+          "minutes": 45,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 170,
+              "note": "i papjekur"
+            },
+            {
+              "food": "potato",
+              "grams": 340
+            },
+            {
+              "food": "pepper",
+              "grams": 95
+            },
+            {
+              "food": "onion",
+              "grams": 50
+            },
+            {
+              "food": "olive_oil",
+              "grams": 8,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Prit patatet, specat dhe qepën, përziej me vajin dhe erëzat.",
+            "Shto pulën në copa sipër.",
+            "Piqe 35–40 minuta në 200 °C."
+          ],
+          "swap": "Patate → patate e ëmbël, 255 g",
+          "totals": {
+            "kcal": 575.5,
+            "p": 46.5,
+            "c": 68.5,
+            "f": 13
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:30",
+          "name": "Salmon me patate e brokoli",
+          "minutes": 35,
+          "ingredients": [
+            {
+              "food": "salmon",
+              "grams": 145
+            },
+            {
+              "food": "potato",
+              "grams": 225
+            },
+            {
+              "food": "broccoli",
+              "grams": 145
+            },
+            {
+              "food": "spice",
+              "label": "Limon, kopër",
+              "household": "sipas dëshirës"
+            }
+          ],
+          "steps": [
+            "Prit patatet në feta dhe piqi 20 minuta në 200 °C.",
+            "Shto salmonin dhe brokolin, piqi edhe 12–15 minuta.",
+            "Shtrydh limon sipër."
+          ],
+          "swap": "Salmon → peshk i bardhë, 190 g",
+          "totals": {
+            "kcal": 524.2,
+            "p": 38.1,
+            "c": 48.9,
+            "f": 20.2
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 3",
+      "kcal_target": 1710,
+      "totals": {
+        "kcal": 1702,
+        "p": 144.8,
+        "c": 195.3,
+        "f": 40.1
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Kos me tërshërë, mollë e kanellë",
+          "minutes": 3,
+          "ingredients": [
+            {
+              "food": "greek_yogurt_2",
+              "grams": 240
+            },
+            {
+              "food": "oats",
+              "grams": 50,
+              "count": 5
+            },
+            {
+              "food": "apple",
+              "grams": 145
+            },
+            {
+              "food": "spice",
+              "label": "Kanellë",
+              "household": "sipas dëshirës"
+            }
+          ],
+          "steps": [
+            "Prije mollën në kubikë.",
+            "Përziej kosin me tërshërën dhe mollën, spërkat kanellë."
+          ],
+          "swap": "Mollë → dardhë, 145 g",
+          "totals": {
+            "kcal": 445.1,
+            "p": 32.9,
+            "c": 62.5,
+            "f": 8.3
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Gjizë me domate e kastravec",
+          "minutes": 3,
+          "ingredients": [
+            {
+              "food": "cottage_cheese",
+              "grams": 190
+            },
+            {
+              "food": "tomato",
+              "grams": 95
+            },
+            {
+              "food": "cucumber",
+              "grams": 95
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 45,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Prit perimet, hidh kripë e piper.",
+            "Hae me gjizën dhe bukën."
+          ],
+          "swap": "Gjizë → 2 vezë të ziera",
+          "totals": {
+            "kcal": 328.7,
+            "p": 28.5,
+            "c": 32,
+            "f": 10
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Sallatë me ton e qiqra",
+          "minutes": 10,
+          "ingredients": [
+            {
+              "food": "tuna_water",
+              "grams": 145
+            },
+            {
+              "food": "chickpeas_cooked",
+              "grams": 115
+            },
+            {
+              "food": "lettuce",
+              "grams": 75
+            },
+            {
+              "food": "salad_mix",
+              "grams": 145
+            },
+            {
+              "food": "olive_oil",
+              "grams": 10,
+              "count": 2
+            }
+          ],
+          "steps": [
+            "Kullo tonin dhe qiqrat.",
+            "Prit perimet dhe përziej gjithçka me vajin dhe limon."
+          ],
+          "swap": "Ton → gjoks pule i zier, 145 g",
+          "totals": {
+            "kcal": 482.6,
+            "p": 49.4,
+            "c": 39.5,
+            "f": 14.6
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Speca të mbushura me mish e oriz",
+          "minutes": 50,
+          "ingredients": [
+            {
+              "food": "pepper",
+              "grams": 240
+            },
+            {
+              "food": "beef_mince_5",
+              "grams": 125
+            },
+            {
+              "food": "rice",
+              "grams": 50
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 95
+            },
+            {
+              "food": "onion",
+              "grams": 40
+            }
+          ],
+          "steps": [
+            "Përziej mishin, orizin e papjekur, qepën dhe gjysmën e salcës.",
+            "Mbush specat, hidh salcën e mbetur dhe pak ujë.",
+            "Piqi 40 minuta në 190 °C."
+          ],
+          "swap": "Viç → gjoks gjeldeti i grirë, 135 g",
+          "totals": {
+            "kcal": 445.7,
+            "p": 34,
+            "c": 61.2,
+            "f": 7.3
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 4",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1900.1,
+        "p": 162.4,
+        "c": 184.4,
+        "f": 54.7
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Vezë të ziera, gjizë e domate",
+          "minutes": 12,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 150,
+              "count": 3
+            },
+            {
+              "food": "cottage_cheese",
+              "grams": 115
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 75,
+              "count": 2.5
+            },
+            {
+              "food": "tomato",
+              "grams": 145
+            }
+          ],
+          "steps": [
+            "Zieji vezët 9 minuta, pastaj në ujë të ftohtë.",
+            "Lyej bukën me gjizë dhe shto domaten në feta."
+          ],
+          "swap": "Gjizë → kos i tendosur, 115 g",
+          "totals": {
+            "kcal": 538.6,
+            "p": 42.7,
+            "c": 41.4,
+            "f": 22
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Bukë me ton e domate",
+          "minutes": 3,
+          "ingredients": [
+            {
+              "food": "wholegrain_bread",
+              "grams": 45,
+              "count": 1.5
+            },
+            {
+              "food": "tuna_water",
+              "grams": 95
+            },
+            {
+              "food": "tomato",
+              "grams": 95
+            }
+          ],
+          "steps": [
+            "Kullo tonin dhe përziej me pak limon.",
+            "Vendose mbi bukë me domaten në feta."
+          ],
+          "swap": "Ton → gjoks pule i zier, 95 g",
+          "totals": {
+            "kcal": 238.5,
+            "p": 30.9,
+            "c": 22.2,
+            "f": 2.5
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Makarona me mish viçi e domate",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "pasta",
+              "grams": 105
+            },
+            {
+              "food": "beef_mince_5",
+              "grams": 125
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 145
+            },
+            {
+              "food": "onion",
+              "grams": 50
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Kaurdis qepën e mishin derisa të marrë ngjyrë.",
+            "Shto salcën dhe lëre 10 minuta.",
+            "Zieji makaronat dhe përzieji me salcën."
+          ],
+          "swap": "Makarona → oriz, 75 g",
+          "totals": {
+            "kcal": 671.4,
+            "p": 43,
+            "c": 93.6,
+            "f": 13.2
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:30",
+          "name": "Omëletë me perime e sallatë",
+          "minutes": 12,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 100,
+              "count": 2
+            },
+            {
+              "food": "egg_white",
+              "grams": 190
+            },
+            {
+              "food": "zucchini",
+              "grams": 95
+            },
+            {
+              "food": "pepper",
+              "grams": 75
+            },
+            {
+              "food": "kashkaval",
+              "grams": 19
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 45,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Kaurdis kungulleshën dhe specin 4 minuta.",
+            "Hidh vezët e rrahura, kaçkavallin sipër, mbuloje 3 minuta."
+          ],
+          "swap": "Kaçkavall → djathë i bardhë, 25 g",
+          "totals": {
+            "kcal": 451.7,
+            "p": 45.7,
+            "c": 27.3,
+            "f": 17.1
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 5",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1925,
+        "p": 161,
+        "c": 234.4,
+        "f": 38.3
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Petulla me tërshërë e proteinë",
+          "minutes": 15,
+          "ingredients": [
+            {
+              "food": "oats",
+              "grams": 50,
+              "count": 5
+            },
+            {
+              "food": "egg_white",
+              "grams": 145
+            },
+            {
+              "food": "whey",
+              "grams": 19
+            },
+            {
+              "food": "banana",
+              "grams": 95
+            },
+            {
+              "food": "honey",
+              "grams": 11,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Bluaj tërshërën, përziej me të bardhat, proteinën dhe gjysmën e bananes.",
+            "Piqi 4 petulla në tigan pa vaj, 2 minuta për anë.",
+            "Shto bananen e mbetur dhe mjaltin sipër."
+          ],
+          "swap": "Mjaltë → fruta pylli, 50 g",
+          "totals": {
+            "kcal": 463.9,
+            "p": 40.5,
+            "c": 66.4,
+            "f": 5.2
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Kos me luleshtrydhe e bajame",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "greek_yogurt_2",
+              "grams": 240
+            },
+            {
+              "food": "strawberries",
+              "grams": 145
+            },
+            {
+              "food": "almonds",
+              "grams": 15,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Prit luleshtrydhet në katërsh dhe përziej me kosin.",
+            "Thyej bajamet sipër."
+          ],
+          "swap": "Luleshtrydhe → fruta pylli, 145 g",
+          "totals": {
+            "kcal": 308.5,
+            "p": 28.2,
+            "c": 23.8,
+            "f": 12.5
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Oriz me pulë e perime",
+          "minutes": 20,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 160,
+              "note": "i papjekur"
+            },
+            {
+              "food": "rice",
+              "grams": 85
+            },
+            {
+              "food": "zucchini",
+              "grams": 95
+            },
+            {
+              "food": "carrot",
+              "grams": 75
+            },
+            {
+              "food": "olive_oil",
+              "grams": 8,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Zieje orizin.",
+            "Kaurdis pulën në copa, pastaj karotën e kungulleshën.",
+            "Shto orizin dhe përziej 2 minuta në zjarr të fortë."
+          ],
+          "swap": "Pulë → gjoks gjeldeti, 160 g",
+          "totals": {
+            "kcal": 615.6,
+            "p": 43.5,
+            "c": 77.8,
+            "f": 13.1
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:30",
+          "name": "Makarona me ton e domate",
+          "minutes": 15,
+          "ingredients": [
+            {
+              "food": "pasta",
+              "grams": 75
+            },
+            {
+              "food": "tuna_water",
+              "grams": 145
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 145
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Zieji makaronat.",
+            "Ngroh salcën me vajin, shto tonin e kulluar.",
+            "Përziej me makaronat dhe borzilok."
+          ],
+          "swap": "Ton → gjoks pule, 145 g",
+          "totals": {
+            "kcal": 537.1,
+            "p": 48.8,
+            "c": 66.4,
+            "f": 7.6
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 6",
+      "kcal_target": 1710,
+      "totals": {
+        "kcal": 1739.2,
+        "p": 160.1,
+        "c": 181.1,
+        "f": 45.1
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:30",
+          "name": "Gjizë me mjaltë e arra",
+          "minutes": 3,
+          "ingredients": [
+            {
+              "food": "cottage_cheese",
+              "grams": 240
+            },
+            {
+              "food": "honey",
+              "grams": 14,
+              "count": 2
+            },
+            {
+              "food": "walnuts",
+              "grams": 8,
+              "count": 0.5
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 45,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Hidh gjizën në tas, mjaltin e arrat sipër.",
+            "Hae me bukën anash."
+          ],
+          "swap": "Arra → bajame, 10 g",
+          "totals": {
+            "kcal": 441.2,
+            "p": 33.7,
+            "c": 39.2,
+            "f": 17.1
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Mollë, gjalpë kikiriku e qumësht",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "apple",
+              "grams": 145
+            },
+            {
+              "food": "peanut_butter",
+              "grams": 15,
+              "count": 1
+            },
+            {
+              "food": "milk_15",
+              "grams": 240
+            },
+            {
+              "food": "whey",
+              "grams": 19
+            }
+          ],
+          "steps": [
+            "Prije mollën në feta dhe lyeji me gjalpë kikiriku.",
+            "Përziej proteinën në qumësht."
+          ],
+          "swap": "Gjalpë kikiriku → bajame, 15 g",
+          "totals": {
+            "kcal": 352.4,
+            "p": 27.5,
+            "c": 36.3,
+            "f": 12.5
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Gjeldet me patate të ëmbël e brokoli",
+          "minutes": 40,
+          "ingredients": [
+            {
+              "food": "turkey_breast",
+              "grams": 170,
+              "note": "i papjekur"
+            },
+            {
+              "food": "sweet_potato",
+              "grams": 240
+            },
+            {
+              "food": "broccoli",
+              "grams": 145
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Piqe patatet e ëmbla në feta 25 minuta në 200 °C.",
+            "Pjeke gjeldetin në tigan 5 minuta për anë.",
+            "Zieje brokolin me avull 5 minuta."
+          ],
+          "swap": "Patate e ëmbël → patate, 265 g",
+          "totals": {
+            "kcal": 488.6,
+            "p": 49.7,
+            "c": 57.8,
+            "f": 7.5
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Kungulleshë e mbushur me gjeldet",
+          "minutes": 40,
+          "ingredients": [
+            {
+              "food": "zucchini",
+              "grams": 285
+            },
+            {
+              "food": "turkey_breast",
+              "grams": 150,
+              "note": "i grirë"
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 95
+            },
+            {
+              "food": "kashkaval",
+              "grams": 19
+            },
+            {
+              "food": "rice",
+              "grams": 40
+            }
+          ],
+          "steps": [
+            "Prit kungulleshat në gjysmë dhe hiq mesin.",
+            "Kaurdis gjeldetin me mesin e kungulleshës dhe salcën, mbushi.",
+            "Hidh kaçkavallin sipër, piqi 25 minuta në 200 °C; hae me oriz."
+          ],
+          "swap": "Gjeldet → mish viçi 5%, 145 g",
+          "totals": {
+            "kcal": 457,
+            "p": 49.1,
+            "c": 47.7,
+            "f": 8
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 7",
+      "kcal_target": 1710,
+      "totals": {
+        "kcal": 1696.7,
+        "p": 154.2,
+        "c": 154.5,
+        "f": 53.6
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:30",
+          "name": "Vezë me domate e speca",
+          "minutes": 12,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 150,
+              "count": 3
+            },
+            {
+              "food": "egg_white",
+              "grams": 95
+            },
+            {
+              "food": "tomato",
+              "grams": 145
+            },
+            {
+              "food": "pepper",
+              "grams": 95
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 45,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Kaurdis specat 3 minuta në tigan pa vaj.",
+            "Shto domaten e grirë dhe lëre 3 minuta.",
+            "Thyej vezët sipër dhe përziej derisa të piqen."
+          ],
+          "swap": "Bukë → 1 patate e zier, 115 g",
+          "totals": {
+            "kcal": 420.2,
+            "p": 37.3,
+            "c": 30.2,
+            "f": 16.5
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Vezë të ziera me perime",
+          "minutes": 10,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 100,
+              "count": 2
+            },
+            {
+              "food": "cucumber",
+              "grams": 145
+            },
+            {
+              "food": "pepper",
+              "grams": 95
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 30,
+              "count": 1
+            },
+            {
+              "food": "cottage_cheese",
+              "grams": 75
+            }
+          ],
+          "steps": [
+            "Zieji vezët 9 minuta.",
+            "Prit perimet në shkopinj dhe hae me gjizën."
+          ],
+          "swap": "Vezë → ton, 75 g",
+          "totals": {
+            "kcal": 331.4,
+            "p": 26.7,
+            "c": 25.1,
+            "f": 14.1
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "13:30",
+          "name": "Fërgesë me pulë",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 150,
+              "note": "i papjekur"
+            },
+            {
+              "food": "pepper",
+              "grams": 145
+            },
+            {
+              "food": "tomato",
+              "grams": 145
+            },
+            {
+              "food": "cottage_cheese",
+              "grams": 75
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 45,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Kaurdis pulën në copa të vogla në tigan pa vaj.",
+            "Shto specat dhe domatet, lëri 10 minuta.",
+            "Përziej gjizën në fund dhe hae me bukën."
+          ],
+          "swap": "Gjizë → djathë i bardhë, 30 g",
+          "totals": {
+            "kcal": 419.8,
+            "p": 50.5,
+            "c": 33.3,
+            "f": 9.2
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Qiqra me spinaq e kos",
+          "minutes": 20,
+          "ingredients": [
+            {
+              "food": "chickpeas_cooked",
+              "grams": 170
+            },
+            {
+              "food": "spinach",
+              "grams": 145
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 95
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            },
+            {
+              "food": "greek_yogurt_2",
+              "grams": 190
+            }
+          ],
+          "steps": [
+            "Kaurdis spinaqin me vajin derisa të bjerë.",
+            "Shto qiqrat dhe salcën, lëri 8 minuta.",
+            "Hae me kosin anash."
+          ],
+          "swap": "Qiqra → thjerrëza, 190 g",
+          "totals": {
+            "kcal": 525.5,
+            "p": 39.7,
+            "c": 65.9,
+            "f": 13.8
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 8",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1919.1,
+        "p": 153.5,
+        "c": 228.7,
+        "f": 45.3
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Shejk me banane, tërshërë e proteinë",
+          "minutes": 3,
+          "ingredients": [
+            {
+              "food": "milk_15",
+              "grams": 285
+            },
+            {
+              "food": "whey",
+              "grams": 30
+            },
+            {
+              "food": "banana",
+              "grams": 115
+            },
+            {
+              "food": "oats",
+              "grams": 40,
+              "count": 4
+            },
+            {
+              "food": "peanut_butter",
+              "grams": 8,
+              "count": 0.5
+            }
+          ],
+          "steps": [
+            "Hidhi të gjitha në blender.",
+            "Përzieji 30 sekonda, me pak akull nëse do."
+          ],
+          "swap": "Banane → fruta pylli, 145 g",
+          "totals": {
+            "kcal": 558.9,
+            "p": 43.7,
+            "c": 70.7,
+            "f": 13.2
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Kos me tërshërë e mjaltë",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "greek_yogurt_2",
+              "grams": 190
+            },
+            {
+              "food": "oats",
+              "grams": 40,
+              "count": 4
+            },
+            {
+              "food": "honey",
+              "grams": 4,
+              "count": 0.5
+            }
+          ],
+          "steps": [
+            "Përziej kosin me tërshërën.",
+            "Hidh mjaltin sipër."
+          ],
+          "swap": "Mjaltë → fruta pylli, 50 g",
+          "totals": {
+            "kcal": 306.5,
+            "p": 25.8,
+            "c": 37.2,
+            "f": 6.4
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Qofte viçi me oriz e sallatë",
+          "minutes": 35,
+          "ingredients": [
+            {
+              "food": "beef_mince_5",
+              "grams": 150
+            },
+            {
+              "food": "onion",
+              "grams": 30
+            },
+            {
+              "food": "rice",
+              "grams": 70
+            },
+            {
+              "food": "salad_mix",
+              "grams": 240
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Përziej mishin me qepën e grirë, kripë e piper, bëj 6 qofte.",
+            "Piqi në furrë 20 minuta në 200 °C.",
+            "Zieje orizin dhe bëj sallatën me vajin."
+          ],
+          "swap": "Oriz → bukë integrale, 65 g",
+          "totals": {
+            "kcal": 556.9,
+            "p": 39,
+            "c": 68.1,
+            "f": 13.4
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:30",
+          "name": "Peshk në furrë me perime",
+          "minutes": 35,
+          "ingredients": [
+            {
+              "food": "white_fish",
+              "grams": 210
+            },
+            {
+              "food": "zucchini",
+              "grams": 145
+            },
+            {
+              "food": "pepper",
+              "grams": 95
+            },
+            {
+              "food": "potato",
+              "grams": 250
+            },
+            {
+              "food": "olive_oil",
+              "grams": 10,
+              "count": 2
+            }
+          ],
+          "steps": [
+            "Prit perimet e patatet, përziej me vajin.",
+            "Piqi 20 minuta në 200 °C, shto peshkun.",
+            "Piqe edhe 12 minuta, limon sipër."
+          ],
+          "swap": "Peshk → gjoks pule, 170 g",
+          "totals": {
+            "kcal": 496.8,
+            "p": 45,
+            "c": 52.6,
+            "f": 12.3
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 9",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1925.8,
+        "p": 172.1,
+        "c": 197.7,
+        "f": 50.3
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Tost me vezë e kaçkavall",
+          "minutes": 8,
+          "ingredients": [
+            {
+              "food": "wholegrain_bread",
+              "grams": 135,
+              "count": 4.5
+            },
+            {
+              "food": "egg",
+              "grams": 100,
+              "count": 2
+            },
+            {
+              "food": "egg_white",
+              "grams": 95
+            },
+            {
+              "food": "kashkaval",
+              "grams": 19
+            },
+            {
+              "food": "tomato",
+              "grams": 95
+            }
+          ],
+          "steps": [
+            "Përziej vezët me të bardhat dhe piqi si omëletë e hollë.",
+            "Vendose mes bukës me kaçkavallin dhe domaten.",
+            "Ngrohe në tigan 2 minuta për anë."
+          ],
+          "swap": "Kaçkavall → djathë i bardhë, 25 g",
+          "totals": {
+            "kcal": 610.6,
+            "p": 46.1,
+            "c": 60.8,
+            "f": 19.7
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Shejk me fruta pylli",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "whey",
+              "grams": 30
+            },
+            {
+              "food": "milk_15",
+              "grams": 190
+            },
+            {
+              "food": "berries",
+              "grams": 95
+            }
+          ],
+          "steps": [
+            "Përzieji në blender 30 sekonda."
+          ],
+          "swap": "Fruta pylli → banane, 75 g",
+          "totals": {
+            "kcal": 256.8,
+            "p": 31.1,
+            "c": 23.1,
+            "f": 4.9
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Peshk i bardhë me patate e sallatë",
+          "minutes": 30,
+          "ingredients": [
+            {
+              "food": "white_fish",
+              "grams": 210
+            },
+            {
+              "food": "potato",
+              "grams": 500
+            },
+            {
+              "food": "lettuce",
+              "grams": 75
+            },
+            {
+              "food": "olive_oil",
+              "grams": 10,
+              "count": 2
+            }
+          ],
+          "steps": [
+            "Zieji patatet 20 minuta.",
+            "Pjeke peshkun në tigan ose furrë 10–12 minuta.",
+            "Shërbeje me sallatë, vaj e limon."
+          ],
+          "swap": "Peshk i bardhë → salmon, 115 g",
+          "totals": {
+            "kcal": 656.9,
+            "p": 48.4,
+            "c": 89.7,
+            "f": 12.1
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Musaka e lehtë me patëllxhan",
+          "minutes": 50,
+          "ingredients": [
+            {
+              "food": "eggplant",
+              "grams": 240
+            },
+            {
+              "food": "beef_mince_5",
+              "grams": 135
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 95
+            },
+            {
+              "food": "greek_yogurt_2",
+              "grams": 75
+            },
+            {
+              "food": "egg",
+              "grams": 50,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Piqi fetat e patëllxhanit 15 minuta në furrë.",
+            "Kaurdis mishin me salcën dhe shtroji me radhë në tavë.",
+            "Mbuloje me kosin e rrahur me vezën, piqe 25 minuta në 190 °C."
+          ],
+          "swap": "Patëllxhan → kungulleshë, 240 g",
+          "totals": {
+            "kcal": 401.6,
+            "p": 46.4,
+            "c": 24.1,
+            "f": 13.6
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 10",
+      "kcal_target": 1710,
+      "totals": {
+        "kcal": 1689.7,
+        "p": 148.5,
+        "c": 190.3,
+        "f": 38.8
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:30",
+          "name": "Kos me fruta pylli e bajame",
+          "minutes": 3,
+          "ingredients": [
+            {
+              "food": "greek_yogurt_2",
+              "grams": 285
+            },
+            {
+              "food": "berries",
+              "grams": 145
+            },
+            {
+              "food": "almonds",
+              "grams": 8,
+              "count": 0.5
+            }
+          ],
+          "steps": [
+            "Hidh kosin në tas.",
+            "Shto frutat dhe bajamet e thyera sipër."
+          ],
+          "swap": "Fruta pylli → luleshtrydhe, 190 g",
+          "totals": {
+            "kcal": 326.9,
+            "p": 31.2,
+            "c": 30.2,
+            "f": 9.8
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Gjizë me portokall",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "cottage_cheese",
+              "grams": 190
+            },
+            {
+              "food": "orange",
+              "grams": 145
+            }
+          ],
+          "steps": [
+            "Qëroje portokallin dhe hae me gjizën."
+          ],
+          "swap": "Portokall → mollë, 145 g",
+          "totals": {
+            "kcal": 254.3,
+            "p": 22.4,
+            "c": 23.6,
+            "f": 8.3
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "13:30",
+          "name": "Gjellë me thjerrëza e pulë",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "lentils_cooked",
+              "grams": 190
+            },
+            {
+              "food": "chicken_breast",
+              "grams": 125,
+              "note": "i papjekur"
+            },
+            {
+              "food": "carrot",
+              "grams": 75
+            },
+            {
+              "food": "onion",
+              "grams": 50
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Kaurdis qepën, karotën dhe pulën në copa.",
+            "Shto thjerrëzat dhe 1 gotë ujë.",
+            "Lëre të ziejë 15 minuta."
+          ],
+          "swap": "Thjerrëza → fasule të ziera, 160 g",
+          "totals": {
+            "kcal": 465.4,
+            "p": 46.4,
+            "c": 50,
+            "f": 9.2
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Supë pule me perime",
+          "minutes": 40,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 150,
+              "note": "i papjekur"
+            },
+            {
+              "food": "carrot",
+              "grams": 95
+            },
+            {
+              "food": "potato",
+              "grams": 275
+            },
+            {
+              "food": "onion",
+              "grams": 50
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 60,
+              "count": 2
+            }
+          ],
+          "steps": [
+            "Zieje pulën në 1 litër ujë 20 minuta, pastaj grije.",
+            "Shto perimet në copa dhe lëri 15 minuta.",
+            "Kthe pulën në supë, limon sipër."
+          ],
+          "swap": "Patate → oriz, 35 g",
+          "totals": {
+            "kcal": 643.1,
+            "p": 48.5,
+            "c": 86.5,
+            "f": 11.5
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 11",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1912.8,
+        "p": 170,
+        "c": 195.5,
+        "f": 47.2
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Pite e lehtë me spinaq e gjizë",
+          "minutes": 10,
+          "ingredients": [
+            {
+              "food": "filo",
+              "grams": 70
+            },
+            {
+              "food": "cottage_cheese",
+              "grams": 145
+            },
+            {
+              "food": "spinach",
+              "grams": 95
+            },
+            {
+              "food": "egg",
+              "grams": 50,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Përgatite një natë më parë: përziej spinaqin, gjizën dhe vezën.",
+            "Shtroje mes 2–3 petëve në një tavë të vogël.",
+            "Piqe 25 minuta në 190 °C; në mëngjes vetëm ngrohe."
+          ],
+          "swap": "Peta → 1 fetë bukë integrale, 40 g",
+          "totals": {
+            "kcal": 444.8,
+            "p": 30.1,
+            "c": 45.5,
+            "f": 15.6
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Sanduiç me ton e sallatë",
+          "minutes": 4,
+          "ingredients": [
+            {
+              "food": "wholegrain_bread",
+              "grams": 75,
+              "count": 2.5
+            },
+            {
+              "food": "tuna_water",
+              "grams": 95
+            },
+            {
+              "food": "lettuce",
+              "grams": 30
+            },
+            {
+              "food": "tomato",
+              "grams": 75
+            }
+          ],
+          "steps": [
+            "Kullo tonin.",
+            "Mbushe bukën me sallatën, domaten dhe tonin."
+          ],
+          "swap": "Ton → vezë të ziera, 95 g",
+          "totals": {
+            "kcal": 313.5,
+            "p": 35.1,
+            "c": 34.5,
+            "f": 3.5
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Tavë kosi me pulë (e lehtë)",
+          "minutes": 45,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 160,
+              "note": "i papjekur"
+            },
+            {
+              "food": "rice",
+              "grams": 70
+            },
+            {
+              "food": "greek_yogurt_2",
+              "grams": 145
+            },
+            {
+              "food": "egg_white",
+              "grams": 55
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Pjeke pulën në tavë me vajin 15 minuta.",
+            "Përziej kosin me të bardhat e vezës dhe derdhe mbi pulën.",
+            "Piqe edhe 20 minuta në 190 °C; hae me oriz."
+          ],
+          "swap": "Oriz → patate të ziera, 220 g",
+          "totals": {
+            "kcal": 622.7,
+            "p": 61.2,
+            "c": 61.8,
+            "f": 12.4
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:30",
+          "name": "Sallatë me vezë, ton e patate",
+          "minutes": 20,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 100,
+              "count": 2
+            },
+            {
+              "food": "tuna_water",
+              "grams": 95
+            },
+            {
+              "food": "potato",
+              "grams": 290
+            },
+            {
+              "food": "lettuce",
+              "grams": 75
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Zieji patatet 20 minuta dhe vezët 9 minuta.",
+            "Prit gjithçka dhe përziej me tonin, vajin dhe limon."
+          ],
+          "swap": "Patate → bukë integrale, 65 g",
+          "totals": {
+            "kcal": 532,
+            "p": 43.7,
+            "c": 53.6,
+            "f": 15.7
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 12",
+      "kcal_target": 1910,
+      "totals": {
+        "kcal": 1928.8,
+        "p": 165.5,
+        "c": 208.3,
+        "f": 48
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Omëletë me kërpudha",
+          "minutes": 10,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 100,
+              "count": 2
+            },
+            {
+              "food": "egg_white",
+              "grams": 190
+            },
+            {
+              "food": "mushrooms",
+              "grams": 95
+            },
+            {
+              "food": "kashkaval",
+              "grams": 19
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 75,
+              "count": 2.5
+            }
+          ],
+          "steps": [
+            "Kaurdis kërpudhat 4 minuta në tigan pa vaj.",
+            "Hidh vezët e rrahura, kaçkavallin sipër, mbuloje 3 minuta."
+          ],
+          "swap": "Kërpudha → spinaq, 95 g",
+          "totals": {
+            "kcal": 515.6,
+            "p": 50.8,
+            "c": 36.3,
+            "f": 17.9
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Kos me banane e bajame",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "greek_yogurt_2",
+              "grams": 190
+            },
+            {
+              "food": "banana",
+              "grams": 95
+            },
+            {
+              "food": "almonds",
+              "grams": 8,
+              "count": 0.5
+            }
+          ],
+          "steps": [
+            "Prije bananen në feta mbi kos.",
+            "Thyej bajamet sipër."
+          ],
+          "swap": "Banane → mollë, 145 g",
+          "totals": {
+            "kcal": 269.6,
+            "p": 21.7,
+            "c": 30.8,
+            "f": 7.9
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "14:00",
+          "name": "Pulë me kërpudha e oriz",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 170,
+              "note": "i papjekur"
+            },
+            {
+              "food": "mushrooms",
+              "grams": 145
+            },
+            {
+              "food": "rice",
+              "grams": 85
+            },
+            {
+              "food": "onion",
+              "grams": 50
+            },
+            {
+              "food": "olive_oil",
+              "grams": 8,
+              "count": 1.5
+            }
+          ],
+          "steps": [
+            "Kaurdis qepën e pulën në copa.",
+            "Shto kërpudhat dhe lëri 8 minuta.",
+            "Shërbeje me orizin e zier."
+          ],
+          "swap": "Kërpudha → kungulleshë, 145 g",
+          "totals": {
+            "kcal": 632.6,
+            "p": 49,
+            "c": 77.1,
+            "f": 13.4
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Sarma me lakër e mish",
+          "minutes": 50,
+          "ingredients": [
+            {
+              "food": "cabbage",
+              "grams": 240
+            },
+            {
+              "food": "beef_mince_5",
+              "grams": 125
+            },
+            {
+              "food": "rice",
+              "grams": 50
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 95
+            },
+            {
+              "food": "greek_yogurt_2",
+              "grams": 95
+            }
+          ],
+          "steps": [
+            "Zbutini gjethet e lakrës në ujë të vluar 3 minuta.",
+            "Mbushi me mishin, orizin e papjekur dhe pak salcë, mbështilli.",
+            "Ziej 40 minuta në salcën e mbetur; hae me kos."
+          ],
+          "swap": "Lakër → speca, 240 g",
+          "totals": {
+            "kcal": 511,
+            "p": 44.1,
+            "c": 64.1,
+            "f": 8.8
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 13",
+      "kcal_target": 1710,
+      "totals": {
+        "kcal": 1741.9,
+        "p": 146,
+        "c": 206.2,
+        "f": 42.6
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:30",
+          "name": "Qull tërshëre me dardhë",
+          "minutes": 6,
+          "ingredients": [
+            {
+              "food": "oats",
+              "grams": 50,
+              "count": 5
+            },
+            {
+              "food": "milk_15",
+              "grams": 240
+            },
+            {
+              "food": "whey",
+              "grams": 19
+            },
+            {
+              "food": "pear",
+              "grams": 145
+            },
+            {
+              "food": "spice",
+              "label": "Kanellë",
+              "household": "sipas dëshirës"
+            }
+          ],
+          "steps": [
+            "Zieji tërshërën me qumështin 3 minuta.",
+            "Përziej proteinën, shto dardhën në feta dhe kanellë."
+          ],
+          "swap": "Dardhë → mollë, 145 g",
+          "totals": {
+            "kcal": 466,
+            "p": 32.4,
+            "c": 68.5,
+            "f": 8.3
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Gjizë me dardhë",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "cottage_cheese",
+              "grams": 190
+            },
+            {
+              "food": "pear",
+              "grams": 145
+            },
+            {
+              "food": "spice",
+              "label": "Kanellë",
+              "household": "sipas dëshirës"
+            }
+          ],
+          "steps": [
+            "Prije dardhën në kubikë mbi gjizën.",
+            "Spërkat kanellë."
+          ],
+          "swap": "Dardhë → portokall, 145 g",
+          "totals": {
+            "kcal": 268.8,
+            "p": 21.7,
+            "c": 28.5,
+            "f": 8.3
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "13:30",
+          "name": "Mish viçi me bishtaja",
+          "minutes": 40,
+          "ingredients": [
+            {
+              "food": "beef_lean",
+              "grams": 180
+            },
+            {
+              "food": "green_beans",
+              "grams": 240
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 95
+            },
+            {
+              "food": "potato",
+              "grams": 115
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Kaurdis mishin në copa me vajin.",
+            "Shto bishtajat, patatet, salcën dhe 1 gotë ujë.",
+            "Lëre të ziejë 30 minuta."
+          ],
+          "swap": "Viç → gjoks gjeldeti, 160 g",
+          "totals": {
+            "kcal": 462.6,
+            "p": 47.6,
+            "c": 43.6,
+            "f": 13
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Tavë me presh e mish",
+          "minutes": 40,
+          "ingredients": [
+            {
+              "food": "leek",
+              "grams": 285
+            },
+            {
+              "food": "beef_lean",
+              "grams": 170
+            },
+            {
+              "food": "rice",
+              "grams": 25
+            },
+            {
+              "food": "tomato_sauce",
+              "grams": 75
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Kaurdis mishin në copa të vogla.",
+            "Shto preshin, orizin, salcën dhe 1 gotë ujë.",
+            "Piqe 30 minuta në 190 °C."
+          ],
+          "swap": "Viç → gjoks pule, 150 g",
+          "totals": {
+            "kcal": 544.6,
+            "p": 44.4,
+            "c": 65.6,
+            "f": 13
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 14",
+      "kcal_target": 1710,
+      "totals": {
+        "kcal": 1701.4,
+        "p": 168.2,
+        "c": 161,
+        "f": 43.8
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:30",
+          "name": "Tost me avokado e vezë",
+          "minutes": 8,
+          "ingredients": [
+            {
+              "food": "wholegrain_bread",
+              "grams": 75,
+              "count": 2.5
+            },
+            {
+              "food": "avocado",
+              "grams": 50
+            },
+            {
+              "food": "egg",
+              "grams": 100,
+              "count": 2
+            },
+            {
+              "food": "egg_white",
+              "grams": 95
+            }
+          ],
+          "steps": [
+            "Shtyp avokadon me pak kripë e limon dhe lyeje bukën.",
+            "Piq vezët me të bardhat dhe vendosi sipër."
+          ],
+          "swap": "Avokado → gjizë, 75 g",
+          "totals": {
+            "kcal": 457.7,
+            "p": 33.7,
+            "c": 36.4,
+            "f": 19.6
+          }
+        },
+        {
+          "slot": "snack",
+          "time": "11:00",
+          "name": "Qumësht me proteinë e mollë",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "whey",
+              "grams": 30
+            },
+            {
+              "food": "milk_15",
+              "grams": 240
+            },
+            {
+              "food": "apple",
+              "grams": 145
+            }
+          ],
+          "steps": [
+            "Përziej proteinën në qumësht.",
+            "Hae mollën anash."
+          ],
+          "swap": "Mollë → banane e vogël, 95 g",
+          "totals": {
+            "kcal": 308.2,
+            "p": 32.6,
+            "c": 34.2,
+            "f": 5.7
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "13:30",
+          "name": "Sallatë Cezar me pulë",
+          "minutes": 15,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 150,
+              "note": "i papjekur"
+            },
+            {
+              "food": "lettuce",
+              "grams": 145
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 45,
+              "count": 1.5
+            },
+            {
+              "food": "kashkaval",
+              "grams": 14
+            },
+            {
+              "food": "greek_yogurt_2",
+              "grams": 50
+            }
+          ],
+          "steps": [
+            "Pjeke pulën dhe prije në rripa.",
+            "Thek bukën në kubikë në tigan.",
+            "Përziej kosin me limon e hudhër si salcë dhe shto gjithçka mbi sallatë."
+          ],
+          "swap": "Kaçkavall → djathë i bardhë, 20 g",
+          "totals": {
+            "kcal": 399.2,
+            "p": 50.1,
+            "c": 24.9,
+            "f": 10.5
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Gjeldet me pure patatesh",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "turkey_breast",
+              "grams": 170,
+              "note": "i papjekur"
+            },
+            {
+              "food": "potato",
+              "grams": 345
+            },
+            {
+              "food": "milk_15",
+              "grams": 50
+            },
+            {
+              "food": "lettuce",
+              "grams": 95
+            },
+            {
+              "food": "olive_oil",
+              "grams": 5,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Zieji patatet, shtypi me qumështin.",
+            "Pjeke gjeldetin në tigan 5 minuta për anë.",
+            "Shërbeje me sallatë me vaj e limon."
+          ],
+          "swap": "Pure → oriz, 55 g",
+          "totals": {
+            "kcal": 536.3,
+            "p": 51.8,
+            "c": 65.6,
+            "f": 8
+          }
+        }
+      ]
+    }
+  ]
+}

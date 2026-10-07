@@ -1,0 +1,18 @@
+{
+  "_about": "How one plan becomes one PDF per gender and weight range. A plan is written for a man of reference_weight kg; each size scales every portion by (weight / reference_weight) ^ exponent, times female_factor for women. Calorie needs grow slower than body weight, hence the exponent below 1. A plan can override any key under its own \"sizes\", e.g. {\"genders\": [\"female\"]} for a women-only diet.",
+  "reference_weight": 80,
+  "exponent": 0.75,
+  "female_factor": 0.88,
+  "genders": ["male", "female"],
+  "gender_labels": {
+    "male":   { "sq": "Mashkull", "code": "m", "file": "mashkull" },
+    "female": { "sq": "Femër",    "code": "f", "file": "femer" }
+  },
+  "weights": [
+    { "label": "50–60", "code": "50-60", "mid": 55 },
+    { "label": "60–70", "code": "60-70", "mid": 65 },
+    { "label": "70–80", "code": "70-80", "mid": 75 },
+    { "label": "80–90", "code": "80-90", "mid": 85 },
+    { "label": "90+",   "code": "90plus", "mid": 95 }
+  ]
+}
