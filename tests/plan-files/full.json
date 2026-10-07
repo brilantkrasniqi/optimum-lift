@@ -1,0 +1,175 @@
+{
+    "format": "optimum-lift-plan",
+    "version": 1,
+    "plan": {
+        "title": "Forcë në shtëpi: 3 javë",
+        "summary": "Two Workouts a week with dumbbells.\nThe third Week is lighter so you recover before the next block.",
+        "goal": "Forcë dhe qëndrueshmëri",
+        "target_audience": "Fillestarë që stërviten në shtëpi",
+        "difficulty": "beginner",
+        "phases": [
+            {
+                "name": "Bazë",
+                "first_week": 1,
+                "last_week": 2
+            },
+            {
+                "name": "Shkarkim",
+                "first_week": 3,
+                "last_week": 3
+            }
+        ],
+        "weeks": [
+            {
+                "workouts": [
+                    {
+                        "name": "Pjesa e sipërme A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 90,
+                                "notes": "Shtrëngo barkun përpara çdo shtytjeje.\nKeep the \"proud chest\" cue; don't arch the lower back."
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pjesa e poshtme A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8",
+                                "intensity": "",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "35",
+                                "intensity": "",
+                                "rest_seconds": null,
+                                "notes": "Çdo anë."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Pjesa e sipërme A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pjesa e poshtme A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "40",
+                                "intensity": "",
+                                "rest_seconds": null,
+                                "notes": "Çdo anë."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Pjesa e sipërme A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 90,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-one-arm-bent-over-row",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "10-12",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pjesa e poshtme A",
+                        "prescriptions": [
+                            {
+                                "exercise": "dumbbell-romanian-deadlift",
+                                "sets": 2,
+                                "target_type": "reps",
+                                "target": "6",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 2,
+                                "target_type": "seconds",
+                                "target": "45",
+                                "intensity": "",
+                                "rest_seconds": null,
+                                "notes": "Çdo anë."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

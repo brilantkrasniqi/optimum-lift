@@ -27,6 +27,8 @@ Only first-party code (the theme, `plugins/optimum-lift-plans`, `mu-plugins`) an
 
 Plans, Exercises, Access, the Download and the Portal live in `plugins/optimum-lift-plans/`, a tracked first-party plugin; the theme only styles and may override its templates (ADR-0003). Spec and tickets: `.scratch/plans-plugin/`. Plan structure changes touch the ACF field groups in `src/Content/`, and Workout Logs depend on the Workout and Prescription `uid`s staying stable.
 
+To write a Training Plan, follow `docs/plan-files.md`. Plan files (one Plan as JSON, Exercises by library key) live in `content/plans/`, mounted at `/plans` in the `wpcli` container; `wp ol-plans import-plan` and `export-plan` move them in and out, and **Training › Import Plan** imports them on production. Spec and tickets: `.scratch/plan-files/`.
+
 The Exercise library (200 Exercises, a still and a GIF each) ships in the plugin's `data/exercises/` (ADR-0010; spec and tickets: `.scratch/exercise-library/`). Rebuild it from the curated source folder with `node tools/build-exercise-library.mjs <folder>`, putting corrections in the script's `OVERRIDES`, never in the output. Import it with `wp ol-plans import-exercises` (`--dry-run`, `--update`, `--fields=`) or **Training › Import**. Outside the database, Exercises are named by their library key, never their post ID.
 
 The storefront lives in the theme (ADR-0006, ADR-0007, ADR-0008; spec and tickets: `.scratch/storefront-theme/`):

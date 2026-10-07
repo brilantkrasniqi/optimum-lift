@@ -1,0 +1,533 @@
+{
+    "format": "optimum-lift-plan",
+    "version": 1,
+    "plan": {
+        "title": "Demo: 4-week body recomposition",
+        "summary": "Three full-body sessions a week. Loads climb each Week; the last Week of each Phase is lighter.",
+        "goal": "Body recomposition",
+        "target_audience": "Beginners with gym access",
+        "difficulty": "beginner",
+        "phases": [
+            {
+                "name": "Foundation",
+                "first_week": 1,
+                "last_week": 2
+            },
+            {
+                "name": "Build",
+                "first_week": 3,
+                "last_week": 4
+            }
+        ],
+        "weeks": [
+            {
+                "workouts": [
+                    {
+                        "name": "Lower body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-romanian-deadlift",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "walking-lunge",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "35",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Upper body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "pull-up",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 7",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "35",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Lower body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-romanian-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "walking-lunge",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "40",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Upper body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "pull-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 8",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "40",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Lower body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-romanian-deadlift",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "walking-lunge",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "45",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Upper body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "pull-up",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 4,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 9",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "45",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": [
+                    {
+                        "name": "Lower body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-romanian-deadlift",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "walking-lunge",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "50",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Upper body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "pull-up",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "dumbbell-standing-overhead-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Full body",
+                        "prescriptions": [
+                            {
+                                "exercise": "barbell-back-squat",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": "Pause 2 seconds at the bottom."
+                            },
+                            {
+                                "exercise": "barbell-bench-press",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "cable-seated-row",
+                                "sets": 3,
+                                "target_type": "reps",
+                                "target": "8-10",
+                                "intensity": "RPE 6",
+                                "rest_seconds": 120,
+                                "notes": ""
+                            },
+                            {
+                                "exercise": "incline-side-plank",
+                                "sets": 3,
+                                "target_type": "seconds",
+                                "target": "50",
+                                "intensity": "",
+                                "rest_seconds": 60,
+                                "notes": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

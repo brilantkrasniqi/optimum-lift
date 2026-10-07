@@ -1,0 +1,41 @@
+{
+    "format": "optimum-lift-plans",
+    "version": 2,
+    "plan": {
+        "title": "   ",
+        "difficulty": "expert",
+        "phases": [
+            { "name": "Start", "first_week": 1, "last_week": 1 },
+            { "name": "Overlap", "first_week": 1, "last_week": 2 },
+            { "name": "Too long", "first_week": 2, "last_week": 3 }
+        ],
+        "weeks": [
+            {
+                "workouts": [
+                    {
+                        "name": "Upper body",
+                        "prescriptions": [
+                            { "exercise": "dumbbell-standing-overhead-press", "sets": 0, "target": "8-10" },
+                            { "exercise": "dumbbell-one-arm-bent-over-row", "sets": "3", "target": "10" },
+                            { "exercise": "dead-bug", "sets": 3, "target": "AMRAP, then rest 30 s", "target_type": "minutes" },
+                            { "exercise": "dumbbell-romanian-deadlift", "sets": 3, "target": "8", "rest_seconds": -5 },
+                            { "exercise": "dumbbell-deadlift", "sets": 3, "target": "8", "rest": 90 },
+                            { "exercise": "Bench Press", "sets": 3, "target": "8" },
+                            { "exercise": "barbel-bench-press", "sets": 3, "target": "8" }
+                        ]
+                    },
+                    {
+                        "name": "",
+                        "prescriptions": [
+                            { "exercise": "barbel-bench-press", "sets": 3, "target": "8" },
+                            { "exercise": "band-y-raise", "sets": 3, "target": "12" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "workouts": []
+            }
+        ]
+    }
+}

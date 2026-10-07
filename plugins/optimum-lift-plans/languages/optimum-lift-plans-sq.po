@@ -159,7 +159,7 @@ msgid "Seconds"
 msgstr "Sekonda"
 
 #: src/Content/ExerciseFields.php:35
-#: src/Content/PlanFields.php:209
+#: src/Content/PlanFields.php:227
 #: src/Content/PostTypes.php:50
 #: templates/pdf/plan.php:136
 msgid "Exercise"
@@ -175,7 +175,7 @@ msgid "Secondary muscles"
 msgstr "Muskujt dytësorë"
 
 #: src/Content/ExerciseFields.php:65
-#: src/Content/PlanFields.php:92
+#: src/Content/PlanFields.php:110
 #: templates/pdf/plan.php:95
 msgid "Difficulty"
 msgstr "Vështirësia"
@@ -213,159 +213,162 @@ msgstr "Link YouTube ose Vimeo i palistuar."
 msgid "Instructions"
 msgstr "Udhëzimet"
 
-#: src/Content/PlanFields.php:60
+#: src/Content/PlanFields.php:78
 #: src/Content/PostTypes.php:63
 msgid "Training Plan"
 msgstr "Plan stërvitjeje"
 
-#: src/Content/PlanFields.php:65
+#: src/Content/PlanFields.php:83
 msgid "Overview"
 msgstr "Përmbledhje"
 
-#: src/Content/PlanFields.php:69
+#: src/Content/PlanFields.php:87
 msgid "Summary"
 msgstr "Përshkrimi i shkurtër"
 
-#: src/Content/PlanFields.php:70
+#: src/Content/PlanFields.php:88
 msgid "Shown on the PDF cover and at the top of the Plan in the Portal."
 msgstr "Shfaqet në kopertinën e PDF-së dhe në krye të planit në portal."
 
-#: src/Content/PlanFields.php:78
+#: src/Content/PlanFields.php:96
 #: templates/pdf/plan.php:89
 msgid "Goal"
 msgstr "Qëllimi"
 
-#: src/Content/PlanFields.php:85
+#: src/Content/PlanFields.php:103
 msgid "Target audience"
 msgstr "Për kë është"
 
-#: src/Content/PlanFields.php:100
-#: src/Content/PlanFields.php:104
+#: src/Content/PlanFields.php:118
+#: src/Content/PlanFields.php:122
 msgid "Phases"
 msgstr "Fazat"
 
-#: src/Content/PlanFields.php:105
+#: src/Content/PlanFields.php:123
 msgid "Optional. A name over consecutive Weeks, e.g. \"Strength\", Weeks 9 to 12. Phases may not overlap."
 msgstr "Opsionale. Një emër mbi disa javë radhazi, p.sh. \"Forcë\", javët 9 deri 12. Fazat nuk mund të mbivendosen."
 
-#: src/Content/PlanFields.php:108
+#: src/Content/PlanFields.php:126
 msgid "Add Phase"
 msgstr "Shto fazë"
 
-#: src/Content/PlanFields.php:113
+#: src/Content/PlanFields.php:131
 msgid "Name"
 msgstr "Emri"
 
-#: src/Content/PlanFields.php:121
+#: src/Content/PlanFields.php:139
 msgid "First Week"
 msgstr "Java e parë"
 
-#: src/Content/PlanFields.php:131
+#: src/Content/PlanFields.php:149
 msgid "Last Week"
 msgstr "Java e fundit"
 
-#: src/Content/PlanFields.php:141
-#: src/Content/PlanFields.php:145
+#: src/Content/PlanFields.php:159
+#: src/Content/PlanFields.php:163
 msgid "Weeks"
 msgstr "Javët"
 
-#: src/Content/PlanFields.php:146
+#: src/Content/PlanFields.php:164
 msgid "A Week is numbered by its position. To write the next Week, hold Shift and click the duplicate icon beside the last Week, then edit the copy."
 msgstr "Java numërohet sipas vendit të saj. Për të shkruar javën tjetër, mbaj Shift dhe kliko ikonën e dyfishimit pranë javës së fundit, pastaj ndrysho kopjen."
 
-#: src/Content/PlanFields.php:151
+#: src/Content/PlanFields.php:169
 msgid "Add Week"
 msgstr "Shto javë"
 
-#: src/Content/PlanFields.php:158
-#: src/Content/PlanFields.php:518
+#: src/Content/PlanFields.php:176
+#: src/Content/PlanFields.php:560
 msgid "Week"
 msgstr "Java"
 
-#: src/Content/PlanFields.php:165
+#: src/Content/PlanFields.php:183
 msgid "Workouts"
 msgstr "Stërvitjet"
 
-#: src/Content/PlanFields.php:170
+#: src/Content/PlanFields.php:188
 msgid "Add Workout"
 msgstr "Shto stërvitje"
 
-#: src/Content/PlanFields.php:176
+#: src/Content/PlanFields.php:194
 msgid "Workout name"
 msgstr "Emri i stërvitjes"
 
-#: src/Content/PlanFields.php:177
+#: src/Content/PlanFields.php:195
 msgid "e.g. \"Upper body\". Not a weekday."
 msgstr "p.sh. \"Pjesa e sipërme\". Jo ditë e javës."
 
-#: src/Content/PlanFields.php:184
+#: src/Content/PlanFields.php:202
 msgid "Prescriptions"
 msgstr "Ushtrimet"
 
-#: src/Content/PlanFields.php:188
+#: src/Content/PlanFields.php:206
 msgid "Add Prescription"
 msgstr "Shto ushtrim"
 
-#: src/Content/PlanFields.php:221
+#: src/Content/PlanFields.php:239
 #: src/Privacy/Privacy.php:121
 msgid "Sets"
 msgstr "Seri"
 
-#: src/Content/PlanFields.php:233
+#: src/Content/PlanFields.php:251
 msgid "Target in"
 msgstr "Objektivi në"
 
-#: src/Content/PlanFields.php:243
+#: src/Content/PlanFields.php:261
 msgid "Target"
 msgstr "Objektivi"
 
-#: src/Content/PlanFields.php:244
+#: src/Content/PlanFields.php:262
 msgid "8, 8-10, AMRAP, 30"
 msgstr "8, 8-10, AMRAP, 30"
 
-#: src/Content/PlanFields.php:253
+#: src/Content/PlanFields.php:271
 #: templates/pdf/plan.php:138
 msgid "Intensity"
 msgstr "Intensiteti"
 
-#: src/Content/PlanFields.php:254
+#: src/Content/PlanFields.php:272
 msgid "e.g. RPE 8"
 msgstr "p.sh. RPE 8"
 
-#: src/Content/PlanFields.php:262
+#: src/Content/PlanFields.php:280
 msgid "Rest (s)"
 msgstr "Pushim (s)"
 
-#: src/Content/PlanFields.php:271
+#: src/Content/PlanFields.php:289
 #: src/Privacy/Privacy.php:120
 #: templates/pdf/plan.php:140
 #: templates/portal/workout.php:182
 msgid "Notes"
 msgstr "Shënime"
 
-#: src/Content/PlanFields.php:411
+#: src/Content/PlanFields.php:429
+#: src/PlanFile/PlanFile.php:267
 msgid "A Phase must end on or after the Week it starts."
 msgstr "Faza duhet të mbarojë në javën ku nis ose më vonë."
 
 #. translators: %d: number of Weeks in the Plan
-#: src/Content/PlanFields.php:417
+#: src/Content/PlanFields.php:435
+#: src/PlanFile/PlanFile.php:273
 #, php-format
 msgid "This Plan only has %d Weeks."
 msgstr "Ky plan ka vetëm %d javë."
 
 #. translators: %d: Week number
-#: src/Content/PlanFields.php:424
+#: src/Content/PlanFields.php:442
+#: src/PlanFile/PlanFile.php:280
 #, php-format
 msgid "Phases overlap at Week %d."
 msgstr "Fazat mbivendosen te java %d."
 
 #. translators: 1: estimated form inputs, 2: max_input_vars
-#: src/Content/PlanFields.php:482
+#: src/Content/PlanFields.php:502
 #, php-format
 msgid "This Plan submits about %1$d form inputs and the server accepts %2$d (max_input_vars). Raise the limit before adding more Weeks."
 msgstr "Ky plan dërgon rreth %1$d fusha formulari dhe serveri pranon %2$d (max_input_vars). Rrite kufirin para se të shtosh javë të tjera."
 
-#: src/Content/PlanFields.php:554
+#: src/Content/PlanFields.php:596
 msgid "The Plan was not saved: the form was cut short because it exceeds the server's max_input_vars limit. Your last saved version is unchanged. Raise max_input_vars and save again."
 msgstr "Plani nuk u ruajt: formulari u pre sepse kalon kufirin max_input_vars të serverit. Versioni i fundit i ruajtur nuk ka ndryshuar. Rrite max_input_vars dhe ruaje përsëri."
 
@@ -504,7 +507,7 @@ msgid "Not found."
 msgstr "Nuk u gjet."
 
 #. translators: %s: comma-separated plugin names
-#: src/Plugin.php:45
+#: src/Plugin.php:50
 #, php-format
 msgid "Optimum Lift Plans is inactive until these plugins are active: %s."
 msgstr "Optimum Lift Plans është joaktiv derisa të aktivizohen këto shtojca: %s."
@@ -548,6 +551,7 @@ msgstr "Përfundo stërvitjen"
 msgid "Workout Logs"
 msgstr "Regjistrimet e stërvitjeve"
 
+#: src/PlanFile/Places.php:21
 #: src/Privacy/Privacy.php:85
 #: src/Privacy/Privacy.php:116
 msgid "Plan"
@@ -603,6 +607,7 @@ msgid "Weeks %1$d–%2$d"
 msgstr "Javët %1$d–%2$d"
 
 #. translators: %d: Week number
+#: src/PlanFile/Places.php:33
 #: templates/pdf/plan.php:120
 #: templates/portal/plan.php:53
 #, php-format
@@ -985,62 +990,60 @@ msgid "Dip bars"
 msgstr "Paralele"
 
 #. translators: 1: Exercise name, 2: library key
-#: src/Library/ExerciseImporter.php:167
+#: src/Library/ExerciseImporter.php:188
 #, php-format
 msgid "\"%1$s\" (%2$s) is in the trash and was left alone."
 msgstr "\"%1$s\" (%2$s) është në kosh dhe u la siç ishte."
 
 #. translators: 1: post ID, 2: Exercise title, 3: library key
-#: src/Library/ExerciseImporter.php:190
+#: src/Library/ExerciseImporter.php:211
 #, php-format
 msgid "Could not give Exercise %1$d \"%2$s\" the key %3$s."
 msgstr "Ushtrimit %1$d \"%2$s\" nuk iu dha dot çelësi %3$s."
 
 #. translators: 1: post ID, 2: Exercise title, 3: library key
-#: src/Library/ExerciseImporter.php:199
+#: src/Library/ExerciseImporter.php:220
 #, php-format
 msgid "Took over Exercise %1$d \"%2$s\" as %3$s."
 msgstr "Ushtrimi %1$d \"%2$s\" u mor përsipër si %3$s."
 
 #. translators: 1: Exercise name, 2: error message
-#: src/Library/ExerciseImporter.php:228
+#: src/Library/ExerciseImporter.php:249
 #, php-format
 msgid "Could not create \"%1$s\": %2$s"
 msgstr "Nuk u krijua dot \"%1$s\": %2$s"
 
 #. translators: %s: media file name
-#: src/Library/ExerciseImporter.php:394
+#: src/Library/ExerciseImporter.php:415
 #, php-format
 msgid "Could not copy %s to a temporary file."
 msgstr "Nuk u kopjua dot %s në një skedar të përkohshëm."
 
 #. translators: 1: media file name, 2: error message
-#: src/Library/ExerciseImporter.php:409
+#: src/Library/ExerciseImporter.php:430
 #, php-format
 msgid "Could not add %1$s to the Media Library: %2$s"
 msgstr "Nuk u shtua dot %1$s në Mediatekë: %2$s"
 
 #. translators: %d: post ID
-#: src/Library/ExerciseImporter.php:459
+#: src/Library/ExerciseImporter.php:480
 #, php-format
 msgid "Exercise %d has no letters or digits in its title, so it still has no key."
 msgstr "Ushtrimi %d nuk ka shkronja ose shifra në titull, ndaj ende nuk ka çelës."
 
 #. translators: 1: post ID, 2: Exercise title, 3: library key
-#: src/Library/ExerciseImporter.php:469
+#: src/Library/ExerciseImporter.php:490
 #, php-format
 msgid "Gave Exercise %1$d \"%2$s\" the key %3$s."
 msgstr "Ushtrimit %1$d \"%2$s\" iu dha çelësi %3$s."
 
 #: src/Library/ImportScreen.php:49
+#: src/Library/ImportScreen.php:50
 #: templates/admin/import-exercises.php:24
 #: templates/admin/import-exercises.php:77
+#: templates/admin/import-plan.php:32
 msgid "Import Exercises"
 msgstr "Importo ushtrimet"
-
-#: src/Library/ImportScreen.php:50
-msgid "Import"
-msgstr "Importo"
 
 #. translators: 1: Exercises done, 2: Exercises in the library
 #: src/Library/ImportScreen.php:70
@@ -1097,46 +1100,46 @@ msgid "The library file has problems. Reload the page to see them."
 msgstr "Skedari i bibliotekës ka probleme. Ringarko faqen për t'i parë."
 
 #. translators: %d: number of Exercises in the library
-#: src/Library/ImportScreen.php:172
+#: src/Library/ImportScreen.php:173
 #, php-format
 msgid "There are no Exercises yet. The plugin comes with a library of %d Exercise, with an image and an animation."
 msgid_plural "There are no Exercises yet. The plugin comes with a library of %d Exercises, each with an image and an animation."
 msgstr[0] "Ende nuk ka ushtrime. Shtojca vjen me një bibliotekë me %d ushtrim, me një imazh dhe një animacion."
 msgstr[1] "Ende nuk ka ushtrime. Shtojca vjen me një bibliotekë me %d ushtrime, secili me një imazh dhe një animacion."
 
-#: src/Library/ImportScreen.php:181
+#: src/Library/ImportScreen.php:182
 msgid "Import the library"
 msgstr "Importo bibliotekën"
 
-#: src/Library/ImportScreen.php:193
+#: src/Library/ImportScreen.php:194
 msgid "New Exercises"
 msgstr "Ushtrime të reja"
 
-#: src/Library/ImportScreen.php:194
+#: src/Library/ImportScreen.php:195
 msgid "Your Exercises with a library name, taken over"
 msgstr "Ushtrimet e tua me emër nga biblioteka, të marra përsipër"
 
-#: src/Library/ImportScreen.php:195
+#: src/Library/ImportScreen.php:196
 msgid "Library Exercises with empty fields filled in"
 msgstr "Ushtrime të bibliotekës me fusha bosh të plotësuara"
 
-#: src/Library/ImportScreen.php:196
+#: src/Library/ImportScreen.php:197
 msgid "Library Exercises already complete"
 msgstr "Ushtrime të bibliotekës tashmë të plota"
 
-#: src/Library/ImportScreen.php:197
+#: src/Library/ImportScreen.php:198
 msgid "Library Exercises in the trash, left alone"
 msgstr "Ushtrime të bibliotekës në kosh, të lëna siç janë"
 
-#: src/Library/ImportScreen.php:198
+#: src/Library/ImportScreen.php:199
 msgid "Other Exercises given a library key"
 msgstr "Ushtrime të tjera që morën çelës biblioteke"
 
-#: src/Library/ImportScreen.php:199
+#: src/Library/ImportScreen.php:200
 msgid "Images and animations added to the Media Library"
 msgstr "Imazhe dhe animacione të shtuara në Mediatekë"
 
-#: src/Library/ImportScreen.php:200
+#: src/Library/ImportScreen.php:201
 msgid "Images and animations already in the Media Library"
 msgstr "Imazhe dhe animacione që ishin tashmë në Mediatekë"
 
@@ -1168,7 +1171,7 @@ msgstr "Biblioteka është importuar plotësisht. Nuk ka asgjë për të bërë.
 msgid "Keep this page open until the import finishes; it takes a few minutes. If it stops, press the button again: it carries on and never imports anything twice."
 msgstr "Mbaje këtë faqe të hapur derisa të përfundojë importimi; zgjat disa minuta. Nëse ndalet, shtyp sërish butonin: vazhdon nga aty ku mbeti dhe nuk importon asgjë dy herë."
 
-#: src/Library/ExerciseImporter.php:77
+#: src/Library/ExerciseImporter.php:80
 msgid "Another import is running. Try again in a minute."
 msgstr "Një importim tjetër është në punë. Provo sërish pas një minute."
 
@@ -1177,3 +1180,364 @@ msgstr "Një importim tjetër është në punë. Provo sërish pas një minute."
 #, php-format
 msgid "%s demonstration"
 msgstr "Demonstrim i ushtrimit %s"
+
+#. translators: %s: error message
+#: src/PlanFile/PlanFileImporter.php:65
+#, php-format
+msgid "The Plan could not be created: %s"
+msgstr "Plani nuk u krijua dot: %s"
+
+#. translators: %s: error message
+#: src/PlanFile/PlanFileImporter.php:75
+#, php-format
+msgid "The import failed while writing the Plan: %s"
+msgstr "Importi dështoi gjatë shkrimit të planit: %s"
+
+#: src/PlanFile/PlanFileImporter.php:80
+msgid "The new Plan was deleted; nothing was imported."
+msgstr "Plani i ri u fshi; nuk u importua asgjë."
+
+#. translators: %d: post ID
+#: src/PlanFile/PlanFileImporter.php:109
+#, php-format
+msgid "A Training Plan with this title already exists (ID %d). Importing creates another one; it does not replace it."
+msgstr "Ekziston tashmë një plan stërvitjeje me këtë titull (ID %d). Importi krijon një tjetër; nuk e zëvendëson atë."
+
+#. translators: 1: estimated form inputs, 2: max_input_vars
+#: src/PlanFile/PlanFileImporter.php:118
+#, php-format
+msgid "This Plan's edit form sends about %1$d inputs and this site accepts %2$d (max_input_vars). It imports fine, but it cannot be saved from wp-admin until the limit is raised."
+msgstr "Formulari i këtij plani dërgon rreth %1$d fusha dhe kjo faqe pranon %2$d (max_input_vars). Importohet pa problem, por nuk mund të ruhet nga wp-admin derisa të rritet kufiri."
+
+#. translators: %s: the problems found, joined
+#: src/PlanFile/PlanFileImporter.php:217
+#, php-format
+msgid "The Plan was written but could not be read back: %s"
+msgstr "Plani u shkrua, por nuk u lexua dot përsëri: %s"
+
+#. translators: %s: where the first difference is, e.g. plan.weeks[2].workouts[0].name
+#: src/PlanFile/PlanFileImporter.php:227
+#, php-format
+msgid "The Plan was written but did not read back as the file says; the first difference is at %s."
+msgstr "Plani u shkrua, por nuk u lexua përsëri ashtu si thotë skedari; dallimi i parë është te %s."
+
+#: src/PlanFile/Places.php:16
+msgid "File"
+msgstr "Skedari"
+
+#. translators: %d: Phase number
+#: src/PlanFile/Places.php:27
+#, php-format
+msgid "Phase %d"
+msgstr "Faza %d"
+
+#. translators: 1: Week number, 2: Workout number
+#: src/PlanFile/Places.php:40
+#, php-format
+msgid "Week %1$d, Workout %2$d"
+msgstr "Java %1$d, stërvitja %2$d"
+
+#. translators: 1: Week number, 2: Workout number, 3: Workout name
+#: src/PlanFile/Places.php:44
+#, php-format
+msgid "Week %1$d, Workout %2$d (\"%3$s\")"
+msgstr "Java %1$d, stërvitja %2$d (\"%3$s\")"
+
+#. translators: 1: a Workout's place, e.g. Week 3, Workout 2 ("Upper body"), 2: Prescription number
+#: src/PlanFile/Places.php:50
+#, php-format
+msgid "%1$s, Prescription %2$d"
+msgstr "%1$s, ushtrimi %2$d"
+
+#. translators: %d: post ID
+#: src/PlanFile/PlanFileExporter.php:36
+#, php-format
+msgid "There is no Training Plan with ID %d."
+msgstr "Nuk ka plan stërvitjeje me ID %d."
+
+#. translators: %d: post ID
+#: src/PlanFile/PlanFileExporter.php:41
+#, php-format
+msgid "Training Plan %d is in the trash."
+msgstr "Plani i stërvitjes %d është në kosh."
+
+#: src/PlanFile/PlanFileExporter.php:76
+msgid "the Exercise no longer exists. Choose another one in wp-admin."
+msgstr "ushtrimi nuk ekziston më. Zgjidh një tjetër në wp-admin."
+
+#. translators: %s: Exercise name
+#: src/PlanFile/PlanFileExporter.php:82
+#, php-format
+msgid "the Exercise \"%s\" has no library key. Save that Exercise once in wp-admin to give it one."
+msgstr "ushtrimi \"%s\" nuk ka çelës biblioteke. Ruaje atë ushtrim një herë në wp-admin që ta marrë një të tillë."
+
+#. translators: 1: Exercise name, 2: library key, 3: places in the Plan
+#: src/PlanFile/PlanFileExporter.php:204
+#, php-format
+msgid "\"%1$s\" (%2$s) is not published and not in the Exercise library, so the site you import into must have it, published. Used in %3$s."
+msgstr "\"%1$s\" (%2$s) nuk është i publikuar dhe nuk është në bibliotekën e ushtrimeve, ndaj faqja ku e importon duhet ta ketë, të publikuar. Përdoret te %3$s."
+
+#. translators: 1: Exercise name, 2: library key, 3: places in the Plan
+#: src/PlanFile/PlanFileExporter.php:206
+#, php-format
+msgid "\"%1$s\" (%2$s) is not published, so the Portal and the PDF leave it out, and the site you import into must have it published. Used in %3$s."
+msgstr "\"%1$s\" (%2$s) nuk është i publikuar, ndaj portali dhe PDF-ja e lënë jashtë, dhe faqja ku e importon duhet ta ketë të publikuar. Përdoret te %3$s."
+
+#. translators: 1: Exercise name, 2: library key, 3: places in the Plan
+#: src/PlanFile/PlanFileExporter.php:208
+#, php-format
+msgid "\"%1$s\" (%2$s) is not in the Exercise library, so the site you import into must have it too. Used in %3$s."
+msgstr "\"%1$s\" (%2$s) nuk është në bibliotekën e ushtrimeve, ndaj edhe faqja ku e importon duhet ta ketë. Përdoret te %3$s."
+
+#: src/PlanFile/ExportAction.php:46
+#: src/PlanFile/ExportAction.php:76
+msgid "Export as JSON"
+msgstr "Eksporto si JSON"
+
+#: src/PlanFile/ExportAction.php:59
+#: templates/admin/import-plan.php:82
+msgid "Plan file"
+msgstr "Skedari i planit"
+
+#: src/PlanFile/ExportAction.php:67
+msgid "This Plan cannot be exported until these are fixed:"
+msgstr "Ky plan nuk mund të eksportohet derisa të rregullohen këto:"
+
+#: src/PlanFile/ExportAction.php:77
+msgid "Exports the last saved version."
+msgstr "Eksporton versionin e fundit të ruajtur."
+
+#: src/PlanFile/ExportAction.php:94
+#: src/PlanFile/ImportPlanScreen.php:91
+msgid "This link has expired. Go back, reload the page and try again."
+msgstr "Kjo lidhje ka skaduar. Kthehu mbrapa, ringarko faqen dhe provo përsëri."
+
+#: src/PlanFile/ExportAction.php:101
+msgid "You are not allowed to export this Plan."
+msgstr "Nuk ke leje ta eksportosh këtë plan."
+
+#: src/PlanFile/ExportAction.php:139
+msgid "The Plan was not exported:"
+msgstr "Plani nuk u eksportua:"
+
+#: src/PlanFile/PlanFile.php:64
+msgid "The file is not UTF-8 text (it looks like UTF-16). Save the file as UTF-8."
+msgstr "Skedari nuk është tekst UTF-8 (duket si UTF-16). Ruaje skedarin si UTF-8."
+
+#. translators: %s: the JSON parser's error message, in English
+#: src/PlanFile/PlanFile.php:76
+#, php-format
+msgid "The file is not valid JSON: %s."
+msgstr "Skedari nuk është JSON i vlefshëm: %s."
+
+#: src/PlanFile/PlanFile.php:80
+msgid "The file must hold one JSON object, starting with {."
+msgstr "Skedari duhet të përmbajë një objekt JSON, që nis me {."
+
+#. translators: 1: library key, 2: places in the Plan, e.g. Week 1, Workout 2, Prescription 3
+#: src/PlanFile/PlanFile.php:113
+#, php-format
+msgid "Exercise \"%1$s\" does not exist on this site. Used in %2$s."
+msgstr "Ushtrimi \"%1$s\" nuk ekziston në këtë faqe. Përdoret te %2$s."
+
+#. translators: 1: library key, 2: places in the Plan, e.g. Week 1, Workout 2, Prescription 3
+#: src/PlanFile/PlanFile.php:115
+#, php-format
+msgid "Exercise \"%1$s\" is in the trash. Used in %2$s."
+msgstr "Ushtrimi \"%1$s\" është në kosh. Përdoret te %2$s."
+
+#. translators: 1: library key, 2: places in the Plan, e.g. Week 1, Workout 2, Prescription 3
+#: src/PlanFile/PlanFile.php:117
+#, php-format
+msgid "Exercise \"%1$s\" is not published. Used in %2$s."
+msgstr "Ushtrimi \"%1$s\" nuk është i publikuar. Përdoret te %2$s."
+
+#: src/PlanFile/PlanFile.php:151
+msgid "The file is larger than 2 MB, which no Plan file needs. Check that it is the right file."
+msgstr "Skedari është më i madh se 2 MB, gjë që asnjë skedar plani nuk e ka nevojë. Kontrollo që është skedari i duhur."
+
+#. translators: 1: property name, 2: the only value allowed
+#: src/PlanFile/PlanFile.php:176
+#, php-format
+msgid "\"%1$s\" must be \"%2$s\"."
+msgstr "\"%1$s\" duhet të jetë \"%2$s\"."
+
+#: src/PlanFile/PlanFile.php:182
+msgid "This file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
+msgstr "Ky skedar u krijua nga një version më i ri i shtojcës. Përditëso shtojcën në këtë faqe, pastaj importoje përsëri."
+
+#. translators: 1: property name, 2: the only number allowed
+#: src/PlanFile/PlanFile.php:185
+#, php-format
+msgid "\"%1$s\" must be %2$d."
+msgstr "\"%1$s\" duhet të jetë %2$d."
+
+#: src/PlanFile/PlanFile.php:195
+#: src/PlanFile/PlanFile.php:251
+#: src/PlanFile/PlanFile.php:298
+#: src/PlanFile/PlanFile.php:322
+#: src/PlanFile/PlanFile.php:351
+msgid "must be an object."
+msgstr "duhet të jetë objekt."
+
+#. translators: %s: the value given for the Exercise
+#: src/PlanFile/PlanFile.php:395
+#, php-format
+msgid "%s is not a library key. A key is lowercase letters and digits joined by hyphens, e.g. \"barbell-back-squat\"."
+msgstr "%s nuk është çelës biblioteke. Një çelës është shkronja të vogla dhe shifra të lidhura me viza, p.sh. \"barbell-back-squat\"."
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:417
+#, php-format
+msgid "\"%s\" must be a whole number of 0 or more, or null."
+msgstr "\"%s\" duhet të jetë numër i plotë 0 ose më shumë, ose null."
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:442
+#, php-format
+msgid "\"%s\" must be text."
+msgstr "\"%s\" duhet të jetë tekst."
+
+#. translators: 1: property name, 2: maximum number of characters
+#: src/PlanFile/PlanFile.php:455
+#, php-format
+msgid "\"%1$s\" must be at most %2$d characters."
+msgstr "\"%1$s\" duhet të ketë jo më shumë se %2$d shenja."
+
+#. translators: 1: property name, 2: lowest number allowed, 3: highest number allowed
+#: src/PlanFile/PlanFile.php:479
+#, php-format
+msgid "\"%1$s\" must be a whole number from %2$d to %3$d."
+msgstr "\"%1$s\" duhet të jetë numër i plotë nga %2$d deri në %3$d."
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:486
+#, php-format
+msgid "\"%s\" must be a whole number."
+msgstr "\"%s\" duhet të jetë numër i plotë."
+
+#. translators: 1: property name, 2: the values allowed, e.g. "reps", "seconds"
+#: src/PlanFile/PlanFile.php:512
+#, php-format
+msgid "\"%1$s\" must be one of: %2$s."
+msgstr "\"%1$s\" duhet të jetë një nga: %2$s."
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:540
+#, php-format
+msgid "\"%s\" must be a list, in [ ]."
+msgstr "\"%s\" duhet të jetë listë, brenda [ ]."
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:561
+#, php-format
+msgid "unknown property \"%s\"."
+msgstr "veti e panjohur \"%s\"."
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:569
+#, php-format
+msgid "\"%s\" is missing."
+msgstr "\"%s\" mungon."
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:575
+#, php-format
+msgid "\"%s\" must not be empty."
+msgstr "\"%s\" nuk duhet të jetë bosh."
+
+#: src/PlanFile/ImportPlanScreen.php:45
+#: src/PlanFile/ImportPlanScreen.php:46
+#: src/PlanFile/ImportPlanScreen.php:182
+#: templates/admin/import-plan.php:25
+#: templates/admin/import-plan.php:96
+msgid "Import Plan"
+msgstr "Importo planin"
+
+#: src/PlanFile/ImportPlanScreen.php:81
+msgid "You are not allowed to import Plans."
+msgstr "Nuk ke leje të importosh plane."
+
+#. translators: %s: what was imported, e.g. 10 Weeks, 30 Workouts, 180 Prescriptions
+#: src/PlanFile/ImportPlanScreen.php:156
+#, php-format
+msgid "Imported as a draft: %s. Review it, publish it, then add it to a Product."
+msgstr "U importua si skicë: %s. Rishikoje, publikoje, pastaj shtoje te një produkt."
+
+#: src/PlanFile/ImportPlanScreen.php:229
+msgid "Choose a Plan file to import."
+msgstr "Zgjidh një skedar plani për të importuar."
+
+#. translators: %d: PHP upload error code
+#: src/PlanFile/ImportPlanScreen.php:238
+#, php-format
+msgid "The upload failed (error %d). Try again."
+msgstr "Ngarkimi dështoi (gabimi %d). Provo përsëri."
+
+#. translators: %s: the largest upload this server accepts, e.g. 2 MB
+#: src/PlanFile/ImportPlanScreen.php:252
+#, php-format
+msgid "The file is larger than this server accepts (%s). A Plan file is usually about 100 KB; check that it is the right file."
+msgstr "Skedari është më i madh se sa pranon ky server (%s). Një skedar plani zakonisht është rreth 100 KB; kontrollo që është skedari i duhur."
+
+#. translators: %s: number of Weeks
+#: src/PlanFile/ImportPlanScreen.php:213
+#, php-format
+msgid "%s Week"
+msgid_plural "%s Weeks"
+msgstr[0] "%s javë"
+msgstr[1] "%s javë"
+
+#. translators: %s: number of Workouts
+#: src/PlanFile/ImportPlanScreen.php:215
+#, php-format
+msgid "%s Workout"
+msgid_plural "%s Workouts"
+msgstr[0] "%s stërvitje"
+msgstr[1] "%s stërvitje"
+
+#. translators: %s: number of Prescriptions
+#: src/PlanFile/ImportPlanScreen.php:217
+#, php-format
+msgid "%s Prescription"
+msgid_plural "%s Prescriptions"
+msgstr[0] "%s ushtrim"
+msgstr[1] "%s ushtrime"
+
+#: templates/admin/import-plan.php:22
+msgid "The file"
+msgstr "Skedari"
+
+#: templates/admin/import-plan.php:28
+msgid "A Plan file is one Training Plan saved as JSON, with its Exercises named by library key. Export one from another site with \"Export as JSON\" on its Training Plans list."
+msgstr "Një skedar plani është një plan stërvitjeje i ruajtur si JSON, me ushtrimet e emërtuara sipas çelësit të bibliotekës. Eksporto një nga një faqe tjetër me \"Eksporto si JSON\" te lista e planeve të stërvitjes atje."
+
+#: templates/admin/import-plan.php:29
+msgid "Importing always creates a new Plan, as a draft. It never changes a Plan you already have. Review the draft, publish it, then add it to a Product."
+msgstr "Importi krijon gjithmonë një plan të ri, si skicë. Nuk ndryshon kurrë një plan që ke tashmë. Rishiko skicën, publikoje, pastaj shtoje te një produkt."
+
+#: templates/admin/import-plan.php:31
+msgid "Every Exercise in the file must already exist on this site, published. If the check finds one missing, import the Exercise library first:"
+msgstr "Çdo ushtrim i skedarit duhet të ekzistojë tashmë në këtë faqe, i publikuar. Nëse kontrolli gjen që mungon ndonjë, importo fillimisht bibliotekën e ushtrimeve:"
+
+#. translators: 1: file name, 2: what it holds, e.g. 10 Weeks, 30 Workouts, 180 Prescriptions
+#: templates/admin/import-plan.php:59
+#, php-format
+msgid "%1$s is ready to import: %2$s. Nothing was imported yet."
+msgstr "%1$s është gati për import: %2$s. Ende nuk është importuar asgjë."
+
+#: templates/admin/import-plan.php:86
+msgid "Check only"
+msgstr "Vetëm kontroll"
+
+#: templates/admin/import-plan.php:90
+msgid "Check only, don't import"
+msgstr "Vetëm kontrollo, mos importo"
+
+#. translators: %s: file name
+#: templates/admin/import-plan.php:42
+#, php-format
+msgid "Nothing was imported. %s has this problem:"
+msgid_plural "Nothing was imported. %s has these problems:"
+msgstr[0] "Nuk u importua asgjë. %s ka këtë problem:"
+msgstr[1] "Nuk u importua asgjë. %s ka këto probleme:"

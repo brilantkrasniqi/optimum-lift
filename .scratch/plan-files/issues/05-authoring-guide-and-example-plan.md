@@ -1,7 +1,7 @@
 # Authoring guide for Claude, and a worked example
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 03
 
 ## What to build

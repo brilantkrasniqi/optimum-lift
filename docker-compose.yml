@@ -81,6 +81,9 @@ services:
       - ./docker/setup.sh:/setup.sh:ro
       - ./plugins.txt:/plugins.txt:ro
       - ./plugins:/plugins-src:ro
+      # Plan files (docs/plan-files.md) and their test fixtures.
+      - ./content/plans:/plans
+      - ./tests/plan-files:/plan-fixtures:ro
     profiles:
       - cli
 

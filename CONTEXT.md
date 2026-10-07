@@ -51,6 +51,8 @@ _Avoid_: Slug, Exercise ID (in files)
 **Prescription** — one line of a Workout: an Exercise plus how to perform it there. A number of identical sets, each with a target (reps or seconds) and optionally an intensity (e.g. RPE) and a rest between sets, plus notes that apply only to this Workout (e.g. *pause 2 seconds at the bottom*). Sets within a Prescription never differ.
 _Avoid_: Workout exercise, Exercise (for the line itself)
 
+**Plan file** — one Training Plan written as a JSON file, naming Exercises by library key, used to move a Plan between sites. Importing one always creates a new Plan.
+
 ## Training performance
 
 What a Customer actually did, as opposed to what the Plan prescribes. Performance never changes the Plan.

@@ -1,0 +1,8 @@
+# Plan files and their fixtures are compared byte for byte with exports,
+# which always use LF; keep Git for Windows from checking them out as CRLF.
+content/plans/*.json text eol=lf
+tests/plan-files/* text eol=lf
+
+# PHPCS (PSR-12) rejects CRLF, and the composer container lints the working
+# tree; keep Git for Windows from checking PHP out as CRLF.
+*.php text eol=lf

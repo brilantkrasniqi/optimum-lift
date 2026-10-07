@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Training › Import: imports the Exercise library from wp-admin, for sites
- * without WP-CLI. The browser asks for one batch at a time, so each request
+ * Training › Import Exercises: imports the Exercise library from wp-admin, for
+ * sites without WP-CLI. The browser asks for one batch at a time, so each request
  * stays far inside a shared host's time limit; every batch is safe to repeat,
  * so a failed one is retried and a closed tab is finished by starting again.
  *
@@ -47,7 +47,7 @@ final class ImportScreen
         $this->hook = (string) add_submenu_page(
             PostTypes::MENU,
             __('Import Exercises', 'optimum-lift-plans'),
-            __('Import', 'optimum-lift-plans'),
+            __('Import Exercises', 'optimum-lift-plans'),
             self::CAPABILITY,
             self::PAGE,
             [$this, 'render']

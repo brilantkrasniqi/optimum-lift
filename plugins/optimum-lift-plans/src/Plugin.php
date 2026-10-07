@@ -13,6 +13,7 @@ use OptimumLift\Plans\Access\AccessRepository;
 use OptimumLift\Plans\Access\OrderAccess;
 use OptimumLift\Plans\Access\ProductFields;
 use OptimumLift\Plans\Cli\ImportExercisesCommand;
+use OptimumLift\Plans\Cli\PlanFileCommand;
 use OptimumLift\Plans\Cli\SeedCommand;
 use OptimumLift\Plans\Content\ExerciseFields;
 use OptimumLift\Plans\Content\LibraryKeys;
@@ -25,6 +26,10 @@ use OptimumLift\Plans\Library\ImportScreen;
 use OptimumLift\Plans\Logging\RestController;
 use OptimumLift\Plans\Logging\WorkoutLogRepository;
 use OptimumLift\Plans\Plan\PlanRepository;
+use OptimumLift\Plans\PlanFile\ExportAction;
+use OptimumLift\Plans\PlanFile\ImportPlanScreen;
+use OptimumLift\Plans\PlanFile\PlanFileExporter;
+use OptimumLift\Plans\PlanFile\PlanFileImporter;
 use OptimumLift\Plans\Portal\Portal;
 use OptimumLift\Plans\Privacy\Privacy;
 
@@ -53,16 +58,20 @@ final class Plugin
 
         add_action('init', [Schema::class, 'maybeUpgrade'], 1);
 
-        $plans     = new PlanRepository();
-        $access    = new AccessRepository();
-        $logs      = new WorkoutLogRepository();
-        $renderer  = new PdfRenderer();
+        $plans        = new PlanRepository();
+        $access       = new AccessRepository();
+        $logs         = new WorkoutLogRepository();
+        $renderer     = new PdfRenderer();
+        $planExporter = new PlanFileExporter();
+        $planImporter = new PlanFileImporter(new LibraryKeys(), $planExporter);
 
         (new PostTypes())->register();
         (new ExerciseFields())->register();
         (new LibraryKeys())->register();
         (new ImportScreen(new ExerciseImporter(new LibraryKeys())))->register();
         (new PlanFields())->register();
+        (new ExportAction($planExporter))->register();
+        (new ImportPlanScreen($planImporter))->register();
         (new ProductFields())->register();
         (new OrderAccess($access))->register();
         (new Delivery($plans, $access, $renderer))->register();
@@ -74,6 +83,10 @@ final class Plugin
             $importer = new ExerciseImporter(new LibraryKeys());
             \WP_CLI::add_command('ol-plans', new SeedCommand($importer));
             \WP_CLI::add_command('ol-plans import-exercises', new ImportExercisesCommand($importer));
+
+            $planFiles = new PlanFileCommand($planExporter, $planImporter);
+            \WP_CLI::add_command('ol-plans export-plan', [$planFiles, 'export']);
+            \WP_CLI::add_command('ol-plans import-plan', [$planFiles, 'import']);
         }
     }
 

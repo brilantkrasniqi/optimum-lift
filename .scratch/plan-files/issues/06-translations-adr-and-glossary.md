@@ -1,7 +1,7 @@
 # Translations, ADR and glossary
 
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 04, 05
 
 ## What to build

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Training › Import. Not overridable by the theme: it is an admin screen.
+ * Training › Import Exercises. Not overridable by the theme: it is an admin screen.
  * assets/admin-import.js runs the import from the [data-ol-import] markup.
  *
  * @var \OptimumLift\Plans\Library\LibraryFile        $file

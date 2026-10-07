@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-05T08:52:29+00:00\n"
+"POT-Creation-Date: 2026-10-07T17:32:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: optimum-lift-plans\n"
@@ -351,7 +351,7 @@ msgid "Seconds"
 msgstr ""
 
 #: src/Content/ExerciseFields.php:35
-#: src/Content/PlanFields.php:209
+#: src/Content/PlanFields.php:227
 #: src/Content/PostTypes.php:50
 #: templates/pdf/plan.php:136
 msgid "Exercise"
@@ -367,7 +367,7 @@ msgid "Secondary muscles"
 msgstr ""
 
 #: src/Content/ExerciseFields.php:65
-#: src/Content/PlanFields.php:92
+#: src/Content/PlanFields.php:110
 #: templates/pdf/plan.php:95
 msgid "Difficulty"
 msgstr ""
@@ -433,159 +433,162 @@ msgstr ""
 msgid "Instructions"
 msgstr ""
 
-#: src/Content/PlanFields.php:60
+#: src/Content/PlanFields.php:78
 #: src/Content/PostTypes.php:63
 msgid "Training Plan"
 msgstr ""
 
-#: src/Content/PlanFields.php:65
+#: src/Content/PlanFields.php:83
 msgid "Overview"
 msgstr ""
 
-#: src/Content/PlanFields.php:69
+#: src/Content/PlanFields.php:87
 msgid "Summary"
 msgstr ""
 
-#: src/Content/PlanFields.php:70
+#: src/Content/PlanFields.php:88
 msgid "Shown on the PDF cover and at the top of the Plan in the Portal."
 msgstr ""
 
-#: src/Content/PlanFields.php:78
+#: src/Content/PlanFields.php:96
 #: templates/pdf/plan.php:89
 msgid "Goal"
 msgstr ""
 
-#: src/Content/PlanFields.php:85
+#: src/Content/PlanFields.php:103
 msgid "Target audience"
 msgstr ""
 
-#: src/Content/PlanFields.php:100
-#: src/Content/PlanFields.php:104
+#: src/Content/PlanFields.php:118
+#: src/Content/PlanFields.php:122
 msgid "Phases"
 msgstr ""
 
-#: src/Content/PlanFields.php:105
+#: src/Content/PlanFields.php:123
 msgid "Optional. A name over consecutive Weeks, e.g. \"Strength\", Weeks 9 to 12. Phases may not overlap."
 msgstr ""
 
-#: src/Content/PlanFields.php:108
+#: src/Content/PlanFields.php:126
 msgid "Add Phase"
 msgstr ""
 
-#: src/Content/PlanFields.php:113
+#: src/Content/PlanFields.php:131
 msgid "Name"
 msgstr ""
 
-#: src/Content/PlanFields.php:121
+#: src/Content/PlanFields.php:139
 msgid "First Week"
 msgstr ""
 
-#: src/Content/PlanFields.php:131
+#: src/Content/PlanFields.php:149
 msgid "Last Week"
 msgstr ""
 
-#: src/Content/PlanFields.php:141
-#: src/Content/PlanFields.php:145
+#: src/Content/PlanFields.php:159
+#: src/Content/PlanFields.php:163
 msgid "Weeks"
 msgstr ""
 
-#: src/Content/PlanFields.php:146
+#: src/Content/PlanFields.php:164
 msgid "A Week is numbered by its position. To write the next Week, hold Shift and click the duplicate icon beside the last Week, then edit the copy."
 msgstr ""
 
-#: src/Content/PlanFields.php:151
+#: src/Content/PlanFields.php:169
 msgid "Add Week"
 msgstr ""
 
-#: src/Content/PlanFields.php:158
-#: src/Content/PlanFields.php:518
+#: src/Content/PlanFields.php:176
+#: src/Content/PlanFields.php:560
 msgid "Week"
 msgstr ""
 
-#: src/Content/PlanFields.php:165
+#: src/Content/PlanFields.php:183
 msgid "Workouts"
 msgstr ""
 
-#: src/Content/PlanFields.php:170
+#: src/Content/PlanFields.php:188
 msgid "Add Workout"
 msgstr ""
 
-#: src/Content/PlanFields.php:176
+#: src/Content/PlanFields.php:194
 msgid "Workout name"
 msgstr ""
 
-#: src/Content/PlanFields.php:177
+#: src/Content/PlanFields.php:195
 msgid "e.g. \"Upper body\". Not a weekday."
 msgstr ""
 
-#: src/Content/PlanFields.php:184
+#: src/Content/PlanFields.php:202
 msgid "Prescriptions"
 msgstr ""
 
-#: src/Content/PlanFields.php:188
+#: src/Content/PlanFields.php:206
 msgid "Add Prescription"
 msgstr ""
 
-#: src/Content/PlanFields.php:221
+#: src/Content/PlanFields.php:239
 #: src/Privacy/Privacy.php:121
 msgid "Sets"
 msgstr ""
 
-#: src/Content/PlanFields.php:233
+#: src/Content/PlanFields.php:251
 msgid "Target in"
 msgstr ""
 
-#: src/Content/PlanFields.php:243
+#: src/Content/PlanFields.php:261
 msgid "Target"
 msgstr ""
 
-#: src/Content/PlanFields.php:244
+#: src/Content/PlanFields.php:262
 msgid "8, 8-10, AMRAP, 30"
 msgstr ""
 
-#: src/Content/PlanFields.php:253
+#: src/Content/PlanFields.php:271
 #: templates/pdf/plan.php:138
 msgid "Intensity"
 msgstr ""
 
-#: src/Content/PlanFields.php:254
+#: src/Content/PlanFields.php:272
 msgid "e.g. RPE 8"
 msgstr ""
 
-#: src/Content/PlanFields.php:262
+#: src/Content/PlanFields.php:280
 msgid "Rest (s)"
 msgstr ""
 
-#: src/Content/PlanFields.php:271
+#: src/Content/PlanFields.php:289
 #: src/Privacy/Privacy.php:120
 #: templates/pdf/plan.php:140
 #: templates/portal/workout.php:182
 msgid "Notes"
 msgstr ""
 
-#: src/Content/PlanFields.php:411
+#: src/Content/PlanFields.php:429
+#: src/PlanFile/PlanFile.php:267
 msgid "A Phase must end on or after the Week it starts."
 msgstr ""
 
 #. translators: %d: number of Weeks in the Plan
-#: src/Content/PlanFields.php:417
+#: src/Content/PlanFields.php:435
+#: src/PlanFile/PlanFile.php:273
 #, php-format
 msgid "This Plan only has %d Weeks."
 msgstr ""
 
 #. translators: %d: Week number
-#: src/Content/PlanFields.php:424
+#: src/Content/PlanFields.php:442
+#: src/PlanFile/PlanFile.php:280
 #, php-format
 msgid "Phases overlap at Week %d."
 msgstr ""
 
 #. translators: 1: estimated form inputs, 2: max_input_vars
-#: src/Content/PlanFields.php:482
+#: src/Content/PlanFields.php:502
 #, php-format
 msgid "This Plan submits about %1$d form inputs and the server accepts %2$d (max_input_vars). Raise the limit before adding more Weeks."
 msgstr ""
 
-#: src/Content/PlanFields.php:554
+#: src/Content/PlanFields.php:596
 msgid "The Plan was not saved: the form was cut short because it exceeds the server's max_input_vars limit. Your last saved version is unchanged. Raise max_input_vars and save again."
 msgstr ""
 
@@ -695,66 +698,64 @@ msgstr ""
 msgid "BW"
 msgstr ""
 
-#: src/Library/ExerciseImporter.php:77
+#: src/Library/ExerciseImporter.php:80
 msgid "Another import is running. Try again in a minute."
 msgstr ""
 
 #. translators: 1: Exercise name, 2: library key
-#: src/Library/ExerciseImporter.php:167
+#: src/Library/ExerciseImporter.php:188
 #, php-format
 msgid "\"%1$s\" (%2$s) is in the trash and was left alone."
 msgstr ""
 
 #. translators: 1: post ID, 2: Exercise title, 3: library key
-#: src/Library/ExerciseImporter.php:190
+#: src/Library/ExerciseImporter.php:211
 #, php-format
 msgid "Could not give Exercise %1$d \"%2$s\" the key %3$s."
 msgstr ""
 
 #. translators: 1: post ID, 2: Exercise title, 3: library key
-#: src/Library/ExerciseImporter.php:199
+#: src/Library/ExerciseImporter.php:220
 #, php-format
 msgid "Took over Exercise %1$d \"%2$s\" as %3$s."
 msgstr ""
 
 #. translators: 1: Exercise name, 2: error message
-#: src/Library/ExerciseImporter.php:228
+#: src/Library/ExerciseImporter.php:249
 #, php-format
 msgid "Could not create \"%1$s\": %2$s"
 msgstr ""
 
 #. translators: %s: media file name
-#: src/Library/ExerciseImporter.php:394
+#: src/Library/ExerciseImporter.php:415
 #, php-format
 msgid "Could not copy %s to a temporary file."
 msgstr ""
 
 #. translators: 1: media file name, 2: error message
-#: src/Library/ExerciseImporter.php:409
+#: src/Library/ExerciseImporter.php:430
 #, php-format
 msgid "Could not add %1$s to the Media Library: %2$s"
 msgstr ""
 
 #. translators: %d: post ID
-#: src/Library/ExerciseImporter.php:459
+#: src/Library/ExerciseImporter.php:480
 #, php-format
 msgid "Exercise %d has no letters or digits in its title, so it still has no key."
 msgstr ""
 
 #. translators: 1: post ID, 2: Exercise title, 3: library key
-#: src/Library/ExerciseImporter.php:469
+#: src/Library/ExerciseImporter.php:490
 #, php-format
 msgid "Gave Exercise %1$d \"%2$s\" the key %3$s."
 msgstr ""
 
 #: src/Library/ImportScreen.php:49
+#: src/Library/ImportScreen.php:50
 #: templates/admin/import-exercises.php:24
 #: templates/admin/import-exercises.php:77
+#: templates/admin/import-plan.php:32
 msgid "Import Exercises"
-msgstr ""
-
-#: src/Library/ImportScreen.php:50
-msgid "Import"
 msgstr ""
 
 #. translators: 1: Exercises done, 2: Exercises in the library
@@ -812,46 +813,46 @@ msgid "The library file has problems. Reload the page to see them."
 msgstr ""
 
 #. translators: %d: number of Exercises in the library
-#: src/Library/ImportScreen.php:172
+#: src/Library/ImportScreen.php:173
 #, php-format
 msgid "There are no Exercises yet. The plugin comes with a library of %d Exercise, with an image and an animation."
 msgid_plural "There are no Exercises yet. The plugin comes with a library of %d Exercises, each with an image and an animation."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Library/ImportScreen.php:181
+#: src/Library/ImportScreen.php:182
 msgid "Import the library"
 msgstr ""
 
-#: src/Library/ImportScreen.php:193
+#: src/Library/ImportScreen.php:194
 msgid "New Exercises"
 msgstr ""
 
-#: src/Library/ImportScreen.php:194
+#: src/Library/ImportScreen.php:195
 msgid "Your Exercises with a library name, taken over"
 msgstr ""
 
-#: src/Library/ImportScreen.php:195
+#: src/Library/ImportScreen.php:196
 msgid "Library Exercises with empty fields filled in"
 msgstr ""
 
-#: src/Library/ImportScreen.php:196
+#: src/Library/ImportScreen.php:197
 msgid "Library Exercises already complete"
 msgstr ""
 
-#: src/Library/ImportScreen.php:197
+#: src/Library/ImportScreen.php:198
 msgid "Library Exercises in the trash, left alone"
 msgstr ""
 
-#: src/Library/ImportScreen.php:198
+#: src/Library/ImportScreen.php:199
 msgid "Other Exercises given a library key"
 msgstr ""
 
-#: src/Library/ImportScreen.php:199
+#: src/Library/ImportScreen.php:200
 msgid "Images and animations added to the Media Library"
 msgstr ""
 
-#: src/Library/ImportScreen.php:200
+#: src/Library/ImportScreen.php:201
 msgid "Images and animations already in the Media Library"
 msgstr ""
 
@@ -883,8 +884,345 @@ msgstr[1] ""
 msgid "Not found."
 msgstr ""
 
+#: src/PlanFile/ExportAction.php:46
+#: src/PlanFile/ExportAction.php:76
+msgid "Export as JSON"
+msgstr ""
+
+#: src/PlanFile/ExportAction.php:59
+#: templates/admin/import-plan.php:82
+msgid "Plan file"
+msgstr ""
+
+#: src/PlanFile/ExportAction.php:67
+msgid "This Plan cannot be exported until these are fixed:"
+msgstr ""
+
+#: src/PlanFile/ExportAction.php:77
+msgid "Exports the last saved version."
+msgstr ""
+
+#: src/PlanFile/ExportAction.php:94
+#: src/PlanFile/ImportPlanScreen.php:91
+msgid "This link has expired. Go back, reload the page and try again."
+msgstr ""
+
+#: src/PlanFile/ExportAction.php:101
+msgid "You are not allowed to export this Plan."
+msgstr ""
+
+#: src/PlanFile/ExportAction.php:139
+msgid "The Plan was not exported:"
+msgstr ""
+
+#: src/PlanFile/ImportPlanScreen.php:45
+#: src/PlanFile/ImportPlanScreen.php:46
+#: src/PlanFile/ImportPlanScreen.php:182
+#: templates/admin/import-plan.php:25
+#: templates/admin/import-plan.php:96
+msgid "Import Plan"
+msgstr ""
+
+#: src/PlanFile/ImportPlanScreen.php:81
+msgid "You are not allowed to import Plans."
+msgstr ""
+
+#. translators: %s: what was imported, e.g. 10 Weeks, 30 Workouts, 180 Prescriptions
+#: src/PlanFile/ImportPlanScreen.php:156
+#, php-format
+msgid "Imported as a draft: %s. Review it, publish it, then add it to a Product."
+msgstr ""
+
+#. translators: %s: number of Weeks
+#: src/PlanFile/ImportPlanScreen.php:213
+#, php-format
+msgid "%s Week"
+msgid_plural "%s Weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of Workouts
+#: src/PlanFile/ImportPlanScreen.php:215
+#, php-format
+msgid "%s Workout"
+msgid_plural "%s Workouts"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of Prescriptions
+#: src/PlanFile/ImportPlanScreen.php:217
+#, php-format
+msgid "%s Prescription"
+msgid_plural "%s Prescriptions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/PlanFile/ImportPlanScreen.php:229
+msgid "Choose a Plan file to import."
+msgstr ""
+
+#. translators: %d: PHP upload error code
+#: src/PlanFile/ImportPlanScreen.php:238
+#, php-format
+msgid "The upload failed (error %d). Try again."
+msgstr ""
+
+#. translators: %s: the largest upload this server accepts, e.g. 2 MB
+#: src/PlanFile/ImportPlanScreen.php:252
+#, php-format
+msgid "The file is larger than this server accepts (%s). A Plan file is usually about 100 KB; check that it is the right file."
+msgstr ""
+
+#: src/PlanFile/Places.php:16
+msgid "File"
+msgstr ""
+
+#: src/PlanFile/Places.php:21
+#: src/Privacy/Privacy.php:85
+#: src/Privacy/Privacy.php:116
+msgid "Plan"
+msgstr ""
+
+#. translators: %d: Phase number
+#: src/PlanFile/Places.php:27
+#, php-format
+msgid "Phase %d"
+msgstr ""
+
+#. translators: %d: Week number
+#: src/PlanFile/Places.php:33
+#: templates/pdf/plan.php:120
+#: templates/portal/plan.php:53
+#, php-format
+msgid "Week %d"
+msgstr ""
+
+#. translators: 1: Week number, 2: Workout number
+#: src/PlanFile/Places.php:40
+#, php-format
+msgid "Week %1$d, Workout %2$d"
+msgstr ""
+
+#. translators: 1: Week number, 2: Workout number, 3: Workout name
+#: src/PlanFile/Places.php:44
+#, php-format
+msgid "Week %1$d, Workout %2$d (\"%3$s\")"
+msgstr ""
+
+#. translators: 1: a Workout's place, e.g. Week 3, Workout 2 ("Upper body"), 2: Prescription number
+#: src/PlanFile/Places.php:50
+#, php-format
+msgid "%1$s, Prescription %2$d"
+msgstr ""
+
+#: src/PlanFile/PlanFile.php:64
+msgid "The file is not UTF-8 text (it looks like UTF-16). Save the file as UTF-8."
+msgstr ""
+
+#. translators: %s: the JSON parser's error message, in English
+#: src/PlanFile/PlanFile.php:76
+#, php-format
+msgid "The file is not valid JSON: %s."
+msgstr ""
+
+#: src/PlanFile/PlanFile.php:80
+msgid "The file must hold one JSON object, starting with {."
+msgstr ""
+
+#. translators: 1: library key, 2: places in the Plan, e.g. Week 1, Workout 2, Prescription 3
+#: src/PlanFile/PlanFile.php:113
+#, php-format
+msgid "Exercise \"%1$s\" does not exist on this site. Used in %2$s."
+msgstr ""
+
+#. translators: 1: library key, 2: places in the Plan, e.g. Week 1, Workout 2, Prescription 3
+#: src/PlanFile/PlanFile.php:115
+#, php-format
+msgid "Exercise \"%1$s\" is in the trash. Used in %2$s."
+msgstr ""
+
+#. translators: 1: library key, 2: places in the Plan, e.g. Week 1, Workout 2, Prescription 3
+#: src/PlanFile/PlanFile.php:117
+#, php-format
+msgid "Exercise \"%1$s\" is not published. Used in %2$s."
+msgstr ""
+
+#: src/PlanFile/PlanFile.php:151
+msgid "The file is larger than 2 MB, which no Plan file needs. Check that it is the right file."
+msgstr ""
+
+#. translators: 1: property name, 2: the only value allowed
+#: src/PlanFile/PlanFile.php:176
+#, php-format
+msgid "\"%1$s\" must be \"%2$s\"."
+msgstr ""
+
+#: src/PlanFile/PlanFile.php:182
+msgid "This file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
+msgstr ""
+
+#. translators: 1: property name, 2: the only number allowed
+#: src/PlanFile/PlanFile.php:185
+#, php-format
+msgid "\"%1$s\" must be %2$d."
+msgstr ""
+
+#: src/PlanFile/PlanFile.php:195
+#: src/PlanFile/PlanFile.php:251
+#: src/PlanFile/PlanFile.php:298
+#: src/PlanFile/PlanFile.php:322
+#: src/PlanFile/PlanFile.php:351
+msgid "must be an object."
+msgstr ""
+
+#. translators: %s: the value given for the Exercise
+#: src/PlanFile/PlanFile.php:395
+#, php-format
+msgid "%s is not a library key. A key is lowercase letters and digits joined by hyphens, e.g. \"barbell-back-squat\"."
+msgstr ""
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:417
+#, php-format
+msgid "\"%s\" must be a whole number of 0 or more, or null."
+msgstr ""
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:442
+#, php-format
+msgid "\"%s\" must be text."
+msgstr ""
+
+#. translators: 1: property name, 2: maximum number of characters
+#: src/PlanFile/PlanFile.php:455
+#, php-format
+msgid "\"%1$s\" must be at most %2$d characters."
+msgstr ""
+
+#. translators: 1: property name, 2: lowest number allowed, 3: highest number allowed
+#: src/PlanFile/PlanFile.php:479
+#, php-format
+msgid "\"%1$s\" must be a whole number from %2$d to %3$d."
+msgstr ""
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:486
+#, php-format
+msgid "\"%s\" must be a whole number."
+msgstr ""
+
+#. translators: 1: property name, 2: the values allowed, e.g. "reps", "seconds"
+#: src/PlanFile/PlanFile.php:512
+#, php-format
+msgid "\"%1$s\" must be one of: %2$s."
+msgstr ""
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:540
+#, php-format
+msgid "\"%s\" must be a list, in [ ]."
+msgstr ""
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:561
+#, php-format
+msgid "unknown property \"%s\"."
+msgstr ""
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:569
+#, php-format
+msgid "\"%s\" is missing."
+msgstr ""
+
+#. translators: %s: property name
+#: src/PlanFile/PlanFile.php:575
+#, php-format
+msgid "\"%s\" must not be empty."
+msgstr ""
+
+#. translators: %d: post ID
+#: src/PlanFile/PlanFileExporter.php:36
+#, php-format
+msgid "There is no Training Plan with ID %d."
+msgstr ""
+
+#. translators: %d: post ID
+#: src/PlanFile/PlanFileExporter.php:41
+#, php-format
+msgid "Training Plan %d is in the trash."
+msgstr ""
+
+#: src/PlanFile/PlanFileExporter.php:76
+msgid "the Exercise no longer exists. Choose another one in wp-admin."
+msgstr ""
+
+#. translators: %s: Exercise name
+#: src/PlanFile/PlanFileExporter.php:82
+#, php-format
+msgid "the Exercise \"%s\" has no library key. Save that Exercise once in wp-admin to give it one."
+msgstr ""
+
+#. translators: 1: Exercise name, 2: library key, 3: places in the Plan
+#: src/PlanFile/PlanFileExporter.php:204
+#, php-format
+msgid "\"%1$s\" (%2$s) is not published and not in the Exercise library, so the site you import into must have it, published. Used in %3$s."
+msgstr ""
+
+#. translators: 1: Exercise name, 2: library key, 3: places in the Plan
+#: src/PlanFile/PlanFileExporter.php:206
+#, php-format
+msgid "\"%1$s\" (%2$s) is not published, so the Portal and the PDF leave it out, and the site you import into must have it published. Used in %3$s."
+msgstr ""
+
+#. translators: 1: Exercise name, 2: library key, 3: places in the Plan
+#: src/PlanFile/PlanFileExporter.php:208
+#, php-format
+msgid "\"%1$s\" (%2$s) is not in the Exercise library, so the site you import into must have it too. Used in %3$s."
+msgstr ""
+
+#. translators: %s: error message
+#: src/PlanFile/PlanFileImporter.php:65
+#, php-format
+msgid "The Plan could not be created: %s"
+msgstr ""
+
+#. translators: %s: error message
+#: src/PlanFile/PlanFileImporter.php:75
+#, php-format
+msgid "The import failed while writing the Plan: %s"
+msgstr ""
+
+#: src/PlanFile/PlanFileImporter.php:80
+msgid "The new Plan was deleted; nothing was imported."
+msgstr ""
+
+#. translators: %d: post ID
+#: src/PlanFile/PlanFileImporter.php:109
+#, php-format
+msgid "A Training Plan with this title already exists (ID %d). Importing creates another one; it does not replace it."
+msgstr ""
+
+#. translators: 1: estimated form inputs, 2: max_input_vars
+#: src/PlanFile/PlanFileImporter.php:118
+#, php-format
+msgid "This Plan's edit form sends about %1$d inputs and this site accepts %2$d (max_input_vars). It imports fine, but it cannot be saved from wp-admin until the limit is raised."
+msgstr ""
+
+#. translators: %s: the problems found, joined
+#: src/PlanFile/PlanFileImporter.php:217
+#, php-format
+msgid "The Plan was written but could not be read back: %s"
+msgstr ""
+
+#. translators: %s: where the first difference is, e.g. plan.weeks[2].workouts[0].name
+#: src/PlanFile/PlanFileImporter.php:227
+#, php-format
+msgid "The Plan was written but did not read back as the file says; the first difference is at %s."
+msgstr ""
+
 #. translators: %s: comma-separated plugin names
-#: src/Plugin.php:45
+#: src/Plugin.php:50
 #, php-format
 msgid "Optimum Lift Plans is inactive until these plugins are active: %s."
 msgstr ""
@@ -926,11 +1264,6 @@ msgstr ""
 #: src/Privacy/Privacy.php:58
 #: src/Privacy/Privacy.php:113
 msgid "Workout Logs"
-msgstr ""
-
-#: src/Privacy/Privacy.php:85
-#: src/Privacy/Privacy.php:116
-msgid "Plan"
 msgstr ""
 
 #: src/Privacy/Privacy.php:86
@@ -990,6 +1323,44 @@ msgstr ""
 msgid "Keep this page open until the import finishes; it takes a few minutes. If it stops, press the button again: it carries on and never imports anything twice."
 msgstr ""
 
+#: templates/admin/import-plan.php:22
+msgid "The file"
+msgstr ""
+
+#: templates/admin/import-plan.php:28
+msgid "A Plan file is one Training Plan saved as JSON, with its Exercises named by library key. Export one from another site with \"Export as JSON\" on its Training Plans list."
+msgstr ""
+
+#: templates/admin/import-plan.php:29
+msgid "Importing always creates a new Plan, as a draft. It never changes a Plan you already have. Review the draft, publish it, then add it to a Product."
+msgstr ""
+
+#: templates/admin/import-plan.php:31
+msgid "Every Exercise in the file must already exist on this site, published. If the check finds one missing, import the Exercise library first:"
+msgstr ""
+
+#. translators: %s: file name
+#: templates/admin/import-plan.php:42
+#, php-format
+msgid "Nothing was imported. %s has this problem:"
+msgid_plural "Nothing was imported. %s has these problems:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: file name, 2: what it holds, e.g. 10 Weeks, 30 Workouts, 180 Prescriptions
+#: templates/admin/import-plan.php:59
+#, php-format
+msgid "%1$s is ready to import: %2$s. Nothing was imported yet."
+msgstr ""
+
+#: templates/admin/import-plan.php:86
+msgid "Check only"
+msgstr ""
+
+#: templates/admin/import-plan.php:90
+msgid "Check only, don't import"
+msgstr ""
+
 #: templates/pdf/plan.php:80
 msgid "Length"
 msgstr ""
@@ -1008,13 +1379,6 @@ msgstr ""
 #: templates/pdf/plan.php:103
 #, php-format
 msgid "Weeks %1$d–%2$d"
-msgstr ""
-
-#. translators: %d: Week number
-#: templates/pdf/plan.php:120
-#: templates/portal/plan.php:53
-#, php-format
-msgid "Week %d"
 msgstr ""
 
 #. translators: 1: Workout number, 2: Workout name

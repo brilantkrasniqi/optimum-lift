@@ -1,0 +1,23 @@
+{
+    "format": "optimum-lift-plan",
+    "version": 1,
+    "plan": {
+        "title": "Minimal Plan",
+        "weeks": [
+            {
+                "workouts": [
+                    {
+                        "name": "Full body",
+                        "prescriptions": [
+                            {
+                                "exercise": "dead-bug",
+                                "sets": 3,
+                                "target": "10"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
