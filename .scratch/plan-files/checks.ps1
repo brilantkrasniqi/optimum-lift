@@ -11,8 +11,11 @@ $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 
 # -T: no TTY, so stdout and stderr stay apart and lines end in LF.
-# All output, stderr included, as text lines.
-function wpc { docker compose --profile cli run --rm -T wpcli @args 2>&1 | ForEach-Object { "$_" } }
+# All output, stderr included, as text lines, without Compose's container
+# status lines and the empty stderr lines PowerShell 5.1 prints as
+# "System.Management.Automation.RemoteException".
+function Clean { process { $l = "$_"; if ($l -notmatch '^\s*Container ' -and $l -ne 'System.Management.Automation.RemoteException') { $l } } }
+function wpc { docker compose --profile cli run --rm -T wpcli @args 2>&1 | Clean }
 # Stdout only, for values.
 function wpv { docker compose --profile cli run --rm -T wpcli @args 2>$null }
 function Section([string] $title) { "`n=== $title" }
@@ -39,9 +42,12 @@ git log --oneline -1
 Section 'Ticket 01: field group unchanged'
 $groupPhp = '<?php echo count(acf_get_local_fields("group_ol_training_plan")), " fields, md5 ", md5(serialize(acf_get_local_fields("group_ol_training_plan"))), "\n";'
 git checkout origin/main -- plugins/optimum-lift-plans/src/Content/PlanFields.php
-"main:   " + (EvalPhp 'group' $groupPhp)
+$groupMain = EvalPhp 'group' $groupPhp
 git checkout HEAD -- plugins/optimum-lift-plans/src/Content/PlanFields.php
-"branch: " + (EvalPhp 'group' $groupPhp)
+$groupBranch = EvalPhp 'group' $groupPhp
+"main:   $groupMain"
+"branch: $groupBranch"
+Check 'the Plan field group is the same as on main' ("$groupMain" -eq "$groupBranch" -and "$groupMain" -match 'md5')
 
 Section 'Seed the demo Plan (4 Weeks)'
 $seed = wpc ol-plans seed
@@ -97,19 +103,32 @@ Section 'Ticket 01: one problem each for bad files'
 Set-Content -Path content/plans/x-notjson.json -Value 'not json' -Encoding ascii
 Get-Content tests/plan-files/minimal.json -Encoding UTF8 | Set-Content -Path content/plans/x-utf16.json -Encoding Unicode
 Get-Content tests/plan-files/minimal.json -Encoding UTF8 | Set-Content -Path content/plans/x-bom.json -Encoding UTF8
-foreach ($f in 'x-big', 'x-notjson', 'x-utf16', 'x-bom') { "-- $f"; wpc ol-plans import-plan "/plans/$f.json" --dry-run }
+foreach ($f in 'x-big', 'x-notjson', 'x-utf16', 'x-bom') {
+    "-- $f"
+    $out = @(wpc ol-plans import-plan "/plans/$f.json" --dry-run)
+    $out
+    if ($f -eq 'x-bom') { Check "$f passes" (($out -join "`n") -match 'Dry run: nothing was written') }
+    else { Check "$f gives one problem" (($out -join "`n") -match 'Nothing was imported: 1 problem.') }
+}
 Remove-Item content/plans/x-big.json, content/plans/x-notjson.json, content/plans/x-utf16.json, content/plans/x-bom.json
 
 Section 'Ticket 03: broken.json'
+# `wp post delete` only trashes posts and pages, so trash the Exercise in PHP.
 $yRaise = [int] (wpv post list --post_type=ol_exercise --meta_key=library_key --meta_value=band-y-raise --field=ID)
-wpc post delete $yRaise
+wpc eval "echo wp_trash_post($yRaise) ? 'Trashed Exercise $yRaise' : 'Could not trash Exercise $yRaise';"
+# The expected messages are the English source strings; the site is Albanian.
+Set-Content -Path mu-plugins/zz-plan-files-english-test.php -Encoding ascii -Value @'
+<?php
+add_filter('pre_determine_locale', static fn () => 'en_US');
+'@
 $before = PlanCount
 $problems = @(docker compose --profile cli run --rm -T wpcli ol-plans import-plan /plan-fixtures/broken.json 2>$null | ForEach-Object { "$_" })
+Remove-Item mu-plugins/zz-plan-files-english-test.php
 $expected = @(Get-Content tests/plan-files/broken.expected.txt -Encoding UTF8)
 $problems
 Check 'broken.json prints exactly broken.expected.txt' (($problems -join "`n") -eq ($expected -join "`n"))
 Check 'broken.json imports nothing' ((PlanCount) -eq $before)
-wpc post update $yRaise --post_status=publish
+wpc eval "wp_untrash_post($yRaise); wp_publish_post($yRaise); echo get_post_status($yRaise), PHP_EOL;"
 
 Section 'Ticket 03: the same file twice'
 $imp = wpc ol-plans import-plan /plans/rt-a.json
@@ -155,11 +174,13 @@ for (`$w = 0; `$w < (int) get_post_meta(`$p, 'weeks', true); `$w++) {
 printf("old estimate %d, PlanFields::estimateInputs %d\n", `$old, OptimumLift\Plans\Content\PlanFields::estimateInputs((int) get_post_meta(`$p, 'phases', true), `$per));
 "@
 "-- dry run with max_input_vars=1000 (expect the max_input_vars note)"
-docker compose --profile cli run --rm -T -e "WP_CLI_PHP_ARGS=-d memory_limit=512M -d max_input_vars=1000" wpcli ol-plans import-plan /plans/rt-16a.json --dry-run 2>&1 | ForEach-Object { "$_" }
+# The image runs the wp phar directly, which ignores WP_CLI_PHP_ARGS.
+docker compose --profile cli run --rm -T --entrypoint php wpcli -d memory_limit=512M -d max_input_vars=1000 /usr/local/bin/wp ol-plans import-plan /plans/rt-16a.json --dry-run 2>&1 | Clean | Tee-Object -Variable lowLimit
+Check 'the dry run warns about max_input_vars' (($lowLimit -join "`n") -match 'max_input_vars')
 
 Section 'Ticket 06: language files'
 $plugin = 'wp-content/plugins/optimum-lift-plans'
-wpc i18n make-pot $plugin "$plugin/languages/optimum-lift-plans.pot" --domain=optimum-lift-plans --exclude=vendor,assets,languages,data
+wpc i18n make-pot $plugin "$plugin/languages/optimum-lift-plans.pot" --domain=optimum-lift-plans '--exclude=vendor,assets,languages,data'
 wpc i18n update-po "$plugin/languages/optimum-lift-plans.pot" "$plugin/languages/optimum-lift-plans-sq.po"
 wpc i18n make-mo "$plugin/languages/optimum-lift-plans-sq.po" "$plugin/languages"
 wpc i18n make-php "$plugin/languages/optimum-lift-plans-sq.po" "$plugin/languages"
