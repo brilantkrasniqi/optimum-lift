@@ -110,7 +110,15 @@ A plan is written once, for a man of 80 kg (`reference_weight` in `sizes.json`).
 
 ## Selling the sizes in WooCommerce
 
-1. Make the diet Product a **Variable product**.
-2. Under Attributes add **Gjinia** (Mashkull | Femër) and **Pesha** (50–60 kg | 60–70 kg | 70–80 kg | 80–90 kg | 90+ kg), both "Used for variations". A women-only diet gets only Pesha.
-3. Under Variations choose "Generate variations", then use the bulk actions to toggle **Virtual** and **Downloadable** and set the price on all of them at once. Open each variation and attach its matching PDF.
-4. To update a plan, re-render and replace each variation's file in the same slot.
+A diet is a **variable Product**: one variation per Size, each with its PDF, all at the same price. The theme's Size picker, cart and Buy Now handle it (ADR-0012). The local demo (`wp ol-shop seed`) sets all of this up with placeholder PDFs.
+
+1. **Once per site** (the seed does it locally): Products › Attributes, add **Gjinia** with slug `gjinia` and **Pesha** with slug `pesha`, both with "Custom ordering". Terms, in this order:
+   - Gjinia: Mashkull (`mashkull`), Femër (`femer`);
+   - Pesha: 50–60 kg (`50-60`), 60–70 kg (`60-70`), 70–80 kg (`70-80`), 80–90 kg (`80-90`), 90+ kg (`90plus`).
+
+   The slugs are the renderer's file codes, so they must match exactly.
+2. **New Product**, type **Variable product**. Under Attributes, add Gjinia and Pesha, or only Pesha for a one-gender diet, select their terms, tick "Used for variations" and save. Under Variations, choose "Generate variations", then use the bulk actions to set the **price** on all of them. Never leave a variation on "Any …": every Size needs one value per attribute.
+3. **Update**, then in the **Size PDFs** box upload all the PDFs from `out/<plan>/` at once and Update again. Each file goes on the variation its name ends with (`…-mashkull-80-90kg.pdf`), which also makes it Virtual and Downloadable. Check the box's table: every Size has its file, and no warning shows. A bundle takes every plan's PDFs (one file per plan per Size); it can take them one plan at a time.
+4. **To update a diet,** re-render and upload the PDFs again. Each file replaces the old one under the same download link, so Customers who already bought get the new version from My Account.
+
+If the host refuses a large upload (its `post_max_size`; each PDF is about 0.5 MB), upload fewer files at a time.

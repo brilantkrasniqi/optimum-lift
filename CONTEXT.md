@@ -15,6 +15,12 @@ The glossary for this project. Terms here are canonical: use them in issues, spe
 
 Preferred over "fitness plan" and "diet plan", which blur into each other in conversation.
 
+**Food** — one entry in the food table (`content/diets/foods.json`): an Albanian name, a group, and kcal and macros per 100 g. Every number in a Nutrition Plan is computed from Foods and grams.
+
+**Recipe** — one dish written once (Foods with grams, steps, a swap) and used by many Nutrition Plans. Named by its **recipe key** (`content/diets/recipes/<recipe-key>.json`), which never changes; a plan names the Recipe and may scale its portion.
+
+**Size** — one gender and weight range that a Nutrition Plan is rendered for ("Mashkull · 80–90 kg"). Each Size is its own PDF, sold as one WooCommerce variation of the diet Product; every Size of a Product costs the same (ADR-0012).
+
 **Product** — a sellable listing in the shop: it has a price, a page, and imagery. One Plan may be sold as several Products — a seasonal edition, a bundle, a discounted variant. This split is what makes a multi-SKU, seasonal catalogue possible without re-authoring content.
 
 **Download** — the PDF of a Plan that a Customer receives after purchase. It is a rendering of the Plan, never authored separately, so it cannot disagree with what the Portal shows.

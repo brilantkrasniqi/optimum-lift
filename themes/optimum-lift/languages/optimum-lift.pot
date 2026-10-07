@@ -2190,3 +2190,153 @@ msgstr ""
 msgctxt "Font size name"
 msgid "Extra large"
 msgstr ""
+
+#: inc/shop/bundle.php:121
+#, php-format
+msgid "Changed to %s"
+msgstr ""
+
+#: inc/shop/buy-now.php:73
+#: inc/shop/sizes.php:202
+msgid "This size is not available."
+msgstr ""
+
+#: inc/shop/sizes.php:201
+msgid "Choose your size first."
+msgstr ""
+
+#: template-parts/blocks/final-cta.php:52
+#: template-parts/blocks/value-stack.php:182
+#: template-parts/cart/upsell.php:73
+#: template-parts/product/add-to-cart.php:31
+#: template-parts/product/buy-buttons.php:57
+#: template-parts/single-product/buy-bar.php:49
+#: template-parts/single-product/buy-bar.php:49
+msgid "Choose your size"
+msgstr ""
+
+#: inc/shop/size-files.php:181
+msgid "Size PDFs"
+msgstr ""
+
+#: inc/shop/size-files.php:545
+msgid "Size PDFs:"
+msgstr ""
+
+#: inc/shop/size-files.php:143
+msgid "The Sizes have different prices. Every Size of a Product must cost the same; the page shows the lowest price."
+msgstr ""
+
+#: inc/shop/size-files.php:153
+#, php-format
+msgid "%s has an \"Any …\" attribute. Give it one value per attribute: such Sizes cannot be bought."
+msgstr ""
+
+#: inc/shop/size-files.php:157
+#, php-format
+msgid "%s is not Virtual, so checkout asks for an address and skips the withdrawal waiver."
+msgstr ""
+
+#: inc/shop/size-files.php:161
+#, php-format
+msgid "%s has no PDF."
+msgstr ""
+
+#: inc/shop/size-files.php:164
+#, php-format
+msgid "%1$s has %2$d PDFs, but the bundle contains %3$d diets sold in Sizes."
+msgstr ""
+
+#: inc/shop/size-files.php:204
+msgid "Upload the PDFs the diet renderer made for this Product, all at once. Each file goes on the Size its name ends with (\"…-mashkull-80-90kg.pdf\"). A file with the same plan name replaces the old one and keeps its download link."
+msgstr ""
+
+#: inc/shop/size-files.php:213
+msgid "Size"
+msgstr ""
+
+#: inc/shop/size-files.php:214
+msgid "Price"
+msgstr ""
+
+#: inc/shop/size-files.php:215
+msgid "Virtual"
+msgstr ""
+
+#: inc/shop/size-files.php:216
+msgid "Downloadable"
+msgstr ""
+
+#: inc/shop/size-files.php:217
+msgid "Files"
+msgstr ""
+
+#: inc/shop/size-files.php:218
+msgid "Status"
+msgstr ""
+
+#: inc/shop/size-files.php:236
+msgid "Published"
+msgstr ""
+
+#: inc/shop/size-files.php:236
+msgid "Private"
+msgstr ""
+
+#: inc/shop/size-files.php:243
+msgid "Upload PDFs"
+msgstr ""
+
+#: inc/shop/size-files.php:246
+msgid "The files are attached when you update the Product."
+msgstr ""
+
+#: inc/shop/size-files.php:302
+#, php-format
+msgid "%s did not upload. Try again, or upload fewer files at once."
+msgstr ""
+
+#: inc/shop/size-files.php:309
+#, php-format
+msgid "%s is not a PDF."
+msgstr ""
+
+#: inc/shop/size-files.php:324
+#, php-format
+msgid "%s matches no Size of this Product. Its name must end with a Size, like \"-mashkull-80-90kg.pdf\"."
+msgstr ""
+
+#: inc/shop/size-files.php:326
+#, php-format
+msgid "%s matches more than one Size."
+msgstr ""
+
+#: inc/shop/size-files.php:336
+#, php-format
+msgid "%1$s and %2$s are both for %3$s."
+msgstr ""
+
+#: inc/shop/size-files.php:364
+msgid "The upload folder could not be created. Check that wp-content/uploads is writable."
+msgstr ""
+
+#: inc/shop/size-files.php:392
+#, php-format
+msgid "%1$s could not be stored: %2$s"
+msgstr ""
+
+#: inc/shop/size-files.php:454
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/shop/size-files.php:534
+msgid "The Size PDFs were not attached:"
+msgstr ""
+
+#: inc/shop/size-files.php:541
+#, php-format
+msgid "%d PDF attached."
+msgid_plural "%d PDFs attached."
+msgstr[0] ""
+msgstr[1] ""

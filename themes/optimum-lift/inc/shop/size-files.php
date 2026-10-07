@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The "Size PDFs" box on a variable Product's edit screen (ADR-0011): one
+ * The "Size PDFs" box on a variable Product's edit screen (ADR-0012): one
  * upload of the renderer's PDFs (`content/diets/`) puts each file on the
  * variation its name names, and a table shows whether every Size is ready to
  * sell.
