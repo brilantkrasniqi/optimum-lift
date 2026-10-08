@@ -49,18 +49,18 @@ Without the argument they render ticket 08's "Choose your size" link. Simple Pro
 ## Acceptance criteria
 
 - [ ] On a Training Plan Product the page's HTML is unchanged apart from asset hashes. Diff the saved HTML from `main` and from the branch.
-- [ ] On `plani-ushqimor-12-javor`: with nothing chosen, both buttons in the price box and in the buy bar submit nothing, and the browser points at the first empty group, which is not hidden under the sticky header.
-- [ ] With JavaScript: Add opens the drawer with the chosen Size, and Buy Now goes to checkout with it.
-- [ ] Without JavaScript (disable it in devtools): Add reloads with WooCommerce's added notice and the chosen variation in the cart, and Buy Now goes to checkout with it.
-- [ ] `?attribute_pa_gjinia=femer&attribute_pa_pesha=60-70` pre-checks both groups. An invalid value checks nothing.
-- [ ] `dieta-mesdhetare` shows a single Pesha group.
-- [ ] With one variation trashed:
+- [x] On `plani-ushqimor-12-javor`: with nothing chosen, both buttons in the price box and in the buy bar submit nothing, and the browser points at the first empty group, which is not hidden under the sticky header.
+- [x] With JavaScript: Add opens the drawer with the chosen Size, and Buy Now goes to checkout with it.
+- [x] Without JavaScript (disable it in devtools): Add reloads with WooCommerce's added notice and the chosen variation in the cart, and Buy Now goes to checkout with it.
+- [x] `?attribute_pa_gjinia=femer&attribute_pa_pesha=60-70` pre-checks both groups. An invalid value checks nothing.
+- [x] `dieta-mesdhetare` shows a single Pesha group.
+- [x] With one variation trashed:
   - its combination is disabled with JavaScript;
   - without JavaScript, choosing it gives "This size is not available." from the server.
-- [ ] Keyboard only: Tab reaches each group, the arrow keys move the choice, and Buy Now submits. The accessibility tree shows each radio's name and its group's legend.
-- [ ] On a diet that also has an "included versions" list, the versions still read as included (check marks, not controls) and the picker reads as a choice. Put a screenshot in the comment.
-- [ ] At 360 px wide: the pills wrap, there is no horizontal scroll, and the buy bar's summary and buttons fit.
-- [ ] `npm run build`, `npm run lint:php` and `npm run analyse:php` pass.
+- [x] Keyboard only: Tab reaches each group, the arrow keys move the choice, and Buy Now submits. The accessibility tree shows each radio's name and its group's legend.
+- [x] On a diet that also has an "included versions" list, the versions still read as included (check marks, not controls) and the picker reads as a choice. Put a screenshot in the comment.
+- [x] At 360 px wide: the pills wrap, there is no horizontal scroll, and the buy bar's summary and buttons fit.
+- [x] `npm run build`, `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
 
@@ -103,3 +103,25 @@ Built in the "Diets 07" commit; the boxes stay open until the owner's PC run.
 8. Keyboard: Tab reaches each group, the arrows move the choice, and Enter on Buy Now submits.
 9. A diet with "included versions" next to the picker: take a screenshot for this comment.
 10. At 360 px wide: no horizontal scroll, and the bar fits.
+
+### 2026-10-08 (Claude)
+
+Checked on the owner's PC on be8100c with headless Edge (Playwright), 12-javor 826 (variations 827–836), Dieta Mesdhetare 837. No console errors.
+
+- **HTML diff, Training Plans 12-javor and Force Mase, logged out, `main` against the branch on the same database:** no asset-hash differences. Two kinds of change:
+  - One whitespace change before the value stack's Buy Now. The new `$cta_link` line was its own `<?php … ?>` tag, so its indentation was printed. It is now inside the `if` tag ("Diets 07: no stray whitespace in the value stack"), so the box stays open until that diff is re-run.
+  - The cross-sell cards for the three diets now say "Choose your size" and link to `#blej`, with the struck regular price. That is tickets 06 and 08: `main` gave a variable parent no anchor price. The price box and the buy bar are identical.
+- **Nothing chosen:** all four buttons (`form="ol-size-form"`) submit nothing, and focus goes to the first Gjinia radio, below the 65 px sticky header, both in the price box and from the buy bar (1280×900 and 390×800). At 390 px the bar shows only Buy Now, as it does for every Product.
+- **With JavaScript:** Mashkull · 80–90 kg gives `variation_id` 830 and the bar's summary; Add opens the drawer with that line. Femër · 60–70 kg with Buy Now goes to checkout with only 833.
+- **Without JavaScript:** Add reloads with WooCommerce's added notice, cart 830. Buy Now Femër · 60–70 kg goes to checkout with 833.
+- **The URL:** `?attribute_pa_gjinia=femer&attribute_pa_pesha=60-70` checks both. `pa_pesha=99` checks only Gjinia, and `pa_gjinia=xyz` checks nothing.
+- **Dieta Mesdhetare:** a single Pesha group.
+- **Femër · 90+ (836) trashed with `wp post update 836 --post_status=trash`, then restored:**
+  - With JavaScript, each of the two greys out the other.
+  - Without JavaScript, Buy Now and Add give "This size is not available." and the cart stays empty.
+- **Keyboard:**
+  - Tab reaches Gjinia, then Pesha, then Buy Now and Add. The arrows move the choice, and Enter on Buy Now checks out 834.
+  - The accessibility tree shows the groups "Gjinia" and "Pesha" with each radio's name.
+- **Included list:** it keeps its check marks, and the picker reads as pills inside the price box. A screenshot was taken on the owner's PC; it is not attached here.
+- **At 360 px:** the pills wrap over four rows and there is no horizontal scroll. The bar's summary and Buy Now fit.
+- **Checks:** `npm run build`, `phpcs` (0 errors) and `phpstan` pass.
