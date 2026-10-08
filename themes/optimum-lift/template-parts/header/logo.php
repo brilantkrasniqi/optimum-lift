@@ -17,7 +17,7 @@ $tagline   = $in_header ? (string) optimum_lift_setting('tagline') : '';
 ?>
 <a href="<?php echo esc_url(home_url('/')); ?>" class="flex shrink-0 items-center gap-2.5" rel="home">
     <span class="grid h-9 w-9 place-items-center rounded-xl bg-accent <?php echo !empty($args['glow']) ? 'shadow-glow' : ''; ?>">
-        <?php echo optimum_lift_icon('logo', 'w-5 h-5 text-white'); ?>
+        <?php echo optimum_lift_icon('logo', 'w-7 h-7 text-white'); ?>
     </span>
     <span class="leading-none">
         <span class="h-display block text-lg text-white <?php echo $in_header ? 'max-[359px]:sr-only' : ''; ?>"><?php bloginfo('name'); ?></span>
