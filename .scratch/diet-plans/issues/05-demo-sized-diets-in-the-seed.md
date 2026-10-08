@@ -1,7 +1,7 @@
 # Demo sized diets in the seed
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: none
 
 ## What to build
@@ -37,12 +37,29 @@ Update the seed's success message and the CLAUDE.md line about the demo storefro
 
 ## Acceptance criteria
 
-- [ ] On a fresh database, `docker compose --profile cli run --rm wpcli ol-shop seed` creates both attributes with ordered terms, and the three variable Products with 10, 5 and 10 published, virtual, downloadable variations at equal prices.
-- [ ] Each variation's file opens in the browser (as admin) and names that Size. Check three at random per Product.
-- [ ] Re-running the seed changes nothing: same variation IDs and file count (`wp post list --post_type=product_variation --format=count` before and after).
-- [ ] Seeding a database seeded by the old seed converts the three Products in place, with the same IDs as before.
-- [ ] `ol-shop seed --reset` leaves no orphan `product_variation` posts.
-- [ ] Training Plan Products 60 and 61 are unchanged (compare `wp wc product get` output before and after, or the Product edit screens).
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] On a fresh database, `docker compose --profile cli run --rm wpcli ol-shop seed` creates both attributes with ordered terms, and the three variable Products with 10, 5 and 10 published, virtual, downloadable variations at equal prices.
+- [x] Each variation's file opens in the browser (as admin) and names that Size. Check three at random per Product.
+- [x] Re-running the seed changes nothing: same variation IDs and file count (`wp post list --post_type=product_variation --format=count` before and after).
+- [x] Seeding a database seeded by the old seed converts the three Products in place, with the same IDs as before.
+- [x] `ol-shop seed --reset` leaves no orphan `product_variation` posts.
+- [x] Training Plan Products 60 and 61 are unchanged (compare `wp wc product get` output before and after, or the Product edit screens).
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-08 (Claude, test run on the owner's PC)
+
+The run used branch `claude/project-thread-rnm05a` at e067d80, with the database backed up first.
+- **First seed:** "Seeded 5 Products (sized: plani-ushqimor-12-javor with 10 variations, dieta-mesdhetare with 5 variations, transformimi-total with 10 variations)", with no warnings.
+- **Conversion in place:** Products 62, 63 and 64 kept their IDs, and the 25 variations are 799–823.
+- **Attributes:** both have ordered terms (Mashkull, Femër; 50–60 … 90+ kg). Mesdhetare has only Pesha, and no Product has default attributes.
+- **Variations:** all are published, virtual and downloadable. Prices are equal within each Product: 12.99, on sale at 6.99, for 12-javor; 9.99, on sale at 5.99, for Mesdhetare; and 14.99 for the bundle, which has no sale, as on `main`.
+- **Files:** nine sampled variations each name their Size. The bundle's variations carry both diets' files, and "Femër · 60–70 kg" is encoded correctly.
+- **Second seed:** a dump of all 25 variations shows no differences.
+- **Programs 60 and 61:** only the usual seed churn changed (re-dated, sale dates and `total_sales` refreshed), as on `main`.
+- **`--reset`:** no orphan variations, postmeta or lookup rows.
+- **`debug.log`:** no PHP notices.
+
+The bundle's download IDs equal the matching diet variations' IDs, because the demo ID is `md5(file)`. That is harmless: WooCommerce keys permissions by Product and download ID.
+
+After the reset, the demo Products have new IDs (824–843), not 60–64.
