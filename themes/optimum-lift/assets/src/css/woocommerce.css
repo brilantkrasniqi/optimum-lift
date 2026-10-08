@@ -442,14 +442,10 @@
     @apply text-accent-light no-underline;
   }
 
-  /* The offer-emails opt-in under the email field (inc/shop/marketing.php):
-     a box that is plainly optional needs no "(optional)". */
-  .woocommerce form .form-row.ol-optin {
-    @apply -mt-1;
-  }
-
-  .ol-optin .optional {
-    @apply hidden;
+  /* The offer-emails opt-in under the waiver (inc/shop/marketing.php):
+     its own box, so it never reads as part of the required one. */
+  #payment .ol-optin {
+    @apply mt-2 mb-0 rounded-xl border border-white/10 bg-white/[.03] p-3.5;
   }
 
   .woocommerce-terms-and-conditions-wrapper .form-row {

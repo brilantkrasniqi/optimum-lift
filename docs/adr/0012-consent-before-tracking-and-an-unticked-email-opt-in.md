@@ -20,8 +20,10 @@ cookies on every visit.
 
 ## Decision
 
-- **An unticked opt-in at checkout** (`inc/shop/marketing.php`), under the
-  email field, optional. The order stores when it was ticked and its exact
+- **An unticked opt-in at checkout** (`inc/shop/marketing.php`), optional,
+  in its own box right under the withdrawal waiver above "Place order",
+  where buyers are already reading and ticking. It is never part of the
+  required box. The order stores when it was ticked and its exact
   wording, and the order screen shows it. *WooCommerce › Email list*
   downloads everyone who said yes as a CSV for the mail service, which keeps
   unsubscribes from then on.

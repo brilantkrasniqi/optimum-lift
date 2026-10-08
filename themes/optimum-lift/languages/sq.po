@@ -2100,8 +2100,8 @@ msgid "Tokens: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee}, 
 msgstr "Shenjat: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. Një frazë mes \" · \" me shenjë pa vlerë nuk shfaqet."
 
 #: inc/shop/withdrawal.php:43
-msgid "I want access to my plan right away, and I understand that once access starts I lose my 14-day right of withdrawal."
-msgstr "Dua akses në plan menjëherë dhe e kuptoj që, sapo të nisë aksesi, humb të drejtën e tërheqjes brenda 14 ditëve."
+msgid "I want my plan right away, and I understand that once I get it, I can no longer cancel the purchase within 14 days."
+msgstr "E dua planin menjëherë dhe e kuptoj që, pasi ta marr, nuk mund ta anuloj më blerjen brenda 14 ditëve."
 
 #: inc/shop/withdrawal.php:82
 msgid "required"
@@ -2126,8 +2126,8 @@ msgid "not recorded for this order"
 msgstr "nuk është regjistruar për këtë porosi"
 
 #: inc/shop/withdrawal.php:148
-msgid "You asked for immediate access to your digital products and confirmed that you lose your right of withdrawal once access starts."
-msgstr "Kërkove akses të menjëhershëm në produktet digjitale dhe konfirmove që, sapo nis aksesi, humb të drejtën e tërheqjes."
+msgid "You asked for your plans right away and confirmed that once you get them, you can no longer cancel the purchase within 14 days."
+msgstr "Kërkove planet menjëherë dhe konfirmove që, pasi t'i marrësh, nuk mund ta anulosh më blerjen brenda 14 ditëve."
 
 #: inc/template-tags.php:253
 msgid "Follow the plan as written and you will see the change. Stuck along the way? Write to us and we will help you get back on track."

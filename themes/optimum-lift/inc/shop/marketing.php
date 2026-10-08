@@ -7,7 +7,9 @@
  * starts unticked, with its own wording, separate from buying. A pre-ticked or
  * hidden box makes every address on the list unusable. So:
  *
- * - An optional box under the email field, never ticked by default.
+ * - An optional box right under the withdrawal waiver above "Place order"
+ *   (inc/shop/withdrawal.php), never ticked by default and never part of the
+ *   required box, so saying no to offers never blocks the order.
  * - The order keeps when it was ticked and its exact wording, the proof a
  *   mail service or regulator asks for; the order screen shows it.
  * - WooCommerce › Email list downloads everyone who said yes as a CSV, to
@@ -26,35 +28,28 @@ function optimum_lift_optin_text(): string
     return __('Send me offers and new plans before anyone else. Unsubscribe anytime.', 'optimum-lift');
 }
 
-// After the checkout trim (inc/shop/checkout.php, priority 20), right under
-// the email field.
-add_filter('woocommerce_checkout_fields', static function (mixed $fields): mixed {
-    if (!is_array($fields) || !is_array($fields['billing'] ?? null)) {
-        return $fields;
-    }
+// Below the waiver (priority 10). This spot is inside #payment, which
+// WooCommerce re-renders on every checkout refresh, so the box is re-ticked
+// from the posted form, as the waiver is.
+add_action('woocommerce_review_order_before_submit', static function (): void {
+    ?>
+    <p class="form-row ol-optin" id="<?php echo esc_attr(OPTIMUM_LIFT_OPTIN_FIELD . '_field'); ?>">
+        <label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
+            <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="<?php echo esc_attr(OPTIMUM_LIFT_OPTIN_FIELD); ?>" id="<?php echo esc_attr(OPTIMUM_LIFT_OPTIN_FIELD); ?>" value="1"<?php checked(optimum_lift_checkout_box_posted(OPTIMUM_LIFT_OPTIN_FIELD)); ?>>
+            <span><?php echo esc_html(optimum_lift_optin_text()); ?></span>
+        </label>
+    </p>
+    <?php
+}, 20);
 
-    $fields['billing'][OPTIMUM_LIFT_OPTIN_FIELD] = [
-        'type'     => 'checkbox',
-        'label'    => optimum_lift_optin_text(),
-        'required' => false,
-        'default'  => 0,
-        'priority' => 15,
-        'class'    => ['form-row-wide', 'ol-optin'],
-    ];
-
-    return $fields;
-}, 30);
-
-// WooCommerce only saves billing_* keys on its own, so this field is saved
-// here, and only when ticked.
-add_action('woocommerce_checkout_create_order', static function (mixed $order, mixed $data): void {
-    if (!$order instanceof WC_Order || !is_array($data) || empty($data[OPTIMUM_LIFT_OPTIN_FIELD])) {
+add_action('woocommerce_checkout_create_order', static function (mixed $order): void {
+    if (!$order instanceof WC_Order || !optimum_lift_checkout_box_posted(OPTIMUM_LIFT_OPTIN_FIELD)) {
         return;
     }
 
     $order->update_meta_data('_ol_marketing_optin_at', (string) time());
     $order->update_meta_data('_ol_marketing_optin_text', optimum_lift_optin_text());
-}, 10, 2);
+});
 
 /**
  * When the order's buyer ticked the opt-in, as a Unix time, or 0.

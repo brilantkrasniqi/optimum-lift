@@ -32,7 +32,8 @@ The withdrawal waiver is hooks too (`inc/shop/withdrawal.php`, ADR-0009): the
 box above "Place order" (`woocommerce_review_order_before_submit`), its check
 (`woocommerce_after_checkout_validation`), the stored consent
 (`woocommerce_checkout_create_order`), the order screen line and the email
-confirmation (`woocommerce_email_order_meta`).
+confirmation (`woocommerce_email_order_meta`). The optional offer-emails box
+(`inc/shop/marketing.php`, ADR-0012) sits right under it on the same hook.
 
 Without JavaScript the coupon form is shown directly (WooCommerce hides it behind a script toggle), from `woocommerce.css` (11b).
 
