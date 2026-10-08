@@ -117,8 +117,8 @@ A diet is a **variable Product**: one variation per Size, each with its PDF, all
    - Pesha: 50–60 kg (`50-60`), 60–70 kg (`60-70`), 70–80 kg (`70-80`), 80–90 kg (`80-90`), 90+ kg (`90plus`).
 
    The slugs are the renderer's file codes, so they must match exactly.
-2. **New Product**, type **Variable product**. Under Attributes, add Gjinia and Pesha, or only Pesha for a one-gender diet, select their terms, tick "Used for variations" and save. Under Variations, choose "Generate variations", then use the bulk actions to set the **price** on all of them. Never leave a variation on "Any …": every Size needs one value per attribute.
+2. **New Product**, type **Variable product**. Under Attributes (close WooCommerce's first-visit tour if it opens), add Gjinia and Pesha, or only Pesha for a one-gender diet, select their terms ("Select all" / "Përzgjidhi krejt"), tick "Used for variations" ("E përdorur për variante") and save. Under Variations, choose "Generate variations" ("Prodho variante"), then use the bulk actions to set the **price** on all of them ("Set regular prices" / "Caktoni çmime të rregullta"). Never leave a variation on "Any …": every Size needs one value per attribute.
 3. **Update**, then in the **Size PDFs** box upload all the PDFs from `out/<plan>/` at once and Update again. Each file goes on the variation its name ends with (`…-mashkull-80-90kg.pdf`), which also makes it Virtual and Downloadable. Check the box's table: every Size has its file, and no warning shows. A bundle takes every plan's PDFs (one file per plan per Size); it can take them one plan at a time.
 4. **To update a diet,** re-render and upload the PDFs again. Each file replaces the old one under the same download link, so Customers who already bought get the new version from My Account.
 
-If the host refuses a large upload (its `post_max_size`; each PDF is about 0.5 MB), upload fewer files at a time.
+If the host refuses a large upload (its `post_max_size`; each PDF is 0.5–1.5 MB), or takes only the first files (`max_file_uploads`, often 20), upload fewer files at a time.

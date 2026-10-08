@@ -1,7 +1,7 @@
 # ADR, glossary, translations and docs
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 04, 06, 07, 08, 09
 
 ## What to build
@@ -35,11 +35,11 @@ Blocked by: 04, 06, 07, 08, 09
 
 ## Acceptance criteria
 
-- [ ] ADR-0011 exists, and ADR-0006 points to it.
-- [ ] `CONTEXT.md` defines Food, Recipe and Size.
-- [ ] `wp i18n make-pot` finds no new string missing from `sq.po`. The Albanian shows on the Product page, in the drawer and in the Size PDFs box with the site in Albanian.
-- [ ] The README walk-through matches what the screens actually show. Follow it once on the local site from a blank Product.
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] ADR-0011 exists, and ADR-0006 points to it.
+- [x] `CONTEXT.md` defines Food, Recipe and Size.
+- [x] `wp i18n make-pot` finds no new string missing from `sq.po`. The Albanian shows on the Product page, in the drawer and in the Size PDFs box with the site in Albanian.
+- [x] The README walk-through matches what the screens actually show. Follow it once on the local site from a blank Product.
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
 
@@ -95,3 +95,17 @@ New strings (`optimum-lift` domain), for Poedit:
 Unsure: "Çfarëdo …" for WooCommerce's "Any …". Use whatever WooCommerce's own Albanian shows on the variation screen.
 
 **PC test:** follow the README's "Selling the sizes in WooCommerce" from a blank Product, with the site in Albanian. Then check the picker, the drawer and the Size PDFs box read in Albanian.
+
+### 2026-10-08 (Claude)
+
+Checked on the owner's PC on be8100c.
+
+- **The ADRs:** ADR-0012 exists, since 0011 is plan files. The status lines of ADR-0006 and ADR-0007 point to it, and ADR-0007 has the Buy Now note.
+- **`CONTEXT.md`:** it defines Food, Recipe and Size.
+- **The translations:**
+  - `wp i18n make-pot`, `update-po`, `make-mo` and `make-php` ran in the container. `sq.po` has 514 entries, none untranslated, fuzzy or obsolete, and the rebuilt `sq.mo` and `sq.l10n.php` are byte-identical to the committed ones.
+  - The `.pot` and `.po` diffs were only `#:` references and translator comments. They are not committed here; the next `make-pot` refreshes them.
+  - Its two warnings about translator comments come from `main`: "%s is already in your cart." in `bundle.php` and `coupon-toast.php`, and "%s review".
+  - The Albanian showed in the picker, the notices, the drawer and the Size PDFs box. WooCommerce's "Any …" did not come up, so "Çfarëdo …" is still for the owner to check.
+- **The README walk-through:** followed on a new Product from blank, and it matched. The README now also names the Albanian wp-admin labels and the first-visit tour, and mentions `max_file_uploads`, since a bundle's 20 files hit PHP's default limit. The box's Femër-first order was fixed in ticket 09.
+- **Checks:** `phpcs` 0 errors and `phpstan` OK.
