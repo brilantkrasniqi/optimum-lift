@@ -1,7 +1,7 @@
 # Every other buy surface, and the Size on cart and order lines
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 07
 
 ## What to build
@@ -41,10 +41,10 @@ Fix only what is wrong, and list what you checked in the comment.
 
 On the seeded demo:
 
-- [ ] The shop page, the front page and a Training Plan Product page show "Choose your size" on every surface for the variable diets and the bundle, and each link lands on that Product's picker. Their Simple Products' buttons are unchanged.
-- [ ] Final CTA, value-stack and the mobile menu on the variable diet's own page lead to its picker.
-- [ ] The drawer, with a Training Plan in the cart, suggests the diet with "Choose your size". With a diet Size and a Training Plan in the cart, it offers the swap to the bundle, and the swap gives the bundle the same Size.
-- [ ] One order for a diet Size and a Training Plan shows the Size exactly once on the line on each of these:
+- [x] The shop page, the front page and a Training Plan Product page show "Choose your size" on every surface for the variable diets and the bundle, and each link lands on that Product's picker. Their Simple Products' buttons are unchanged.
+- [x] Final CTA, value-stack and the mobile menu on the variable diet's own page lead to its picker.
+- [x] The drawer, with a Training Plan in the cart, suggests the diet with "Choose your size". With a diet Size and a Training Plan in the cart, it offers the swap to the bundle, and the swap gives the bundle the same Size.
+- [x] One order for a diet Size and a Training Plan shows the Size exactly once on the line on each of these:
   - the drawer;
   - the checkout summary;
   - the classic cart page;
@@ -52,9 +52,9 @@ On the seeded demo:
   - the customer email and the admin email;
   - My Account › Orders and the order view;
   - the wp-admin order.
-- [ ] The thank-you `purchase` payload has the parent's `id` and the `variant` for the diet line (read it in the page source).
-- [ ] No PHP notice in `wp-content/debug.log` while doing all of the above.
-- [ ] `npm run build`, `npm run lint:php` and `npm run analyse:php` pass.
+- [x] The thank-you `purchase` payload has the parent's `id` and the `variant` for the diet line (read it in the page source).
+- [x] No PHP notice in `wp-content/debug.log` while doing all of the above.
+- [x] `npm run build`, `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
 
@@ -97,3 +97,32 @@ Built in the "Diets 08" commit; the boxes stay open until the owner's PC run.
 5. View the thank-you page's source. The `purchase` items have the parent `id` and `variant`.
 6. The Product page's JSON-LD passes https://validator.schema.org.
 7. `debug.log` stays empty.
+
+### 2026-10-08 (Claude)
+
+Checked on the owner's PC on be8100c, logged out, comparing every Product link with `main` on the same database.
+
+- **The shop, the front page and the Training Plan pages:**
+  - The bundle banner, the cards for 12-javor 826, Dieta Mesdhetare 837 and the bundle 843, and the cross-sells all became one "Choose your size" link to the Product's `#blej`.
+  - The badges on the diet cards now show the discount, because the variable parent has an anchor price.
+  - Every link for Training Plans 824 and 825 is identical to `main`.
+- **On the sized Products' own pages:** the header, mobile menu, final CTA and guarantee links go to `#blej`, with no `data-buy-now`. The price box and the bar submit the picker.
+  - The seed puts no value stack on a sized Product, so it was rendered with `wp eval`. Elsewhere it shows "Choose your size". On its own Product it keeps its label and links to `#blej`. Training Plan 824 keeps Buy Now.
+- **The drawer:** with only a Training Plan in the cart, it suggests 12-javor with "Choose your size". With 12-javor Mashkull · 80–90 kg and a Training Plan, it offers the swap, which adds bundle variation 847.
+- **Order 860:** Training Plan 824 and variation 830, paid cash on delivery, then set to Processing. The Size appears once on the line in each of these:
+  - the drawer and its remove label;
+  - the cart page;
+  - the checkout summary;
+  - the thank-you page;
+  - My Account's order view;
+  - the wp-admin order;
+  - the admin and customer emails, both HTML and plain.
+
+  The customer email and the thank-you page also list the download, "… — Mashkull · 80–90 kg", in their downloads table. That is the file's name, not the line. My Account's Orders list shows no line names at all, as in WooCommerce.
+- **The thank-you `purchase` items:** `{"id":826,…,"variant":"Mashkull · 80–90 kg"}`, next to the Training Plan with no `variant`.
+- **`debug.log`:** no new lines. `npm run build`, `phpcs` and `phpstan` pass.
+
+**Structured data:** it was checked locally, not with validator.schema.org. Each page has one JSON-LD block that parses. On the sized Products, WooCommerce's markup for a variable Product whose Sizes cost the same was a single price, with no sale end and no list price. A Simple Product on sale has both.
+- `sizes.php` now gives it the same shape through `woocommerce_structured_data_product_offer`: the sale price valid until the earliest sale end of the Sizes, then the regular price as the ListPrice.
+- That was added after the PC run, in "Diets 08: the sale in a sized Product's structured data". It is to be re-checked on the PC.
+- `image` is missing on every Product, Training Plans included. That is the same on `main`, because the demo Products have no featured image.

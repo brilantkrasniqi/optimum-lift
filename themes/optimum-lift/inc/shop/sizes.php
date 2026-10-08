@@ -290,3 +290,49 @@ add_action('wp_loaded', static function (): void {
     wc_add_notice(optimum_lift_size_error($product, $request), 'notice');
     unset($_REQUEST['add-to-cart'], $_GET['add-to-cart'], $_POST['add-to-cart']);
 }, 19);
+
+/*
+ * WooCommerce's structured data for a variable Product whose Sizes all cost
+ * the same is one price with no sale end and no list price, where a Simple
+ * Product on sale gets both. This gives it the same shape: the sale price
+ * valid until the earliest sale end of its Sizes, then the regular price as
+ * the ListPrice. An offer that already has a price type (a URL naming one
+ * Size) is left alone.
+ */
+add_filter('woocommerce_structured_data_product_offer', static function (mixed $offer, mixed $product): mixed {
+    if (
+        !is_array($offer)
+        || !$product instanceof WC_Product_Variable
+        || ($offer['@type'] ?? '') !== 'Offer'
+        || !$product->is_on_sale()
+    ) {
+        return $offer;
+    }
+
+    $specs = $offer['priceSpecification'] ?? null;
+    if (!is_array($specs) || count($specs) !== 1 || !is_array($specs[0]) || isset($specs[0]['priceType'])) {
+        return $offer;
+    }
+
+    $price   = (float) $product->get_variation_price('min', true);
+    $regular = (float) $product->get_variation_regular_price('min', true);
+    if ($regular <= $price) {
+        return $offer;
+    }
+
+    $sale = $specs[0];
+    $list = array_merge($sale, [
+        'price'     => wc_format_decimal($regular, wc_get_price_decimals()),
+        'priceType' => 'https://schema.org/ListPrice',
+    ]);
+
+    $end = optimum_lift_sale_end($product);
+    if ($end !== null) {
+        $sale['validThrough']     = gmdate('Y-m-d', $end);
+        $offer['priceValidUntil'] = $sale['validThrough'];
+    }
+
+    $offer['priceSpecification'] = [$sale, $list];
+
+    return $offer;
+}, 10, 2);
