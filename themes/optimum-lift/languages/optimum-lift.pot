@@ -2340,3 +2340,25 @@ msgid "%d PDF attached."
 msgid_plural "%d PDFs attached."
 msgstr[0] ""
 msgstr[1] ""
+
+#: inc/shop/account-diets.php
+msgctxt "My Account tab"
+msgid "Diets"
+msgstr ""
+
+#: inc/shop/account-diets.php
+msgid "Your diets"
+msgstr ""
+
+#: inc/shop/account-diets.php
+msgid "You do not have any diets yet."
+msgstr ""
+
+#: inc/shop/account-diets.php
+#, php-format
+msgid "Part of %s"
+msgstr ""
+
+#: inc/shop/account-diets.php
+msgid "Download PDF"
+msgstr ""

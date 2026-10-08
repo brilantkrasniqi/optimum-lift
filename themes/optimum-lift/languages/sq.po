@@ -2339,3 +2339,25 @@ msgid "%d PDF attached."
 msgid_plural "%d PDFs attached."
 msgstr[0] "%d PDF u bashkëngjit."
 msgstr[1] "%d PDF u bashkëngjitën."
+
+#: inc/shop/account-diets.php
+msgctxt "My Account tab"
+msgid "Diets"
+msgstr "Dietat"
+
+#: inc/shop/account-diets.php
+msgid "Your diets"
+msgstr "Dietat e tua"
+
+#: inc/shop/account-diets.php
+msgid "You do not have any diets yet."
+msgstr "Nuk ke ende asnjë dietë."
+
+#: inc/shop/account-diets.php
+#, php-format
+msgid "Part of %s"
+msgstr "Pjesë e %s"
+
+#: inc/shop/account-diets.php
+msgid "Download PDF"
+msgstr "Shkarko PDF"
