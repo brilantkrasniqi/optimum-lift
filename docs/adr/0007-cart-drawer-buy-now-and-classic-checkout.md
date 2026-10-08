@@ -1,6 +1,6 @@
 # ADR-0007: A server-rendered cart drawer, a separate Buy Now endpoint, and the classic checkout
 
-**Status:** Accepted (2026-09-16)
+**Status:** Accepted (2026-09-16). Amended by ADR-0013 (diet Sizes).
 
 Resolves the open consequence of ADR-0002 about WooCommerce's stylesheets.
 
@@ -45,7 +45,8 @@ Options for checkout:
   with" Products, used by the drawer, the Product page and the thank-you page.
 - **Buy Now is its own endpoint**, `?ol_buy_now=<id>`, handled on `wp_loaded`:
   empty the cart, add the one Product, redirect to checkout. It shares no
-  handler with add-to-cart.
+  handler with add-to-cart. (ADR-0013: a Product sold in Sizes also takes the
+  Size, and the Size is resolved before the cart is emptied.)
 - **Bundle rules live on the server:** adding a bundle removes its component
   lines; adding a component already covered by a bundle in the cart is a no-op
   with a notice.

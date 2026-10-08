@@ -1,0 +1,19 @@
+{
+  "name": "Sallatë me ton e qiqra",
+  "slots": ["lunch"],
+  "minutes": 10,
+  "tags": ["pescatarian", "dairy-free", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "tuna_water", "grams": 150 },
+    { "food": "chickpeas_cooked", "grams": 120 },
+    { "food": "lettuce", "grams": 80 },
+    { "food": "salad_mix", "grams": 150 },
+    { "food": "olive_oil", "grams": 10 }
+  ],
+  "steps": [
+    "Kullo tonin dhe qiqrat.",
+    "Prit perimet dhe përziej gjithçka me vajin dhe limon."
+  ],
+  "swap": "Ton → gjoks pule i zier, 150 g"
+}

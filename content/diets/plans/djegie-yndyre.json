@@ -1,0 +1,48 @@
+{
+  "plan": {
+    "name": "Djegie yndyre",
+    "tagline": "Humb dhjamë, ruaj muskujt",
+    "goal": "cutting",
+    "for_whom": "Për ata që stërviten 3–5 herë në javë dhe duan të humbin 0.5–1% të peshës në javë pa humbur forcë.",
+    "water_litres": 3
+  },
+  "how_to": [
+    "Ndiq ditët me radhë. Ditët e stërvitjes kanë më shumë karbohidrate; në ditët e pushimit ha më pak.",
+    "Peshoji ushqimet e papjekura me peshore kuzhine për 2 javët e para. Pastaj e mëson syri.",
+    "Nëse nuk të pëlqen një ushqim, përdor zëvendësimin poshtë çdo vakti. Kaloritë mbeten të njëjta.",
+    "Mos e hiq vaktin e ndërmjetëm: ai mban proteinën lart dhe urinë poshtë.",
+    "Peshohu çdo mëngjes dhe shiko mesataren e javës, jo një ditë të vetme."
+  ],
+  "adjust": [
+    "Nëse nuk humb peshë për 2 javë rresht, hiq 1 fetë bukë ose 20 g oriz në ditë.",
+    "Nëse humb më shumë se 1 kg në javë dhe ndihesh pa energji, shto 1 frut në ditë."
+  ],
+  "days": [
+    {
+      "week": "Java 1",
+      "title": "Dita 1",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 1950,
+      "tip": "Gatuaj darkën dyfish: gjysma bëhet dreka e nesërme.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "omelete-me-spinaq-e-djathe", "grams": { "egg_white": 100, "white_cheese": 30, "wholegrain_bread": 60 } },
+        { "slot": "snack", "time": "11:00", "recipe": "kos-me-molle-e-arra", "grams": { "walnuts": 15 } },
+        { "slot": "lunch", "time": "14:00", "recipe": "pule-ne-skare-oriz-e-sallate-shope", "grams": { "rice": 70 } },
+        { "slot": "dinner", "time": "19:30", "recipe": "fasule-me-mish-vici" }
+      ]
+    },
+    {
+      "week": "Java 1",
+      "title": "Dita 2",
+      "type": "Ditë pushimi",
+      "kcal_target": 1750,
+      "tip": "Ditë pushimi nuk do të thotë ditë pa lëvizje: bëj 8–10 mijë hapa.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "tershere-me-kos-e-fruta-pylli" },
+        { "slot": "snack", "time": "11:00", "recipe": "buke-me-gjize-e-domate" },
+        { "slot": "lunch", "time": "14:00", "recipe": "sallate-me-ton-e-qiqra" },
+        { "slot": "dinner", "time": "19:30", "recipe": "salmon-me-patate-e-brokoli", "grams": { "potato": 200 } }
+      ]
+    }
+  ]
+}

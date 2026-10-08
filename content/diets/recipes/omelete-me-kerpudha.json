@@ -1,0 +1,19 @@
+{
+  "name": "Omëletë me kërpudha",
+  "slots": ["breakfast"],
+  "minutes": 10,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 100 },
+    { "food": "egg_white", "grams": 200 },
+    { "food": "mushrooms", "grams": 100 },
+    { "food": "kashkaval", "grams": 20 },
+    { "food": "wholegrain_bread", "grams": 75 }
+  ],
+  "steps": [
+    "Kaurdis kërpudhat 4 minuta në tigan pa vaj.",
+    "Hidh vezët e rrahura, kaçkavallin sipër, mbuloje 3 minuta."
+  ],
+  "swap": "Kërpudha → spinaq, 100 g"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Tost me vezë",
+  "slots": ["breakfast"],
+  "minutes": 10,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 100 },
+    { "food": "wholegrain_bread", "grams": 60 },
+    { "food": "spice", "label": "Piper i zi", "household": "sipas dëshirës" }
+  ],
+  "steps": [
+    "Skuq vezët në tigan pa vaj.",
+    "Thek bukën dhe vendos vezët sipër."
+  ],
+  "swap": "Bukë integrale → patate, 40 g"
+}

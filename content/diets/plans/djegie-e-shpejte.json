@@ -1,0 +1,211 @@
+{
+  "plan": {
+    "name": "Djegie e shpejtë",
+    "tagline": "14 ditë · humb dhjamë shpejt, pa uri",
+    "for_whom": "Për burra që stërviten 4 herë në javë dhe duan të humbin rreth 1% të peshës në javë, pa humbur forcë dhe pa ngelur pa ngrënë.",
+    "water_litres": 3.5
+  },
+  "sizes": {
+    "genders": [
+      "male"
+    ]
+  },
+  "how_to": [
+    "Plani ka 14 ditë të ndryshme. Pas Ditës 14 fillo sërish nga Dita 1.",
+    "Ditët e stërvitjes janë 1, 2, 4, 5 (dhe 8, 9, 11, 12). Nëse stërvitesh në ditë të tjera, ndërro ditët me njëra-tjetrën, jo vaktet.",
+    "Proteina është e lartë çdo ditë: ajo mban muskujt dhe të ngop. Mos e ul.",
+    "Peshoji ushqimet e papjekura me peshore kuzhine. Në një dietë të shpejtë, 50 g oriz më shumë ka rëndësi.",
+    "Nëse nuk të pëlqen një ushqim, përdor zëvendësimin poshtë vaktit.",
+    "Peshohu çdo mëngjes dhe shiko mesataren e javës."
+  ],
+  "adjust": [
+    "Qëllimi është 0.7–1% e peshës në javë. Nëse humb më shumë dhe ndihesh pa fuqi, shto 1 frut në ditë.",
+    "Nëse pesha nuk lëviz 2 javë rresht, hiq 1 fetë bukë në ditë.",
+    "Mos e mbaj këtë plan më shumë se 8 javë rresht. Pastaj ha 1–2 javë sa për mirëmbajtje dhe kthehu.",
+    "Nëse ndihesh i lodhur ose të bie forca në stërvitje për më shumë se një javë, kalo te një dietë më e butë."
+  ],
+  "days": [
+    {
+      "week": "Java 1",
+      "title": "Dita 1",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Pi 2 gota ujë para çdo vakti: ndihmon me urinë.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "omelete-me-spinaq-e-djathe" },
+        { "slot": "snack", "time": "11:00", "recipe": "kos-me-molle-e-arra" },
+        { "slot": "lunch", "time": "14:00", "recipe": "pule-ne-skare-oriz-e-sallate-shope" },
+        { "slot": "dinner", "time": "19:30", "recipe": "fasule-me-mish-vici" }
+      ]
+    },
+    {
+      "week": "Java 1",
+      "title": "Dita 2",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Stërvitja e forcës mban muskujt gjatë dietës. Mos e lër.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "tershere-me-proteine-e-fruta-pylli" },
+        { "slot": "snack", "time": "11:00", "recipe": "shejk-proteine-me-banane" },
+        { "slot": "lunch", "time": "14:00", "recipe": "pule-me-patate-ne-tave" },
+        { "slot": "dinner", "time": "19:30", "recipe": "salmon-me-patate-e-brokoli" }
+      ]
+    },
+    {
+      "week": "Java 1",
+      "title": "Dita 3",
+      "type": "Ditë pushimi",
+      "kcal_target": 1800,
+      "tip": "Ditë pushimi: bëj 8–10 mijë hapa, por pa stërvitje të rëndë.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "kos-me-tershere-molle-e-kanelle" },
+        { "slot": "snack", "time": "11:00", "recipe": "gjize-me-domate-e-kastravec" },
+        { "slot": "lunch", "time": "14:00", "recipe": "sallate-me-ton-e-qiqra" },
+        { "slot": "dinner", "time": "19:00", "recipe": "speca-te-mbushura-me-mish-e-oriz" }
+      ]
+    },
+    {
+      "week": "Java 1",
+      "title": "Dita 4",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Gatuaj pulën e 2 ditëve njëherësh dhe ruaje në frigorifer.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "veze-te-ziera-gjize-e-domate" },
+        { "slot": "snack", "time": "11:00", "recipe": "buke-me-ton-e-domate" },
+        { "slot": "lunch", "time": "14:00", "recipe": "makarona-me-mish-vici-e-domate" },
+        { "slot": "dinner", "time": "19:30", "recipe": "omelete-me-perime-e-sallate" }
+      ]
+    },
+    {
+      "week": "Java 1",
+      "title": "Dita 5",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Uria vjen në valë dhe kalon pas 20 minutash. Pi ujë ose çaj.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "petulla-me-tershere-e-proteine" },
+        { "slot": "snack", "time": "11:00", "recipe": "kos-me-luleshtrydhe-e-bajame" },
+        { "slot": "lunch", "time": "14:00", "recipe": "oriz-me-pule-e-perime" },
+        { "slot": "dinner", "time": "19:30", "recipe": "makarona-me-ton-e-domate" }
+      ]
+    },
+    {
+      "week": "Java 1",
+      "title": "Dita 6",
+      "type": "Ditë pushimi",
+      "kcal_target": 1800,
+      "tip": "Fli 7–9 orë: gjumi i pakët e shton urinë të nesërmen.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:30", "recipe": "gjize-me-mjalte-e-arra" },
+        { "slot": "snack", "time": "11:00", "recipe": "molle-gjalpe-kikiriku-e-qumesht" },
+        { "slot": "lunch", "time": "14:00", "recipe": "gjeldet-me-patate-te-embel-e-brokoli" },
+        { "slot": "dinner", "time": "19:00", "recipe": "kungulleshe-e-mbushur-me-gjeldet" }
+      ]
+    },
+    {
+      "week": "Java 1",
+      "title": "Dita 7",
+      "type": "Ditë pushimi",
+      "kcal_target": 1800,
+      "tip": "Peshohu nesër në mëngjes, pas tualetit, para ngrënies.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:30", "recipe": "veze-me-domate-e-speca" },
+        { "slot": "snack", "time": "11:00", "recipe": "veze-te-ziera-me-perime" },
+        { "slot": "lunch", "time": "13:30", "recipe": "fergese-me-pule" },
+        { "slot": "dinner", "time": "19:00", "recipe": "qiqra-me-spinaq-e-kos" }
+      ]
+    },
+    {
+      "week": "Java 2",
+      "title": "Dita 8",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Java e dytë: ndryshojnë vaktet, rregullat mbeten të njëjta.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "shejk-me-banane-tershere-e-proteine" },
+        { "slot": "snack", "time": "11:00", "recipe": "kos-me-tershere-e-mjalte" },
+        { "slot": "lunch", "time": "14:00", "recipe": "qofte-vici-me-oriz-e-sallate" },
+        { "slot": "dinner", "time": "19:30", "recipe": "peshk-ne-furre-me-perime" }
+      ]
+    },
+    {
+      "week": "Java 2",
+      "title": "Dita 9",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Erëzat, limoni dhe uthulla nuk kanë kalori. Përdori lirshëm.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "tost-me-veze-e-kackavall" },
+        { "slot": "snack", "time": "11:00", "recipe": "shejk-me-fruta-pylli" },
+        { "slot": "lunch", "time": "14:00", "recipe": "peshk-i-bardhe-me-patate-e-sallate" },
+        { "slot": "dinner", "time": "19:00", "recipe": "musaka-e-lehte-me-patellxhan" }
+      ]
+    },
+    {
+      "week": "Java 2",
+      "title": "Dita 10",
+      "type": "Ditë pushimi",
+      "kcal_target": 1800,
+      "tip": "Kafeja pa sheqer para stërvitjes të jep energji pa kalori.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:30", "recipe": "kos-me-fruta-pylli-e-bajame" },
+        { "slot": "snack", "time": "11:00", "recipe": "gjize-me-portokall" },
+        { "slot": "lunch", "time": "13:30", "recipe": "gjelle-me-thjerreza-e-pule" },
+        { "slot": "dinner", "time": "19:00", "recipe": "supe-pule-me-perime" }
+      ]
+    },
+    {
+      "week": "Java 2",
+      "title": "Dita 11",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Nëse ha jashtë, zgjidh mish në skarë dhe sallatë pa salcë.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "pite-e-lehte-me-spinaq-e-gjize" },
+        { "slot": "snack", "time": "11:00", "recipe": "sanduic-me-ton-e-sallate" },
+        { "slot": "lunch", "time": "14:00", "recipe": "tave-kosi-me-pule-e-lehte" },
+        { "slot": "dinner", "time": "19:30", "recipe": "sallate-me-veze-ton-e-patate" }
+      ]
+    },
+    {
+      "week": "Java 2",
+      "title": "Dita 12",
+      "type": "Ditë stërvitjeje",
+      "kcal_target": 2000,
+      "tip": "Përgatit vaktet e fundjavës që të premten.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:00", "recipe": "omelete-me-kerpudha" },
+        { "slot": "snack", "time": "11:00", "recipe": "kos-me-banane-e-bajame" },
+        { "slot": "lunch", "time": "14:00", "recipe": "pule-me-kerpudha-e-oriz" },
+        { "slot": "dinner", "time": "19:00", "recipe": "sarma-me-laker-e-mish" }
+      ]
+    },
+    {
+      "week": "Java 2",
+      "title": "Dita 13",
+      "type": "Ditë pushimi",
+      "kcal_target": 1800,
+      "tip": "Mesatarja e peshës së javës tregon progresin, jo një ditë.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:30", "recipe": "qull-tershere-me-dardhe" },
+        { "slot": "snack", "time": "11:00", "recipe": "gjize-me-dardhe" },
+        { "slot": "lunch", "time": "13:30", "recipe": "mish-vici-me-bishtaja" },
+        { "slot": "dinner", "time": "19:00", "recipe": "tave-me-presh-e-mish" }
+      ]
+    },
+    {
+      "week": "Java 2",
+      "title": "Dita 14",
+      "type": "Ditë pushimi",
+      "kcal_target": 1800,
+      "tip": "Plani përsëritet: nesër fillon sërish nga Dita 1.",
+      "meals": [
+        { "slot": "breakfast", "time": "08:30", "recipe": "tost-me-avokado-e-veze" },
+        { "slot": "snack", "time": "11:00", "recipe": "qumesht-me-proteine-e-molle" },
+        { "slot": "lunch", "time": "13:30", "recipe": "sallate-cezar-me-pule" },
+        { "slot": "dinner", "time": "19:00", "recipe": "gjeldet-me-pure-patatesh" }
+      ]
+    }
+  ]
+}

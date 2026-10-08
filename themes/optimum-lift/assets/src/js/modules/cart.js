@@ -9,6 +9,13 @@
  * instead. [data-buy-now] is plain navigation and is never intercepted
  * (pending-links.js only shows that it is loading).
  *
+ * The Size picker's add button ([data-size-add]) submits its form; the add
+ * goes through the drawer on `submit`, after the browser has checked that
+ * every group has a choice. If the request fails, the form is submitted
+ * natively, and WooCommerce adds it on a page load. An add that still needs a
+ * Size (the endpoint's `needs_choice`) closes the drawer and points at the
+ * picker; from anywhere else, it goes to the Product's picker.
+ *
  * Nothing waits silently: the control that started a request is aria-busy (a
  * spinner, components.css) and the drawer has data-busy (a moving bar, dimmed
  * totals and, for an add, a placeholder line; drawer.css) until it answers.
@@ -226,6 +233,47 @@ export function init() {
       return;
     }
 
+    if (result.needs_choice && result.url) {
+      window.location.href = result.url;
+      return;
+    }
+
+    if (result.ok && result.added !== false && result.item) {
+      track('add_to_cart', result.item);
+    }
+  }
+
+  async function addSize(form, button) {
+    const data = { product_id: button.value };
+    new FormData(form).forEach((value, key) => {
+      if (key === 'variation_id' || key.startsWith('attribute_')) {
+        data[key] = String(value);
+      }
+    });
+
+    showNotice('');
+    open(button);
+
+    const result = await run(button, 'ol_add_to_cart', data, 'add');
+
+    if (!result) {
+      form.dataset.native = 'true';
+      form.requestSubmit(button);
+      return;
+    }
+
+    if (result.needs_choice) {
+      showNotice('');
+      close();
+      const notice = form.querySelector('[data-size-notice]');
+      if (notice) {
+        notice.innerHTML = result.notice || '';
+      }
+      const empty = [...form.querySelectorAll('fieldset')].find((group) => !group.querySelector('input:checked'));
+      (empty || form.querySelector('fieldset'))?.querySelector('input:not([disabled])')?.focus();
+      return;
+    }
+
     if (result.ok && result.added !== false && result.item) {
       track('add_to_cart', result.item);
     }
@@ -234,6 +282,11 @@ export function init() {
   async function swapToBundle(el) {
     showNotice('');
     const result = await run(el, 'ol_swap_to_bundle', { bundle_id: el.dataset.cartSwap, nonce: el.dataset.nonce || '' }, 'update');
+
+    if (result?.needs_choice && result.url) {
+      window.location.href = result.url;
+      return;
+    }
 
     if (result?.ok && result.added !== false && result.item) {
       track('add_to_cart', result.item);
@@ -303,6 +356,31 @@ export function init() {
       } catch (error) {
         console.error(error);
       }
+    }
+  });
+
+  document.addEventListener('submit', (e) => {
+    const form = e.target;
+    const button = e.submitter;
+    if (
+      !(form instanceof HTMLFormElement)
+      || !form.matches('[data-size-picker]')
+      || !(button instanceof HTMLButtonElement)
+      || !button.matches('[data-size-add]')
+      || document.body.classList.contains('woocommerce-cart')
+    ) {
+      return;
+    }
+
+    // The fallback after a failed request: let the browser submit it.
+    if (form.dataset.native) {
+      delete form.dataset.native;
+      return;
+    }
+
+    e.preventDefault();
+    if (!button.hasAttribute('aria-busy')) {
+      addSize(form, button);
     }
   });
 

@@ -1,0 +1,16 @@
+{
+  "name": "Shejk me fruta pylli",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "whey", "grams": 30 },
+    { "food": "milk_15", "grams": 200 },
+    { "food": "berries", "grams": 100 }
+  ],
+  "steps": [
+    "Përzieji në blender 30 sekonda."
+  ],
+  "swap": "Fruta pylli → banane, 80 g"
+}

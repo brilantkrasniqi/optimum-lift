@@ -1,0 +1,17 @@
+{
+  "name": "Kos me fruta pylli e bajame",
+  "slots": ["breakfast"],
+  "minutes": 3,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "greek_yogurt_2", "grams": 300 },
+    { "food": "berries", "grams": 150 },
+    { "food": "almonds", "grams": 10 }
+  ],
+  "steps": [
+    "Hidh kosin në tas.",
+    "Shto frutat dhe bajamet e thyera sipër."
+  ],
+  "swap": "Fruta pylli → luleshtrydhe, 200 g"
+}

@@ -19,13 +19,14 @@ import * as buybar from './modules/buybar.js';
 import * as stickyCta from './modules/sticky-cta.js';
 import * as exitIntent from './modules/exit-intent.js';
 import * as shopSort from './modules/shop-sort.js';
+import * as sizePicker from './modules/size-picker.js';
 import * as cart from './modules/cart.js';
 import * as pendingLinks from './modules/pending-links.js';
 import * as couponToast from './modules/coupon-toast.js';
 
 // consent before track: a visitor who accepted earlier gets the Pixel queued
 // before track.js sends the events the page printed.
-const modules = [consent, track, countdown, menu, reveal, accordion, tabs, gallery, buybar, stickyCta, exitIntent, shopSort, cart, pendingLinks, couponToast];
+const modules = [consent, track, countdown, menu, reveal, accordion, tabs, gallery, buybar, stickyCta, exitIntent, shopSort, sizePicker, cart, pendingLinks, couponToast];
 
 function boot() {
   modules.forEach((module) => {

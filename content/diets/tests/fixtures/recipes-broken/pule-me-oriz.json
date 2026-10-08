@@ -1,0 +1,17 @@
+{
+  "name": "Pulë me oriz",
+  "slots": ["lunch", "dinner"],
+  "minutes": 25,
+  "tags": ["gluten-free", "meal-prep"],
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 150 },
+    { "food": "rice", "grams": 70, "note": "i papjekur" },
+    { "food": "olive_oil", "grams": 10 },
+    { "food": "salad_mix", "grams": 100 }
+  ],
+  "steps": [
+    "Zieje orizin.",
+    "Pjek pulën në skarë dhe shërbeje me sallatën."
+  ],
+  "swap": "Oriz → patate, 300 g"
+}

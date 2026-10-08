@@ -187,7 +187,7 @@ function optimum_lift_cross_sells_for(array $products, int $limit = 3): array
 {
     $owned = [];
     foreach ($products as $product) {
-        $owned[] = $product->get_id();
+        $owned[] = optimum_lift_base_id($product);
         foreach (optimum_lift_bundle_components($product) as $component) {
             $owned[] = $component->get_id();
         }

@@ -1,6 +1,6 @@
 # ADR-0006: Storefront sales content is ACF Flexible Content registered by the theme; bundles are Simple Products validated against their components
 
-**Status:** Accepted (2026-09-16)
+**Status:** Accepted (2026-09-16). Amended by ADR-0013 (diet Sizes).
 
 ## Context
 

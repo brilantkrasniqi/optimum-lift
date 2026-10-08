@@ -1,0 +1,20 @@
+{
+  "name": "Tost me vezë e kaçkavall",
+  "slots": ["breakfast"],
+  "minutes": 8,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "wholegrain_bread", "grams": 140 },
+    { "food": "egg", "grams": 100 },
+    { "food": "egg_white", "grams": 100 },
+    { "food": "kashkaval", "grams": 20 },
+    { "food": "tomato", "grams": 100 }
+  ],
+  "steps": [
+    "Përziej vezët me të bardhat dhe piqi si omëletë e hollë.",
+    "Vendose mes bukës me kaçkavallin dhe domaten.",
+    "Ngrohe në tigan 2 minuta për anë."
+  ],
+  "swap": "Kaçkavall → djathë i bardhë, 25 g"
+}

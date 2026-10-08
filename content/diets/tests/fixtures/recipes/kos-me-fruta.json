@@ -1,0 +1,11 @@
+{
+  "name": "Kos me fruta",
+  "slots": ["snack"],
+  "minutes": 2,
+  "ingredients": [
+    { "food": "greek_yogurt_2", "grams": 200 },
+    { "food": "berries", "grams": 100 },
+    { "food": "honey", "grams": 14 }
+  ],
+  "steps": ["Përziej kosin me frutat dhe mjaltin."]
+}

@@ -175,10 +175,12 @@ $split = $side_image !== '' || $mockup !== null;
                 <?php endif; ?>
             </div>
 
-            <?php if ($cta_product !== null) : ?>
+            <?php if ($cta_product !== null) :
+                $cta_link = optimum_lift_buy_link($cta_product);
+                ?>
                 <div class="<?php echo esc_attr($split ? 'mt-7' : 'reveal mt-7 text-center'); ?>">
-                    <a href="<?php echo esc_url(optimum_lift_buy_now_url($cta_product)); ?>" rel="nofollow" data-buy-now="<?php echo esc_attr((string) $cta_product->get_id()); ?>" data-cta="value-stack" class="btn btn-light btn-lg gap-2.5">
-                        <span><?php echo optimum_lift_replace_tokens($cta_label, $cta_product); ?></span>
+                    <a href="<?php echo esc_url($cta_link['url']); ?>"<?php echo $cta_link['buy_now'] ? ' rel="nofollow" data-buy-now="' . esc_attr((string) $cta_product->get_id()) . '"' : ''; ?> data-cta="value-stack" class="btn btn-light btn-lg gap-2.5">
+                        <span><?php echo $cta_link['choose'] ? esc_html__('Choose your size', 'optimum-lift') : optimum_lift_replace_tokens($cta_label, $cta_product); ?></span>
                         <?php echo optimum_lift_icon('arrow-right', 'h-5 w-5 shrink-0'); ?>
                     </a>
                 </div>

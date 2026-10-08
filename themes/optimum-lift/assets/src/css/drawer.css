@@ -170,6 +170,14 @@
     text-underline-offset: 2px;
   }
 
+  /* The Size of a Product sold in Sizes ("Mashkull · 80–90 kg"). */
+  .olc-item-size {
+    margin-top: 0.1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-zinc-400);
+  }
+
   .olc-item-price {
     display: flex;
     flex-wrap: wrap;

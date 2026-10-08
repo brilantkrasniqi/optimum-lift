@@ -1,3 +1,86 @@
 /*
  * Product page styles (ticket 05). Only what utilities cannot express; @layer components.
  */
+
+@layer components {
+  /*
+   * The Size picker (template-parts/product/size-picker.php): radio pills that
+   * read as a choice, unlike the included-versions check pills beside them.
+   * The radio itself stays in the label, visually hidden but focusable, so
+   * the arrow keys move the choice and the browser's validation bubble points
+   * at it.
+   */
+  .ol-size-picker {
+    @apply grid gap-4;
+  }
+
+  .ol-size-group {
+    @apply m-0 min-w-0 border-0 p-0;
+  }
+
+  .ol-size-legend {
+    @apply mb-2.5 p-0 text-[10px] font-extrabold tracking-[.2em] text-zinc-400 uppercase;
+  }
+
+  .ol-size-options {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .ol-size-pill {
+    @apply relative inline-flex cursor-pointer;
+  }
+
+  .ol-size-pill input {
+    @apply absolute inset-0 m-0 h-full w-full cursor-pointer opacity-0;
+    /*
+     * The browser scrolls to the first empty radio when a buy button is
+     * pressed too early: clear the sticky header and the buy bar (under the
+     * header on desktop, at the bottom on phones), and show the legend too.
+     */
+    scroll-margin-top: 10.5rem;
+    scroll-margin-bottom: 6rem;
+  }
+
+  .ol-size-pill span {
+    @apply inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-xl border border-white/15 bg-transparent px-4 text-[13px] font-extrabold whitespace-nowrap text-zinc-200 transition;
+  }
+
+  /* An empty ring that fills when chosen: the radio's own cue. */
+  .ol-size-pill span::before {
+    content: "";
+    @apply size-3 shrink-0 rounded-full border-2 border-zinc-500 transition;
+  }
+
+  .ol-size-pill:hover span {
+    @apply border-white/35 text-white;
+  }
+
+  .ol-size-pill input:focus-visible + span {
+    @apply outline-2 outline-offset-2 outline-acid;
+  }
+
+  .ol-size-pill input:checked + span {
+    @apply border-acid bg-acid/10 text-white;
+  }
+
+  .ol-size-pill input:checked + span::before {
+    @apply border-acid bg-acid shadow-[inset_0_0_0_2px_var(--wp--preset--color--surface)];
+  }
+
+  .ol-size-pill input:disabled,
+  .ol-size-pill:has(input:disabled) {
+    @apply cursor-not-allowed;
+  }
+
+  .ol-size-pill input:disabled + span {
+    @apply border-white/[.07] text-zinc-600 line-through;
+  }
+
+  .ol-size-pill input:disabled + span::before {
+    @apply border-zinc-700;
+  }
+
+  .ol-size-notice:empty {
+    @apply hidden;
+  }
+}

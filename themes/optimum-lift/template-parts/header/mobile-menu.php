@@ -15,13 +15,15 @@ $product = optimum_lift_current_product();
 $shop    = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/');
 $bundle  = $product === null && function_exists('optimum_lift_find_bundle') ? optimum_lift_find_bundle() : null;
 
-// `html` is escaped here because the Product price is markup.
+// `html` is escaped here because the Product price is markup. A Product
+// sold in Sizes leads to its picker (sizes.php).
 if ($product !== null) {
-    $cta = [
-        'url'     => function_exists('optimum_lift_buy_now_url') ? optimum_lift_buy_now_url($product) : '#blej',
+    $sized = function_exists('optimum_lift_needs_choice') && optimum_lift_needs_choice($product);
+    $cta   = [
+        'url'     => function_exists('optimum_lift_buy_now_url') && !$sized ? optimum_lift_buy_now_url($product) : '#blej',
         /* translators: %s: the Product's price. */
-        'html'    => sprintf(esc_html__('Buy now — %s', 'optimum-lift'), wp_kses_post(wc_price(wc_get_price_to_display($product)))),
-        'buy_now' => $product->get_id(),
+        'html'    => sprintf(esc_html__('Buy now — %s', 'optimum-lift'), wp_kses_post(wc_price($sized ? optimum_lift_current_price($product) : wc_get_price_to_display($product)))),
+        'buy_now' => $sized ? 0 : $product->get_id(),
         'id'      => 'menu-buy-now',
     ];
 } elseif (is_front_page()) {

@@ -1,0 +1,19 @@
+{
+  "name": "Vezë të ziera me perime",
+  "slots": ["snack"],
+  "minutes": 10,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 100 },
+    { "food": "cucumber", "grams": 150 },
+    { "food": "pepper", "grams": 100 },
+    { "food": "wholegrain_bread", "grams": 35 },
+    { "food": "cottage_cheese", "grams": 80 }
+  ],
+  "steps": [
+    "Zieji vezët 9 minuta.",
+    "Prit perimet në shkopinj dhe hae me gjizën."
+  ],
+  "swap": "Vezë → ton, 80 g"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Kungulleshë e mbushur me gjeldet",
+  "slots": ["dinner"],
+  "minutes": 40,
+  "tags": ["gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "zucchini", "grams": 300 },
+    { "food": "turkey_breast", "grams": 160, "note": "i grirë" },
+    { "food": "tomato_sauce", "grams": 100 },
+    { "food": "kashkaval", "grams": 20 },
+    { "food": "rice", "grams": 40 }
+  ],
+  "steps": [
+    "Prit kungulleshat në gjysmë dhe hiq mesin.",
+    "Kaurdis gjeldetin me mesin e kungulleshës dhe salcën, mbushi.",
+    "Hidh kaçkavallin sipër, piqi 25 minuta në 200 °C; hae me oriz."
+  ],
+  "swap": "Gjeldet → mish viçi 5%, 150 g"
+}

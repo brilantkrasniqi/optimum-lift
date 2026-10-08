@@ -45,16 +45,16 @@
    * its icons give way to a spinner after the label, so the button keeps its
    * size and says it is working. The Buy Now pulse stops meanwhile.
    */
-  :is([data-add-to-cart], [data-buy-now], [data-cart-swap], [data-begin-checkout], .olc-rm)[aria-busy="true"] {
+  :is([data-add-to-cart], [data-size-add], [data-buy-now], [data-buy-now-submit], [data-cart-swap], [data-begin-checkout], .olc-rm)[aria-busy="true"] {
     @apply pointer-events-none cursor-progress;
     animation: none;
   }
 
-  :is([data-add-to-cart], [data-buy-now], [data-cart-swap], [data-begin-checkout])[aria-busy="true"] > svg {
+  :is([data-add-to-cart], [data-size-add], [data-buy-now], [data-buy-now-submit], [data-cart-swap], [data-begin-checkout])[aria-busy="true"] > svg {
     display: none;
   }
 
-  :is([data-add-to-cart], [data-buy-now], [data-cart-swap], [data-begin-checkout], .olc-rm)[aria-busy="true"]::after {
+  :is([data-add-to-cart], [data-size-add], [data-buy-now], [data-buy-now-submit], [data-cart-swap], [data-begin-checkout], .olc-rm)[aria-busy="true"]::after {
     content: "";
     display: inline-block;
     flex: none;

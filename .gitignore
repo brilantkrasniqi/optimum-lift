@@ -10,3 +10,7 @@
 /node_modules/
 /vendor/
 /themes/optimum-lift/assets/dist/
+
+# Diet PDFs and the renderer's own dependencies
+/content/diets/out/
+/content/diets/node_modules/

@@ -13,12 +13,17 @@
 declare(strict_types=1);
 
 /**
- * An ACF field value, or null when ACF is inactive.
+ * An ACF field value, or null when ACF is inactive. A variation reads its
+ * parent's fields (sizes.php).
  */
 function optimum_lift_field(int $post_id, string $name): mixed
 {
     if ($post_id <= 0 || !function_exists('get_field')) {
         return null;
+    }
+
+    if (get_post_type($post_id) === 'product_variation') {
+        $post_id = wp_get_post_parent_id($post_id);
     }
 
     return get_field($name, $post_id);
@@ -44,7 +49,7 @@ function optimum_lift_kind_slugs(): array
  */
 function optimum_lift_product_kind(WC_Product $p): ?string
 {
-    $terms = get_the_terms($p->get_id(), 'product_cat');
+    $terms = get_the_terms(optimum_lift_base_id($p), 'product_cat');
     if (!is_array($terms)) {
         return null;
     }
@@ -71,12 +76,15 @@ function optimum_lift_is_bundle(WC_Product $p): bool
 
 /**
  * The bundle's published, purchasable components, in the order the editor set.
+ * For a bundle sold in Sizes, or one of its variations, the components are
+ * the parent Products.
  *
  * @return list<WC_Product>
  */
 function optimum_lift_bundle_components(WC_Product $bundle): array
 {
-    $ids = optimum_lift_field($bundle->get_id(), 'ol_bundle_components');
+    $bundle = optimum_lift_base_product($bundle);
+    $ids    = optimum_lift_field($bundle->get_id(), 'ol_bundle_components');
     if (!is_array($ids)) {
         return [];
     }
@@ -158,7 +166,8 @@ function optimum_lift_bundles(): array
 }
 
 /**
- * The first bundle, or with $containing, the first bundle that includes it.
+ * The first bundle, or with $containing, the first bundle that includes it (a
+ * variation is included when its parent is).
  */
 function optimum_lift_find_bundle(?WC_Product $containing = null): ?WC_Product
 {
@@ -168,7 +177,7 @@ function optimum_lift_find_bundle(?WC_Product $containing = null): ?WC_Product
         }
 
         foreach (optimum_lift_bundle_components($bundle) as $component) {
-            if ($component->get_id() === $containing->get_id()) {
+            if ($component->get_id() === optimum_lift_base_id($containing)) {
                 return $bundle;
             }
         }
@@ -194,7 +203,7 @@ function optimum_lift_complement_kind(WC_Product $p): ?string
  */
 function optimum_lift_goal(WC_Product $p): ?string
 {
-    $names = wc_get_product_terms($p->get_id(), 'pa_objektivi', ['fields' => 'names']);
+    $names = wc_get_product_terms(optimum_lift_base_id($p), 'pa_objektivi', ['fields' => 'names']);
     $first = reset($names);
 
     return is_string($first) && $first !== '' ? optimum_lift_plain_text($first) : null;
@@ -228,7 +237,7 @@ function optimum_lift_category_label(WC_Product $p): string
         return $label;
     }
 
-    $terms   = get_the_terms($p->get_id(), 'product_cat');
+    $terms   = get_the_terms(optimum_lift_base_id($p), 'product_cat');
     $default = (int) get_option('default_product_cat');
     foreach (is_array($terms) ? $terms : [] as $term) {
         if ($term->term_id !== $default) {
@@ -402,7 +411,8 @@ function optimum_lift_catalog_count(): int
 /**
  * "Bought together" Products: the native Cross-sells, else Products of the
  * complementary kind, with the bundle that contains $p (or the first bundle)
- * taking the last slot. A bundle never cross-sells itself.
+ * taking the last slot. A bundle never cross-sells itself. A variation
+ * cross-sells what its parent does.
  *
  * @return list<WC_Product>
  */
@@ -411,6 +421,8 @@ function optimum_lift_cross_sells(WC_Product $p, int $limit = 3): array
     if ($limit <= 0) {
         return [];
     }
+
+    $p = optimum_lift_base_product($p);
 
     $bundle     = null;
     $candidates = [];
@@ -459,10 +471,16 @@ function optimum_lift_cross_sells(WC_Product $p, int $limit = 3): array
 }
 
 /**
- * The Buy Now link (ADR-0007). Unescaped: pass it through esc_url() at output.
+ * The Buy Now link (ADR-0007). A Product that needs a Size links to its
+ * picker (`#blej`) instead; a variation buys that Size. Unescaped: pass it
+ * through esc_url() at output.
  */
 function optimum_lift_buy_now_url(WC_Product $p): string
 {
+    if (optimum_lift_needs_choice($p)) {
+        return $p->get_permalink() . '#blej';
+    }
+
     return home_url('/?ol_buy_now=' . $p->get_id());
 }
 

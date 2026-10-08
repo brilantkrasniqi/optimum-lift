@@ -1,0 +1,19 @@
+{
+  "name": "Makarona me ton e domate",
+  "slots": ["dinner"],
+  "minutes": 15,
+  "tags": ["pescatarian", "dairy-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "pasta", "grams": 80 },
+    { "food": "tuna_water", "grams": 150 },
+    { "food": "tomato_sauce", "grams": 150 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Zieji makaronat.",
+    "Ngroh salcën me vajin, shto tonin e kulluar.",
+    "Përziej me makaronat dhe borzilok."
+  ],
+  "swap": "Ton → gjoks pule, 150 g"
+}

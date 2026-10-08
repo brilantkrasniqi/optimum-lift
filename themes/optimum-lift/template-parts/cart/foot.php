@@ -21,7 +21,10 @@ foreach ($lines as $product) {
     $price    = optimum_lift_current_price($product);
     $anchors += optimum_lift_anchor_price($product);
     $current += $price;
-    $items[]  = ['id' => $product->get_id(), 'name' => optimum_lift_plain_text($product->get_name()), 'price' => $price];
+    $base     = optimum_lift_base_product($product);
+    $variant  = optimum_lift_size_label($product);
+    $items[]  = ['id' => $base->get_id(), 'name' => optimum_lift_plain_text($base->get_name()), 'price' => $price]
+        + ($variant !== '' ? ['variant' => $variant] : []);
 }
 
 $decimals = wc_get_price_decimals();

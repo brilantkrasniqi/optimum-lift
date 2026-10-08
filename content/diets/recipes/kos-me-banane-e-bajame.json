@@ -1,0 +1,17 @@
+{
+  "name": "Kos me banane e bajame",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "greek_yogurt_2", "grams": 200 },
+    { "food": "banana", "grams": 100 },
+    { "food": "almonds", "grams": 10 }
+  ],
+  "steps": [
+    "Prije bananen në feta mbi kos.",
+    "Thyej bajamet sipër."
+  ],
+  "swap": "Banane → mollë, 150 g"
+}

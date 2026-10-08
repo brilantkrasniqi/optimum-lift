@@ -1,0 +1,17 @@
+{
+  "name": "Gjizë me dardhë",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "cottage_cheese", "grams": 200 },
+    { "food": "pear", "grams": 150 },
+    { "food": "spice", "label": "Kanellë", "household": "sipas dëshirës" }
+  ],
+  "steps": [
+    "Prije dardhën në kubikë mbi gjizën.",
+    "Spërkat kanellë."
+  ],
+  "swap": "Dardhë → portokall, 150 g"
+}

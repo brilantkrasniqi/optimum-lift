@@ -1,0 +1,17 @@
+{
+  "name": "Qumësht me proteinë e mollë",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "whey", "grams": 30 },
+    { "food": "milk_15", "grams": 250 },
+    { "food": "apple", "grams": 150 }
+  ],
+  "steps": [
+    "Përziej proteinën në qumësht.",
+    "Hae mollën anash."
+  ],
+  "swap": "Mollë → banane e vogël, 100 g"
+}

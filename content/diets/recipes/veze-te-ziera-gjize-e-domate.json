@@ -1,0 +1,18 @@
+{
+  "name": "Vezë të ziera, gjizë e domate",
+  "slots": ["breakfast"],
+  "minutes": 12,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "egg", "grams": 150 },
+    { "food": "cottage_cheese", "grams": 120 },
+    { "food": "wholegrain_bread", "grams": 80 },
+    { "food": "tomato", "grams": 150 }
+  ],
+  "steps": [
+    "Zieji vezët 9 minuta, pastaj në ujë të ftohtë.",
+    "Lyej bukën me gjizë dhe shto domaten në feta."
+  ],
+  "swap": "Gjizë → kos i tendosur, 120 g"
+}

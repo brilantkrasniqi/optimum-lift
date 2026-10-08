@@ -1,0 +1,20 @@
+{
+  "name": "Pulë në skarë, oriz e sallatë shope",
+  "slots": ["lunch"],
+  "minutes": 25,
+  "tags": ["gluten-free", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 180, "note": "i papjekur" },
+    { "food": "rice", "grams": 85 },
+    { "food": "salad_mix", "grams": 300 },
+    { "food": "white_cheese", "grams": 20 },
+    { "food": "olive_oil", "grams": 7 }
+  ],
+  "steps": [
+    "Pjeke pulën në skarë 6–7 minuta për anë.",
+    "Zieje orizin sipas paketimit.",
+    "Prit perimet, shto vajin dhe djathin sipër."
+  ],
+  "swap": "Oriz → patate të ziera, 320 g"
+}

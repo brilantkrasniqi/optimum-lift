@@ -1,0 +1,20 @@
+{
+  "name": "Tavë kosi me pulë (e lehtë)",
+  "slots": ["lunch"],
+  "minutes": 45,
+  "tags": ["gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "chicken_breast", "grams": 170, "note": "i papjekur" },
+    { "food": "rice", "grams": 75 },
+    { "food": "greek_yogurt_2", "grams": 150 },
+    { "food": "egg_white", "grams": 60 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Pjeke pulën në tavë me vajin 15 minuta.",
+    "Përziej kosin me të bardhat e vezës dhe derdhe mbi pulën.",
+    "Piqe edhe 20 minuta në 190 °C; hae me oriz."
+  ],
+  "swap": "Oriz → patate të ziera, 230 g"
+}

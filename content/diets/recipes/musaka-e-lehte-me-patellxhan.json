@@ -1,0 +1,20 @@
+{
+  "name": "Musaka e lehtë me patëllxhan",
+  "slots": ["dinner"],
+  "minutes": 50,
+  "tags": ["gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "eggplant", "grams": 250 },
+    { "food": "beef_mince_5", "grams": 140 },
+    { "food": "tomato_sauce", "grams": 100 },
+    { "food": "greek_yogurt_2", "grams": 80 },
+    { "food": "egg", "grams": 50 }
+  ],
+  "steps": [
+    "Piqi fetat e patëllxhanit 15 minuta në furrë.",
+    "Kaurdis mishin me salcën dhe shtroji me radhë në tavë.",
+    "Mbuloje me kosin e rrahur me vezën, piqe 25 minuta në 190 °C."
+  ],
+  "swap": "Patëllxhan → kungulleshë, 250 g"
+}

@@ -46,8 +46,13 @@ if (($block['primary_action'] ?? '') === 'anchor') {
     $anchor = sanitize_title(ltrim($text($block['primary_anchor'] ?? null), '#'));
     $href   = $anchor !== '' ? '#' . $anchor : '';
 } elseif ($buyable && $product !== null) {
-    $href = optimum_lift_buy_now_url($product);
+    // A Product sold in Sizes leads to its picker (sizes.php).
+    $link  = optimum_lift_buy_link($product);
+    $href  = $link['url'];
+    $label = $link['choose'] ? __('Choose your size', 'optimum-lift') : $label;
 }
+$sized   = $product !== null && optimum_lift_needs_choice($product);
+$buy_now = $href !== '' && !str_starts_with($href, '#') && !$sized;
 
 if ($heading === '' && $body === '' && $href === '') {
     return;
@@ -113,16 +118,19 @@ $body_class = match (true) {
 
         <?php if ($paired && $href !== '' && $product !== null) : ?>
             <div class="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <a href="<?php echo esc_url($href); ?>"<?php echo str_starts_with($href, '#') ? ' data-cta="final-cta"' : ' rel="nofollow" data-buy-now="' . esc_attr((string) $product->get_id()) . '" data-cta="final-buy-now"'; ?> class="btn btn-primary w-full gap-2.5 rounded-xl px-8 py-4 text-base sm:w-auto">
+                <a href="<?php echo esc_url($href); ?>"<?php echo !$buy_now ? ' data-cta="final-cta"' : ' rel="nofollow" data-buy-now="' . esc_attr((string) $product->get_id()) . '" data-cta="final-buy-now"'; ?> class="btn btn-primary w-full gap-2.5 rounded-xl px-8 py-4 text-base sm:w-auto">
                     <span><?php echo optimum_lift_replace_tokens($label, $product); ?></span>
                     <?php echo optimum_lift_icon('arrow-right', 'w-5 h-5 shrink-0'); ?>
                 </a>
                 <?php
-                get_template_part('template-parts/product/add-to-cart', null, [
-                    'product' => $product,
-                    'cta'     => 'final-add',
-                    'class'   => 'btn btn-ghost w-full rounded-xl px-8 py-4 text-[15px] sm:w-auto',
-                ]);
+                // A Product sold in Sizes gets no add button: it too would lead to the picker.
+                if (!$sized) {
+                    get_template_part('template-parts/product/add-to-cart', null, [
+                        'product' => $product,
+                        'cta'     => 'final-add',
+                        'class'   => 'btn btn-ghost w-full rounded-xl px-8 py-4 text-[15px] sm:w-auto',
+                    ]);
+                }
                 ?>
             </div>
             <?php if ($note !== '') : ?>
@@ -130,7 +138,7 @@ $body_class = match (true) {
             <?php endif; ?>
         <?php else : ?>
             <?php if ($href !== '') : ?>
-                <a href="<?php echo esc_url($href); ?>"<?php echo str_starts_with($href, '#') || $product === null ? ' data-cta="final-cta"' : ' rel="nofollow" data-buy-now="' . esc_attr((string) $product->get_id()) . '" data-cta="final-buy-now"'; ?> class="btn btn-light pulse mt-8 gap-2.5 rounded-2xl px-8 py-5 text-lg shadow-glow">
+                <a href="<?php echo esc_url($href); ?>"<?php echo !$buy_now || $product === null ? ' data-cta="final-cta"' : ' rel="nofollow" data-buy-now="' . esc_attr((string) $product->get_id()) . '" data-cta="final-buy-now"'; ?> class="btn btn-light pulse mt-8 gap-2.5 rounded-2xl px-8 py-5 text-lg shadow-glow">
                     <span><?php echo optimum_lift_replace_tokens($label, $product); ?></span>
                     <?php echo optimum_lift_icon('arrow-right', 'w-5 h-5 shrink-0'); ?>
                 </a>

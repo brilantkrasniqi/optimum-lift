@@ -8,8 +8,17 @@
 
 declare(strict_types=1);
 
+/**
+ * For a Product sold in Sizes, the lowest Size's price; every Size of a
+ * Product costs the same (ADR-0013). A variable Product's own price is only a
+ * cache WooCommerce syncs from its variations, so it is not read.
+ */
 function optimum_lift_current_price(WC_Product $p): float
 {
+    if ($p instanceof WC_Product_Variable) {
+        return (float) $p->get_variation_price('min', true);
+    }
+
     return (float) wc_get_price_to_display($p);
 }
 
@@ -17,7 +26,8 @@ function optimum_lift_current_price(WC_Product $p): float
  * The struck-through comparison price. For a bundle, the sum of its
  * components' current prices, so "cheaper together" stays true when a
  * component's price changes; a bundle without components compares with
- * itself and shows no saving. For anything else, the regular price.
+ * itself and shows no saving. For anything else, the regular price (for a
+ * Product sold in Sizes, the lowest Size's).
  */
 function optimum_lift_anchor_price(WC_Product $p): float
 {
@@ -28,6 +38,12 @@ function optimum_lift_anchor_price(WC_Product $p): float
         }
 
         return round(array_sum(array_map('optimum_lift_current_price', $components)), wc_get_price_decimals());
+    }
+
+    if ($p instanceof WC_Product_Variable) {
+        $regular = (float) $p->get_variation_regular_price('min', true);
+
+        return $regular > 0 ? $regular : optimum_lift_current_price($p);
     }
 
     $regular = $p->get_regular_price();

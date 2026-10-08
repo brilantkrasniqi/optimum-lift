@@ -1,0 +1,20 @@
+{
+  "name": "Gjeldet me pure patatesh",
+  "slots": ["dinner"],
+  "minutes": 25,
+  "tags": ["gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "turkey_breast", "grams": 180, "note": "i papjekur" },
+    { "food": "potato", "grams": 360 },
+    { "food": "milk_15", "grams": 50 },
+    { "food": "lettuce", "grams": 100 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Zieji patatet, shtypi me qumështin.",
+    "Pjeke gjeldetin në tigan 5 minuta për anë.",
+    "Shërbeje me sallatë me vaj e limon."
+  ],
+  "swap": "Pure → oriz, 60 g"
+}

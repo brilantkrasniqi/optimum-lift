@@ -1,0 +1,20 @@
+{
+  "name": "Petulla me tërshërë e proteinë",
+  "slots": ["breakfast"],
+  "minutes": 15,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "oats", "grams": 55 },
+    { "food": "egg_white", "grams": 150 },
+    { "food": "whey", "grams": 20 },
+    { "food": "banana", "grams": 100 },
+    { "food": "honey", "grams": 10 }
+  ],
+  "steps": [
+    "Bluaj tërshërën, përziej me të bardhat, proteinën dhe gjysmën e bananes.",
+    "Piqi 4 petulla në tigan pa vaj, 2 minuta për anë.",
+    "Shto bananen e mbetur dhe mjaltin sipër."
+  ],
+  "swap": "Mjaltë → fruta pylli, 50 g"
+}

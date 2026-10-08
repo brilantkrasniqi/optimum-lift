@@ -1,0 +1,20 @@
+{
+  "name": "Qofte viçi me oriz e sallatë",
+  "slots": ["lunch"],
+  "minutes": 35,
+  "tags": ["dairy-free", "gluten-free", "meal-prep", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "beef_mince_5", "grams": 160 },
+    { "food": "onion", "grams": 30 },
+    { "food": "rice", "grams": 75 },
+    { "food": "salad_mix", "grams": 250 },
+    { "food": "olive_oil", "grams": 5 }
+  ],
+  "steps": [
+    "Përziej mishin me qepën e grirë, kripë e piper, bëj 6 qofte.",
+    "Piqi në furrë 20 minuta në 200 °C.",
+    "Zieje orizin dhe bëj sallatën me vajin."
+  ],
+  "swap": "Oriz → bukë integrale, 70 g"
+}

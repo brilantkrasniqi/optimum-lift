@@ -10,6 +10,9 @@
  * footer's 80px spacer (see optimum_lift_has_sticky_bar()), so the footer's
  * last line is never covered. Desktop: under the sticky header, with the
  * trust line and add to cart.
+ *
+ * A Product sold in Sizes: the chosen Size shows next to the price
+ * (modules/size-picker.js), and the buttons submit the hero's Size picker.
  */
 
 declare(strict_types=1);
@@ -22,6 +25,7 @@ if (!$product instanceof WC_Product || !$product->is_purchasable() || !$product-
 }
 
 $saving = optimum_lift_saving($product);
+$choose = optimum_lift_needs_choice($product);
 ?>
 <div data-buybar class="invisible fixed inset-x-0 bottom-0 z-30 translate-y-full border-t border-white/10 bg-surface/95 px-4 py-3 backdrop-blur-xl transition-[translate,visibility] duration-300 data-shown:visible data-shown:translate-y-0 motion-reduce:transition-none md:top-[calc(var(--ol-sticky-top)+4rem)] md:bottom-auto md:-translate-y-full md:border-t-0 md:border-b">
     <div class="mx-auto flex max-w-7xl items-center gap-3">
@@ -41,6 +45,9 @@ $saving = optimum_lift_saving($product);
                 </p>
             <?php endif; ?>
         </div>
+<?php if ($choose) : ?>
+        <p data-size-summary data-empty="<?php esc_attr_e('Choose your size', 'optimum-lift'); ?>" class="min-w-0 flex-1 truncate text-[12px] font-bold text-zinc-400 sm:max-w-48 sm:flex-none"><?php esc_html_e('Choose your size', 'optimum-lift'); ?></p>
+<?php endif; ?>
 
         <?php
         get_template_part('template-parts/product/buy-buttons', null, [
@@ -48,7 +55,10 @@ $saving = optimum_lift_saving($product);
             'layout'     => 'row',
             'size'       => 'sm',
             'cta_prefix' => 'buybar',
-            'class'      => 'flex-1 sm:flex-none [&>a]:whitespace-nowrap [&>[data-add-to-cart]]:hidden md:[&>[data-add-to-cart]]:inline-flex',
+            'class'      => $choose
+                ? 'flex-none flex-nowrap [&>*]:whitespace-nowrap [&>[data-size-add]]:hidden md:[&>[data-size-add]]:inline-flex'
+                : 'flex-1 sm:flex-none [&>a]:whitespace-nowrap [&>[data-add-to-cart]]:hidden md:[&>[data-add-to-cart]]:inline-flex',
+            'form'       => 'ol-size-form',
         ]);
         ?>
     </div>

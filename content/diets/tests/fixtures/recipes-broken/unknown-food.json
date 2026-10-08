@@ -1,0 +1,1 @@
+{ "name": "Omëletë me spinaq", "slots": ["breakfast"], "minutes": 10, "ingredients": [{ "food": "egg", "grams": 100 }, { "food": "egg_white", "grams": 100 }, { "food": "spinaq", "grams": 60 }], "steps": ["Rrihi vezët.", "Gatuaji me spinaqin."] }

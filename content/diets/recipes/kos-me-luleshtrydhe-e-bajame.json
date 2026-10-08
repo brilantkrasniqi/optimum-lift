@@ -1,0 +1,17 @@
+{
+  "name": "Kos me luleshtrydhe e bajame",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian", "gluten-free"],
+  "photo": "",
+  "ingredients": [
+    { "food": "greek_yogurt_2", "grams": 250 },
+    { "food": "strawberries", "grams": 150 },
+    { "food": "almonds", "grams": 15 }
+  ],
+  "steps": [
+    "Prit luleshtrydhet në katërsh dhe përziej me kosin.",
+    "Thyej bajamet sipër."
+  ],
+  "swap": "Luleshtrydhe → fruta pylli, 150 g"
+}

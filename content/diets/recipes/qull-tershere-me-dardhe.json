@@ -1,0 +1,19 @@
+{
+  "name": "Qull tërshëre me dardhë",
+  "slots": ["breakfast"],
+  "minutes": 6,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "oats", "grams": 50 },
+    { "food": "milk_15", "grams": 250 },
+    { "food": "whey", "grams": 20 },
+    { "food": "pear", "grams": 150 },
+    { "food": "spice", "label": "Kanellë", "household": "sipas dëshirës" }
+  ],
+  "steps": [
+    "Zieji tërshërën me qumështin 3 minuta.",
+    "Përziej proteinën, shto dardhën në feta dhe kanellë."
+  ],
+  "swap": "Dardhë → mollë, 150 g"
+}

@@ -1,0 +1,201 @@
+{
+  "plan": "Fixture OK",
+  "size": {
+    "code": "m-80",
+    "gender": "Mashkull",
+    "weight": "80 kg"
+  },
+  "days": [
+    {
+      "title": "Dita 1",
+      "kcal_target": null,
+      "totals": {
+        "kcal": 1029.2,
+        "p": 70.8,
+        "c": 109.6,
+        "f": 31.9
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "time": "08:00",
+          "name": "Tost me vezë",
+          "minutes": 10,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 150,
+              "count": 3
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 90,
+              "count": 3
+            },
+            {
+              "food": "spice",
+              "label": "Piper i zi",
+              "household": "sipas dëshirës"
+            }
+          ],
+          "steps": [
+            "Skuq vezët në tigan pa vaj.",
+            "Thek bukën dhe vendos vezët sipër."
+          ],
+          "swap": "Bukë integrale → patate, 60 g",
+          "totals": {
+            "kcal": 436.8,
+            "p": 30.6,
+            "c": 37.9,
+            "f": 17.3
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "13:00",
+          "name": "Pulë me oriz",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 150
+            },
+            {
+              "food": "rice",
+              "grams": 85,
+              "note": "i papjekur"
+            },
+            {
+              "food": "olive_oil",
+              "grams": 10,
+              "count": 2
+            },
+            {
+              "food": "salad_mix",
+              "grams": 100
+            }
+          ],
+          "steps": [
+            "Zieje orizin.",
+            "Pjek pulën në skarë dhe shërbeje me sallatën."
+          ],
+          "swap": "Oriz → patate, 300 g",
+          "totals": {
+            "kcal": 592.4,
+            "p": 40.2,
+            "c": 71.7,
+            "f": 14.6
+          }
+        }
+      ]
+    },
+    {
+      "title": "Dita 2",
+      "kcal_target": null,
+      "totals": {
+        "kcal": 860.5,
+        "p": 70,
+        "c": 100.7,
+        "f": 18.1
+      },
+      "meals": [
+        {
+          "slot": "snack",
+          "time": "10:30",
+          "name": "Kos me fruta",
+          "minutes": 2,
+          "ingredients": [
+            {
+              "food": "greek_yogurt_2",
+              "grams": 100
+            },
+            {
+              "food": "berries",
+              "grams": 50
+            },
+            {
+              "food": "honey",
+              "grams": 7,
+              "count": 1
+            }
+          ],
+          "steps": [
+            "Përziej kosin me frutat dhe mjaltin."
+          ],
+          "totals": {
+            "kcal": 119.3,
+            "p": 10.4,
+            "c": 15.7,
+            "f": 2.1
+          }
+        },
+        {
+          "slot": "lunch",
+          "time": "13:00",
+          "name": "Pulë me oriz",
+          "minutes": 25,
+          "ingredients": [
+            {
+              "food": "chicken_breast",
+              "grams": 150
+            },
+            {
+              "food": "rice",
+              "grams": 70,
+              "note": "i papjekur"
+            },
+            {
+              "food": "salad_mix",
+              "grams": 100
+            }
+          ],
+          "steps": [
+            "Zieje orizin.",
+            "Pjek pulën në skarë dhe shërbeje me sallatën."
+          ],
+          "swap": "Oriz → patate, 300 g",
+          "totals": {
+            "kcal": 450,
+            "p": 39.2,
+            "c": 59.7,
+            "f": 4.5
+          }
+        },
+        {
+          "slot": "dinner",
+          "time": "19:00",
+          "name": "Tost me vezë",
+          "minutes": 10,
+          "ingredients": [
+            {
+              "food": "egg",
+              "grams": 100,
+              "count": 2
+            },
+            {
+              "food": "wholegrain_bread",
+              "grams": 60,
+              "count": 2
+            },
+            {
+              "food": "spice",
+              "label": "Piper i zi",
+              "household": "sipas dëshirës"
+            }
+          ],
+          "steps": [
+            "Skuq vezët në tigan pa vaj.",
+            "Thek bukën dhe vendos vezët sipër."
+          ],
+          "swap": "Bukë integrale → patate, 40 g",
+          "totals": {
+            "kcal": 291.2,
+            "p": 20.4,
+            "c": 25.3,
+            "f": 11.5
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -48,14 +48,38 @@ function optimum_lift_offer(?WC_Product $p = null): ?array
     }
 
     $percent  = optimum_lift_saving($p)['percent'] ?? null;
-    $sale_end = $p->get_date_on_sale_to();
-    if ($sale_end !== null && $sale_end->getTimestamp() > $now) {
-        return optimum_lift_offer_shape($sale_end->getTimestamp(), 'product', $percent, false);
+    $sale_end = optimum_lift_sale_end($p);
+    if ($sale_end !== null && $sale_end > $now) {
+        return optimum_lift_offer_shape($sale_end, 'product', $percent, false);
     }
 
     return $ends_at !== null && $ends_at > $now
         ? optimum_lift_offer_shape($ends_at, 'site', $percent, false)
         : null;
+}
+
+/**
+ * When the Product's scheduled sale ends, as a UTC timestamp. For a Product
+ * sold in Sizes, the earliest future end among its Sizes on sale.
+ */
+function optimum_lift_sale_end(WC_Product $p): ?int
+{
+    if (!$p instanceof WC_Product_Variable) {
+        return $p->get_date_on_sale_to()?->getTimestamp();
+    }
+
+    $now = time();
+    $end = null;
+    foreach ($p->get_children() as $id) {
+        $variation = wc_get_product($id);
+        $on_sale   = $variation instanceof WC_Product_Variation && $variation->is_purchasable() && $variation->is_on_sale();
+        $date      = $on_sale ? $variation->get_date_on_sale_to() : null;
+        if ($date !== null && $date->getTimestamp() > $now && ($end === null || $date->getTimestamp() < $end)) {
+            $end = $date->getTimestamp();
+        }
+    }
+
+    return $end;
 }
 
 /**

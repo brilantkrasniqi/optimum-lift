@@ -1,0 +1,19 @@
+{
+  "name": "Pite e lehtë me spinaq e gjizë",
+  "slots": ["breakfast"],
+  "minutes": 10,
+  "tags": ["vegetarian", "balkan"],
+  "photo": "",
+  "ingredients": [
+    { "food": "filo", "grams": 75 },
+    { "food": "cottage_cheese", "grams": 150 },
+    { "food": "spinach", "grams": 100 },
+    { "food": "egg", "grams": 50 }
+  ],
+  "steps": [
+    "Përgatite një natë më parë: përziej spinaqin, gjizën dhe vezën.",
+    "Shtroje mes 2–3 petëve në një tavë të vogël.",
+    "Piqe 25 minuta në 190 °C; në mëngjes vetëm ngrohe."
+  ],
+  "swap": "Peta → 1 fetë bukë integrale, 40 g"
+}

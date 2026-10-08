@@ -1,0 +1,17 @@
+{
+  "name": "Kos me tërshërë e mjaltë",
+  "slots": ["snack"],
+  "minutes": 2,
+  "tags": ["vegetarian"],
+  "photo": "",
+  "ingredients": [
+    { "food": "greek_yogurt_2", "grams": 200 },
+    { "food": "oats", "grams": 40 },
+    { "food": "honey", "grams": 5 }
+  ],
+  "steps": [
+    "Përziej kosin me tërshërën.",
+    "Hidh mjaltin sipër."
+  ],
+  "swap": "Mjaltë → fruta pylli, 50 g"
+}
