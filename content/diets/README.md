@@ -15,7 +15,7 @@ node render.js plans/<plan>.json --dump           # each size's computed plan as
 - `--out`: in a project thread, Claude renders with `--out /mnt/project-files/diet-plans/out` so the PDFs can be attached to a reply.
 - `--dump`: writes `<plan>-<gender>-<weight>kg.json` per size, with every gram, count and total the PDF would print (rounded to 0.1). It needs no Playwright, and two runs give the same bytes, so diffing two dumps proves a change moved no number.
 
-Needs Node, and Playwright for the PDFs. Claude's cloud sessions have a global Playwright, which `render.js` falls back to; elsewhere run `npm install` here once (`npm run render -- plans/<plan>.json` works too). The fonts are the theme's own (`themes/optimum-lift/assets/fonts/`), so the PDFs and the site share one copy.
+Needs Node, and Playwright for the PDFs. Claude's cloud sessions have a global Playwright, which `render.js` falls back to; elsewhere run `npm install` here once (`npm run render -- plans/<plan>.json` works too). That fetches no browser: the renderer uses Playwright's Chromium if `npx playwright install chromium` was run, else an installed Edge or Chrome. The fonts are the theme's own (`themes/optimum-lift/assets/fonts/`), so the PDFs and the site share one copy.
 
 ## Files
 

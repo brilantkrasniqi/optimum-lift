@@ -391,7 +391,20 @@ if (dump) {
     const { execSync } = require('child_process');
     ({ chromium } = require(path.join(execSync('npm root -g').toString().trim(), 'playwright')));
   }
-  const browser = await chromium.launch();
+  // Playwright's own Chromium (`npx playwright install chromium`), else an
+  // installed Edge or Chrome: `npm install` alone fetches no browser.
+  let browser;
+  for (const channel of [undefined, 'msedge', 'chrome']) {
+    try {
+      browser = await chromium.launch(channel ? { channel } : {});
+      break;
+    } catch (error) {
+      if (channel === 'chrome') {
+        console.error('No browser found. Run `npx playwright install chromium` here, or install Edge or Chrome.');
+        throw error;
+      }
+    }
+  }
   const page = await browser.newPage({ viewport: { width: 794, height: 1123 }, deviceScaleFactor: 2 });
   for (const { size, htmlPath } of built) {
     await page.goto('file://' + htmlPath);

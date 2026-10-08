@@ -1,7 +1,7 @@
 # "Size PDFs" box on the Product edit screen
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 05
 
 ## What to build
@@ -38,17 +38,17 @@ So `djegie-e-shpejte-mashkull-80-90kg.pdf` matches a Gjinia × Pesha variation `
 
 ## Acceptance criteria
 
-- [ ] Uploading the 10 PDFs from `content/diets/out/djegie-yndyre/` (or the shared folder's copies) to `plani-ushqimor-12-javor` puts each file on the variation its name says. Open three at random and check the cover's Size. All 10 are Virtual and Downloadable, and the table shows no warning.
-- [ ] Uploading the 5 `djegie-e-shpejte` PDFs to `dieta-mesdhetare` (Pesha only) matches by weight.
-- [ ] A misnamed file, or two files for one Size, attaches nothing, and the error names the files.
-- [ ] Re-uploading after a test order:
+- [x] Uploading the 10 PDFs from `content/diets/out/djegie-yndyre/` (or the shared folder's copies) to `plani-ushqimor-12-javor` puts each file on the variation its name says. Open three at random and check the cover's Size. All 10 are Virtual and Downloadable, and the table shows no warning.
+- [x] Uploading the 5 `djegie-e-shpejte` PDFs to `dieta-mesdhetare` (Pesha only) matches by weight.
+- [x] A misnamed file, or two files for one Size, attaches nothing, and the error names the files.
+- [x] Re-uploading after a test order:
   - the variation's download ID is unchanged (`wp eval` printing `array_keys($variation->get_downloads())` before and after);
   - the Customer's existing link serves the new file;
   - no stray copies are left in the folder.
-- [ ] The bundle takes 20 files (two plans) and each variation ends with two.
-- [ ] Changing one variation's price, unticking Virtual on another, and removing a file from a third shows all three warnings.
-- [ ] A non-PDF is refused, and a user without `edit_product` on the post cannot upload.
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] The bundle takes 20 files (two plans) and each variation ends with two.
+- [x] Changing one variation's price, unticking Virtual on another, and removing a file from a third shows all three warnings.
+- [x] A non-PDF is refused, and a user without `edit_product` on the post cannot upload.
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
 
@@ -93,3 +93,28 @@ Built in the "Diets 09" commit, in `inc/shop/size-files.php` (loaded with the ot
    - a `.txt` renamed to `.pdf` is refused;
    - a Shop Manager can upload;
    - a user without `edit_product` never reaches the save.
+
+### 2026-10-08 (Claude)
+
+Checked on the owner's PC on be8100c, with the database backed up first. The run used local test users with the administrator, shop manager and author roles.
+
+- **Rendering:** `node render.js` failed at first, because `npm install` fetches no browser. `render.js` now falls back to an installed Edge or Chrome, and the README says so; "Diets 09: fixes from the PC run". The run then gave 10 PDFs for djegie-yndyre and 5 (Mashkull only) for djegie-e-shpejte, with no overflow.
+- **12-javor, all 10 files uploaded:** "10 PDF u bashkëngjitën." and no warning. All ten Sizes are Virtual and Downloadable, every download ID was kept, and the stored files are byte-identical to `out/`.
+  - The covers of three random Sizes show their own Size. The cover's top half is plain black, because there is no photo, as decided.
+- **Fixed: the row order.** The table listed Femër before Mashkull, while the picker shows Mashkull first. `WC_Product_Attribute::get_terms()` sorts by name; the table now uses `wc_get_product_terms()`, as the picker does.
+- **Dieta Mesdhetare:** "5 PDF u bashkëngjitën.", matched by weight, with the IDs kept.
+- **A misnamed file, or two files for one Size:** each gives an error naming the files. The folder and every download stay unchanged.
+- **Re-upload after test order 862:** the same My Account link served the changed file, then the original again. The download ID never changed, and the folder held exactly 10 files.
+- **The bundle:**
+  - The real renders are 15 files, because djegie-e-shpejte is Mashkull only. The five Femër Sizes warned "… ka 1 PDF, por paketa përmban 2 dieta …". With 20 files, every Size ends with two.
+  - **Fixed:** on the 15-file upload, each Femër Size lost its second seeded file (the demo Dieta Mesdhetare placeholder), because only files this box stored were kept. A bundle now keeps every file that no new one replaces, so an upload for fewer plans takes nothing away from earlier buyers.
+- **The warnings:** a different price, a Size that is not Virtual, and a Size with no file each show their warning, and the table shows each problem in its row.
+- **Refusals:** a text file named `.pdf` is refused. A shop manager can upload. An author cannot open the Product.
+- **Checks:** `phpcs` 0 errors, `phpstan` OK, and nothing new in `debug.log`. Download permissions on orders 857, 858, 860 and 862 are intact.
+
+**Left as they are:**
+- **The stored file is a URL.** The box stores the file's URL in `woocommerce_uploads`, which is what WooCommerce's own "Choose file" stores. A move to another domain would need a search-replace, as for every other uploaded file.
+- **New IDs are UUIDs.** A new download slot gets a UUID where WooCommerce uses 32 hex digits; both are valid IDs.
+- **The price warning names no Size.** It does not say which Size costs differently, but the table shows each Size's price.
+
+The two fixes are to be re-checked on the PC: the row order, and a 15-file bundle upload that keeps the Femër placeholders.

@@ -33,8 +33,13 @@ function optimum_lift_size_variations(WC_Product_Variable $product): array
             continue;
         }
 
+        // The picker's order: wc_get_product_terms() sorts by the terms'
+        // own order, where WC_Product_Attribute::get_terms() sorts by name.
         $values = $attribute->is_taxonomy()
-            ? array_map(static fn (WP_Term $term): string => $term->slug, $attribute->get_terms() ?? [])
+            ? array_map(
+                static fn (WP_Term $term): string => $term->slug,
+                array_filter(wc_get_product_terms($product->get_id(), $attribute->get_name(), ['fields' => 'all']), static fn (mixed $t): bool => $t instanceof WP_Term)
+            )
             : $attribute->get_options();
         $order['attribute_' . sanitize_title($attribute->get_name())] = array_flip(array_map('strval', $values));
     }
@@ -417,8 +422,9 @@ function optimum_lift_size_files_attach(WC_Product_Variable $product, array $pla
         $downloads = [];
         $spare     = [];
 
-        // Keep a bundle's files for plans this upload does not touch, if they
-        // are this box's own; any other file gives up its ID to a new one.
+        // A new file takes the ID of the same plan's file this box stored,
+        // else of another file, in turn, so buyers' links keep working. A
+        // bundle keeps the files no new one replaced; a diet holds one file.
         $prefixes  = array_column($items, 'prefix');
         $by_prefix = [];
         foreach ($existing as $id => $download) {
@@ -442,6 +448,12 @@ function optimum_lift_size_files_attach(WC_Product_Variable $product, array $pla
             $download->set_file($item['url']);
             $download->set_name(trim($product->get_name() . ' — ' . $label . ($bundle ? ' — ' . ucfirst(str_replace('-', ' ', $item['prefix'])) : '')));
             $downloads[$id] = $download;
+        }
+
+        if ($bundle) {
+            foreach ($spare as $id) {
+                $downloads[$id] = $existing[$id];
+            }
         }
 
         try {
