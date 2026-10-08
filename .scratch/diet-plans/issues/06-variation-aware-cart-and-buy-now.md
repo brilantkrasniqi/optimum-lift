@@ -1,7 +1,7 @@
 # Variation-aware cart, Buy Now and helpers
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 05
 
 ## What to build
@@ -62,16 +62,16 @@ Find the rest by following every consumer of `optimum_lift_cart_lines()` (`cart/
 
 Checked on the owner's PC against the seeded demo. Give the exact URLs and steps in the comment.
 
-- [ ] `/?ol_buy_now=<12-javor ID>&attribute_pa_gjinia=femer&attribute_pa_pesha=60-70` reaches checkout with exactly that Size. A cash-on-delivery order, set to Processing, gives the "Femër · 60–70 kg" placeholder on the thank-you page, in the email and in My Account › Downloads.
-- [ ] `/?ol_buy_now=<variation ID>` does the same for that variation.
-- [ ] Buy Now with no choice, with only Pesha, with `attribute_pa_pesha=99`, or with another Product's variation ID: back on the Product page at `#blej` with the right notice. A cart that held a Training Plan beforehand still holds it.
-- [ ] The add endpoint (call it from the browser console with `fetch` and FormData): a Size adds it; the same Size again gives `added: false` and one line; a different Size leaves one line, the new Size, with "Changed to …".
-- [ ] With a diet Size in the cart, adding the bundle replaces the diet line. With the bundle in the cart, adding a diet Size gives "already included".
-- [ ] Swap to bundle with "Mashkull · 80–90 kg" of a component diet in the cart adds the bundle's "Mashkull · 80–90 kg".
-- [ ] The drawer upsell for a cart holding only a diet variation proposes the same thing it does for the Simple diet on `main` (the Training Plan or the bundle).
-- [ ] The offer timer on a variable diet counts down to its variations' sale end.
-- [ ] Training Plan Products behave exactly as before: Buy Now, add, the drawer upsell, swap and remove.
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] `/?ol_buy_now=<12-javor ID>&attribute_pa_gjinia=femer&attribute_pa_pesha=60-70` reaches checkout with exactly that Size. A cash-on-delivery order, set to Processing, gives the "Femër · 60–70 kg" placeholder on the thank-you page, in the email and in My Account › Downloads.
+- [x] `/?ol_buy_now=<variation ID>` does the same for that variation.
+- [x] Buy Now with no choice, with only Pesha, with `attribute_pa_pesha=99`, or with another Product's variation ID: back on the Product page at `#blej` with the right notice. A cart that held a Training Plan beforehand still holds it.
+- [x] The add endpoint (call it from the browser console with `fetch` and FormData): a Size adds it; the same Size again gives `added: false` and one line; a different Size leaves one line, the new Size, with "Changed to …".
+- [x] With a diet Size in the cart, adding the bundle replaces the diet line. With the bundle in the cart, adding a diet Size gives "already included".
+- [x] Swap to bundle with "Mashkull · 80–90 kg" of a component diet in the cart adds the bundle's "Mashkull · 80–90 kg".
+- [x] The drawer upsell for a cart holding only a diet variation proposes the same thing it does for the Simple diet on `main` (the Training Plan or the bundle).
+- [x] The offer timer on a variable diet counts down to its variations' sale end.
+- [x] Training Plan Products behave exactly as before: Buy Now, add, the drawer upsell, swap and remove.
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
 
@@ -110,3 +110,18 @@ Lint: `phpcs` 0 errors, `phpstan` no errors, `npm run build` ok. Known gap until
 7. The drawer upsell for a cart with only a diet Size matches `main`'s for the Simple diet.
 8. Set a sale end on the 12-javor variations; the offer timer counts to the earliest.
 9. A Training Plan: Buy Now, add, upsell, swap and remove as before.
+
+### 2026-10-08 (Claude)
+
+Checked on the owner's PC on be8100c (`npm run build` ok), after `ol-shop seed --reset`: 12-javor 826 (variations 827–836), Dieta Mesdhetare 837 (838–842), bundle 843 (844–853), Training Plans 824 and 825. Cash on delivery was enabled for virtual Products on that local site only, with a test customer.
+
+1. `/?ol_buy_now=826&attribute_pa_gjinia=femer&attribute_pa_pesha=60-70`: checkout shows "Plani Ushqimor 12-Javor × 1 / Femër · 60–70 kg". Order 857 (variation 833) set to Processing: the thank-you page, the processing email and My Account › Downloads give "Plani Ushqimor 12-Javor — Femër · 60–70 kg".
+2. `/?ol_buy_now=847` (bundle, Mashkull · 80–90 kg): order 858 gives both diets' downloads for that Size plus the Training Plan's PDF.
+3. With Training Plan 824 in the cart, all four failing Buy Now links land on the Product's `#blej` with the right notice, the chosen `attribute_*` kept, and the cart still `[824]`.
+4. The add endpoint: added, then `added: false` with one line, then "U ndryshua në Mashkull · 70–80 kg" with one line. Also checked: no Size or only Pesha gives `needs_choice`; a variation ID as `product_id` works; a variation of another Product is refused and the cart is unchanged.
+5. Diet then bundle in the same Size leaves only the bundle; bundle then a diet Size gives "already included" for both diets.
+6. The drawer's switch with 12-javor Mashkull · 80–90 kg and Training Plan 824 adds bundle variation 847. With Dieta Mesdhetare 80–90 (no Gjinia, so no bundle Size can be derived), the drawer links to the bundle's picker, and the endpoint called directly answers `needs_choice`.
+7. Only a diet Size in the cart: the drawer proposes Training Plan 824, as `main` does for the Simple diet.
+8. Sale ends set on variations 833 and 834: the timer counts to the earliest, and the values were restored afterwards.
+9. The Training Plans' Buy Now, add, remove and the drawer work as before. One expected difference: the bundle and the diets are now sold in Sizes, so the drawer's offers for a cart of Training Plans only are "Choose your size" links to the picker instead of one-click buttons. That covers the complement diet, and the full bundle for 824 + 825. A Training Plan has no Size to carry over, so this is the ADR-0012 fallback, not a regression in the Training Plans themselves.
+10. `phpcs` 0 errors, `phpstan` no errors. No console errors, no new `debug.log` lines.
