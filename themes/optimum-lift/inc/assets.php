@@ -44,6 +44,23 @@ add_action('wp_head', static function (): void {
     }
 }, 1);
 
+// The brand favicons, until a Site Icon is set under Appearance › Customize ›
+// Site Identity, which then prints its own tags and wins.
+add_action('wp_head', static function (): void {
+    if (has_site_icon()) {
+        return;
+    }
+
+    printf(
+        '<link rel="icon" href="%s" sizes="32x32">' . "\n"
+        . '<link rel="icon" href="%s" type="image/svg+xml">' . "\n"
+        . '<link rel="apple-touch-icon" href="%s">' . "\n",
+        esc_url(get_theme_file_uri('assets/brand/favicon.ico')),
+        esc_url(get_theme_file_uri('assets/brand/favicon.svg')),
+        esc_url(get_theme_file_uri('assets/brand/apple-touch-icon.png'))
+    );
+});
+
 // Every phone and browser the store targets draws emoji natively. WordPress's
 // fallback adds a detection script and swaps emoji for images from s.w.org, a
 // third-party request. The styles are switched off by unhooking the legacy

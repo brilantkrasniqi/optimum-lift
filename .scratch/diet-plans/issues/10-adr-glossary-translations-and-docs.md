@@ -47,7 +47,7 @@ Blocked by: 04, 06, 07, 08, 09
 
 Done in the "Diets 10" commit; the boxes stay open until the owner's PC run.
 
-- **The ADR is ADR-0012, not 0011.** `docs/adr/0011-plans-move-between-sites-as-json-files.md` arrived with PR #3 first. The new ADR is `docs/adr/0012-diets-are-sold-in-sizes-as-variable-products.md`, and the code comments name it. ADR-0006's and ADR-0007's status lines say "Amended by ADR-0012 (diet Sizes)". ADR-0007's Buy Now bullet notes the Size.
+- **The ADR is ADR-0013, not 0011.** (It was ADR-0012 until the merge, when the consent ADR took 0012 on `main`.) `docs/adr/0011-plans-move-between-sites-as-json-files.md` arrived with PR #3 first. The new ADR is `docs/adr/0013-diets-are-sold-in-sizes-as-variable-products.md`, and the code comments name it. ADR-0006's and ADR-0007's status lines say "Amended by ADR-0013 (diet Sizes)". ADR-0007's Buy Now bullet notes the Size.
 - `CONTEXT.md`: **Food**, **Recipe** (with recipe key) and **Size**, after Nutrition Plan.
 - Docs:
   - `woocommerce/README.md`: the `review-order.php` row, plus a paragraph on the variation-title filter and the `wp_loaded` pre-handler;
@@ -100,7 +100,7 @@ Unsure: "Çfarëdo …" for WooCommerce's "Any …". Use whatever WooCommerce's 
 
 Checked on the owner's PC on be8100c.
 
-- **The ADRs:** ADR-0012 exists, since 0011 is plan files. The status lines of ADR-0006 and ADR-0007 point to it, and ADR-0007 has the Buy Now note.
+- **The ADRs:** ADR-0013 exists, since 0011 is plan files. The status lines of ADR-0006 and ADR-0007 point to it, and ADR-0007 has the Buy Now note.
 - **`CONTEXT.md`:** it defines Food, Recipe and Size.
 - **The translations:**
   - `wp i18n make-pot`, `update-po`, `make-mo` and `make-php` ran in the container. `sq.po` has 514 entries, none untranslated, fuzzy or obsolete, and the rebuilt `sq.mo` and `sq.l10n.php` are byte-identical to the committed ones.

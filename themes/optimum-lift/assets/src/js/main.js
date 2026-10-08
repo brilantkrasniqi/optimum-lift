@@ -7,6 +7,7 @@
  * Page data the server provides is on window.optimumLift (inc/assets.php).
  */
 
+import * as consent from './modules/consent.js';
 import * as track from './modules/track.js';
 import * as countdown from './modules/countdown.js';
 import * as menu from './modules/menu.js';
@@ -23,7 +24,9 @@ import * as cart from './modules/cart.js';
 import * as pendingLinks from './modules/pending-links.js';
 import * as couponToast from './modules/coupon-toast.js';
 
-const modules = [track, countdown, menu, reveal, accordion, tabs, gallery, buybar, stickyCta, exitIntent, shopSort, sizePicker, cart, pendingLinks, couponToast];
+// consent before track: a visitor who accepted earlier gets the Pixel queued
+// before track.js sends the events the page printed.
+const modules = [consent, track, countdown, menu, reveal, accordion, tabs, gallery, buybar, stickyCta, exitIntent, shopSort, sizePicker, cart, pendingLinks, couponToast];
 
 function boot() {
   modules.forEach((module) => {

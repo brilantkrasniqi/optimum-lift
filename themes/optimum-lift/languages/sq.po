@@ -2190,6 +2190,78 @@ msgstr "Krijo një"
 msgid "Account"
 msgstr "Llogaria"
 
+#: inc/customizer.php:97
+msgid "Meta Pixel ID"
+msgstr "ID e Meta Pixel"
+
+#: inc/customizer.php:98
+msgid "Digits only. Setting it shows the cookie banner, and the Pixel loads only for visitors who accept."
+msgstr "Vetëm shifra. Kur e vendos, shfaqet njoftimi për cookies, dhe Pixel ngarkohet vetëm për vizitorët që e pranojnë."
+
+#: inc/consent.php:51
+msgid "Cookie settings"
+msgstr "Cilësimet e cookies"
+
+#: template-parts/components/consent-banner.php:17
+msgid "Cookies"
+msgstr "Cookies"
+
+#: template-parts/components/consent-banner.php:19
+msgid "We use cookies to see which ads bring you here and to improve the site. Cookies for the cart and your account are always on."
+msgstr "Përdorim cookies për të parë cilat reklama të sjellin këtu dhe për ta përmirësuar faqen. Cookies për shportën dhe llogarinë tënde janë gjithmonë aktive."
+
+#: template-parts/components/consent-banner.php:25
+msgid "Decline"
+msgstr "Refuzoj"
+
+#: template-parts/components/consent-banner.php:26
+msgid "Accept"
+msgstr "Pranoj"
+
+#: inc/shop/marketing.php:26
+msgid "Send me offers and new plans before anyone else. Unsubscribe anytime."
+msgstr "Më dërgo oferta dhe planet e reja para të tjerëve. Çregjistrohesh kur të duash."
+
+#: inc/shop/marketing.php:77
+msgid "Offer emails:"
+msgstr "Email-et me oferta:"
+
+#. translators: %s: date and time the box was ticked.
+#: inc/shop/marketing.php:81
+#, php-format
+msgid "agreed at checkout, %s"
+msgstr "pranuar në pagesë, %s"
+
+#: inc/shop/marketing.php:82
+msgid "not agreed"
+msgstr "nuk ka pranuar"
+
+#: inc/shop/marketing.php:133
+#: inc/shop/marketing.php:134
+#: inc/shop/marketing.php:142
+msgid "Email list"
+msgstr "Lista e email-eve"
+
+#. translators: %d: number of buyers.
+#: inc/shop/marketing.php:146
+#, php-format
+msgid "%d buyer agreed to offer emails at checkout."
+msgid_plural "%d buyers agreed to offer emails at checkout."
+msgstr[0] "%d blerës ka pranuar email-et me oferta në pagesë."
+msgstr[1] "%d blerës kanë pranuar email-et me oferta në pagesë."
+
+#: inc/shop/marketing.php:149
+msgid "Import the file into your mail service. It keeps track of unsubscribes, so importing again does not add back anyone who left. Never email anyone who is not on this list."
+msgstr "Importoje skedarin në shërbimin tënd të email-eve. Ai i mban mend çregjistrimet, ndaj importimi i sërishëm nuk i shton përsëri ata që janë larguar. Mos i dërgo kurrë email askujt që nuk është në këtë listë."
+
+#: inc/shop/marketing.php:150
+msgid "Download CSV"
+msgstr "Shkarko CSV"
+
+#: inc/shop/marketing.php:159
+msgid "You are not allowed to download the email list."
+msgstr "Nuk ke leje ta shkarkosh listën e email-eve."
+
 #: inc/shop/bundle.php:121
 #, php-format
 msgid "Changed to %s"

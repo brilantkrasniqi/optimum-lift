@@ -1,4 +1,4 @@
-# ADR-0012: Diets are sold in Sizes as WooCommerce variable Products, chosen with the theme's own picker
+# ADR-0013: Diets are sold in Sizes as WooCommerce variable Products, chosen with the theme's own picker
 
 **Status:** Accepted (2026-10-07). Amends ADR-0006 and ADR-0007.
 

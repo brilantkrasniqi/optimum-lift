@@ -19,7 +19,7 @@ Preferred over "fitness plan" and "diet plan", which blur into each other in con
 
 **Recipe** — one dish written once (Foods with grams, steps, a swap) and used by many Nutrition Plans. Named by its **recipe key** (`content/diets/recipes/<recipe-key>.json`), which never changes; a plan names the Recipe and may scale its portion.
 
-**Size** — one gender and weight range that a Nutrition Plan is rendered for ("Mashkull · 80–90 kg"). Each Size is its own PDF, sold as one WooCommerce variation of the diet Product; every Size of a Product costs the same (ADR-0012).
+**Size** — one gender and weight range that a Nutrition Plan is rendered for ("Mashkull · 80–90 kg"). Each Size is its own PDF, sold as one WooCommerce variation of the diet Product; every Size of a Product costs the same (ADR-0013).
 
 **Product** — a sellable listing in the shop: it has a price, a page, and imagery. One Plan may be sold as several Products — a seasonal edition, a bundle, a discounted variant. This split is what makes a multi-SKU, seasonal catalogue possible without re-authoring content.
 

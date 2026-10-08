@@ -18,7 +18,7 @@ $excerpt    = wp_trim_words(get_the_excerpt(), 24);
             <?php the_post_thumbnail('medium_large', ['class' => 'absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]', 'sizes' => '(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw']); ?>
         <?php else : ?>
             <span class="ph-photo absolute inset-0 grid place-items-center text-zinc-700" aria-hidden="true">
-                <?php echo optimum_lift_icon('logo', 'w-12 h-12', ['stroke-width' => '1.6']); ?>
+                <?php echo optimum_lift_icon('logo', 'w-16 h-16'); ?>
             </span>
         <?php endif; ?>
     </div>

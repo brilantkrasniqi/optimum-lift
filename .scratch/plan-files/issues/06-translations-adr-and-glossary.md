@@ -1,7 +1,7 @@
 # Translations, ADR and glossary
 
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 04, 05
 
 ## What to build
@@ -12,9 +12,17 @@ Blocked by: 04, 05
 
 ## Acceptance criteria
 
-- [ ] With the site in Albanian, the Import Plan screen, the meta box, the row action, and every problem in `broken.expected.txt` (via the screen) are in Albanian.
-- [ ] `msgfmt --statistics` (or `wp i18n` output) shows no untranslated or fuzzy plugin strings.
-- [ ] ADR-0011 exists and the spec links to it; `CONTEXT.md` has the term.
-- [ ] `npm run lint:php` and `npm run analyse:php` pass.
+- [x] With the site in Albanian, the Import Plan screen, the meta box, the row action, and every problem in `broken.expected.txt` (via the screen) are in Albanian.
+- [x] `msgfmt --statistics` (or `wp i18n` output) shows no untranslated or fuzzy plugin strings.
+- [x] ADR-0011 exists and the spec links to it; `CONTEXT.md` has the term.
+- [x] `npm run lint:php` and `npm run analyse:php` pass.
 
 ## Comments
+
+### 2026-10-07 (Claude)
+
+Albanian for every new string; `.pot`, `.po`, `.mo`, `.l10n.php` regenerated with `wp i18n` (325 strings, 0 untranslated, 0 fuzzy). With the admin in Albanian, the Import Plan screen, meta box, row action and every `broken.json` problem through the screen are Albanian (only quoted file values stay English). WP-CLI success lines stay English, like the plugin's other commands.
+
+ADR-0011 written and linked from the spec; `CONTEXT.md` has **Plan file**. `lint:php` and `analyse:php` pass.
+
+Also: `.gitattributes` keeps PHP and Plan files LF, because `core.autocrlf` on Windows made every PHP file fail PSR-12.

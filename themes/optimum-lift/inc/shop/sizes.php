@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Sizes (ADR-0012): a variable Product sells one variation per Size, such as
+ * Sizes (ADR-0013): a variable Product sells one variation per Size, such as
  * a diet in "Mashkull · 80–90 kg". The rest of the storefront asks these
  * helpers instead of WooCommerce's variation API, and a variation stands for
  * its parent wherever the theme reads kinds, bundles, ACF fields or

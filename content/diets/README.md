@@ -110,7 +110,7 @@ A plan is written once, for a man of 80 kg (`reference_weight` in `sizes.json`).
 
 ## Selling the sizes in WooCommerce
 
-A diet is a **variable Product**: one variation per Size, each with its PDF, all at the same price. The theme's Size picker, cart and Buy Now handle it (ADR-0012). The local demo (`wp ol-shop seed`) sets all of this up with placeholder PDFs.
+A diet is a **variable Product**: one variation per Size, each with its PDF, all at the same price. The theme's Size picker, cart and Buy Now handle it (ADR-0013). The local demo (`wp ol-shop seed`) sets all of this up with placeholder PDFs.
 
 1. **Once per site** (the seed does it locally): Products › Attributes, add **Gjinia** with slug `gjinia` and **Pesha** with slug `pesha`, both with "Custom ordering". Terms, in this order:
    - Gjinia: Mashkull (`mashkull`), Femër (`femer`);

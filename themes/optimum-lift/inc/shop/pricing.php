@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 /**
  * For a Product sold in Sizes, the lowest Size's price; every Size of a
- * Product costs the same (ADR-0012). A variable Product's own price is only a
+ * Product costs the same (ADR-0013). A variable Product's own price is only a
  * cache WooCommerce syncs from its variations, so it is not read.
  */
 function optimum_lift_current_price(WC_Product $p): float

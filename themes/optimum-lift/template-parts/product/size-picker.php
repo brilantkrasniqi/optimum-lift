@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The Size picker (ADR-0012) in the hero's price box, for a Product that
+ * The Size picker (ADR-0013) in the hero's price box, for a Product that
  * needs a choice: one group of radio pills per variation attribute, nothing
  * chosen unless the URL names a Size (`?attribute_pa_pesha=60-70`).
  *
