@@ -36,6 +36,7 @@ The storefront lives in the theme (ADR-0006, ADR-0007, ADR-0008; spec and ticket
 - **Cart, Buy Now and bundles:** `inc/shop/{cart,buy-now,bundle,upsell}.php` and `modules/cart.js`.
 - **Checkout:** `inc/shop/checkout.php`, with the template overrides listed in `woocommerce/README.md`.
 - **Urgency and proof:** only from real data (`inc/shop/{proof,offer}.php`).
+- **Consent and the email list:** the Pixel and order attribution wait for the cookie banner (`inc/consent.php`, `modules/consent.js`), which shows only once a Meta Pixel ID is set; offer emails need the unticked checkout opt-in (`inc/shop/marketing.php`, ADR-0012).
 - **Guarantee and refunds:** no refunds on digital Products; checkout takes a withdrawal waiver (`inc/shop/withdrawal.php`), and the guarantee is the Customizer's `guarantee` promise, never money back (ADR-0009).
 - **Strings:** source strings are English. Albanian lives in `languages/sq.po`; after changing strings run `wp i18n make-pot`, `update-po`, `make-mo` and `make-php` (see ticket 12). The Plans plugin's is `plugins/optimum-lift-plans/languages/optimum-lift-plans-sq.po`, same steps with `--domain=optimum-lift-plans --exclude=vendor,assets,languages,data`.
 

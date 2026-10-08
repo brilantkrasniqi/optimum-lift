@@ -91,6 +91,13 @@ function optimum_lift_settings(): array
             'description' => __('Comma-separated. List only the methods checkout actually offers.', 'optimum-lift'),
             'sanitize'    => $text,
         ],
+        'meta_pixel_id' => [
+            'default'     => '',
+            'control'     => 'text',
+            'label'       => __('Meta Pixel ID', 'optimum-lift'),
+            'description' => __('Digits only. Setting it shows the cookie banner, and the Pixel loads only for visitors who accept.', 'optimum-lift'),
+            'sanitize'    => static fn (mixed $value): string => (string) preg_replace('/\D+/', '', is_scalar($value) ? (string) $value : ''),
+        ],
     ];
 }
 
