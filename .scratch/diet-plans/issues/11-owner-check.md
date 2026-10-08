@@ -21,8 +21,12 @@ Brilant, on your PC, with the branch pulled, `npm run build` done and the stack 
 
 ## Acceptance criteria
 
-- [ ] Every step above behaves as described.
-- [ ] Brilant says whether to merge to `main`.
+- [x] Every step above behaves as described.
+- [x] Brilant says whether to merge to `main`.
 - [ ] After merging, before selling on production: the Gjinia and Pesha attributes are created there with the same slugs (README step 1).
 
 ## Comments
+
+### 2026-10-08 (Claude)
+
+Brilant ran the steps on his PC: "it works well". His one request, the diets in My Account, became ticket 12. He then said to merge ("all good merge"). The last box is for production: create the Gjinia and Pesha attributes there before selling sized diets. Ticket 12 is not yet checked on the PC.
