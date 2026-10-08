@@ -24,6 +24,7 @@ define('OPTIMUM_LIFT_URI', get_template_directory_uri());
         'inc/customizer.php',
         'inc/icons.php',
         'inc/template-tags.php',
+        'inc/consent.php',
     ];
 
     // The storefront modules call WooCommerce on load or in their hooks.
@@ -45,6 +46,7 @@ define('OPTIMUM_LIFT_URI', get_template_directory_uri());
             'inc/shop/upsell.php',
             'inc/shop/checkout.php',
             'inc/shop/withdrawal.php',
+            'inc/shop/marketing.php',
         );
     }
 

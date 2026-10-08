@@ -23,5 +23,6 @@ $legal = optimum_lift_legal_links();
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
+        <?php optimum_lift_consent_settings_button('cursor-pointer text-[11px] font-semibold text-zinc-500 transition hover:text-white'); ?>
     </div>
 </footer>

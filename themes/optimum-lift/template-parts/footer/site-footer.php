@@ -83,6 +83,7 @@ $link_class = 'block py-[5px] transition hover:text-white';
                 echo esc_html(sprintf(__('© %1$s %2$s. All rights reserved.', 'optimum-lift'), wp_date('Y'), get_bloginfo('name')));
                 ?>
             </p>
+            <?php optimum_lift_consent_settings_button('cursor-pointer text-[11px] font-semibold text-zinc-500 transition hover:text-white'); ?>
             <p class="max-w-xl text-[11px] leading-relaxed text-zinc-500 sm:text-right">
                 <?php esc_html_e('Results vary from person to person. This information does not replace medical advice — talk to your doctor before starting a training program or a diet, especially if you have a health condition or are pregnant.', 'optimum-lift'); ?>
             </p>
