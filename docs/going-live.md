@@ -2,7 +2,7 @@
 
 How the live site is built and kept up to date. The short version:
 
-- **The server** is a netcup VPS (VPS 500 G12: 2 vCPU, 4 GB RAM) running Ubuntu 24.04 with Apache, PHP 8.3 and MariaDB, the same pieces as the local Docker stack. It is your own server: you set it up once with the steps below, and security updates then install themselves. If the shop outgrows it, move up to a bigger plan.
+- **The server** is a netcup VPS (VPS 500 G12: 2 vCPU, 4 GB RAM) running Ubuntu 24.04 LTS or newer with Apache, PHP (whatever version Ubuntu ships: 8.3 on 24.04, 8.5 on 26.04) and MariaDB. It is your own server: you set it up once with the steps below, and security updates then install themselves. If the shop outgrows it, move up to a bigger plan.
 - **The domain** stays on Cloudflare, which sits in front of the server: DNS, HTTPS and protection.
 - **The database is built, never copied** (ADR-0015). WordPress's installer creates your admin, and `wp ol-shop setup` creates every setting, page and attribute the code depends on. Products, Plans and the front page's sections you enter on the live site.
 - **Code goes live from `main`.** Merging a pull request deploys the theme, the Plans plugin and the hardening mu-plugin (`.github/workflows/deploy.yml`, once switched on). Uploads, `wp-config.php` and the database are never deployed.
@@ -24,9 +24,9 @@ apt -y install unattended-upgrades && dpkg-reconfigure -f noninteractive unatten
 apt -y install ufw
 ufw allow OpenSSH && ufw allow 80/tcp && ufw allow 443/tcp && ufw --force enable
 
-# The web server, PHP 8.3 (Ubuntu 24.04's own) and the database
-apt -y install apache2 mariadb-server libapache2-mod-php8.3 \
-  php8.3-mysql php8.3-curl php8.3-gd php8.3-intl php8.3-mbstring php8.3-xml php8.3-zip php8.3-bcmath php8.3-imagick \
+# The web server, PHP (Ubuntu's own version, no number so an upgrade keeps it) and the database
+apt -y install apache2 mariadb-server libapache2-mod-php \
+  php-mysql php-curl php-gd php-intl php-mbstring php-xml php-zip php-bcmath php-imagick \
   unzip rsync
 a2enmod rewrite ssl headers remoteip
 
@@ -153,7 +153,7 @@ Then:
 
 ```sh
 sudo a2ensite optimumlift && sudo a2dissite 000-default
-sudo sed -i 's/^upload_max_filesize.*/upload_max_filesize = 64M/; s/^post_max_size.*/post_max_size = 64M/; s/^memory_limit.*/memory_limit = 256M/' /etc/php/8.3/apache2/php.ini
+sudo sed -i 's/^upload_max_filesize.*/upload_max_filesize = 64M/; s/^post_max_size.*/post_max_size = 64M/; s/^memory_limit.*/memory_limit = 256M/' /etc/php/*/apache2/php.ini
 ```
 
 Apache reloads in section 2, once the certificate files exist.
