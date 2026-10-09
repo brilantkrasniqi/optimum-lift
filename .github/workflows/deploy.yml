@@ -1,0 +1,74 @@
+# Deploys main to the live server: builds the theme's CSS and JS and the Plans
+# plugin's dependencies, then copies the code (and only the code) over SSH.
+# Uploads, wp-config.php and the database are never touched
+# (docs/going-live.md).
+#
+# Off until the repository variable DEPLOY_ENABLED is "true". It also needs:
+#   variables  DEPLOY_HOST (server IP or name), DEPLOY_USER, DEPLOY_PATH
+#              (the WordPress folder, e.g. /var/www/optimumlift)
+#   secrets    DEPLOY_SSH_KEY (the private key of the deploy user)
+#              DEPLOY_KNOWN_HOSTS (the server's line from `ssh-keyscan <host>`)
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: vars.DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build the theme's CSS and JS
+        run: |
+          npm ci
+          npm run build
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          tools: composer:v2
+
+      - name: Install the Plans plugin's dependencies (Dompdf)
+        run: composer install --working-dir=plugins/optimum-lift-plans --no-dev --no-interaction --optimize-autoloader
+
+      - name: Set up SSH
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Copy the code to the server
+        env:
+          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
+          WP_PATH: ${{ vars.DEPLOY_PATH }}
+        run: |
+          rsync_code() {
+            rsync -rltz --omit-dir-times --delete --chmod=D2775,F664 -e "ssh -i ~/.ssh/id_deploy" "$@"
+          }
+          rsync_code --exclude=assets/src themes/optimum-lift/ "$TARGET:$WP_PATH/wp-content/themes/optimum-lift/"
+          rsync_code plugins/optimum-lift-plans/ "$TARGET:$WP_PATH/wp-content/plugins/optimum-lift-plans/"
+          # Only the hardening plugin: the other two mu-plugins are local only.
+          rsync -ltz --chmod=F664 -e "ssh -i ~/.ssh/id_deploy" mu-plugins/ol-hardening.php "$TARGET:$WP_PATH/wp-content/mu-plugins/"
+          # The bootstrap script and the plugin list it reads, next to the site, not in it.
+          rsync -ltz --chmod=F664 -e "ssh -i ~/.ssh/id_deploy" deploy/bootstrap-live.sh plugins.txt "$TARGET:$WP_PATH/../optimum-lift-deploy/"
