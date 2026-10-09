@@ -60,15 +60,20 @@ function optimum_lift_bundle_diet_name(WC_Product $product, array $download): st
 {
     $fallback = (string) ($download['download_name'] ?? $product->get_name());
     $file     = is_array($download['file'] ?? null) ? (string) ($download['file']['file'] ?? '') : '';
-    $prefix   = $product instanceof WC_Product_Variation ? optimum_lift_size_file_prefix($file, $product) : null;
-    if ($prefix === null) {
+    if (!$product instanceof WC_Product_Variation || $file === '') {
         return $fallback;
     }
+
+    $prefix = optimum_lift_size_file_prefix($file, $product);
+    $stem   = optimum_lift_size_file_stem((string) wp_parse_url($file, PHP_URL_PATH));
 
     foreach (optimum_lift_bundle_components($product) as $component) {
         $sized = $component instanceof WC_Product_Variable ? optimum_lift_matching_variation($component, $product) : null;
         foreach ($sized?->get_downloads() ?? [] as $own) {
-            if (optimum_lift_size_file_prefix($own->get_file(), $sized) === $prefix) {
+            // The same PDF, or a component sold in fewer attributes (Pesha
+            // alone) whose file the bundle's suffix does not end with.
+            $own_stem = optimum_lift_size_file_stem((string) wp_parse_url($own->get_file(), PHP_URL_PATH));
+            if ($own_stem === $stem || ($prefix !== null && optimum_lift_size_file_prefix($own->get_file(), $sized) === $prefix)) {
                 return $component->get_name();
             }
         }

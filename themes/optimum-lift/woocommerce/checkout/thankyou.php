@@ -120,8 +120,8 @@ defined('ABSPATH') || exit;
                     </li>
                     <?php if ($ol_new_guest) : ?>
                         <li>
-                            <strong><?php esc_html_e('Set your password', 'optimum-lift'); ?></strong>
-                            <?php esc_html_e('On your first order we create your account and email you a link to set its password.', 'optimum-lift'); ?>
+                            <strong><?php esc_html_e('Log in from your email', 'optimum-lift'); ?></strong>
+                            <?php esc_html_e('On your first order we create your account and email you a link to log in. No password needed.', 'optimum-lift'); ?>
                         </li>
                     <?php endif; ?>
                     <li>

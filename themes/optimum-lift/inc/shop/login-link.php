@@ -262,6 +262,19 @@ add_filter('wc_get_template', static function (string $template, string $templat
 }, 10, 2);
 
 /*
+ * Logging in attaches the customer's guest orders, so a diet bought without
+ * an account shows under My Account › Diets. The Plans plugin attaches only
+ * orders with a Plan, when they are paid. Safe because a customer can only log
+ * in after proving the email: from a login link, or a password set from a
+ * reset link (registering logs no one in).
+ */
+add_action('wp_login', static function (string $login, WP_User $user): void {
+    if (optimum_lift_login_link_allowed($user)) {
+        wc_update_new_customer_past_orders($user->ID);
+    }
+}, 10, 2);
+
+/*
  * Registering: no password field, and no login until the emailed link is used.
  * Forced here rather than left to WooCommerce › Settings › Accounts, so the
  * flow cannot drift from what the emails promise.
@@ -269,6 +282,13 @@ add_filter('wc_get_template', static function (string $template, string $templat
 add_filter('pre_option_woocommerce_registration_generate_password', static fn (): string => 'yes');
 
 add_filter('woocommerce_registration_auth_new_customer', '__return_false');
+
+// WooCommerce's "Your account is using a temporary password. We emailed you a
+// link to change your password." notice: customers were emailed a login link
+// instead, and need no password.
+add_filter('get_user_option_default_password_nag', static function (mixed $nag, string $option, WP_User $user): mixed {
+    return optimum_lift_login_link_allowed($user) ? false : $nag;
+}, 10, 3);
 
 add_filter('gettext_woocommerce', static function (string $translation, string $text): string {
     return match ($text) {

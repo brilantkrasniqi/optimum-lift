@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-07T17:32:13+00:00\n"
+"POT-Creation-Date: 2026-10-09T12:31:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: optimum-lift-plans\n"
@@ -24,16 +24,16 @@ msgstr ""
 msgid "Exercises, Training Plans, Access, Downloads and the Portal. Plan content lives here, never in the theme (ADR-0003)."
 msgstr ""
 
-#: src/Access/OrderAccess.php:66
+#: src/Access/OrderAccess.php:68
 msgid "Could not create an account for this order, so no Plan Access was granted."
 msgstr ""
 
-#: src/Access/OrderAccess.php:163
+#: src/Access/OrderAccess.php:165
 #: src/Privacy/Privacy.php:82
 msgid "Plan Access"
 msgstr ""
 
-#: src/Access/OrderAccess.php:170
+#: src/Access/OrderAccess.php:172
 msgid "revoked"
 msgstr ""
 
@@ -683,7 +683,7 @@ msgstr ""
 #. translators: %s: billing email
 #: src/Download/Delivery.php:199
 #, php-format
-msgid "Sign in with %s to open your Plans. If this is your first order, we have emailed you a link to set your password."
+msgid "Log in as %s to open your Plans. If this is your first order, we have emailed you a link to log in."
 msgstr ""
 
 #: src/Download/Delivery.php:238
@@ -1210,13 +1210,13 @@ msgid "This Plan's edit form sends about %1$d inputs and this site accepts %2$d 
 msgstr ""
 
 #. translators: %s: the problems found, joined
-#: src/PlanFile/PlanFileImporter.php:217
+#: src/PlanFile/PlanFileImporter.php:262
 #, php-format
 msgid "The Plan was written but could not be read back: %s"
 msgstr ""
 
 #. translators: %s: where the first difference is, e.g. plan.weeks[2].workouts[0].name
-#: src/PlanFile/PlanFileImporter.php:227
+#: src/PlanFile/PlanFileImporter.php:272
 #, php-format
 msgid "The Plan was written but did not read back as the file says; the first difference is at %s."
 msgstr ""

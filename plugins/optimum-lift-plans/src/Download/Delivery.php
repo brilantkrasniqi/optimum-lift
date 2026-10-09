@@ -196,7 +196,7 @@ final class Delivery
                 '<p>%s</p>',
                 esc_html(sprintf(
                     /* translators: %s: billing email */
-                    __('Sign in with %s to open your Plans. If this is your first order, we have emailed you a link to set your password.', 'optimum-lift-plans'),
+                    __('Log in as %s to open your Plans. If this is your first order, we have emailed you a link to log in.', 'optimum-lift-plans'),
                     $order->get_billing_email()
                 ))
             );
