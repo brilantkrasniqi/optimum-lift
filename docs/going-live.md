@@ -72,20 +72,20 @@ The site's files belong to `www-data`, the user Apache runs PHP as, so wp-admin 
 sudo install -d -o www-data -g www-data -m 2775 /var/www/optimumlift
 cd /var/www/optimumlift
 sudo -u www-data wp core download --locale=en_US
-sudo -u www-data wp config create --dbname=optimumlift --dbuser=optimumlift --prompt=dbpass --extra-php <<'PHP'
-define('WP_ENVIRONMENT_TYPE', 'production');
-define('WP_DEBUG', false);
-define('DISALLOW_FILE_EDIT', true);
-define('FORCE_SSL_ADMIN', true);
-// WordPress's own cron runs on page views; a real one (below) is reliable.
-define('DISABLE_WP_CRON', true);
-PHP
+read -rsp 'Database password: ' DB_PASS; echo   # paste it; nothing shows while you type
+sudo -u www-data wp config create --dbname=optimumlift --dbuser=optimumlift --dbpass="$DB_PASS"
+unset DB_PASS
+sudo -u www-data wp config set WP_ENVIRONMENT_TYPE production
+sudo -u www-data wp config set WP_DEBUG false --raw
+sudo -u www-data wp config set DISALLOW_FILE_EDIT true --raw
+sudo -u www-data wp config set FORCE_SSL_ADMIN true --raw
+sudo -u www-data wp config set DISABLE_WP_CRON true --raw   # the real cron below runs it instead
 sudo chmod 640 wp-config.php
 sudo -u www-data mkdir -p wp-content/mu-plugins
 sudo find /var/www/optimumlift -type d -exec chmod 2775 {} +
 ```
 
-`--prompt=dbpass` asks for the database password instead of putting it in your shell history. Never copy `wp-config.php` from your PC: the Docker one is for local only.
+`read -s` takes the database password without showing it or putting it in your shell history. Never copy `wp-config.php` from your PC: the Docker one is for local only.
 
 WP-Cron every five minutes (scheduled sales, WooCommerce's background jobs, emails), and a copy of the database and uploads every night, kept for a week:
 
