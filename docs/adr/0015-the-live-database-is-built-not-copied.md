@@ -6,7 +6,7 @@ How-to: `docs/going-live.md`.
 
 ## Context
 
-The site goes live on a Hetzner Cloud server behind Cloudflare. The code
+The site goes live on a netcup VPS behind Cloudflare. The code
 depends on a lot of database state that is not content: WooCommerce settings
 (price format, registration, no terms checkbox), the classic cart and checkout
 pages (ADR-0007), the Size attributes `pa_gjinia` and `pa_pesha` with their
@@ -31,7 +31,7 @@ database state the code depends on. `wp ol-shop seed` uses it locally and adds
 the demo data; `wp ol-shop setup` uses it on a fresh live site and adds what
 only live needs (offline payments off, sample content deleted, legal pages as
 drafts so placeholder text never goes public). WordPress itself, and its
-admin, come from Hetzner's WordPress app; the admin login is never `admin`.
+admin, come from WordPress's own installer; the admin login is never `admin`.
 
 The setup is idempotent: settings are set again, pages and terms are only
 created when missing, and it creates no Products, Plans or reviews. A change

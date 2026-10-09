@@ -5,7 +5,7 @@
 #
 # Off until the repository variable DEPLOY_ENABLED is "true". It also needs:
 #   variables  DEPLOY_HOST (server IP or name), DEPLOY_USER, DEPLOY_PATH
-#              (the WordPress folder, /var/www/html on the WordPress app)
+#              (the WordPress folder, e.g. /var/www/optimumlift)
 #   secrets    DEPLOY_SSH_KEY (the private key of the deploy user)
 #              DEPLOY_KNOWN_HOSTS (the server's line from `ssh-keyscan <host>`)
 
