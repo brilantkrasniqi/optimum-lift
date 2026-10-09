@@ -197,7 +197,7 @@ Open `https://yourdomain`. WordPress's installer asks for:
 - **Site title:** Optimum Lift.
 - **Username:** not `admin`, the domain or the shop's name: those are what login bots try first. Something like your name plus a word. The login never shows on the site (`mu-plugins/ol-hardening.php` hides it).
 - **Password:** let your password manager make a long one and save it there.
-- **Your email.** Leave *Search engine visibility* unticked.
+- **Your email.** Tick *Discourage search engines from indexing this site* for now, so Google doesn't pick up an empty shop; untick it (*Settings › Reading*) when you open for business.
 
 ### Uploading the code
 
