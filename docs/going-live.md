@@ -220,7 +220,7 @@ Then **Actions › Deploy › Run workflow**. From then on every merge into `mai
 
 Never upload `mu-plugins/ol-dynamic-host.php` or `ol-local-mail.php` (local only), `uploads/`, or anything from `docker/`.
 
-**ACF Pro** goes up by hand once, either way: your licensed copy into `wp-content/plugins/advanced-custom-fields-pro/`. Enter the license key in wp-admin afterwards so it gets updates.
+**ACF Pro** goes up by hand once, either way: your licensed copy into `wp-content/plugins/`, in a folder named `advanced-custom-fields-pro` (a zip downloaded from GitHub unpacks as `advanced-custom-fields-pro-main`; either name works, but `wp plugin activate` needs the one you used). Enter the license key in wp-admin afterwards so it gets updates.
 
 ### Plugins, theme and setup
 
@@ -257,12 +257,29 @@ In wp-admin, logged in as your admin:
 1. **Two-factor login.** Install the free *Two Factor* plugin (by WordPress.org contributors), then *Users › Profile*: turn on an authenticator app and save the backup codes. Add `two-factor` to `plugins.txt` in a pull request so the next setup has it too.
 2. **Legal pages.** Paste the reviewed texts from the legal drafts into *Pages › Kushtet e shërbimit / Politika e privatësisë / Politika e kthimit* and Publish each. The footer and the checkout's withdrawal waiver link to them.
 3. **Payments.** Install and set up the card gateway (Raiffeisen's plugin, once the merchant account exists), and add it to `plugins.txt`. Until then the shop cannot take money, and with the offline methods off nobody can order.
-4. **Email.** Set up the sending service and WP Mail SMTP, add its SPF, DKIM and DMARC records in Cloudflare (DNS only), and place a test order. Customers log in only through emailed links, so this has to work before launch.
+4. **Email.** Done on the live site with **Brevo** for sending and **Cloudflare Email Routing** for receiving:
+   - *Receiving:* Cloudflare › Email › Email Routing: verify your own inbox under *Destination Addresses*, then a rule `info@<domain>` → that inbox. Cloudflare adds the `MX` records and the one SPF record itself.
+   - *Sending:* in Brevo add the domain (manual authentication) and enter the records it shows in Cloudflare, all **DNS only**: a `brevo-code` TXT, two DKIM CNAMEs, a `_dmarc` TXT and the three `mail` branding CNAMEs. Brevo needs no SPF record of its own. Then add the sender `info@<domain>`.
+   - *The shop:* a Brevo **API key** (it starts with `xkeysib-`; an SMTP key starts with `xsmtpsib-` and does not work here) and the free *WP Mail SMTP* plugin, configured in `wp-config.php` so the key never sits in the database:
+
+     ```sh
+     sudo -u www-data wp plugin install wp-mail-smtp --activate
+     read -rsp 'Brevo API key: ' BREVO_KEY; echo
+     sudo -u www-data wp config set WPMS_ON true --raw
+     sudo -u www-data wp config set WPMS_MAILER sendinblue
+     sudo -u www-data wp config set WPMS_SENDINBLUE_API_KEY "$BREVO_KEY"; unset BREVO_KEY
+     sudo -u www-data wp config set WPMS_MAIL_FROM info@<domain>
+     sudo -u www-data wp config set WPMS_MAIL_FROM_NAME "Optimum Lift"
+     sudo -u www-data wp config set WPMS_MAIL_FROM_FORCE true --raw
+     sudo -u www-data wp config set WPMS_MAIL_FROM_NAME_FORCE true --raw
+     ```
+
+     Check with *WP Mail SMTP › Tools › Email Test*, then place a test order. Customers log in only through emailed links, so this has to work before launch. WP Mail SMTP is deliberately **not** in `plugins.txt`: `docker/setup.sh` would activate it locally too and it could take over the Mailpit routing in `mu-plugins/ol-local-mail.php`.
 5. **Customizer › Optimum Lift:** contact email, WhatsApp, Instagram, TikTok, guarantee text, offer label and end date, customer baseline, payment badges. Leave the Meta Pixel ID empty until you run ads.
 6. **Content.** Import Plans (*Training › Import Plan*, from `content/plans/`), create the Products with their Plans, Sizes and sections, and fill in the front page's sections.
 7. **Store address** under *WooCommerce › Settings › General*.
 8. **Backups off the server.** Install the free *UpdraftPlus* plugin and point it at Google Drive or Dropbox: database daily, uploads weekly. A netcup VPS has no automatic backups of its own, and a backup on the same server dies with it.
-9. **Search engines.** *Settings › Reading › Search engine visibility* stays unticked; turn it on temporarily only if you want to hide the site while you fill it in.
+9. **Search engines.** The installer ticked *Discourage search engines*; untick it in *Settings › Reading* on the day you open for business.
 
 ## 5. Updating the site later
 
