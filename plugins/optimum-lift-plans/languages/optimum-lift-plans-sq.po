@@ -24,16 +24,16 @@ msgstr "Optimum Lift Plans"
 msgid "Exercises, Training Plans, Access, Downloads and the Portal. Plan content lives here, never in the theme (ADR-0003)."
 msgstr "Ushtrime, plane stërvitjeje, aksesi, shkarkimet dhe portali. Përmbajtja e planeve jeton këtu, kurrë në temë (ADR-0003)."
 
-#: src/Access/OrderAccess.php:66
+#: src/Access/OrderAccess.php:68
 msgid "Could not create an account for this order, so no Plan Access was granted."
 msgstr "Nuk u krijua dot një llogari për këtë porosi, ndaj nuk u dha akses në asnjë plan."
 
-#: src/Access/OrderAccess.php:163
+#: src/Access/OrderAccess.php:165
 #: src/Privacy/Privacy.php:82
 msgid "Plan Access"
 msgstr "Aksesi në plane"
 
-#: src/Access/OrderAccess.php:170
+#: src/Access/OrderAccess.php:172
 msgid "revoked"
 msgstr "revokuar"
 
@@ -463,8 +463,8 @@ msgstr "Shkarko PDF"
 #. translators: %s: billing email
 #: src/Download/Delivery.php:199
 #, php-format
-msgid "Sign in with %s to open your Plans. If this is your first order, we have emailed you a link to set your password."
-msgstr "Hyr me %s për të hapur planet e tua. Nëse kjo është porosia jote e parë, të kemi dërguar me email një link për të vendosur fjalëkalimin."
+msgid "Log in as %s to open your Plans. If this is your first order, we have emailed you a link to log in."
+msgstr "Hyr si %s për të hapur planet e tua. Nëse kjo është porosia jote e parë, të kemi dërguar me email një link për të hyrë."
 
 #: src/Download/Delivery.php:238
 msgid "PDF"
@@ -1210,13 +1210,13 @@ msgid "This Plan's edit form sends about %1$d inputs and this site accepts %2$d 
 msgstr "Formulari i këtij plani dërgon rreth %1$d fusha dhe kjo faqe pranon %2$d (max_input_vars). Importohet pa problem, por nuk mund të ruhet nga wp-admin derisa të rritet kufiri."
 
 #. translators: %s: the problems found, joined
-#: src/PlanFile/PlanFileImporter.php:217
+#: src/PlanFile/PlanFileImporter.php:262
 #, php-format
 msgid "The Plan was written but could not be read back: %s"
 msgstr "Plani u shkrua, por nuk u lexua dot përsëri: %s"
 
 #. translators: %s: where the first difference is, e.g. plan.weeks[2].workouts[0].name
-#: src/PlanFile/PlanFileImporter.php:227
+#: src/PlanFile/PlanFileImporter.php:272
 #, php-format
 msgid "The Plan was written but did not read back as the file says; the first difference is at %s."
 msgstr "Plani u shkrua, por nuk u lexua përsëri ashtu si thotë skedari; dallimi i parë është te %s."

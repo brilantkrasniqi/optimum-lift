@@ -261,7 +261,7 @@ msgstr "Pagesa"
 msgid "Your details"
 msgstr "Të dhënat e tua"
 
-#: inc/shop/checkout.php:245
+#: inc/shop/checkout.php:291
 #: template-parts/single-product/cross-sells.php:32
 msgid "Frequently bought together"
 msgstr "Shpesh blihen bashkë"
@@ -1114,7 +1114,7 @@ msgstr "Kushtet e përdorimit"
 msgid "Privacy policy"
 msgstr "Politika e privatësisë"
 
-#: inc/shop/withdrawal.php:80
+#: inc/shop/withdrawal.php:89
 #: inc/template-tags.php:400
 msgid "Refund policy"
 msgstr "Politika e rimbursimit"
@@ -1987,12 +1987,12 @@ msgid "The order confirmation arrives at %s within a few minutes. Check spam if 
 msgstr "Konfirmimi i porosisë do të të vijë në adresën %s brenda pak minutash. Kontrollo dosjen Spam nëse nuk e gjen."
 
 #: woocommerce/checkout/thankyou.php:123
-msgid "Set your password"
-msgstr "Vendos fjalëkalimin"
+msgid "Log in from your email"
+msgstr "Hyr nga email-i"
 
 #: woocommerce/checkout/thankyou.php:124
-msgid "On your first order we create your account and email you a link to set its password."
-msgstr "Pas porosisë së parë, krijojmë llogarinë tënde dhe të dërgojmë me email një lidhje për të vendosur fjalëkalimin."
+msgid "On your first order we create your account and email you a link to log in. No password needed."
+msgstr "Pas porosisë së parë, krijojmë llogarinë tënde dhe të dërgojmë me email një link për të hyrë. Nuk të duhet fjalëkalim."
 
 #: woocommerce/checkout/thankyou.php:128
 msgid "Open your plan"
@@ -2105,29 +2105,29 @@ msgstr "Variablat e disponueshme: {price}, {regular_price}, {saving}, {bundle_pr
 msgid "I want my plan right away, and I understand that once I get it, I can no longer cancel the purchase within 14 days."
 msgstr "E dua planin menjëherë dhe e kuptoj që, pasi ta marr, nuk mund ta anuloj më blerjen brenda 14 ditëve."
 
-#: inc/shop/withdrawal.php:82
+#: inc/shop/withdrawal.php:91
 msgid "required"
 msgstr "e detyrueshme"
 
-#: inc/shop/withdrawal.php:93
+#: inc/shop/withdrawal.php:102
 msgid "To place the order, tick the box that asks for immediate access."
 msgstr "Për ta përfunduar porosinë, shëno kutinë që konfirmon kërkesën për akses të menjëhershëm."
 
-#: inc/shop/withdrawal.php:127
+#: inc/shop/withdrawal.php:136
 msgid "Withdrawal waiver:"
 msgstr "Heqja dorë nga e drejta e tërheqjes:"
 
 #. translators: %s: date and time the box was ticked.
-#: inc/shop/withdrawal.php:131
+#: inc/shop/withdrawal.php:140
 #, php-format
 msgid "ticked at checkout, %s"
 msgstr "e shënuar gjatë pagesës, %s"
 
-#: inc/shop/withdrawal.php:137
+#: inc/shop/withdrawal.php:146
 msgid "not recorded for this order"
 msgstr "nuk është regjistruar për këtë porosi"
 
-#: inc/shop/withdrawal.php:148
+#: inc/shop/withdrawal.php:157
 msgid "You asked for your plans right away and confirmed that once you get them, you can no longer cancel the purchase within 14 days."
 msgstr "Kërkove planet menjëherë dhe konfirmove që, pasi t'i marrësh, nuk mund ta anulosh më blerjen brenda 14 ditëve."
 
@@ -2221,47 +2221,47 @@ msgstr "Refuzoj"
 msgid "Accept"
 msgstr "Pranoj"
 
-#: inc/shop/marketing.php:26
+#: inc/shop/marketing.php:28
 msgid "Send me offers and new plans before anyone else. Unsubscribe anytime."
 msgstr "Më dërgo ofertat dhe planet e reja para të tjerëve. Mund të çregjistrohesh kurdo që dëshiron."
 
-#: inc/shop/marketing.php:77
+#: inc/shop/marketing.php:72
 msgid "Offer emails:"
 msgstr "Email-e promocionale:"
 
 #. translators: %s: date and time the box was ticked.
-#: inc/shop/marketing.php:81
+#: inc/shop/marketing.php:76
 #, php-format
 msgid "agreed at checkout, %s"
 msgstr "ka dhënë pëlqimin gjatë pagesës, %s"
 
-#: inc/shop/marketing.php:82
+#: inc/shop/marketing.php:77
 msgid "not agreed"
 msgstr "nuk ka dhënë pëlqimin"
 
-#: inc/shop/marketing.php:133
-#: inc/shop/marketing.php:134
-#: inc/shop/marketing.php:142
+#: inc/shop/marketing.php:128
+#: inc/shop/marketing.php:129
+#: inc/shop/marketing.php:137
 msgid "Email list"
 msgstr "Lista e email-eve"
 
 #. translators: %d: number of buyers.
-#: inc/shop/marketing.php:146
+#: inc/shop/marketing.php:141
 #, php-format
 msgid "%d buyer agreed to offer emails at checkout."
 msgid_plural "%d buyers agreed to offer emails at checkout."
 msgstr[0] "%d blerës ka dhënë pëlqimin për të marrë email-e promocionale gjatë pagesës."
 msgstr[1] "%d blerës kanë dhënë pëlqimin për të marrë email-e promocionale gjatë pagesës."
 
-#: inc/shop/marketing.php:149
+#: inc/shop/marketing.php:144
 msgid "Import the file into your mail service. It keeps track of unsubscribes, so importing again does not add back anyone who left. Never email anyone who is not on this list."
 msgstr "Importoje skedarin në shërbimin tënd të email-eve. Lista ruan të dhënat për personat që janë çregjistruar, ndaj importimi i përsëritur nuk i shton përsëri. Mos i dërgo email askujt që nuk figuron në këtë listë."
 
-#: inc/shop/marketing.php:150
+#: inc/shop/marketing.php:145
 msgid "Download CSV"
 msgstr "Shkarko CSV"
 
-#: inc/shop/marketing.php:159
+#: inc/shop/marketing.php:154
 msgid "You are not allowed to download the email list."
 msgstr "Nuk ke leje ta shkarkosh listën e email-eve."
 
@@ -2451,12 +2451,12 @@ msgstr "Përfshihet në %s"
 msgid "Download PDF"
 msgstr "Shkarko PDF"
 
-#: inc/shop/login-link.php:114
+#: inc/shop/login-link.php:118
 msgid "Your login link"
 msgstr "Linku yt për hyrje"
 
 #. translators: %s: customer's first name
-#: inc/shop/login-link.php:119
+#: inc/shop/login-link.php:123
 #: woocommerce/emails/customer-new-account.php:30
 #: woocommerce/emails/plain/customer-new-account.php:29
 #, php-format
@@ -2464,52 +2464,52 @@ msgid "Hi %s,"
 msgstr "Përshëndetje %s,"
 
 #. translators: %s: customer's first name
-#: inc/shop/login-link.php:120
+#: inc/shop/login-link.php:124
 msgid "Tap the button to log in to your Optimum Lift account. No password needed."
 msgstr "Shtyp butonin për të hyrë në llogarinë tënde në Optimum Lift. Nuk të duhet fjalëkalim."
 
-#: inc/shop/login-link.php:122
+#: inc/shop/login-link.php:126
 msgid "The link works once, within 15 minutes. If you did not ask for it, ignore this email: no one can log in without it."
 msgstr "Linku funksionon vetëm një herë, brenda 15 minutave. Nëse nuk e ke kërkuar, injoroje këtë email: askush nuk mund të hyjë pa të."
 
 #. translators: %s: site name
-#: inc/shop/login-link.php:128
+#: inc/shop/login-link.php:132
 #, php-format
 msgid "Log in to %s"
 msgstr "Hyr në %s"
 
-#: inc/shop/login-link.php:144
+#: inc/shop/login-link.php:148
 #: template-parts/account/login-link.php:30
 #: woocommerce/emails/plain/customer-new-account.php:33
 msgid "Log in to my account"
 msgstr "Hyr në llogarinë time"
 
-#: inc/shop/login-link.php:156
+#: inc/shop/login-link.php:160
 msgid "or, without a password"
 msgstr "ose, pa fjalëkalim"
 
-#: inc/shop/login-link.php:159
+#: inc/shop/login-link.php:163
 msgid "Email me a login link"
 msgstr "Më dërgo një link për hyrje"
 
-#: inc/shop/login-link.php:178
+#: inc/shop/login-link.php:182
 msgid "Enter your email address, then ask for the link."
 msgstr "Shkruaj email-in tënd, pastaj kërko linkun."
 
-#: inc/shop/login-link.php:188
+#: inc/shop/login-link.php:192
 msgid "If an account uses that email, a login link is on its way. Check your inbox (and spam). The link works once, within 15 minutes."
 msgstr "Nëse ka një llogari me këtë email, linku për hyrje është rrugës. Shiko inbox-in (edhe spam-in). Linku funksionon vetëm një herë, brenda 15 minutave."
 
-#: inc/shop/login-link.php:203
-#: inc/shop/login-link.php:234
+#: inc/shop/login-link.php:207
+#: inc/shop/login-link.php:238
 msgid "That login link has expired or was already used. Ask for a new one below."
 msgstr "Ky link për hyrje ka skaduar ose është përdorur tashmë. Kërko një të ri më poshtë."
 
-#: inc/shop/login-link.php:271
+#: inc/shop/login-link.php:288
 msgid "No password needed: we will email you a link to log in."
 msgstr "Nuk të duhet fjalëkalim: do të të dërgojmë me email një link për të hyrë."
 
-#: inc/shop/login-link.php:272
+#: inc/shop/login-link.php:289
 msgid "Your account is ready. We emailed you a link to log in."
 msgstr "Llogaria jote është gati. Të dërguam me email një link për të hyrë."
 

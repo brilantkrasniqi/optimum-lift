@@ -283,6 +283,13 @@ add_filter('pre_option_woocommerce_registration_generate_password', static fn ()
 
 add_filter('woocommerce_registration_auth_new_customer', '__return_false');
 
+// WooCommerce's "Your account is using a temporary password. We emailed you a
+// link to change your password." notice: customers were emailed a login link
+// instead, and need no password.
+add_filter('get_user_option_default_password_nag', static function (mixed $nag, string $option, WP_User $user): mixed {
+    return optimum_lift_login_link_allowed($user) ? false : $nag;
+}, 10, 3);
+
 add_filter('gettext_woocommerce', static function (string $translation, string $text): string {
     return match ($text) {
         'A link to set a new password will be sent to your email address.' => __('No password needed: we will email you a link to log in.', 'optimum-lift'),

@@ -173,6 +173,52 @@ add_filter('woocommerce_order_received_verify_known_shoppers', static function (
 });
 
 /*
+ * The Raiffeisen return URL (/?wc-api=raiaccept_redirect&orderId=N) takes any
+ * order number from anyone, syncs its status with the bank, then sends the
+ * visitor to that order's thank-you link, key included. Order numbers count
+ * up, so a stranger could collect keys and see a fresh guest order's name,
+ * email and downloads. The status sync still runs for everyone; only the
+ * browser that placed the order, or its logged-in owner, follows the link.
+ * Anyone else lands on My Account (or the cart, for a cancelled payment).
+ */
+function optimum_lift_placed_order(WC_Order $order): bool
+{
+    if ($order->get_customer_id() > 0 && $order->get_customer_id() === get_current_user_id()) {
+        return true;
+    }
+
+    $session = WC()->session;
+
+    return $session !== null && absint($session->get('order_awaiting_payment')) === $order->get_id();
+}
+
+add_action('woocommerce_api_raiaccept_redirect', static function (): void {
+    $order_id = isset($_GET['orderId']) && is_string($_GET['orderId']) ? absint($_GET['orderId']) : 0; // phpcs:ignore -- the bank's redirect carries no nonce.
+    $order    = $order_id > 0 ? wc_get_order($order_id) : null;
+
+    if (!$order instanceof WC_Order || optimum_lift_placed_order($order)) {
+        return;
+    }
+
+    $safe = static fn (string $url): string => str_contains($url, 'raiaccept_recreate_cart') ? wc_get_cart_url() : wc_get_page_permalink('myaccount');
+
+    add_filter('wp_redirect', static function (mixed $location) use ($order, $safe): mixed {
+        return is_string($location) && str_contains($location, $order->get_order_key()) ? $safe($location) : $location;
+    });
+
+    // The iframe display posts the link to the parent page instead of redirecting.
+    ob_start(static function (string $html) use ($order, $safe): string {
+        return (string) preg_replace_callback(
+            '/"redirectUrl":"([^"]*)"/',
+            static fn (array $m): string => str_contains(stripslashes($m[1]), $order->get_order_key())
+                ? '"redirectUrl":' . wp_json_encode($safe(stripslashes($m[1])))
+                : $m[0],
+            $html
+        );
+    });
+}, 1);
+
+/*
  * ------------------------------------------------------------ cart page (10e)
  */
 
