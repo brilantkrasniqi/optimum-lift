@@ -37,7 +37,7 @@ while (have_posts()) :
             <?php if ($account && !$signed_in && !is_wc_endpoint_url('lost-password')) : ?>
                 <p class="mb-6 flex max-w-2xl gap-3 rounded-2xl border border-acid/25 bg-acid/[.06] p-4 text-[13.5px] leading-relaxed text-zinc-300">
                     <?php echo optimum_lift_icon('lock', 'mt-0.5 w-4 h-4 shrink-0 text-acid'); ?>
-                    <span><?php esc_html_e('Bought a plan? Log in with the email you used at checkout. On your first order we emailed you a link to set your password; if you cannot find it, use "Lost your password?".', 'optimum-lift'); ?></span>
+                    <span><?php esc_html_e('Bought a plan? Enter the email you used at checkout and tap "Email me a login link". No password needed.', 'optimum-lift'); ?></span>
                 </p>
             <?php endif; ?>
 
