@@ -28,18 +28,18 @@ msgstr "http://localhost:8080"
 #. Description of the theme
 #: style.css
 msgid "Custom storefront theme for Optimum Lift."
-msgstr "Tema e dyqanit të Optimum Lift, e ndërtuar posaçërisht."
+msgstr "Temë e personalizuar për dyqanin online të Optimum Lift."
 
 #: 404.php:23
 msgid "That page does not exist or has moved. Try a search, or head back to the shop."
-msgstr "Kjo faqe nuk ekziston ose është zhvendosur. Provo një kërkim, ose kthehu te dyqani."
+msgstr "Kjo faqe nuk ekziston ose është zhvendosur. Provo të kërkosh diçka ose kthehu te dyqani."
 
 #: 404.php:31
 #: inc/shop/account-diets.php:96
 #: template-parts/content-none.php:30
 #: template-parts/content-shop-cta.php:23
 msgid "Browse the shop"
-msgstr "Shiko dyqanin"
+msgstr "Shfleto produktet"
 
 #: 404.php:33
 msgid "Go to the homepage"
@@ -81,7 +81,7 @@ msgstr "Kalo te përmbajtja"
 
 #: inc/customizer.php:25
 msgid "Header tagline"
-msgstr "Slogani në header"
+msgstr "Slogani në krye të faqes"
 
 #: inc/customizer.php:31
 msgid "Contact email"
@@ -93,15 +93,15 @@ msgstr "Numri i WhatsApp-it"
 
 #: inc/customizer.php:38
 msgid "International format, digits only (e.g. 38344123456). Leave empty to hide every WhatsApp link."
-msgstr "Formati ndërkombëtar, vetëm shifra (p.sh. 38344123456). Lëre bosh për të fshehur çdo lidhje WhatsApp."
+msgstr "Shkruaj numrin në format ndërkombëtar, vetëm me shifra (p.sh. 38344123456). Lëre bosh për të fshehur të gjitha lidhjet e WhatsApp-it."
 
 #: inc/customizer.php:44
 msgid "Instagram URL"
-msgstr "Linku i Instagram-it"
+msgstr "Adresa e Instagram-it"
 
 #: inc/customizer.php:50
 msgid "TikTok URL"
-msgstr "Linku i TikTok-ut"
+msgstr "Adresa e TikTok-ut"
 
 #: inc/customizer.php:61
 msgid "Launch offer"
@@ -109,39 +109,39 @@ msgstr "Oferta e lansimit"
 
 #: inc/customizer.php:63
 msgid "Offer label"
-msgstr "Emri i ofertës"
+msgstr "Teksti i ofertës"
 
 #: inc/customizer.php:69
 msgid "Site offer ends at"
-msgstr "Oferta e faqes mbaron më"
+msgstr "Oferta e faqes përfundon më"
 
 #: inc/customizer.php:70
 msgid "In the site timezone. The offer bar and countdowns show only while this date is in the future, or while a Product has a scheduled sale."
-msgstr "Sipas zonës kohore të faqes. Shiriti i ofertës dhe numëruesit shfaqen vetëm kur kjo datë është në të ardhmen, ose kur një produkt ka një ulje të planifikuar."
+msgstr "Ora llogaritet sipas zonës kohore të faqes. Shiriti i ofertës dhe numëruesit shfaqen vetëm nëse kjo datë është ende në të ardhmen ose nëse një produkt ka zbritje të planifikuar."
 
 #: inc/customizer.php:76
 msgid "Customers before the online store"
-msgstr "Klientët para dyqanit online"
+msgstr "Klientë para hapjes së dyqanit online"
 
 #: inc/customizer.php:77
 msgid "Added to paid online orders for the customer count."
-msgstr "U shtohet porosive të paguara online për numrin e klientëve."
+msgstr "Ky numër i shtohet numrit të klientëve që kanë bërë porosi të paguara online."
 
 #: inc/customizer.php:83
 msgid "Exit-intent coupon code"
-msgstr "Kodi i kuponit në dalje"
+msgstr "Kodi i kuponit për vizitorët që largohen"
 
 #: inc/customizer.php:84
 msgid "The homepage exit offer shows only while this coupon exists and is valid."
-msgstr "Oferta në dalje e faqes kryesore shfaqet vetëm kur ky kupon ekziston dhe është i vlefshëm."
+msgstr "Oferta që shfaqet kur vizitori largohet nga faqja kryesore është aktive vetëm për sa kohë që ky kupon ekziston dhe është i vlefshëm."
 
 #: inc/customizer.php:90
 msgid "Payment badges"
-msgstr "Shenjat e pagesës"
+msgstr "Ikonat e mënyrave të pagesës"
 
 #: inc/customizer.php:91
 msgid "Comma-separated. List only the methods checkout actually offers."
-msgstr "Të ndara me presje. Listo vetëm mënyrat e pagesës që ofron vërtet faqja e pagesës."
+msgstr "Ndaji me presje. Shëno vetëm mënyrat e pagesës që ofrohen realisht gjatë përfundimit të porosisë."
 
 #: inc/setup.php:38
 msgid "Primary"
@@ -153,7 +153,7 @@ msgstr "Fundi i faqes"
 
 #: inc/shop/archive.php:22
 msgid "Our picks"
-msgstr "Të zgjedhurat"
+msgstr "Përzgjedhjet tona"
 
 #: inc/shop/archive.php:23
 msgid "Best sellers"
@@ -161,11 +161,11 @@ msgstr "Më të shiturat"
 
 #: inc/shop/archive.php:24
 msgid "Price: low to high"
-msgstr "Çmimi: i ulët → i lartë"
+msgstr "Çmimi: nga më i liri te më i shtrenjti"
 
 #: inc/shop/archive.php:25
 msgid "Price: high to low"
-msgstr "Çmimi: i lartë → i ulët"
+msgstr "Çmimi: nga më i shtrenjti te më i liri"
 
 #: inc/shop/archive.php:98
 msgid "All"
@@ -177,7 +177,7 @@ msgstr "Programe stërvitjeje"
 
 #: inc/shop/archive.php:62
 msgid "Diets"
-msgstr "Dieta"
+msgstr "Plane ushqimore"
 
 #: inc/shop/archive.php:63
 msgid "Bundles"
@@ -187,7 +187,7 @@ msgstr "Paketa"
 #: inc/woocommerce.php:26
 msgctxt "breadcrumb"
 msgid "Home"
-msgstr "Kreu"
+msgstr "Ballina"
 
 #: inc/shop/archive.php:132
 #: inc/template-tags.php:122
@@ -204,7 +204,7 @@ msgstr "Të gjitha produktet"
 #: inc/shop/bundle.php:72
 #, php-format
 msgid "%1$s is already included in %2$s in your cart."
-msgstr "%1$s përfshihet tashmë në %2$s që ke në shportë."
+msgstr "%1$s është tashmë pjesë e paketës %2$s në shportën tënde."
 
 #. translators: %s: Product name.
 #. translators: %s: the discount, e.g. "10% extra off".
@@ -218,13 +218,13 @@ msgstr "%s është tashmë në shportën tënde."
 #: inc/shop/bundle.php:191
 #, php-format
 msgid "%s has no published components, so it shows no saving. Choose its components under \"Bundle\"."
-msgstr "%s nuk ka produkte përbërëse të publikuara, prandaj nuk shfaq kursim. Zgjidh produktet përbërëse te \"Bundle\"."
+msgstr "%s nuk ka produkte të përfshira të publikuara, ndaj nuk shfaqet asnjë kursim. Zgjidhi produktet për këtë paketë te \"Paketa\"."
 
 #. translators: 1: bundle name, 2: bundle price, 3: sum of its components' prices.
 #: inc/shop/bundle.php:197
 #, php-format
 msgid "%1$s costs %2$s, which is not less than its components together (%3$s), so it shows no saving. Lower its price below the components' total."
-msgstr "%1$s kushton %2$s, që nuk është më pak se produktet përbërëse bashkë (%3$s), prandaj nuk shfaq kursim. Ule çmimin nën totalin e tyre."
+msgstr "%1$s kushton %2$s, pra nuk është më e lirë se shuma e çmimeve të produkteve të përfshira (%3$s), ndaj nuk shfaqet kursim. Vendose çmimin e paketës nën shumën totale të produkteve."
 
 #: inc/shop/buy-now.php:63
 #: inc/shop/cart.php:207
@@ -251,7 +251,7 @@ msgstr "Sesioni yt ka skaduar. Rifresko faqen dhe provo përsëri."
 #: inc/shop/checkout.php:95
 #, php-format
 msgid "%1$s uses the WooCommerce block, which the Optimum Lift theme does not style. Replace the block with the %2$s shortcode."
-msgstr "%1$s përdor bllokun e WooCommerce, të cilin tema Optimum Lift nuk e stilizon. Zëvendësoje bllokun me shortcode-in %2$s."
+msgstr "%1$s përdor një bllok të WooCommerce që nuk është stilizuar nga tema Optimum Lift. Zëvendësoje me shortcode-in %2$s."
 
 #: inc/shop/checkout.php:129
 msgid "Payment"
@@ -264,7 +264,7 @@ msgstr "Të dhënat e tua"
 #: inc/shop/checkout.php:245
 #: template-parts/single-product/cross-sells.php:32
 msgid "Frequently bought together"
-msgstr "Blihet shpesh bashkë me"
+msgstr "Shpesh blihen bashkë"
 
 #: inc/shop/fields.php:30
 msgid "Sales page"
@@ -277,11 +277,11 @@ msgstr "Paketa"
 
 #: inc/shop/fields.php:45
 msgid "Components"
-msgstr "Përbërësit"
+msgstr "Produktet e përfshira"
 
 #: inc/shop/fields.php:46
 msgid "The Products this bundle includes. Its comparison price is the sum of their current prices."
-msgstr "Produktet që përfshin kjo paketë. Çmimi i krahasimit është shuma e çmimeve të tyre aktuale."
+msgstr "Produktet që përfshin kjo paketë. Çmimi i krahasimit është shuma e çmimeve aktuale të këtyre produkteve."
 
 #: inc/shop/fields.php:57
 msgid "Page sections"
@@ -301,15 +301,15 @@ msgstr "Theksi i titullit"
 
 #: inc/shop/fields.php:79
 msgid "The end of the Product name to show in the accent colour, e.g. \"12-Javor\"."
-msgstr "Fundi i emrit të produktit që shfaqet me ngjyrën e theksit, p.sh. \"12-Javor\"."
+msgstr "Pjesa e fundit e emrit të produktit që do të shfaqet me ngjyrën e theksit, p.sh. \"12-javor\"."
 
 #: inc/shop/fields.php:81
 msgid "Card blurb"
-msgstr "Përshkrimi i kartës"
+msgstr "Përshkrimi i shkurtër i kartelës"
 
 #: inc/shop/fields.php:82
 msgid "One sentence for Product cards. When empty, the short description cut to 16 words."
-msgstr "Një fjali për kartat e produktit. Kur është bosh, përshkrimi i shkurtër i prerë në 16 fjalë."
+msgstr "Një fjali për kartelat e produktit. Nëse lihet bosh, përshkrimi i shkurtër shkurtohet në 16 fjalë."
 
 #: inc/shop/fields.php:84
 msgid "Benefit bullets"
@@ -322,11 +322,11 @@ msgstr "Teksti"
 
 #: inc/shop/fields.php:87
 msgid "Cards show the first 3, the Product page up to 6."
-msgstr "Kartat shfaqin 3 të parat, faqja e produktit deri në 6."
+msgstr "Kartelat shfaqin 3 përfitimet e para, ndërsa faqja e produktit mund të shfaqë deri në 6."
 
 #: inc/shop/fields.php:89
 msgid "Duration (weeks)"
-msgstr "Kohëzgjatja (javë)"
+msgstr "Kohëzgjatja (në javë)"
 
 #: inc/shop/fields.php:90
 msgid "Shows the price per week."
@@ -346,7 +346,7 @@ msgstr "Etiketa e nivelit"
 
 #: inc/shop/fields.php:98
 msgid "The pill beside the category. When empty, the goal."
-msgstr "Etiketa pranë kategorisë. Kur është bosh, objektivi."
+msgstr "Etiketa e vogël pranë kategorisë. Nëse lihet bosh, shfaqet objektivi."
 
 #: inc/shop/fields.php:100
 msgid "Included versions"
@@ -364,7 +364,7 @@ msgstr "Opsionet"
 
 #: inc/shop/fields.php:104
 msgid "Every version ships with the Product. Nothing here is a choice the buyer makes."
-msgstr "Çdo version vjen me produktin. Asgjë këtu nuk është zgjedhje që bën blerësi."
+msgstr "Të gjitha versionet përfshihen në produkt. Këtu nuk ka opsione që blerësi duhet t’i zgjedhë."
 
 #: inc/shop/fields.php:106
 msgid "Versions note"
@@ -372,7 +372,7 @@ msgstr "Shënimi i versioneve"
 
 #: inc/shop/fields.php:107
 msgid "Trust strip"
-msgstr "Shiriti i besimit"
+msgstr "Shiriti i elementeve të besimit"
 
 #: inc/shop/fields.php:108
 #: inc/shop/fields.php:131
@@ -381,11 +381,11 @@ msgstr "Vlera"
 
 #: inc/shop/fields.php:114
 msgid "Bundle hint"
-msgstr "Sugjerimi për paketën"
+msgstr "Teksti shoqërues i paketës"
 
 #: inc/shop/fields.php:115
 msgid "The sentence before the bundle name, e.g. \"E do edhe ushqimin e zgjidhur?\""
-msgstr "Fjalia para emrit të paketës, p.sh. \"E do edhe ushqimin e zgjidhur?\""
+msgstr "Fjalia që shfaqet para emrit të paketës, p.sh. \"Dëshiron ta plotësosh edhe planin ushqimor?\""
 
 #: inc/shop/fields.php:129
 msgid "Title"
@@ -397,7 +397,7 @@ msgstr "Emri"
 
 #: inc/shop/fields.php:133
 msgid "Body"
-msgstr "Teksti"
+msgstr "Përmbajtja"
 
 #: inc/shop/fields.php:134
 msgid "Note"
@@ -417,7 +417,7 @@ msgstr "Teksti i butonit"
 
 #: inc/shop/fields.php:138
 msgid "Button anchor"
-msgstr "Ankora e butonit"
+msgstr "ID-ja e seksionit ku të çon butoni"
 
 #: inc/shop/fields.php:139
 msgid "Chips"
@@ -425,7 +425,7 @@ msgstr "Etiketat"
 
 #: inc/shop/fields.php:142
 msgid "Who it is for"
-msgstr "Për kë është"
+msgstr "Për kë është ky produkt"
 
 #: inc/shop/fields.php:143
 msgid "\"For you\" title"
@@ -467,7 +467,7 @@ msgstr "Me ikona"
 #: inc/shop/fields.php:159
 #: inc/shop/fields.php:379
 msgid "Cards"
-msgstr "Kartat"
+msgstr "Kartelat"
 
 #: inc/shop/fields.php:163
 #: inc/shop/fields.php:405
@@ -476,7 +476,7 @@ msgstr "Pikat"
 
 #: inc/shop/fields.php:165
 msgid "Featured"
-msgstr "I veçuar"
+msgstr "I theksuar"
 
 #: inc/shop/fields.php:167
 msgid "Checklist"
@@ -484,7 +484,7 @@ msgstr "Lista e kontrollit"
 
 #: inc/shop/fields.php:169
 msgid "Look inside"
-msgstr "Shiko brenda"
+msgstr "Shiko çfarë përmban"
 
 #: inc/shop/fields.php:170
 msgid "Workout label"
@@ -496,7 +496,7 @@ msgstr "Etiketa e shkurtër e stërvitjes"
 
 #: inc/shop/fields.php:172
 msgid "Workout rows"
-msgstr "Rreshtat e stërvitjes"
+msgstr "Rreshtat e ushtrimeve"
 
 #: inc/shop/fields.php:173
 msgid "Exercise"
@@ -536,7 +536,7 @@ msgstr "Shënimi i progresit"
 
 #: inc/shop/fields.php:188
 msgid "Sample day"
-msgstr "Një ditë shembull"
+msgstr "Shembull i një dite"
 
 #: inc/shop/fields.php:189
 msgid "Day label"
@@ -586,12 +586,12 @@ msgstr "Lejohet teksti i theksuar."
 
 #: inc/shop/fields.php:204
 msgid "Facts"
-msgstr "Faktet"
+msgstr "Të dhëna kryesore"
 
 #: inc/shop/fields.php:209
 #: template-parts/blocks/value-stack.php:240
 msgid "Shopping list"
-msgstr "Lista e pazarit"
+msgstr "Lista e blerjeve"
 
 #: inc/shop/fields.php:211
 msgid "Cost label"
@@ -603,7 +603,7 @@ msgstr "Kostoja"
 
 #: inc/shop/fields.php:213
 msgid "Cost suffix"
-msgstr "Prapashtesa e kostos"
+msgstr "Njësia pas kostos"
 
 #: inc/shop/fields.php:214
 msgid "Cost note"
@@ -619,7 +619,7 @@ msgstr "Shënimi i listës"
 
 #: inc/shop/fields.php:219
 msgid "Value stack"
-msgstr "Stiva e vlerës"
+msgstr "Përmbledhja e vlerës"
 
 #: inc/shop/fields.php:220
 msgid "Layout"
@@ -631,7 +631,7 @@ msgstr "Në qendër"
 
 #: inc/shop/fields.php:222
 msgid "Split, with image"
-msgstr "E ndarë, me foto"
+msgstr "E ndarë në dy pjesë, me imazh"
 
 #: inc/shop/fields.php:224
 #: inc/shop/fields.php:277
@@ -691,7 +691,7 @@ msgstr "Citimi"
 
 #: inc/shop/fields.php:246
 msgid "Disclaimer"
-msgstr "Mohimi i përgjegjësisë"
+msgstr "Sqarim"
 
 #: inc/shop/fields.php:250
 msgid "Reviews"
@@ -703,7 +703,7 @@ msgstr "Burimi"
 
 #: inc/shop/fields.php:252
 msgid "Product reviews, then testimonials"
-msgstr "Vlerësimet e produktit, pastaj dëshmitë"
+msgstr "Fillimisht vlerësimet e produktit, pastaj dëshmitë e klientëve"
 
 #: inc/shop/fields.php:253
 msgid "Product reviews"
@@ -716,7 +716,7 @@ msgstr "Dëshmitë"
 
 #: inc/shop/fields.php:256
 msgid "Product reviews to show"
-msgstr "Vlerësime të produktit për t'u shfaqur"
+msgstr "Numri i vlerësimeve të produktit që do të shfaqen"
 
 #: inc/shop/fields.php:265
 msgid "Rating"
@@ -773,7 +773,7 @@ msgstr "Roli"
 
 #: inc/shop/fields.php:300
 msgid "Badges"
-msgstr "Distinktivët"
+msgstr "Etiketat"
 
 #: inc/customizer.php:56
 #: inc/shop/fields.php:307
@@ -787,7 +787,7 @@ msgstr "Brez"
 
 #: inc/shop/fields.php:310
 msgid "Card"
-msgstr "Kartë"
+msgstr "Kartelë"
 
 #: inc/shop/fields.php:317
 #: template-parts/footer/site-footer.php:21
@@ -808,7 +808,7 @@ msgstr "Përgjigjja"
 
 #: inc/shop/fields.php:322
 msgid "Medical disclaimer"
-msgstr "Shënimi mjekësor"
+msgstr "Sqarim mjekësor"
 
 #: inc/shop/fields.php:323
 msgid "Show the WhatsApp help box"
@@ -816,11 +816,11 @@ msgstr "Shfaq kutinë e ndihmës në WhatsApp"
 
 #: inc/shop/fields.php:324
 msgid "Shown only when a WhatsApp number is set in the Customizer."
-msgstr "Shfaqet vetëm kur në Customizer është vendosur një numër WhatsApp."
+msgstr "Shfaqet vetëm nëse në Customizer është vendosur një numër WhatsApp."
 
 #: inc/shop/fields.php:327
 msgid "Final call to action"
-msgstr "Thirrja përfundimtare për veprim"
+msgstr "Thirrja për veprim në fund të faqes"
 
 #: inc/shop/fields.php:329
 #: inc/shop/fields.php:418
@@ -846,7 +846,7 @@ msgstr "Bli tani"
 
 #: inc/shop/fields.php:338
 msgid "Scroll to a section"
-msgstr "Shko te një seksion"
+msgstr "Shko te seksioni"
 
 #: inc/shop/fields.php:340
 #: inc/shop/fields.php:351
@@ -859,11 +859,11 @@ msgstr "Shfaq \"Shto në shportë\""
 
 #: inc/shop/fields.php:344
 msgid "Rich text"
-msgstr "Tekst i formatuar"
+msgstr "Tekst me formatim"
 
 #: inc/shop/fields.php:347
 msgid "Homepage hero"
-msgstr "Hapja e faqes kryesore"
+msgstr "Seksioni kryesor i faqes kryesore"
 
 #: inc/shop/fields.php:348
 msgid "Show customers and rating"
@@ -879,7 +879,7 @@ msgstr "Ankora e butonit dytësor"
 
 #: inc/shop/fields.php:354
 msgid "Reassurance"
-msgstr "Siguritë"
+msgstr "Mesazhe që krijojnë besim"
 
 #: inc/shop/fields.php:357
 msgid "Before label"
@@ -899,15 +899,15 @@ msgstr "Progresi (%)"
 
 #: inc/shop/fields.php:361
 msgid "Progress stats"
-msgstr "Shifrat e progresit"
+msgstr "Statistikat e progresit"
 
 #: inc/shop/fields.php:365
 msgid "Day plan label"
-msgstr "Etiketa e planit të ditës"
+msgstr "Etiketa e planit ditor"
 
 #: inc/shop/fields.php:366
 msgid "Day plan"
-msgstr "Plani i ditës"
+msgstr "Plani ditor"
 
 #: inc/shop/fields.php:367
 #: template-parts/blocks/sample-day.php:117
@@ -920,7 +920,7 @@ msgstr "Shifrat"
 
 #: inc/shop/fields.php:375
 msgid "Marquee"
-msgstr "Shiriti lëvizës"
+msgstr "Tekst lëvizës"
 
 #: inc/shop/fields.php:378
 msgid "Problem"
@@ -928,7 +928,7 @@ msgstr "Problemi"
 
 #: inc/shop/fields.php:384
 msgid "Closing line"
-msgstr "Rreshti përmbyllës"
+msgstr "Fjalia përmbyllëse"
 
 #: inc/shop/fields.php:388
 msgid "How it works"
@@ -944,11 +944,11 @@ msgstr "Shfaq porositë e fundit"
 
 #: inc/shop/fields.php:397
 msgid "Shown only when enough orders were paid in the last 24 hours."
-msgstr "Shfaqet vetëm kur janë paguar mjaftueshëm porosi në 24 orët e fundit."
+msgstr "Shfaqet vetëm nëse janë paguar mjaftueshëm porosi gjatë 24 orëve të fundit."
 
 #: inc/shop/fields.php:400
 msgid "Goal tabs"
-msgstr "Skedat e objektivave"
+msgstr "Skedat sipas objektivit"
 
 #: inc/shop/fields.php:401
 msgid "Tabs"
@@ -965,7 +965,7 @@ msgstr "Titulli"
 
 #: inc/shop/fields.php:409
 msgid "Used when no Product is set."
-msgstr "Përdoret kur nuk është zgjedhur produkt."
+msgstr "Përdoret kur nuk është caktuar asnjë produkt."
 
 #: inc/shop/fields.php:411
 msgid "Stat"
@@ -989,7 +989,7 @@ msgstr "Kur është bosh, paketa e parë."
 
 #: inc/shop/fields.php:423
 msgid "Featured Products to show"
-msgstr "Produkte të veçuara për t'u shfaqur"
+msgstr "Produktet e theksuara që do të shfaqen"
 
 #: inc/shop/fields.php:428
 msgid "\"More Products\" heading"
@@ -1017,11 +1017,11 @@ msgstr "Etiketa e navigimit"
 
 #: inc/shop/fields.php:453
 msgid "Adds a link to this section in the header."
-msgstr "Shton një lidhje për këtë seksion në kokën e faqes."
+msgstr "Shton një lidhje për këtë seksion në menynë e sipërme."
 
 #: inc/shop/fields.php:456
 msgid "Eyebrow"
-msgstr "Mbititulli"
+msgstr "Teksti sipër titullit"
 
 #: inc/shop/fields.php:459
 msgid "Background"
@@ -1036,7 +1036,7 @@ msgstr "Faqja"
 
 #: inc/shop/fields.php:465
 msgid "A new line breaks the heading."
-msgstr "Një rresht i ri e ndan titullin në dy rreshta."
+msgstr "Një rresht i ri e ndan titullin."
 
 #: inc/shop/fields.php:469
 msgid "Intro"
@@ -1044,7 +1044,7 @@ msgstr "Hyrja"
 
 #: inc/shop/fields.php:546
 msgid "One per line."
-msgstr "Një për rresht."
+msgstr "Shkruaj nga një në çdo rresht."
 
 #: inc/shop/fields.php:637
 msgid "Icon"
@@ -1052,7 +1052,7 @@ msgstr "Ikona"
 
 #: inc/shop/fields.php:651
 msgid "Put *words* between asterisks to show them in the accent colour."
-msgstr "Vendos *fjalët* mes yjeve që të shfaqen me ngjyrën e theksit."
+msgstr "Vendos *fjalët* midis yllëzave që të shfaqen me ngjyrën e theksit."
 
 #. translators: %s: the highest discount, a number.
 #: inc/shop/offer.php:95
@@ -1080,7 +1080,7 @@ msgstr "Paketa e plotë"
 
 #: inc/shop/proof.php:202
 msgid "Best value"
-msgstr "Vlera më e mirë"
+msgstr "Zgjedhja më ekonomike"
 
 #: inc/shop/proof.php:206
 msgid "Best seller"
@@ -1107,7 +1107,7 @@ msgstr "Fillo tani"
 
 #: inc/template-tags.php:398
 msgid "Terms of service"
-msgstr "Kushtet e shërbimit"
+msgstr "Kushtet e përdorimit"
 
 #: inc/template-tags.php:399
 #: template-parts/components/consent-banner.php:21
@@ -1117,18 +1117,18 @@ msgstr "Politika e privatësisë"
 #: inc/shop/withdrawal.php:80
 #: inc/template-tags.php:400
 msgid "Refund policy"
-msgstr "Politika e kthimit"
+msgstr "Politika e rimbursimit"
 
 #: inc/woocommerce.php:22
 #: template-parts/shop/intro.php:21
 msgid "Breadcrumb"
-msgstr "Rruga"
+msgstr "Shtegu i navigimit"
 
 #. translators: %s: date the page was last changed.
 #: page.php:60
 #, php-format
 msgid "Last updated %s"
-msgstr "Përditësuar më %s"
+msgstr "Përditësuar për herë të fundit më %s"
 
 #. translators: %s: number of search results.
 #: search.php:22
@@ -1145,15 +1145,15 @@ msgstr "Kërko"
 
 #: searchform.php:16
 msgid "Search articles, programs, plans…"
-msgstr "Kërko artikuj, programe, plane…"
+msgstr "Kërko artikuj, programe stërvitjeje ose plane ushqimore…"
 
 #. translators: %d: estimated reading time in minutes.
 #: single.php:30
 #, php-format
 msgid "%d min read"
 msgid_plural "%d min read"
-msgstr[0] "%d min lexim"
-msgstr[1] "%d min lexim"
+msgstr[0] "Lexohet për %d min"
+msgstr[1] "Lexohet për %d min"
 
 #: single.php:54
 msgid "Tags"
@@ -1185,7 +1185,7 @@ msgstr "Jo"
 
 #: template-parts/blocks/comparison.php:84
 msgid "You're viewing it"
-msgstr "Po e shikon"
+msgstr "Aktualisht po e shikon"
 
 #: template-parts/blocks/comparison.php:93
 msgid "View"
@@ -1193,15 +1193,15 @@ msgstr "Shiko"
 
 #: template-parts/blocks/faq.php:93
 msgid "Have other questions before you buy?"
-msgstr "Ke pyetje të tjera para se të blesh?"
+msgstr "Ke ende pyetje para se të blesh?"
 
 #: template-parts/blocks/faq.php:94
 msgid "Message us on WhatsApp and we reply within 24 hours."
-msgstr "Shkruaj në WhatsApp — përgjigjemi brenda 24 orësh."
+msgstr "Na shkruaj në WhatsApp. Do të të përgjigjemi brenda 24 orëve."
 
 #: template-parts/blocks/faq.php:98
 msgid "Message us on WhatsApp"
-msgstr "Shkruaj në WhatsApp"
+msgstr "Na shkruaj në WhatsApp"
 
 #: template-parts/blocks/faq.php:99
 #: template-parts/blocks/preview.php:147
@@ -1258,7 +1258,7 @@ msgstr "Shiko të gjitha produktet (%s)"
 
 #: template-parts/blocks/pricing.php:62
 msgid "Offer ends in"
-msgstr "Oferta mbaron pas"
+msgstr "Oferta përfundon pas"
 
 #: template-parts/blocks/pricing.php:117
 msgid "100% secure payment"
@@ -1266,7 +1266,7 @@ msgstr "Pagesë 100% e sigurt"
 
 #: template-parts/blocks/pricing.php:122
 msgid "Instant delivery by email"
-msgstr "Dorëzim i menjëhershëm në email"
+msgstr "Dërgesë e menjëhershme me email"
 
 #: template-parts/blocks/results.php:50
 msgid "Results vary from person to person and depend on following the plan."
@@ -1322,11 +1322,11 @@ msgstr "%s nga 5 yje"
 
 #: template-parts/blocks/reviews.php:255
 msgid "Rate…"
-msgstr "Vlerëso…"
+msgstr "Vlerësoje…"
 
 #: template-parts/blocks/reviews.php:256
 msgid "Perfect"
-msgstr "Perfekt"
+msgstr "Shkëlqyeshëm"
 
 #: template-parts/blocks/reviews.php:257
 msgid "Good"
@@ -1338,7 +1338,7 @@ msgstr "Mesatar"
 
 #: template-parts/blocks/reviews.php:259
 msgid "Not that bad"
-msgstr "Jo aq keq"
+msgstr "Jo edhe aq keq"
 
 #: template-parts/blocks/reviews.php:260
 msgid "Very poor"
@@ -1385,15 +1385,15 @@ msgstr "P / K / Y"
 
 #: template-parts/blocks/sample-day.php:124
 msgid "Protein / carbs / fat (g)"
-msgstr "Proteina / karbohidrate / yndyra (g)"
+msgstr "Proteina / karbohidrate / yndyrë (g)"
 
 #. translators: %s: number of customers who paid for an order in the last 24 hours.
 #: template-parts/blocks/steps.php:115
 #, php-format
 msgid "%s customer started in the last 24 hours"
 msgid_plural "%s customers started in the last 24 hours"
-msgstr[0] "%s klient e ka filluar në 24 orët e fundit"
-msgstr[1] "%s klientë e kanë filluar në 24 orët e fundit"
+msgstr[0] "%s klient e ka nisur programin gjatë 24 orëve të fundit"
+msgstr[1] "%s klientë e kanë nisur programin gjatë 24 orëve të fundit"
 
 #: template-parts/blocks/value-stack.php:145
 msgid "Bonus:"
@@ -1409,7 +1409,7 @@ msgstr "Vlera totale"
 
 #: template-parts/blocks/value-stack.php:170
 msgid "You pay today"
-msgstr "Ti paguan sot"
+msgstr "Çmimi që paguan sot"
 
 #: template-parts/blocks/value-stack.php:198
 msgid "PDF"
@@ -1417,7 +1417,7 @@ msgstr "PDF"
 
 #: template-parts/blocks/value-stack.php:220
 msgid "Macros of the day"
-msgstr "Makro të ditës"
+msgstr "Makrot ditore"
 
 #: template-parts/cart/drawer.php:21
 msgid "Your cart"
@@ -1433,7 +1433,7 @@ msgstr "Shporta jote është bosh."
 
 #: template-parts/cart/empty.php:15
 msgid "Pick a training program or a meal plan and start today."
-msgstr "Zgjidh një program ose një plan ushqimor dhe fillo sot."
+msgstr "Zgjidh një program stërvitjeje ose një plan ushqimor dhe fillo që sot."
 
 #: template-parts/cart/empty.php:17
 msgid "Keep browsing the products"
@@ -1441,7 +1441,7 @@ msgstr "Vazhdo të shfletosh produktet"
 
 #: template-parts/cart/foot.php:39
 msgid "Value without discount"
-msgstr "Vlera pa ulje"
+msgstr "Vlera pa zbritje"
 
 #: template-parts/cart/foot.php:42
 #: woocommerce/checkout/review-order.php:105
@@ -1450,7 +1450,7 @@ msgstr "Kursen"
 
 #: template-parts/cart/foot.php:45
 msgid "Coupon discount"
-msgstr "Zbritja e kuponit"
+msgstr "Zbritja nga kuponi"
 
 #: template-parts/cart/foot.php:47
 msgid "Total"
@@ -1481,13 +1481,13 @@ msgstr "Hiq"
 
 #: template-parts/cart/upsell.php:32
 msgid "Better deal"
-msgstr "Ofertë më e mirë"
+msgstr "Ofertë më e leverdishme"
 
 #. translators: 1: bundle name, 2: bundle price.
 #: template-parts/cart/upsell.php:35
 #, php-format
 msgid "%1$s includes every program and every diet for %2$s — less than what's in your cart."
-msgstr "%1$s i përmban të gjitha programet dhe të gjitha dietat për %2$s — më lirë se sa ke në shportë."
+msgstr "%1$s përfshin të gjitha programet dhe planet ushqimore për %2$s — me çmim më të ulët se produktet që ke në shportë."
 
 #. translators: %s: amount saved by switching.
 #: template-parts/cart/upsell.php:40
@@ -1499,7 +1499,7 @@ msgstr "Kalo te paketa e plotë dhe kurse %s"
 #: template-parts/cart/upsell.php:45
 #, php-format
 msgid "Only +%s more for everything"
-msgstr "Vetëm +%s më shumë për gjithçka"
+msgstr "Vetëm edhe +%s për t’i marrë të gjitha"
 
 #. translators: 1: bundle name, 2: its components' total price, struck through, 3: bundle price.
 #: template-parts/cart/upsell.php:48
@@ -1515,19 +1515,19 @@ msgstr "Kalo te %s"
 
 #: template-parts/cart/upsell.php:58
 msgid "Goes well with this"
-msgstr "Shkon bashkë me këtë"
+msgstr "Plotësoje me këtë"
 
 #. translators: %s: meal plan name.
 #: template-parts/cart/upsell.php:62
 #, php-format
 msgid "Training without a meal plan only gets you halfway. Add %s and complete the system."
-msgstr "Stërvitja pa plan ushqimor ecën përgjysmë. Shto %s dhe mbylle sistemin."
+msgstr "Pa një plan ushqimor, stërvitja të çon vetëm deri në gjysmë të rrugës. Shto %s për ta plotësuar planin."
 
 #. translators: %s: training program name.
 #: template-parts/cart/upsell.php:64
 #, php-format
 msgid "Eating well without training only gets you halfway. Add %s and complete the system."
-msgstr "Ushqimi pa stërvitje ecën përgjysmë. Shto %s dhe mbylle sistemin."
+msgstr "Pa stërvitje, ushqyerja e mirë të çon vetëm deri në gjysmë të rrugës. Shto %s për ta plotësuar planin."
 
 #. translators: 1: Product name, 2: its price.
 #: template-parts/cart/upsell.php:66
@@ -1547,7 +1547,7 @@ msgstr "Plani të vjen me email menjëherë pas pagesës."
 
 #: template-parts/checkout/trust.php:30
 msgid "Encrypted payment"
-msgstr "Pagesë e enkriptuar"
+msgstr "Pagesë e mbrojtur me enkriptim"
 
 #: template-parts/checkout/trust.php:31
 msgid "Your payment is protected with SSL encryption."
@@ -1584,7 +1584,7 @@ msgstr "Faqja tjetër"
 
 #: template-parts/content-none.php:17
 msgid "Nothing matched your search."
-msgstr "Asgjë nuk përputhet me kërkimin."
+msgstr "Nuk u gjet asnjë rezultat për kërkimin tënd."
 
 #: template-parts/content-none.php:17
 msgid "Nothing here yet."
@@ -1592,11 +1592,11 @@ msgstr "Ende nuk ka asgjë këtu."
 
 #: template-parts/content-none.php:20
 msgid "Try fewer or different words, or browse every program and plan in the shop."
-msgstr "Provo më pak fjalë ose fjalë të tjera, ose shiko çdo program dhe plan në dyqan."
+msgstr "Provo me më pak fjalë ose me fjalë të tjera, ose shfleto të gjitha programet dhe planet në dyqan."
 
 #: template-parts/content-none.php:20
 msgid "We are working on new content. In the meantime, browse the programs and plans."
-msgstr "Po punojmë për përmbajtje të re. Ndërkohë, shiko programet dhe planet."
+msgstr "Po përgatisim përmbajtje të re. Ndërkohë, shfleto programet dhe planet."
 
 #: template-parts/content-shop-cta.php:18
 msgid "Ready to start?"
@@ -1604,7 +1604,7 @@ msgstr "Gati për të filluar?"
 
 #: template-parts/content-shop-cta.php:19
 msgid "Training programs and meal plans in Albanian, for real people with real schedules."
-msgstr "Programe stërvitjeje dhe plane ushqimore në shqip, për njerëz realë me orare reale."
+msgstr "Programe stërvitjeje dhe plane ushqimore në shqip, për njerëz me angazhime dhe orare reale."
 
 #: template-parts/content.php:44
 msgid "Read"
@@ -1619,7 +1619,7 @@ msgstr "© %1$s %2$s. Të gjitha të drejtat e rezervuara."
 
 #: template-parts/footer/site-footer.php:39
 msgid "Training programs and meal plans in Albanian, for real people with real schedules. No miracles, no detox teas, no empty promises — just a plan and discipline."
-msgstr "Programe stërvitjeje dhe plane ushqimore në shqip, për njerëz realë me orare reale. Pa mrekulli, pa çajra, pa premtime boshe — vetëm plan dhe disiplinë."
+msgstr "Programe stërvitjeje dhe plane ushqimore në shqip, për njerëz me angazhime dhe orare reale. Pa mrekulli, pa çajra “detoks” e pa premtime boshe — vetëm një plan dhe disiplinë."
 
 #: template-parts/footer/site-footer.php:56
 #: template-parts/shop/archive.php:61
@@ -1644,7 +1644,7 @@ msgstr "Bli tani — %s"
 #: template-parts/header/mobile-menu.php:35
 #, php-format
 msgid "Get my plan — %d%% off"
-msgstr "Merr planin tim — %d%% ULJE"
+msgstr "Merr planin tim — %d%% zbritje"
 
 #. translators: %d: discount percent.
 #: template-parts/header/mobile-menu.php:35
@@ -1662,7 +1662,7 @@ msgstr "Shiko të gjitha produktet"
 #: template-parts/header/mobile-menu.php:53
 #: template-parts/header/mobile-menu.php:56
 msgid "Menu"
-msgstr "Menu"
+msgstr "Menyja"
 
 #: template-parts/header/mobile-menu.php:59
 msgid "Close menu"
@@ -1691,26 +1691,26 @@ msgstr "Hap menunë"
 
 #: template-parts/header/urgency-bar.php:22
 msgid "Ends in"
-msgstr "Mbaron pas"
+msgstr "Përfundon pas"
 
 #. translators: %s: the discount, e.g. 10% or 5,00 €.
 #: template-parts/components/coupon-toast.php:23
 #: template-parts/home/exit-modal.php:30
 #, php-format
 msgid "%s extra off"
-msgstr "%s ulje shtesë"
+msgstr "Edhe %s zbritje"
 
 #. translators: %s: the discount, e.g. "10% extra off", in bold.
 #: template-parts/home/exit-modal.php:34
 #, php-format
 msgid "Get %s on top of the current offer."
-msgstr "Merr %s mbi ofertën aktuale."
+msgstr "Përfito edhe %s zbritje mbi ofertën aktuale."
 
 #. translators: %s: the discount, e.g. "10% extra off", in bold.
 #: template-parts/home/exit-modal.php:36
 #, php-format
 msgid "Get %s on your order."
-msgstr "Merr %s në porosinë tënde."
+msgstr "Përfito %s zbritje në porosinë tënde."
 
 #: template-parts/components/coupon-toast.php:46
 #: template-parts/home/exit-modal.php:44
@@ -1719,11 +1719,11 @@ msgstr "Mbyll"
 
 #: template-parts/home/exit-modal.php:49
 msgid "Wait — don’t leave it for Monday"
-msgstr "Prit — mos e lësho për të hënën"
+msgstr "Prit — mos e shty për të hënën"
 
 #: template-parts/home/exit-modal.php:52
 msgid "It is applied automatically as soon as you add a product to your cart:"
-msgstr "Aplikohet automatikisht sapo të shtosh një produkt në shportë:"
+msgstr "Kodi aplikohet automatikisht sapo të shtosh një produkt në shportë:"
 
 #: template-parts/home/exit-modal.php:57
 msgid "Use it now"
@@ -1731,13 +1731,13 @@ msgstr "Përdore tani"
 
 #: template-parts/home/exit-modal.php:58
 msgid "No thanks, I’ll continue without the discount"
-msgstr "Jo faleminderit, do të vazhdoj pa ulje"
+msgstr "Jo, faleminderit. Do të vazhdoj pa zbritje."
 
 #. translators: %d: discount percent.
 #: template-parts/home/sticky-cta.php:22
 #, php-format
 msgid "Get the plan — %d%% off"
-msgstr "Merr planin — %d%% ULJE"
+msgstr "Merr planin — %d%% zbritje"
 
 #: template-parts/home/sticky-cta.php:23
 msgid "Get the plan"
@@ -1758,11 +1758,11 @@ msgstr "Shto në shportë"
 #: template-parts/product/bundle-banner.php:31
 #, php-format
 msgid "Most chosen · %d in 10 customers"
-msgstr "Më i zgjedhuri · %d nga 10 klientë"
+msgstr "Zgjedhja më e shpeshtë · %d nga 10 klientë"
 
 #: template-parts/product/bundle-banner.php:101
 msgid "Start my transformation now"
-msgstr "Filloj transformimin tani"
+msgstr "Nis transformimin tim tani"
 
 #: template-parts/product/card.php:56
 msgid "View the program"
@@ -1792,7 +1792,7 @@ msgstr "Pa program stërvitjeje"
 #: template-parts/product/card.php:151
 #, php-format
 msgid "Save %d%%"
-msgstr "Kursen %d%%"
+msgstr "Kurse %d%%"
 
 #. translators: %s: number of copies sold.
 #: template-parts/product/card.php:174
@@ -1800,8 +1800,8 @@ msgstr "Kursen %d%%"
 #, php-format
 msgid "%s sold"
 msgid_plural "%s sold"
-msgstr[0] "%s e shitur"
-msgstr[1] "%s të shitura"
+msgstr[0] "%s shitje"
+msgstr[1] "%s shitje"
 
 #: template-parts/product/payment-badges.php:23
 msgid "Accepted payment methods"
@@ -1822,11 +1822,11 @@ msgstr "Kursen %s"
 #: template-parts/product/price.php:96
 #, php-format
 msgid "≈ %s per week · one-time payment"
-msgstr "≈ %s në javë · pagesë e njëhershme"
+msgstr "Rreth %s në javë · pagesë e vetme"
 
 #: template-parts/product/trust-line.php:17
 msgid "One-time payment"
-msgstr "Pagesë e njëhershme"
+msgstr "Pagesë e vetme"
 
 #: template-parts/shop/empty.php:14
 msgid "No products match your search."
@@ -1842,7 +1842,7 @@ msgstr "Ende nuk ka produkte."
 
 #: template-parts/shop/empty.php:22
 msgid "We are working on new products — in the meantime, see them all."
-msgstr "Po punojmë për produkte të reja — ndërkohë shiko të gjitha."
+msgstr "Po përgatisim produkte të reja. Ndërkohë, shiko të gjitha produktet."
 
 #: template-parts/shop/empty.php:23
 msgid "See all"
@@ -1850,7 +1850,7 @@ msgstr "Shiko të gjitha"
 
 #: template-parts/shop/empty.php:25
 msgid "We are working on new products."
-msgstr "Po punojmë për produkte të reja."
+msgstr "Po përgatisim produkte të reja."
 
 #. translators: %s: number of Products in the catalogue.
 #: template-parts/shop/intro.php:45
@@ -1862,7 +1862,7 @@ msgstr[1] "%s produkte digjitale në shqip — programe stërvitjeje dhe plane u
 
 #: template-parts/shop/intro.php:49
 msgid "One-time payment and instant access."
-msgstr "Pagesë e njëhershme dhe akses i menjëhershëm."
+msgstr "Pagesë e vetme dhe akses i menjëhershëm."
 
 #: template-parts/shop/pagination.php:30
 msgid "Pages"
@@ -1892,37 +1892,37 @@ msgstr[1] "%s produkte"
 #: template-parts/single-product/bundle-hint.php:51
 #, php-format
 msgid "%1$s includes every meal plan and training program for %2$s."
-msgstr "%1$s i ka të gjitha planet dhe programet për %2$s."
+msgstr "%1$s përfshin të gjitha planet ushqimore dhe programet e stërvitjes për %2$s."
 
 #. translators: 1: bundle name, 2: bundle price.
 #: template-parts/single-product/bundle-hint.php:53
 #, php-format
 msgid "%1$s includes every training program and meal plan for %2$s."
-msgstr "%1$s i ka të gjitha programet dhe dietat për %2$s."
+msgstr "%1$s përfshin të gjitha programet e stërvitjes dhe planet ushqimore për %2$s."
 
 #. translators: 1: bundle name, 2: number of other Products in the bundle, 3: bundle price.
 #: template-parts/single-product/bundle-hint.php:57
 #, php-format
 msgid "%1$s includes this and %2$s more product for %3$s."
 msgid_plural "%1$s includes this and %2$s more products for %3$s."
-msgstr[0] "%1$s e përfshin këtë dhe %2$s produkt tjetër për %3$s."
-msgstr[1] "%1$s e përfshin këtë dhe %2$s produkte të tjera për %3$s."
+msgstr[0] "%1$s përfshin këtë produkt dhe %2$s produkt tjetër për %3$s."
+msgstr[1] "%1$s përfshin këtë produkt dhe %2$s produkte të tjera për %3$s."
 
 #: template-parts/single-product/cross-sells.php:24
 msgid "Customers who got this program also added these."
-msgstr "Klientët që morën këtë program, shtuan edhe këto."
+msgstr "Klientët që blenë këtë program shtuan edhe këto produkte."
 
 #: template-parts/single-product/cross-sells.php:25
 msgid "Food decides how much you lose. Training decides how you look once you lose it."
-msgstr "Ushqimi zgjidh sa humbet. Stërvitja zgjidh si dukesh kur e humb."
+msgstr "Ushqimi përcakton sa peshë humb, ndërsa stërvitja ndikon në mënyrën si dukesh pasi ta humbësh."
 
 #: template-parts/single-product/fallback.php:43
 msgid "No hidden subscription"
-msgstr "Pa abonim i fshehur"
+msgstr "Pa abonime të fshehta"
 
 #: template-parts/single-product/fallback.php:44
 msgid "No complicated cancellation"
-msgstr "Pa anulim i komplikuar"
+msgstr "Pa procedura të ndërlikuara për anulim"
 
 #: template-parts/single-product/gallery.php:64
 msgid "Product images"
@@ -1936,15 +1936,15 @@ msgstr "Shfaq foton %1$d nga %2$d"
 
 #: template-parts/single-product/price-box.php:25
 msgid "Arrives in your email within 60 seconds"
-msgstr "Të vjen në email brenda 60 sekondave"
+msgstr "E merr me email brenda 60 sekondash"
 
 #: template-parts/single-product/price-box.php:26
 msgid "One-time payment — no subscription to cancel"
-msgstr "Pagesë e njëhershme — pa abonim për të anuluar"
+msgstr "Pagesë e vetme — pa abonim që duhet ta anulosh"
 
 #: template-parts/single-product/price-box.php:27
 msgid "Lifetime access + updates"
-msgstr "Akses i përhershëm + përditësime"
+msgstr "Akses i përhershëm dhe përditësime"
 
 #: template-parts/single-product/price-box.php:46
 msgid "Buy now — instant access"
@@ -1956,7 +1956,7 @@ msgstr "Shfaq detajet"
 
 #: woocommerce/checkout/thankyou.php:31
 msgid "Your payment did not go through"
-msgstr "Pagesa jote nuk kaloi"
+msgstr "Pagesa nuk u realizua"
 
 #. translators: %s: buyer's first name.
 #: woocommerce/checkout/thankyou.php:74
@@ -1974,17 +1974,17 @@ msgstr "Porosia jote u konfirmua. Plani yt është gati."
 
 #: woocommerce/checkout/thankyou.php:109
 msgid "What happens next"
-msgstr "Çfarë ndodh tani"
+msgstr "Çfarë ndodh më pas?"
 
 #: woocommerce/checkout/thankyou.php:112
 msgid "Check your email"
-msgstr "Shiko email-in"
+msgstr "Kontrollo email-in tënd"
 
 #. translators: %s: billing email address.
 #: woocommerce/checkout/thankyou.php:116
 #, php-format
 msgid "The order confirmation arrives at %s within a few minutes. Check spam if it is not there."
-msgstr "Konfirmimi i porosisë të vjen te %s brenda pak minutash. Shiko te spam nëse nuk e gjen."
+msgstr "Konfirmimi i porosisë do të të vijë në adresën %s brenda pak minutash. Kontrollo dosjen Spam nëse nuk e gjen."
 
 #: woocommerce/checkout/thankyou.php:123
 msgid "Set your password"
@@ -1992,15 +1992,15 @@ msgstr "Vendos fjalëkalimin"
 
 #: woocommerce/checkout/thankyou.php:124
 msgid "On your first order we create your account and email you a link to set its password."
-msgstr "Në porosinë e parë të krijojmë llogarinë dhe të dërgojmë me email një link për të vendosur fjalëkalimin."
+msgstr "Pas porosisë së parë, krijojmë llogarinë tënde dhe të dërgojmë me email një lidhje për të vendosur fjalëkalimin."
 
 #: woocommerce/checkout/thankyou.php:128
 msgid "Open your plan"
-msgstr "Hape planin"
+msgstr "Hap planin tënd"
 
 #: woocommerce/checkout/thankyou.php:129
 msgid "Your plans are always in your account, ready to open on your phone or download as a PDF."
-msgstr "Planet e tua janë gjithmonë në llogari, gati për t'u hapur në telefon ose për t'u shkarkuar si PDF."
+msgstr "Planet e tua i gjen gjithmonë në llogari. Mund t’i hapësh në telefon ose t’i shkarkosh si PDF."
 
 #: woocommerce/checkout/thankyou.php:130
 msgid "Go to my plans"
@@ -2008,11 +2008,11 @@ msgstr "Shko te planet e mia"
 
 #: woocommerce/checkout/thankyou.php:172
 msgid "Complete your system"
-msgstr "Plotësoje sistemin"
+msgstr "Plotëso kombinimin tënd"
 
 #: woocommerce/checkout/thankyou.php:173
 msgid "Most customers pair training with a meal plan."
-msgstr "Shumica e klientëve e kombinojnë stërvitjen me një plan ushqimor."
+msgstr "Shumica e klientëve e kombinojnë programin e stërvitjes me një plan ushqimor."
 
 #: theme.json
 msgctxt "Color name"
@@ -2042,7 +2042,7 @@ msgstr "Teksti"
 #: theme.json
 msgctxt "Color name"
 msgid "Ink muted"
-msgstr "Teksti i zbehtë"
+msgstr "Teksti dytësor"
 
 #: theme.json
 msgctxt "Color name"
@@ -2052,7 +2052,7 @@ msgstr "Theksi"
 #: theme.json
 msgctxt "Color name"
 msgid "Accent light"
-msgstr "Theksi i çelët"
+msgstr "Ngjyra e theksit e çelët"
 
 #: theme.json
 msgctxt "Color name"
@@ -2095,11 +2095,11 @@ msgstr "Sukses i garantuar"
 
 #: inc/customizer.php:57
 msgid "The promise shown in the header, cart, checkout and shop. Leave empty to hide it. The store does not give refunds, so never promise money back here."
-msgstr "Premtimi që shfaqet në kokë, në shportë, në pagesë dhe në dyqan. Lëre bosh për ta fshehur. Dyqani nuk kthen para, ndaj mos premto kurrë kthim parash këtu."
+msgstr "Premtimi që shfaqet në krye të faqes, në shportë, gjatë pagesës dhe në dyqan. Lëre bosh për të mos e shfaqur. Dyqani nuk ofron rimbursime, ndaj mos premto kthim parash këtu."
 
 #: inc/shop/fields.php:646
 msgid "Tokens: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. A phrase between \" · \" whose token has no value is left out."
-msgstr "Shenjat: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. Një frazë mes \" · \" me shenjë pa vlerë nuk shfaqet."
+msgstr "Variablat e disponueshme: {price}, {regular_price}, {saving}, {bundle_price}, {guarantee}, {customers}, {rating}, {reviews}, {store_rating}, {store_reviews}, {rest}. Nëse një variabël nuk ka vlerë, hiqet edhe fraza përkatëse midis ndarësve \" · \"."
 
 #: inc/shop/withdrawal.php:43
 msgid "I want my plan right away, and I understand that once I get it, I can no longer cancel the purchase within 14 days."
@@ -2111,17 +2111,17 @@ msgstr "e detyrueshme"
 
 #: inc/shop/withdrawal.php:93
 msgid "To place the order, tick the box that asks for immediate access."
-msgstr "Për ta bërë porosinë, shëno kutinë që kërkon akses të menjëhershëm."
+msgstr "Për ta përfunduar porosinë, shëno kutinë që konfirmon kërkesën për akses të menjëhershëm."
 
 #: inc/shop/withdrawal.php:127
 msgid "Withdrawal waiver:"
-msgstr "Heqja dorë nga tërheqja:"
+msgstr "Heqja dorë nga e drejta e tërheqjes:"
 
 #. translators: %s: date and time the box was ticked.
 #: inc/shop/withdrawal.php:131
 #, php-format
 msgid "ticked at checkout, %s"
-msgstr "u shënua në pagesë, %s"
+msgstr "e shënuar gjatë pagesës, %s"
 
 #: inc/shop/withdrawal.php:137
 msgid "not recorded for this order"
@@ -2133,26 +2133,26 @@ msgstr "Kërkove planet menjëherë dhe konfirmove që, pasi t'i marrësh, nuk m
 
 #: inc/template-tags.php:253
 msgid "Follow the plan as written and you will see the change. Stuck along the way? Write to us and we will help you get back on track."
-msgstr "Ndiqe planin siç është shkruar dhe ndryshimin do ta shohësh. Ke ngecur diku? Na shkruaj dhe të ndihmojmë të kthehesh në binarë."
+msgstr "Ndiqe planin sipas udhëzimeve dhe do të vëresh ndryshime. Has vështirësi gjatë rrugës? Na shkruaj dhe do të të ndihmojmë të vazhdosh."
 
 #: template-parts/cart/drawer.php:18
 #: template-parts/cart/drawer.php:33
 msgid "Adding to your cart…"
-msgstr "Duke e shtuar në shportë…"
+msgstr "Po shtohet në shportë…"
 
 #: template-parts/cart/drawer.php:19
 msgid "Updating your cart…"
-msgstr "Duke përditësuar shportën…"
+msgstr "Po përditësohet shporta…"
 
 #: template-parts/checkout/trust.php:18
 msgid "Follow the plan and the results come. If you get stuck, we help you."
-msgstr "Ndiqe planin dhe rezultatet vijnë. Nëse ngec, të ndihmojmë."
+msgstr "Ndiqe planin dhe rezultatet do të vijnë. Nëse has vështirësi, jemi këtu për të të ndihmuar."
 
 #. translators: %s: the coupon code.
 #: template-parts/components/coupon-toast.php:27
 #, php-format
 msgid "Code %s applied"
-msgstr "Kodi %s u aplikua"
+msgstr "Kodi %s u aktivizua"
 
 #. translators: %s: the coupon code.
 #: template-parts/components/coupon-toast.php:29
@@ -2187,7 +2187,7 @@ msgstr "Nuk ke ende llogari?"
 
 #: inc/woocommerce.php:83
 msgid "Create one"
-msgstr "Krijo një"
+msgstr "Krijo një të tillë"
 
 #: template-parts/header/mobile-menu.php:75
 msgid "Account"
@@ -2199,7 +2199,7 @@ msgstr "ID e Meta Pixel"
 
 #: inc/customizer.php:98
 msgid "Digits only. Setting it shows the cookie banner, and the Pixel loads only for visitors who accept."
-msgstr "Vetëm shifra. Kur e vendos, shfaqet njoftimi për cookies, dhe Pixel ngarkohet vetëm për vizitorët që e pranojnë."
+msgstr "Vetëm shifra. Kur vendoset ID-ja, shfaqet njoftimi për cookies dhe Pixel ngarkohet vetëm për vizitorët që japin pëlqimin."
 
 #: inc/consent.php:51
 msgid "Cookie settings"
@@ -2211,7 +2211,7 @@ msgstr "Cookies"
 
 #: template-parts/components/consent-banner.php:19
 msgid "We use cookies to see which ads bring you here and to improve the site. Cookies for the cart and your account are always on."
-msgstr "Përdorim cookies për të parë cilat reklama të sjellin këtu dhe për ta përmirësuar faqen. Cookies për shportën dhe llogarinë tënde janë gjithmonë aktive."
+msgstr "Përdorim cookies për të kuptuar cilat reklama të sjellin në faqen tonë dhe për ta përmirësuar atë. Cookies të nevojshme për shportën dhe llogarinë tënde janë gjithmonë aktive."
 
 #: template-parts/components/consent-banner.php:25
 msgid "Decline"
@@ -2223,21 +2223,21 @@ msgstr "Pranoj"
 
 #: inc/shop/marketing.php:26
 msgid "Send me offers and new plans before anyone else. Unsubscribe anytime."
-msgstr "Më dërgo oferta dhe planet e reja para të tjerëve. Çregjistrohesh kur të duash."
+msgstr "Më dërgo ofertat dhe planet e reja para të tjerëve. Mund të çregjistrohesh kurdo që dëshiron."
 
 #: inc/shop/marketing.php:77
 msgid "Offer emails:"
-msgstr "Email-et me oferta:"
+msgstr "Email-e promocionale:"
 
 #. translators: %s: date and time the box was ticked.
 #: inc/shop/marketing.php:81
 #, php-format
 msgid "agreed at checkout, %s"
-msgstr "pranuar në pagesë, %s"
+msgstr "ka dhënë pëlqimin gjatë pagesës, %s"
 
 #: inc/shop/marketing.php:82
 msgid "not agreed"
-msgstr "nuk ka pranuar"
+msgstr "nuk ka dhënë pëlqimin"
 
 #: inc/shop/marketing.php:133
 #: inc/shop/marketing.php:134
@@ -2250,12 +2250,12 @@ msgstr "Lista e email-eve"
 #, php-format
 msgid "%d buyer agreed to offer emails at checkout."
 msgid_plural "%d buyers agreed to offer emails at checkout."
-msgstr[0] "%d blerës ka pranuar email-et me oferta në pagesë."
-msgstr[1] "%d blerës kanë pranuar email-et me oferta në pagesë."
+msgstr[0] "%d blerës ka dhënë pëlqimin për të marrë email-e promocionale gjatë pagesës."
+msgstr[1] "%d blerës kanë dhënë pëlqimin për të marrë email-e promocionale gjatë pagesës."
 
 #: inc/shop/marketing.php:149
 msgid "Import the file into your mail service. It keeps track of unsubscribes, so importing again does not add back anyone who left. Never email anyone who is not on this list."
-msgstr "Importoje skedarin në shërbimin tënd të email-eve. Ai i mban mend çregjistrimet, ndaj importimi i sërishëm nuk i shton përsëri ata që janë larguar. Mos i dërgo kurrë email askujt që nuk është në këtë listë."
+msgstr "Importoje skedarin në shërbimin tënd të email-eve. Lista ruan të dhënat për personat që janë çregjistruar, ndaj importimi i përsëritur nuk i shton përsëri. Mos i dërgo email askujt që nuk figuron në këtë listë."
 
 #: inc/shop/marketing.php:150
 msgid "Download CSV"
@@ -2291,27 +2291,27 @@ msgstr "Zgjidh madhësinë"
 
 #: inc/shop/size-files.php:186
 msgid "Size PDFs"
-msgstr "PDF-të e madhësive"
+msgstr "PDF-të sipas madhësisë"
 
 #: inc/shop/size-files.php:557
 msgid "Size PDFs:"
-msgstr "PDF-të e madhësive:"
+msgstr "PDF-të sipas madhësisë:"
 
 #: inc/shop/size-files.php:148
 msgid "The Sizes have different prices. Every Size of a Product must cost the same; the page shows the lowest price."
-msgstr "Madhësitë kanë çmime të ndryshme. Çdo madhësi e një produkti duhet të kushtojë njësoj; faqja tregon çmimin më të ulët."
+msgstr "Variantet sipas madhësisë kanë çmime të ndryshme. Të gjitha madhësitë e të njëjtit produkt duhet të kenë të njëjtin çmim; faqja shfaq çmimin më të ulët."
 
 #. translators: %s: Size, such as "Mashkull · 80–90 kg", or a variation number.
 #: inc/shop/size-files.php:158
 #, php-format
 msgid "%s has an \"Any …\" attribute. Give it one value per attribute: such Sizes cannot be bought."
-msgstr "%s ka një atribut \"Çfarëdo …\". Jepi një vlerë për çdo atribut: madhësi të tilla nuk mund të blihen."
+msgstr "%s ka një atribut \"Çfarëdo …\". Cakto një vlerë konkrete për secilin atribut; variantet pa vlera të përcaktuara nuk mund të blihen."
 
 #. translators: %s: Size.
 #: inc/shop/size-files.php:162
 #, php-format
 msgid "%s is not Virtual, so checkout asks for an address and skips the withdrawal waiver."
-msgstr "%s nuk është Virtuale, ndaj pagesa kërkon adresë dhe nuk shfaq heqjen dorë nga e drejta e tërheqjes."
+msgstr "%s nuk është shënuar si produkt virtual, prandaj gjatë pagesës kërkohet adresa dhe nuk shfaqet deklarata e heqjes dorë nga e drejta e tërheqjes."
 
 #. translators: %s: Size.
 #: inc/shop/size-files.php:166
@@ -2323,11 +2323,11 @@ msgstr "%s nuk ka PDF."
 #: inc/shop/size-files.php:169
 #, php-format
 msgid "%1$s has %2$d PDFs, but the bundle contains %3$d diets sold in Sizes."
-msgstr "%1$s ka %2$d PDF, por paketa përmban %3$d dieta që shiten sipas madhësisë."
+msgstr "%1$s ka %2$d skedarë PDF, por paketa përmban %3$d plane ushqimore që shiten sipas madhësisë."
 
 #: inc/shop/size-files.php:209
 msgid "Upload the PDFs the diet renderer made for this Product, all at once. Each file goes on the Size its name ends with (\"…-mashkull-80-90kg.pdf\"). A file with the same plan name replaces the old one and keeps its download link."
-msgstr "Ngarko njëherësh PDF-të që krijoi gjeneruesi i dietave për këtë produkt. Çdo skedar shkon te madhësia me të cilën mbaron emri i tij (\"…-mashkull-80-90kg.pdf\"). Një skedar me të njëjtin emër plani zëvendëson të vjetrin dhe ruan linkun e shkarkimit."
+msgstr "Ngarko njëherësh skedarët PDF të gjeneruar për këtë produkt. Çdo skedar i caktohet madhësisë që përputhet me prapashtesën e emrit (\"…-mashkull-80-90kg.pdf\"). Nëse ekziston një skedar me të njëjtin emër plani, ai zëvendësohet dhe lidhja e shkarkimit mbetet e njëjtë."
 
 #: inc/shop/size-files.php:218
 msgid "Size"
@@ -2373,19 +2373,19 @@ msgstr "Skedarët bashkëngjiten kur përditëson produktin."
 #: inc/shop/size-files.php:307
 #, php-format
 msgid "%s did not upload. Try again, or upload fewer files at once."
-msgstr "%s nuk u ngarkua. Provo sërish, ose ngarko më pak skedarë njëherësh."
+msgstr "Skedari %s nuk u ngarkua. Provo përsëri ose ngarko më pak skedarë njëherësh."
 
 #. translators: %s: file name.
 #: inc/shop/size-files.php:314
 #, php-format
 msgid "%s is not a PDF."
-msgstr "%s nuk është PDF."
+msgstr "%s nuk është skedar PDF."
 
 #. translators: %s: file name.
 #: inc/shop/size-files.php:329
 #, php-format
 msgid "%s matches no Size of this Product. Its name must end with a Size, like \"-mashkull-80-90kg.pdf\"."
-msgstr "%s nuk përputhet me asnjë madhësi të këtij produkti. Emri i tij duhet të mbarojë me një madhësi, si \"-mashkull-80-90kg.pdf\"."
+msgstr "%s nuk përputhet me asnjë madhësi të këtij produkti. Emri i skedarit duhet të përfundojë me një madhësi, p.sh. \"-mashkull-80-90kg.pdf\"."
 
 #. translators: %s: file name.
 #: inc/shop/size-files.php:331
@@ -2397,17 +2397,17 @@ msgstr "%s përputhet me më shumë se një madhësi."
 #: inc/shop/size-files.php:341
 #, php-format
 msgid "%1$s and %2$s are both for %3$s."
-msgstr "%1$s dhe %2$s janë të dy për %3$s."
+msgstr "%1$s dhe %2$s i përkasin të dy madhësisë %3$s."
 
 #: inc/shop/size-files.php:369
 msgid "The upload folder could not be created. Check that wp-content/uploads is writable."
-msgstr "Dosja e ngarkimit nuk u krijua dot. Kontrollo që wp-content/uploads të jetë e shkrueshme."
+msgstr "Nuk u krijua dot dosja për ngarkim. Kontrollo nëse dosja wp-content/uploads ka leje shkrimi."
 
 #. translators: 1: file name, 2: the reason.
 #: inc/shop/size-files.php:397
 #, php-format
 msgid "%1$s could not be stored: %2$s"
-msgstr "%1$s nuk u ruajt dot: %2$s"
+msgstr "%1$s nuk mund të ruhej: %2$s"
 
 #. translators: 1: Size, 2: the reason.
 #: inc/shop/size-files.php:466
@@ -2417,25 +2417,25 @@ msgstr "%1$s: %2$s"
 
 #: inc/shop/size-files.php:546
 msgid "The Size PDFs were not attached:"
-msgstr "PDF-të e madhësive nuk u bashkëngjitën:"
+msgstr "PDF-të sipas madhësisë nuk u bashkëngjitën:"
 
 #. translators: %d: number of PDFs.
 #: inc/shop/size-files.php:553
 #, php-format
 msgid "%d PDF attached."
 msgid_plural "%d PDFs attached."
-msgstr[0] "%d PDF u bashkëngjit."
-msgstr[1] "%d PDF u bashkëngjitën."
+msgstr[0] "%d skedar PDF u bashkëngjit."
+msgstr[1] "%d skedarë PDF u bashkëngjitën."
 
 #: inc/shop/account-diets.php:150
 #: inc/shop/account-diets.php:154
 msgctxt "My Account tab"
 msgid "Diets"
-msgstr "Dietat"
+msgstr "Plane ushqimore"
 
 #: inc/shop/account-diets.php:164
 msgid "Your diets"
-msgstr "Dietat e tua"
+msgstr "Planet e tua ushqimore"
 
 #: inc/shop/account-diets.php:95
 msgid "You do not have any diets yet."
@@ -2445,7 +2445,7 @@ msgstr "Nuk ke ende asnjë dietë."
 #: inc/shop/account-diets.php:111
 #, php-format
 msgid "Part of %s"
-msgstr "Pjesë e %s"
+msgstr "Përfshihet në %s"
 
 #: inc/shop/account-diets.php:118
 msgid "Download PDF"
