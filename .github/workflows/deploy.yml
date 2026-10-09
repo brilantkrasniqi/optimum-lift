@@ -5,7 +5,7 @@
 #
 # Off until the repository variable DEPLOY_ENABLED is "true". It also needs:
 #   variables  DEPLOY_HOST (server IP or name), DEPLOY_USER, DEPLOY_PATH
-#              (the WordPress folder, e.g. /var/www/optimumlift)
+#              (the WordPress folder, /var/www/html on the WordPress app)
 #   secrets    DEPLOY_SSH_KEY (the private key of the deploy user)
 #              DEPLOY_KNOWN_HOSTS (the server's line from `ssh-keyscan <host>`)
 
@@ -70,5 +70,3 @@ jobs:
           rsync_code plugins/optimum-lift-plans/ "$TARGET:$WP_PATH/wp-content/plugins/optimum-lift-plans/"
           # Only the hardening plugin: the other two mu-plugins are local only.
           rsync -ltz --chmod=F664 -e "ssh -i ~/.ssh/id_deploy" mu-plugins/ol-hardening.php "$TARGET:$WP_PATH/wp-content/mu-plugins/"
-          # The bootstrap script and the plugin list it reads, next to the site, not in it.
-          rsync -ltz --chmod=F664 -e "ssh -i ~/.ssh/id_deploy" deploy/bootstrap-live.sh plugins.txt "$TARGET:$WP_PATH/../optimum-lift-deploy/"

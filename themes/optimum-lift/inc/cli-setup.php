@@ -28,7 +28,7 @@ final class SetupCommand
     /**
      * Creates the database state the theme and the Plans plugin depend on.
      *
-     * For a fresh live site; run by deploy/bootstrap-live.sh. Sets the store
+     * For a fresh live site (docs/going-live.md). Sets the store
      * settings (currency, price format, timezone, registration, the checkout
      * texts), turns off the offline payment methods (cash on delivery would
      * grant Plan Access without payment), creates the shop pages with the

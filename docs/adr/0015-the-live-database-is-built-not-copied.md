@@ -22,7 +22,7 @@ Options considered:
 2. **Set everything by hand in wp-admin from a checklist.** Every setting is
    one more thing to forget, and nothing keeps the list in step with the code
    as it changes.
-3. **A script that builds it, sharing its code with the local seed.**
+3. **A command that builds it, sharing its code with the local seed.**
 
 ## Decision
 
@@ -30,9 +30,8 @@ Option 3. `SiteSetup` (`themes/optimum-lift/inc/site-setup.php`) holds the
 database state the code depends on. `wp ol-shop seed` uses it locally and adds
 the demo data; `wp ol-shop setup` uses it on a fresh live site and adds what
 only live needs (offline payments off, sample content deleted, legal pages as
-drafts so placeholder text never goes public). `deploy/bootstrap-live.sh`
-installs WordPress with a named admin, never `admin`, and a generated password
-shown once, then runs the setup and the Exercise import.
+drafts so placeholder text never goes public). WordPress itself, and its
+admin, come from Hetzner's WordPress app; the admin login is never `admin`.
 
 The setup is idempotent: settings are set again, pages and terms are only
 created when missing, and it creates no Products, Plans or reviews. A change

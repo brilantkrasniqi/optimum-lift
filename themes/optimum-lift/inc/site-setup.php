@@ -328,7 +328,7 @@ final class SiteSetup
 
     /**
      * WordPress keeps WPLANG only for an installed language; docker/setup.sh
-     * and deploy/bootstrap-live.sh install the Albanian packs.
+     * installs the Albanian packs locally, docs/going-live.md on the server.
      */
     public function siteLanguage(): string
     {
