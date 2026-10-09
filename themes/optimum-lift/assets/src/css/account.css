@@ -250,6 +250,52 @@
     @apply font-bold text-white underline decoration-zinc-600 underline-offset-2 hover:decoration-white;
   }
 
+  /* inc/shop/login-link.php: the login form's "Email me a login link". */
+  .ol-login-link {
+    @apply mt-6;
+  }
+
+  .ol-login-link__or {
+    @apply mb-4 flex items-center gap-3 text-[11px] font-extrabold tracking-wider text-zinc-500 uppercase;
+  }
+
+  .ol-login-link__or::before,
+  .ol-login-link__or::after {
+    @apply h-px flex-1 bg-white/[.08];
+    content: "";
+  }
+
+  .woocommerce-account .button.ol-login-link__button {
+    @apply min-h-12 w-full border-acid/40 text-[14px] text-acid hover:bg-acid/10;
+  }
+
+  /* The register form's line where a password field would be. */
+  .woocommerce-form-register > p:not(.form-row) {
+    @apply mb-4 text-[13px] leading-relaxed text-zinc-400;
+  }
+
+  /* template-parts/account/login-link.php: opened from a login link. */
+  .ol-login-link-confirm {
+    @apply max-w-xl rounded-2xl border border-acid/25 bg-surface p-5 sm:p-7;
+  }
+
+  .ol-login-link-confirm h2 {
+    @apply mb-3 text-2xl text-white;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  .ol-login-link-confirm p {
+    @apply mb-6 text-[14px] leading-relaxed text-zinc-400;
+  }
+
+  .woocommerce-account .button.ol-login-link-confirm__submit {
+    @apply min-h-12 w-full border-accent bg-accent px-6 text-[14px] shadow-glow hover:bg-accent-light sm:w-auto;
+  }
+
   .woocommerce-ResetPassword > p:first-child {
     @apply mb-5 text-[14px] leading-relaxed text-zinc-400;
   }

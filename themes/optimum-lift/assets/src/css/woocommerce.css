@@ -684,6 +684,60 @@
     @apply rounded-2xl border border-white/[.08] bg-surface p-5 sm:p-6;
   }
 
+  /* The downloads table (order/order-downloads.php), set like the order table above. */
+  .ol-thankyou .woocommerce-order-downloads__title {
+    @apply text-2xl text-white;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.06;
+  }
+
+  .ol-thankyou .woocommerce-table--order-downloads {
+    @apply mt-4 w-full border-collapse text-[14px];
+  }
+
+  .ol-thankyou .woocommerce-table--order-downloads :is(th, td) {
+    @apply border-t border-white/[.06] py-3 pr-4 text-left align-middle font-semibold text-zinc-400 last:pr-0;
+  }
+
+  .ol-thankyou .woocommerce-table--order-downloads thead th {
+    @apply border-t-0 pt-0 text-[10px] font-extrabold tracking-[.14em] text-zinc-500 uppercase;
+  }
+
+  .ol-thankyou .woocommerce-table--order-downloads .download-product a {
+    @apply font-extrabold text-white hover:underline;
+  }
+
+  .ol-thankyou .woocommerce-table--order-downloads .download-file .button {
+    @apply inline-flex rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[12px] font-extrabold text-white transition hover:bg-white/10;
+  }
+
+  /* Rows become labelled stacks on phones, as in My Account (account.css). */
+  @media (max-width: 767px) {
+    .ol-thankyou .woocommerce-table--order-downloads :is(tbody, tr, td) {
+      display: block;
+    }
+
+    .ol-thankyou .woocommerce-table--order-downloads thead {
+      @apply sr-only;
+    }
+
+    .ol-thankyou .woocommerce-table--order-downloads tr {
+      @apply border-t border-white/[.08] py-2 first:border-t-0;
+    }
+
+    .ol-thankyou .woocommerce-table--order-downloads td {
+      @apply flex items-center justify-between gap-4 border-0 py-1.5 pr-0 text-right;
+    }
+
+    .ol-thankyou .woocommerce-table--order-downloads td[data-title]::before {
+      @apply shrink-0 text-left text-[11px] font-extrabold tracking-wider text-zinc-500 uppercase;
+      content: attr(data-title);
+    }
+  }
+
   /* The Plans plugin's section after the order table (Download/Delivery.php). */
   .ol-order-plans {
     @apply rounded-2xl border border-acid/25 bg-acid/[.05] p-5 sm:p-6;
