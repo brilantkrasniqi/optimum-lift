@@ -220,7 +220,7 @@ Then **Actions › Deploy › Run workflow**. From then on every merge into `mai
 
 Never upload `mu-plugins/ol-dynamic-host.php` or `ol-local-mail.php` (local only), `uploads/`, or anything from `docker/`.
 
-**ACF Pro** goes up by hand once, either way: your licensed copy into `wp-content/plugins/advanced-custom-fields-pro/`. Enter the license key in wp-admin afterwards so it gets updates.
+**ACF Pro** goes up by hand once, either way: your licensed copy into `wp-content/plugins/`, in a folder named `advanced-custom-fields-pro` (a zip downloaded from GitHub unpacks as `advanced-custom-fields-pro-main`; either name works, but `wp plugin activate` needs the one you used). Enter the license key in wp-admin afterwards so it gets updates.
 
 ### Plugins, theme and setup
 
