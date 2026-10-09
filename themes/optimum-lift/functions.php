@@ -50,6 +50,7 @@ define('OPTIMUM_LIFT_URI', get_template_directory_uri());
             'inc/shop/size-files.php',
             'inc/shop/account-diets.php',
             'inc/shop/marketing.php',
+            'inc/shop/login-link.php',
         );
     }
 
