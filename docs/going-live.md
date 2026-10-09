@@ -262,7 +262,7 @@ In wp-admin, logged in as your admin:
 6. **Content.** Import Plans (*Training › Import Plan*, from `content/plans/`), create the Products with their Plans, Sizes and sections, and fill in the front page's sections.
 7. **Store address** under *WooCommerce › Settings › General*.
 8. **Backups off the server.** Install the free *UpdraftPlus* plugin and point it at Google Drive or Dropbox: database daily, uploads weekly. A netcup VPS has no automatic backups of its own, and a backup on the same server dies with it.
-9. **Search engines.** *Settings › Reading › Search engine visibility* stays unticked; turn it on temporarily only if you want to hide the site while you fill it in.
+9. **Search engines.** The installer ticked *Discourage search engines*; untick it in *Settings › Reading* on the day you open for business.
 
 ## 5. Updating the site later
 
