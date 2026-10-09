@@ -21,7 +21,8 @@ schema version:
 
 - `{prefix}ol_access`: one row per Customer, Plan and order. Written when an
   order reaches *processing* or *completed*. Revoked (`revoked_at` set, row
-  kept) when the order is refunded or cancelled.
+  kept) when the order is refunded or cancelled, or moves back to *on-hold*,
+  *pending* or *failed*; restored if it is paid again.
 - `{prefix}ol_workout_logs`: one row per Workout Log.
 - `{prefix}ol_logged_sets`: one row per Logged Set. It stores `user_id`,
   `exercise_id` and `performed_at` again, even though they could be joined from

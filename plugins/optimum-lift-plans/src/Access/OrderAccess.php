@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Turns paid orders into Access, and refunds or cancellations into revoked
- * Access.
+ * Turns paid orders into Access, and orders that are no longer paid (refunded,
+ * cancelled, or moved back to on-hold, pending or failed) into revoked Access.
+ * Paying again restores it.
  *
  * Grants run on `woocommerce_order_status_{processing,completed}`, which fire
  * before the status-transition emails are sent, so those emails can already
@@ -31,8 +32,9 @@ final class OrderAccess
         add_action('woocommerce_checkout_create_order_line_item', [$this, 'snapshotItemPlans'], 10, 3);
         add_action('woocommerce_order_status_processing', [$this, 'grant'], 5, 2);
         add_action('woocommerce_order_status_completed', [$this, 'grant'], 5, 2);
-        add_action('woocommerce_order_status_refunded', [$this, 'revoke'], 5);
-        add_action('woocommerce_order_status_cancelled', [$this, 'revoke'], 5);
+        foreach (['refunded', 'cancelled', 'on-hold', 'pending', 'failed'] as $status) {
+            add_action('woocommerce_order_status_' . $status, [$this, 'revoke'], 5);
+        }
         add_action('woocommerce_admin_order_data_after_order_details', [$this, 'renderOrderPanel']);
         add_filter('woocommerce_hidden_order_itemmeta', [$this, 'hideItemMeta']);
     }

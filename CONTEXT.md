@@ -28,7 +28,7 @@ Preferred over "fitness plan" and "diet plan", which blur into each other in con
 **Customer** — someone who has bought at least one Product.
 _Avoid_: Client, user, member
 
-**Access** — a Customer's standing right to follow one Plan and receive its Download, obtained by buying a Product that includes that Plan. Once obtained, Access does not change when the Product is later edited; it ends only if the purchase is refunded or cancelled.
+**Access** — a Customer's standing right to follow one Plan and receive its Download, obtained by buying a Product that includes that Plan. Once obtained, Access does not change when the Product is later edited; it ends only if the purchase is refunded or cancelled, or the order goes back to unpaid (on-hold, pending or failed), and returns if it is paid again.
 
 **Portal** — the signed-in area where a Customer follows the Plans they have Access to and logs their training.
 _Avoid_: Dashboard, client area, members area
