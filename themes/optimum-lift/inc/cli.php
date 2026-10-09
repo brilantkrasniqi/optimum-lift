@@ -26,7 +26,6 @@ use DateTimeImmutable;
 use RuntimeException;
 use WC_Comments;
 use WC_Coupon;
-use WC_Install;
 use WC_Product;
 use WC_Product_Attribute;
 use WC_Product_Download;
@@ -35,8 +34,6 @@ use WC_Product_Variable;
 use WC_Product_Variation;
 use WP_CLI;
 use WP_Comment;
-use WP_Error;
-use WP_Term;
 
 /**
  * Demo storefront data for local development.
@@ -73,29 +70,14 @@ final class ShopCommand
     private const BUNDLE  = 'transformimi-total';
 
     /**
-     * The Size attributes (spec .scratch/diet-plans, Decision 9): term slugs
-     * equal the diet renderer's codes, in the order every picker shows them.
-     */
-    private const SIZES = [
-        'gjinia' => ['name' => 'Gjinia', 'terms' => ['mashkull' => 'Mashkull', 'femer' => 'Femër']],
-        'pesha'  => ['name' => 'Pesha', 'terms' => [
-            '50-60'  => '50–60 kg',
-            '60-70'  => '60–70 kg',
-            '70-80'  => '70–80 kg',
-            '80-90'  => '80–90 kg',
-            '90plus' => '90+ kg',
-        ]],
-    ];
-
-    /**
      * The sized diets in the bundle, whose files each bundle variation carries.
      */
     private const BUNDLE_SIZED = [self::DIET, self::MED];
 
-    private const FRONT_PAGE = 'kreu';
-    private const COUPON     = 'OPTIMUM10';
-    private const GOAL       = 'objektivi';
-    private const PLAN_TYPE  = 'ol_training_plan';
+    private const COUPON    = 'OPTIMUM10';
+    private const PLAN_TYPE = 'ol_training_plan';
+
+    private SiteSetup $site;
 
     /**
      * @var array<string, int> Product IDs by slug.
@@ -148,6 +130,8 @@ final class ShopCommand
      */
     public function seed(array $args, array $assoc): void
     {
+        $this->site = new SiteSetup();
+
         try {
             WP_CLI::success($this->run(isset($assoc['reset'])));
         } catch (RuntimeException $e) {
@@ -178,15 +162,9 @@ final class ShopCommand
 
         $offerEnd = (new DateTimeImmutable('now', wp_timezone()))->setTime(23, 59)->add(new DateInterval('P3D'));
 
-        $categories = [
-            'programe-stervitjeje' => $this->term('product_cat', 'programe-stervitjeje', 'Programe stërvitjeje'),
-            'dieta'                => $this->term('product_cat', 'dieta', 'Plane ushqimore'),
-            'paketa'               => $this->term('product_cat', 'paketa', 'Paketa'),
-        ];
-        $goals = $this->goals();
-        foreach (self::SIZES as $slug => $size) {
-            $this->sizes[$slug] = $this->sizeAttribute($slug, $size['name'], $size['terms']);
-        }
+        $categories  = $this->site->categories();
+        $goals       = $this->site->goals();
+        $this->sizes = $this->site->sizes();
 
         foreach ($catalogue as $slug => $data) {
             $this->ids[$slug] = $this->saveProduct($slug, $data, $categories, $goals, $offerEnd);
@@ -209,13 +187,13 @@ final class ShopCommand
 
         $plan = $this->linkPlan();
 
-        $frontPage = $this->frontPage();
+        $frontPage = $this->site->frontPage();
         $this->saveFields($frontPage, ['field_olt_blocks' => $this->homeBlocks()]);
 
         $this->coupon();
         $this->configure($offerEnd);
-        $this->legalPages();
-        $language = $this->siteLanguage();
+        $this->site->legalPages(true);
+        $language = $this->site->siteLanguage();
 
         if ($this->unknownFields !== []) {
             throw new RuntimeException(sprintf(
@@ -248,13 +226,13 @@ final class ShopCommand
         // Force-deleting a variable Product deletes its variations too
         // (WC_Post_Data::delete_post_data() on `delete_post`).
         foreach ($slugs as $slug) {
-            $product = wc_get_product($this->postId('product', $slug));
+            $product = wc_get_product($this->site->postId('product', $slug));
             if ($product) {
                 $product->delete(true);
             }
         }
 
-        $page = $this->postId('page', self::FRONT_PAGE);
+        $page = $this->site->postId('page', SiteSetup::FRONT_PAGE);
         if ($page > 0) {
             wp_delete_post($page, true);
         }
@@ -263,116 +241,6 @@ final class ShopCommand
         if ($coupon->get_id() > 0) {
             $coupon->delete(true);
         }
-    }
-
-    private function postId(string $postType, string $slug): int
-    {
-        $ids = get_posts([
-            'post_type'        => $postType,
-            'name'             => $slug,
-            'post_status'      => 'any',
-            'numberposts'      => 1,
-            'fields'           => 'ids',
-            'suppress_filters' => true,
-        ]);
-
-        return $ids === [] ? 0 : (int) $ids[0];
-    }
-
-    private function term(string $taxonomy, string $slug, string $name): int
-    {
-        $term = get_term_by('slug', $slug, $taxonomy);
-        if ($term instanceof WP_Term) {
-            if (wp_specialchars_decode($term->name) !== $name) {
-                wp_update_term($term->term_id, $taxonomy, ['name' => $name]);
-            }
-
-            return $term->term_id;
-        }
-
-        $inserted = wp_insert_term($name, $taxonomy, ['slug' => $slug]);
-        if ($inserted instanceof WP_Error) {
-            throw new RuntimeException(sprintf('Could not create the term "%s": %s', $name, $inserted->get_error_message()));
-        }
-
-        return (int) $inserted['term_id'];
-    }
-
-    /**
-     * The global goal attribute and its terms.
-     *
-     * @return array{attribute: int, taxonomy: string, terms: array<string, int>}
-     */
-    private function goals(): array
-    {
-        [$attribute, $taxonomy] = $this->attribute(self::GOAL, 'Objektivi');
-
-        $terms = [];
-        foreach (
-            [
-                'humbje-yndyre'       => 'Humbje yndyre',
-                'mase-force'          => 'Masë & forcë',
-                'shendet-mbajtje'     => 'Shëndet & mbajtje',
-                'transformim-i-plote' => 'Transformim i plotë',
-            ] as $slug => $name
-        ) {
-            $terms[$name] = $this->term($taxonomy, $slug, $name);
-        }
-
-        return ['attribute' => $attribute, 'taxonomy' => $taxonomy, 'terms' => $terms];
-    }
-
-    /**
-     * A global attribute with custom term order, created when missing and
-     * left alone when present. Returns its ID and taxonomy.
-     *
-     * @return array{0: int, 1: string}
-     */
-    private function attribute(string $slug, string $name): array
-    {
-        $attribute = wc_attribute_taxonomy_id_by_name($slug);
-        if ($attribute === 0) {
-            $created = wc_create_attribute([
-                'name'         => $name,
-                'slug'         => $slug,
-                'type'         => 'select',
-                'order_by'     => 'menu_order',
-                'has_archives' => false,
-            ]);
-            if ($created instanceof WP_Error) {
-                throw new RuntimeException(sprintf('Could not create the attribute "%s": %s', $name, $created->get_error_message()));
-            }
-            $attribute = $created;
-        }
-
-        // WooCommerce registers attribute taxonomies on init, before this
-        // request created the attribute.
-        $taxonomy = wc_attribute_taxonomy_name($slug);
-        if (!taxonomy_exists($taxonomy)) {
-            register_taxonomy($taxonomy, ['product'], ['hierarchical' => false, 'show_ui' => false, 'rewrite' => false]);
-        }
-
-        return [$attribute, $taxonomy];
-    }
-
-    /**
-     * A Size attribute and its terms, in the given order.
-     *
-     * @param array<string, string> $terms slug => name
-     * @return SizeAttribute Its terms as slug => term ID.
-     */
-    private function sizeAttribute(string $slug, string $name, array $terms): array
-    {
-        [$attribute, $taxonomy] = $this->attribute($slug, $name);
-
-        $ids   = [];
-        $index = 0;
-        foreach ($terms as $termSlug => $termName) {
-            $ids[(string) $termSlug] = $this->term($taxonomy, (string) $termSlug, $termName);
-            wc_set_term_order($ids[(string) $termSlug], $index++, $taxonomy);
-        }
-
-        return ['attribute' => $attribute, 'taxonomy' => $taxonomy, 'terms' => $ids];
     }
 
     /**
@@ -386,8 +254,8 @@ final class ShopCommand
         // A sized Product is variable. Loading the post seeded as Simple by an
         // older seed as WC_Product_Variable converts it in place, same ID.
         $product = $sizes === []
-            ? new WC_Product_Simple($this->postId('product', $slug))
-            : new WC_Product_Variable($this->postId('product', $slug));
+            ? new WC_Product_Simple($this->site->postId('product', $slug))
+            : new WC_Product_Variable($this->site->postId('product', $slug));
         $onSale = $data['sale'] !== '';
 
         $product->set_name($data['title']);
@@ -527,7 +395,7 @@ final class ShopCommand
         foreach ($sizes as $size) {
             $next = [];
             foreach ($combinations as $combination) {
-                foreach (array_keys(self::SIZES[$size]['terms']) as $term) {
+                foreach (array_keys(SiteSetup::SIZES[$size]['terms']) as $term) {
                     $next[] = $combination + [$size => (string) $term];
                 }
             }
@@ -556,7 +424,7 @@ final class ShopCommand
     {
         $names = [];
         foreach ($values as $size => $term) {
-            $names[] = self::SIZES[$size]['terms'][$term];
+            $names[] = SiteSetup::SIZES[$size]['terms'][$term];
         }
 
         return implode(' · ', $names);
@@ -897,26 +765,6 @@ final class ShopCommand
         return $hidden;
     }
 
-    private function frontPage(): int
-    {
-        $id = wp_insert_post([
-            'ID'           => $this->postId('page', self::FRONT_PAGE),
-            'post_type'    => 'page',
-            'post_status'  => 'publish',
-            'post_title'   => 'Kreu',
-            'post_name'    => self::FRONT_PAGE,
-            'post_content' => '',
-        ], true);
-        if ($id instanceof WP_Error) {
-            throw new RuntimeException('Could not save the front page: ' . $id->get_error_message());
-        }
-
-        update_option('show_on_front', 'page');
-        update_option('page_on_front', $id);
-
-        return $id;
-    }
-
     private function coupon(): void
     {
         $coupon = new WC_Coupon(self::COUPON);
@@ -932,136 +780,11 @@ final class ShopCommand
 
     private function configure(DateTimeImmutable $offerEnd): void
     {
-        $options = [
-            // The home page's <title> and link previews read the tagline.
-            'blogdescription'                  => 'Programe stërvitjeje dhe plane ushqimore në shqip',
-            // Kosovo's zone, so offers end and orders are dated in local time.
-            'timezone_string'                  => 'Europe/Belgrade',
-            'date_format'                      => 'j F Y',
-            'woocommerce_coming_soon'          => 'no',
-            'woocommerce_default_country'      => 'XK',
-            'woocommerce_price_thousand_sep'   => '.',
-            'woocommerce_price_decimal_sep'    => ',',
-            'woocommerce_price_num_decimals'   => '2',
-            'woocommerce_currency_pos'         => 'right_space',
-            'woocommerce_enable_reviews'       => 'yes',
-            'woocommerce_enable_review_rating' => 'yes',
-            // The header's account button offers "Create an account". Whoever
-            // registers there picks a password; a guest checkout's account
-            // still gets a set-password email (the Plans plugin's OrderAccess).
-            'woocommerce_enable_myaccount_registration'  => 'yes',
-            'woocommerce_registration_generate_password' => 'no',
-            // Settings, so WooCommerce stores them in the language it was
-            // installed in (English) unless they are set.
-            'woocommerce_registration_privacy_policy_text' => 'Të dhënat e tua përdoren për të menaxhuar llogarinë tënde. Më shumë te faqja [privacy_policy].',
-            'woocommerce_checkout_privacy_policy_text'     => 'Të dhënat e tua përdoren për të përpunuar porosinë dhe për llogarinë tënde. Më shumë te faqja [privacy_policy].',
-        ];
-        foreach ($options as $name => $value) {
-            update_option($name, $value);
-        }
-
-        // The storefront is Albanian; wp-admin stays English for whoever builds it.
-        foreach (get_users(['role' => 'administrator', 'fields' => 'ID']) as $userId) {
-            update_user_meta((int) $userId, 'locale', 'en_US');
-        }
+        $this->site->settings();
+        $this->site->shopPages();
 
         set_theme_mod('offer_ends_at', $offerEnd->format('Y-m-d\TH:i'));
         set_theme_mod('exit_coupon', self::COUPON);
-
-        // ADR-0007: the classic cart and checkout, not the blocks WooCommerce installs.
-        foreach (['cart' => 'woocommerce_cart', 'checkout' => 'woocommerce_checkout'] as $page => $shortcode) {
-            if (get_post(wc_get_page_id($page)) === null) {
-                WC_Install::create_pages();
-            }
-
-            wp_update_post([
-                'ID'           => wc_get_page_id($page),
-                'post_content' => sprintf('<!-- wp:shortcode -->[%s]<!-- /wp:shortcode -->', $shortcode),
-            ]);
-        }
-
-        // WooCommerce names its pages in English. The titles show in the
-        // browser tab, on cart and My Account, and in My Account's eyebrow.
-        $titles = ['shop' => 'Dyqani', 'cart' => 'Shporta', 'checkout' => 'Pagesa', 'myaccount' => 'Llogaria ime'];
-        foreach ($titles as $page => $title) {
-            if (wc_get_page_id($page) > 0) {
-                wp_update_post(['ID' => wc_get_page_id($page), 'post_title' => $title]);
-            }
-        }
-    }
-
-    /**
-     * The terms, privacy and refund pages the footer and checkout link to,
-     * published with placeholder text marked for replacement. The pages
-     * WordPress and WooCommerce created as drafts are reused when they exist.
-     */
-    private function legalPages(): void
-    {
-        $email = (string) optimum_lift_setting('contact_email');
-        $pages = [
-            'woocommerce_terms_page_id' => ['kushtet-e-sherbimit', 'Kushtet e shërbimit', [
-                'Këto kushte rregullojnë blerjen dhe përdorimin e produkteve digjitale të Optimum Lift: programe stërvitjeje dhe plane ushqimore. Duke blerë, i pranon ato.',
-                'Produktet janë për përdorim personal. Nuk lejohet shpërndarja, rishitja ose publikimi i materialeve pa leje me shkrim.',
-                'Informacioni në produkte nuk zëvendëson këshillën mjekësore. Konsultohu me mjekun para se të fillosh një program stërvitjeje ose dietë.',
-            ]],
-            'wp_page_for_privacy_policy' => ['politika-e-privatesise', 'Politika e privatësisë', [
-                'Në pagesë mbledhim vetëm email-in, emrin dhe shtetin, që të përpunojmë porosinë dhe të të dërgojmë produktin.',
-                'Pagesat me kartë i përpunon ofruesi i pagesave. Ne nuk i shohim dhe nuk i ruajmë të dhënat e kartës.',
-                sprintf('Për të parë ose fshirë të dhënat e tua, shkruaj në %s.', $email),
-            ]],
-            'woocommerce_refund_returns_page_id' => ['politika-e-kthimit', 'Politika e kthimit', [
-                'Produktet e Optimum Lift janë digjitale dhe i merr menjëherë pas pagesës. Në pagesë kërkon që aksesi të nisë menjëherë dhe pranon që, sapo nis, humb të drejtën e tërheqjes brenda 14 ditëve. Prandaj, pasi aksesi është dhënë, nuk kthejmë para.',
-                sprintf('Nëse produkti nuk hapet, ka gabim ose nuk është siç përshkruhet, shkruaj në %s me numrin e porosisë dhe e rregullojmë ose ta zëvendësojmë. Kjo nuk prek të drejtat që të jep ligji.', $email),
-            ]],
-        ];
-
-        foreach ($pages as $option => [$slug, $title, $paragraphs]) {
-            $id = (int) get_option($option);
-            if ($id <= 0 || get_post($id) === null) {
-                $id = $this->postId('page', $slug);
-            }
-
-            array_unshift($paragraphs, '<strong>[Tekst shembull: zëvendësoje me tekstin ligjor të rishikuar para lansimit.]</strong>');
-            $content = implode("\n\n", array_map(
-                static fn (string $paragraph): string => '<!-- wp:paragraph --><p>' . $paragraph . '</p><!-- /wp:paragraph -->',
-                $paragraphs
-            ));
-
-            $saved = wp_insert_post([
-                'ID'           => $id,
-                'post_type'    => 'page',
-                'post_status'  => 'publish',
-                'post_title'   => $title,
-                'post_name'    => $slug,
-                'post_content' => $content,
-            ], true);
-            if ($saved instanceof WP_Error) {
-                throw new RuntimeException(sprintf('Could not save the page "%s": %s', $title, $saved->get_error_message()));
-            }
-
-            update_option($option, $saved);
-        }
-
-        // A terms page turns on WooCommerce's required terms checkbox. The
-        // checkout asks for as little as possible (ADR-0007), so it stays off:
-        // the one box a buyer must tick is the withdrawal waiver
-        // (inc/shop/withdrawal.php, ADR-0009).
-        update_option('woocommerce_checkout_terms_and_conditions_checkbox_text', '');
-    }
-
-    /**
-     * WordPress keeps WPLANG only for an installed language; docker/setup.sh
-     * installs the Albanian packs.
-     */
-    private function siteLanguage(): string
-    {
-        if (!in_array('sq', get_available_languages(), true)) {
-            return 'The site language stays English until the sq language pack is installed: wp language core install sq';
-        }
-
-        update_option('WPLANG', 'sq');
-
-        return 'Site language: sq.';
     }
 
     /**

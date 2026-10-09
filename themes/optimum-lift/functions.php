@@ -55,6 +55,8 @@ define('OPTIMUM_LIFT_URI', get_template_directory_uri());
     }
 
     if (defined('WP_CLI') && WP_CLI) {
+        $modules[] = 'inc/site-setup.php';
+        $modules[] = 'inc/cli-setup.php';
         $modules[] = 'inc/cli.php';
     }
 
