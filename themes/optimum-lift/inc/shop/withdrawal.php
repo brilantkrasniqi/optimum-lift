@@ -40,16 +40,17 @@ function optimum_lift_waiver_needed(): bool
  */
 function optimum_lift_waiver_text(): string
 {
-    return __('I want access to my plan right away, and I understand that once access starts I lose my 14-day right of withdrawal.', 'optimum-lift');
+    return __('I want my plan right away, and I understand that once I get it, I can no longer cancel the purchase within 14 days.', 'optimum-lift');
 }
 
 /**
- * Whether the box is ticked in this request: on the order post itself, or in
- * the form a checkout refresh sends as `post_data`.
+ * Whether a checkout box is ticked in this request: on the order post itself,
+ * or in the form a checkout refresh sends as `post_data`. Boxes inside
+ * #payment are re-rendered on every refresh, so they read this to stay ticked.
  */
-function optimum_lift_waiver_posted(): bool
+function optimum_lift_checkout_box_posted(string $field): bool
 {
-    if (!empty($_POST[OPTIMUM_LIFT_WAIVER_FIELD])) {
+    if (!empty($_POST[$field])) {
         return true;
     }
 
@@ -60,7 +61,15 @@ function optimum_lift_waiver_posted(): bool
 
     parse_str(stripslashes($form), $data);
 
-    return !empty($data[OPTIMUM_LIFT_WAIVER_FIELD]);
+    return !empty($data[$field]);
+}
+
+/**
+ * Whether the waiver box is ticked in this request.
+ */
+function optimum_lift_waiver_posted(): bool
+{
+    return optimum_lift_checkout_box_posted(OPTIMUM_LIFT_WAIVER_FIELD);
 }
 
 add_action('woocommerce_review_order_before_submit', static function (): void {
@@ -145,7 +154,7 @@ add_action('woocommerce_email_order_meta', static function (mixed $order, mixed 
         return;
     }
 
-    $line = __('You asked for immediate access to your digital products and confirmed that you lose your right of withdrawal once access starts.', 'optimum-lift');
+    $line = __('You asked for your plans right away and confirmed that once you get them, you can no longer cancel the purchase within 14 days.', 'optimum-lift');
 
     if ($plain_text) {
         echo "\n" . esc_html($line) . "\n";

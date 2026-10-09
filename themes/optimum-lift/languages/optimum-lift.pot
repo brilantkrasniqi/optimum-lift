@@ -1409,7 +1409,7 @@ msgid "Choose your size first."
 msgstr ""
 
 #: inc/shop/withdrawal.php:43
-msgid "I want access to my plan right away, and I understand that once access starts I lose my 14-day right of withdrawal."
+msgid "I want my plan right away, and I understand that once I get it, I can no longer cancel the purchase within 14 days."
 msgstr ""
 
 #: inc/shop/withdrawal.php:80
@@ -1440,7 +1440,7 @@ msgid "not recorded for this order"
 msgstr ""
 
 #: inc/shop/withdrawal.php:148
-msgid "You asked for immediate access to your digital products and confirmed that you lose your right of withdrawal once access starts."
+msgid "You asked for your plans right away and confirmed that once you get them, you can no longer cancel the purchase within 14 days."
 msgstr ""
 
 #. translators: %s: search query.
