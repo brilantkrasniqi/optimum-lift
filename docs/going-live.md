@@ -44,8 +44,11 @@ cp ~/.ssh/authorized_keys /home/deploy/.ssh/ && chown deploy:deploy /home/deploy
 Check that `ssh deploy@<ipv4>` works from your PC. Only then turn off root login and passwords over SSH, so the only way in is your key:
 
 ```sh
-sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/; s/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
-systemctl reload ssh
+# Ubuntu reads /etc/ssh/sshd_config.d/*.conf first and the first value wins, so a file
+# named 00- beats the cloud image's own 50-cloud-init.conf (which allows passwords).
+printf 'PermitRootLogin no\nPasswordAuthentication no\n' | sudo tee /etc/ssh/sshd_config.d/00-hardening.conf
+sudo sshd -T | grep -E '^(permitrootlogin|passwordauthentication)'   # both must say no
+sudo systemctl reload ssh
 ```
 
 From here on, log in as `deploy`.
